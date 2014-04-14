@@ -72,8 +72,7 @@ public class CkanRestClient
     
     public boolean CreateDatasetRelationship(DatasetRelationship orgRel)
     {
-    	JsonNode lala = getJsonTree(orgRel);
-    	String json = lala.toString();
+    	String json = getJsonTree(orgRel).toString();
 
     	String path = actionMap.get("CreateDatasetRelationship");    	
     	return postJson(path, json);
@@ -111,7 +110,7 @@ public class CkanRestClient
     		st = nodes.next();
     		if(!jsonOrgRel.get(st).equals(jsonNewRel.get(st))) //not!!
     		{
-    			dynamicJson += jsonNewRel.get(st).getTextValue() + ", ";
+    			dynamicJson += jsonNewRel.get(st).toString() + ", ";
     		}
     	}
     	

@@ -4,5 +4,8 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="lib" path="C:/Program Files (x86)/adt-bundle-windows-x86_64-20131030/resteasy-jaxrs-3.0.6.Final/lib/jackson-mapper-asl-1.9.12.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files (x86)/adt-bundle-windows-x86_64-20131030/resteasy-jaxrs-3.0.6.Final/lib/jackson-core-asl-1.9.12.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/adt-bundle-windows-x86_64-20131030/commons-configuration-1.10/commons-configuration-1.10.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/adt-bundle-windows-x86_64-20131030/commons-lang-2.6/commons-lang-2.6.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/JsonId"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
