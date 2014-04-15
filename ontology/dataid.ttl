@@ -26,6 +26,14 @@
 	] , [
 		a owl:Restriction ;
         owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty rdfs:label
+	] , [
+		a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty dct:description
+	] , [
+		a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty dct:issued
 	] , [
 		a owl:Restriction ;
@@ -35,6 +43,10 @@
 		a owl:Restriction ;
         owl:minCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty dct:publisher
+	] , [
+		a owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty dct:creator
 	] , [
 		a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -54,11 +66,23 @@
 	] , [
 		a owl:Restriction ;
         owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onProperty dcat:distribution
+        owl:onProperty dcat:landingPage
 	] , [
 		a owl:Restriction ;
         owl:minCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty prov:wasGeneratedBy
+	] , [
+		a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty dct:license
+	] , [
+		a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty dct:rights
+	] , [
+		a owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty dct:language
 	] .
 
 :Distribution
@@ -80,7 +104,7 @@
         owl:onProperty dct:license
 	] , [
 		a owl:Restriction ;
-        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty dct:rights
 	] , [
 		a owl:Restriction ;
