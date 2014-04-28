@@ -1,0 +1,4 @@
+{
+	"datahubActionUri": "http://datahub.io/api/3/action/",
+	"mappingConfigPath": "\\bin\\MappingConfig.json"
+}
