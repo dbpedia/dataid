@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rdf:RDF xmlns:dcat="http://www.w3.org/ns/dcat#" xmlns:dct="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sd="http://www.w3.org/ns/sparql-service-description#" xmlns:void="http://rdfs.org/ns/void#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns="http://dbpedia.org/dataid#">
-  <rdf:Description rdf:about="http://dbpedia.org/dataid">
+<rdf:RDF xmlns:datid="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#" xmlns:dcat="http://www.w3.org/ns/dcat#" xmlns:dct="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sd="http://www.w3.org/ns/sparql-service-description#" xmlns:void="http://rdfs.org/ns/void#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <rdf:Description rdf:about="file:///home/martin/projects/dataId/git/dataId/ontology/dataid.ttl">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid">
+  <rdf:Description rdf:about="file:///home/martin/projects/dataId/git/dataId/ontology/dataid.ttl">
     <rdfs:comment xml:lang="en">DBpedia Data ID is an ontology with the goal of describing LOD datasets via RDF files in a uniform way. Established vocabularies like DCAT, VoID, Prov-O and SPARQL Service Description are used for maximum compatibility.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid">
+  <rdf:Description rdf:about="file:///home/martin/projects/dataId/git/dataId/ontology/dataid.ttl">
     <rdfs:label xml:lang="en">DataID</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid1">
@@ -144,120 +144,117 @@
   <rdf:Description rdf:nodeID="genid15">
     <owl:onProperty rdf:resource="http://purl.org/dc/terms/rights"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="genid16">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid16">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid16">
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/language"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdf:type rdf:resource="http://rdfs.org/ns/void#Dataset"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdf:type rdf:resource="http://www.w3.org/ns/sparql-service-description#Dataset"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdfs:label xml:lang="en">Dataset</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdfs:subClassOf rdf:nodeID="genid1"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdfs:subClassOf rdf:nodeID="genid2"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdfs:subClassOf rdf:nodeID="genid3"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdfs:subClassOf rdf:nodeID="genid4"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdfs:subClassOf rdf:nodeID="genid5"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdfs:subClassOf rdf:nodeID="genid6"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdfs:subClassOf rdf:nodeID="genid7"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdfs:subClassOf rdf:nodeID="genid8"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdfs:subClassOf rdf:nodeID="genid9"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdfs:subClassOf rdf:nodeID="genid10"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdfs:subClassOf rdf:nodeID="genid11"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdfs:subClassOf rdf:nodeID="genid12"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdfs:subClassOf rdf:nodeID="genid13"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdfs:subClassOf rdf:nodeID="genid14"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset">
     <rdfs:subClassOf rdf:nodeID="genid15"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Dataset">
-    <rdfs:subClassOf rdf:nodeID="genid16"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid17">
+  <rdf:Description rdf:nodeID="genid16">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="genid17">
+  <rdf:Description rdf:nodeID="genid16">
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="genid17">
+  <rdf:Description rdf:nodeID="genid16">
     <owl:onProperty rdf:resource="http://purl.org/dc/terms/title"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="genid18">
+  <rdf:Description rdf:nodeID="genid17">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="genid18">
+  <rdf:Description rdf:nodeID="genid17">
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="genid18">
+  <rdf:Description rdf:nodeID="genid17">
     <owl:onProperty rdf:resource="http://purl.org/dc/terms/issued"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="genid19">
+  <rdf:Description rdf:nodeID="genid18">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="genid19">
+  <rdf:Description rdf:nodeID="genid18">
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="genid19">
+  <rdf:Description rdf:nodeID="genid18">
     <owl:onProperty rdf:resource="http://purl.org/dc/terms/license"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="genid20">
+  <rdf:Description rdf:nodeID="genid19">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="genid20">
+  <rdf:Description rdf:nodeID="genid19">
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="genid20">
+  <rdf:Description rdf:nodeID="genid19">
     <owl:onProperty rdf:resource="http://purl.org/dc/terms/rights"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="genid20">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid20">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid20">
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/dcat#accessURL"/>
+  </rdf:Description>
   <rdf:Description rdf:nodeID="genid21">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
@@ -265,7 +262,40 @@
     <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid21">
-    <owl:onProperty rdf:resource="http://www.w3.org/ns/dcat#accessURL"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/dcat#mediaType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Distribution">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Distribution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Distribution">
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Distribution">
+    <rdfs:comment xml:lang="en">A way to access a dataset, like a dump file, an endpoint, an API etc.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Distribution">
+    <rdfs:label xml:lang="en">Distribution</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Distribution">
+    <rdfs:subClassOf rdf:nodeID="genid16"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Distribution">
+    <rdfs:subClassOf rdf:nodeID="genid17"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Distribution">
+    <rdfs:subClassOf rdf:nodeID="genid18"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Distribution">
+    <rdfs:subClassOf rdf:nodeID="genid19"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Distribution">
+    <rdfs:subClassOf rdf:nodeID="genid20"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Distribution">
+    <rdfs:subClassOf rdf:nodeID="genid21"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid22">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
@@ -274,16 +304,16 @@
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid22">
-    <owl:onProperty rdf:resource="http://www.w3.org/ns/sparql-service-description#defaultDataset"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid23">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid23">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid23">
-    <owl:onProperty rdf:resource="http://www.w3.org/ns/dcat#mediaType"/>
+    <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/name"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid24">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
@@ -292,45 +322,30 @@
     <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid24">
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/format"/>
+    <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/mbox"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Distribution">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Agent">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Distribution">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Agent">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Distribution">
-    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Agent">
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Distribution">
-    <rdfs:comment xml:lang="en">A way to access a dataset, like a dump file, an endpoint, an API etc.</rdfs:comment>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Agent">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Distribution">
-    <rdfs:label xml:lang="en">Distribution</rdfs:label>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Agent">
+    <rdfs:label xml:lang="en">Agent</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Distribution">
-    <rdfs:subClassOf rdf:nodeID="genid17"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Distribution">
-    <rdfs:subClassOf rdf:nodeID="genid18"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Distribution">
-    <rdfs:subClassOf rdf:nodeID="genid19"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Distribution">
-    <rdfs:subClassOf rdf:nodeID="genid20"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Distribution">
-    <rdfs:subClassOf rdf:nodeID="genid21"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Distribution">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Agent">
     <rdfs:subClassOf rdf:nodeID="genid22"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Distribution">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Agent">
     <rdfs:subClassOf rdf:nodeID="genid23"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Distribution">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Agent">
     <rdfs:subClassOf rdf:nodeID="genid24"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid25">
@@ -340,85 +355,79 @@
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid25">
-    <owl:onProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid26">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid26">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid26">
-    <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/name"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid27">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid27">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid27">
-    <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/mbox"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Agent">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Agent">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Agent">
-    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Agent">
-    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Agent">
-    <rdfs:label xml:lang="en">Agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Agent">
-    <rdfs:subClassOf rdf:nodeID="genid25"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Agent">
-    <rdfs:subClassOf rdf:nodeID="genid26"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Agent">
-    <rdfs:subClassOf rdf:nodeID="genid27"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid28">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid28">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="genid28">
     <owl:onProperty rdf:resource="http://purl.org/dc/terms/title"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="genid29">
+  <rdf:Description rdf:nodeID="genid26">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="genid29">
+  <rdf:Description rdf:nodeID="genid26">
     <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="genid29">
+  <rdf:Description rdf:nodeID="genid26">
     <owl:onProperty rdf:resource="http://purl.org/dc/terms/publisher"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Activity">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Activity">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Activity">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Activity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Activity">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Activity">
     <rdf:type rdf:resource="http://www.w3.org/ns/prov#Activity"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Activity">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Activity">
     <rdfs:label xml:lang="en">Activity</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Activity">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Activity">
+    <rdfs:subClassOf rdf:nodeID="genid25"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Activity">
+    <rdfs:subClassOf rdf:nodeID="genid26"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid27">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid27">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid27">
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/title"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid28">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid28">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid28">
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/publisher"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Entity">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Entity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Entity">
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Entity">
+    <rdfs:label xml:lang="en">Activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Entity">
+    <rdfs:subClassOf rdf:nodeID="genid27"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Entity">
     <rdfs:subClassOf rdf:nodeID="genid28"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Activity">
-    <rdfs:subClassOf rdf:nodeID="genid29"/>
+  <rdf:Description rdf:nodeID="genid29">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid29">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid29">
+    <owl:onProperty rdf:resource="http://rdfs.org/ns/void#subjectTarget"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid30">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
@@ -427,33 +436,33 @@
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid30">
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/title"/>
+    <owl:onProperty rdf:resource="http://rdfs.org/ns/void#objectTarget"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid31">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid31">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:nodeID="genid31">
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/publisher"/>
+    <owl:onProperty rdf:resource="http://rdfs.org/ns/void#triples"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Entity">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Linkset">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Entity">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Linkset">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Entity">
-    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Linkset">
+    <rdfs:label xml:lang="en">Linkset</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Entity">
-    <rdfs:label xml:lang="en">Activity</rdfs:label>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Linkset">
+    <rdfs:subClassOf rdf:nodeID="genid29"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Entity">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Linkset">
     <rdfs:subClassOf rdf:nodeID="genid30"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#Entity">
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Linkset">
     <rdfs:subClassOf rdf:nodeID="genid31"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://rdfs.org/ns/void#sparqlEndpoint">
@@ -466,10 +475,10 @@
     <rdfs:label xml:lang="en">SPARQL endpoint</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="http://rdfs.org/ns/void#sparqlEndpoint">
-    <rdfs:domain rdf:resource="http://dbpedia.org/dataid#Dataset"/>
+    <rdfs:domain rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://rdfs.org/ns/void#sparqlEndpoint">
-    <rdfs:range rdf:resource="http://dbpedia.org/dataid#Distribution"/>
+    <rdfs:range rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Distribution"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/dcat#distribution">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -484,10 +493,10 @@
     <rdfs:comment xml:lang="en">Distribution of the dataset</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/dcat#distribution">
-    <rdfs:domain rdf:resource="http://dbpedia.org/dataid#Dataset"/>
+    <rdfs:domain rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/dcat#distribution">
-    <rdfs:range rdf:resource="http://dbpedia.org/dataid#Distribution"/>
+    <rdfs:range rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Distribution"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/dcat#contactPoint">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -502,10 +511,10 @@
     <rdfs:comment xml:lang="en">Agent to be contacted for questions and maintenance</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/dcat#contactPoint">
-    <rdfs:domain rdf:resource="http://dbpedia.org/dataid#Dataset"/>
+    <rdfs:domain rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/dcat#contactPoint">
-    <rdfs:range rdf:resource="http://dbpedia.org/dataid#Agent"/>
+    <rdfs:range rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Agent"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/publisher">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -520,7 +529,7 @@
     <rdfs:comment xml:lang="en">Publisher of the dataset</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/publisher">
-    <rdfs:range rdf:resource="http://dbpedia.org/dataid#Agent"/>
+    <rdfs:range rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Agent"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/creator">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -535,7 +544,7 @@
     <rdfs:comment xml:lang="en">Creator of the dataset</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/creator">
-    <rdfs:range rdf:resource="http://dbpedia.org/dataid#Agent"/>
+    <rdfs:range rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Agent"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasDerivedFrom">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -550,10 +559,10 @@
     <rdfs:comment xml:lang="en">Entity the dataset was derived from</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasDerivedFrom">
-    <rdfs:domain rdf:resource="http://dbpedia.org/dataid#Dataset"/>
+    <rdfs:domain rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasDerivedFrom">
-    <rdfs:range rdf:resource="http://dbpedia.org/dataid#Entity"/>
+    <rdfs:range rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Entity"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasGeneratedBy">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -568,10 +577,10 @@
     <rdfs:comment xml:lang="en">Activity used to generate the dataset</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasGeneratedBy">
-    <rdfs:domain rdf:resource="http://dbpedia.org/dataid#Dataset"/>
+    <rdfs:domain rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasGeneratedBy">
-    <rdfs:range rdf:resource="http://dbpedia.org/dataid#Activity"/>
+    <rdfs:range rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Activity"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/prov#used">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -586,10 +595,10 @@
     <rdfs:comment xml:lang="en">Entity used by the Activity to generate the dataset</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/prov#used">
-    <rdfs:domain rdf:resource="http://dbpedia.org/dataid#Activity"/>
+    <rdfs:domain rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Activity"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/prov#used">
-    <rdfs:range rdf:resource="http://dbpedia.org/dataid#Entity"/>
+    <rdfs:range rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Entity"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/sparql-service-description#defaultDataset">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -604,27 +613,96 @@
     <rdfs:comment xml:lang="en">Default dataset this distribution delivers</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/sparql-service-description#defaultDataset">
-    <rdfs:domain rdf:resource="http://dbpedia.org/dataid#Distribution"/>
+    <rdfs:domain rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Distribution"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/sparql-service-description#defaultDataset">
-    <rdfs:range rdf:resource="http://dbpedia.org/dataid#Dataset"/>
+    <rdfs:range rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#subdataSet">
+  <rdf:Description rdf:about="http://rdfs.org/ns/void#subset">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#subdataSet">
+  <rdf:Description rdf:about="http://rdfs.org/ns/void#subset">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#subdataSet">
-    <rdfs:label xml:lang="en">sub dataset</rdfs:label>
+  <rdf:Description rdf:about="http://rdfs.org/ns/void#subset">
+    <rdfs:label xml:lang="en">Subset of the dataset</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#subdataSet">
+  <rdf:Description rdf:about="http://rdfs.org/ns/void#subset">
     <rdfs:comment xml:lang="en">A dataset contained in the parent dataset</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#subdataSet">
-    <rdfs:domain rdf:resource="http://dbpedia.org/dataid#Dataset"/>
+  <rdf:Description rdf:about="http://rdfs.org/ns/void#subset">
+    <rdfs:domain rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/dataid#subdataSet">
-    <rdfs:range rdf:resource="http://dbpedia.org/dataid#Dataset"/>
+  <rdf:Description rdf:about="http://rdfs.org/ns/void#subset">
+    <rdfs:range rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#version">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#version">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#version">
+    <rdfs:label xml:lang="en">Version of the dataset</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#version">
+    <rdfs:comment xml:lang="en">A different version of this dataset</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#version">
+    <rdfs:domain rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#version">
+    <rdfs:range rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#ontologyLocation">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#ontologyLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#ontologyLocation">
+    <rdfs:label xml:lang="en">Ontology Location</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#ontologyLocation">
+    <rdfs:comment xml:lang="en">Links to the ontology or vocabulary this dataset uses</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#ontologyLocation">
+    <rdfs:domain rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#versionInfo">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#versionInfo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#versionInfo">
+    <rdfs:label xml:lang="en">Version Information</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#versionInfo">
+    <rdfs:comment xml:lang="en">A string denoting the version of this dataset</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#versionInfo">
+    <rdfs:domain rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#versionInfo">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#latestVersion">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#latestVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#latestVersion">
+    <rdfs:label xml:lang="en">Latest version</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#latestVersion">
+    <rdfs:comment xml:lang="en">A string denoting the latest version of this dataset</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#latestVersion">
+    <rdfs:domain rdf:resource="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#Dataset"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl#latestVersion">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </rdf:Description>
 </rdf:RDF>
