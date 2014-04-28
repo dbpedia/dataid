@@ -1,7 +1,5 @@
  #This resource describes the project DBpedia. We would need a new description (i.e. instance of dcat:Dataset) for the english version DBpedia. I will describe the German DBpedia below to make the distinction clear.
 
-#This file is being developed here https://docs.google.com/document/d/1lzDhDOAwMBWbUq0CKgpqOna_szS8eCPD2YrRhkEl7vY/edit?usp=sharing . Feel free to correct errors, comment and contribute
-
 #Statistics like number of triples, uptime of endpoint, number of links, usage of ontologies, number of errors etc should be kept in a different file, linked from the description. Statistics like that are subject to permanent change, but this data id should be relatively stable and not be edited too often.
 
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -14,17 +12,24 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix : <http://dbpedia.org#> .
 
-<http://dbpedia.org/>
-    a dcat:Dataset, void:Dataset, sd:Dataset ;
-    a prov:Entity ;
+<> a void:DatasetDescription ;
+    dct:title "DataId of the DBpedia dataset" ;
+    dct:creator <http://wiki.dbpedia.org/Association>;
+    foaf:primaryTopic :DBpedia .
+
+<http://dbpedia.org#DBpedia>
+    a dcat:Dataset, void:Dataset, sd:Dataset, prov:Entity ;
     dct:title "DBpedia" ;
-    dcat:keyword "LOD" ;
-    dct:issued "2014-04-01"^^xsd:date ;
-    dct:modified "2014-04-01"^^xsd:date ;
+	rdfs:label "DBpedia" ;
+    dct:description """DBpedia is a crowd-sourced community effort to extract structured information from Wikipedia and make this information available on the Web. DBpedia allows you to ask sophisticated queries against Wikipedia, and to link the different data sets on the Web to Wikipedia data. We hope that this work will make it easier for the huge amount of information in Wikipedia to be used in some new interesting ways. Furthermore, it might inspire new mechanisms for navigating, linking, and improving the encyclopedia itself.""" ;
+    dcat:keyword "lod" , "crossdomain" , "rdf" , "access-api" , "access-bulk" , "access-www" , "wikipedia" ;
+    dct:issued "2014-02-14"^^xsd:date ;
+    dct:modified "2014-02-14"^^xsd:date ;
     dcat:contactPoint <http://wiki.dbpedia.org/Association> ;
     dct:publisher <http://wiki.dbpedia.org/Association> ;
-    void:rootResource <> ;
     void:exampleResource <http://dbpedia.org/data/Berlin.rdf> ;
     dct:language "multilingual" ;
     dct:accrualPeriodicity <http://purl.org/linked-data/sdmx/2009/code#freq-W>  ;
@@ -33,105 +38,82 @@
     dcat:landingPage <http://dbpedia.org/> ;
     prov:wasDerivedFrom <http://wikipedia.org> ;
     prov:wasGeneratedBy <https://github.com/dbpedia/extraction-framework/> ;
-    datid:subdataSet <http://de.dbpedia.org/> .
+    dct:license <http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License> ;
+    dct:rights """DBpedia is derived from Wikipedia and is distributed under the same licensing terms as Wikipedia itself. As Wikipedia has moved to dual-licensing, we also dual-license DBpedia starting with release 3.4.
+Data comprising DBpedia release 3.4 and subsequent releases is licensed under the terms of the Creative Commons Attribution-ShareAlike 3.0 license and the GNU Free Documentation License. Data comprising DBpedia releases up to and including release 3.3 is licensed only under the terms of the GNU Free Documentation License.""" ;
+    datid:ontologyLocation <http://downloads.dbpedia.org/3.9/dbpedia_3.9.owl> ;
+    datid:versionInfo "3.9" ;
+    datid:latestVersion "3.9" .
+
+<http://downloads.dbpedia.org/3.9/>
+    a dcat:Distribution ;
+    dct:title "DBpedia dumps" ;
+    dct:description "Download directory of DBpedia dump files" ;
+    dct:issued "2014-02-14"^^xsd:date ;
+    dct:modified "2014-02-14"^^xsd:date ;
+    dct:license <http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License> ;
+    dct:rights """DBpedia is derived from Wikipedia and is distributed under the same licensing terms as Wikipedia itself. As Wikipedia has moved to dual-licensing, we also dual-license DBpedia starting with release 3.4.
+Data comprising DBpedia release 3.4 and subsequent releases is licensed under the terms of the Creative Commons Attribution-ShareAlike 3.0 license and the GNU Free Documentation License. Data comprising DBpedia releases up to and including release 3.3 is licensed only under the terms of the GNU Free Documentation License.""" ;
+    dcat:accessURL <http://downloads.dbpedia.org/3.9/de/> ;
+    dcat:mediaType "application/x-bzip" .
 
 <http://dbpedia.org/sparql/>
-    a dcat:Distribution, sd:Service ;
+    rdf:type dcat:Distribution, sd:Service ;
     dct:title "DBpedia SPARQL endpoint" ;
     dct:description "Main SPARQL access point of the DBpedia" ;
-    dct:issued "2014-04-01"^^xsd:date ;
-    dct:modified "2014-04-01"^^xsd:date ;
+    dct:issued "2014-02-14"^^xsd:date ;
+    dct:modified "2014-02-14"^^xsd:date ;
     dct:license <http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License> ;
     dct:rights """DBpedia is derived from Wikipedia and is distributed under the same licensing terms as Wikipedia itself. As Wikipedia has moved to dual-licensing, we also dual-license DBpedia starting with release 3.4.
 Data comprising DBpedia release 3.4 and subsequent releases is licensed under the terms of the Creative Commons Attribution-ShareAlike 3.0 license and the GNU Free Documentation License. Data comprising DBpedia releases up to and including release 3.3 is licensed only under the terms of the GNU Free Documentation License.""" ;
     dcat:accessURL <http://dbpedia.org/sparql/> ;
     sd:endpoint <http://dbpedia.org/sparql/> ;
-    sd:defaultDataset <http://dbpedia.org/> ;
+    sd:defaultDataset <http://dbpedia.org#DBpedia> ;
     void:triples "358996938" ;
     sd:resultFormat <http://www.w3.org/ns/formats/RDF_XML>, <http://www.w3.org/ns/formats/Turtle> ;
     dcat:mediaType "application/sparql-results+xml" , "text/rdf+n3" , "text/rdf+ttl", "text/rdf+turtle" , "text/turtle" , "text/n3" , "application/turtle" , "application/x-turtle" , "application/rdf+xml" ;
     dct:format  "application/sparql-results+xml" , "text/rdf+n3" , "text/rdf+ttl", "text/rdf+turtle" , "text/turtle" , "text/n3" , "application/turtle" , "application/x-turtle" , "application/rdf+xml" .
 
 <http://wiki.dbpedia.org/Association>
-    a foaf:Agent, foaf:Organization, prov:Agent ;
+    rdf:type foaf:Agent, foaf:Organization, prov:Agent ;
     foaf:name "DBpedia Association" ;
     rdfs:label "DBpedia Association" ;
-    foaf:maker "Sebastian Hellmann", "Michael Martin " , "Dimitris Kontokostas" ;
+    foaf:maker "Sebastian Hellmann" , "Michael Martin" , "Dimitris Kontokostas" ;
     foaf:mbox "dbpedia@infai.org" .
 
 <http://wikipedia.org/>
-    a prov:Entity ;
+    rdf:type prov:Entity ;
     dct:title "Wikipedia" ;
     dct:publisher <https://www.wikimedia.org/> .
 
 <https://github.com/dbpedia/extraction-framework/>
-    a prov:Activity ;
+    rdf:type prov:Activity ;
     dct:title "The DBpedia extraction framework" ;
     dct:publisher  <http://wiki.dbpedia.org/Association> ;
     prov:used <http://mappings.dbpedia.org/> .
 
 <http://mappings.dbpedia.org/>
-    a prov:Entity ;
+    rdf:type prov:Entity ;
     dct:title "Mapping of Wikipedia articles to RDF" ;
     dct:publisher  <http://wiki.dbpedia.org/Association> .
 
+<http://dbpedia.org#Linkset_dbpedia_freebase>
+	rdf:type void:Linkset ;
+    dct:issued "2014-02-14"^^xsd:date ;
+    dct:modified "2014-02-14"^^xsd:date ;
+    void:triples "3400000" ;
+	void:linkPredicate owl:sameAs ;
+	void:subjectTarget :DBpedia ;
+    void:objectTarget <http://freebase.com/> .
 
-
-#Describing the German DBpedia here, as a sub dataset of the DBpedia project.
-
-<http://de.dbpedia.org/>
-    a dcat:Dataset, void:Dataset, sd:Dataset ;
-    a prov:Entity ;
-    dct:title "DBpedia German" ;
-    dcat:keyword "LOD" ;
-    dct:issued "2014-04-01"^^xsd:date ;
-    dct:modified "2014-04-01"^^xsd:date ;
-    dcat:contactPoint <http://wiki.dbpedia.org/Association> ;
-    dct:publisher <http://wiki.dbpedia.org/Association> ;
-    void:rootResource <> ;
-    void:exampleResource <http://de.dbpedia.org/data/Berlin.rdf> ;
-    dct:language <http://www.lexvo.org/page/iso639-3/deu> ;
-    dct:accrualPeriodicity <http://purl.org/linked-data/sdmx/2009/code#freq-W>  ;
-    dcat:distribution <http://de.dbpedia.org/sparql/> , <http://downloads.dbpedia.org/3.9/de> ;
-    void:dataDump <http://downloads.dbpedia.org/3.9/de> ;
-    dcat:landingPage <http://de.dbpedia.org/> ;
-    prov:wasDerivedFrom <http://de.wikipedia.org> ;
-    prov:wasGeneratedBy <https://github.com/dbpedia/extraction-framework/> .
-    
-<http://downloads.dbpedia.org/3.9/de>
-    a dcat:Distribution ;
-    dct:title "DBpedia German Downloads" ;
-    dct:description "Download directory of German DBpedia files" ;
-    dct:issued "2014-04-01"^^xsd:date ;
-    dct:modified "2014-04-01"^^xsd:date ;
-    dct:license <http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License> ;
-    dct:rights """DBpedia is derived from Wikipedia and is distributed under the same licensing terms as Wikipedia itself. As Wikipedia has moved to dual-licensing, we also dual-license DBpedia starting with release 3.4.
-Data comprising DBpedia release 3.4 and subsequent releases is licensed under the terms of the Creative Commons Attribution-ShareAlike 3.0 license and the GNU Free Documentation License. Data comprising DBpedia releases up to and including release 3.3 is licensed only under the terms of the GNU Free Documentation License.""" ;
-    dcat:accessURL <http://downloads.dbpedia.org/3.9/de/> ;
-    dcat:mediaType "application/x-bzip" ;
-    dct:format  "text/turtle".
-
-<http://de.dbpedia.org/sparql/>
-    a dcat:Distribution, sd:Service ;
-    dct:title "German DBpedia SPARQL endpoint" ;
-    dct:description "SPARQL access point of the German DBpedia" ;
-    dct:issued "2014-04-01"^^xsd:date ;
-    dct:modified "2014-04-01"^^xsd:date ;
-    dct:license <http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License> ;
-    dct:rights """DBpedia is derived from Wikipedia and is distributed under the same licensing terms as Wikipedia itself. As Wikipedia has moved to dual-licensing, we also dual-license DBpedia starting with release 3.4.
-Data comprising DBpedia release 3.4 and subsequent releases is licensed under the terms of the Creative Commons Attribution-ShareAlike 3.0 license and the GNU Free Documentation License. Data comprising DBpedia releases up to and including release 3.3 is licensed only under the terms of the GNU Free Documentation License.""" ;
-    dcat:accessURL <http://de.dbpedia.org/sparql/> ;
-    sd:endpoint <http://de.dbpedia.org/sparql/> ;
-    sd:defaultDataset <http://de.dbpedia.org/> ;
-    void:triples "???" ;
-    sd:resultFormat <http://www.w3.org/ns/formats/RDF_XML>, <http://www.w3.org/ns/formats/Turtle> ;
-    dcat:mediaType "application/sparql-results+xml" , "text/rdf+n3" , "text/rdf+ttl", "text/rdf+turtle" , "text/turtle" , "text/n3" , "application/turtle" , "application/x-turtle" , "application/rdf+xml" ;
-    dct:format  "application/sparql-results+xml" , "text/rdf+n3" , "text/rdf+ttl", "text/rdf+turtle" , "text/turtle" , "text/n3" , "application/turtle" , "application/x-turtle" , "application/rdf+xml" .
-
-<http://de.wikipedia.org/>
-    a prov:Entity ;
-    dct:title "German Wikipedia" ;
-    dct:publisher <https://www.wikimedia.org/> .
+<http://dbpedia.org#Linkset_dbpedia_yago>
+	rdf:type void:Linkset ;
+    dct:issued "2014-02-14"^^xsd:date ;
+    dct:modified "2014-02-14"^^xsd:date ;
+    void:triples "18100000" ;
+	void:linkPredicate owl:sameAs ;
+	void:subjectTarget :DBpedia ;
+    void:objectTarget <http://yago-knowledge.org> .
     
 
 
