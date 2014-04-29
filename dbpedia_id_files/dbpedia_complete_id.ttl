@@ -84,7 +84,8 @@ Data comprising DBpedia release 3.4 and subsequent releases is licensed under th
 <http://wikipedia.org/>
     rdf:type prov:Entity ;
     dct:title "Wikipedia" ;
-    dct:publisher <https://www.wikimedia.org/> .
+    dct:publisher <http://www.wikimedia.org/> .
+<http://www.wikimedia.org/> a datid:Agent.
 
 <https://github.com/dbpedia/extraction-framework/>
     rdf:type prov:Activity ;
