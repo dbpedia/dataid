@@ -85,7 +85,6 @@ Data comprising DBpedia release 3.4 and subsequent releases is licensed under th
     rdf:type prov:Entity ;
     dct:title "Wikipedia" ;
     dct:publisher <http://www.wikimedia.org/> .
-<http://www.wikimedia.org/> a datid:Agent.
 
 <https://github.com/dbpedia/extraction-framework/>
     rdf:type prov:Activity ;
@@ -115,6 +114,6 @@ Data comprising DBpedia release 3.4 and subsequent releases is licensed under th
 	void:linkPredicate owl:sameAs ;
 	void:subjectTarget :DBpedia ;
     void:objectTarget <http://yago-knowledge.org> .
-    
 
-
+<http://www.wikimedia.org/> a datid:Agent .
+<http://wiki.dbpedia.org/Association> a datid:Agent .
