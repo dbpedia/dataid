@@ -69,7 +69,7 @@ Data comprising DBpedia release 3.4 and subsequent releases is licensed under th
     dcat:accessURL <http://dbpedia.org/sparql/> ;
     sd:endpoint <http://dbpedia.org/sparql/> ;
     sd:defaultDataset <http://dbpedia.org#DBpedia> ;
-    void:triples "358996938" ;
+    void:triples "358996938"^^xsd:integer;
     sd:resultFormat <http://www.w3.org/ns/formats/RDF_XML>, <http://www.w3.org/ns/formats/Turtle> ;
     dcat:mediaType "application/sparql-results+xml" , "text/rdf+n3" , "text/rdf+ttl", "text/rdf+turtle" , "text/turtle" , "text/n3" , "application/turtle" , "application/x-turtle" , "application/rdf+xml" ;
     dct:format  "application/sparql-results+xml" , "text/rdf+n3" , "text/rdf+ttl", "text/rdf+turtle" , "text/turtle" , "text/n3" , "application/turtle" , "application/x-turtle" , "application/rdf+xml" .
@@ -101,7 +101,7 @@ Data comprising DBpedia release 3.4 and subsequent releases is licensed under th
 	rdf:type void:Linkset ;
     dct:issued "2014-02-14"^^xsd:date ;
     dct:modified "2014-02-14"^^xsd:date ;
-    void:triples "3400000" ;
+    void:triples "3400000"^^xsd:integer ;
 	void:linkPredicate owl:sameAs ;
 	void:subjectTarget :DBpedia ;
     void:objectTarget <http://freebase.com/> .
@@ -110,7 +110,7 @@ Data comprising DBpedia release 3.4 and subsequent releases is licensed under th
 	rdf:type void:Linkset ;
     dct:issued "2014-02-14"^^xsd:date ;
     dct:modified "2014-02-14"^^xsd:date ;
-    void:triples "18100000" ;
+    void:triples "18100000"^^xsd:integer ;
 	void:linkPredicate owl:sameAs ;
 	void:subjectTarget :DBpedia ;
     void:objectTarget <http://yago-knowledge.org> .
