@@ -1,0 +1,213 @@
+{
+  "@graph" : [ {
+    "@id" : "",
+    "@type" : "void:DatasetDescription",
+    "dc:creator" : {
+      "@id" : "http://wiki.dbpedia.org/Association"
+    },
+    "dc:title" : "DataId of the DBpedia dataset",
+    "foaf:primaryTopic" : {
+      "@id" : "http://dbpedia.org#DBpedia"
+    }
+  }, {
+    "@id" : "http://dbpedia.org#DBpedia",
+    "@type" : [ "dcat:Dataset", "void:Dataset", "sd:Dataset", "prov:Entity" ],
+    "datid:latestVersion" : "3.9",
+    "datid:ontologyLocation" : {
+      "@id" : "http://downloads.dbpedia.org/3.9/dbpedia_3.9.owl"
+    },
+    "datid:versionInfo" : "3.9",
+    "dc:accrualPeriodicity" : {
+      "@id" : "http://purl.org/linked-data/sdmx/2009/code#freq-W"
+    },
+    "dc:description" : "DBpedia is a crowd-sourced community effort to extract structured information from Wikipedia and make this information available on the Web. DBpedia allows you to ask sophisticated queries against Wikipedia, and to link the different data sets on the Web to Wikipedia data. We hope that this work will make it easier for the huge amount of information in Wikipedia to be used in some new interesting ways. Furthermore, it might inspire new mechanisms for navigating, linking, and improving the encyclopedia itself.",
+    "dc:issued" : {
+      "@type" : "xsd:date",
+      "@value" : "2014-02-14"
+    },
+    "dc:language" : "multilingual",
+    "dc:license" : {
+      "@id" : "http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License"
+    },
+    "dc:modified" : {
+      "@type" : "xsd:date",
+      "@value" : "2014-02-14"
+    },
+    "dc:publisher" : {
+      "@id" : "http://wiki.dbpedia.org/Association"
+    },
+    "dc:rights" : "DBpedia is derived from Wikipedia and is distributed under the same licensing terms as Wikipedia itself. As Wikipedia has moved to dual-licensing, we also dual-license DBpedia starting with release 3.4.\nData comprising DBpedia release 3.4 and subsequent releases is licensed under the terms of the Creative Commons Attribution-ShareAlike 3.0 license and the GNU Free Documentation License. Data comprising DBpedia releases up to and including release 3.3 is licensed only under the terms of the GNU Free Documentation License.",
+    "dc:title" : "DBpedia",
+    "void:exampleResource" : {
+      "@id" : "http://dbpedia.org/data/Berlin.rdf"
+    },
+    "void:sparqlEndpoint" : {
+      "@id" : "http://dbpedia.org/sparql/"
+    },
+    "rdfs:label" : "DBpedia",
+    "dcat:contactPoint" : {
+      "@id" : "http://wiki.dbpedia.org/Association"
+    },
+    "dcat:distribution" : [ {
+      "@id" : "http://dbpedia.org/sparql/"
+    }, {
+      "@id" : "http://downloads.dbpedia.org/3.9/"
+    } ],
+    "dcat:keyword" : [ "lod", "crossdomain", "rdf", "access-api", "access-bulk", "access-www", "wikipedia" ],
+    "dcat:landingPage" : {
+      "@id" : "http://dbpedia.org/"
+    },
+    "prov:wasDerivedFrom" : {
+      "@id" : "http://wikipedia.org"
+    },
+    "prov:wasGeneratedBy" : {
+      "@id" : "https://github.com/dbpedia/extraction-framework/"
+    }
+  }, {
+    "@id" : "http://dbpedia.org#Linkset_dbpedia_freebase",
+    "@type" : "void:Linkset",
+    "dc:issued" : {
+      "@type" : "xsd:date",
+      "@value" : "2014-02-14"
+    },
+    "dc:modified" : {
+      "@type" : "xsd:date",
+      "@value" : "2014-02-14"
+    },
+    "void:linkPredicate" : {
+      "@id" : "owl:sameAs"
+    },
+    "void:objectTarget" : {
+      "@id" : "http://freebase.com/"
+    },
+    "void:subjectTarget" : {
+      "@id" : "http://dbpedia.org#DBpedia"
+    },
+    "void:triples" : "3400000"
+  }, {
+    "@id" : "http://dbpedia.org#Linkset_dbpedia_yago",
+    "@type" : "void:Linkset",
+    "dc:issued" : {
+      "@type" : "xsd:date",
+      "@value" : "2014-02-14"
+    },
+    "dc:modified" : {
+      "@type" : "xsd:date",
+      "@value" : "2014-02-14"
+    },
+    "void:linkPredicate" : {
+      "@id" : "owl:sameAs"
+    },
+    "void:objectTarget" : {
+      "@id" : "http://yago-knowledge.org"
+    },
+    "void:subjectTarget" : {
+      "@id" : "http://dbpedia.org#DBpedia"
+    },
+    "void:triples" : "18100000"
+  }, {
+    "@id" : "http://dbpedia.org/sparql/",
+    "@type" : [ "dcat:Distribution", "sd:Service" ],
+    "dc:description" : "Main SPARQL access point of the DBpedia",
+    "dc:format" : [ "application/sparql-results+xml", "text/rdf+n3", "text/rdf+ttl", "text/rdf+turtle", "text/turtle", "text/n3", "application/turtle", "application/x-turtle", "application/rdf+xml" ],
+    "dc:issued" : {
+      "@type" : "xsd:date",
+      "@value" : "2014-02-14"
+    },
+    "dc:license" : {
+      "@id" : "http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License"
+    },
+    "dc:modified" : {
+      "@type" : "xsd:date",
+      "@value" : "2014-02-14"
+    },
+    "dc:rights" : "DBpedia is derived from Wikipedia and is distributed under the same licensing terms as Wikipedia itself. As Wikipedia has moved to dual-licensing, we also dual-license DBpedia starting with release 3.4.\nData comprising DBpedia release 3.4 and subsequent releases is licensed under the terms of the Creative Commons Attribution-ShareAlike 3.0 license and the GNU Free Documentation License. Data comprising DBpedia releases up to and including release 3.3 is licensed only under the terms of the GNU Free Documentation License.",
+    "dc:title" : "DBpedia SPARQL endpoint",
+    "void:triples" : "358996938",
+    "dcat:accessURL" : {
+      "@id" : "http://dbpedia.org/sparql/"
+    },
+    "dcat:mediaType" : [ "application/sparql-results+xml", "text/rdf+n3", "text/rdf+ttl", "text/rdf+turtle", "text/turtle", "text/n3", "application/turtle", "application/x-turtle", "application/rdf+xml" ],
+    "sd:defaultDataset" : {
+      "@id" : "http://dbpedia.org#DBpedia"
+    },
+    "sd:endpoint" : {
+      "@id" : "http://dbpedia.org/sparql/"
+    },
+    "sd:resultFormat" : [ {
+      "@id" : "http://www.w3.org/ns/formats/RDF_XML"
+    }, {
+      "@id" : "http://www.w3.org/ns/formats/Turtle"
+    } ]
+  }, {
+    "@id" : "http://downloads.dbpedia.org/3.9/",
+    "@type" : "dcat:Distribution",
+    "dc:description" : "Download directory of DBpedia dump files",
+    "dc:issued" : {
+      "@type" : "xsd:date",
+      "@value" : "2014-02-14"
+    },
+    "dc:license" : {
+      "@id" : "http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License"
+    },
+    "dc:modified" : {
+      "@type" : "xsd:date",
+      "@value" : "2014-02-14"
+    },
+    "dc:rights" : "DBpedia is derived from Wikipedia and is distributed under the same licensing terms as Wikipedia itself. As Wikipedia has moved to dual-licensing, we also dual-license DBpedia starting with release 3.4.\nData comprising DBpedia release 3.4 and subsequent releases is licensed under the terms of the Creative Commons Attribution-ShareAlike 3.0 license and the GNU Free Documentation License. Data comprising DBpedia releases up to and including release 3.3 is licensed only under the terms of the GNU Free Documentation License.",
+    "dc:title" : "DBpedia dumps",
+    "dcat:accessURL" : {
+      "@id" : "http://downloads.dbpedia.org/3.9/de/"
+    },
+    "dcat:mediaType" : "application/x-bzip"
+  }, {
+    "@id" : "http://mappings.dbpedia.org/",
+    "@type" : "prov:Entity",
+    "dc:publisher" : {
+      "@id" : "http://wiki.dbpedia.org/Association"
+    },
+    "dc:title" : "Mapping of Wikipedia articles to RDF"
+  }, {
+    "@id" : "http://wiki.dbpedia.org/Association",
+    "@type" : [ "foaf:Agent", "foaf:Organization", "prov:Agent", "datid:Agent" ],
+    "rdfs:label" : "DBpedia Association",
+    "foaf:maker" : [ "Sebastian Hellmann", "Michael Martin", "Dimitris Kontokostas" ],
+    "foaf:mbox" : "dbpedia@infai.org",
+    "foaf:name" : "DBpedia Association"
+  }, {
+    "@id" : "http://wikipedia.org/",
+    "@type" : "prov:Entity",
+    "dc:publisher" : {
+      "@id" : "http://www.wikimedia.org/"
+    },
+    "dc:title" : "Wikipedia"
+  }, {
+    "@id" : "http://www.wikimedia.org/",
+    "@type" : "datid:Agent"
+  }, {
+    "@id" : "https://github.com/dbpedia/extraction-framework/",
+    "@type" : "prov:Activity",
+    "dc:publisher" : {
+      "@id" : "http://wiki.dbpedia.org/Association"
+    },
+    "dc:title" : "The DBpedia extraction framework",
+    "prov:used" : {
+      "@id" : "http://mappings.dbpedia.org/"
+    }
+  } ],
+  "@context" : {
+    "datid" : "http://dbpedia.org/dataid#",
+    "dthub" : "http://datahub.io/",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "dc" : "http://purl.org/dc/terms/",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "void" : "http://rdfs.org/ns/void#",
+    "prov" : "http://www.w3.org/ns/prov#",
+    "sd" : "http://www.w3.org/ns/sparql-service-description#",
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "@base" : "http://lalaland.io"
+  }
+}
