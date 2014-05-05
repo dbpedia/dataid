@@ -1,6 +1,8 @@
 package aksw.dataid.datahub.mappingobjects;
 
 import java.util.Date;
+import java.util.List;
+
 import org.codehaus.jackson.annotate.*;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -10,18 +12,19 @@ public class DataIdProperty
 	private String type;
 	private String comment;
 	private String addedBy;
-	private String datahub;
 	private Date issued;
-	private boolean isReadOnly = false; 	//if property is read-only in Datahub.io - optional in mapping.jsona
+	private String dataHub;
+	private boolean isReadOnly = false; 	//if property is read-only in Datahub.io - optional in mapping.json
 	private boolean isList = false;			//if property is a list on Datahub.io - optional - mapped to list element!
 	private boolean additionalKey = false;  //indicates an additional key-value pair is to be used to map this data-id property at datahub.io - optional
-	//if property is not part of dataset-object we need a chain like; "dataid:dataset, dc:publisher, foaf:mbox" to link foaf:mbox to dataset- optional
-	private String referenceChain = ""; 
+	private boolean isReverseProp = false;	//a given dataid property is used in reverse (by adding a ^) - optional
+	//if property is not part of dataset-object we need a chain like; "dc:publisher, foaf:mbox" to link foaf:mbox to dataset- optional
+	private List<String> referenceChain = null; 
 	
-	public String getReferenceChain() {
+	public List<String> getReferenceChain() {
 		return referenceChain;
 	}
-	public void setReferenceChain(String referenceChain) {
+	public void setReferenceChain(List<String> referenceChain) {
 		this.referenceChain = referenceChain;
 	}
 	@JsonProperty("isList")
@@ -37,12 +40,6 @@ public class DataIdProperty
 	}
 	public void setReadOnly(boolean readOnly) {
 		this.isReadOnly = readOnly;
-	}
-	public String getDatahub() {
-		return datahub;
-	}
-	public void setDatahub(String datahub) {
-		this.datahub = datahub;
 	}
 	@JsonProperty("@id")
 	public String getId() {
@@ -84,5 +81,17 @@ public class DataIdProperty
 	}
 	public void setAdditionalKey(boolean additionalKey) {
 		this.additionalKey = additionalKey;
+	}
+	public boolean isReverseProp() {
+		return isReverseProp;
+	}
+	public void setReverseProp(boolean isReverseProp) {
+		this.isReverseProp = isReverseProp;
+	}
+	public String getDataHub() {
+		return dataHub;
+	}
+	public void setDataHub(String dataHub) {
+		this.dataHub = dataHub;
 	}
 }

@@ -12,7 +12,7 @@ public class MappingConfig
 	private String version;
 	private Date created;
 	private String author;
-	private Map<String,DataIdProperty> dictionary;
+	private Map<String, Map<String,DataIdProperty>> dataHubMapping;
 	
 	public String getVersion() {
 		return version;
@@ -32,36 +32,32 @@ public class MappingConfig
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	public Map<String, DataIdProperty> getDictionary() {
-		return dictionary;
-	}
-	public void setDictionary(Map<String, DataIdProperty> dictionary) {
-		this.dictionary = dictionary;
-	}
 	
-	public DataIdProperty GetDataIdProperty(String dataDataIdProperty)
+	public DataIdProperty GetPropertyByDataId(String dictionary, String dataDataIdProperty)
 	{
-		for(String key : dictionary.keySet())
-		{
-			DataIdProperty prop = dictionary.get(key);
-			if(prop.getId().equals(dataDataIdProperty))
+			for(String key : dataHubMapping.get(dictionary).keySet())
 			{
-				return prop;
+				DataIdProperty prop = dataHubMapping.get(dictionary).get(key);
+				if(prop.getId().equals(dataDataIdProperty))
+				{
+					return prop;
+				}
 			}
-		}
+		
 		return null;
 	}
 	
-	public DataIdProperty GetDataHubProperty(String dataDataIdProperty)
+	public DataIdProperty GetPropertyByDataHub(String dictionary, String dataDataIdProperty)
 	{
-		for(String key : dictionary.keySet())
-		{
-			DataIdProperty prop = dictionary.get(key);
-			if(prop.getDatahub() != null && prop.getDatahub().equals(dataDataIdProperty))
-			{
+		DataIdProperty prop = dataHubMapping.get(dictionary).get(dataDataIdProperty);
 				return prop;
-			}
-		}
-		return null;
+
+	}
+	public Map<String, Map<String, DataIdProperty>> getDataHubMapping() {
+		return dataHubMapping;
+	}
+	public void setDataHubMapping(
+			Map<String, Map<String, DataIdProperty>> dataHubMapping) {
+		this.dataHubMapping = dataHubMapping;
 	}
 }

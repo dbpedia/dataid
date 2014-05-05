@@ -1,7 +1,3 @@
- #This resource describes the project DBpedia. We would need a new description (i.e. instance of dcat:Dataset) for the english version DBpedia. I will describe the German DBpedia below to make the distinction clear.
-
-#Statistics like number of triples, uptime of endpoint, number of links, usage of ontologies, number of errors etc should be kept in a different file, linked from the description. Statistics like that are subject to permanent change, but this data id should be relatively stable and not be edited too often.
-
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -39,8 +35,7 @@
     prov:wasDerivedFrom <http://wikipedia.org> ;
     prov:wasGeneratedBy <https://github.com/dbpedia/extraction-framework/> ;
     dct:license <http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License> ;
-    dct:rights "DBpedia is derived from Wikipedia and is distributed under the same licensing terms as Wikipedia itself. As Wikipedia has moved to dual-licensing, we also dual-license DBpedia starting with release 3.4.
-Data comprising DBpedia release 3.4 and subsequent releases is licensed under the terms of the Creative Commons Attribution-ShareAlike 3.0 license and the GNU Free Documentation License. Data comprising DBpedia releases up to and including release 3.3 is licensed only under the terms of the GNU Free Documentation License." ;
+    dct:rights "DBpedia is derived from Wikipedia and is distributed under the same licensing terms as Wikipedia itself. As Wikipedia has moved to dual-licensing, we also dual-license DBpedia starting with release 3.4. Data comprising DBpedia release 3.4 and subsequent releases is licensed under the terms of the Creative Commons Attribution-ShareAlike 3.0 license and the GNU Free Documentation License. Data comprising DBpedia releases up to and including release 3.3 is licensed only under the terms of the GNU Free Documentation License." ;
     datid:ontologyLocation <http://downloads.dbpedia.org/3.9/dbpedia_3.9.owl> ;
     datid:versionInfo "3.9" ;
     datid:latestVersion "3.9" .
@@ -52,8 +47,7 @@ Data comprising DBpedia release 3.4 and subsequent releases is licensed under th
     dct:issued "2014-02-14"^^xsd:date ;
     dct:modified "2014-02-14"^^xsd:date ;
     dct:license <http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License> ;
-    dct:rights "DBpedia is derived from Wikipedia and is distributed under the same licensing terms as Wikipedia itself. As Wikipedia has moved to dual-licensing, we also dual-license DBpedia starting with release 3.4.
-Data comprising DBpedia release 3.4 and subsequent releases is licensed under the terms of the Creative Commons Attribution-ShareAlike 3.0 license and the GNU Free Documentation License. Data comprising DBpedia releases up to and including release 3.3 is licensed only under the terms of the GNU Free Documentation License." ;
+    dct:rights "DBpedia is derived from Wikipedia and is distributed under the same licensing terms as Wikipedia itself. As Wikipedia has moved to dual-licensing, we also dual-license DBpedia starting with release 3.4. Data comprising DBpedia release 3.4 and subsequent releases is licensed under the terms of the Creative Commons Attribution-ShareAlike 3.0 license and the GNU Free Documentation License. Data comprising DBpedia releases up to and including release 3.3 is licensed only under the terms of the GNU Free Documentation License." ;
     dcat:accessURL <http://downloads.dbpedia.org/3.9/de/> ;
     dcat:mediaType "application/x-bzip" .
 
@@ -64,8 +58,7 @@ Data comprising DBpedia release 3.4 and subsequent releases is licensed under th
     dct:issued "2014-02-14"^^xsd:date ;
     dct:modified "2014-02-14"^^xsd:date ;
     dct:license <http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License> ;
-    dct:rights "DBpedia is derived from Wikipedia and is distributed under the same licensing terms as Wikipedia itself. As Wikipedia has moved to dual-licensing, we also dual-license DBpedia starting with release 3.4.
-Data comprising DBpedia release 3.4 and subsequent releases is licensed under the terms of the Creative Commons Attribution-ShareAlike 3.0 license and the GNU Free Documentation License. Data comprising DBpedia releases up to and including release 3.3 is licensed only under the terms of the GNU Free Documentation License." ;
+    dct:rights "DBpedia is derived from Wikipedia and is distributed under the same licensing terms as Wikipedia itself. As Wikipedia has moved to dual-licensing, we also dual-license DBpedia starting with release 3.4. Data comprising DBpedia release 3.4 and subsequent releases is licensed under the terms of the Creative Commons Attribution-ShareAlike 3.0 license and the GNU Free Documentation License. Data comprising DBpedia releases up to and including release 3.3 is licensed only under the terms of the GNU Free Documentation License." ;
     dcat:accessURL <http://dbpedia.org/sparql/> ;
     sd:endpoint <http://dbpedia.org/sparql/> ;
     sd:defaultDataset <http://dbpedia.org#DBpedia> ;

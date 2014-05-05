@@ -15,6 +15,7 @@ public class Resource
     private String url;
     private Integer size;
     private Integer position;
+    private Integer triples;
     private String resource_type;
     private Date last_modified;
     private String hash;
@@ -24,7 +25,10 @@ public class Resource
     private String state;
 
 
-	public Resource() {}
+	public Resource() 
+	{
+		size = 0;
+	}
 	
     public String getState() {
 		return state;
@@ -145,4 +149,20 @@ public class Resource
     public String getMimetype_inner() {
         return mimetype_inner;
     }
+
+	public Integer getTriples() {
+		return triples;
+	}
+
+	public void setTriples(Integer triples) {
+		this.triples = triples;
+	}
+
+	public void setSize(Integer size) {
+		this.size = size;
+	}
+
+	public void setPosition(Integer position) {
+		this.position = position;
+	}
 }

@@ -32,9 +32,6 @@ public class Tag
 	public Date getRevision_timestamp() {
 		return revision_timestamp;
 	}
-	public void setRevision_timestamp(Date revision_timestamp) {
-		this.revision_timestamp = revision_timestamp;
-	}
 	public String getState() {
 		return state;
 	}

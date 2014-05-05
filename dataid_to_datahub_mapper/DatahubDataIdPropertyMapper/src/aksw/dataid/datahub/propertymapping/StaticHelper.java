@@ -1,12 +1,22 @@
 package aksw.dataid.datahub.propertymapping;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -14,6 +24,8 @@ import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.JavaType;
+
+import com.fasterxml.jackson.databind.JsonNode;
 
 import aksw.dataid.datahub.jsonobjects.DatahubResponse;
 import aksw.dataid.datahub.jsonobjects.Dataset;
@@ -41,87 +53,43 @@ public class StaticHelper
 	    }
 	    return null;
 	}
-	
-	@SuppressWarnings("unchecked")
-	public static boolean SetDatasetProperty(Dataset set, DataIdProperty fieldProperty, String fieldValue) 
-	{
-	        try {
-	            Field field = getField(fieldProperty);
-	        	if(fieldProperty.isReadOnly())
-	        	{	return false;    }
-	        	else if(fieldProperty.isList())
-	        	{
-	        		ParameterizedType listType = (ParameterizedType) field.getGenericType();
-	                Class<?> listClass = (Class<?>) listType.getRawType();//getActualTypeArguments()[0];
-		            Object value = castToValue(fieldValue, listClass, listType);
-		            field.set(set, value);
-		            return true;
-	        	}
-	        	else if(fieldProperty.isAdditionalKey())
-	        	{
-	        		field = Dataset.class.getDeclaredField("extras");
-	        		Method add = List.class.getDeclaredMethod("add",Object.class);
-	        		DatasetExtras extras = new DatasetExtras();
-	        		extras.setKey(fieldProperty.getId());
-	        		extras.setValue(fieldValue);
-	        		//TODO extras added?
-	        		add.invoke(field.get(set), extras);
-		            return true;
-	        	}
-	        	else
-	        	{
-		            Object value = castToValue(fieldValue, field.getType(), null);
-		            field.set(set, value);
-		            return true;
-	        	}
 
-	        }catch (Exception e) {
-	    	    return false;
-	        }
-	}
-
-	private static <T> T castToValue(String fieldValue, Class<T> type, ParameterizedType listType) 
-	{
-		ObjectMapper mapper = new ObjectMapper();
-		T value = null;
-			try {
-				if(listType != null)
-				{
-					Class<?> t = (Class<?>) listType.getActualTypeArguments()[0];
-					JavaType javaType = mapper.getTypeFactory().constructParametricType(List.class,t);
-					value = mapper.readValue(fieldValue, javaType);
-				}
-				else
-				{
-					value = mapper.readValue(fieldValue, type);
-					
-				}
-			} catch (JsonParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (JsonMappingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		return value;
-	}
-
-	private static Field getField(DataIdProperty fieldProperty)
-	{
-		Field field = null;
+	public static void writeToFile(String content, String filePath) {
 		try {
-			field = Dataset.class.getDeclaredField(fieldProperty.getDatahub());
-			field.setAccessible(true);
-		} catch (NoSuchFieldException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
+ 
+			File file = new File(filePath);
+			if (!file.exists()) {
+				file.createNewFile();
+			}
+ 
+			FileWriter fw = new FileWriter(file.getAbsoluteFile());
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write(content);
+			bw.close();
+ 
+			System.out.println("Done");
+ 
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return field;
+	}
+	
+	public static String readFile(String filePath) {
+		 
+		File file = new File(filePath);
+		StringBuilder sb = new StringBuilder();
+		try (FileInputStream fis = new FileInputStream(file)) { 
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(fis));
+			String line;
+			while ((line = br.readLine()) != null) 
+			{
+				sb.append(line + "\n");
+			}
+ 
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return sb.toString();
 	}
 }

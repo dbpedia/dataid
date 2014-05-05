@@ -12,23 +12,7 @@
  	"prov":"http://www.w3.org/ns/prov#",
  	"sd":"http://www.w3.org/ns/sparql-service-description#",
  	"owl":"http://www.w3.org/2002/07/owl#",
- 	"xsd":"http://www.w3.org/2001/XMLSchema#",
- 	
- 	
- 	"dataset": "dataid:dataset",
- 	
-    
-    
-    "version": "datid:version",
-    "author": "dc:publisher",
-    "created": {
-      "@id": "dc:issued",
-      "@type": "xsd:date"
-    },
-    "dictionary": {
-       "@id": "dthub:mappingDict",
-       "@container": "@index"
-     }
+ 	"xsd":"http://www.w3.org/2001/XMLSchema#"
   },
   "dataid:dataset": {
   	"dc:rights": "License Not Specified",

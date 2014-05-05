@@ -1,5 +1,6 @@
 package aksw.dataid.datahub.jsonobjects;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
@@ -7,7 +8,7 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Dataset 
 {
-	   private String id;
+	   	private String id;
 	    private String name;
 	    private String title;
 	    private String revision_id;
@@ -44,6 +45,12 @@ public class Dataset
 			this.isopen = true;
 			this.isPrivate = false;
 			this.state = "active";
+			
+			extras = new ArrayList<DatasetExtras>();
+			tags = new ArrayList<Tag>();
+			resources = new ArrayList<Resource>();
+			relationships_as_object = new ArrayList<DatasetRelationship>();
+			relationships_as_subject = new ArrayList<DatasetRelationship>();
 		}
 
 
