@@ -6,11 +6,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -26,6 +29,10 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.JavaType;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.github.jsonldjava.core.Context;
+import com.github.jsonldjava.core.JsonLdError;
+import com.github.jsonldjava.core.JsonLdOptions;
+import com.github.jsonldjava.core.JsonLdProcessor;
 
 import aksw.dataid.datahub.jsonobjects.DatahubResponse;
 import aksw.dataid.datahub.jsonobjects.Dataset;
@@ -92,4 +99,36 @@ public class StaticHelper
 		}
 		return sb.toString();
 	}
+	
+	public static String readUrl(String url)
+	{
+		StringBuilder sb = new StringBuilder();
+		InputStream in = null;
+		try {
+			URL u = new URL(url);
+			in = u.openStream();
+		} catch (MalformedURLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (in != null) 
+		{
+			BufferedReader br = new BufferedReader(new InputStreamReader(in));
+			String line;
+			try {
+				while ((line = br.readLine()) != null) {
+					sb.append(line + "\n");
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return sb.toString();
+		}
+		return null;
+	}
+
 }

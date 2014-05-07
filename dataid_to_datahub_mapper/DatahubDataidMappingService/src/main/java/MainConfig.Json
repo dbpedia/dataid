@@ -3,7 +3,7 @@
 	"dataHubUsername": "chile",
 	"datahubOrganization": "aksw",
 	"datahubApiKey": "1495b749-5efc-4097-9ba6-7e8d1acdbb67",
-	"mappingConfigPath": "\\bin\\MappingConfig.json",
+	"mappingConfigPath": "\\target\\classes\\MappingConfig.json",
 	"ckanTimeOut": 10000,
 	"ckanActionMap":{
 		"GetDataset": "package_show",

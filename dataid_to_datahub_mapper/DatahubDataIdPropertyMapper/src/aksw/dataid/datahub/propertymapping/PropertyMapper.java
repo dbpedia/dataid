@@ -33,20 +33,15 @@ public class PropertyMapper
 	private ObjectMapper mapper = new ObjectMapper();
 	private Context jsonLdContext = new Context();
 	private List<LinkedHashMap> dataIdDataset;
+	private JsonNode mappingContent;
 	
 	
-    public PropertyMapper(String mappingFilePath)
+    public PropertyMapper(JsonNode mappingContent)
     {
-    	JsonFileManager fileManager = new JsonFileManager();
-    	try {
-    		fileManager.LoadJsonFile(mappingFilePath, false);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	if(fileManager.getFileContent() != null)
+    	this.mappingContent = mappingContent;
+    	if(mappingContent != null)
     	{
-    		mappingConfig = castJsonToObject(fileManager.getFileContent(), MappingConfig.class, "@graph");
+    		mappingConfig = castJsonToObject(mappingContent, MappingConfig.class, "@graph");
     		for(Map<String,DataIdProperty> dictionary : mappingConfig.getDataHubMapping().values())
     		{
 	    		for(String key : dictionary.keySet())
@@ -55,15 +50,11 @@ public class PropertyMapper
 	    			{	
 	    				dictionary.get(key).setDataHub(key);
 	    			}
-	    			else if(dictionary.get(key).getDataHub().contains("{"))
-	    			{
-	    				
-	    			}
 	    		}
     		}
     		
     		try {
-				String cont = fileManager.getFileContent().get("@context").toString();
+				String cont = mappingContent.get("@context").toString();
 				Object lala = JsonUtils.fromString(cont);
 				jsonLdContext = new Context(((Map<String, Object>) lala), new JsonLdOptions("http://lalaland.io"));
 			} catch (JsonParseException e) {
@@ -126,7 +117,7 @@ public class PropertyMapper
     	return null;
     }
     
-    public JsonNode DataidToDatahub(List<LinkedHashMap> dataIdObject) throws DataHubMappingException
+    public Dataset DataidToDatahub(List<LinkedHashMap> dataIdObject) throws DataHubMappingException
     {
     	dataIdDataset = dataIdObject;
 		Dataset set = new Dataset();
@@ -155,7 +146,7 @@ public class PropertyMapper
 		if(!datasetfound)
 			throw new DataHubMappingException("no dataset found!");
 		addTriples(set);
-    	return mapper.convertValue(set, JsonNode.class);
+    	return set;
     }
     
 	private void addTriples(Dataset set) {
@@ -165,7 +156,8 @@ public class PropertyMapper
 			if(r.getTriples() != null)
 				triples += r.getTriples();
 		}
-		setDatasetExtra(set, "triples", String.valueOf(triples));
+		if(triples > 0)
+			setDatasetExtra(set, "triples", String.valueOf(triples));
 	}
 	
 	private void setDatasetExtra(Dataset set, String key, String value) {
@@ -216,14 +208,12 @@ public class PropertyMapper
 			}
 			if(set.getClass() == Tag.class)
 			{
-				for(Object tag : fieldValue)
-				{
 					Tag t = new Tag();
-					t.setDisplay_name(String.valueOf(tag));
+					t.setDisplay_name(String.valueOf(ele));
 					t.setState("active");
-					t.setName(String.valueOf(tag));
+					t.setName(String.valueOf(ele));
 					set = (T) t;
-				}
+				
 			}
 			else if(ele.getClass() == LinkedHashMap.class)
 				set = fillObjectWithMapValues(set, (LinkedHashMap)ele);

@@ -40,11 +40,15 @@ public class Dataset
 	    private Integer num_tags;
 
 
-		public Dataset(){
-			//commons
+		public Dataset()
+		{
+			//common values
 			this.isopen = true;
-			this.isPrivate = false;
+			
+			//TODO switch back to false when done with debugging!
+			this.isPrivate = true;
 			this.state = "active";
+			this.type = "dataset";
 			
 			extras = new ArrayList<DatasetExtras>();
 			tags = new ArrayList<Tag>();
@@ -53,6 +57,16 @@ public class Dataset
 			relationships_as_subject = new ArrayList<DatasetRelationship>();
 		}
 
+		/**
+		 * method necessary since a non-simple get method produces a NullPointerException in jackson.json.ObjectMapper!?
+		 */
+		public void PrepareForParsing()
+		{
+			for(Resource res : this.resources)
+			{
+				res.PrepareForParsing();
+			}
+		}
 
 	    public List<DatasetRelationship> getRelationships_as_object() {
 			return relationships_as_object;
@@ -124,7 +138,7 @@ public class Dataset
 	    }
 
 	    public String getName() {
-	        return name;
+	        return name.toLowerCase().replace(" ", "_");
 	    }
 
 	    public void setTitle(String title) {

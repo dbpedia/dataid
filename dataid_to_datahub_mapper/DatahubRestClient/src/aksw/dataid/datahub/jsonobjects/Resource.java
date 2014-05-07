@@ -2,6 +2,7 @@ package aksw.dataid.datahub.jsonobjects;
 
 import java.util.Date;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -28,6 +29,28 @@ public class Resource
 	public Resource() 
 	{
 		size = 0;
+		state = "active";
+	}
+	
+	/**
+	 * method necessary since a non-simple get method produces a NullPointerException in jackson.json.ObjectMapper!?
+	 */
+	public void PrepareForParsing()
+	{
+    	if (format != null) {
+			//datahub displays different formats of a resource via the || operators
+			if (format.startsWith("["))
+				format = format.substring(1, format.length() - 2);
+			format = format.replace(";", ",").replace(" ", "");
+			format = format.replace(",", "||");
+		}
+    	if (mimetype != null) {
+			//datahub displays different mimetypes of a resource via the || operators
+			if (mimetype.startsWith("["))
+				mimetype = mimetype.substring(1, mimetype.length() - 2);
+			mimetype = mimetype.replace(";", ",").replace(" ", "");
+			mimetype = mimetype.replace(",", "||");
+		}
 	}
 	
     public String getState() {
@@ -86,16 +109,8 @@ public class Resource
         return url;
     }
 
-    public void setSize(int size) {
-        this.size = size;
-    }
-
     public int getSize() {
         return size;
-    }
-
-    public void setPosition(int position) {
-        this.position = position;
     }
 
     public int getPosition() {
@@ -149,11 +164,12 @@ public class Resource
     public String getMimetype_inner() {
         return mimetype_inner;
     }
-
+    @JsonIgnore
 	public Integer getTriples() {
 		return triples;
 	}
 
+    @JsonIgnore
 	public void setTriples(Integer triples) {
 		this.triples = triples;
 	}

@@ -1,15 +1,17 @@
 package aksw.dataid.datahub.jsonutils;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class StaticHelper 
+public class StaticJsonHelper 
 {
 	public static final ObjectMapper mapper = new ObjectMapper();
 
@@ -48,5 +50,16 @@ public class StaticHelper
 	    } catch(JSONException ex) { 
 	        return false;
 	    }
+	}
+
+	public static JsonNode getJsonContent(String path) {
+		JsonFileManager mainFileManager = new JsonFileManager();
+		try {
+			mainFileManager.LoadJsonFile(path);
+		} catch (FileNotFoundException e) {
+			System.err.println("File '" + path + "' could not be found. Try editing the MainConfig.json file.");
+			System.exit(0);
+		}
+		return mainFileManager.getFileContent();
 	}
 }

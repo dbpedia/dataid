@@ -56,8 +56,8 @@ public class JsonFileManager {
     	if(classpath)
     	{
 			InputStream inputStream = getClass().getResourceAsStream(filePath);
-			String test = StaticHelper.GetStringFromInputStream(inputStream);
-			if(StaticHelper.isJsonValid(test))
+			String test = StaticJsonHelper.GetStringFromInputStream(inputStream);
+			if(StaticJsonHelper.isJsonValid(test))
 				fileContent= convertStringToJsonNode(test);
 			return fileContent;
     	}
@@ -69,8 +69,8 @@ public class JsonFileManager {
     		{
     			try {
 					InputStream inputStream = new FileInputStream(filePath);
-					String test = StaticHelper.GetStringFromInputStream(inputStream);
-					if(StaticHelper.isJsonValid(test))
+					String test = StaticJsonHelper.GetStringFromInputStream(inputStream);
+					if(StaticJsonHelper.isJsonValid(test))
 						fileContent = convertStringToJsonNode(test);
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
@@ -82,7 +82,7 @@ public class JsonFileManager {
     	else if(!Files.exists(path) && Files.exists(path.getParent()) && Files.isDirectory(path.getParent()))
     	{
     		this.fileName = filePath;
-    		this.fileContent = StaticHelper.mapper.createObjectNode();
+    		this.fileContent = StaticJsonHelper.mapper.createObjectNode();
     		return fileContent;
     	}
     	return null;
@@ -90,7 +90,7 @@ public class JsonFileManager {
     
 	private JsonNode convertStringToJsonNode(String test) {
 		try {
-			return StaticHelper.mapper.readValue(test, JsonNode.class);
+			return StaticJsonHelper.mapper.readValue(test, JsonNode.class);
 		} catch (JsonParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

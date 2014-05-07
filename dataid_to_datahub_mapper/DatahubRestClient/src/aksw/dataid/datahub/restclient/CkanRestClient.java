@@ -7,6 +7,8 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -26,18 +28,25 @@ import aksw.dataid.datahub.restclient.HttpMethod;
 public class CkanRestClient 
 {
 	private String connectionUrl;
-    private final ObjectMapper mapper = new ObjectMapper();
-    private final int normalTimeout = 10000;
-    private final String apiKey = "1495b749-5efc-4097-9ba6-7e8d1acdbb67";
+    private final ObjectMapper serializer = new ObjectMapper();
+    private final ObjectMapper deserializer = new ObjectMapper();
+    private static int normalTimeout = 10000;
+    private String apiKey;
     private Map<String, String> actionMap = new HashMap<String, String>();
 
-    public CkanRestClient(String  baseUrl) 
+    public CkanRestClient(String  baseUrl, String apiKey, Map<String, String> actionMap) 
     {
+    	this(baseUrl, apiKey, actionMap, normalTimeout);
+    }
+
+	public CkanRestClient(String  baseUrl, String apiKey, Map<String, String> actionMap, int timeout) 
+    {
+    	this.apiKey = apiKey;
+    	normalTimeout = timeout;
         connectionUrl = baseUrl + (!(baseUrl.endsWith("/")) ? "/" : "");
-        actionMap.put("GetDataset", "package_show");
-        actionMap.put("GetRelationships", "package_relationships_list");
-        actionMap.put("UpdateDatasetRelationship", "package_relationship_update");
-        actionMap.put("CreateDatasetRelationship", "package_relationship_create");
+        this.actionMap = actionMap;
+        serializer.configure(org.codehaus.jackson.map.SerializationConfig.Feature.WRITE_DATES_AS_TIMESTAMPS, false);
+        serializer.setDateFormat(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSS"));
     }
     
     public Dataset GetDataset(String nameId)
@@ -47,13 +56,48 @@ public class CkanRestClient
     	String json = handleHttpResponse(conn);
     	DatahubResponse<Dataset> returnObject = null;
 		try {
-			JavaType type = mapper.getTypeFactory().constructParametricType(DatahubResponse.class, Dataset.class);
-			returnObject = mapper.readValue(json, type);
+			JavaType type = deserializer.getTypeFactory().constructParametricType(DatahubResponse.class, Dataset.class);
+			returnObject = deserializer.readValue(json, type);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     	return returnObject.getResult();
+    }
+    
+    public boolean CreateDataset(String DataHubId, Dataset set)
+    {
+    	set.setName(DataHubId);
+    	set.PrepareForParsing();
+    	JsonNode json = serializer.convertValue(set, JsonNode.class);
+    	String path = actionMap.get("CreateDataset");  
+    	return postJson(path, json.toString());
+    }
+    
+    public boolean UpdateDataset(String DataHubId, Dataset set)
+    {
+    	set.setName(DataHubId);
+    	set.PrepareForParsing();
+    	JsonNode json = serializer.convertValue(set, JsonNode.class);
+    	String path = actionMap.get("UpdateDataset");  
+    	return postJson(path, json.toString());
+    }
+    
+    public String GetOrganizationId(String orgName)
+    {
+    	String subPath = actionMap.get("GetOrganizationId") + "?id=" + orgName;
+    	HttpURLConnection conn = getHttpConnection(subPath, HttpMethod.Get, normalTimeout);
+    	String json = handleHttpResponse(conn); 
+    	DatahubResponse<JsonNode> returnObject = null;
+		try {
+			JavaType type = serializer.getTypeFactory().constructParametricType(DatahubResponse.class, JsonNode.class);
+			returnObject = serializer.readValue(json, type);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		JsonNode org = returnObject.getResult().get("id");
+		return org.toString();
     }
     
     public List<DatasetRelationship> GetRelationships(String nameId)
@@ -62,9 +106,9 @@ public class CkanRestClient
     	String json = handleHttpResponse(getHttpConnection(subPath, HttpMethod.Get, normalTimeout));
     	DatahubResponse<List<DatasetRelationship>> returnObject = null;
 		try {
-			CollectionType collType = mapper.getTypeFactory().constructCollectionType(List.class, DatasetRelationship.class);
-			JavaType type = mapper.getTypeFactory().constructParametricType(DatahubResponse.class, collType);
-			returnObject = mapper.readValue(json, type);
+			CollectionType collType = serializer.getTypeFactory().constructCollectionType(List.class, DatasetRelationship.class);
+			JavaType type = serializer.getTypeFactory().constructParametricType(DatahubResponse.class, collType);
+			returnObject = serializer.readValue(json, type);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -227,8 +271,8 @@ public class CkanRestClient
     private JsonNode getJsonTree(Object obj)
     {
     	try {
-    		String json = mapper.writeValueAsString(obj);
-    		JsonNode node = mapper.readTree(json);
+    		String json = serializer.writeValueAsString(obj);
+    		JsonNode node = serializer.readTree(json);
 			return node;
 		} catch (JsonGenerationException e) {
 			// TODO Auto-generated catch block
@@ -242,4 +286,20 @@ public class CkanRestClient
 		}
     	return null;
     }
+
+	public static int getNormalTimeout() {
+		return normalTimeout;
+	}
+
+	public static void setNormalTimeout(int normalTimeout) {
+		CkanRestClient.normalTimeout = normalTimeout;
+	}
+
+	public String getApiKey() {
+		return apiKey;
+	}
+
+	public void setApiKey(String apiKey) {
+		this.apiKey = apiKey;
+	}
 }
