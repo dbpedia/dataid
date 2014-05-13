@@ -57,6 +57,6 @@ public class DataIdProcesser
 		} catch (JsonLdError e) {
 			throw new DataHubMappingException("Error while trying to parse DataId file: " + e.getMessage());
 		}
-		return null;
+		return set;
 	}
 }

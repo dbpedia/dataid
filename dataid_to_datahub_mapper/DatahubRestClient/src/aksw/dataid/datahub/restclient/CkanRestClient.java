@@ -97,7 +97,7 @@ public class CkanRestClient
 			e.printStackTrace();
 		}
 		JsonNode org = returnObject.getResult().get("id");
-		return org.toString();
+		return org.toString().replace("\"", "");
     }
     
     public List<DatasetRelationship> GetRelationships(String nameId)

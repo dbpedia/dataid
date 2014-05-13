@@ -37,7 +37,7 @@ public class DatahubPublisher
         return set.getName();
     }
     
-    @POST
+    @GET
     @Path("/update")
     @Produces("text/plain")
     public String updateDataset(
@@ -46,8 +46,7 @@ public class DatahubPublisher
     		@QueryParam(value = "organization") final String organization,
     		@QueryParam(value = "ckanapikey") final String ckanapikey) 
     {
-
-    	String dataId = StaticHelper.readUrl(url);
+    	String dataId = StaticHelper.readUrl("https://raw.githubusercontent.com/dbpedia/dataId/master/dataid_to_datahub_mapper/DatahubDataIdPropertyMapper/src/dbpedia_complete_id.ttl");
     	DataIdProcesser proc;
     	Dataset set = null;
 		try {
