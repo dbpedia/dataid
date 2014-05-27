@@ -1,0 +1,56 @@
+#http://datahub.io/dataset/wold
+#World Loanword Database
+
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix datid: <http://dbpedia.org/dataid#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix : <http://dbpedia.org#> .
+ 
+<http://mlode.nlp2rdf.org/datasets/wold.nt.gz> 
+ a dcat:Dataset, void:Dataset, sd:Dataset, prov:Entity ; 
+ dct:title "World Loanword Database" ; 
+ rdfs:label "World Loanword Database" ; 
+ dct:issued "2012-09-22"^^xsd:date ;
+ dct:publisher <http://wold.livingsources.org/contributor> ; 
+ void:exampleResource <http://wold.livingsources.org/meaning/1-1#2/24.3/-4.8> ;
+ dct:language "Multilingual" ;
+ dct:description "It provides vocabularies (mini-dictionaries of about 1000-2000 entries) of 41 languages from around the world, with comprehensive information about the loanword status of each word. It allows users to find loanwords, source words and donor languages in each of the 41 languages, but also makes it easy to compare loanwords across languages. " ; ok
+ dcat:landingPage <http://wold.livingsources.org/> ;
+ dcat:contactPoint :contact;
+ prov:wasDerivedFrom <http://wikipedia.org> ;
+ prov:wasGeneratedBy <https://github.com/dbpedia/extraction-framework/> ;
+ dct:license <http://www.opendefinition.org/licenses/cc-by> ;  
+ dct:rights "Data comprising DBpedia release 3.4 and subsequent releases is licensed under the terms of the Creative Commons Attribution-ShareAlike 3.0 license and the GNU Free Documentation License. Data comprising DBpedia releases up to and including release 3.3 is licensed only under the terms of the GNU Free Documentation License." ;
+ datid:ontologyLocation <http://wold.livingsources.org/vocabulary/19.rdf> ;  
+ datid:versionInfo "1.8c" ; 
+ datid:version <http://no.dbpedia.org#DBpedia_no_3.0rc> , <http://no.dbpedia.org#DBpedia_no_3.1> , <http://no.dbpedia.org#DBpedia_no_3.2> , <http://no.dbpedia.org#DBpedia_no_3.3> , <http://no.dbpedia.org#DBpedia_no_3.4> , <http://no.dbpedia.org#DBpedia_no_3.5.1> , <http://no.dbpedia.org#DBpedia_no_3.5> , <http://no.dbpedia.org#DBpedia_no_3.6> , <http://no.dbpedia.org#DBpedia_no_3.7-i18n> , <http://no.dbpedia.org#DBpedia_no_3.7> , <http://no.dbpedia.org#DBpedia_no_3.8> , <http://no.dbpedia.org#DBpedia_no_3.9>  ;
+ datid:latestVersion <http://no.dbpedia.org#DBpedia_no_3.9> ;
+ void:subset <http://mlode.nlp2rdf.org/datasets/wold.nt.gz> .
+ 
+ :contact
+ rdf:type foaf:Agent, prov:Agent ;
+ rdfs:label "World Loanword Database Contact" ;
+ foaf:mbox "contact.wold@livingreviews.org." .
+ 
+ <http://mlode.nlp2rdf.org/datasets/wold.nt.gz>
+  a dcat:Distribution ;
+  dct:title "World Loanword Database: turtle file" ;
+  dct:description "World Loanword Database: wold.nt.gz" ;
+  dct:modified "22-Sep-2012"^^xsd:date ;
+  dct:license <http://www.opendefinition.org/licenses/cc-by>; 
+  dcat:accessURL <http://datahub.io/dataset/wold/resource/48bbcd7b-4e0b-4f63-97e3-1afc54696a3c> ;
+  dcat:downloadURL <http://mlode.nlp2rdf.org/datasets/wold.nt.gz> ;
+  dcat:byteSize "4000000"^^xsd:decimal ;
+  dcat:mediaType "application/x-compressed" ;
+  dct:format "ttl" . 
+
+  
+ 
