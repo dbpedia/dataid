@@ -6,5 +6,24 @@
 </head>
 <body>
 <a href="validate">Validate</a>
+
+<form action="validate" id="usrform">
+    <textarea name="s" form="usrform" style="width:400px;height:250px;">#Enter RDF here...</textarea>
+    <br/>
+    <input type="hidden" name="t" value="text">
+    <br/>
+    <select name="i">
+        <option value="turtle">Turtle</option>
+        <option value="ntriples">N-Triples</option>
+        <option value="n3">N3</option>
+        <option value="jsonld">JSON-LD</option>
+        <option value="rdfjson">RDF/JSON</option>
+        <option value="rdfxml">RDF/XML</option>
+    </select>
+    <input type="submit">
+</form>
+
+
+
 </body>
 </html>

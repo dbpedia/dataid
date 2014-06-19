@@ -33,14 +33,13 @@ public class DataIDValidatorWS extends RDFUnitWebService {
     protected RDFUnitConfiguration getConfiguration(HttpServletRequest httpServletRequest) throws ParameterException {
 
 
-
         String type = httpServletRequest.getParameter("t");
         if (type == null || !(type.equals("text") || type.equals("uri"))) {
             throw new ParameterException("'t' must be one of text or uri");
         }
 
         String source = httpServletRequest.getParameter("s");
-        if (source == null || source.isEmpty()){
+        if (source == null || source.isEmpty()) {
             throw new ParameterException("'s' must be defined and not empty");
         }
 
@@ -51,7 +50,7 @@ public class DataIDValidatorWS extends RDFUnitWebService {
         }
 
         String outputFormat = httpServletRequest.getParameter("o");
-        if (outputFormat == null || outputFormat.isEmpty()){
+        if (outputFormat == null || outputFormat.isEmpty()) {
             outputFormat = "html";
         }
 
