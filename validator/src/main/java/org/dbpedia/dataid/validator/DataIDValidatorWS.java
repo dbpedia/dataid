@@ -27,7 +27,7 @@ public class DataIDValidatorWS extends RDFUnitWebService {
 
     @Override
     public void init() throws ServletException {
-        RDFUnitStaticWrapper.initWrapper("https://raw.githubusercontent.com/dbpedia/dataId/master/ontology/dataid.ttl");
+        RDFUnitStaticWrapper.initWrapper("http://dataid.dbpedia.org/ns/core#");
     }
 
     @Override
