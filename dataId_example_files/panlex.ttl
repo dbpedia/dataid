@@ -1,150 +1,99 @@
-#http://datahub.io/dataset/panlex
-#PanLex
-
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
-@prefix void: <http://rdfs.org/ns/void#> .
-@prefix datid: <http://dbpedia.org/dataid#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix : <http://dbpedia.org#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dct: <http://purl.org/dc/terms> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
- 
-<http://ld.panlex.org/downloads/releases/2013-02-14/>  
- a dcat:Dataset, void:Dataset, sd:Dataset, prov:Entity ; 
- dct:title "PanLex" ; 
- rdfs:label "PanLex" ;  
- dct:issued "2013-02-14"^^xsd:date ;  
- dct:publisher <http://panlex.org/contact/> ;  
- void:exampleResource <http://ld.panlex.org/plx/page/definition/4711> ;   
- dct:language "Multiligual" ;  
- dct:description "A lexical database documenting translations among lexemes of language varieties. " ; 
- dcat:landingPage <http://panlex.org> ;  
- dcat:contactPoint :Patrick_Westphal ; 
- dct:license <http://ld.panlex.org/plx/License> ;  
- datid:ontologyLocation <http://ld.panlex.org/downloads/releases/2013-02-14/2013-02-14-panlex-ontology.ttl> ; 
- datid:versionInfo "1.8c" ; 
- dcat:distribution <http://dev.panlex.org/db/panlex-20140501-csv.zip> ,<http://dev.panlex.org/db/panlex-20140501-json.zip>, <http://dev.panlex.org/db/panlex-20140501-xml.zip>,<http://dev.panlex.org/db/panlex-20140310-csv.zip>, <http://dev.panlex.org/db/panlex-20140310-json.zip>, <http://dev.panlex.org/db/panlex-20140310-xml.zip>, <http://dev.panlex.org/db/panlex-20140403-csv.zip>, <http://dev.panlex.org/db/panlex-20140403-json.zip>, <http://dev.panlex.org/db/panlex-20140403-xml.zip>.
- 
- :Patrick_Westphal
- rdf:type foaf:Agent, prov:Agent ;
- foaf:name "Patrick Westphal" ;
- rdfs:label "Patrick Westphal" ;
- foaf:homepage <http://aksw.org/PatrickWestphal.html> .
- 
- <http://dev.panlex.org/db/panlex-20140501-csv.zip>
-  a dcat:Distribution ;
+<http://ld.panlex.org/downloads/releases/2013-02-14/>
+  owl:type dataid:Dataset, dcat:Dataset, void:Dataset, sd:Dataset, prov:Entity ;
+  dct:title "PanLex" ;
+  rdfs:label "PanLex" ;
+  dct:description "A lexical database documenting translations among lexemes of language varieties." ;
+  dct:issued "2-14-2013"^^xsd:date ;
+  void:exampleResource <http://ld.panlex.org/plx/page/definition/4711> ;
+  dct:language "Multiligual" ;
+  dct:landingPage <http://panlex.org> ;
+  dcat:distribution <http://dev.panlex.org/db/panlex-20140501-csv.zip>, <http://dev.panlex.org/db/panlex-20140501-json.zip>, <http://dev.panlex.org/db/panlex-20140501-xml.zip>, <http://dev.panlex.org/db/panlex-20140310-csv.zip>, <http://dev.panlex.org/db/panlex-20140310-json.zip>, <http://dev.panlex.org/db/panlex-20140310-xml.zip>, <http://dev.panlex.org/db/panlex-20140403-csv.zip>, <http://dev.panlex.org/db/panlex-20140403-json.zip>, <http://dev.panlex.org/db/panlex-20140403-xml.zip> ;
+  dcat:contactPoint <http://panlex.org/contact/>, <http://aksw.org/PatrickWestphal.html> .
+
+<http://dev.panlex.org/db/panlex-20140501-csv.zip>
+  owl:type rdfs:subClassOf, dcat:distribution ;
   dct:title "panlex csv file" ;
   dct:description "pantex dumpfile: panlex-20140501-csv.zip" ;
-  dct:modified "01-May-2014"^^xsd:date ;
-  dct:license <http://ld.panlex.org/plx/License> ;   
-  dcat:accessURL <http://dev.panlex.org/db/panlex-20140501-csv.zip> ;
-  dcat:downloadURL <http://dev.panlex.org/db/panlex-20140501-csv.zip> ;
-  dcat:byteSize "749000000"^^xsd:decimal ;
+  dct:issued "05-01-2014" ;
   dcat:mediaType "application/x-bzip" ;
   dct:format "csv" .
- 
- <http://dev.panlex.org/db/panlex-20140501-json.zip>
-  a dcat:Distribution ;
+
+<http://dev.panlex.org/db/panlex-20140501-json.zip>
+  owl:type rdfs:subClassOf, dcat:distribution ;
   dct:title "panlex json file" ;
   dct:description "pantex dumpfile: panlex-20140501-json.zip" ;
-  dct:modified "01-May-2014"^^xsd:date ;
-  dct:license <http://ld.panlex.org/plx/License> ;   
-  dcat:accessURL  <http://dev.panlex.org/db/panlex-20140501-json.zip> ;
-  dcat:downloadURL  <http://dev.panlex.org/db/panlex-20140501-json.zip> ;
-  dcat:byteSize "816000000"^^xsd:decimal ;
+  dct:issued "05-01-2014" ;
   dcat:mediaType "application/x-bzip" ;
   dct:format "json" .
- 
- <http://dev.panlex.org/db/panlex-20140501-xml.zip>
-  a dcat:Distribution ;
+
+<http://dev.panlex.org/db/panlex-20140501-xml.zip>
+  owl:type rdfs:subClassOf, dcat:distribution ;
   dct:title "panlex xml file" ;
   dct:description "pantex dumpfile: panlex-20140501-xml.zip" ;
-  dct:modified "01-May-2014"^^xsd:date ;
-  dct:license <http://ld.panlex.org/plx/License> ;   
-  dcat:accessURL   <http://dev.panlex.org/db/panlex-20140501-xml.zip> ;
-  dcat:downloadURL   <http://dev.panlex.org/db/panlex-20140501-xml.zip> ;
-  dcat:byteSize "896000000"^^xsd:decimal ;
   dcat:mediaType "application/x-bzip" ;
   dct:format "xml" .
-  
-   <http://dev.panlex.org/db/panlex-20140310-csv.zip>
-  a dcat:Distribution ;
+
+<http://dev.panlex.org/db/panlex-20140310-csv.zip>
+  owl:type rdfs:subClassOf, dcat:distribution ;
   dct:title "panlex csv file" ;
   dct:description "pantex dumpfile: panlex-20140310-csv.zip" ;
-  dct:modified "10-Mar-2014"^^xsd:date ;
-  dct:license <http://ld.panlex.org/plx/License> ;   
-  dcat:accessURL <http://dev.panlex.org/db/panlex-20140310-csv.zip> ;
-  dcat:downloadURL <http://dev.panlex.org/db/panlex-20140310-csv.zip> ;
-  dcat:byteSize "757000000"^^xsd:decimal ;
+  dct:issued "05-10-2014" ;
   dcat:mediaType "application/x-bzip" ;
   dct:format "csv" .
- 
- <http://dev.panlex.org/db/panlex-20140310-json.zip>
-  a dcat:Distribution ;
+
+<http://dev.panlex.org/db/panlex-20140310-json.zip>
+  owl:type rdfs:subClassOf, dcat:distribution ;
   dct:title "panlex json file" ;
   dct:description "pantex dumpfile: panlex-20140310-json.zip" ;
-  dct:modified "10-Mar-2014"^^xsd:date ;
-  dct:license <http://ld.panlex.org/plx/License> ;   
-  dcat:accessURL  <http://dev.panlex.org/db/panlex-20140310-json.zip> ;
-  dcat:downloadURL  <http://dev.panlex.org/db/panlex-20140310-json.zip> ;
-  dcat:byteSize "824000000"^^xsd:decimal ;
+  dct:issued "05-10-2014" ;
   dcat:mediaType "application/x-bzip" ;
   dct:format "json" .
- 
- <http://dev.panlex.org/db/panlex-20140310-xml.zip>
-  a dcat:Distribution ;
+
+<http://dev.panlex.org/db/panlex-20140310-xml.zip>
+  owl:type rdfs:subClassOf, dcat:distribution ;
   dct:title "panlex xml file" ;
   dct:description "pantex dumpfile: panlex-20140310-xml.zip" ;
-  dct:modified "10-Mar-2014"^^xsd:date ;
-  dct:license <http://ld.panlex.org/plx/License> ;   
-  dcat:accessURL   <http://dev.panlex.org/db/panlex-20140310-xml.zip> ;
-  dcat:downloadURL   <http://dev.panlex.org/db/panlex-20140310-xml.zip> ;
-  dcat:byteSize "906000000"^^xsd:decimal ;
+  dct:issued "05-10-2014" ;
   dcat:mediaType "application/x-bzip" ;
   dct:format "xml" .
-  
-   <http://dev.panlex.org/db/panlex-20140403-csv.zip>
-  a dcat:Distribution ;
+
+<http://dev.panlex.org/db/panlex-20140403-csv.zip>
+  owl:type rdfs:subClassOf, dcat:distribution ;
   dct:title "panlex csv file" ;
   dct:description "pantex dumpfile: panlex-20140403-csv.zip" ;
-  dct:modified "03-Apr-2014"^^xsd:date ;
-  dct:license <http://ld.panlex.org/plx/License> ;   
-  dcat:accessURL <http://dev.panlex.org/db/panlex-20140403-csv.zip> ;
-  dcat:downloadURL <http://dev.panlex.org/db/panlex-20140403-csv.zip> ;
-  dcat:byteSize "769000000"^^xsd:decimal ;
+  dct:issued "04-03-2014" ;
   dcat:mediaType "application/x-bzip" ;
   dct:format "csv" .
- 
- <http://dev.panlex.org/db/panlex-20140403-json.zip>
-  a dcat:Distribution ;
+
+<http://dev.panlex.org/db/panlex-20140403-json.zip>
+  owl:type rdfs:subClassOf, dcat:distribution ;
   dct:title "panlex json file" ;
   dct:description "pantex dumpfile: panlex-20140403-json.zip" ;
-  dct:modified "03-Apr-2014"^^xsd:date ;
-  dct:license <http://ld.panlex.org/plx/License> ;   
-  dcat:accessURL  <http://dev.panlex.org/db/panlex-20140403-json.zip> ;
-  dcat:downloadURL  <http://dev.panlex.org/db/panlex-20140403-json.zip> ;
-  dcat:byteSize "837000000"^^xsd:decimal ;
+  dct:issued "04-03-2014" ;
   dcat:mediaType "application/x-bzip" ;
   dct:format "json" .
- 
- <http://dev.panlex.org/db/panlex-20140403-xml.zip>
-  a dcat:Distribution ;
+
+<http://dev.panlex.org/db/panlex-20140403-xml.zip>
+  owl:type rdfs:subClassOf, dcat:distribution ;
   dct:title "panlex xml file" ;
   dct:description "pantex dumpfile: panlex-20140403-xml.zip" ;
-  dct:modified "03-Apr-2014"^^xsd:date ;
-  dct:license <http://ld.panlex.org/plx/License> ;   
-  dcat:accessURL   <http://dev.panlex.org/db/panlex-20140403-xml.zip> ;
-  dcat:downloadURL   <http://dev.panlex.org/db/panlex-20140403-xml.zip> ;
-  dcat:byteSize "919000000"^^xsd:decimal ;
+  dct:issued "04-03-2014" ;
   dcat:mediaType "application/x-bzip" ;
   dct:format "xml" .
- 
- 
- 
- 
+
+<http://panlex.org/contact/> owl:type prov:Agent, foaf:Agent .
+<http://aksw.org/PatrickWestphal.html>
+  owl:type prov:Agent, foaf:Agent ;
+  rdfs:label "Patrick Westphal" ;
+  foaf:name "Patrick Westphal" .

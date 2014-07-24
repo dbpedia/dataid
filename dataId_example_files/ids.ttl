@@ -1,61 +1,46 @@
-#http://datahub.io/dataset/ids
-#Intercontinental Dictionary Series
-#ask about ontology location
-
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
-@prefix void: <http://rdfs.org/ns/void#> .
-@prefix datid: <http://dbpedia.org/dataid#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix : <http://dbpedia.org#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dct: <http://purl.org/dc/terms> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
- 
-<http://lingweb.eva.mpg.de/ids/> 
- a dcat:Dataset, void:Dataset, sd:Dataset, prov:Entity ; 
- dct:title "Intercontinental Dictionary Series" ; 
- rdfs:label "IDS" ;
- dct:issued "2012-09-22"^^xsd:date ; 
- dct:publisher :Bernard_Comrie ;
- void:exampleResource <http://mlode.nlp2rdf.org/resource/data/ids/entry/e110-c17?output=ttl> ; 
- dct:language "Miltilingual" ; 
- dct:description "The purpose of the IDS is to establish a database where lexical material across the continents is organized in such a way that comparisons can be made. Historical studies, comparative, and theoretical linguistic research can be based on this documentation. This is a long term cooperative project that will go on for the next generation or so and will involve linguists all over the world. It is aimed towards international understanding and cooperation. This is a pioneering effort that will have global impact. The purpose also contributes to preserving information on the little-known and "non-prestigious" languages of the world, many of which are becoming extinct." ;
- dcat:landingPage <http://lingweb.eva.mpg.de/ids/> ; 
- dcat:contactPoint :Bernard_Comrie ;
- dct:creator :Mary_Richie_Key ;
- dct:license <http://www.opendefinition.org/licenses/cc-by-sa> ;
- datid:ontologyLocation <http://downloads.dbpedia.org/3.9/dbpedia_3.9.owl> ;
- dcat:distribution <http://mlode.nlp2rdf.org/datasets/ids.nt.gz>;
- 
- :Bernard_Comrie
- rdf:type foaf:Agent, prov:Agent ;
- foaf:name "Bernard Comrie" ;
- rdfs:label "Bernard Comrie" ;
- foaf:homepage <http://www.eva.mpg.de/linguistics/staff/bernhard-comrie/home.html> ;
- foaf:mbox "comrie@eva.mpg.de" .
- 
- :Mary_Richie_Key
- foaf:name "Mary Richie Key" ;
- rdfs:label "Mary Richie Key" ;
- foaf:homepage: <http://senate.universityofcalifornia.edu/inmemoriam/MaryRichieKey.htm> .
- 
-  <http://mlode.nlp2rdf.org/datasets/ids.nt.gz>
-  a dcat:Distribution ;
+<http://lingweb.eva.mpg.de/ids/>
+  owl:type dataid:Dataset, dcat:Dataset, void:Dataset, sd:Dataset, prov:Entity ;
+  dct:title "Intercontinental Dictionary Series" ;
+  rdfs:label "IDS" ;
+  dct:description "The purpose of the IDS is to establish a database where lexical material across the continents is organized in such a way that comparisons can be made. Historical studies, comparative, and theoretical linguistic research can be based on this documentation. This is a long term cooperative project that will go on for the next generation or so and will involve linguists all over the world. It is aimed towards international understanding and cooperation. This is a pioneering effort that will have global impact. The purpose also contributes to preserving information on the little-known and \"non-prestigious\" languages of the world, many of which are becoming extinct." ;
+  dct:issued "22-09-2012"^^xsd:date ;
+  void:exampleResource <http://mlode.nlp2rdf.org/resource/data/ids/entry/e110-c17?output=ttl> ;
+  dct:language "Multilingual" ;
+  dct:landingPage <http://lingweb.eva.mpg.de/ids/> ;
+  dataid:licenseName "Creative Commons Attribution-ShareAlike 4.0 International" ;
+  dct:license <http://purl.oclc.org/NET/rdflicense/cc-by-sa> ;
+  dcat:distribution <http://mlode.nlp2rdf.org/datasets/ids.nt.gz> ;
+  dct:publisher <http://www.eva.mpg.de/linguistics/staff/bernhard-comrie/home.html> ;
+  dcat:contactPoint <http://www.eva.mpg.de/linguistics/staff/bernhard-comrie/home.html> ;
+  dct:creator <http://senate.universityofcalifornia.edu/inmemoriam/MaryRichieKey.htm> .
+
+<http://mlode.nlp2rdf.org/datasets/ids.nt.gz>
+  owl:type rdfs:subClassOf, dcat:distribution ;
   dct:title "Intercontinental Dictionary Series: nt file" ;
   dct:description "Intercontinental Dictionary Series dumpfile: ids.nt.gz" ;
-  dct:issued "22-Sep-2013"^^xsd:date ;
-  dct:modified "22-Sep-2013"^^xsd:date ;
-  dct:license <http://www.opendefinition.org/licenses/cc-by-sa>; 
-  datid:licenseName: "Creative Commons Attribution Share-Alike" ;
-  dcat:accessURL <http://linkedspending.aksw.org/extensions/page/page/export/lscomplete-0.1.tar.gz> ;
-  dcat:byteSize "1300000"^^xsd:decimal ;
+  dct:issued "09-22-2013" ;
   dcat:mediaType "application/x-gzip" ;
-  dct:format "text/n3" . 
- 
- 
- 
+  dct:format "text/n3" .
+
+<http://www.eva.mpg.de/linguistics/staff/bernhard-comrie/home.html>
+  owl:type prov:Agent, foaf:Agent ;
+  rdfs:label "" ;
+  foaf:name "" ;
+  foaf:mbox "" .
+
+<http://senate.universityofcalifornia.edu/inmemoriam/MaryRichieKey.htm>
+  owl:type prov:Agent, foaf:Agent ;
+  rdfs:label "Mary Richie Key" ;
+  foaf:name "Mary Richie Key" ;
+  foaf:mbox "" .

@@ -1,52 +1,39 @@
-#http://datahub.io/dataset/semanticquran
-#SemanticQuran
-
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
-@prefix void: <http://rdfs.org/ns/void#> .
-@prefix datid: <http://dbpedia.org/dataid#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix : <http://dbpedia.org#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dct: <http://purl.org/dc/terms> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
- 
 <http://datahub.io/dataset/semanticquran/resource/3ce737f7-83af-444b-bcd4-81ef0cc4b062?inner_span=True>
- a dcat:Dataset, void:Dataset, sd:Dataset, prov:Entity ; 
- dct:title "Semantic Quran" ; 
- rdfs:label "Semantic Quran" ; 
- dct:issued "2012-09-21"^^xsd:date ;   
- dct:publisher :Mohamed_Sherif ; 
- void:exampleResource <http://mlode.nlp2rdf.org/resource/semanticquran/quran1-1> ;  
- dct:language "Multilingual" ; 
- dct:description "The Semantic Quran dataset is a multilingual RDF representation of translations of the Quran. The dataset was created by integrating data from two different semi-structured sources. The dataset were aligned to an ontology designed to represent multilingual data from sources with a hierarchical structure. The resulting RDF data encompasses 43 different languages which belong to the most under represented languages in Linked Data, including Arabic, Amharic and Amazigh. We designed the dataset to be easily usable in natural-language processing applications with the goal of facilitating the development of knowledge extraction tools for these languages. In particular, the Semantic Quran is compatible with the Natural-Language Interchange Format and contains explicit morpho-syntactic information on the utilized terms. " ;
- dcat:landingPage <http://aksw.org/Projects/SemanticQuran.html> ; 
- dcat:contactPoint :Mohamed_Sherif ; 
- dct:license <http://creativecommons.org/licenses/by-nc/2.0/> ; 
- dct:rights "Data comprising DBpedia release 3.4 and subsequent releases is licensed under the terms of the Creative Commons Attribution-ShareAlike 3.0 license and the GNU Free Documentation License. Data comprising DBpedia releases up to and including release 3.3 is licensed only under the terms of the GNU Free Documentation License." ;
- datid:ontologyLocation <http://mlode.nlp2rdf.org/datasets/qvoc.owl.ttl.gz> ; 
- datid:versionInfo "1.0" ; 
- void:distribution <http://mlode.nlp2rdf.org/datasets/semanticquran.nt.gz>  .
+  owl:type dataid:Dataset, dcat:Dataset, void:Dataset, sd:Dataset, prov:Entity ;
+  dct:title "Semantic Quran" ;
+  rdfs:label "Semantic Quran" ;
+  dct:description "The Semantic Quran dataset is a multilingual RDF representation of translations of the Quran. The dataset was created by integrating data from two different semi-structured sources. The dataset were aligned to an ontology designed to represent multilingual data from sources with a hierarchical structure. The resulting RDF data encompasses 43 different languages which belong to the most under represented languages in Linked Data, including Arabic, Amharic and Amazigh. We designed the dataset to be easily usable in natural-language processing applications with the goal of facilitating the development of knowledge extraction tools for these languages. In particular, the Semantic Quran is compatible with the Natural-Language Interchange Format and contains explicit morpho-syntactic information on the utilized terms." ;
+  dct:issued "7-24-2014"^^xsd:date ;
+  void:exampleResource <http://mlode.nlp2rdf.org/resource/semanticquran/quran1-1> ;
+  dct:language "multilingual" ;
+  dct:landingPage <http://aksw.org/Projects/SemanticQuran.html> ;
+  dataid:licenseName "Creative Commons Attribution-NonCommercial 4.0 International" ;
+  dct:license <http://purl.oclc.org/NET/rdflicense/cc-by-nc> ;
+  dcat:distribution <http://mlode.nlp2rdf.org/datasets/semanticquran.nt.gz> ;
+  dct:creator <http://aksw.org/MohamedSherif.html> .
 
- :Mohamed_Sherif
- rdf:type foaf:Agent, prov:Agent ;
- foaf:name "Mohamed Sherif" ;
- rdfs:label "Mohamed Sherif" ;
- foaf:homepage <http://aksw.org/MohamedSherif.html> .
-  
- <http://mlode.nlp2rdf.org/datasets/semanticquran.nt.gz>
-  a dcat:Distribution ;
+<http://mlode.nlp2rdf.org/datasets/semanticquran.nt.gz>
+  owl:type rdfs:subClassOf, dcat:distribution ;
   dct:title "semanticQuran nt file" ;
   dct:description "semanticQuran dumpfile: semanticquran.nt.gz" ;
-  dct:modified "24-Apr-2013"^^xsd:date ;
-  dct:license <http://creativecommons.org/licenses/by-nc/2.0/> ;  
-  dcat:accessURL <http://datahub.io/dataset/semanticquran/resource/3ce737f7-83af-444b-bcd4-81ef0cc4b062?inner_span=True> ;
-  dcat:downloadURL <http://mlode.nlp2rdf.org/datasets/semanticquran.nt.gz> ;
-  dcat:byteSize "134000000"^^xsd:decimal ;
+  dct:issued "24-04-2013" ;
   dcat:mediaType "application/x-compressed" ;
-  dct:format "nt" . 
- 
+  dct:format "nt" ;
+  void:triples "134000000" .
+
+<http://aksw.org/MohamedSherif.html>
+  owl:type prov:Agent, foaf:Agent ;
+  rdfs:label "Mohamed Sherif" ;
+  foaf:name "Mohamed Sherif" ;
+  foaf:mbox "" .
