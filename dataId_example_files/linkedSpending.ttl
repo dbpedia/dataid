@@ -1,47 +1,77 @@
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+#http://datahub.io/dataset/linkedspending
+#LinkedSpending Database
+#ask when was issued
+
+
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix void: <http://rdfs.org/ns/void#> .
-@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix dct: <http://purl.org/dc/terms> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix datid: <http://dbpedia.org/dataid#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix : <http://dbpedia.org#> .
 
-<https://openspending.org/datasets>
-  owl:type dataid:Dataset, dcat:Dataset, void:Dataset, sd:Dataset, prov:Entity ;
-  dct:title "Linked Spending Database" ;
-  rdfs:label "Linked Spending Database" ;
-  dct:description "LinkedSpending contains government spendings from all over the world as Linked Data. LinkedSpending uses the information collected by the OpenSpending project and makes it available as an RDF knowledge base according to the Linked Data principles. Just follow the examples on the right or discover the data by yourself!" ;
-  dct:issued "7-20-2014"^^xsd:date ;
-  void:exampleResource <https://openspending.org/vigo_income_2012/concepto/13000/entries#concepto:13000> ;
-  dct:language "Multilingual" ;
-  dct:landingPage <https://openspending.org/> ;
-  dataid:licenseName "Open Data Commons Attribution License" ;
-  dct:license <http://purl.oclc.org/NET/rdflicense/odc-by> ;
-  dcat:distribution <http://linkedspending.aksw.org/extensions/page/page/export/lscomplete20143.tar.gz> ;
-  void:sparqlEndpoint <http://linkedspending.aksw.org/extensions/page/page/export/lscomplete-0.1.tar.gz> ;
-  dct:publisher <http://community.openspending.org/> ;
-  dcat:contactPoint [
-    owl:type prov:Agent, foaf:Agent ;
-    rdfs:label "General contact point" ;
-    foaf:name "General contact point" ;
-    foaf:mbox "info@openspending.org"
-  ] .
-
-<http://linkedspending.aksw.org/extensions/page/page/export/lscomplete20143.tar.gz>
-  owl:type rdfs:subClassOf, dcat:distribution ;
+ 
+<https://openspending.org/datasets> 
+ a dcat:Dataset, void:Dataset, sd:Dataset, prov:Entity ; 
+ dct:title "Linked Spending Database" ; 
+ rdfs:label "Linked Spending Database" ; 
+ dct:publisher <http://community.openspending.org/> ; 
+ void:exampleResource <https://openspending.org/vigo_income_2012/concepto/13000/entries#concepto:13000> ;  
+ dct:language "Multilingual" ; 
+ dct:description "LinkedSpending contains government spendings from all over the world as Linked Data. LinkedSpending uses the information collected by the OpenSpending project and makes it available as an RDF knowledge base according to the Linked Data principles. Just follow the examples on the right or discover the data by yourself! " ; 
+ dcat:landingPage <https://openspending.org/> ; 
+ #Konrad is the contact point of the distribution. So I think that we must have contactPoint property in the distribution class
+ #dcat:contactPoint :Konrad_Hoeffner ;
+ dcat:contactPoint :Linked_Spending_Contact ;
+ dct:license <http://opendatacommons.org/licenses/> ; 
+ dataid:licenseName: "Open Data Commons license";
+ datid:ontologyLocation <http://linkedspending.aksw.org/> ;  
+ dcat:distribution <http://linkedspending.aksw.org/extensions/page/page/export/lscomplete20143.tar.gz>,  <http://linkedspending.aksw.org/extensions/page/page/export/lscomplete-0.1.tar.gz> .
+ 
+ :Linked_Spending_Contact
+ rdf:type foaf:Agent, prov:Agent ;
+ rdfs:label  "General contact point";
+ foaf:mbox "info@openspending.org" .
+ 
+ :Konrad_Hoeffner
+ rdf:type foaf:Agent, prov:Agent ;
+ foaf:name "Konrad Hoeffner" ;
+ rdfs:label "Konrad Hoeffner" ;
+ foaf:homepage <http://aksw.org/KonradHoeffner.html> .
+ 
+ 
+ <http://linkedspending.aksw.org/extensions/page/page/export/lscomplete20143.tar.gz>
+  a dcat:Distribution ;
   dct:title "linkedSpending: nt file" ;
   dct:description "linkedSpending dumpfile: lscomplete20143.tar.gz" ;
+  dct:modified "01-Mar-2014"^^xsd:date ;
+  dct:license <http://opendatacommons.org/licenses/pddl/1.0/>; 
+  dcat:accessURL <http://linkedspending.aksw.org/> ;
+  dcat:downloadURL <http://linkedspending.aksw.org/extensions/page/page/export/lscomplete20143.tar.gz> ;
+  dcat:byteSize "2400000000"^^xsd:decimal ;
   dcat:mediaType "application/x-compressed" ;
-  dct:format "text/n3" .
-
-<http://linkedspending.aksw.org/extensions/page/page/export/lscomplete-0.1.tar.gz>
-  owl:type rdfs:subClassOf, dcat:distribution ;
+  dct:format "text/n3" .  
+  
+ <http://linkedspending.aksw.org/extensions/page/page/export/lscomplete-0.1.tar.gz>
+  a dcat:Distribution ;
   dct:title "linkedSpending: nt file" ;
   dct:description "linkedSpending dumpfile: scomplete-0.1.tar.gz" ;
+  dct:modified "01-Sep-2013"^^xsd:date ;
+  dct:license <http://opendatacommons.org/licenses/pddl/1.0/>; 
+  dcat:accessURL <http://linkedspending.aksw.org/> ;
+  dcat:downloadURL <http://linkedspending.aksw.org/extensions/page/page/export/lscomplete-0.1.tar.gz> ;
+  dcat:byteSize "100000000"^^xsd:decimal ;
   dcat:mediaType "application/x-compressed" ;
-  dct:format "text/n3" .
-
-<http://community.openspending.org/> owl:type prov:Agent, foaf:Agent .
+  dct:format "text/n3" . 
+ 
+ 
+ 
+ 
+ 
+ 
