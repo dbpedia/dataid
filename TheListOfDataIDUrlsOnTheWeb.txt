@@ -1,3 +1,7 @@
 #  (hopefully thousands of entries before the 2nd DBpedia Community Meeting http://wiki.dbpedia.org/meetings/Leipzig2014  )
 http://dbpedia.org/dataid.ttl
 http://brown.nlp2rdf.org/dataid.ttl
+http://aksw.org/dataid.ttl#kore50-nif.ttl
+http://aksw.org/dataid.ttl#News-100.ttl
+http://aksw.org/dataid.ttl#RSS-500.ttl
+http://aksw.org/dataid.ttl#Reuters-128.ttl
