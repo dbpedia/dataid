@@ -8,11 +8,15 @@
 <a href="validate">Validate</a>
 
 <form action="validate" id="usrform" method="post">
-    <textarea name="s" form="usrform" style="width:400px;height:250px;">#Enter RDF here...</textarea>
+    <label for="s">RDF Data</label>
+    <textarea name="s" id="s" form="usrform" style="width:400px;height:250px;">#Enter RDF here...</textarea>
+
     <br/>
     <input type="hidden" name="t" value="text">
     <br/>
-    <select name="i">
+    <label for="i">Input RDF Format</label>
+
+    <select name="i" id="i">
         <option value="turtle">Turtle</option>
         <option value="ntriples">N-Triples</option>
         <option value="n3">N3</option>
@@ -22,7 +26,6 @@
     </select>
     <input type="submit">
 </form>
-
 
 
 </body>
