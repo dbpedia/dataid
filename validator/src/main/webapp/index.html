@@ -2,13 +2,14 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>DataID Validator</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<a href="validate">Validate</a>
+<!--a href="validate">Validate</a-->
 
 <form action="validate" id="usrform" method="post">
-    <label for="s">RDF Data</label>
+    <!--label for="s">RDF Data</label-->
     <textarea name="s" id="s" form="usrform" style="width:400px;height:250px;">#Enter RDF here...</textarea>
 
     <br/>
@@ -23,6 +24,19 @@
         <option value="jsonld">JSON-LD</option>
         <option value="rdfjson">RDF/JSON</option>
         <option value="rdfxml">RDF/XML</option>
+    </select>
+
+    <label for="o">Output Format</label>
+    <select name="o" id="o">
+        <option value="html">HTML (default)</option>
+        <option value="turtle">Turtle</option>
+        <option value="ntriples">N-Triples</option>
+        <option value="n3">N3</option>
+        <option value="jsonld">JSON-LD</option>
+        <option value="rdfjson">RDF/JSON</option>
+        <option value="rdfxml">RDF/XML</option>
+        <option value="rdfxmlabbrev">RDF/XML-ABBREV</option>
+
     </select>
     <input type="submit">
 </form>
