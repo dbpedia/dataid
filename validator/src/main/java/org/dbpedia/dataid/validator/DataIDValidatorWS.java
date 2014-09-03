@@ -81,6 +81,9 @@ public class DataIDValidatorWS extends RDFUnitWebService {
             throw new ParameterException(e.getMessage(), e);
         }
 
+        // test input if it reads data
+        configuration.getTestSource().getExecutionFactory();
+
         return configuration;
     }
 
