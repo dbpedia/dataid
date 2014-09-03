@@ -1,85 +1,78 @@
-#http://datahub.io/dataset/sentiws
-#SentimentWortschatz
-
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
-@prefix void: <http://rdfs.org/ns/void#> .
-@prefix datid: <http://dbpedia.org/dataid#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix : <http://dbpedia.org#> .
- 
- 
-<http://asv.informatik.uni-leipzig.de/download/sentiws.html>
- a dcat:Dataset, void:Dataset, sd:Dataset, prov:Entity ; 
- dct:title "SentimentWortschatz" ; 
- rdfs:label "SentimentWortschatz dataId file" ;
- dct:issued "2012-09-21"^^xsd:date ;   
- dct:publisher <http://wiki.dbpedia.org/Association> ;
- void:exampleResource <http://mlode.nlp2rdf.org/page/sentiws/word/Abstumpfung> ;  
- dct:language "German" ; 
- dct:description "SentimentWortschatz, or SentiWS for short, is a publicly available German-language resource for sentiment analysis, opinion mining etc. It lists positive and negative polarity bearing words weighted within the interval of [-1; 1] plus their part of speech tag, and if applicable, their inflections. " ; 
- dcat:landingPage <http://asv.informatik.uni-leipzig.de/download/sentiws.html> ;
- dcat:contactPoint :Mohamed_Sherif ; 
- dct:license <http://creativecommons.org/licenses/by-nc-sa/3.0/> ; 
- datid:ontologyLocation <http://downloads.dbpedia.org/3.9/dbpedia_3.9.owl> ;
- datid:versionInfo "1.8c" ; 
- datid:version <http://wortschatz.informatik.uni-leipzig.de/download/SentiWS_v1.8c.zip>, <http://wortschatz.uni-leipzig.de/download/SentiWS_v1.8b.zip> ;
- datid:latestVersion <http://wortschatz.informatik.uni-leipzig.de/download/SentiWS_v1.8c.zip> ;
- void:distribution <http://mlode.nlp2rdf.org/downloads/sentiws.ttl.gz>  .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dct: <http://purl.org/dc/terms> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
- 
- :Mohamed_Sherif
- rdf:type foaf:Agent, prov:Agent ;
- foaf:name "Mohamed Sherif" ;
- rdfs:label "Mohamed Sherif" ;
- foaf:homepage <http://aksw.org/MohamedSherif.html> .
- 
-  <http://wortschatz.informatik.uni-leipzig.de/download/SentiWS_v1.8c.zip>
-  a dcat:Distribution ;
-  dct:title "sentiws: Second publicly available version in which some POS tags were corrected file" ;
-  dct:description "Second publicly available version in which some POS tags were corrected, SentiWS dumpfile: SentiWS_v1.8c.zip" ;
-  dct:modified "21-Mar-2011"^^xsd:date ;
-  dct:license <http://creativecommons.org/licenses/by-nc-sa/3.0/>;
-  dcat:accessURL <http://asv.informatik.uni-leipzig.de/download/sentiws.html> ;
-  dcat:downloadURL <http://wortschatz.uni-leipzig.de/download/SentiWS_v1.8c.zip> ;
-  dcat:byteSize "86900"^^xsd:decimal ;
+<http://asv.informatik.uni-leipzig.de/download/sentiws.html>
+  owl:type dataid:Dataset, dcat:Dataset, void:Dataset, sd:Dataset, prov:Entity ;
+  dct:title "SentimentWortschatz" ;
+  rdfs:label "SentimentWortschatz dataId file" ;
+  dct:description "SentimentWortschatz, or SentiWS for short, is a publicly available German-language resource for sentiment analysis, opinion mining etc. It lists positive and negative polarity bearing words weighted within the interval of [-1; 1] plus their part of speech tag, and if applicable, their inflections." ;
+  dct:issued "9-21-2012"^^xsd:date ;
+  void:exampleResource <http://mlode.nlp2rdf.org/page/sentiws/word/Abstumpfung> ;
+  dct:language "German" ;
+  dct:landingPage <http://asv.informatik.uni-leipzig.de/download/sentiws.html> ;
+  dataid:licenseName "Creative Commons Attribution-ShareAlike 4.0 International" ;
+  dct:license <http://purl.oclc.org/NET/rdflicense/cc-by-sa> ;
+  dataid:version <http://wortschatz.informatik.uni-leipzig.de/download/SentiWS_v1.8c.zip>, <http://wortschatz.informatik.uni-leipzig.de/download/SentiWS_v1.8b.zip> ;
+  void:sparqlEndpoint <http://mlode.nlp2rdf.org/downloads/sentiws.ttl.gz> ;
+  dct:publisher <http://wiki.dbpedia.org/Association> ;
+  dcat:contactPoint <http://aksw.org/MohamedSherif.html> .
+
+<http://wortschatz.informatik.uni-leipzig.de/download/SentiWS_v1.8c.zip>
+  owl:type dataid:Dataset, dcat:Dataset, void:Dataset, sd:Dataset, prov:Entity, rdfs:subClassOf, dcat:distribution ;
+  rdfs:label "Second publicly available version in which some POS tags were corrected, SentiWS dumpfile: SentiWS_v1.8c.zi" ;
+  dct:issued "9-21-2012"^^xsd:date ;
+  void:exampleResource <http://asv.informatik.uni-leipzig.de/download/sentiws.html> ;
+  dct:language "German" ;
+  dct:landingPage <http://asv.informatik.uni-leipzig.de/download/sentiws.html> ;
+  dataid:licenseName "Creative Commons Attribution-ShareAlike 4.0 International" ;
+  dct:license <http://purl.oclc.org/NET/rdflicense/cc-by-sa> ;
+  void:sparqlEndpoint <http://wortschatz.informatik.uni-leipzig.de/download/SentiWS_v1.8c.zip> ;
+  dct:title "SentiWS v1.8c" ;
+  dct:description "SentiWS v1.8c zip file" ;
   dcat:mediaType "application/x-bzip" ;
-  dct:format "txt" . 
-  
-  <http://wortschatz.informatik.uni-leipzig.de/download/SentiWS_v1.8b.zip>
-  a dcat:Distribution ;
-  dct:title "sentiws: First publicly available version as described in Remus et al. (2010)" ;
+  dct:format "txt" .
+
+<http://wortschatz.informatik.uni-leipzig.de/download/SentiWS_v1.8b.zip>
+  owl:type dataid:Dataset, dcat:Dataset, void:Dataset, sd:Dataset, prov:Entity ;
+  dct:title "sentiws 1.8b" ;
+  rdfs:label "sentiws: First publicly available version as described in Remus et al. (2010)" ;
   dct:description "First publicly available version as described in Remus et al. (2010), SentiWS dumpfile: SentiWS_v1.8b.zip" ;
-  dct:modified "19-May-2010"^^xsd:date ;
-  dct:license <http://creativecommons.org/licenses/by-nc-sa/3.0/>; 
-  dcat:accessURL <http://asv.informatik.uni-leipzig.de/download/sentiws.html> ;
-  dcat:downloadURL <http://wortschatz.uni-leipzig.de/download/SentiWS_v1.8b.zip> ;
-  dcat:byteSize "86400"^^xsd:decimal ;
+  dct:issued "05-19-2010"^^xsd:date ;
+  void:exampleResource <http://wortschatz.informatik.uni-leipzig.de/download/SentiWS_v1.8b.zip> ;
+  dct:language "German" ;
+  dct:landingPage <http://asv.informatik.uni-leipzig.de/download/sentiws.html> ;
+  dataid:licenseName "Creative Commons Attribution-ShareAlike 4.0 International" ;
+  dct:license <http://purl.oclc.org/NET/rdflicense/cc-by-sa> ;
+  void:sparqlEndpoint <http://wortschatz.uni-leipzig.de/download/SentiWS_v1.8b.zip> .
+
+<http://wortschatz.uni-leipzig.de/download/SentiWS_v1.8b.zip>
+  owl:type rdfs:subClassOf, dcat:distribution ;
+  dct:title "SentiWS_v1.8b.zip" ;
+  dct:description "SentiWS_v1.8b.zip dump file" ;
   dcat:mediaType "application/x-bzip" ;
-  dct:format "txt" . 
-  
-  <http://mlode.nlp2rdf.org/downloads/sentiws.ttl.gz>
-  a dcat:Distribution ;
+  dct:format "txt" .
+
+<http://mlode.nlp2rdf.org/downloads/sentiws.ttl.gz>
+  owl:type rdfs:subClassOf, dcat:distribution ;
   dct:title "sentiws: turtle file" ;
   dct:description "File was converted for MLODE by M. Sherif, SentiWS dumpfile: SentiWS_v1.8b.zip" ;
-  dct:modified "21-Sep-2012"^^xsd:date ;
-  dct:license <http://creativecommons.org/licenses/by-nc/2.0/>; 
-  dcat:accessURL <http://datahub.io/dataset/sentiws/resource/72191162-75e8-4655-9c4b-712e6caa5c79> ;
-  dcat:downloadURL <http://mlode.nlp2rdf.org/downloads/sentiws.ttl.gz> ;
-  dcat:byteSize "158900"^^xsd:decimal ;
+  dct:issued "09-21-2012" ;
   dcat:mediaType "application/x-bzip" ;
-  dct:format "ttl" . 
-  
-  
-  
-  
-  
+  dct:format "ttl" .
+
+<http://wiki.dbpedia.org/Association> owl:type prov:Agent, foaf:Agent .
+<http://aksw.org/MohamedSherif.html>
+  owl:type prov:Agent, foaf:Agent ;
+  rdfs:label "Mohamed Sherif" ;
+  foaf:name "Mohamed Sherif" .
  
  
  

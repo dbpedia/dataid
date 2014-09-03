@@ -18,7 +18,7 @@
         <file.encoding>UTF-8</file.encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <rdfunit-version>0.6.5</rdfunit-version>
+        <rdfunit-version>0.6.8</rdfunit-version>
     </properties>
 
     <dependencies>

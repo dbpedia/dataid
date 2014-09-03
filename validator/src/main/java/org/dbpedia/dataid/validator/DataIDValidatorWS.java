@@ -64,7 +64,7 @@ public class DataIDValidatorWS extends RDFUnitWebService {
         }
 
         RDFUnitConfiguration configuration = new RDFUnitConfiguration(datasetName, "../data/");
-        configuration.setResultLevelReporting(TestCaseExecutionType.rlogTestCaseResult);
+        configuration.setTestCaseExecutionType(TestCaseExecutionType.rlogTestCaseResult);
 
         if (isText) {
             try {
@@ -91,7 +91,7 @@ public class DataIDValidatorWS extends RDFUnitWebService {
 
     @Override
     protected Model validate(final RDFUnitConfiguration configuration, final Source dataset, final TestSuite testSuite) throws TestCaseExecutionException {
-        return RDFUnitStaticWrapper.validate(configuration, dataset, testSuite);
+        return RDFUnitStaticWrapper.validate(configuration.getTestCaseExecutionType(), dataset, testSuite);
     }
 
     @Override
