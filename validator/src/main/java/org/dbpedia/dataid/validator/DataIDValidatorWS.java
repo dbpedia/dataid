@@ -27,7 +27,7 @@ public class DataIDValidatorWS extends RDFUnitWebService {
 
     @Override
     public void init() throws ServletException {
-        RDFUnitStaticWrapper.initWrapper("http://dataid.dbpedia.org/ns/core#");
+        RDFUnitStaticWrapper.initWrapper("http://dataid.dbpedia.org/ns/core#", "/org/dbpedia/dataid/dataid.ttl/");
     }
 
     @Override
@@ -64,7 +64,6 @@ public class DataIDValidatorWS extends RDFUnitWebService {
         }
 
         RDFUnitConfiguration configuration = new RDFUnitConfiguration(datasetName, "../data/");
-        configuration.setTestCaseExecutionType(TestCaseExecutionType.rlogTestCaseResult);
 
         if (isText) {
             try {
@@ -79,6 +78,16 @@ public class DataIDValidatorWS extends RDFUnitWebService {
             configuration.setOutputFormatTypes(Arrays.asList(outputFormat));
         } catch (UndefinedSerializationException e) {
             throw new ParameterException(e.getMessage(), e);
+        }
+
+        try {
+            configuration.setTestCaseExecutionType( TestCaseExecutionType.valueOf(httpServletRequest.getParameter("r")));
+        } catch (Exception e) {
+            configuration.setTestCaseExecutionType( TestCaseExecutionType.aggregatedTestCaseResult);
+        }
+
+        if (configuration.getTestCaseExecutionType().equals(TestCaseExecutionType.extendedTestCaseResult) && outputFormat.equals("html")) {
+            throw new ParameterException("Annotated results cannot be displayed in HTML, please select an RDF format (e.g. turtle)");
         }
 
         // test input if it reads data

@@ -26,6 +26,14 @@
         <option value="rdfxml">RDF/XML</option>
     </select>
 
+    <label for="r">Report Type</label>
+    <select name="r" id="r">
+        <option value="statusTestCaseResult">Status (all)</option>
+        <option value="aggregatedTestCaseResult">Counts (all)</option>
+        <option value="rlogTestCaseResult" selected="selected">Resources</option>
+        <option value="extendedTestCaseResult">Annotated (No HTML Preview)</option>
+    </select>
+
     <label for="o">Output Format</label>
     <select name="o" id="o">
         <option value="html">HTML (default)</option>
@@ -38,6 +46,7 @@
         <option value="rdfxmlabbrev">RDF/XML-ABBREV</option>
 
     </select>
+
     <input type="submit">
 </form>
 
