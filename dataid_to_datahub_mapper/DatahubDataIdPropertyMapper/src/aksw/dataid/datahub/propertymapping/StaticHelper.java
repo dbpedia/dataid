@@ -9,35 +9,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.Date;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
 
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.JavaType;
-
-import com.fasterxml.jackson.databind.JsonNode;
-import com.github.jsonldjava.core.Context;
-import com.github.jsonldjava.core.JsonLdError;
-import com.github.jsonldjava.core.JsonLdOptions;
-import com.github.jsonldjava.core.JsonLdProcessor;
-
-import aksw.dataid.datahub.jsonobjects.DatahubResponse;
-import aksw.dataid.datahub.jsonobjects.Dataset;
-import aksw.dataid.datahub.jsonobjects.DatasetExtras;
-import aksw.dataid.datahub.mappingobjects.DataIdProperty;
+import org.codehaus.jackson.JsonNode;
 
 public class StaticHelper 
 {
@@ -130,5 +109,28 @@ public class StaticHelper
 		}
 		return null;
 	}
-
+	
+    public static <T> T castJsonToObject(String jsonString, Class<T> clas)
+    {
+    	return castJsonToObject(jsonString, clas, "");
+    }
+    public static <T> T castJsonToObject(String json, Class<T> clas, String subNode)
+    {
+		try {
+			JsonNode node = mapper.readValue(json, JsonNode.class);
+			JavaType mapping = mapper.getTypeFactory().constructType(clas);
+			T config = mapper.readValue(node.get(subNode).toString(), mapping);
+			return config;
+		} catch (JsonParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+    }
 }

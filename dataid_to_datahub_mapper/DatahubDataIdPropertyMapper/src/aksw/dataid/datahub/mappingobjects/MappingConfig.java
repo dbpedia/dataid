@@ -1,6 +1,7 @@
 package aksw.dataid.datahub.mappingobjects;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 
@@ -13,6 +14,7 @@ public class MappingConfig
 	private Date created;
 	private String author;
 	private Map<String, Map<String,DataIdProperty>> dataHubMapping;
+	private Map<String, String> rdfContext;
 	
 	public String getVersion() {
 		return version;
@@ -38,10 +40,15 @@ public class MappingConfig
 			for(String key : dataHubMapping.get(dictionary).keySet())
 			{
 				DataIdProperty prop = dataHubMapping.get(dictionary).get(key);
-				if(prop.getId().equals(dataDataIdProperty))
+				for(String ref : prop.getDataIdRefs())
 				{
-					return prop;
+					//TODO proper comparison!!
+					if(ref.equals(dataDataIdProperty))
+					{
+						return prop;
+					}
 				}
+
 			}
 		
 		return null;
@@ -60,4 +67,20 @@ public class MappingConfig
 			Map<String, Map<String, DataIdProperty>> dataHubMapping) {
 		this.dataHubMapping = dataHubMapping;
 	}
+	public Map<String, String> getRdfContext() {
+		return rdfContext;
+	}
+	public void setRdfContext(Map<String, String> rdfContext) {
+		this.rdfContext = rdfContext;
+	}
+	
+    public String getPrefix(String uri)
+    {
+    	for(String key : this.rdfContext.keySet())
+    	{
+    		if(rdfContext.get(key).trim().equals(uri.trim()))
+    			return key;
+    	}
+    	return null;
+    }
 }

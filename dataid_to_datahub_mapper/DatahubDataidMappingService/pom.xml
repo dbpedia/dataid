@@ -52,6 +52,11 @@
             <version>${jersey-version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-multipart-provider</artifactId>
+			<version>3.0.8.Final</version>
+		</dependency>
     </dependencies>
     <build>
         <plugins>

@@ -1,6 +1,6 @@
 package aksw.dataid.datahub.jsonobjects;
 
-public class DatahubException 
+public class DatahubError implements ValidCkanResponse
 {
 	private String message;
 	private String type;

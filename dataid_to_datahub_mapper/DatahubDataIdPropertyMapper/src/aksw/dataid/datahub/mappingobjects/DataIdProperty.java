@@ -1,19 +1,26 @@
 package aksw.dataid.datahub.mappingobjects;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.codehaus.jackson.annotate.*;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DataIdProperty 
-{
-	private String id;
+{				
+	private String dataIdRef; //dataHub property name
 	private String type;
 	private String comment;
 	private String addedBy;
 	private Date issued;
 	private String dataHub;
+	private String hasAlternative;
+	private String dictionary;
+	private boolean isAlternative = false;		//indicates this property as an alternative mapping, and is therefore ignored as a standard mapping property
 	private boolean isReadOnly = false; 	//if property is read-only in Datahub.io - optional in mapping.json
 	private boolean isList = false;			//if property is a list on Datahub.io - optional - mapped to list element!
 	private boolean additionalKey = false;  //indicates an additional key-value pair is to be used to map this data-id property at datahub.io - optional
@@ -41,13 +48,24 @@ public class DataIdProperty
 	public void setReadOnly(boolean readOnly) {
 		this.isReadOnly = readOnly;
 	}
-	@JsonProperty("@id")
-	public String getId() {
-		return id;
+	public List<String> getDataIdRefs()
+	{
+		String[] reffs = getDataIdRef().replace(";", ",").replace(" ", "").split(",");
+		return Arrays.asList(reffs);
+	}
+	public String getDataIdRef() {
+		return dataIdRef;
+	}
+	public void setDataIdRef(String id) {
+		this.dataIdRef = id;
 	}
 	@JsonProperty("@id")
-	public void setId(String id) {
-		this.id = id;
+	public String getDataHub() {
+		return dataHub;
+	}
+	@JsonProperty("@id")
+	public void setDataHub(String dataHub) {
+		this.dataHub = dataHub;
 	}
 	@JsonProperty("@type")
 	public String getType() {
@@ -88,10 +106,24 @@ public class DataIdProperty
 	public void setReverseProp(boolean isReverseProp) {
 		this.isReverseProp = isReverseProp;
 	}
-	public String getDataHub() {
-		return dataHub;
+	public String getDictionary() {
+		return dictionary;
 	}
-	public void setDataHub(String dataHub) {
-		this.dataHub = dataHub;
+	public void setDictionary(String dictionary) {
+		this.dictionary = dictionary;
+	}
+	public String getHasAlternative() {
+		return hasAlternative;
+	}
+	public void setHasAlternative(String hasAlternative) {
+		this.hasAlternative = hasAlternative;
+	}
+	@JsonProperty("isAlternative")
+	public boolean isAlternative() {
+		return isAlternative;
+	}
+	@JsonProperty("isAlternative")
+	public void setAlternative(boolean isAlternative) {
+		this.isAlternative = isAlternative;
 	}
 }

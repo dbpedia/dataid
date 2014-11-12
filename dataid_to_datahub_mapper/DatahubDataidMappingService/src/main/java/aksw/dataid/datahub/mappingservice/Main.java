@@ -1,9 +1,7 @@
 
 package aksw.dataid.datahub.mappingservice;
 
-import aksw.dataid.datahub.cli.DataIdProcesser;
 import aksw.dataid.datahub.jsonutils.StaticJsonHelper;
-import aksw.dataid.datahub.propertymapping.PropertyMapper;
 import aksw.dataid.datahub.restclient.CkanRestClient;
 
 import com.sun.jersey.api.container.grizzly2.GrizzlyWebContainerFactory;
@@ -25,11 +23,9 @@ public class Main {
 	private static String mainConfigPath = mainPath + "\\target\\classes\\MainConfig.Json";
 	private static String mappingConfigPath;
 	private static JsonNode mainConfigFile;
-	private static CkanRestClient client;
 	
-	private static CkanRestClient createCkanRestClient() {
+	public static CkanRestClient CreateCkanRestClient(String apiKey) {
 		String dataHubUrl = mainConfigFile.get("datahubActionUri").asText();
-		String apiKey = mainConfigFile.get("datahubApiKey").asText();
 		int timeout = Integer.parseInt(mainConfigFile.get("ckanTimeOut").asText());
 		Map<String, String> actions = new HashMap<String, String>();
 		Iterator<Entry<String, JsonNode>> i = mainConfigFile.get("ckanActionMap").getFields();
@@ -75,7 +71,6 @@ public class Main {
 		mainConfigFile = StaticJsonHelper.getJsonContent(mainConfigPath);
 		String zw = mainConfigFile.get("mappingConfigPath").asText();
 		mappingConfigPath = zw.startsWith("\\") ? (mainPath + zw) : zw;
-	    client = createCkanRestClient();
 	    
         HttpServer httpServer = startServer();
         System.out.println(String.format("Jersey app started with WADL available at "
@@ -84,10 +79,6 @@ public class Main {
         System.in.read();
         httpServer.stop();
     }
-
-	public static CkanRestClient getClient() {
-		return client;
-	}
 
 	public static String getMappingConfigPath() {
 		return mappingConfigPath;

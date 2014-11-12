@@ -5,18 +5,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.codehaus.jackson.JsonGenerationException;
+import org.apache.http.client.HttpResponseException;
 import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.type.CollectionType;
 import org.codehaus.jackson.type.JavaType;
@@ -30,7 +26,7 @@ public class CkanRestClient
 	private String connectionUrl;
     private final ObjectMapper serializer = new ObjectMapper();
     private final ObjectMapper deserializer = new ObjectMapper();
-    private static int normalTimeout = 10000;
+    private static int normalTimeout = 30000;
     private String apiKey;
     private Map<String, String> actionMap = new HashMap<String, String>();
 
@@ -49,141 +45,117 @@ public class CkanRestClient
         serializer.setDateFormat(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSS"));
     }
     
-    public Dataset GetDataset(String nameId)
+    public Dataset GetDataset(String nameId) throws IOException, DatahubException
     {
     	String subPath = actionMap.get("GetDataset") + "?id=" + nameId;
     	HttpURLConnection conn = getHttpConnection(subPath, HttpMethod.Get, normalTimeout);
     	String json = handleHttpResponse(conn);
-    	DatahubResponse<Dataset> returnObject = null;
-		try {
+    	if (json != null) {
+			DatahubResponse<Dataset> returnObject = null;
 			JavaType type = deserializer.getTypeFactory().constructParametricType(DatahubResponse.class, Dataset.class);
-			returnObject = deserializer.readValue(json, type);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			returnObject = getDatahubResponse(json, type, Dataset.class);
+			return returnObject.getResult();
 		}
-    	return returnObject.getResult();
+    	return null;
     }
+
+	@SuppressWarnings("unchecked")
+	private <T> DatahubResponse<T> getDatahubResponse(String json, JavaType type, Class<T> exp) throws IOException, DatahubException 
+	{
+		DatahubResponse<T> response;
+		response = (DatahubResponse<T>) deserializer.readValue(json, type);
+		if(response.getError() != null)
+			throw new DatahubException(response.getError());
+		return response;
+	}
     
-    public boolean CreateDataset(String DataHubId, Dataset set)
+    public ValidCkanResponse CreateDataset(Dataset set) throws HttpResponseException, IOException
     {
-    	set.setName(DataHubId);
+    	set.setName(set.getName().replace(" ", ""));
     	set.PrepareForParsing();
     	JsonNode json = serializer.convertValue(set, JsonNode.class);
     	String path = actionMap.get("CreateDataset");  
     	return postJson(path, json.toString());
     }
     
-    public boolean UpdateDataset(String DataHubId, Dataset set)
+    public ValidCkanResponse UpdateDataset(Dataset set) throws HttpResponseException, IOException
     {
-    	set.setName(DataHubId);
+    	set.setName(set.getName().replace(" ", ""));
     	set.PrepareForParsing();
     	JsonNode json = serializer.convertValue(set, JsonNode.class);
     	String path = actionMap.get("UpdateDataset");  
+
     	return postJson(path, json.toString());
     }
     
-    public String GetOrganizationId(String orgName)
+    public String GetOrganizationId(String orgName) throws IOException, DatahubException
     {
     	String subPath = actionMap.get("GetOrganizationId") + "?id=" + orgName;
     	HttpURLConnection conn = getHttpConnection(subPath, HttpMethod.Get, normalTimeout);
     	String json = handleHttpResponse(conn); 
     	DatahubResponse<JsonNode> returnObject = null;
-		try {
-			JavaType type = serializer.getTypeFactory().constructParametricType(DatahubResponse.class, JsonNode.class);
-			returnObject = serializer.readValue(json, type);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		JavaType type = serializer.getTypeFactory().constructParametricType(DatahubResponse.class, JsonNode.class);
+		returnObject = getDatahubResponse(json, type, JsonNode.class);
+
 		JsonNode org = returnObject.getResult().get("id");
 		return org.toString().replace("\"", "");
     }
     
-    public List<DatasetRelationship> GetRelationships(String nameId)
+    @SuppressWarnings("unchecked")
+	public List<DatasetRelationship> GetRelationships(String nameId) throws IOException, DatahubException
     {
     	String subPath = actionMap.get("GetRelationships") + "?id=" + nameId;
     	String json = handleHttpResponse(getHttpConnection(subPath, HttpMethod.Get, normalTimeout));
-    	DatahubResponse<List<DatasetRelationship>> returnObject = null;
-		try {
-			CollectionType collType = serializer.getTypeFactory().constructCollectionType(List.class, DatasetRelationship.class);
-			JavaType type = serializer.getTypeFactory().constructParametricType(DatahubResponse.class, collType);
-			returnObject = serializer.readValue(json, type);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	return returnObject.getResult();
+    	DatahubResponse<Object> returnObject = null;
+		CollectionType collType = serializer.getTypeFactory().constructCollectionType(List.class, DatasetRelationship.class);
+		JavaType type = serializer.getTypeFactory().constructParametricType(DatahubResponse.class, collType);
+		returnObject = getDatahubResponse(json, type, Object.class);
+
+    	return (List<DatasetRelationship>)returnObject.getResult();
     }
     
-    public boolean CreateDatasetRelationship(DatasetRelationship orgRel)
-    {
-    	String json = getJsonTree(orgRel).toString();
-
-    	String path = actionMap.get("CreateDatasetRelationship");    	
-    	return postJson(path, json);
-    }
-    
-    public boolean UpdateDatasetRelationship(DatasetRelationship orgRel, DatasetRelationship newRel)
-    {
-    	String dynamicJson = "";
-		try {
-			dynamicJson = getDynamicJsonObjDifference(orgRel, newRel);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return false;
-		}
-    	
-    	String path = actionMap.get("UpdateDatasetRelationship");
-    	return postJson(path, dynamicJson);
-    }
-
-	private <T> String getDynamicJsonObjDifference(T orgObj, T newObj) throws Exception 
-	{
-		if(orgObj == null || newObj == null)
-			throw new Exception("one object is null");
-		if(orgObj.getClass() != newObj.getClass())
-			throw new Exception("objects are not of the same type");
-		String dynamicJson = "{";
-    	JsonNode jsonOrgRel = getJsonTree(orgObj);
-    	JsonNode jsonNewRel = getJsonTree(newObj);
-    	
-    	Iterator<String> nodes = jsonOrgRel.getFieldNames();
-    	
-    	for(String st; nodes.hasNext();)
-    	{
-    		st = nodes.next();
-    		if(!jsonOrgRel.get(st).equals(jsonNewRel.get(st))) //not!!
-    		{
-    			dynamicJson += jsonNewRel.get(st).toString() + ", ";
-    		}
-    	}
-    	
-    	dynamicJson = dynamicJson.substring(0, dynamicJson.length()-2) + "}";
-    	return dynamicJson;
-	}
+//    public boolean CreateDatasetRelationship(DatasetRelationship orgRel) throws HttpResponseException, IOException
+//    {
+//    	String json = getJsonTree(orgRel).toString();
+//
+//    	String path = actionMap.get("CreateDatasetRelationship");    	
+//    	return postJson(path, json);
+//    }
+//    
+//    public boolean UpdateDatasetRelationship(DatasetRelationship orgRel, DatasetRelationship newRel) throws HttpResponseException, IOException
+//    {
+//    	String dynamicJson = "";
+//		try {
+//			dynamicJson = getDynamicJsonObjDifference(orgRel, newRel);
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//			return false;
+//		}
+//    	
+//    	String path = actionMap.get("UpdateDatasetRelationship");
+//    	return postJson(path, dynamicJson);
+//    }
 	
-	private boolean postJson(String path, String jsonData)
+	private ValidCkanResponse postJson(String path, String jsonData) throws HttpResponseException, IOException
 	{
 		HttpURLConnection conn = this.getHttpConnection(path, HttpMethod.Post, normalTimeout);
-		int status = 0;
+		OutputStream os = conn.getOutputStream();
+		byte[] output = jsonData.getBytes();
+		os.write(output);
+		os.close();
+		DatahubResponse<Dataset> returnObject = null;
+		JavaType type = deserializer.getTypeFactory().constructParametricType(DatahubResponse.class, Dataset.class);
 		try {
-			OutputStream os = conn.getOutputStream();
-			byte[] output = jsonData.getBytes();
-			os.write(output);
-			os.close();
-			status = conn.getResponseCode();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			conn.disconnect();
+			String res = handleHttpResponse(conn);
+			returnObject = getDatahubResponse(res, type, Dataset.class);
+		} catch (DatahubException e) {
+			throw new HttpResponseException(conn.getResponseCode(), e.getMessage());
 		}
-		conn.disconnect();
-		if(status == 200 || status == 201)
-			return true;
+		if(returnObject.getResult() != null)
+			return returnObject.getResult();
 		else
-			return false;
+			return returnObject.getError();
 	}
     
 	private String handleHttpResponse(HttpURLConnection conn)
@@ -194,23 +166,17 @@ public class CkanRestClient
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			return null;		}
-		switch (status) {
-		case 200:
-		case 201:
-			String json = null;
+		String json = null;
+		if (status < 400) {
 			try {
 				json = ReadJsonResponse(conn);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-	        conn.disconnect();
-			return json;
-		default:
-	        conn.disconnect();
-			return null;
-			//TODO do not return null!
 		}
+		conn.disconnect();
+		return json;
 	}
 
 	private String ReadJsonResponse(HttpURLConnection conn) throws IOException 
@@ -228,63 +194,36 @@ public class CkanRestClient
 		return sb.toString();
 	}
 	
-	private HttpURLConnection getHttpPostConnection(String path)
+	private HttpURLConnection getHttpPostConnection(String path) throws IOException
 	{
 		return getHttpConnection(path, HttpMethod.Post, normalTimeout);
 	}
 	
-	private HttpURLConnection getHttpGetConnection(String path)
+	private HttpURLConnection getHttpGetConnection(String path) throws IOException
 	{
 		return getHttpConnection(path, HttpMethod.Get, normalTimeout);
 	}
 	
-    private HttpURLConnection getHttpConnection(String path, HttpMethod requestMethod, int timeout)
+    private HttpURLConnection getHttpConnection(String path, HttpMethod requestMethod, int timeout) throws IOException
     {
     	HttpURLConnection conn = null;
-        try {
-			URL uri = new URL(connectionUrl + path);
-			conn = (HttpURLConnection) uri.openConnection();
-			conn.setUseCaches(false);
-			conn.setConnectTimeout(timeout);
-			conn.setReadTimeout(timeout);
-			conn.setRequestProperty("Content-Type", "application/json");			
-			conn.setRequestProperty("Accept", "application/json");
-			conn.setRequestProperty("Authorization", apiKey);
-			conn.setRequestMethod(requestMethod.toString().toUpperCase());
-			if(requestMethod == HttpMethod.Post)
-			{
-				conn.setDoInput (true);
-				conn.setDoOutput (true);
-			}
-			conn.connect();
-		} //TODO do not return null!
-        catch (MalformedURLException e) {
-			return null;
+		URL uri = new URL(connectionUrl + path);
+		conn = (HttpURLConnection) uri.openConnection();
+		conn.setUseCaches(false);
+		conn.setConnectTimeout(timeout);
+		conn.setReadTimeout(timeout);
+		conn.setRequestProperty("Content-Type", "application/json");			
+		conn.setRequestProperty("Accept", "application/json");
+		conn.setRequestProperty("Authorization", apiKey);
+		conn.setRequestMethod(requestMethod.toString().toUpperCase());
+		if(requestMethod == HttpMethod.Post)
+		{
+			conn.setDoInput (true);
+			conn.setDoOutput (true);
 		}
-		catch (IOException e) {
-			return null;
-		}
+		conn.connect();
       //TODO do not return null!
 	    return conn;
-    }
-    
-    private JsonNode getJsonTree(Object obj)
-    {
-    	try {
-    		String json = serializer.writeValueAsString(obj);
-    		JsonNode node = serializer.readTree(json);
-			return node;
-		} catch (JsonGenerationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	return null;
     }
 
 	public static int getNormalTimeout() {

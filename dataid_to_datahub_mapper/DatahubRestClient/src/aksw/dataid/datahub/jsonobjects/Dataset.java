@@ -6,7 +6,7 @@ import java.util.List;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Dataset 
+public class Dataset implements ValidCkanResponse
 {
 	   	private String id;
 	    private String name;

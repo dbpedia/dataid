@@ -32,8 +32,8 @@
 		       "addedBy": "Chile",
 		       "issued": "2014-04-16T09:26:29.603416"
 		     },
-		   "name": {
-		       "@id": "rdfs:label",
+		   "name": {/*name is the datahub-id, which contains no spaces - spaces will be removed*/
+		       "@id": "dc:title",
 		       "@type": "xsd:string",
 		       "comment": "A name given to the dataset.",
 		       "addedBy": "Chile",
@@ -81,6 +81,15 @@
 		       "@id": "dc:publisher",
 		       "@type": "xsd:string",
 		       "referenceChain": ["dc:publisher", "rdfs:label"],
+		       "comment": "some mapping comment",
+		       "addedBy": "Chile",
+		       "issued": "2014-04-16T09:26:29.603416",
+		       "alternative":"alt_pub1"
+		      },
+		      "alt_pub1": {
+		       "@id": "dc:publisher",
+		       "@type": "xsd:string",
+		       "referenceChain": ["dc:publisher", "@id"],
 		       "comment": "some mapping comment",
 		       "addedBy": "Chile",
 		       "issued": "2014-04-16T09:26:29.603416"

@@ -2,7 +2,7 @@ package aksw.dataid.datahub.jsonobjects;
 
 import java.util.Date;
 
-public class Tag 
+public class Tag implements DataHubListObject
 {
 	private String vocabulary_id;
 	private String display_name;

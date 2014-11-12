@@ -1,7 +1,9 @@
 package aksw.dataid.datahub.jsonutils;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -12,6 +14,7 @@ import org.apache.commons.configuration.ConfigurationException;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
+import org.json.JSONException;
 
 public class JsonFileManager {
 
@@ -21,6 +24,7 @@ public class JsonFileManager {
 	public JsonFileManager() 
     {
     }
+	
     public String getFileName() {
 		return fileName;
 	}
@@ -32,25 +36,45 @@ public class JsonFileManager {
 	public JsonNode getFileContent() {
 		return fileContent;
 	}
-    
-    public void SaveProperties() throws ConfigurationException 
+	
+    public void SaveToJsonFile(String filePath, String content) throws JSONException
     {
-    	if(fileName != null)
+    	if(StaticJsonHelper.isJsonValid(content))
     	{
-    		Path path = Paths.get(fileName);
-    		if(Files.isWritable(path))
-    		{
-        		//config.save(fileName);
-    		}
-    		throw new ConfigurationException("File is not writable.");
+			FileOutputStream fop = null;
+			File file;
+	 
+			try {
+	 
+				file = new File(filePath);
+				if (!file.exists()) {
+					file.createNewFile();
+				}
+				fop = new FileOutputStream(file);
+	 
+				byte[] contentInBytes = content.getBytes();
+				fop.write(contentInBytes);
+				fop.flush();
+				fop.close(); 
+			} catch (IOException e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					if (fop != null) {
+						fop.close();
+					}
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
     	}
-    	throw new ConfigurationException("No File loaded.");
     }
-    public JsonNode LoadJsonFile(String filePath) throws FileNotFoundException 
+    
+    public JsonNode LoadJsonFile(String filePath) throws FileNotFoundException, JSONException 
     {
     	return LoadJsonFile(filePath, false);
     }
-    public JsonNode LoadJsonFile(String filePath, boolean classpath) throws FileNotFoundException 
+    public JsonNode LoadJsonFile(String filePath, boolean classpath) throws FileNotFoundException, JSONException 
     {
     	Path path = Paths.get(filePath);
     	if(classpath)
@@ -58,7 +82,8 @@ public class JsonFileManager {
 			InputStream inputStream = getClass().getResourceAsStream(filePath);
 			String test = StaticJsonHelper.GetStringFromInputStream(inputStream);
 			if(StaticJsonHelper.isJsonValid(test))
-				fileContent= convertStringToJsonNode(test);
+				fileContent= StaticJsonHelper.convertStringToJsonNode(test);
+				
 			return fileContent;
     	}
     	else if(Files.exists(path) && !Files.isDirectory(path))
@@ -71,7 +96,7 @@ public class JsonFileManager {
 					InputStream inputStream = new FileInputStream(filePath);
 					String test = StaticJsonHelper.GetStringFromInputStream(inputStream);
 					if(StaticJsonHelper.isJsonValid(test))
-						fileContent = convertStringToJsonNode(test);
+						fileContent = StaticJsonHelper.convertStringToJsonNode(test);
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -87,21 +112,9 @@ public class JsonFileManager {
     	}
     	return null;
     }
-    
-	private JsonNode convertStringToJsonNode(String test) {
-		try {
-			return StaticJsonHelper.mapper.readValue(test, JsonNode.class);
-		} catch (JsonParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
+	
+	public void setFileContent(String fileContent) {
+		this.fileContent = StaticJsonHelper.convertStringToJsonNode(fileContent);
 	}
 
 }

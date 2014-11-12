@@ -9,6 +9,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
+<> a void:DatasetDescription ;
+ dct:title "Linked Spending Database" ;
+ dct:creator <http://community.openspending.org/> .
+ 
 <https://openspending.org/datasets>
   owl:type dataid:Dataset, dcat:Dataset, void:Dataset, sd:Dataset, prov:Entity ;
   dct:title "Linked Spending Database" ;

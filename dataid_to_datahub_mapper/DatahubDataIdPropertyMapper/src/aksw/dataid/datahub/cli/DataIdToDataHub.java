@@ -17,6 +17,7 @@ import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.OptionGroup;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
+import org.apache.http.client.HttpResponseException;
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.JsonMappingException;
@@ -31,6 +32,7 @@ import aksw.dataid.datahub.jsonutils.JsonFileManager;
 import aksw.dataid.datahub.jsonutils.StaticJsonHelper;
 import aksw.dataid.datahub.propertymapping.*;
 import aksw.dataid.datahub.restclient.CkanRestClient;
+import aksw.dataid.datahub.restclient.DatahubException;
 
 public class DataIdToDataHub {
 
@@ -49,25 +51,36 @@ public class DataIdToDataHub {
 		String mappingPath = zw.startsWith("\\") ? (mainPath + zw) : zw;
 		CommandLine cli = getCli(args);
 		String dataIdContent = getDataIdContent(cli);
-		Dataset set = null;
+		List<Dataset> sets = null;
 		DataIdProcesser processor;
 		try {
-			processor = new DataIdProcesser(dataIdContent, mappingPath);
-			set = processor.createDataset();
-		} catch (DataHubMappingException e1) {
+			processor = new DataIdProcesser(mappingPath);
+			sets = processor.GetDataHubDataset(dataIdContent);
+		} catch (DataHubMappingException | DataIdInputException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		client = createCkanRestClient();
-						
-	    if(cli.getOptionValue("create") != null)
-	    {
-	    	client.CreateDataset(cli.getOptionValue("create"), set);
-	    }
-	    else if(cli.getOptionValue("update") != null)
-	    {
-	    	client.UpdateDataset(cli.getOptionValue("update"), set);
-	    }
+
+		for(Dataset set : sets)
+		{
+	    	try {		
+			    if(cli.getOptionValue("create") != null)
+			    {
+					client.CreateDataset(set);
+			    }
+			    else if(cli.getOptionValue("update") != null)
+			    {
+			    	client.UpdateDataset(set);
+			    }
+			} catch (HttpResponseException e) {
+		        System.err.println( "An exception occurred while accessing Datahub: \n" + e.getMessage() );
+		        System.exit(0);
+			} catch (IOException e) {
+		        System.err.println( "An exception occurred: \n" + e.getMessage() );
+		        System.exit(0);
+			}
+		}
 	}
 
 	private static CkanRestClient createCkanRestClient() {
@@ -154,6 +167,8 @@ public class DataIdToDataHub {
 		group1.isRequired();
 		options.addOptionGroup(group1);
 
+		
+		//TODO get rid of dataset-names
 		OptionGroup group2 = new OptionGroup();
 		group2.addOption(OptionBuilder.withArgName( "dataset name" )
                 .hasArg()

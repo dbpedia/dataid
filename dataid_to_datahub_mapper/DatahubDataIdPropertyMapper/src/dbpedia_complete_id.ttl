@@ -11,10 +11,10 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix : <http://dbpedia.org#> .
 
-<> a void:DatasetDescription ;
-    dct:title "DataId of the DBpedia dataset" ;
-    dct:creator <http://wiki.dbpedia.org/Association>;
-    foaf:primaryTopic :DBpedia .
+#<> a void:DatasetDescription ;
+#    dct:title "DataId of the DBpedia dataset" ;
+#    dct:creator <http://wiki.dbpedia.org/Association>;
+#    foaf:primaryTopic :DBpedia .
 
 <http://dbpedia.org#DBpedia>
     a dcat:Dataset, void:Dataset, sd:Dataset, prov:Entity ;

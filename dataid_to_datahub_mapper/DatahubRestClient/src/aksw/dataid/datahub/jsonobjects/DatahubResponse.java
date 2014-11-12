@@ -7,7 +7,7 @@ public class DatahubResponse <T>
 {
     public boolean success;
     public T result;	
-    public DatahubException error;
+    public DatahubError error;
     
 	public boolean isSuccess() {
 		return success;
@@ -21,10 +21,10 @@ public class DatahubResponse <T>
 	public void setResult(T result) {
 		this.result = result;
 	}
-	public DatahubException getError() {
+	public DatahubError getError() {
 		return error;
 	}
-	public void setError(DatahubException error) {
+	public void setError(DatahubError error) {
 		this.error = error;
 	}
 }
