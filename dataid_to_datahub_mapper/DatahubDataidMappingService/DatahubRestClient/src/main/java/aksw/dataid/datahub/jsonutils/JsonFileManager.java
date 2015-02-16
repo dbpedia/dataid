@@ -33,9 +33,8 @@ public class JsonFileManager {
 		return fileContent;
 	}
 	
-    public void SaveToJsonFile(String filePath, String content)
-    {
-    	if(StaticJsonHelper.isJsonValid(content))
+    public void SaveToJsonFile(String filePath, String content) throws IOException {
+    	if(StaticJsonHelper.isJsonLdValid(content))
     	{
 			FileOutputStream fop = null;
 			File file;
@@ -51,9 +50,7 @@ public class JsonFileManager {
 				byte[] contentInBytes = content.getBytes();
 				fop.write(contentInBytes);
 				fop.flush();
-				fop.close(); 
-			} catch (IOException e) {
-				e.printStackTrace();
+				fop.close();
 			} finally {
 				try {
 					if (fop != null) {
@@ -77,7 +74,7 @@ public class JsonFileManager {
     	{
 			InputStream inputStream = getClass().getResourceAsStream(filePath);
 			String test = StaticJsonHelper.GetStringFromInputStream(inputStream);
-			if(StaticJsonHelper.isJsonValid(test))
+			if(StaticJsonHelper.isJsonLdValid(test))
 				fileContent= StaticJsonHelper.convertStringToJsonNode(test);
 				
 			return fileContent;
@@ -91,7 +88,7 @@ public class JsonFileManager {
     			try {
 					InputStream inputStream = new FileInputStream(filePath);
 					String test = StaticJsonHelper.GetStringFromInputStream(inputStream);
-					if(StaticJsonHelper.isJsonValid(test))
+					if(StaticJsonHelper.isJsonLdValid(test))
 						fileContent = StaticJsonHelper.convertStringToJsonNode(test);
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block

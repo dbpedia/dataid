@@ -5,12 +5,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Date;
 
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.core.JsonParseException;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.github.jsonldjava.utils.JsonUtils;
 
 public class StaticJsonHelper 
 {
@@ -43,11 +41,11 @@ public class StaticJsonHelper
 		return sb.toString();
 	}
 	
-	public static boolean isJsonValid(String test)
+	public static boolean isJsonLdValid(String content)
 	{
         try {
-            new JSONObject(test);
-        } catch (JSONException e) {
+            JsonUtils.fromString(content);
+        } catch (IOException e) {
             return false;
         }
         return true;
@@ -60,23 +58,28 @@ public class StaticJsonHelper
 		} catch (FileNotFoundException e) {
 			System.err.println("File '" + path + "' could not be found. Try editing the MainConfig.json file.");
 		}
-        //catch (JSONException e) {
-		//	System.err.println("File not in valid Json-format.");
-		//}
 		return mainFileManager.getFileContent();
 	}
+
+    public static String getPrettyContent(String path)
+    {
+        return getPrettyContent(getJsonContent(path));
+    }
+
+    public static String getPrettyContent(JsonNode node)
+    {
+        try {
+            return JsonUtils.toPrettyString(JsonUtils.fromString(node.toString()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 	
-	public static void writeJsonContent(String path, String content)
-	{
+	public static void writeJsonContent(String path, String content) throws IOException {
 		JsonFileManager mainFileManager = new JsonFileManager();
-		try {
-			mainFileManager.LoadJsonFile(path);
-		} catch (FileNotFoundException e) {
-			System.err.println("File '" + path + "' could not be found. Try editing the MainConfig.json file.");
-		} 
-		String newPath = path.substring(0, path.lastIndexOf('.')) + new Date().toGMTString().replace(" ", "").replace(":", "") + ".json";
-		mainFileManager.SaveToJsonFile(newPath, mainFileManager.getFileContent().toString());
-		mainFileManager.SaveToJsonFile(path, content);
+		mainFileManager.LoadJsonFile(path);
+		mainFileManager.SaveToJsonFile(path, StaticJsonHelper.getPrettyContent(StaticJsonHelper.convertStringToJsonNode(content)));
 	}
     
 	public static JsonNode convertStringToJsonNode(String test) {

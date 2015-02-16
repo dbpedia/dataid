@@ -28,10 +28,7 @@ a) Both functions require the same parameters:
 An acceptable request URL would look like this:
 http://<host>:<port>/dataid/datahubpublisher/createdataset?apikey=1395b749-5ecc-4197-9ba6-7e8d1afdbb67&organization=aksw&datasetname=linkedspending&isprivate=true
 
-b) The HTTP-Header 'Accept: application/json' has to be supplied.
-
-c) As data enter the whole dataId (including prefixes).
-
+b) As data enter the whole dataId (including prefixes).
 
 2. Hosting the DataHub-publisher
 ################################
@@ -48,13 +45,17 @@ This file provides basic informations needed to interact with the CKAN-REST-Serv
 1. datahubActionUri : If not altered by DataHub.io, this should be: "http://datahub.io/api/3/action/".
 2. mappingConfigPath: The relative path or url to find the MappingConfig.json, needed to translate DataIds to DataHub datasets.
 3. ckanTimeOut      : The timeout in ms when communication with the CKAN-REST-Service of DataHub.io.
-4. ckanActionMap	: This map tells a specific function of the DataId To DataHub publisher, to use the named function of the CKAN-REST-Service. 
+4. adminName        : Used as username to provide authority when editing the MappingConfig.json via the http server.
+5. password         : The password for editing the MappingConfig.json.
+6. ckanActionMap	: This map points a function of the DataId To DataHub publisher, to use the named function of the CKAN-REST-Service.
 					  (should not be altered unless the CKAN-API changes)
 					  
 b) MappingConfig.json
 
 Provides all informations needed to map a DataId to a DataHub dataset. (see 3.)	
 The MappingConfig.json file is a JsonLD <insert url> document to provide context information similar to turtle syntax.
+Under the address http://<host>:<port>/dataid/datahubpublisher/getmappings this file can be edited with the additional
+entry of username and password defined in the MainConfig.json
 
 
 3. Mapping DataId to DataHub datasets.

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Mappings</title>
+    <style type="text/css">
+        textarea { width: 100%; height: 30em; margin: 0; padding: 0; border: 1px solid #000; }
+    </style>
+    <script>
+        function setMappings() {
+            var url = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '')+'/dataid/datahubpublisher/setmappings?username='
+                + document.getElementById('username').value + '&password=' + document.getElementById('password').value;
+            var method = "POST";
+            var postData = document.getElementById('jsonld').value;
+            var async = true;
+            var request = new XMLHttpRequest();
+            request.onload = function () {
+                alert(request.responseText);
+            }
+            request.open(method, url, async);
+
+            request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            request.send(postData);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                Mappings Configuration
+            </h1>
+        </div>
+        <div>
+            <label class="textareaContainer">
+                <textarea id="jsonld" class="textarea">$content</textarea>
+            </label>
+            <br/>
+            <br/>
+            <label>please enter username and password</label>
+            <form action="">
+                Username: <input type="text" id="username"><br>
+                Password: <input type="password" id="password">
+            </form>
+                <br/>
+            <input type=button onClick="setMappings()" value='save mappings'>
+        </div>
+    </div>
+</body>
+</html>

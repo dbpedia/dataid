@@ -1,6 +1,8 @@
 package aksw.dataid.datahub.mappingservice;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -10,18 +12,15 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.Response;
 
 import aksw.dataid.datahub.propertymapping.DataHubMappingException;
 import org.apache.http.client.HttpResponseException;
-import org.json.JSONException;
 
 import aksw.dataid.datahub.cli.DataIdProcesser;
 import aksw.dataid.datahub.jsonobjects.DatahubError;
 import aksw.dataid.datahub.jsonobjects.Dataset;
 import aksw.dataid.datahub.jsonobjects.ValidCkanResponse;
 import aksw.dataid.datahub.jsonutils.StaticJsonHelper;
-import aksw.dataid.datahub.propertymapping.PropertyMapper;
 import aksw.dataid.datahub.restclient.CkanRestClient;
 import aksw.dataid.datahub.restclient.DatahubException;
 
@@ -50,37 +49,45 @@ public class DatahubPublisher
     }
 
     @GET
-    @Path("/getmapping")
-    @Produces("text/plain")
-    public String getMapping() 
+    @Path("/getmappings")
+    @Produces("text/html")
+    public String getMappings()
     {
 		try {
-			DataIdProcesser proc = new DataIdProcesser(Main.getMappingConfigPath());
-			return proc.getMappingConfig().toString();
-		} catch (DataHubMappingException e) {
+            DataIdProcesser proc = new DataIdProcesser(Main.getMappingConfigPath());
+            String f = this.getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
+            f = f.substring(1, f.indexOf("target")) + "webcontent/MappingsPage.html";
+            String content = new String(Files.readAllBytes(Paths.get(f)));
+            content = content.replace("$content", StaticJsonHelper.getPrettyContent(proc.getMappingConfig()));
+			return content;
+		} catch (DataHubMappingException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return "an error occurred";
     }
-    
-	@POST
-	@Path("/updatemapping")
-	public String UpdateMapping(final String content)
-	{
-		PropertyMapper m = new PropertyMapper(StaticJsonHelper.convertStringToJsonNode(content));
-		if(m.getMappingConfig() != null)
-		{
-			try {
-				StaticJsonHelper.writeJsonContent(Main.getMappingConfigPath(), content);
-			} catch (JSONException e) {
-				return produceHttpResponse(new DatahubError("content is not a valid Json-Ld format"));
-			}
-		}
-		else
-			return produceHttpResponse(new DatahubError("content is not a valid Json-Ld format"));
-		return "mapping updated";
-	}
+
+    @POST
+    @Path("/setmappings")
+    public String SetMappings(
+            @QueryParam(value = "username") final String username,
+            @QueryParam(value = "password") final String password,
+            final String content)
+    {
+        if(!StaticJsonHelper.isJsonLdValid(content))
+            return "no valid JsonLd!";
+        String admins = Main.getMainConfigFile().get("adminName").toString().replace("\"", "");
+        String pass = Main.getMainConfigFile().get("password").toString().replace("\"", "");
+        if(!admins.equals(username) || !pass.equals(password))
+            return "Username or password not recognized!";
+
+        try {
+            StaticJsonHelper.writeJsonContent(Main.getMappingConfigPath(), content);
+        } catch (IOException e) {
+            return e.getMessage();
+        }
+        return "mappings were updated";
+    }
 	
 	@POST
 	@Path("/updatedataset")

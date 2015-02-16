@@ -14,16 +14,17 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import javax.servlet.ServletContext;
 import javax.ws.rs.core.UriBuilder;
 
 
 public class Main {
-	private static String mainPath = System.getProperty("user.home").replace('\\', '/') + "/Desktop";
-	private static String mainConfigPath = mainPath + "/MainConfig.Json";
+	private static String mainPath;
+	private static String mainConfigPath;
 	private static String mappingConfigPath;
-	private static JsonNode mainConfigFile;
-	
-	public static CkanRestClient CreateCkanRestClient(String apiKey) {
+    private static JsonNode mainConfigFile;
+
+    public static CkanRestClient CreateCkanRestClient(String apiKey) {
 		String dataHubUrl = mainConfigFile.get("datahubActionUri").asText();
 		int timeout = Integer.parseInt(mainConfigFile.get("ckanTimeOut").asText());
 		Map<String, String> actions = new HashMap<String, String>();
@@ -66,14 +67,16 @@ public class Main {
     }
     
     public static void main(String[] args) throws IOException {
-        // Grizzly 2 initialization
+        mainPath = Main.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+        mainPath = mainPath.substring(1, mainPath.indexOf("target")) + "webcontent";
+        mainConfigPath = mainPath + "/MainConfig.json";
 		mainConfigFile = StaticJsonHelper.getJsonContent(mainConfigPath);
 		String zw = mainConfigFile.get("mappingConfigPath").asText();
 		mappingConfigPath = zw.startsWith("/") ? (mainPath + zw) : (mainPath + "/" + zw);
 	    
         HttpServer httpServer = startServer();
         System.out.println(String.format("Jersey app started with WADL available at "
-                + "%sapplication.wadl\nHit enter to stop it...",
+                        + "%sapplication.wadl\nHit enter to stop it...",
                 BASE_URI));
         System.in.read();
         httpServer.stop();
@@ -81,5 +84,9 @@ public class Main {
 
 	public static String getMappingConfigPath() {
 		return mappingConfigPath;
-	}    
+	}
+
+    public static JsonNode getMainConfigFile() {
+        return mainConfigFile;
+    }
 }
