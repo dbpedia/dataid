@@ -5,12 +5,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JavaType;
@@ -35,6 +30,8 @@ public class PropertyMapper
 	private Map<String,String> contextSynchronization = new HashMap<String,String>();
 	private DataId currentId;
 	private String dataIdPrefix;
+
+    private static List<String> ImplicitAlternativeProps;
 	
 	
     public PropertyMapper(JsonNode mappingContent)
@@ -101,10 +98,9 @@ public class PropertyMapper
     {
     	currentId = dataIdObject;
     	this.synchronizeRdfContexts(dataIdObject.getRdfContext());
-		List<Dataset> sets = new ArrayList<Dataset>();
-		LinkedHashMap dataset = null;
-		
-		boolean datasetfound = false;
+		List<Dataset> sets = new ArrayList<>();
+        ImplicitAlternativeProps = new ArrayList<>();
+
 		for(LinkedHashMap map : dataIdObject.getDataIdBody())
 		{
 			if(map.containsKey("@type"))
@@ -114,7 +110,6 @@ public class PropertyMapper
 				{
 					Dataset set = new Dataset();
 					sets.add(fillObjectWithMapValues(set, map));
-					datasetfound = true;
 					addTriples(set);
 				}
 			}
@@ -142,7 +137,7 @@ public class PropertyMapper
 		set.getExtras().add(ex);
 	}
     
-	private <T> T fillObjectWithMapValues(T set, LinkedHashMap dataset) 
+	private <T extends ValidCkanResponse> T fillObjectWithMapValues(T set, LinkedHashMap dataset)
 	{
 		//take care of id link
 		if(dataset.keySet().size() == 1 && dataset.get("@id") != null)
@@ -152,17 +147,19 @@ public class PropertyMapper
 			if(zw != null)
 				dataset = zw;
 		}
-		String dictionary = "dataset";
+        DataIdProperty.MappingDictionaryType dictType = DataIdProperty.MappingDictionaryType.Dataset;
 		if(set.getClass() == Resource.class)
-			dictionary = "resource";
-		for(Object field : mappingConfig.getDataHubMapping().get(dictionary).keySet())
+            dictType = DataIdProperty.MappingDictionaryType.Resource;
+		for(Object field : mappingConfig.getDataHubMapping().get(dictType.toString().toLowerCase()).keySet())
     	{
-    		DataIdProperty dataId = mappingConfig.GetPropertyByDataHub(dictionary, field.toString());
+    		DataIdProperty dataId = mappingConfig.GetPropertyByDataHub(dictType, field.toString());
     		if(dataId == null)
     			continue;
-    		if(dataId.isAlternative())
-    			continue;
-    		dataId.setDictionary(dictionary);
+    		if(ImplicitAlternativeProps.contains(dataId.getDataHub()) || dataId.isAlternative()) {
+                dataId.setAlternative(true);
+                continue;
+            }
+    		dataId.setDictionary(dictType);
 			SetGenericProperty(set, dataId, dataset);
     	}
     	return set;
@@ -215,73 +212,113 @@ public class PropertyMapper
 	}
     
 	@SuppressWarnings("unchecked")
-	public boolean SetGenericProperty(Object target, DataIdProperty fieldProperty, LinkedHashMap context) 
+	public <T extends ValidCkanResponse> boolean SetGenericProperty(T target, DataIdProperty fieldProperty, LinkedHashMap context)
 	{
+        for(String fieldString : fieldProperty.getDataIdRefs()) {
+            if (fieldProperty.isReadOnly()) {
+                return false;
+            }
 
-        try {
-			for(String fieldString : fieldProperty.getDataIdRefs())
-			{
-				Object fieldValue = context.get(fieldString);
-				String stringValue = null;
-						
-				if(fieldProperty.getReferenceChain() != null)
-					stringValue = followReferenceChain((List<String>)fieldProperty.getReferenceChain(), context);
-				else
-					stringValue = extractRealValue(fieldValue);
+            //extract value
+            Object fieldValue = context.get(fieldString);
+            if(fieldValue == null)
+                return false;
+            String stringValue = null;
 
-                Field field = null;
-                if(fieldProperty.isReadOnly())
-                {	return false;    }
-                else if(fieldProperty.isList())
+            //multiple property occurrences -> if visible add additional keys
+            if (!fieldProperty.isList() && List.class.isAssignableFrom(fieldValue.getClass())) {
+                if(fieldProperty.isAdditionalKey() || Arrays.asList("url", "author", "author_email", "maintainer", "maintainer_email").contains(fieldProperty.getDataHub()))
                 {
-                    field = getField(target.getClass(), fieldProperty);
-                    ParameterizedType genericType = (ParameterizedType) field.getGenericType();
-                    Class<DataHubListObject> t = (Class<DataHubListObject>) genericType.getActualTypeArguments()[0];
-                    List<DataHubListObject> value = getGenericList(t, fieldValue);
+                    int count =0;
+                    for (Object obj : (List) fieldValue) {
+                        DataIdProperty zw = (DataIdProperty) fieldProperty.clone();
 
-                    try {
-                        List<DataHubListObject> zw = (List<DataHubListObject>) field.get(target);
-                        value.addAll(zw);
-                    } catch (Exception e) {
+                        if(count > 0) {
+                            zw.setAdditionalKey(true);
+                            zw.setDataHub(fieldProperty.getDataHub() + "_" + count);
+                        }
+                        setGenericproperty(target, zw, context, obj, getStringValue(zw, context, obj));
+                        count++;
                     }
-                    field.set(target, value);
                 }
-                else if(fieldProperty.isAdditionalKey())
-                {
-                    field = Dataset.class.getDeclaredField("extras");
-                    field.setAccessible(true);
-                    setDatasetExtra(((Dataset)target), fieldProperty.getDataHub(), stringValue);
+                else
+                    setGenericproperty(target, fieldProperty, context, ((List) fieldValue).get(0), getStringValue(fieldProperty, context, ((List) fieldValue).get(0)));
 
-                    //TODO check the following lines -> adds a property after adding additional key (if prop exists)
-                    field = getField(target.getClass(), fieldProperty);
-                    Object value = castToValue(stringValue, field.getType(), null);
-                    field.set(target, value);
-                }
-                else if(stringValue != null)
-                {
-                    field = getField(target.getClass(), fieldProperty);
-                    Object value = castToValue(stringValue, field.getType(), null);
-                    field.set(target, value);
-                }
+                return true;
+            }
+            stringValue = getStringValue(fieldProperty, context, fieldValue);
+
+            if (!setGenericproperty(target, fieldProperty, context, fieldValue, stringValue))  //not!!
+                return false;
+        }
+        return true;
+	}
+
+    private String getStringValue(DataIdProperty fieldProperty, LinkedHashMap context, Object fieldValue) {
+        String stringValue;//follow reference chain
+        if (fieldProperty.getReferenceChain() != null)
+            stringValue = followReferenceChain((List<String>) fieldProperty.getReferenceChain(), context);
+        else
+            stringValue = extractRealValue(fieldValue);
+
+        //take care of default values
+        if (stringValue == null && fieldProperty.getDefaultValue() != null)
+            stringValue = fieldProperty.getDefaultValue();
+        return stringValue;
+    }
+
+    private  <T extends ValidCkanResponse> boolean setGenericproperty(T target, DataIdProperty fieldProperty, LinkedHashMap context, Object fieldValue, String stringValue) {
+        //take care of default values
+        if (stringValue == null && fieldProperty.getDefaultValue() != null)
+            stringValue = fieldProperty.getDefaultValue();
+
+        Field field = null;
+        //create a Field and set value to it
+        try {
+            if (fieldProperty.isList()) {
+                field = getField(target.getClass(), fieldProperty);
+                ParameterizedType genericType = (ParameterizedType) field.getGenericType();
+                Class<DataHubListObject> t = (Class<DataHubListObject>) genericType.getActualTypeArguments()[0];
+                List<DataHubListObject> value = getGenericList(t, fieldValue);
 
                 try {
-                    field.get(target);	//alas, if field == null field.get throws Nullpointer
-                } catch (NullPointerException e) {
-                    if(fieldProperty.getHasAlternative() != null)
-                    {
-                        DataIdProperty altProp = mappingConfig.GetPropertyByDataHub(fieldProperty.getDictionary(), fieldProperty.getHasAlternative());
-                        altProp.setDataHub(fieldProperty.getDataHub());
-                        return SetGenericProperty(target, altProp, context);
-                    }
+                    List<DataHubListObject> zw = (List<DataHubListObject>) field.get(target);
+                    value.addAll(zw);
+                } catch (Exception e) {
                 }
-		        }
-	            return true;
-	
-	        }catch (Exception e) {
-	    	    return false;
-	        }
-		
-	}
+                field.set(target, value);
+            } else if (fieldProperty.isAdditionalKey()) {
+                field = Dataset.class.getDeclaredField("extras");
+                field.setAccessible(true);
+                setDatasetExtra(((Dataset) target), fieldProperty.getDataHub(), stringValue);
+
+                //TODO check the following lines -> adds a property after adding additional key (if prop exists)
+                field = getField(target.getClass(), fieldProperty);
+                Object value = castToValue(stringValue, field.getType(), null);
+                field.set(target, value);
+            } else if (stringValue != null) {
+                field = getField(target.getClass(), fieldProperty);
+                Object value = castToValue(stringValue, field.getType(), null);
+                field.set(target, value);
+            }
+
+            //follow alternatives
+            try {
+                field.get(target);    //alas, if field == null field.get throws Nullpointer
+            } catch (NullPointerException e) {
+                if (fieldProperty.getHasAlternative() != null) {
+                    DataIdProperty altProp = mappingConfig.GetPropertyByDataHub(fieldProperty.getDictionary(), fieldProperty.getHasAlternative());
+                    ImplicitAlternativeProps.add(altProp.getDataHub());
+                    altProp.setDataHub(fieldProperty.getDataHub());
+                    return SetGenericProperty(target, altProp, context);
+                }
+            }
+        }catch(Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
 	
 	private String extractRealValue(Object value)
 	{
@@ -295,7 +332,7 @@ public class PropertyMapper
 				return ((LinkedHashMap)value).get("@value").toString();
 			return null;
 		}
-		else if(value.getClass() == List.class)
+		else if(List.class.isAssignableFrom(value.getClass()))
 		{
 			return extractRealValue(((List<LinkedHashMap>)value).get(0));
 		}
@@ -313,41 +350,41 @@ public class PropertyMapper
 				fieldValue = "\"" + fieldValue + "\"";
 		}
 		T value = null;
-			try {
-				if(listType != null)
-				{
-					Class<?> t = (Class<?>) listType.getActualTypeArguments()[0];
-					JavaType javaType = mapper.getTypeFactory().constructParametricType(List.class,t);
-					value = mapper.readValue(fieldValue, javaType);
-				}
-				else if(type == Date.class)
-				{
-					if(fieldValue.contains("-"))
-					{
-						SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-						try {
-							value = (T) sdf.parse(fieldValue);
-						} catch (ParseException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					}
-				}
-				else
-				{
-					value = mapper.readValue(fieldValue, type);
-					
-				}
-			} catch (JsonParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (JsonMappingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+        try {
+            if(listType != null)
+            {
+                Class<?> t = (Class<?>) listType.getActualTypeArguments()[0];
+                JavaType javaType = mapper.getTypeFactory().constructParametricType(List.class,t);
+                value = mapper.readValue(fieldValue, javaType);
+            }
+            else if(type == Date.class)
+            {
+                if(fieldValue.contains("-"))
+                {
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                    try {
+                        value = (T) sdf.parse(fieldValue);
+                    } catch (ParseException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+            }
+            else
+            {
+                value = mapper.readValue(fieldValue, type);
+
+            }
+        } catch (JsonParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (JsonMappingException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 		return value;
 	}
 

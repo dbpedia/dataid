@@ -8,8 +8,13 @@ import java.util.Date;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class DataIdProperty 
-{				
+public class DataIdProperty
+{
+    public enum MappingDictionaryType{
+        Dataset,
+        Resource
+    }
+
 	private String dataIdRef; //dataHub property name
 	private String type;
 	private String comment;
@@ -17,14 +22,15 @@ public class DataIdProperty
 	private Date issued;
 	private String dataHub;
 	private String hasAlternative;
-	private String dictionary;
+	private MappingDictionaryType dictionary = MappingDictionaryType.Dataset;
 	private boolean isAlternative = false;		//indicates this property as an alternative mapping, and is therefore ignored as a standard mapping property
 	private boolean isReadOnly = false; 	//if property is read-only in Datahub.io - optional in mapping.json
 	private boolean isList = false;			//if property is a list on Datahub.io - optional - mapped to list element!
 	private boolean additionalKey = false;  //indicates an additional key-value pair is to be used to map this data-id property at datahub.io - optional
 	private boolean isReverseProp = false;	//a given dataid property is used in reverse (by adding a ^) - optional
 	//if property is not part of dataset-object we need a chain like; "dc:publisher, foaf:mbox" to link foaf:mbox to dataset- optional
-	private List<String> referenceChain = null; 
+	private List<String> referenceChain = null;
+    private String defaultValue;            //should provide a json-string which will be inserted as default value if null
 	
 	public List<String> getReferenceChain() {
 		return referenceChain;
@@ -91,6 +97,8 @@ public class DataIdProperty
 	public void setIssued(Date issued) {
 		this.issued = issued;
 	}
+    public String getDefaultValue() { return defaultValue; }
+    public void setDefaultValue(String defaultValue) {  this.defaultValue = defaultValue; }
 
 	public boolean isAdditionalKey() {
 		return additionalKey;
@@ -104,10 +112,10 @@ public class DataIdProperty
 	public void setReverseProp(boolean isReverseProp) {
 		this.isReverseProp = isReverseProp;
 	}
-	public String getDictionary() {
+	public MappingDictionaryType getDictionary() {
 		return dictionary;
 	}
-	public void setDictionary(String dictionary) {
+	public void setDictionary(MappingDictionaryType dictionary) {
 		this.dictionary = dictionary;
 	}
 	public String getHasAlternative() {
@@ -124,4 +132,26 @@ public class DataIdProperty
 	public void setAlternative(boolean isAlternative) {
 		this.isAlternative = isAlternative;
 	}
+
+    @Override
+    public Object clone() {
+        DataIdProperty clone = new DataIdProperty();
+        clone.setAddedBy(this.getAddedBy());
+        clone.setAdditionalKey(this.isAdditionalKey());
+        clone.setAlternative(this.isAlternative());
+        clone.setComment(this.getComment());
+        clone.setDataHub(this.getDataHub());
+        clone.setDataIdRef(this.dataIdRef);
+        clone.setDefaultValue(this.getDefaultValue());
+        clone.setDictionary(this.getDictionary());
+        clone.setHasAlternative(this.getHasAlternative());
+        clone.setIssued(this.getIssued());
+        clone.setList(this.isList);
+        clone.setReadOnly(this.isReadOnly);
+        clone.setReferenceChain(this.getReferenceChain());
+        clone.setReverseProp(this.isReverseProp);
+        clone.setType(this.getType());
+
+        return clone;
+    }
 }

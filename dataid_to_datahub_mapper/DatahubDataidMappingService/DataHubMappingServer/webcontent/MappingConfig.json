@@ -200,7 +200,8 @@
           "comment" : "number of triples in this dataset",
           "addedBy" : "Chile",
           "issued" : "2014-04-16T09:26:29.603416",
-          "additionalKey" : true
+          "additionalKey" : true,
+          "defaultValue" : "http://lod2.com/sparql"
         }
       },
       "resource" : {

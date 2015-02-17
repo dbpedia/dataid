@@ -1,5 +1,5 @@
 package aksw.dataid.datahub.jsonobjects;
 
-public interface DataHubListObject {
+public interface DataHubListObject extends ValidCkanResponse{
 
 }

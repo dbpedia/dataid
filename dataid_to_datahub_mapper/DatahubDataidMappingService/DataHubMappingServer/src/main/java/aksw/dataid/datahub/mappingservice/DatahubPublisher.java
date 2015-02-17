@@ -92,14 +92,14 @@ public class DatahubPublisher
 	@POST
 	@Path("/updatedataset")
 	public String UpdateDataset(
-		//	@QueryParam(value = "datasetname") final String datasetid,
 			@QueryParam(value = "organization") final String organization,
 			@QueryParam(value = "apikey") final String apiKey,
+            @QueryParam(value = "datasettitle") final String datasetTitle,
 			@DefaultValue("false") @QueryParam(value = "isprivate") final boolean isprivate,
 			final String dataid) 
 	{
 		
-		String res = checkParameters(organization, apiKey, dataid);
+		String res = checkParameters(organization, apiKey, dataid, datasetTitle);
 		if(res != null)
 			return res;
 		
@@ -107,7 +107,7 @@ public class DatahubPublisher
 		
 		List<Dataset> sets = null;
 		try {
-			sets = CreateDatahubDataset(client, organization,	dataid, isprivate);
+			sets = CreateDatahubDataset(client, organization, dataid, datasetTitle, isprivate);
 		} catch (DataHubMappingException e1) {
 			return produceHttpResponse(e1);
 		} catch (IOException e1) {
@@ -139,39 +139,39 @@ public class DatahubPublisher
 	@POST
 	@Path("/createdataset")
 	public String CreateDataset(
-			//@QueryParam(value = "datasetname") final String datasetid,
 			@QueryParam(value = "organization") final String organization,
 			@QueryParam(value = "apikey") final String apiKey,
+            @QueryParam(value = "datasettitle") final String datasetTitle,
 			@DefaultValue("false") @QueryParam(value = "isprivate") final boolean isprivate,
 			final String dataid) 
 	{
 
-		String res = checkParameters(organization, apiKey, dataid);
-		if(res != null)
-			return res;
-		
-		final CkanRestClient client = Main.CreateCkanRestClient(apiKey);
-		
-		List<Dataset> sets = null;
-		try {
-			sets = CreateDatahubDataset(client, organization,	dataid, isprivate);
-		} catch (DataHubMappingException e1) {
-			return produceHttpResponse(e1);
-		} catch (IOException e1) {
-			return produceHttpResponse(e1);
-		} catch (DatahubException e1) {
-			return produceHttpResponse(e1);
-		}
-		
-		if(sets == null || sets.size() == 0)
-			return produceHttpResponse(new DatahubError("no datasets found"));
+        String res = checkParameters(organization, apiKey, dataid, datasetTitle);
+        if(res != null)
+            return res;
+
+        final CkanRestClient client = Main.CreateCkanRestClient(apiKey);
+
+        List<Dataset> sets = null;
+        try {
+            sets = CreateDatahubDataset(client, organization, dataid, datasetTitle, isprivate);
+        } catch (DataHubMappingException e1) {
+            return produceHttpResponse(e1);
+        } catch (IOException e1) {
+            return produceHttpResponse(e1);
+        } catch (DatahubException e1) {
+            return produceHttpResponse(e1);
+        }
+
+        if(sets == null || sets.size() == 0)
+            return produceHttpResponse(new DatahubError("no datasets found"));
         
         try {
         	for(Dataset set : sets)
         	{
 	        	ValidCkanResponse ckanRes = client.CreateDataset(set);
 	        	if(!(ckanRes instanceof Dataset)) //not!
-	        		return produceHttpResponse(new DatahubError((DatahubError) ckanRes));
+	        		return produceHttpResponse((DatahubError) ckanRes);
         	}
 			return produceHttpResponse(sets);
 				
@@ -183,12 +183,13 @@ public class DatahubPublisher
  
 	}
 
-	private String checkParameters(final String organization, final String apiKey, final String dataid)
+	private String checkParameters(final String organization, final String apiKey, final String dataid, final String datahubTitle)
 	{
 		if(apiKey == null)
 			return produceHttpResponse(new DatahubError("parameter 'apikey' is missing - the datahub apikey can be found in the user-profile view"));
-//		if(datasetid == null)
-//			return produceHttpResponse(new DatahubError("parameter 'datasetname' is missing - this is the internal name of the dataset"));
+//TODO datahubTitle could be null?
+//		if(datahubTitle == null)
+//			return produceHttpResponse(new DatahubError("parameter 'datasetTitle' is missing - this is the internal name of the dataset"));
 		if(organization == null)
 			return produceHttpResponse(new DatahubError("parameter 'organization' is missing - the internal name of an organization the dataset is published under"));
 		if(dataid == null)
@@ -196,7 +197,7 @@ public class DatahubPublisher
 		return null;
 	}
 
-	private List<Dataset> CreateDatahubDataset(final CkanRestClient client, final String organization, final String dataid, final boolean isprivate) 
+	private List<Dataset> CreateDatahubDataset(final CkanRestClient client, final String organization, final String dataid, final String datahubTitle, final boolean isprivate)
 			throws DataHubMappingException, IOException, DatahubException {
 		DataIdProcesser proc = new DataIdProcesser(Main.getMappingConfigPath());
     	List<Dataset> sets = proc.GetDataHubDataset(dataid);
@@ -204,6 +205,10 @@ public class DatahubPublisher
 			String owner_org = client.GetOrganizationId(organization);
 			set.setOwner_org(owner_org);
 			set.setPrivate(isprivate);
+            if(datahubTitle != null) {
+                set.setName(datahubTitle.toLowerCase().replace(' ', '_'));
+                set.setTitle(datahubTitle);
+            }
 		}
 		return sets;
 	}

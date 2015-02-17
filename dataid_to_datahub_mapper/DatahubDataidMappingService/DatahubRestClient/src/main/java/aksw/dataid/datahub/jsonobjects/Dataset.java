@@ -8,308 +8,308 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Dataset implements ValidCkanResponse
 {
-	   	private String id;
-	    private String name;
-	    private String title;
-	    private String revision_id;
-	    private String maintainer;
-	    private String maintainer_email;
-	    private String license_id;
-	    private String license;
-	    private String license_title;
-	    private String license_url;
-	    private Date metadata_created;
-	    private Date metadata_modified;
-	    private String author;
-	    private String author_email;
-	    private String download_url;
-	    private String state;
-	    private String version;
-	    private String type;
-	    private String notes;
-	    private boolean isopen;
-	    private List<Tag> tags;
-	    private List<Resource> resources;
-	    private String url;
-	    private List<DatasetExtras> extras;
-		private List<DatasetRelationship> relationships_as_object;
-	    private List<DatasetRelationship> relationships_as_subject;
-	    private boolean isPrivate;
-	    private String owner_org;
-	    private Integer num_resources;
-	    private Integer num_tags;
+    private String id;
+    private String name;
+    private String title;
+    private String revision_id;
+    private String maintainer;
+    private String maintainer_email;
+    private String license_id;
+    private String license;
+    private String license_title;
+    private String license_url;
+    private Date metadata_created;
+    private Date metadata_modified;
+    private String author;
+    private String author_email;
+    private String download_url;
+    private String state;
+    private String version;
+    private String type;
+    private String notes;
+    private boolean isopen;
+    private List<Tag> tags;
+    private List<Resource> resources;
+    private String url;
+    private List<DatasetExtras> extras;
+    private List<DatasetRelationship> relationships_as_object;
+    private List<DatasetRelationship> relationships_as_subject;
+    private boolean isPrivate;
+    private String owner_org;
+    private Integer num_resources;
+    private Integer num_tags;
 
 
-		public Dataset()
-		{
-			//common values
-			this.isopen = true;
-			
-			//TODO switch back to false when done with debugging!
-			this.isPrivate = true;
-			this.state = "active";
-			this.type = "dataset";
-			
-			extras = new ArrayList<DatasetExtras>();
-			tags = new ArrayList<Tag>();
-			resources = new ArrayList<Resource>();
-			relationships_as_object = new ArrayList<DatasetRelationship>();
-			relationships_as_subject = new ArrayList<DatasetRelationship>();
-		}
+    public Dataset()
+    {
+        //common values
+        this.isopen = true;
 
-		/**
-		 * method necessary since a non-simple get method produces a NullPointerException in jackson.json.ObjectMapper!?
-		 */
-		public void PrepareForParsing()
-		{
-			for(Resource res : this.resources)
-			{
-				res.PrepareForParsing();
-			}
-		}
+        //TODO switch back to false when done with debugging!
+        this.isPrivate = true;
+        this.state = "active";
+        this.type = "dataset";
 
-	    public List<DatasetRelationship> getRelationships_as_object() {
-			return relationships_as_object;
-		}
+        extras = new ArrayList<DatasetExtras>();
+        tags = new ArrayList<Tag>();
+        resources = new ArrayList<Resource>();
+        relationships_as_object = new ArrayList<DatasetRelationship>();
+        relationships_as_subject = new ArrayList<DatasetRelationship>();
+    }
 
-		public void setRelationships_as_object(
-				List<DatasetRelationship> relationships_as_object) {
-			this.relationships_as_object = relationships_as_object;
-		}
+    /**
+     * method necessary since a non-simple get method produces a NullPointerException in jackson.json.ObjectMapper!?
+     */
+    public void PrepareForParsing()
+    {
+        for(Resource res : this.resources)
+        {
+            res.PrepareForParsing();
+        }
+    }
 
-		public List<DatasetRelationship> getRelationships_as_subject() {
-			return relationships_as_subject;
-		}
+    public List<DatasetRelationship> getRelationships_as_object() {
+        return relationships_as_object;
+    }
 
-		public void setRelationships_as_subject(
-				List<DatasetRelationship> relationships_as_subject) {
-			this.relationships_as_subject = relationships_as_subject;
-		}
+    public void setRelationships_as_object(
+            List<DatasetRelationship> relationships_as_object) {
+        this.relationships_as_object = relationships_as_object;
+    }
 
-		public boolean isPrivate() {
-			return isPrivate;
-		}
+    public List<DatasetRelationship> getRelationships_as_subject() {
+        return relationships_as_subject;
+    }
 
-		public void setPrivate(boolean isPrivate) {
-			this.isPrivate = isPrivate;
-		}
+    public void setRelationships_as_subject(
+            List<DatasetRelationship> relationships_as_subject) {
+        this.relationships_as_subject = relationships_as_subject;
+    }
 
-		public String getOwner_org() {
-			return owner_org;
-		}
+    public boolean isPrivate() {
+        return isPrivate;
+    }
 
-		public void setOwner_org(String owner_org) {
-			this.owner_org = owner_org;
-		}
+    public void setPrivate(boolean isPrivate) {
+        this.isPrivate = isPrivate;
+    }
 
-		public Integer getNum_resources() {
-			return num_resources;
-		}
+    public String getOwner_org() {
+        return owner_org;
+    }
 
-		public void setNum_resources(Integer num_resources) {
-			this.num_resources = num_resources;
-		}
+    public void setOwner_org(String owner_org) {
+        this.owner_org = owner_org;
+    }
 
-		public Integer getNum_tags() {
-			return num_tags;
-		}
+    public Integer getNum_resources() {
+        return num_resources;
+    }
 
-		public void setNum_tags(Integer num_tags) {
-			this.num_tags = num_tags;
-		}
-		
-	    public List<DatasetExtras> getExtras() {
-			return extras;
-		}
+    public void setNum_resources(Integer num_resources) {
+        this.num_resources = num_resources;
+    }
 
-		public void setExtras(List<DatasetExtras> extras) {
-			this.extras = extras;
-		}
-		
-	    public void setId(String id) {
-	        this.id = id;
-	    }
-	    public String getId() {
-	        return id;
-	    }
+    public Integer getNum_tags() {
+        return num_tags;
+    }
 
-	    public void setName(String name) {
-	        this.name = name;
-	    }
+    public void setNum_tags(Integer num_tags) {
+        this.num_tags = num_tags;
+    }
 
-	    public String getName() {
-	        return name.toLowerCase().replace(" ", "_");
-	    }
+    public List<DatasetExtras> getExtras() {
+        return extras;
+    }
 
-	    public void setTitle(String title) {
-	        this.title = title;
-	    }
+    public void setExtras(List<DatasetExtras> extras) {
+        this.extras = extras;
+    }
 
-	    public String getTitle() {
-	        return title;
-	    }
+    public void setId(String id) { this.id = id;  }
 
-	    public void setRevision_id(String revision_id) {
-	        this.revision_id = revision_id;
-	    }
+    public String getId() {
+        return id;
+    }
 
-	    public String getRevision_id() {
-	        return revision_id;
-	    }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	    public void setMaintainer(String maintainer) {
-	        this.maintainer = maintainer;
-	    }
+    public String getName() {
+        return name.toLowerCase().replace(" ", "_");
+    }
 
-	    public String getMaintainer() {
-	        return maintainer;
-	    }
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	    public void setMaintainer_email(String maintainer_email) {
-	        this.maintainer_email = maintainer_email;
-	    }
+    public String getTitle() {
+        return title;
+    }
 
-	    public String getMaintainer_email() {
-	        return maintainer_email;
-	    }
+    public void setRevision_id(String revision_id) {
+        this.revision_id = revision_id;
+    }
 
-	    public void setLicense_id(String license_id) {
-	        this.license_id = license_id;
-	    }
+    public String getRevision_id() {
+        return revision_id;
+    }
 
-	    public String getLicense_id() {
-	        return license_id;
-	    }
+    public void setMaintainer(String maintainer) {
+        this.maintainer = maintainer;
+    }
 
-	    public void setLicense(String license) {
-	        this.license = license;
-	    }
+    public String getMaintainer() {
+        return maintainer;
+    }
 
-	    public String getLicense() {
-	        return license;
-	    }
+    public void setMaintainer_email(String maintainer_email) {
+        this.maintainer_email = maintainer_email;
+    }
 
-	    public void setLicense_title(String license_title) {
-	        this.license_title = license_title;
-	    }
+    public String getMaintainer_email() {
+        return maintainer_email;
+    }
 
-	    public String getLicense_title() {
-	        return license_title;
-	    }
+    public void setLicense_id(String license_id) {
+        this.license_id = license_id;
+    }
 
-	    public void setLicense_url(String license_url) {
-	        this.license_url = license_url;
-	    }
+    public String getLicense_id() {
+        return license_id;
+    }
 
-	    public String getLicense_url() {
-	        return license_url;
-	    }
+    public void setLicense(String license) {
+        this.license = license;
+    }
 
-	    public void setMetadata_created(Date metadata_created) {
-	        this.metadata_created = metadata_created;
-	    }
+    public String getLicense() {
+        return license;
+    }
 
-	    public Date getMetadata_created() {
-	        return metadata_created;
-	    }
+    public void setLicense_title(String license_title) {
+        this.license_title = license_title;
+    }
 
-	    public void setMetadata_modified(Date metadata_modified) {
-	        this.metadata_modified = metadata_modified;
-	    }
+    public String getLicense_title() {
+        return license_title;
+    }
 
-	    public Date getMetadata_modified() {
-	        return metadata_modified;
-	    }
+    public void setLicense_url(String license_url) {
+        this.license_url = license_url;
+    }
 
-	    public void setAuthor(String author) {
-	        this.author = author;
-	    }
+    public String getLicense_url() {
+        return license_url;
+    }
 
-	    public String getAuthor() {
-	        return author;
-	    }
+    public void setMetadata_created(Date metadata_created) {
+        this.metadata_created = metadata_created;
+    }
 
-	    public void setAuthor_email(String author_email) {
-	        this.author_email = author_email;
-	    }
+    public Date getMetadata_created() {
+        return metadata_created;
+    }
 
-	    public String getAuthor_email() {
-	        return author_email;
-	    }
+    public void setMetadata_modified(Date metadata_modified) {
+        this.metadata_modified = metadata_modified;
+    }
 
-	    public void setDownload_url(String download_url) {
-	        this.download_url = download_url;
-	    }
+    public Date getMetadata_modified() {
+        return metadata_modified;
+    }
 
-	    public String getDownload_url() {
-	        return download_url;
-	    }
+    public void setAuthor(String author) {
+        this.author = author;
+    }
 
-	    public void setState(String state) {
-	        this.state = state;
-	    }
+    public String getAuthor() {
+        return author;
+    }
 
-	    public String getState() {
-	        return state;
-	    }
+    public void setAuthor_email(String author_email) {
+        this.author_email = author_email;
+    }
 
-	    public void setVersion(String version) {
-	        this.version = version;
-	    }
+    public String getAuthor_email() {
+        return author_email;
+    }
 
-	    public String getVersion() {
-	        return version;
-	    }
+    public void setDownload_url(String download_url) {
+        this.download_url = download_url;
+    }
 
-	    public void setType(String type) {
-	        this.type = type;
-	    }
+    public String getDownload_url() {
+        return download_url;
+    }
 
-	    public String getType() {
-	        return type;
-	    }
+    public void setState(String state) {
+        this.state = state;
+    }
 
-	    public void setNotes(String notes) {
-	        this.notes = notes;
-	    }
+    public String getState() {
+        return state;
+    }
 
-	    public String getNotes() {
-	        return notes;
-	    }
+    public void setVersion(String version) {
+        this.version = version;
+    }
 
-	    public void setIsopen(boolean isopen) {
-	        this.isopen = isopen;
-	    }
+    public String getVersion() {
+        return version;
+    }
 
-	    public boolean isIsopen() {
-	        return isopen;
-	    }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-	    public void setTags(List<Tag> tags) {
-	        this.tags = tags;
-	    }
+    public String getType() {
+        return type;
+    }
 
-	    public List<Tag> getTags() {
-	        return tags;
-	    }
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
 
-	    public void setUrl(String url) {
-	        this.url = url;
-	    }
+    public String getNotes() {
+        return notes;
+    }
 
-	    public String getUrl() {
-	        return url;
-	    }
+    public void setIsopen(boolean isopen) {
+        this.isopen = isopen;
+    }
 
-	    public List<Resource> getResources() {
-	        return resources;
-	    }
+    public boolean isIsopen() {
+        return isopen;
+    }
 
-	    public void setResources( List<Resource> resources ) {
-	        this.resources = resources;
-	    }
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
 
-	    public String toString() {
-	        return "<Dataset:" + this.getName() + " ," + this.getTitle() + "," + this.getAuthor() + ", " + this.getUrl() + ">";
-	    }
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public List<Resource> getResources() {
+        return resources;
+    }
+
+    public void setResources( List<Resource> resources ) {
+        this.resources = resources;
+    }
+
+    @Override
+    public String toString() {
+        return "<Dataset:" + this.getName() + " ," + this.getTitle() + "," + this.getAuthor() + ", " + this.getUrl() + ">";
+    }
 }

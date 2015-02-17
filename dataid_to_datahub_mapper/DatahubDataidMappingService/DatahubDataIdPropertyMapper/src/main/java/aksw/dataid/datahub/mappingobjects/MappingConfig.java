@@ -55,11 +55,10 @@ public class MappingConfig
 		return null;
 	}
 	
-	public DataIdProperty GetPropertyByDataHub(String dictionary, String dataDataIdProperty)
+	public DataIdProperty GetPropertyByDataHub(DataIdProperty.MappingDictionaryType dictionary, String dataDataIdProperty)
 	{
-		DataIdProperty prop = dataHubMapping.get(dictionary).get(dataDataIdProperty);
+		DataIdProperty prop = dataHubMapping.get(dictionary.toString().toLowerCase()).get(dataDataIdProperty);
 				return prop;
-
 	}
 	public Map<String, Map<String, DataIdProperty>> getDataHubMapping() {
 		return dataHubMapping;
