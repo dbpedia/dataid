@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import aksw.dataid.datahub.restclient.DatahubException;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -48,25 +49,33 @@ public class DataIdToDataHub {
 			processor = new DataIdProcesser(mappingPath);
 			sets = processor.GetDataHubDataset(dataIdContent);
 		} catch (DataHubMappingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
         } catch (DataIdInputException e1) {
-            // TODO Auto-generated catch block
             e1.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-		client = createCkanRestClient();
+        client = createCkanRestClient();
 
 		for(Dataset set : sets)
 		{
 	    	try {		
 			    if(cli.getOptionValue("create") != null)
 			    {
-					client.CreateDataset(set);
-			    }
+                    try {
+                        client.CreateDataset(set);
+                    } catch (DatahubException e) {
+                        e.printStackTrace();
+                    }
+                }
 			    else if(cli.getOptionValue("update") != null)
 			    {
-			    	client.UpdateDataset(set);
-			    }
+                    try {
+                        client.UpdateDataset(set);
+                    } catch (DatahubException e) {
+                        e.printStackTrace();
+                    }
+                }
 			} catch (HttpResponseException e) {
 		        System.err.println( "An exception occurred while accessing Datahub: \n" + e.getMessage() );
 		        System.exit(0);

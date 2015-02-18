@@ -34,8 +34,7 @@ public class PropertyMapper
     private static List<String> ImplicitAlternativeProps;
 	
 	
-    public PropertyMapper(JsonNode mappingContent)
-    {
+    public PropertyMapper(JsonNode mappingContent) throws IOException {
     	if(mappingContent != null)
     	{
     		mappingConfig = StaticHelper.castJsonToObject(mappingContent.toString(), MappingConfig.class, "@graph");
@@ -52,17 +51,9 @@ public class PropertyMapper
 	    			}
 	    		}
     		}
-    		
-    		try {
-				String cont = mappingContent.get("@context").toString();
-				jsonLdContext = new Context(((Map<String, Object>) JsonUtils.fromString(cont)), new JsonLdOptions("http://someuri.io"));
-			} catch (JsonParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+            String cont = mappingContent.get("@context").toString();
+            jsonLdContext = new Context(((Map<String, Object>) JsonUtils.fromString(cont)), new JsonLdOptions("http://someuri.io"));
+
     	}
     }
 
@@ -89,7 +80,8 @@ public class PropertyMapper
     		if(i<chain.size()-1)
     			context = getObjectMapById(extractRealValue(context.get(chain.get(i))));
     		else
-    			return extractRealValue(context.get(chain.get(i)));
+                if(context.keySet().contains(chain.get(i)))
+    			    return extractRealValue(context.get(chain.get(i)));
     	}
     	return null;
     }
@@ -98,8 +90,8 @@ public class PropertyMapper
     {
     	currentId = dataIdObject;
     	this.synchronizeRdfContexts(dataIdObject.getRdfContext());
-		List<Dataset> sets = new ArrayList<>();
-        ImplicitAlternativeProps = new ArrayList<>();
+		List<Dataset> sets = new ArrayList<Dataset>();
+        ImplicitAlternativeProps = new ArrayList<String>();
 
 		for(LinkedHashMap map : dataIdObject.getDataIdBody())
 		{
@@ -166,8 +158,7 @@ public class PropertyMapper
 	}
 	
 	@SuppressWarnings("unchecked")
-	private <T extends DataHubListObject> List<DataHubListObject> getGenericList(Class<T> listClass, Object fieldValue)
-	{
+	private <T extends DataHubListObject> List<DataHubListObject> getGenericList(Class<T> listClass, Object fieldValue) throws IllegalAccessException, InstantiationException {
 		List<LinkedHashMap> value = null;
 		if(fieldValue.getClass() == LinkedHashMap.class)
 		{
@@ -180,16 +171,8 @@ public class PropertyMapper
 		List<T> list = new ArrayList<T>();
 		for(Object ele : value)
 		{
-			T set = null;
-			try {
-				set = listClass.newInstance();
-			} catch (InstantiationException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IllegalAccessException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			T set = listClass.newInstance();
+
 			if(set.getClass() == Tag.class)
 			{
 					Tag t = new Tag();
@@ -293,9 +276,15 @@ public class PropertyMapper
                 setDatasetExtra(((Dataset) target), fieldProperty.getDataHub(), stringValue);
 
                 //TODO check the following lines -> adds a property after adding additional key (if prop exists)
-                field = getField(target.getClass(), fieldProperty);
-                Object value = castToValue(stringValue, field.getType(), null);
-                field.set(target, value);
+                try {
+                    field = getField(target.getClass(), fieldProperty);
+                    Object value = castToValue(stringValue, field.getType(), null);
+                    field.set(target, value);
+                }
+                catch(Exception e)
+                {
+                    e.printStackTrace();
+                }
             } else if (stringValue != null) {
                 field = getField(target.getClass(), fieldProperty);
                 Object value = castToValue(stringValue, field.getType(), null);
@@ -341,8 +330,7 @@ public class PropertyMapper
 	}
 
 	@SuppressWarnings("unchecked")
-	public <T> T castToValue(String fieldValue, Class<T> type, ParameterizedType listType) 
-	{
+	public <T> T castToValue(String fieldValue, Class<T> type, ParameterizedType listType) throws ParseException, IOException {
 		ObjectMapper mapper = new ObjectMapper();
 		if(type == String.class)
 		{
@@ -350,57 +338,33 @@ public class PropertyMapper
 				fieldValue = "\"" + fieldValue + "\"";
 		}
 		T value = null;
-        try {
-            if(listType != null)
+        if(listType != null)
+        {
+            Class<?> t = (Class<?>) listType.getActualTypeArguments()[0];
+            JavaType javaType = mapper.getTypeFactory().constructParametricType(List.class,t);
+            value = mapper.readValue(fieldValue, javaType);
+        }
+        else if(type == Date.class)
+        {
+            if(fieldValue.contains("-"))
             {
-                Class<?> t = (Class<?>) listType.getActualTypeArguments()[0];
-                JavaType javaType = mapper.getTypeFactory().constructParametricType(List.class,t);
-                value = mapper.readValue(fieldValue, javaType);
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                value = (T) sdf.parse(fieldValue);
             }
-            else if(type == Date.class)
-            {
-                if(fieldValue.contains("-"))
-                {
-                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                    try {
-                        value = (T) sdf.parse(fieldValue);
-                    } catch (ParseException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
-                }
-            }
-            else
-            {
-                value = mapper.readValue(fieldValue, type);
+        }
+        else
+        {
+            value = mapper.readValue(fieldValue, type);
 
-            }
-        } catch (JsonParseException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (JsonMappingException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         }
 		return value;
 	}
 
-	public Field getField(Class<?> targetClass, DataIdProperty fieldProperty)
+	public Field getField(Class<?> targetClass, DataIdProperty fieldProperty) throws NoSuchFieldException, SecurityException
 	{
 		Field field = null;
-		try {
-			field = targetClass.getDeclaredField(fieldProperty.getDataHub());
-			field.setAccessible(true);
-		} catch (NoSuchFieldException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        field = targetClass.getDeclaredField(fieldProperty.getDataHub());
+        field.setAccessible(true);
 		return field;
 	}
 	
@@ -447,8 +411,6 @@ public class PropertyMapper
 		}
 		return null;
 	}
-
-
 	public MappingConfig getMappingConfig() {
 		return mappingConfig;
 	}

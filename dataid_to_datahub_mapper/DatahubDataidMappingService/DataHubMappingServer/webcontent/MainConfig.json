@@ -2,7 +2,7 @@
 	"datahubActionUri": "http://datahub.io/api/3/action/",
 	"mappingConfigPath": "MappingConfig.json",
 	"ckanTimeOut": 10000,
-    "adminName":"chile",
+    "adminName":"aksw",
     "password":"goodStuff",
 	"ckanActionMap":{
 		"GetDataset": "package_show",

@@ -208,28 +208,28 @@
         "description" : {
           "dataIdRef" : "dc:description",
           "@type" : "xsd:string",
-          "comment" : "free-text account of the dataset.",
+          "comment" : "resource description",
           "addedBy" : "Chile",
           "issued" : "2014-04-16T09:26:29.603416"
         },
         "name" : {
           "dataIdRef" : "dc:title",
           "@type" : "xsd:string",
-          "comment" : "free-text account of the dataset.",
+          "comment" : "resource name",
           "addedBy" : "Chile",
           "issued" : "2014-04-16T09:26:29.603416"
         },
         "format" : {
           "dataIdRef" : "dc:format",
           "@type" : "xsd:string",
-          "comment" : "free-text account of the dataset.",
+          "comment" : "mimetype format",
           "addedBy" : "Chile",
           "issued" : "2014-04-16T09:26:29.603416"
         },
         "url" : {
           "dataIdRef" : "dcat:accessURL",
           "@type" : "xsd:string",
-          "comment" : "free-text account of the dataset.",
+          "comment" : "reference url",
           "addedBy" : "Chile",
           "issued" : "2014-04-16T09:26:29.603416",
           "hasAlternative" : "alt_rec_url"
@@ -237,7 +237,7 @@
         "alt_rec_url" : {
           "dataIdRef" : "@id",
           "@type" : "xsd:string",
-          "comment" : "free-text account of the dataset.",
+          "comment" : "reference url",
           "addedBy" : "Chile",
           "issued" : "2014-04-16T09:26:29.603416",
           "isAlternative" : true
@@ -245,14 +245,14 @@
         "last_modified" : {
           "dataIdRef" : "dc:modified",
           "@type" : "xsd:date",
-          "comment" : "free-text account of the dataset.",
+          "comment" : "last modification",
           "addedBy" : "Chile",
           "issued" : "2014-04-16T09:26:29.603416"
         },
         "mimetype" : {
           "dataIdRef" : "dcat:mediaType",
           "@type" : "xsd:string",
-          "comment" : "free-text account of the dataset.",
+          "comment" : "mimetype",
           "addedBy" : "Chile",
           "issued" : "2014-04-16T09:26:29.603416"
         },

@@ -33,6 +33,8 @@ local.properties
 #################
 .idea
 .settings
+target/
+lib/
 
 #################
 ## Visual Studio

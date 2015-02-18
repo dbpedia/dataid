@@ -1,14 +1,18 @@
 package aksw.dataid.datahub.jsonutils;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.core.JsonParseException;
+import com.github.jsonldjava.core.JsonLdError;
+import com.github.jsonldjava.core.JsonLdProcessor;
+import com.github.jsonldjava.core.RDFDataset;
+import com.github.jsonldjava.impl.NQuadRDFParser;
+import com.github.jsonldjava.impl.TurtleRDFParser;
 import com.github.jsonldjava.utils.JsonUtils;
+import org.openrdf.rio.RDFHandlerException;
+import org.openrdf.rio.RDFParseException;
+import org.openrdf.rio.turtle.TurtleParser;
 
 public class StaticJsonHelper 
 {
@@ -50,6 +54,37 @@ public class StaticJsonHelper
         }
         return true;
 	}
+
+    public static boolean isTurtleValid(String content)
+    {
+        try {
+            new TurtleParser().parse(new StringReader(content), "http://someuri.org");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean isNquadValid(String content)
+    {
+        try {
+            new NQuadRDFParser().parse(content);
+        } catch (JsonLdError jsonLdError) {
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean isRdfXmlValid(String content)
+    {
+        try {
+            new NQuadRDFParser().parse(content);
+        } catch (JsonLdError jsonLdError) {
+            return false;
+        }
+        return true;
+    }
 
 	public static JsonNode getJsonContent(String path) {
 		JsonFileManager mainFileManager = new JsonFileManager();

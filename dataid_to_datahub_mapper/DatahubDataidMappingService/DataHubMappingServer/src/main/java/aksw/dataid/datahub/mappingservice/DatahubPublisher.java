@@ -108,16 +108,12 @@ public class DatahubPublisher
 		List<Dataset> sets = null;
 		try {
 			sets = CreateDatahubDataset(client, organization, dataid, datasetTitle, isprivate);
-		} catch (DataHubMappingException e1) {
-			return produceHttpResponse(e1);
-		} catch (IOException e1) {
-			return produceHttpResponse(e1);
-		} catch (DatahubException e1) {
+		} catch (Exception e1) {
 			return produceHttpResponse(e1);
 		}
 		
 		if(sets == null || sets.size() == 0)
-			return produceHttpResponse(new DatahubError("no datasets found"));
+			return produceHttpResponse(new DatahubException("no datasets found"));
 
         try {
             for(Dataset set : sets)
@@ -127,14 +123,12 @@ public class DatahubPublisher
 	        		return produceHttpResponse((DatahubError) ckanRes);
             }
 			return produceHttpResponse(sets);
-				
-		} catch (HttpResponseException e) {
+
+		} catch (Exception e) {
 			return produceHttpResponse(e);
-		} catch (IOException e) {
-			return produceHttpResponse(e);
-		} 
- 
-	}
+		}
+
+    }
 	
 	@POST
 	@Path("/createdataset")
@@ -155,16 +149,12 @@ public class DatahubPublisher
         List<Dataset> sets = null;
         try {
             sets = CreateDatahubDataset(client, organization, dataid, datasetTitle, isprivate);
-        } catch (DataHubMappingException e1) {
-            return produceHttpResponse(e1);
-        } catch (IOException e1) {
-            return produceHttpResponse(e1);
-        } catch (DatahubException e1) {
+        } catch (Exception e1) {
             return produceHttpResponse(e1);
         }
 
         if(sets == null || sets.size() == 0)
-            return produceHttpResponse(new DatahubError("no datasets found"));
+            return produceHttpResponse(new DatahubException("no datasets found"));
         
         try {
         	for(Dataset set : sets)
@@ -174,14 +164,11 @@ public class DatahubPublisher
 	        		return produceHttpResponse((DatahubError) ckanRes);
         	}
 			return produceHttpResponse(sets);
-				
-		} catch (HttpResponseException e) {
+		} catch (Exception e) {
 			return produceHttpResponse(e);
-		} catch (IOException e) {
-			return produceHttpResponse(e);
-		} 
- 
-	}
+		}
+
+    }
 
 	private String checkParameters(final String organization, final String apiKey, final String dataid, final String datahubTitle)
 	{
@@ -224,6 +211,7 @@ public class DatahubPublisher
 
     private String produceHttpResponse(Exception ex)
     {
+        ex.printStackTrace();
         String html = "<html><body><p>An error occurred: \\n" + ex.getMessage() + "</p></body></html>";
         return html;
     }

@@ -1,9 +1,6 @@
 package aksw.dataid.datahub.restclient;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -12,7 +9,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.databind.type.CollectionType;
-import org.apache.http.client.HttpResponseException;
 import com.fasterxml.jackson.databind.*;
 
 import aksw.dataid.datahub.jsonobjects.*;
@@ -66,8 +62,7 @@ public class CkanRestClient
 		return response;
 	}
     
-    public ValidCkanResponse CreateDataset(Dataset set) throws HttpResponseException, IOException
-    {
+    public ValidCkanResponse CreateDataset(Dataset set) throws IOException, DatahubException {
     	set.setName(set.getName().replace(" ", ""));
     	set.PrepareForParsing();
     	JsonNode json = serializer.convertValue(set, JsonNode.class);
@@ -75,8 +70,7 @@ public class CkanRestClient
     	return postJson(path, json.toString());
     }
     
-    public ValidCkanResponse UpdateDataset(Dataset set) throws HttpResponseException, IOException
-    {
+    public ValidCkanResponse UpdateDataset(Dataset set) throws IOException, DatahubException {
     	set.setName(set.getName().replace(" ", ""));
     	set.PrepareForParsing();
     	JsonNode json = serializer.convertValue(set, JsonNode.class);
@@ -134,8 +128,7 @@ public class CkanRestClient
 //    	return postJson(path, dynamicJson);
 //    }
 	
-	private ValidCkanResponse postJson(String path, String jsonData) throws HttpResponseException, IOException
-	{
+	private ValidCkanResponse postJson(String path, String jsonData) throws IOException, DatahubException {
 		HttpURLConnection conn = this.getHttpConnection(path, HttpMethod.Post, normalTimeout);
 		OutputStream os = conn.getOutputStream();
 		byte[] output = jsonData.getBytes();
@@ -143,43 +136,44 @@ public class CkanRestClient
 		os.close();
 		DatahubResponse<Dataset> returnObject = null;
 		JavaType type = deserializer.getTypeFactory().constructParametricType(DatahubResponse.class, Dataset.class);
-		try {
-			String res = handleHttpResponse(conn);
-			returnObject = getDatahubResponse(res, type, Dataset.class);
-		} catch (DatahubException e) {
-			throw new HttpResponseException(conn.getResponseCode(), e.getMessage());
-		}
+
+        String res = handleHttpResponse(conn);
+        returnObject = getDatahubResponse(res, type, Dataset.class);
+
 		if(returnObject.getResult() != null)
 			return returnObject.getResult();
 		else
 			return returnObject.getError();
 	}
     
-	private String handleHttpResponse(HttpURLConnection conn)
-	{
+	private String handleHttpResponse(HttpURLConnection conn) throws DatahubException {
 		int status =0;
 		try {
 			status = conn.getResponseCode();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			return null;		}
+			e.printStackTrace();
+			return null;
+        }
 		String json = null;
-		if (status < 400) {
+
 			try {
-				json = ReadJsonResponse(conn);
+                if (status < 400)
+				    json = ReadResponseStream(conn.getInputStream());
+                else
+                    throw new DatahubException(ReadResponseStream(conn.getErrorStream()));
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
+                return null;
 			}
-		}
+
 		conn.disconnect();
 		return json;
 	}
 
-	private String ReadJsonResponse(HttpURLConnection conn) throws IOException 
+	private String ReadResponseStream(InputStream stream) throws IOException
 	{
 		StringBuilder sb;
-		BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+		BufferedReader br = new BufferedReader(new InputStreamReader(stream));
 		sb = new StringBuilder();
 		String line;
 		while ((line = br.readLine()) != null) 
@@ -219,7 +213,6 @@ public class CkanRestClient
 			conn.setDoOutput (true);
 		}
 		conn.connect();
-      //TODO do not return null!
 	    return conn;
     }
 

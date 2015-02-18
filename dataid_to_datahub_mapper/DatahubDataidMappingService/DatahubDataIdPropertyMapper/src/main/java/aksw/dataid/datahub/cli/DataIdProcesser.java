@@ -6,6 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import aksw.dataid.datahub.jsonutils.RdfXmlParser;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.github.jsonldjava.core.JsonLdError;
@@ -25,8 +26,7 @@ public class DataIdProcesser
 	private JsonNode mappingConfig;
 	private PropertyMapper mapper;
 	
-	public DataIdProcesser(String mappingConfigPath) throws DataHubMappingException
-	{
+	public DataIdProcesser(String mappingConfigPath) throws DataHubMappingException, IOException {
 		mappingConfig = StaticJsonHelper.getJsonContent(mappingConfigPath);
 	    if(mappingConfig == null)
             throw new DataHubMappingException("the mapping-config file could not be found");
@@ -60,6 +60,7 @@ public class DataIdProcesser
 	{
 		JsonLdOptions opt = new JsonLdOptions();
 		opt.format = "text/turtle";
+        opt.setBase("http://someuri.org");
 		opt.setUseNativeTypes(true);
 		opt.setCompactArrays(true);
 		
@@ -69,27 +70,42 @@ public class DataIdProcesser
 	private DataId getDataIdFromNquads(String sourceId) throws JsonLdError
 	{
 		JsonLdOptions opt = new JsonLdOptions();
-		opt.setBase("application/nquads");
+        opt.format = "application/nquads";
+        opt.setBase("http://someuri.org");
 		opt.setUseNativeTypes(true);
 		opt.setCompactArrays(true);
 		
 		return getDataId(sourceId, opt);
 	}
 
+    private DataId getDataIdFromRdfXml(String sourceId) throws JsonLdError
+    {
+        JsonLdProcessor.registerRDFParser("rdf/xml", new RdfXmlParser());
+        JsonLdOptions opt = new JsonLdOptions();
+        opt.format = "rdf/xml";
+        opt.setBase("http://someuri.org");
+        opt.setUseNativeTypes(true);
+        opt.setCompactArrays(true);
+
+        return getDataId(sourceId, opt);
+    }
+
 	public List<Dataset> GetDataHubDataset(String sourceId) throws DataHubMappingException, DataIdInputException {
 		List<Dataset> sets = new ArrayList<Dataset>();
 		DataidInput inputType = getInputType(sourceId);
 		if(inputType == DataidInput.None)
-			throw new DataIdInputException("The provided input is not of the following formats: turtle, n-quads or json-ld");
+			throw new DataIdInputException("The provided input is not of the following formats: turtle, n-quads, RdfXml or json-ld");
 		try {
 			if(inputType == DataidInput.Turtle)
 				sets = mapper.DataidToDatahub(getDataIdFromTurtle(sourceId));
-			if(inputType == DataidInput.Nquads)
+			else if(inputType == DataidInput.Nquads)
 				sets = mapper.DataidToDatahub(getDataIdFromNquads(sourceId));
-			if(inputType == DataidInput.JsonLd)
-				sets = mapper.DataidToDatahub(buildDataId(sourceId));			
-		} catch (DataHubMappingException e) {
-			throw new DataHubMappingException( "An Exception while mapping properties ocured: " + e.getMessage() );
+			else if(inputType == DataidInput.JsonLd)
+				sets = mapper.DataidToDatahub(buildDataId(sourceId));
+            else if(inputType == DataidInput.RdfXml)
+                sets = mapper.DataidToDatahub(getDataIdFromRdfXml(sourceId));
+        } catch (DataHubMappingException e) {
+			throw new DataHubMappingException( "An Exception while mapping properties ocurred: " + e.getMessage() );
 		} catch (JsonLdError e) {
 			throw new DataIdInputException("Error while trying to parse DataId file: " + e.getMessage());
 		}
@@ -100,13 +116,15 @@ public class DataIdProcesser
 	{
 		String test = testString.trim();
 		if(!test.contains("http://dataid.dbpedia.org/ns/core#"))  //!not!
-			return DataidInput.None;
-		if(test.trim().startsWith("{") && test.contains("\"@graph\""))
+			return DataidInput.NoDataId;
+		if(test.trim().startsWith("{") && test.contains("\"@context\"") && StaticJsonHelper.isJsonLdValid(test))
 			return DataidInput.JsonLd;
-		if(test.contains("@prefix") && test.replace(" ", "").contains(":<http://dataid.dbpedia.org/ns/core#>"))
+		if(test.contains("@prefix") && StaticJsonHelper.isTurtleValid(test))
 			return DataidInput.Turtle;
-		if(test.contains("http://dataid.dbpedia.org/ns/core#Dataset"))
+		if(test.contains("http://dataid.dbpedia.org/ns/core#Dataset") && StaticJsonHelper.isNquadValid(test))
 			return DataidInput.Nquads;
+        if(test.replace(" ", "").contains("rdf:resource=\"http://dataid.dbpedia.org/ns/core#Dataset\""))
+            return DataidInput.RdfXml;
 		return DataidInput.None;
 	}
 

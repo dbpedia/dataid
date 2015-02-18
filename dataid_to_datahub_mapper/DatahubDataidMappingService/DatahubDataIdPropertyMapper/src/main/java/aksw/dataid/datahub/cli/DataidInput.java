@@ -5,5 +5,7 @@ public enum DataidInput
 	Turtle,
 	Nquads,
 	JsonLd,
+    RdfXml,
+    NoDataId,
 	None
 }
