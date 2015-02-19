@@ -60,7 +60,7 @@ public class PropertyMapper
     
     private LinkedHashMap getObjectMapById(String id)
     {
-    	if(currentId.getDataIdBody() != null)
+    	if(id == null || currentId.getDataIdBody() != null)
     	{
     		for(LinkedHashMap map : currentId.getDataIdBody())
     		{
@@ -80,7 +80,7 @@ public class PropertyMapper
     		if(i<chain.size()-1)
     			context = getObjectMapById(extractRealValue(context.get(chain.get(i))));
     		else
-                if(context.keySet().contains(chain.get(i)))
+                if(context != null && context.keySet().contains(chain.get(i)))
     			    return extractRealValue(context.get(chain.get(i)));
     	}
     	return null;
@@ -203,7 +203,7 @@ public class PropertyMapper
             }
 
             //extract value
-            Object fieldValue = context.get(fieldString);
+            Object fieldValue = fieldProperty.getReferenceChain() == null ? context.get(fieldString) : fieldProperty.getReferenceChain().get(0);
             if(fieldValue == null)
                 return false;
             String stringValue = null;
