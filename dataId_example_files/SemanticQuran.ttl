@@ -30,6 +30,7 @@
   dct:issued "24-04-2013" ;
   dcat:mediaType "application/x-compressed" ;
   dct:format "nt" ;
+  dcat:accessURL "http://mlode.nlp2rdf.org/datasets/semanticquran.nt.gz" ;
   void:triples "134000000" .
 
 <http://aksw.org/MohamedSherif.html>
