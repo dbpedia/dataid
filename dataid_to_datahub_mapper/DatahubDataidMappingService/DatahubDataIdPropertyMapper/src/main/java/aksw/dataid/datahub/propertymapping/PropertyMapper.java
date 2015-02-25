@@ -98,7 +98,7 @@ public class PropertyMapper
 			if(map.containsKey("@type"))
 			{
 				//mapping for dataset and resources
-				if(containsIri(String.valueOf((map.get("@type"))), dataIdPrefix, "Dataset")) //type.contains("http://dataid.dbpedia.org/ns/core#Dataset") || type.contains("dataid:Dataset"))
+				if(StaticHelper.ContainsIri(String.valueOf((map.get("@type"))), dataIdPrefix, "Dataset", mappingConfig.getRdfContext()))
 				{
 					Dataset set = new Dataset();
 					sets.add(fillObjectWithMapValues(set, map));
@@ -115,11 +115,11 @@ public class PropertyMapper
 		int triples =0;
 		for(Resource r : set.getResources())
 		{
-			if(r.getTriples() != null)
-				triples += r.getTriples();
-		}
-		if(triples > 0)
-			setDatasetExtra(set, "triples", String.valueOf(triples));
+            if(r.getTriples() != null)
+                triples += r.getTriples();
+        }
+        if(triples > 0)
+            setDatasetExtra(set, "triples", String.valueOf(triples));
 	}
 	
 	private void setDatasetExtra(Dataset set, String key, String value) {
@@ -129,34 +129,44 @@ public class PropertyMapper
 		set.getExtras().add(ex);
 	}
     
-	private <T extends ValidCkanResponse> T fillObjectWithMapValues(T set, LinkedHashMap dataset)
+	private <T extends ValidCkanResponse> T fillObjectWithMapValues(T set, LinkedHashMap dataContext)
 	{
 		//take care of id link
-		if(dataset.keySet().size() == 1 && dataset.get("@id") != null)
+		if(dataContext.keySet().size() == 1 && dataContext.get("@id") != null)
 		{
-			String id = String.valueOf(dataset.get("@id"));
+			String id = String.valueOf(dataContext.get("@id"));
 			LinkedHashMap zw = getObjectMapById(id);
 			if(zw != null)
-				dataset = zw;
+				dataContext = zw;
 		}
         DataIdProperty.MappingDictionaryType dictType = DataIdProperty.MappingDictionaryType.Dataset;
 		if(set.getClass() == Resource.class)
             dictType = DataIdProperty.MappingDictionaryType.Resource;
 		for(Object field : mappingConfig.getDataHubMapping().get(dictType.toString().toLowerCase()).keySet())
     	{
-    		DataIdProperty dataId = mappingConfig.GetPropertyByDataHub(dictType, field.toString());
-    		if(dataId == null)
+    		DataIdProperty dataIdProp = mappingConfig.GetPropertyByDataHub(dictType, field.toString());
+    		if(dataIdProp == null)
     			continue;
-    		if(ImplicitAlternativeProps.contains(dataId.getDataHub()) || dataId.isAlternative()) {
-                dataId.setAlternative(true);
+    		if(ImplicitAlternativeProps.contains(dataIdProp.getDataHub()) || dataIdProp.isAlternative()) {
+                dataIdProp.setAlternative(true);
                 continue;
             }
-    		dataId.setDictionary(dictType);
-			SetGenericProperty(set, dataId, dataset);
+
+            dataIdProp.setDictionary(dictType);
+            //add links
+            if(StaticHelper.ContainsIri(dataIdProp.getType(), dataIdPrefix, "Linkset", mappingConfig.getRdfContext())) {
+                LinkedHashMap link = getSubGraphMap(((LinkedHashMap<String, Object>) dataContext.get(dataIdProp.getDataIdRef())).get("@id").toString());
+                String voidPrefix = StaticHelper.GetPrefix("http://rdfs.org/ns/void#", mappingConfig.getRdfContext());
+                String target = ((LinkedHashMap<String, Object>) link.get(voidPrefix + ":target")).get("@id").toString();
+                String shorty = "links:" + target.substring(0, target.lastIndexOf('.')).replace("http://", "");
+                setDatasetExtra((Dataset) set, shorty, link.get(voidPrefix + ":triples").toString());
+            }
+            else
+			    SetGenericProperty(set, dataIdProp, dataContext);
     	}
     	return set;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	private <T extends DataHubListObject> List<DataHubListObject> getGenericList(Class<T> listClass, Object fieldValue) throws IllegalAccessException, InstantiationException {
 		List<LinkedHashMap> value = null;
@@ -329,6 +339,16 @@ public class PropertyMapper
 			return String.valueOf(value);
 	}
 
+    private LinkedHashMap<String, Object> getSubGraphMap(String key)
+    {
+        for(LinkedHashMap<String, Object> map: this.currentId.getDataIdBody())
+        {
+            if(map.get("@id").toString().equals(key))
+                return map;
+        }
+        return null;
+    }
+
 	@SuppressWarnings("unchecked")
 	public <T> T castToValue(String fieldValue, Class<T> type, ParameterizedType listType) throws ParseException, IOException {
 		ObjectMapper mapper = new ObjectMapper();
@@ -371,46 +391,19 @@ public class PropertyMapper
 	public Context getJsonLdContext() {
 		return jsonLdContext;
 	}
-	
-	public boolean containsIri(String value, String prefix, String postfix)
-	{
-		String longPrefix = null;
-		if(prefix.contains("/"))
-			longPrefix = prefix;
-		else
-			prefix = prefix.replace(":", "");
-		
-		if(longPrefix == null)
-			longPrefix = mappingConfig.getRdfContext().get(prefix);
-	
-		prefix = getPrefix(longPrefix, currentId.getRdfContext());
-		if(value.contains(prefix + ":" + postfix) || value.contains(longPrefix + postfix))
-			return true;
-		else
-			return false;
-	}
-	
+
 	public void synchronizeRdfContexts(Map<String, String> dataIdContext) throws DataIdInputException
 	{
 		this.contextSynchronization.clear();
 		for(String prefix : dataIdContext.keySet())
 		{
 			String postfix = dataIdContext.get(prefix);
-			String configPrefix = getPrefix(postfix, mappingConfig.getRdfContext());
+			String configPrefix = StaticHelper.GetPrefix(postfix, mappingConfig.getRdfContext());
 			if(configPrefix != null)
 				this.contextSynchronization.put(prefix,  configPrefix);
 		}
 	}
-	
-	private String getPrefix(String postfix, Map<String, String> context)
-	{
-		for(String prefix : context.keySet())
-		{
-			if(postfix.equals(context.get(prefix)))
-				return prefix;
-		}
-		return null;
-	}
+
 	public MappingConfig getMappingConfig() {
 		return mappingConfig;
 	}

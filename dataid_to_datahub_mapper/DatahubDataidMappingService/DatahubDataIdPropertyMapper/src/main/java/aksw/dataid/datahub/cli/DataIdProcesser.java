@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 import aksw.dataid.datahub.jsonutils.RdfXmlParser;
+import aksw.dataid.datahub.mappingobjects.MappingConfig;
+import aksw.dataid.datahub.propertymapping.StaticHelper;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.github.jsonldjava.core.JsonLdError;
@@ -23,24 +25,28 @@ import aksw.dataid.datahub.propertymapping.PropertyMapper;
 
 public class DataIdProcesser 
 {
-	private JsonNode mappingConfig;
+	private MappingConfig mappingConfig;
 	private PropertyMapper mapper;
 	
 	public DataIdProcesser(String mappingConfigPath) throws DataHubMappingException, IOException {
-		mappingConfig = StaticJsonHelper.getJsonContent(mappingConfigPath);
+        mappingConfig = StaticHelper.castJsonToObject(StaticJsonHelper.getJsonContent(mappingConfigPath).toString(), MappingConfig.class, "@graph");
 	    if(mappingConfig == null)
             throw new DataHubMappingException("the mapping-config file could not be found");
-        mapper = new PropertyMapper(mappingConfig);
+        mapper = new PropertyMapper(StaticJsonHelper.getJsonContent(mappingConfigPath));
 	}
 	
-	private List<LinkedHashMap> getDataIdFromJson(String sourceId, JsonLdOptions opt) throws JsonLdError, JsonParseException, IOException
+	private DataId getDataIdFromJson(String sourceId) throws JsonLdError, JsonParseException, IOException
 	{
+        JsonLdOptions opt = new JsonLdOptions();
+        opt.format = "jsonld";
+        opt.setBase("http://someuri.org");
+        opt.setUseNativeTypes(true);
+        opt.setCompactArrays(true);
 		Object result =null;
 		result = JsonUtils.fromString(sourceId);
-		result = JsonLdProcessor.compact(result, mapper.getJsonLdContext(), opt);
-		return (List<LinkedHashMap>) ((Map<String, Object>) result).get("@graph");
+		return buildDataId(JsonLdProcessor.compact(result, mapper.getJsonLdContext(), opt));
 	}
-		
+
 	private DataId getDataId(String sourceId, JsonLdOptions opt) throws JsonLdError
 	{
 		Object result =null;
@@ -51,8 +57,10 @@ public class DataIdProcesser
 
 	private DataId buildDataId(Object result) {
 		DataId id = new DataId();
-		id.setDataIdBody((List<LinkedHashMap<String, Object>>) ((Map<String, Object>) result).get("@graph"));
 		id.setRdfContext((Map<String, String>) ((Map<String, Object>) result).get("@context"));
+
+        List<LinkedHashMap<String, Object>> graph = (List<LinkedHashMap<String, Object>>) ((Map<String, Object>) result).get("@graph");
+        id.setDataIdBody((List<LinkedHashMap<String, Object>>) ((Map<String, Object>) result).get("@graph"));
 		return id;
 	}
 	
@@ -101,15 +109,19 @@ public class DataIdProcesser
 			else if(inputType == DataidInput.Nquads)
 				sets = mapper.DataidToDatahub(getDataIdFromNquads(sourceId));
 			else if(inputType == DataidInput.JsonLd)
-				sets = mapper.DataidToDatahub(buildDataId(sourceId));
+				sets = mapper.DataidToDatahub(getDataIdFromJson(sourceId));
             else if(inputType == DataidInput.RdfXml)
                 sets = mapper.DataidToDatahub(getDataIdFromRdfXml(sourceId));
         } catch (DataHubMappingException e) {
 			throw new DataHubMappingException( "An Exception while mapping properties ocurred: " + e.getMessage() );
 		} catch (JsonLdError e) {
 			throw new DataIdInputException("Error while trying to parse DataId file: " + e.getMessage());
-		}
-		return sets;
+		} catch (JsonParseException e) {
+            throw new DataIdInputException("Error while trying to parse DataId file: " + e.getMessage());
+        } catch (IOException e) {
+            throw new DataIdInputException("IOException: " + e.getMessage());
+        }
+        return sets;
 	}
 	
 	private DataidInput getInputType(String testString)
@@ -126,10 +138,6 @@ public class DataIdProcesser
         if(test.replace(" ", "").contains("rdf:resource=\"http://dataid.dbpedia.org/ns/core#Dataset\""))
             return DataidInput.RdfXml;
 		return DataidInput.None;
-	}
-
-	public JsonNode getMappingConfig() {
-		return mappingConfig;
 	}
 
 	public PropertyMapper getMapper() {

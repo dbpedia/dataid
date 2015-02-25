@@ -1,5 +1,6 @@
 package aksw.dataid.datahub.propertymapping;
 
+import aksw.dataid.datahub.mappingobjects.MappingConfig;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -17,6 +18,7 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Field;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Map;
 
 public class StaticHelper 
 {
@@ -136,5 +138,34 @@ public class StaticHelper
             e.printStackTrace();
         }
 		return null;
+    }
+
+    public static boolean ContainsIri(String value, String prefix, String postfix, Map<String, String> redContext)
+    {
+        String longPrefix = null;
+        if(prefix.contains("/"))
+            longPrefix = prefix;
+        else
+            prefix = prefix.replace(":", "");
+
+        if(longPrefix == null)
+            longPrefix = redContext.get(prefix);
+
+        prefix = GetPrefix(longPrefix, redContext);
+        if(value.contains(prefix + ":" + postfix) || value.contains(longPrefix + postfix))
+            return true;
+        else
+            return false;
+    }
+
+
+    public static String GetPrefix(String postfix, Map<String, String> context)
+    {
+        for(String prefix : context.keySet())
+        {
+            if(postfix.equals(context.get(prefix)))
+                return prefix;
+        }
+        return null;
     }
 }

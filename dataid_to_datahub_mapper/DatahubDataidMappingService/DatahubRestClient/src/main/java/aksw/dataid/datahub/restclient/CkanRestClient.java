@@ -14,9 +14,10 @@ import com.fasterxml.jackson.databind.*;
 import aksw.dataid.datahub.jsonobjects.*;
 
 
-public class CkanRestClient 
+public class CkanRestClient implements Closeable
 {
 	private String connectionUrl;
+    private HttpURLConnection conn;
     private final ObjectMapper serializer = new ObjectMapper();
     private final ObjectMapper deserializer = new ObjectMapper();
     private static int normalTimeout = 30000;
@@ -38,10 +39,10 @@ public class CkanRestClient
         serializer.setDateFormat(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSS"));
     }
     
-    public Dataset GetDataset(String nameId) throws IOException, DatahubException
+    public Dataset GetDataset(String nameId) throws IOException, DatahubError
     {
     	String subPath = actionMap.get("GetDataset") + "?id=" + nameId;
-    	HttpURLConnection conn = getHttpConnection(subPath, HttpMethod.Get, normalTimeout);
+    	conn = getHttpConnection(subPath, HttpMethod.Get, normalTimeout);
     	String json = handleHttpResponse(conn);
     	if (json != null) {
 			DatahubResponse<Dataset> returnObject = null;
@@ -53,16 +54,16 @@ public class CkanRestClient
     }
 
 	@SuppressWarnings("unchecked")
-	private <T> DatahubResponse<T> getDatahubResponse(String json, JavaType type, Class<T> exp) throws IOException, DatahubException 
+	private <T> DatahubResponse<T> getDatahubResponse(String json, JavaType type, Class<T> exp) throws IOException, DatahubError
 	{
 		DatahubResponse<T> response;
 		response = (DatahubResponse<T>) deserializer.readValue(json, type);
 		if(response.getError() != null)
-			throw new DatahubException(response.getError());
+			throw response.getError();
 		return response;
 	}
     
-    public ValidCkanResponse CreateDataset(Dataset set) throws IOException, DatahubException {
+    public ValidCkanResponse CreateDataset(Dataset set) throws IOException, DatahubError {
     	set.setName(set.getName().replace(" ", ""));
     	set.PrepareForParsing();
     	JsonNode json = serializer.convertValue(set, JsonNode.class);
@@ -70,7 +71,7 @@ public class CkanRestClient
     	return postJson(path, json.toString());
     }
     
-    public ValidCkanResponse UpdateDataset(Dataset set) throws IOException, DatahubException {
+    public ValidCkanResponse UpdateDataset(Dataset set) throws IOException, DatahubError {
     	set.setName(set.getName().replace(" ", ""));
     	set.PrepareForParsing();
     	JsonNode json = serializer.convertValue(set, JsonNode.class);
@@ -79,7 +80,7 @@ public class CkanRestClient
     	return postJson(path, json.toString());
     }
     
-    public String GetOrganizationId(String orgName) throws IOException, DatahubException
+    public String GetOrganizationId(String orgName) throws IOException, DatahubError
     {
     	String subPath = actionMap.get("GetOrganizationId") + "?id=" + orgName;
     	HttpURLConnection conn = getHttpConnection(subPath, HttpMethod.Get, normalTimeout);
@@ -93,7 +94,7 @@ public class CkanRestClient
     }
     
     @SuppressWarnings("unchecked")
-	public List<DatasetRelationship> GetRelationships(String nameId) throws IOException, DatahubException
+	public List<DatasetRelationship> GetRelationships(String nameId) throws IOException, DatahubError
     {
     	String subPath = actionMap.get("GetRelationships") + "?id=" + nameId;
     	String json = handleHttpResponse(getHttpConnection(subPath, HttpMethod.Get, normalTimeout));
@@ -128,7 +129,7 @@ public class CkanRestClient
 //    	return postJson(path, dynamicJson);
 //    }
 	
-	private ValidCkanResponse postJson(String path, String jsonData) throws IOException, DatahubException {
+	private ValidCkanResponse postJson(String path, String jsonData) throws IOException, DatahubError {
 		HttpURLConnection conn = this.getHttpConnection(path, HttpMethod.Post, normalTimeout);
 		OutputStream os = conn.getOutputStream();
 		byte[] output = jsonData.getBytes();
@@ -146,7 +147,7 @@ public class CkanRestClient
 			return returnObject.getError();
 	}
     
-	private String handleHttpResponse(HttpURLConnection conn) throws DatahubException {
+	private String handleHttpResponse(HttpURLConnection conn) throws DatahubError {
 		int status =0;
 		try {
 			status = conn.getResponseCode();
@@ -160,7 +161,7 @@ public class CkanRestClient
                 if (status < 400)
 				    json = ReadResponseStream(conn.getInputStream());
                 else
-                    throw new DatahubException(ReadResponseStream(conn.getErrorStream()));
+                    json = ReadResponseStream(conn.getErrorStream());
 			} catch (IOException e) {
 				e.printStackTrace();
                 return null;
@@ -197,7 +198,8 @@ public class CkanRestClient
 	
     private HttpURLConnection getHttpConnection(String path, HttpMethod requestMethod, int timeout) throws IOException
     {
-    	HttpURLConnection conn = null;
+        if(conn != null)
+            close();
 		URL uri = new URL(connectionUrl + path);
 		conn = (HttpURLConnection) uri.openConnection();
 		conn.setUseCaches(false);
@@ -231,4 +233,13 @@ public class CkanRestClient
 	public void setApiKey(String apiKey) {
 		this.apiKey = apiKey;
 	}
+
+    @Override
+    public void close() throws IOException {
+        if(conn!= null)
+        {
+            conn.disconnect();
+            conn = null;
+        }
+    }
 }

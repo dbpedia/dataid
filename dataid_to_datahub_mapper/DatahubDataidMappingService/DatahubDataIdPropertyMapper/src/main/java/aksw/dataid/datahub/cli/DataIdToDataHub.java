@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import aksw.dataid.datahub.restclient.DatahubException;
+import aksw.dataid.datahub.jsonobjects.DatahubError;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -64,7 +64,7 @@ public class DataIdToDataHub {
 			    {
                     try {
                         client.CreateDataset(set);
-                    } catch (DatahubException e) {
+                    } catch (DatahubError e) {
                         e.printStackTrace();
                     }
                 }
@@ -72,7 +72,7 @@ public class DataIdToDataHub {
 			    {
                     try {
                         client.UpdateDataset(set);
-                    } catch (DatahubException e) {
+                    } catch (DatahubError e) {
                         e.printStackTrace();
                     }
                 }

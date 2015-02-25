@@ -1,9 +1,12 @@
 package aksw.dataid.datahub.jsonobjects;
 
+import com.fasterxml.jackson.annotation.*;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class DatahubError extends Exception implements ValidCkanResponse
 {
 	private String message;
-	private String type;
+	private String __type;
 
     public DatahubError() {
         super();
@@ -17,31 +20,36 @@ public class DatahubError extends Exception implements ValidCkanResponse
     public DatahubError(String message, Throwable cause) {
         super(message, cause);
         this.message = message;
-        this.type = cause.getClass().getName();
+        this.__type = cause.getClass().getName();
     }
 
     public DatahubError(Throwable cause) {
         super(cause);
-        this.type = cause.getClass().getName();
+        this.__type = cause.getClass().getName();
         this.message = cause.getMessage();
     }
 
     protected DatahubError(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
         this.message = message;
-        this.type = cause.getClass().getName();
+        this.__type = cause.getClass().getName();
     }
 
-    public String getMessage() {
-		return message;
+    @Override
+    public String getMessage() {return message;
 	}
 	public void setMessage(String message) {
 		this.message = message;
 	}
+    public void setName(String[] message) {
+        this.message = message[0];
+    }
+    @JsonProperty("__type")
 	public String getType() {
-		return type;
+		return __type;
 	}
+    @JsonProperty("__type")
 	public void setType(String type) {
-		this.type = type;
+		this.__type = type;
 	}
 }
