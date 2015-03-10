@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:datid="http://dataid.dbpedia.org/ns/core#"
+   xmlns:dcat="http://www.w3.org/ns/dcat#"
+   xmlns:dct="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:sd="http://www.w3.org/ns/sparql-service-description#"
+   xmlns:void="http://rdfs.org/ns/void#"
+   xmlns:xml="http://www.w3.org/XML/1998/namespace"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xmlns="http://www.semanticweb.org/owl/owlapi/turtle#">
+  <owl:Ontology rdf:about="http://dataid.dbpedia.org/ns/core#">
+    <rdfs:comment xml:lang="en">DBpedia Data ID is an ontology with the goal of describing LOD datasets via RDF files in a uniform way. Established vocabularies like DCAT, VoID, Prov-O and SPARQL Service Description are used for maximum compatibility.</rdfs:comment>
+    <rdfs:label xml:lang="en">DataID</rdfs:label>
+    <owl:imports rdf:resource="http://vocab.deri.ie/void"/>
+    <owl:imports rdf:resource="http://www.w3.org/ns/dcat"/>
+    <owl:imports rdf:resource="http://www.w3.org/ns/prov"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://dataid.dbpedia.org/ns/core#Activity">
+    <rdfs:label xml:lang="en">Activity</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://dataid.dbpedia.org/ns/core#Contact">
+    <rdfs:comment xml:lang="en">Contact agent. An agent that can be contacted for general requests about the dataset.</rdfs:comment>
+    <rdfs:label xml:lang="en">Contact</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://dataid.dbpedia.org/ns/core#Contributor">
+    <rdfs:comment xml:lang="en">Contributor to the dataset. An agent that was involved in creating or maintaining the dataset but does not have the main part in this activity.</rdfs:comment>
+    <rdfs:label xml:lang="en">Contributor</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://dataid.dbpedia.org/ns/core#Creator">
+    <rdfs:comment xml:lang="en">Creator of the dataset. An agent that is credited with a main part in the initial creation of the dataset.</rdfs:comment>
+    <rdfs:label xml:lang="en">Creator</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://dataid.dbpedia.org/ns/core#Dataset">
+    <rdfs:label xml:lang="en">Dataset</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="http://dataid.dbpedia.org/ns/core#Distribution"/>
+        <owl:onProperty rdf:resource="http://www.w3.org/ns/dcat#distribution"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <owl:onProperty rdf:resource="http://dataid.dbpedia.org/ns/core#associatedAgent"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:onProperty rdf:resource="http://purl.org/dc/terms/title"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://dataid.dbpedia.org/ns/core#Distribution">
+    <rdfs:comment xml:lang="en">A way to access a dataset, like a dump file, an endpoint, an API etc.</rdfs:comment>
+    <rdfs:label xml:lang="en">Distribution</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <owl:onProperty rdf:resource="http://www.w3.org/ns/dcat#downloadURL"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://dataid.dbpedia.org/ns/core#Entity"/>
+  <owl:ObjectProperty rdf:about="http://dataid.dbpedia.org/ns/core#LatestLinksetVersion">
+    <rdfs:comment xml:lang="en">Latest version of a linkset</rdfs:comment>
+    <rdfs:domain rdf:resource="http://dataid.dbpedia.org/ns/core#Linkset"/>
+    <rdfs:label xml:lang="en">latest linkset version</rdfs:label>
+    <rdfs:range rdf:resource="http://dataid.dbpedia.org/ns/core#Linkset"/>
+    <rdfs:subPropertyOf rdf:resource="http://dataid.dbpedia.org/ns/core#latestVersion"/>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="http://dataid.dbpedia.org/ns/core#Linkset">
+    <rdfs:label xml:lang="en">Linkset</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://rdfs.org/ns/void#Linkset"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://dataid.dbpedia.org/ns/core#Maintainer">
+    <rdfs:comment xml:lang="en">Maintainer of the dataset. An agent that ensures the technical correctness, accessibility and up-to-dateness of a dataset.</rdfs:comment>
+    <rdfs:label xml:lang="en">Maintainer</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://dataid.dbpedia.org/ns/core#Publisher">
+    <rdfs:comment xml:lang="en">Publisher of the dataset. An agent that makes the dataset accessible online on a server or repository without necessarily being involved in its creation.</rdfs:comment>
+    <rdfs:label xml:lang="en">Publisher</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://dataid.dbpedia.org/ns/core#associatedAgent">
+    <rdfs:comment xml:lang="en">some agent generally connected to the dataset, their function to be specified by their rdf:type</rdfs:comment>
+    <rdfs:label xml:lang="en">associated agent</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://dataid.dbpedia.org/ns/core#checksum">
+    <rdfs:comment xml:lang="en">Checksum of a file to check for correctness</rdfs:comment>
+    <rdfs:label xml:lang="en">checksum</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://dataid.dbpedia.org/ns/core#containsLinks">
+    <rdfs:comment xml:lang="en">Set of links to another dataset contained in this dataset</rdfs:comment>
+    <rdfs:domain rdf:resource="http://dataid.dbpedia.org/ns/core#Dataset"/>
+    <rdfs:label xml:lang="en">contains links</rdfs:label>
+    <rdfs:range rdf:resource="http://dataid.dbpedia.org/ns/core#Linkset"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://dataid.dbpedia.org/ns/core#graphName">
+    <rdfs:comment xml:lang="en">The name of the graph of this distribution in a SPARQL endpoint</rdfs:comment>
+    <rdfs:domain rdf:resource="http://dataid.dbpedia.org/ns/core#Distribution"/>
+    <rdfs:label xml:lang="en">Graph name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://dataid.dbpedia.org/ns/core#latestVersion">
+    <rdfs:comment xml:lang="en">The latest version of this dataset</rdfs:comment>
+    <rdfs:domain rdf:resource="http://dataid.dbpedia.org/ns/core#Dataset"/>
+    <rdfs:label xml:lang="en">latest version</rdfs:label>
+    <rdfs:range rdf:resource="http://dataid.dbpedia.org/ns/core#Dataset"/>
+  </owl:ObjectProperty>
+  <rdfs:Datatype rdf:about="http://dataid.dbpedia.org/ns/core#md5">
+    <rdfs:comment>A md5 checksum</rdfs:comment>
+    <rdfs:label>md5 checksum</rdfs:label>
+    <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:withRestrictions>
+      <rdf:Description>
+        <rdf:first>
+          <rdf:Description>
+            <xsd:pattern>[a-z0-9]{32}</xsd:pattern>
+          </rdf:Description>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </rdf:Description>
+    </owl:withRestrictions>
+  </rdfs:Datatype>
+  <owl:DatatypeProperty rdf:about="http://dataid.dbpedia.org/ns/core#md5Hash">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://dataid.dbpedia.org/ns/core#Distribution"/>
+    <rdfs:label xml:lang="en">md5 hash</rdfs:label>
+    <rdfs:range rdf:resource="http://dataid.dbpedia.org/ns/core#md5"/>
+    <rdfs:subPropertyOf rdf:resource="http://dataid.dbpedia.org/ns/core#checksum"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://dataid.dbpedia.org/ns/core#nextLinksetVersion">
+    <rdfs:comment xml:lang="en">next version of a linkset</rdfs:comment>
+    <rdfs:domain rdf:resource="http://dataid.dbpedia.org/ns/core#Linkset"/>
+    <rdfs:label xml:lang="en">next linkset version</rdfs:label>
+    <rdfs:range rdf:resource="http://dataid.dbpedia.org/ns/core#Linkset"/>
+    <rdfs:subPropertyOf rdf:resource="http://dataid.dbpedia.org/ns/core#nextVersion"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://dataid.dbpedia.org/ns/core#nextVersion">
+    <rdfs:comment xml:lang="en">Next version of a dataset</rdfs:comment>
+    <rdfs:domain rdf:resource="http://dataid.dbpedia.org/ns/core#Dataset"/>
+    <rdfs:label xml:lang="en">next version</rdfs:label>
+    <rdfs:range rdf:resource="http://dataid.dbpedia.org/ns/core#Dataset"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://dataid.dbpedia.org/ns/core#previousLinksetVersion">
+    <rdfs:comment xml:lang="en">previous version of a linkste</rdfs:comment>
+    <rdfs:domain rdf:resource="http://dataid.dbpedia.org/ns/core#Linkset"/>
+    <rdfs:label xml:lang="en">previous linkset version</rdfs:label>
+    <rdfs:range rdf:resource="http://dataid.dbpedia.org/ns/core#Linkset"/>
+    <rdfs:subPropertyOf rdf:resource="http://dataid.dbpedia.org/ns/core#previousVersion"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://dataid.dbpedia.org/ns/core#previousVersion">
+    <rdfs:comment xml:lang="en">previous version of a dataset</rdfs:comment>
+    <rdfs:domain rdf:resource="http://dataid.dbpedia.org/ns/core#Dataset"/>
+    <rdfs:label xml:lang="en">previous version</rdfs:label>
+    <rdfs:range rdf:resource="http://dataid.dbpedia.org/ns/core#Dataset"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/issued">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:comment xml:lang="en">Date of formal issuance (e.g., publication) of the resource.</rdfs:comment>
+    <rdfs:label xml:lang="en">Date Issued</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label xml:lang="en">Title</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://rdfs.org/ns/void#sparqlEndpoint">
+    <rdfs:domain rdf:resource="http://dataid.dbpedia.org/ns/core#Dataset"/>
+    <rdfs:label xml:lang="en">SPARQL endpoint</rdfs:label>
+    <rdfs:range rdf:resource="http://dataid.dbpedia.org/ns/core#Distribution"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://rdfs.org/ns/void#subset">
+    <rdfs:comment xml:lang="en">A dataset contained in the parent dataset</rdfs:comment>
+    <rdfs:domain rdf:resource="http://dataid.dbpedia.org/ns/core#Dataset"/>
+    <rdfs:label xml:lang="en">Subset of the dataset</rdfs:label>
+    <rdfs:range rdf:resource="http://dataid.dbpedia.org/ns/core#Dataset"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#used">
+    <rdfs:comment xml:lang="en">Entity used by the Activity to generate the dataset</rdfs:comment>
+    <rdfs:domain rdf:resource="http://dataid.dbpedia.org/ns/core#Activity"/>
+    <rdfs:label xml:lang="en">was generated by</rdfs:label>
+    <rdfs:range rdf:resource="http://dataid.dbpedia.org/ns/core#Entity"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasDerivedFrom">
+    <rdfs:comment xml:lang="en">Entity the dataset was derived from</rdfs:comment>
+    <rdfs:domain rdf:resource="http://dataid.dbpedia.org/ns/core#Dataset"/>
+    <rdfs:label xml:lang="en">was derived from</rdfs:label>
+    <rdfs:range rdf:resource="http://dataid.dbpedia.org/ns/core#Entity"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasGeneratedBy">
+    <rdfs:comment xml:lang="en">Activity used to generate the dataset</rdfs:comment>
+    <rdfs:domain rdf:resource="http://dataid.dbpedia.org/ns/core#Dataset"/>
+    <rdfs:label xml:lang="en">was generated by</rdfs:label>
+    <rdfs:range rdf:resource="http://dataid.dbpedia.org/ns/core#Activity"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sparql-service-description#defaultDataset">
+    <rdfs:comment xml:lang="en">Default dataset this distribution delivers</rdfs:comment>
+    <rdfs:domain rdf:resource="http://dataid.dbpedia.org/ns/core#Distribution"/>
+    <rdfs:label xml:lang="en">Default dataset</rdfs:label>
+    <rdfs:range rdf:resource="http://dataid.dbpedia.org/ns/core#Dataset"/>
+  </owl:ObjectProperty>
+</rdf:RDF>
