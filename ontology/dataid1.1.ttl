@@ -77,8 +77,11 @@ datid:associatedAgent rdf:type owl:ObjectProperty ;
                       
                       rdfs:label "associated agent"@en ;
                       
-                      rdfs:comment "some agent generally connected to the dataset, their function to be specified by their rdf:type"@en .
-
+                      rdfs:comment "some agent generally connected to the dataset, their function to be specified by their rdf:type"@en ;
+                    
+                    rdfs:domain prov:Entity;
+                    
+                    rdfs:range prov:Agent.
 
 
 ###  http://dataid.dbpedia.org/ns/core#containsLinks
@@ -281,6 +284,45 @@ datid:graphName rdf:type owl:DatatypeProperty ;
                 rdfs:domain datid:Distribution ;
                 
                 rdfs:range xsd:string .
+                
+                
+###  http://dataid.dbpedia.org/ns/core#agentName
+
+datid:agentName rdf:type owl:DatatypeProperty ;
+                
+                rdfs:label "Agent Name"@en ;
+                
+                rdfs:comment "The name of an associated agent"@en ;
+                
+                rdfs:domain prov:Agent ;
+                
+                rdfs:range xsd:string .      
+
+
+###  http://dataid.dbpedia.org/ns/core#agentMail
+
+datid:agentMail rdf:type owl:DatatypeProperty ;
+                
+                rdfs:label "E-mail address"@en ;
+                
+                rdfs:comment "The e-mail address of an associated agent"@en ;
+                
+                rdfs:domain prov:Agent ;
+                
+                rdfs:range xsd:string .   
+                
+                
+###  http://dataid.dbpedia.org/ns/core#agentUrl
+
+datid:agentMail rdf:type owl:DatatypeProperty ;
+                
+                rdfs:label "Agent URL"@en ;
+                
+                rdfs:comment "Landingpage associated with an agent"@en ;
+                
+                rdfs:domain prov:Agent ;
+                
+                rdfs:range xsd:string .                 
 
 
 
@@ -418,7 +460,13 @@ datid:Distribution rdf:type owl:Class ;
 
 ###  http://dataid.dbpedia.org/ns/core#Entity
 
-datid:Entity rdf:type owl:Class .
+datid:Entity rdf:type owl:Class ;
+              
+              rdfs:label "Entity"@en ;
+              
+              rdfs:subClassOf prov:Entity .
+
+
 
 
 
