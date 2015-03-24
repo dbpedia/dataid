@@ -1,536 +1,247 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix : <http://www.semanticweb.org/owl/owlapi/turtle#> .
 @prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix void: <http://rdfs.org/ns/void#> .
-@prefix datid: <http://dataid.dbpedia.org/ns/core#> .
-@base <http://dataid.dbpedia.org/ns/core#> .
-
-<http://dataid.dbpedia.org/ns/core#> rdf:type owl:Ontology ;
-                                     
-                                     rdfs:label "DataID"@en ;
-                                     
-                                     rdfs:comment "DBpedia Data ID is an ontology with the goal of describing LOD datasets via RDF files in a uniform way. Established vocabularies like DCAT, VoID, Prov-O and SPARQL Service Description are used for maximum compatibility."@en ;
-                                     
-                                     owl:imports <http://vocab.deri.ie/void> ,
-                                                 <http://www.w3.org/ns/dcat> ,
-                                                 <http://www.w3.org/ns/prov> .
-
-
-#################################################################
-#
-#    Datatypes
-#
-#################################################################
-
-
-###  http://dataid.dbpedia.org/ns/core#md5
-
-datid:md5 rdf:type rdfs:Datatype ;
-          
-          rdfs:comment "A md5 checksum" ;
-
-		  rdfs:label "md5 checksum" ; 
-		  owl:onDatatype xsd:string ;
-	      owl:withRestrictions (
-		    [
-			  xsd:pattern "[a-z0-9]{32}"
-		    ]
-	      ) .
-
-
-
-
-
-#################################################################
-#
-#    Object Properties
-#
-#################################################################
-
-
-###  http://dataid.dbpedia.org/ns/core#LatestLinksetVersion
-
-datid:LatestLinksetVersion rdf:type owl:ObjectProperty ;
-                           
-                           rdfs:label "latest linkset version"@en ;
-                           
-                           rdfs:comment "Latest version of a linkset"@en ;
-                           
-                           rdfs:range datid:Linkset ;
-                           
-                           rdfs:domain datid:Linkset ;
-                           
-                           rdfs:subPropertyOf datid:latestVersion .
-
-
-
-###  http://dataid.dbpedia.org/ns/core#associatedAgent
-
-datid:associatedAgent rdf:type owl:ObjectProperty ;
-                      
-                      rdfs:label "associated agent"@en ;
-                      
-                      rdfs:comment "some agent generally connected to the dataset, their function to be specified by their rdf:type"@en ;
-                    
-                    rdfs:domain prov:Entity;
-                    
-                    rdfs:range prov:Agent.
-
-
-###  http://dataid.dbpedia.org/ns/core#containsLinks
-
-datid:containsLinks rdf:type owl:ObjectProperty ;
-                    
-                    rdfs:label "contains links"@en ;
-                    
-                    rdfs:comment "Set of links to another dataset contained in this dataset"@en ;
-                    
-                    rdfs:domain datid:Dataset ;
-                    
-                    rdfs:range datid:Linkset .
-
-
-
-###  http://dataid.dbpedia.org/ns/core#latestVersion
-
-datid:latestVersion rdf:type owl:ObjectProperty ;
-                    
-                    rdfs:label "latest version"@en ;
-                    
-                    rdfs:comment "The latest version of this dataset"@en ;
-                    
-                    rdfs:range datid:Dataset ;
-                    
-                    rdfs:domain datid:Dataset .
-
-
-
-###  http://dataid.dbpedia.org/ns/core#nextLinksetVersion
-
-datid:nextLinksetVersion rdf:type owl:ObjectProperty ;
-                         
-                         rdfs:label "next linkset version"@en ;
-                         
-                         rdfs:comment "next version of a linkset"@en ;
-                         
-                         rdfs:range datid:Linkset ;
-                         
-                         rdfs:domain datid:Linkset ;
-                         
-                         rdfs:subPropertyOf datid:nextVersion .
-
-
-
-###  http://dataid.dbpedia.org/ns/core#nextVersion
-
-datid:nextVersion rdf:type owl:ObjectProperty ;
-                  
-                  rdfs:label "next version"@en ;
-                  
-                  rdfs:comment "Next version of a dataset"@en ;
-                  
-                  rdfs:domain datid:Dataset ;
-                  
-                  rdfs:range datid:Dataset .
-
-
-
-###  http://dataid.dbpedia.org/ns/core#previousLinksetVersion
-
-datid:previousLinksetVersion rdf:type owl:ObjectProperty ;
-                             
-                             rdfs:label "previous linkset version"@en ;
-                             
-                             rdfs:comment "previous version of a linkste"@en ;
-                             
-                             rdfs:range datid:Linkset ;
-                             
-                             rdfs:domain datid:Linkset ;
-                             
-                             rdfs:subPropertyOf datid:previousVersion .
-
-
-
-###  http://dataid.dbpedia.org/ns/core#previousVersion
-
-datid:previousVersion rdf:type owl:ObjectProperty ;
-                      
-                      rdfs:label "previous version"@en ;
-                      
-                      rdfs:comment "previous version of a dataset"@en ;
-                      
-                      rdfs:range datid:Dataset ;
-                      
-                      rdfs:domain datid:Dataset .
-
-
-
-###  http://rdfs.org/ns/void#sparqlEndpoint
-
-void:sparqlEndpoint rdf:type owl:ObjectProperty ;
-                    
-                    rdfs:label "SPARQL endpoint"@en ;
-                    
-                    rdfs:domain datid:Dataset ;
-                    
-                    rdfs:range datid:Distribution .
-
-
-
-###  http://rdfs.org/ns/void#subset
-
-void:subset rdf:type owl:ObjectProperty ;
-            
-            rdfs:label "Subset of the dataset"@en ;
-            
-            rdfs:comment "A dataset contained in the parent dataset"@en ;
-            
-            rdfs:range datid:Dataset ;
-            
-            rdfs:domain datid:Dataset .
-
-
-
-###  http://www.w3.org/ns/prov#used
-
-prov:used rdf:type owl:ObjectProperty ;
-          
-          rdfs:label "was generated by"@en ;
-          
-          rdfs:comment "Entity used by the Activity to generate the dataset"@en ;
-          
-          rdfs:domain datid:Activity ;
-          
-          rdfs:range datid:Entity .
-
-
-
-###  http://www.w3.org/ns/prov#wasDerivedFrom
-
-prov:wasDerivedFrom rdf:type owl:ObjectProperty ;
-                    
-                    rdfs:label "was derived from"@en ;
-                    
-                    rdfs:comment "Entity the dataset was derived from"@en ;
-                    
-                    rdfs:domain datid:Dataset ;
-                    
-                    rdfs:range datid:Entity .
-
-
-
-###  http://www.w3.org/ns/prov#wasGeneratedBy
-
-prov:wasGeneratedBy rdf:type owl:ObjectProperty ;
-                    
-                    rdfs:label "was generated by"@en ;
-                    
-                    rdfs:comment "Activity used to generate the dataset"@en ;
-                    
-                    rdfs:range datid:Activity ;
-                    
-                    rdfs:domain datid:Dataset .
-
-
-
-###  http://www.w3.org/ns/sparql-service-description#defaultDataset
-
-sd:defaultDataset rdf:type owl:ObjectProperty ;
-                  
-                  rdfs:label "Default dataset"@en ;
-                  
-                  rdfs:comment "Default dataset this distribution delivers"@en ;
-                  
-                  rdfs:range datid:Dataset ;
-                  
-                  rdfs:domain datid:Distribution .
-
-
-
-
-
-#################################################################
-#
-#    Data properties
-#
-#################################################################
-
-
-###  http://dataid.dbpedia.org/ns/core#checksum
-
-datid:checksum rdf:type owl:DatatypeProperty ;
-               
-               rdfs:label "checksum"@en ;
-               
-               rdfs:comment "Checksum of a file to check for correctness"@en .
-
-
-
-###  http://dataid.dbpedia.org/ns/core#graphName
-
-datid:graphName rdf:type owl:DatatypeProperty ;
-                
-                rdfs:label "Graph name"@en ;
-                
-                rdfs:comment "The name of the graph of this distribution in a SPARQL endpoint"@en ;
-                
-                rdfs:domain datid:Distribution ;
-                
-                rdfs:range xsd:string .
-                
-                
-###  http://dataid.dbpedia.org/ns/core#agentName
-
-datid:agentName rdf:type owl:DatatypeProperty ;
-                
-                rdfs:label "Agent Name"@en ;
-                
-                rdfs:comment "The name of an associated agent"@en ;
-                
-                rdfs:domain prov:Agent ;
-                
-                rdfs:range xsd:string .      
-
-
-###  http://dataid.dbpedia.org/ns/core#agentMail
-
-datid:agentMail rdf:type owl:DatatypeProperty ;
-                
-                rdfs:label "E-mail address"@en ;
-                
-                rdfs:comment "The e-mail address of an associated agent"@en ;
-                
-                rdfs:domain prov:Agent ;
-                
-                rdfs:range xsd:string .   
-                
-                
-###  http://dataid.dbpedia.org/ns/core#agentUrl
-
-datid:agentMail rdf:type owl:DatatypeProperty ;
-                
-                rdfs:label "Agent URL"@en ;
-                
-                rdfs:comment "Landingpage associated with an agent"@en ;
-                
-                rdfs:domain prov:Agent ;
-                
-                rdfs:range xsd:string .                 
-
-
-
-###  http://dataid.dbpedia.org/ns/core#md5Hash
-
-datid:md5Hash rdf:type owl:DatatypeProperty ,
-                       owl:FunctionalProperty ;
-              
-              rdfs:label "md5 hash"@en ;
-              
-              rdfs:domain datid:Distribution ;
-              
-              rdfs:subPropertyOf datid:checksum ;
-              
-              rdfs:range datid:md5 .
-
-
-
-###  http://purl.org/dc/terms/issued
-
-dct:issued rdf:type owl:DatatypeProperty ;
-           
-           rdfs:label "Date Issued"@en ;
-           
-           rdfs:comment "Date of formal issuance (e.g., publication) of the resource."@en .
-
-
-
-###  http://purl.org/dc/terms/title
-
-dct:title rdf:type owl:DatatypeProperty ;
-          
-          rdfs:label "Title"@en .
-
-
-
-
-
-#################################################################
-#
-#    Classes
-#
-#################################################################
-
-
-###  http://dataid.dbpedia.org/ns/core#Activity
-
-datid:Activity rdf:type owl:Class ;
-               
-               rdfs:label "Activity"@en ;
-               
-               rdfs:subClassOf prov:Activity .
-
-
-
-###  http://dataid.dbpedia.org/ns/core#Contact
-
-datid:Contact rdf:type owl:Class ;
-              
-              rdfs:label "Contact"@en ;
-              
-              rdfs:subClassOf prov:Agent ;
-              
-              rdfs:comment "Contact agent. An agent that can be contacted for general requests about the dataset."@en .
-
-
-
-###  http://dataid.dbpedia.org/ns/core#Contributor
-
-datid:Contributor rdf:type owl:Class ;
-                  
-                  rdfs:label "Contributor"@en ;
-                  
-                  rdfs:subClassOf prov:Agent ;
-                  
-                  rdfs:comment "Contributor to the dataset. An agent that was involved in creating or maintaining the dataset but does not have the main part in this activity."@en .
-
-
-
-###  http://dataid.dbpedia.org/ns/core#Creator
-
-datid:Creator rdf:type owl:Class ;
-              
-              rdfs:label "Creator"@en ;
-              
-              rdfs:subClassOf prov:Agent ;
-              
-              rdfs:comment "Creator of the dataset. An agent that is credited with a main part in the initial creation of the dataset."@en .
-
-
-
-###  http://dataid.dbpedia.org/ns/core#Dataset
-
-datid:Dataset rdf:type owl:Class ;
-              
-              rdfs:label "Dataset"@en ;
-              
-              rdfs:subClassOf void:Dataset ,
-                              dcat:Dataset ,
-                              prov:Entity ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty dcat:distribution ;
-                                owl:onClass datid:Distribution ;
-                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty datid:associatedAgent ;
-                                owl:onClass prov:Agent ;
-                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty dct:title ;
-                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onDataRange xsd:string
-                              ] .
-
-
-
-###  http://dataid.dbpedia.org/ns/core#Distribution
-
-datid:Distribution rdf:type owl:Class ;
-                   
-                   rdfs:label "Distribution"@en ;
-                   
-                   rdfs:subClassOf dcat:Distribution ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty dcat:downloadURL ;
-                                     owl:onClass rdfs:Resource ;
-                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
-                                   ] ;
-                   
-                   rdfs:comment "A way to access a dataset, like a dump file, an endpoint, an API etc."@en .
-
-
-
-###  http://dataid.dbpedia.org/ns/core#Entity
-
-datid:Entity rdf:type owl:Class ;
-              
-              rdfs:label "Entity"@en ;
-              
-              rdfs:subClassOf prov:Entity .
-
-
-
-
-
-###  http://dataid.dbpedia.org/ns/core#Linkset
-
-datid:Linkset rdf:type owl:Class ;
-              
-              rdfs:label "Linkset"@en ;
-              
-              rdfs:subClassOf void:Linkset .
-
-
-
-###  http://dataid.dbpedia.org/ns/core#Maintainer
-
-datid:Maintainer rdf:type owl:Class ;
-                 
-                 rdfs:label "Maintainer"@en ;
-                 
-                 rdfs:subClassOf prov:Agent ;
-                 
-                 rdfs:comment "Maintainer of the dataset. An agent that ensures the technical correctness, accessibility and up-to-dateness of a dataset."@en .
-
-
-
-###  http://dataid.dbpedia.org/ns/core#Publisher
-
-datid:Publisher rdf:type owl:Class ;
-                
-                rdfs:label "Publisher"@en ;
-                
-                rdfs:subClassOf prov:Agent ;
-                
-                rdfs:comment "Publisher of the dataset. An agent that makes the dataset accessible online on a server or repository without necessarily being involved in its creation."@en .
-
-
-
-
-
-#################################################################
-#
-#    Individuals
-#
-#################################################################
-
-
-###  http://purl.org/dc/terms/issued
-
-dct:issued rdf:type owl:NamedIndividual ;
-           
-           rdfs:label "Date Issued"@en ;
-           
-           rdfs:comment "Date of formal issuance (e.g., publication) of the resource."@en .
-
-
-
-###  http://purl.org/dc/terms/title
-
-dct:title rdf:type owl:NamedIndividual ;
-          
-          rdfs:label "Title"@en .
-
-
-
-
-###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
+@prefix datid: <http://schema.dbpedia.org/dataid/core#> .
+
+dct:issued
+    a owl:DatatypeProperty, owl:NamedIndividual ;
+    rdfs:comment "Date of formal issuance (e.g., publication) of the resource."@en ;
+    rdfs:label "Date Issued"@en .
+
+dct:title
+    a owl:DatatypeProperty, owl:NamedIndividual ;
+    rdfs:label "Title"@en .
+
+void:sparqlEndpoint
+    a owl:ObjectProperty ;
+    rdfs:domain datid:Dataset ;
+    rdfs:label "SPARQL endpoint"@en ;
+    rdfs:range datid:Distribution .
+
+void:subset
+    a owl:ObjectProperty ;
+    rdfs:comment "A dataset contained in the parent dataset"@en ;
+    rdfs:domain datid:Dataset ;
+    rdfs:label "Subset of the dataset"@en ;
+    rdfs:range datid:Dataset .
+
+<http://schema.dbpedia.org/dataid/core#>
+    a owl:Ontology ;
+    rdfs:comment "DBpedia Data ID is an ontology with the goal of describing LOD datasets via RDF files in a uniform way. Established vocabularies like DCAT, VoID, Prov-O and SPARQL Service Description are used for maximum compatibility."@en ;
+    rdfs:label "DataID"@en ;
+    owl:imports <http://vocab.deri.ie/void>, <http://www.w3.org/ns/dcat>, <http://www.w3.org/ns/prov> .
+
+datid:Activity
+    a owl:Class ;
+    rdfs:label "Activity"@en ;
+    rdfs:subClassOf prov:Activity .
+
+datid:Contact
+    a owl:Class ;
+    rdfs:comment "Contact agent. An agent that can be contacted for general requests about the dataset."@en ;
+    rdfs:label "Contact"@en ;
+    rdfs:subClassOf prov:Agent .
+
+datid:Contributor
+    a owl:Class ;
+    rdfs:comment "Contributor to the dataset. An agent that was involved in creating or maintaining the dataset but does not have the main part in this activity."@en ;
+    rdfs:label "Contributor"@en ;
+    rdfs:subClassOf prov:Agent .
+
+datid:Creator
+    a owl:Class ;
+    rdfs:comment "Creator of the dataset. An agent that is credited with a main part in the initial creation of the dataset."@en ;
+    rdfs:label "Creator"@en ;
+    rdfs:subClassOf prov:Agent .
+
+datid:Dataset
+    a owl:Class ;
+    rdfs:label "Dataset"@en ;
+    rdfs:subClassOf void:Dataset, dcat:Dataset, prov:Entity, [
+        a owl:Restriction ;
+        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass datid:Distribution ;
+        owl:onProperty dcat:distribution
+    ], [
+        a owl:Restriction ;
+        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass prov:Agent ;
+        owl:onProperty datid:associatedAgent
+    ], [
+        a owl:Restriction ;
+        owl:onDataRange xsd:string ;
+        owl:onProperty dct:title ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+    ] .
+
+datid:Distribution
+    a owl:Class ;
+    rdfs:comment "A way to access a dataset, like a dump file, an endpoint, an API etc."@en ;
+    rdfs:label "Distribution"@en ;
+    rdfs:subClassOf dcat:Distribution, [
+        a owl:Restriction ;
+        owl:onClass rdfs:Resource ;
+        owl:onProperty dcat:downloadURL ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+    ] .
+
+datid:Entity
+    a owl:Class ;
+    rdfs:label "Entity"@en ;
+    rdfs:subClassOf prov:Entity .
+
+datid:LatestLinksetVersion
+    a owl:ObjectProperty ;
+    rdfs:comment "Latest version of a linkset"@en ;
+    rdfs:domain datid:Linkset ;
+    rdfs:label "latest linkset version"@en ;
+    rdfs:range datid:Linkset ;
+    rdfs:subPropertyOf datid:latestVersion .
+
+datid:Linkset
+    a owl:Class ;
+    rdfs:label "Linkset"@en ;
+    rdfs:subClassOf void:Linkset .
+
+datid:Maintainer
+    a owl:Class ;
+    rdfs:comment "Maintainer of the dataset. An agent that ensures the technical correctness, accessibility and up-to-dateness of a dataset."@en ;
+    rdfs:label "Maintainer"@en ;
+    rdfs:subClassOf prov:Agent .
+
+datid:Publisher
+    a owl:Class ;
+    rdfs:comment "Publisher of the dataset. An agent that makes the dataset accessible online on a server or repository without necessarily being involved in its creation."@en ;
+    rdfs:label "Publisher"@en ;
+    rdfs:subClassOf prov:Agent .
+
+datid:agentMail
+    a owl:DatatypeProperty ;
+    rdfs:comment "Landingpage associated with an agent"@en, "The e-mail address of an associated agent"@en ;
+    rdfs:domain prov:Agent ;
+    rdfs:label "Agent URL"@en, "E-mail address"@en ;
+    rdfs:range xsd:string .
+
+datid:agentName
+    a owl:DatatypeProperty ;
+    rdfs:comment "The name of an associated agent"@en ;
+    rdfs:domain prov:Agent ;
+    rdfs:label "Agent Name"@en ;
+    rdfs:range xsd:string .
+
+datid:associatedAgent
+    a owl:ObjectProperty ;
+    rdfs:comment "some agent generally connected to the dataset, their function to be specified by their rdf:type"@en ;
+    rdfs:domain prov:Entity ;
+    rdfs:label "associated agent"@en ;
+    rdfs:range prov:Agent .
+
+datid:checksum
+    a owl:DatatypeProperty ;
+    rdfs:comment "Checksum of a file to check for correctness"@en ;
+    rdfs:label "checksum"@en .
+
+datid:containsLinks
+    a owl:ObjectProperty ;
+    rdfs:comment "Set of links to another dataset contained in this dataset"@en ;
+    rdfs:domain datid:Dataset ;
+    rdfs:label "contains links"@en ;
+    rdfs:range datid:Linkset .
+
+datid:graphName
+    a owl:DatatypeProperty ;
+    rdfs:comment "The name of the graph of this distribution in a SPARQL endpoint"@en ;
+    rdfs:domain datid:Distribution ;
+    rdfs:label "Graph name"@en ;
+    rdfs:range xsd:string .
+
+datid:latestVersion
+    a owl:ObjectProperty ;
+    rdfs:comment "The latest version of this dataset"@en ;
+    rdfs:domain datid:Dataset ;
+    rdfs:label "latest version"@en ;
+    rdfs:range datid:Dataset .
+
+datid:md5
+    a rdfs:Datatype ;
+    rdfs:comment "A md5 checksum" ;
+    rdfs:label "md5 checksum" ;
+    owl:onDatatype xsd:string ;
+    owl:withRestrictions ([
+            xsd:pattern "[a-z0-9]{32}"
+        ]
+    ) .
+
+datid:md5Hash
+    a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:domain datid:Distribution ;
+    rdfs:label "md5 hash"@en ;
+    rdfs:range datid:md5 ;
+    rdfs:subPropertyOf datid:checksum .
+
+datid:nextLinksetVersion
+    a owl:ObjectProperty ;
+    rdfs:comment "next version of a linkset"@en ;
+    rdfs:domain datid:Linkset ;
+    rdfs:label "next linkset version"@en ;
+    rdfs:range datid:Linkset ;
+    rdfs:subPropertyOf datid:nextVersion .
+
+datid:nextVersion
+    a owl:ObjectProperty ;
+    rdfs:comment "Next version of a dataset"@en ;
+    rdfs:domain datid:Dataset ;
+    rdfs:label "next version"@en ;
+    rdfs:range datid:Dataset .
+
+datid:previousLinksetVersion
+    a owl:ObjectProperty ;
+    rdfs:comment "previous version of a linkste"@en ;
+    rdfs:domain datid:Linkset ;
+    rdfs:label "previous linkset version"@en ;
+    rdfs:range datid:Linkset ;
+    rdfs:subPropertyOf datid:previousVersion .
+
+datid:previousVersion
+    a owl:ObjectProperty ;
+    rdfs:comment "previous version of a dataset"@en ;
+    rdfs:domain datid:Dataset ;
+    rdfs:label "previous version"@en ;
+    rdfs:range datid:Dataset .
+
+prov:used
+    a owl:ObjectProperty ;
+    rdfs:comment "Entity used by the Activity to generate the dataset"@en ;
+    rdfs:domain datid:Activity ;
+    rdfs:label "was generated by"@en ;
+    rdfs:range datid:Entity .
+
+prov:wasDerivedFrom
+    a owl:ObjectProperty ;
+    rdfs:comment "Entity the dataset was derived from"@en ;
+    rdfs:domain datid:Dataset ;
+    rdfs:label "was derived from"@en ;
+    rdfs:range datid:Entity .
+
+prov:wasGeneratedBy
+    a owl:ObjectProperty ;
+    rdfs:comment "Activity used to generate the dataset"@en ;
+    rdfs:domain datid:Dataset ;
+    rdfs:label "was generated by"@en ;
+    rdfs:range datid:Activity .
+
+sd:defaultDataset
+    a owl:ObjectProperty ;
+    rdfs:comment "Default dataset this distribution delivers"@en ;
+    rdfs:domain datid:Distribution ;
+    rdfs:label "Default dataset"@en ;
+    rdfs:range datid:Dataset .
 
