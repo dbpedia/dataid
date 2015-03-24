@@ -11,14 +11,50 @@
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix datid: <http://schema.dbpedia.org/dataid/core#> .
 
+## Ontology Definition 
+
+<http://schema.dbpedia.org/dataid/core#>
+    a owl:Ontology ;
+    rdfs:comment "DBpedia Data ID is an ontology with the goal of describing LOD datasets via RDF files in a uniform way. Established vocabularies like DCAT, VoID, Prov-O and SPARQL Service Description are used for maximum compatibility."@en ;
+    rdfs:label "DataID"@en ;
+    owl:imports <http://vocab.deri.ie/void>, <http://www.w3.org/ns/dcat>, <http://www.w3.org/ns/prov> .
+
+### USE CASES
+datid:Tool a owl:Class .
+
+datid:ToolLODImageGenerator a datid:Tool , owl:NamedIndividual ;
+	rdfs:comment "";
+	datid:uses 
+	[ 	rdfs:comment "used to label the LOD cloud image" ;
+		datid:implements <rdfs:label> ] ,
+	[   rdfs:comment "xxx" ;  
+		datid:implements <dcat:distribution> ] ,
+	[   rdfs:comment "xxx" ;
+		datid:implements <dcat:downloadURL> ]  .
+
+
+datid:ToolLODImageGenerator a datid:Tool , owl:NamedIndividual ;
+	rdfs:comment "";
+	datid:uses 
+	[ 	rdfs:comment "used to label the LOD cloud image" ;
+		datid:implements <rdfs:label> ] ,
+	[   rdfs:comment "xxx" ;  
+		datid:implements <dcat:distribution> ] ,
+	[   rdfs:comment "xxx" ;
+		datid:implements <dcat:downloadURL> ]  .
+
+## datatype properties
+
 dct:issued
-    a owl:DatatypeProperty, owl:NamedIndividual ;
+    a owl:DatatypeProperty ;
     rdfs:comment "Date of formal issuance (e.g., publication) of the resource."@en ;
     rdfs:label "Date Issued"@en .
 
 dct:title
-    a owl:DatatypeProperty, owl:NamedIndividual ;
+    a owl:DatatypeProperty ;
     rdfs:label "Title"@en .
+
+## object properties
 
 void:sparqlEndpoint
     a owl:ObjectProperty ;
@@ -33,11 +69,7 @@ void:subset
     rdfs:label "Subset of the dataset"@en ;
     rdfs:range datid:Dataset .
 
-<http://schema.dbpedia.org/dataid/core#>
-    a owl:Ontology ;
-    rdfs:comment "DBpedia Data ID is an ontology with the goal of describing LOD datasets via RDF files in a uniform way. Established vocabularies like DCAT, VoID, Prov-O and SPARQL Service Description are used for maximum compatibility."@en ;
-    rdfs:label "DataID"@en ;
-    owl:imports <http://vocab.deri.ie/void>, <http://www.w3.org/ns/dcat>, <http://www.w3.org/ns/prov> .
+
 
 datid:Activity
     a owl:Class ;
