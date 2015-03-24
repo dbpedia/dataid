@@ -22,26 +22,51 @@
 ### USE CASES
 datid:Tool a owl:Class .
 
-datid:ToolLODImageGenerator a datid:Tool , owl:NamedIndividual ;
+datid:LODImageGenerator a datid:Tool , owl:NamedIndividual ;
 	rdfs:comment "";
 	datid:uses 
 	[ 	rdfs:comment "used to label the LOD cloud image" ;
 		datid:implements <rdfs:label> ] ,
 	[   rdfs:comment "xxx" ;  
 		datid:implements <dcat:distribution> ] ,
+	[   rdfs:comment "xxx" ;  
+		datid:implements <dct:title> ] ,
 	[   rdfs:comment "xxx" ;
 		datid:implements <dcat:downloadURL> ]  .
 
 
-datid:ToolLODImageGenerator a datid:Tool , owl:NamedIndividual ;
+datid:DebianPackageGenerator a datid:Tool , owl:NamedIndividual ;
 	rdfs:comment "";
 	datid:uses 
-	[ 	rdfs:comment "used to label the LOD cloud image" ;
-		datid:implements <rdfs:label> ] ,
+	[ 	rdfs:comment "xxx" ;
+		datid:implements <datid:checksum> ] ,
 	[   rdfs:comment "xxx" ;  
 		datid:implements <dcat:distribution> ] ,
 	[   rdfs:comment "xxx" ;
 		datid:implements <dcat:downloadURL> ]  .
+
+
+datid:DataManagementPlan a datid:Tool , owl:NamedIndividual ;
+	rdfs:comment "";
+	datid:uses 
+	[ 	rdfs:comment "xxx" ;
+		datid:implements <datid:checksum> ] ,
+	[   rdfs:comment "xxx" ;  
+		datid:implements <dcat:distribution> ] ,
+	[   rdfs:comment "xxx" ;
+		datid:implements <dcat:downloadURL> ]  .
+
+datid:DataHubUpload a datid:Tool , owl:NamedIndividual ;
+	rdfs:comment "";
+	datid:uses 
+	[ 	rdfs:comment "xxx" ;
+		datid:implements <rdfs:label> ]   .
+		
+datid:DataHubUpload a datid:Tool , owl:NamedIndividual ;
+	rdfs:comment "";
+	datid:uses 
+	[ 	rdfs:comment "xxx" ;
+		datid:implements <rdfs:label> ]   .
 
 ## datatype properties
 
@@ -179,7 +204,8 @@ datid:associatedAgent
 datid:checksum
     a owl:DatatypeProperty ;
     rdfs:comment "Checksum of a file to check for correctness"@en ;
-    rdfs:label "checksum"@en .
+    rdfs:label "checksum"@en ,
+    rdfs:range datid:md5 , datid:crc32 .
 
 datid:containsLinks
     a owl:ObjectProperty ;
@@ -208,7 +234,7 @@ datid:md5
     rdfs:label "md5 checksum" ;
     owl:onDatatype xsd:string ;
     owl:withRestrictions ([
-            xsd:pattern "[a-z0-9]{32}"
+            xsd:pattern "[a-fA-F0-9]{4,32}"
         ]
     ) .
 
