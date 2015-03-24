@@ -78,6 +78,8 @@ dct:issued
 dct:title
     a owl:DatatypeProperty ;
     rdfs:label "Title"@en .
+    
+datid:bibtex a owl:DatatypeProperty . 
 
 ## object properties
 
