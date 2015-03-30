@@ -206,7 +206,7 @@ datid:associatedAgent
 datid:checksum
     a owl:DatatypeProperty ;
     rdfs:comment "Checksum of a file to check for correctness"@en ;
-    rdfs:label "checksum"@en ,
+    rdfs:label "checksum"@en ;
     rdfs:range datid:md5 , datid:crc32 .
 
 datid:containsLinks
