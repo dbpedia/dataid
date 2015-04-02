@@ -1,0 +1,79 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://schema.dbpedia.org/dataid#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dmp: <http://schemas.dbpedia.org/dmp#> .
+
+<http://downloads.dbpedia.org/2014/dataid.ttl>
+ a void:DatasetDescription;
+ foaf:primaryTopic <http://downloads.dbpedia.org/2014/dataid.ttl#dataset> .
+
+<http://downloads.dbpedia.org/2014/dataid.ttl#dataset>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2014 dataset" ;
+ rdfs:label "DBpedia_2014_en" ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "09-04-2014" ;
+ void:triples "1200000000" ;
+ void:vocabulary <http://data.dws.informatik.uni-mannheim.de/dbpedia/2014/dbpedia_2014.owl> ;
+ prov:wasDerivedFrom <http://downloads.dbpedia.org/2014/en/dataid.ttl#wikipedia> ;
+ dc:description "DBpedia is a crowd-sourced community effort to extract structured information from Wikipedia and make this information available on the Web. DBpedia allows you to ask sophisticated queries against Wikipedia, and to link the different data sets on the Web to Wikipedia data. We hope that this work will make it easier for the huge amount of information in Wikipedia to be used in some new interesting ways. Furthermore, it might inspire new mechanisms for navigating, linking, and improving the encyclopedia itself." ;
+ dmp:usefulness "DBpedia is a useful resource for interlinking general datasets with encyclopedic knowledge. Users profitting from DBpedia are open data developers, SMEs and researchers in data science and NLP" ;
+ dmp:similarData """<a href="https://www.freebase.com/">Freebase</a> or <a href="http://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/yago-naga/yago/">YAGO</a> provide similar datasets""" ;
+ dmp:reuseAndIntegration "DBpedia data can be integrated into other datasets and reused for data enrichment or mashup purposes" ;
+ dmp:additionalSoftware """DBpedia needs no additional software to be used. DBpedia provides complementary software for extraction, data management and enrichment under <a href="http://github.com/dbpedia">http://github.com/dbpedia</a>""" ;
+ dmp:repositoryUrl <http://datahub.io/dataset/dbpedia> ;
+ dmp:growth "DBpedia is an ongoing open-source project. Goal of the project is the extraction of the Wikipedia, as complete as possible. Currently, 126 languages are being extracted. In the future, DBpedia will try to increase its importance as the center of the LOD cloud by adding further external datasets" ;
+ dmp:archiveLink <http://downloads.dbpedia.org> ;
+ dmp:preservation "Preservation of the DBpedia is guaranteed by archival of old versions on the archive server, the intent of the DBpedia Association to keep the project running, as well as the DBpedia language chapters and the DBpedia community." ;
+ dmp:openness "DBpedia is an open dataset, licensed under CC-BY-SA 3.0." ;
+ dmp:licenseName "CC-BY-SA 3.0" ;
+ dcat:distribution <http://dbpedia.org/sparql> ;
+ void:subset <http://downloads.dbpedia.org/2014/af/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/als/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/am/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/an/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ar/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/arz/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ast/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/az/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ba/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/bat_smg/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/be/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/be_x_old/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/bg/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/bn/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/bpy/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/br/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/bs/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/bug/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ca/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ce/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ceb/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ckb/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/commons/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/cs/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/cv/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/cy/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/da/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/de/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/el/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/en/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/eo/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/es/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/et/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/eu/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/fa/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/fi/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/fr/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/fy/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ga/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/gd/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/gl/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/gu/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/he/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/hi/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/hr/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ht/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/hu/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/hy/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ia/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/id/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/io/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/is/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/it/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ja/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/jv/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ka/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/kk/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/kn/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ko/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ku/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ky/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/la/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/lb/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/links/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/lmo/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/lt/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/lv/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/map_bms/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/mg/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/mk/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ml/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/mn/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/mr/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ms/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/my/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/mzn/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/nap/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/nds/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ne/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/new/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/nl/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/nn/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/no/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/oc/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/pa/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/pl/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/pms/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/pnb/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/pt/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/qu/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ro/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ru/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/sa/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/sah/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/scn/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/sco/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/sh/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/si/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/simple/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/sk/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/sl/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/sq/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/sr/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/su/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/sv/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/sw/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ta/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/te/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/tg/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/th/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/tl/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/tr/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/tt/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/uk/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/ur/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/uz/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/vec/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/vi/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/vo/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/wa/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/war/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/yi/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/yo/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/zh/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/zh_min_nan/dataid.ttl#dataset>, <http://downloads.dbpedia.org/2014/zh_yue>  .
+
+<http://dbpedia.org/sparql>
+ rdf:type dataid:Distribution ;
+ dc:title "Dbpedia SPARQL endpoint" ;
+ dataid:graphName "http://dbpedia.org" .
+
+<http://downloads.dbpedia.org/2014/en/dataid.ttl#wikipedia>
+ rdf:type prov:Entity ;
+ dc:title "Wikipedia" ;
+ foaf:homepage <http://wikipedia.org> ;
+ prov:wasAttributedTo <http://downloads.dbpedia.org/2014/en/dataid.ttl#wikimedia> .
+
+<http://downloads.dbpedia.org/2014/en/dataid.ttl#wikimedia>
+ rdf:type prov:Agent ;
+ foaf:name "Wikimedia Foundation" ;
+ foaf:mbox "info@wikimedia.org" .
+
+<http://wiki.dbpedia.org/Association>
+ rdf:type dataid:Publisher, dataid:Maintainer ;
+ dataid:agentName "DBpedia Association" ;
+ dataid:agentMail "dbpedia@infai.org" .
+
+<https://github.com/dbpedia/extraction-framework/wiki/Extraction-Instructions>
+ rdf:type prov:Activity ;
+ dc:title "Extraction of DBpedia data from Wikipedia dumps" ;
+ prov:used <http://mappings.dbpedia.org/> ;
+ prov:used <https://github.com/dbpedia/extraction-framework> ;
+ prov:wasAssociatedWith <http://wiki.dbpedia.org/Association> .
+
+<http://mappings.dbpedia.org/>
+ rdf:type prov:Entity ;
+ dc:title "Mapping of Wikipedia articles to RDF" ;
+ dc:publisher <http://wiki.dbpedia.org/Association> .
+
+<https://github.com/dbpedia/extraction-framework>
+ rdf:type prov:Entity ;
+ dc:title "The DBpedia extraction framework" ;
+ dc:publisher  <http://wiki.dbpedia.org/Association> .
