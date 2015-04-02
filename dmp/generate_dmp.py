@@ -175,7 +175,7 @@ def getBasicMetadata(graph, namespaces):
 #       return None   
 #    return str(qres.bindings[0]["?title"])
 
-def generateHtml(data, authors, links, prov, additionalData, outfile):
+def generateHtml(data, authors, links, prov, additionalData):
     
     if os.path.exists(data["label"]+".html"):
         os.remove(data["label"]+".html")
@@ -271,20 +271,18 @@ def main(argv):
     infile = ''
     outfile = ''
     try:
-        opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
+        opts, args = getopt.getopt(argv,"hi:",["ifile="])
     except getopt.GetoptError as err:
-        print('generate_dmp.py -i <inputfile> -o <outputfile>')
+        print('generate_dmp.py -i <inputfile>')
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print('Usage: generate_dmp.py -i <inputfile> -o <outputfile>')
+            print('Usage: generate_dmp.py -i <inputfile>')
             sys.exit()
         elif opt in ("-i","--infile"):
             infile = arg
-        elif opt in ("-o","--outfile"):
-            outfile = arg
         else:
-            print('Usage: generate_dmp.py -i <inputfile> -o <outputfile>')
+            print('Usage: generate_dmp.py -i <inputfile>')
             sys.exit()
     
     if os.path.exists(outfile):
@@ -317,7 +315,7 @@ def main(argv):
             links = countLinks(g, namespaces)
             prov = getProv(g, namespaces)     
             additionalData = getDMPStuff(g, namespaces)
-            generateHtml(data, authors, links, prov, additionalData, outfile)
+            generateHtml(data, authors, links, prov, additionalData)
         except BadSyntax:
             print("[ERROR] Could not parse "+str(dataid), file=sys.stderr)
         
