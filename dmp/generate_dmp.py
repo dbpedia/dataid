@@ -68,7 +68,7 @@ def getDMPStuff(graph, namespaces):
           OPTIONAL{?dataset dmp:archiveLink ?archiveLink }
           OPTIONAL{?dataset dmp:preservation ?preservation } 
           OPTIONAL{?dataset dmp:openness ?openness }
-          OPTIONAL{?dataset dmp:licenseName ?licenseName } 
+          OPTIONAL{?dataset dataid:licenseName ?licenseName } 
           
         }""",initNs=namespaces)
            
@@ -289,14 +289,14 @@ def main(argv):
         os.remove(outfile)
     
     namespaces = dict(
-        dataid=Namespace("http://schema.dbpedia.org/dataid#"),
+        dataid=Namespace("http://dataid.dbpedia.org/ns/core#"),
         void=Namespace("http://rdfs.org/ns/void#"),
         dc=Namespace("http://purl.org/dc/terms/"),
         dcat=Namespace("http://www.w3.org/ns/dcat#"),
         rdf=Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#"),
         foaf=Namespace("http://xmlns.com/foaf/0.1/"),
         prov=Namespace("http://www.w3.org/ns/prov#"),
-        dmp=Namespace("http://schemas.dbpedia.org/dmp#"))
+        dmp=Namespace("http://dataid.dbpedia.org/ns/dmp#"))
     
     dataids = getDataIDs(infile, namespaces)
     

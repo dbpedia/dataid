@@ -1,0 +1,156 @@
+@prefix : <http://www.semanticweb.org/owl/owlapi/turtle#> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@base <http://dataid.dbpedia.org/ns/dmp#> .
+
+<http://dataid.dbpedia.org/ns/dmp#> rdf:type owl:Ontology ;
+                                     
+                     rdfs:label "EU H2020 Data management plan properties"@en ;
+                     rdfs:comment "This is a collection of properties needed to create data management plans for datasets. Find an example dataid implementing these properties here: https://github.com/dbpedia/dataid/blob/master/dmp/dataid.ttl"@en ;
+                     owl:imports <http://dataid.dbpedia.org/ns/core#>
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://dataid.dbpedia.org/ns/dmp#usefulness
+
+dmp:usefulness rdf:type owl:DatatypeProperty ;
+               rdfs:label "usefulness"@en ;
+               rdfs:comment "Description of to whom the data could be useful, and whether it underpins a scientific publication."@en ;
+               rdfs:domain dataid:Dataset ;
+    		   rdfs:range xsd:string .
+
+###  http://dataid.dbpedia.org/ns/dmp#similarData
+
+dmp:similarData rdf:type owl:DatatypeProperty ;
+               rdfs:label "similar data"@en ;
+               rdfs:comment "Information on the existence (or not) of similar data."@en ;
+               rdfs:domain dataid:Dataset ;
+    		   rdfs:range xsd:string .
+
+###  http://dataid.dbpedia.org/ns/dmp#reuseAndIntegration
+
+dmp:reuseAndIntegration rdf:type owl:DatatypeProperty ;
+               rdfs:label "reuse and integration"@en ;
+               rdfs:comment "Information on the possibilities for integration and reuse of the dataset."@en ;
+               rdfs:domain dataid:Dataset ;
+    		   rdfs:range xsd:string .
+
+###  http://dataid.dbpedia.org/ns/dmp#additionalSoftware
+
+dmp:additionalSoftware rdf:type owl:DatatypeProperty ;
+               rdfs:label "additional software"@en ;
+               rdfs:comment "Information on additional software needed for use, re-use and integration."@en ;
+               rdfs:domain dataid:Dataset ;
+    		   rdfs:range xsd:string .
+
+###  http://dataid.dbpedia.org/ns/dmp#growth
+
+dmp:growth rdf:type owl:DatatypeProperty ;
+               rdfs:label "growth"@en ;
+               rdfs:comment "Indication of what the datas approximated end volume is."@en ;
+               rdfs:domain dataid:Dataset ;
+    		   rdfs:range xsd:string .
+
+###  http://dataid.dbpedia.org/ns/dmp#preservation
+
+dmp:preservation rdf:type owl:DatatypeProperty ;
+               rdfs:label "preservation"@en ;
+               rdfs:comment "Indication of how long the data should be preserved what the associated costs are and how these are planned to be covered."@en ;
+               rdfs:domain dataid:Dataset ;
+    		   rdfs:range xsd:string .
+
+###  http://dataid.dbpedia.org/ns/dmp#openness
+
+dmp:openness rdf:type owl:DatatypeProperty ;
+               rdfs:label "openness"@en ;
+               rdfs:comment "Description of how data will be shared, including access procedures, embargo periods (if any), outlines of technical mechanisms for dissemination and definition of whether access will be widely open or restricted to specific groups. In case the dataset cannot be shared, the reasons for this should be mentioned (e.g. ethical, rules of personal data, intellectual property, commercial, privacy-related, security-related)."@en ;
+               rdfs:domain dataid:Dataset ;
+    		   rdfs:range xsd:string .
+
+###  http://dataid.dbpedia.org/ns/dmp#repositoryUrl
+
+dmp:repositoryUrl rdf:type owl:ObjectProperty ;
+               rdfs:label "repository URL"@en ;
+               rdfs:comment "Identification of the repository where data will be stored, if already existing and identified, indicating in particular the type of repository (institutional, standard repository for the discipline, etc.)."@en ;
+               rdfs:domain dataid:Dataset ;
+    		   rdfs:range rdf:Resource .
+
+###  http://dataid.dbpedia.org/ns/dmp#archiveLink
+
+dmp:archiveLink rdf:type owl:ObjectProperty ;
+               rdfs:label "archive link"@en ;
+               rdfs:comment "Link to an archive preserving current data."@en ;
+               rdfs:domain dataid:Dataset ;
+    		   rdfs:range rdf:Resource . 
+
+
+#################################################################
+#
+#    Class restrictions
+#
+#################################################################
+
+dataid:Dataset rdf:type owl:Class ;
+              rdfs:label "Dataset"@en ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty dmp:usefulness ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string 
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty dmp:similarData ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string 
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty dmp:reuseAndIntegration ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string 
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty dmp:additionalSoftware ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string 
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty dmp:growth ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string 
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty dmp:preservation ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string 
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty dmp:openness ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string 
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty dmp:repositoryUrl ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string 
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty dmp:rarchiveLink ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string 
+                              ] .
+
