@@ -3,7 +3,8 @@ Data Management Plan generation
 
 Tool to generate EU H2020 Data Management Plans from DataID files. Use the contained dataid.ttl as template for your dataset, then add its location to the aligned_dataindex.ttl. 
 
-Run the conversion skript using python3 generate_dmp.py -i aligned_dataindex.ttl
+Run the conversion skript using 
+`$ python3 generate_dmp.py -i aligned_dataindex.ttl`
 
 The skript is relatively forgiving for missing metadata. Mandatory properties are:
 * dc:title - Long name of the dataset
