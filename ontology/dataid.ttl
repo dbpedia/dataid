@@ -146,11 +146,17 @@ dataid:Dataset
         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onDataRange xsd:integer ;
         owl:onProperty void:documents
-    ], [
-        a owl:Restriction ;
-        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onClass dataid:Distribution ;
-        owl:onProperty dcat:distribution
+    ], [ rdf:type owl:Class ;
+		owl:unionOf ( [ rdf:type owl:Restriction ;
+			owl:onProperty void:subset ;
+		 	owl:onClass dataid:Dataset ;
+		 	owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+		]
+     	[ rdf:type owl:Restriction ;
+         	owl:onProperty dcat:distribution ;
+         	owl:onClass dataid:Distribution ;
+         	owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+       	] )
     ], [
         a owl:Restriction ;
         owl:onClass rdf:Resource ;
@@ -552,6 +558,12 @@ dcat:mediaType
     rdfs:domain dataid:Distribution ;
     rdfs:range xsd:string .
 
+foaf:topic
+	a owl:DatatypeProperty ;
+    rdfs:comment "Links a DatasetDescription to one or more datasets. Links what the DataID is about."@en ;
+    rdfs:domain void:DatasetDescription ;
+    rdfs:range dataid:Dataset .
+
 odrl:Policy
     a owl:Class .
 
@@ -585,7 +597,8 @@ sd:defaultDataset
 
 void:DatasetDescription
 	a owl:Class ;
-	rdfs:label "A description of one or more datasets. The DataID itself."@en ;
+    rdfs:label "A description of one or more datasets. The DataID itself."@en ;
+	dct:description "A description of one or more datasets. The DataID itself."@en ;
 	rdfs:comment """DataID is a way of describing Linked-Open-Data (LOD) datasets including content, authors, licenses and provenance via RDF files.
 Making your data accessible to others is the basic idea of LOD and is your contribution to a universal data give and take.
 To create DataIDs alongside datasets is the best way of announcing a new dataset and its updates to a global community by placing 
