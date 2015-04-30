@@ -1,0 +1,21 @@
+<http://wiki.dbpedia.org/Association>
+ rdf:type dataid:Publisher, dataid:Maintainer ;
+ dataid:agentName "DBpedia Association" ;
+ dataid:agentMail "dbpedia@infai.org" .
+
+<https://github.com/dbpedia/extraction-framework/wiki/Extraction-Instructions>
+ rdf:type prov:Activity ;
+ dc:title "Extraction of DBpedia data from Wikipedia dumps" ;
+ prov:used <http://mappings.dbpedia.org/> ;
+ prov:used <https://github.com/dbpedia/extraction-framework> ;
+ prov:wasAssociatedWith <http://wiki.dbpedia.org/Association> .
+
+<http://mappings.dbpedia.org/>
+ rdf:type prov:Entity ;
+ dc:title "Mapping of Wikipedia articles to RDF" ;
+ dc:publisher <http://wiki.dbpedia.org/Association> .
+
+<https://github.com/dbpedia/extraction-framework>
+ rdf:type prov:Entity ;
+ dc:title "The DBpedia extraction framework" ;
+ dc:publisher  <http://wiki.dbpedia.org/Association> .
