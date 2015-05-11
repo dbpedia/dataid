@@ -1,0 +1,70 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_data.gov.uk>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/data.gov.uk> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/enakting-mortality/dataid#dataset> ;
+        void:triples         "42"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/enakting-mortality/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:t.omitola@ecs.soton.ac.uk" ;
+        foaf:name  "Tope Omitola" .
+
+<http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/enakting-mortality/dataid#dataset> ;
+        void:triples         "5"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/enakting-mortality/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_rkbexplorer>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/rkbexplorer> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/enakting-mortality/dataid#dataset> ;
+        void:triples         "28"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_ordnance-survey-linked-data>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/ordnance-survey-linked-data> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/enakting-mortality/dataid#dataset> ;
+        void:triples         "399"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/enakting-mortality/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:t.omitola@ecs.soton.ac.uk" ;
+        foaf:name  "Tope Omitola" .
+
+<http://mortality.psi.enakting.org/id/void>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://mortality.psi.enakting.org/id/void> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_data.openpsi.org>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/data.openpsi.org> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/enakting-mortality/dataid#dataset> ;
+        void:triples         "2"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/enakting-mortality/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "enakting-mortality"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/enakting-mortality/dataid#creator> , <http://dataid.dbpedia.org/lod/enakting-mortality/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_rkbexplorer> , <http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_ordnance-survey-linked-data> , <http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_data.openpsi.org> , <http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_dbpedia> , <http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_data.gov.uk> ;
+        dct:description         "UK's Mortality data per region for the year 2008/09, delivered by the UK Home Office.\n\nProvenance of this dataset:\nhttp://www.statistics.gov.uk/downloads/theme_population/Table_3_Deaths_Area_Local_Authority.xls"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "EnAKTing Mortality Dataset"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://mortality.psi.enakting.org/id/Scarborough> ;
+        void:triples            "12933"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://mortality.psi.enakting.org/id/" ;
+        dcat:distribution       <http://mortality.psi.enakting.org/id/void> ;
+        dcat:keyword            "published-by-third-party" , "government" , "format-xhtml" , "format-rdf" , "lod" , "no-proprietary-vocab" ;
+        dcat:landingPage        <http://datahub.io/dataset/enakting-mortality> .

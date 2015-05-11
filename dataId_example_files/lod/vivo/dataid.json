@@ -1,0 +1,129 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/vivo/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:hanjia@indiana.edu",
+    "name" : "Han Jia"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:dingying@indiana.edu",
+    "name" : "VIVO"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/vivo/dataid#creator", "http://dataid.dbpedia.org/lod/vivo/dataid#contributor" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/vivo/dataid#links_dbpedia",
+    "dct:description" : "VIVO has been funded by NIH to create a semantic Facebook for scientist. It utilizes Semantic Web technologies to model scientists and provides federated search to enhance the discovery of researchers and collaborators across the country. The PI is the lead for the VIVO ontology team that is developing a core ontology for modeling scientists, publications, resources, grants, locations, and services. There are 236 classes in VIVO core version 1.0 ontology with 278 object properties and 222 data properties, incorporating classes from popular ontologies, such as BIBO, Dublin Core, Event, FOAF, geopolitical, and SKOS. VIVO data is based on high quality personnel data for VIVO partner institutions (i.e., University of Florida, Cornell University, Indiana University, Washington University, Weill Cornell Medical College, Scripps, and Ponce School of Medicine) that comes primarily from faculty annual reports, with additional publication data from Scopus and PubMed. VIVO data is for scientists with a focus on research (i.e., educational background, publications, expertise, grants), teaching (i.e., courses, seminars, training), and service (i.e., organizing conferences, editorial boards, other community services).\n\nIndividual packages are available:\n\n* package:vivo-cornell-university\n* package:vivo-indiana-university\n* package:vivo-university-of-florida",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "VIVO",
+    "exampleResource" : "http://vivo.ufl.edu/display/n1622",
+    "triples" : "4514025",
+    "uriSpace" : "http://vivo.cornell.edu/individual/",
+    "rdfs:label" : "vivo",
+    "distribution" : [ "http://vivo.ufl.edu/data/all.n3", "http://vivo.cornell.edu/Cornell-VIVO.n3", "http://vivo-onto.slis.indiana.edu/sitemap.xml", "http://vivo.iu.edu/IU-VIVO.n3", "http://thedatahub.org/dataset/vivo-ponce/resource/7c353a8e-92f4-4aa5-8af5-53857d6c483c" ],
+    "keyword" : [ "format-rdf", "published-by-producer", "deref-vocab", "education", "crossdomain", "lod", "void-sparql-endpoint", "social-networks", "dataset-collection", "science", "vivo" ],
+    "landingPage" : "http://datahub.io/dataset/vivo"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/vivo/dataid#dataset",
+    "triples" : "58"
+  }, {
+    "@id" : "http://thedatahub.org/dataset/vivo-ponce/resource/7c353a8e-92f4-4aa5-8af5-53857d6c483c",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://thedatahub.org/dataset/vivo-ponce/resource/7c353a8e-92f4-4aa5-8af5-53857d6c483c",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://vivo-onto.slis.indiana.edu/sitemap.xml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://vivo-onto.slis.indiana.edu/sitemap.xml",
+    "mediaType" : "meta/sitemap"
+  }, {
+    "@id" : "http://vivo.cornell.edu/Cornell-VIVO.n3",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://vivo.cornell.edu/Cornell-VIVO.n3",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://vivo.iu.edu/IU-VIVO.n3",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://vivo.iu.edu/IU-VIVO.n3",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://vivo.ufl.edu/data/all.n3",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://vivo.ufl.edu/data/all.n3",
+    "mediaType" : "text/turtle"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/prefix-cc/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/prefix-cc/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/prefix-cc/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Richard Cyganiak"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/prefix-cc/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/prefix-cc/dataid#creator",
+    "dct:description" : "A community-curated collection of namespace prefix mappings for use in RDF applications.\n\nFeatures a lookup API and bulk download.",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "prefix.cc",
+    "exampleResource" : "http://prefix.cc/foaf.file.vann",
+    "triples" : "8000",
+    "uriSpace" : "http://prefix.cc/",
+    "rdfs:label" : "prefix-cc",
+    "distribution" : [ "http://prefix.cc/popular/all.file.vann", "http://prefix.cc/about/api", "http://prefix.cc/popular/all.file.csv", "http://prefix.cc/popular/all.file.json" ],
+    "keyword" : [ "prefix", "namespace", "published-by-producer", "usergeneratedcontent", "lod", "format-owl", "no-proprietary-vocab", "format-foaf", "no-provenance-metadata", "rdf", "format-vann", "no-license-metadata", "format-rdf" ],
+    "landingPage" : "http://datahub.io/dataset/prefix-cc"
+  }, {
+    "@id" : "http://prefix.cc/about/api",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://prefix.cc/about/api",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://prefix.cc/popular/all.file.csv",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://prefix.cc/popular/all.file.csv",
+    "mediaType" : "CSV"
+  }, {
+    "@id" : "http://prefix.cc/popular/all.file.json",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://prefix.cc/popular/all.file.json",
+    "mediaType" : "JSON"
+  }, {
+    "@id" : "http://prefix.cc/popular/all.file.vann",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://prefix.cc/popular/all.file.vann",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

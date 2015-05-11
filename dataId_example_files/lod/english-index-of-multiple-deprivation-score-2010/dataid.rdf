@@ -1,0 +1,92 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/english-index-of-multiple-deprivation-score-2010/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/english-index-of-multiple-deprivation-score-2010/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://opendatacommunities.org/def/IMD">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://opendatacommunities.org/def/IMD"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://opendatacommunities.org/datasets/imd-score-2010.ttl">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://opendatacommunities.org/datasets/imd-score-2010.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://opendatacommunities.org/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://opendatacommunities.org/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://opendatacommunities-downloads.s3.amazonaws.com/imd-2010-imd-score.ttl.zip">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://opendatacommunities-downloads.s3.amazonaws.com/imd-2010-imd-score.ttl.zip"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/english-index-of-multiple-deprivation-score-2010/dataid#dataset">
+    <dcat:distribution rdf:resource="http://opendatacommunities.org/datasets/imd-score-2010.ttl"/>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/english-index-of-multiple-deprivation-score-2010/dataid#contributor">
+        <foaf:mbox>mailto:hello@publishmydata.com</foaf:mbox>
+        <foaf:name>PublishMyData</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>format-sdmxd</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/english-index-of-multiple-deprivation-score-2010/dataid#links_odc-lsoa">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/odc-lsoa"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/english-index-of-multiple-deprivation-score-2010/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >32482</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://opendatacommunities.org/sparql"/>
+    <dcat:distribution rdf:resource="http://opendatacommunities.org/def/IMD"/>
+    <void:uriSpace>http://opendatacommunities.org/id/IMD/2010/IMD-score/LSOA/</void:uriSpace>
+    <dcat:keyword>department-of-infrastructure-transport-regional-development-and-local-government</dcat:keyword>
+    <dcat:keyword>geographic</dcat:keyword>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dcat:keyword>housing</dcat:keyword>
+    <dcat:keyword>environment</dcat:keyword>
+    <dcat:keyword>crime</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>deprivation</dcat:keyword>
+    <dct:license rdf:resource="http://reference.data.gov.uk/id/open-government-licence"/>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >194892</void:triples>
+    <dcat:keyword>health</dcat:keyword>
+    <dcat:keyword>government</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >English Index of Multiple Deprivation Score 2010</dct:title>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/english-index-of-multiple-deprivation-score-2010/dataid#creator">
+        <foaf:mbox>mailto:bill@swirrl.com</foaf:mbox>
+        <foaf:name>Bill Roberts</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>format-cube</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <void:exampleResource rdf:resource="http://opendatacommunities.org/doc/IMD/2010/IMD-score/LSOA/E01000001.ttl"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >english-index-of-multiple-deprivation-score-2010</rdfs:label>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This dataset contains the main Index of Multiple Deprivation scores for 2010. It was created from data provided by the Department of Communities and Local Government. See &lt;a href="http://www.communities.gov.uk/publications/corporate/statistics/indices2010"&gt;here&lt;/a&gt; for details.
+
+194892 triples.</dct:description>
+    <dcat:keyword>education</dcat:keyword>
+    <dcat:keyword>employment</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/english-index-of-multiple-deprivation-score-2010"/>
+    <void:sparqlEndpoint rdf:resource="http://opendatacommunities.org/sparql"/>
+    <dcat:distribution rdf:resource="http://opendatacommunities-downloads.s3.amazonaws.com/imd-2010-imd-score.ttl.zip"/>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dcat:keyword>imd</dcat:keyword>
+    <dcat:keyword>linkeddata</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

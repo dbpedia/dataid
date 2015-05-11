@@ -1,0 +1,36 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://inoh.bio2rdf.org/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://inoh.bio2rdf.org/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/bio2rdf-inoh/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:name  "François Belleau" .
+
+<http://dataid.dbpedia.org/lod/bio2rdf-inoh/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Bio2RDF" .
+
+<http://dataid.dbpedia.org/lod/bio2rdf-inoh/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "bio2rdf-inoh"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/bio2rdf-inoh/dataid#contributor> , <http://dataid.dbpedia.org/lod/bio2rdf-inoh/dataid#creator> ;
+        dct:description         " Is a pathway database of model organisms including human, mouse, rat and others. In INOH, the term pathway refers to higher order functional knowledge such as relationships among multiple bio-molecules that constitute signal transduction pathways or biological events in general. As most part of this knowledge resides in scientific articles, the database focuses on curating and encoding textual knowledge into a machine-processable form."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "Bio2RDF::INOH"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:sparqlEndpoint     <http://inoh.bio2rdf.org/sparql> ;
+        void:uriSpace           "inoh " ;
+        dcat:distribution       <http://inoh.bio2rdf.org/sparql> ;
+        dcat:keyword            "published by third party." , "lod" ;
+        dcat:landingPage        <http://datahub.io/dataset/bio2rdf-inoh> .
+
+<http://dataid.dbpedia.org/lod/bio2rdf-inoh/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/bio2rdf-inoh/dataid#dataset" .

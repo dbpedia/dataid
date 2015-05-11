@@ -1,0 +1,140 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.bibsys.no/data/query_authority.html",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://data.bibsys.no/data/query_authority.html",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/radatana/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/radatana/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/radatana/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:support@bibsys.no",
+    "name" : "support@bibsys.no"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/radatana/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:support@bibsys.no",
+    "name" : "BIBSYS"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/radatana/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/radatana/dataid#creator", "http://dataid.dbpedia.org/lod/radatana/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/radatana/dataid#links_dnb-gemeinsame-normdatei", "http://dataid.dbpedia.org/lod/radatana/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/radatana/dataid#links_viaf" ],
+    "dct:description" : "This is an RDF representation of the personal name authorities in the BIBSYS authority file, the dataset was created with funding from the Norwegian Archive, Library and Museum Authority (ABM-utvikling) by BIBSYS and NTNU University Library.\n\nSee also [http://brinxmat.posterous.com/bibsys-personal-name-linked-open-data-publish](http://brinxmat.posterous.com/bibsys-personal-name-linked-open-data-publish).",
+    "license" : "http://www.opendefinition.org/licenses/odc-pddl",
+    "dct:title" : "Rådata nå!",
+    "exampleResource" : "http://data.bibsys.no/data/notrbib/authorityentry/x90061718",
+    "sparqlEndpoint" : "http://data.bibsys.no/data/query_authority.html",
+    "triples" : "9370074",
+    "uriSpace" : "http://data.bibsys.no/data/notrbib/authorityentry/",
+    "rdfs:label" : "radatana",
+    "distribution" : [ "http://www.bibsys.no/linked_data/authority", "http://def.bibsys.no/xmlns/radatana/1.0#", "http://data.bibsys.no/data/query_authority.html" ],
+    "keyword" : [ "format-foaf", "format-rdfs", "format-dc", "format-whois", "format-radatana", "persons", "linkeddata", "no-license-metadata", "linked-open-data", "bibliographic", "deref-vocab", "format-skos", "norwegian", "authorities", "published-by-producer", "no-provenance-metadata", "publications", "no-vocab-mappings", "linked-data", "format-xsd", "format-owl", "format-rdf", "lod", "lld" ],
+    "landingPage" : "http://datahub.io/dataset/radatana"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/radatana/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/radatana/dataid#dataset",
+    "triples" : "30346"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/radatana/dataid#links_dnb-gemeinsame-normdatei",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/radatana/dataid#dataset",
+    "triples" : "209681"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/radatana/dataid#links_viaf",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/viaf/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/radatana/dataid#dataset",
+    "triples" : "311154"
+  }, {
+    "@id" : "http://def.bibsys.no/xmlns/radatana/1.0#",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://def.bibsys.no/xmlns/radatana/1.0#",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.bibsys.no/linked_data/authority",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.bibsys.no/linked_data/authority",
+    "mediaType" : "application/x-ntriples"
+  } ],
+  "@context" : {
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

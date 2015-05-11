@@ -1,0 +1,52 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "traditional-korean-medicine"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid#creator> , <http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid#links_bioportal-ncbitaxon> ;
+        dct:description         "Traditional Korean medicine (Hangul: 한의학, Hanja: 韓醫學) developed with the influence of other traditional medicine. Its techniques in treatment and diagnosis are both similar and unique to other traditional medicine. (Visit Wikipedia, http://en.wikipedia.org/wiki/Traditional_Korean_medicine.)\n\n\"Ontology-based Traditional Korean Medicine Knowledge Framework\" project is systematization of core knowledge of TKM and enhancing the applicability of the knowledge. This project is supported by Korean government and Korea Institute of Oriental Medicine is pursuing this project since 2009.\n\nTo achieve this, our group is constructing ontology for TKM, in particular, patient status and medicinal treatment for them. The center is conceptualizing disease, pattern, symptom and medical test result to define patient status and medicinal materials, formulas, acupuncture and moxibustion for treatment method.\n\nFor information about terms of traditional medicine in the area of East Asia, read this WHO standard, http://tkm.kiom.re.kr/ontology/doc/WHO-IST.pdf. This paper can be found at http://www.wpro.who.int/publications/PUB_9789290612487.htm. (Last check: Dec. 17th, 2009)\n\nAs a first step for construction, the center is focusing on medicinal materials including biological materials (plants and animals), minerals (stone and metal resources)."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/gfdl> ;
+        dct:title               "Traditional Korean Medicine Ontology"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://tkm.kiom.re.kr/ontology/get?query=MM%E4%BA%BA%E8%94%98> , <http://ontology.kiom.re.kr/ontology/ginseng_example.rdf> ;
+        void:sparqlEndpoint     <http://tkm.kiom.re.kr/ontology/sparql> ;
+        void:triples            "51932"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://tkm.kiom.re.kr/tkmedicine" ;
+        dcat:distribution       <http://tkm.kiom.re.kr/ontology/sparql> , <http://ontology.kiom.re.kr/ontology/lod.rdf> ;
+        dcat:keyword            "format-foaf" , "lod" , "no-vocab-mappings" , "lifesciences" , "medicines" , "no-provenance-metadata" , "published-by-producer" , "no-deref-vocab" , "format-rdf" , "linked-data" , "format-ncbitaxon" ;
+        dcat:landingPage        <http://datahub.io/dataset/traditional-korean-medicine> .
+
+<http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:skkim@kiom.re.kr" ;
+        foaf:name  "Sang-Kyun Kim" .
+
+<http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:hcjang@kiom.re.kr" ;
+        foaf:name  "Hyunchul Jang" .
+
+<http://ontology.kiom.re.kr/ontology/lod.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://ontology.kiom.re.kr/ontology/lod.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://tkm.kiom.re.kr/ontology/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://tkm.kiom.re.kr/ontology/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid#links_bioportal-ncbitaxon>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/bioportal-ncbitaxon/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid#dataset> ;
+        void:triples         "2119"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid#dataset" .

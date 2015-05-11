@@ -1,0 +1,78 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/semantic_bible/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/semantic_bible/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/semantic_bible/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Sean Boisen"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/semantic_bible/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/semantic_bible/dataid#creator",
+    "dct:description" : "Data exposed: (for New Testament Names) is a semantic knowledge base describing each named thing in the New Testament\n\nSize of dump and data set: about 600 names\n\nNTNames base URI <http://semanticbible.org/ns/2006/NTNames#>\nBut not dereferenceable, unless explicit extension added (http://www.semanticbible.com/2006/11/NTNames.owl)\n\n### Openness: NOT OPEN\n\nLinks to cc by-nc-sa in footer.",
+    "license" : "http://creativecommons.org/licenses/by-nc/2.0/",
+    "dct:title" : "Semantic Bible",
+    "uriSpace" : "http://semanticbible.org/ns/2006/NTNames#",
+    "rdfs:label" : "semantic_bible",
+    "distribution" : [ "http://www.semanticbible.org/2006/11/NTNames.owl, http://www.semanticbible.org/2006/11/NTN-individuals.owl", "http://www.semanticbible.com/2006/11/NTNames.owl" ],
+    "keyword" : [ "no-deref-vocab", "lod", "lodcloud.unconnected", "bible", "linkeddata", "format-rdf", "lodcloud.needsfixing", "ckanupload.esw.200910", "lodcloud.nolinks", "rdf" ],
+    "landingPage" : "http://datahub.io/dataset/semantic_bible"
+  }, {
+    "@id" : "http://www.semanticbible.com/2006/11/NTNames.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.semanticbible.com/2006/11/NTNames.owl",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://www.semanticbible.org/2006/11/NTNames.owl, http://www.semanticbible.org/2006/11/NTN-individuals.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.semanticbible.org/2006/11/NTNames.owl, http://www.semanticbible.org/2006/11/NTN-individuals.owl",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

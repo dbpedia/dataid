@@ -1,0 +1,45 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/bricklink/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bricklink/dataid#dataset> ;
+        void:triples         "25797"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bricklink/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "bricklink"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/bricklink/dataid#creator> , <http://dataid.dbpedia.org/lod/bricklink/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/bricklink/dataid#links_dbpedia> ;
+        dct:description         "Bricklink is an unofficial lego marketplace. Essentially it is the EBay for lego, where you can buy or sell anything to do with Lego. The lego community maintain a number of fantastic resources that catalogue all of the Lego products, often down to the detail of the number, colour and type of each part in a lego set. The catalogue that powers the Bricklink website is available for download and reuse and has been used to create this dataset.\n\nCurrently the dataset consists of descriptions of over 9000 Lego sets and over 23,000 Lego parts. A number of the lego sets have detailed inventories including number, type and colour of parts. There are also links to sets, instructions and part images.\n\n*Note* this dataset is no longer updated, it was taken off-line during the shutdown of Kasabi. A dump of the dataset has been [uploaded to the Internet Archive](http://archive.org/details/kasabi)\n"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "Bricklink"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:triples            "3314214"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://data.kasabi.com/dataset/bricklink/" ;
+        dcat:distribution       <http://archive.org/download/kasabi/bricklink.gz> ;
+        dcat:keyword            "format-rdf" , "published-by-third-party" , "published" , "media" ;
+        dcat:landingPage        <http://datahub.io/dataset/bricklink> .
+
+<http://dataid.dbpedia.org/lod/bricklink/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:leigh@ldodds.com" ;
+        foaf:name  "Leigh Dodds" .
+
+<http://archive.org/download/kasabi/bricklink.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://archive.org/download/kasabi/bricklink.gz> ;
+        dcat:mediaType    "application/x-nquads" .
+
+<http://dataid.dbpedia.org/lod/bricklink/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:leigh@ldodds.com" ;
+        foaf:name  "Leigh Dodds" .
+
+<http://dataid.dbpedia.org/lod/bricklink/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/bricklink/dataid#dataset" .

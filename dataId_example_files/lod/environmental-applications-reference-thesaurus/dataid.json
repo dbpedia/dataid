@@ -1,0 +1,152 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:riccardo.albertoni@gmail.com",
+    "name" : "Riccardo Albertoni (CNR-IMATI-GE),  Monica De Martino (CNR-IMATI-GE)  "
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:plini@iia.cnr.it",
+    "name" : "Paolo Plini (CNR-IIA-EKOLab) "
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#contributor", "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#links_umthes", "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#links_agrovoc-skos", "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#links_eurovoc-in-skos", "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#links_gemet" ],
+    "dct:description" : "The Environmental Applications Reference Thesaurus (EARTh) has been compiled and is maintained by the  CNR-IIA-EKOLab  to facilitate the indexing, retrieval, harmonizing and integration of human- and machine-readable environmental information from disparate sources, across the cultural and linguistic barriers. Ownership of such material always remains with the CNR-IIA-EKOLab.\n\nEARTh has been made available as linked data as an activity within the European Project NatureSDIPlus (ECP-2007-GEO-317007)\n\n",
+    "license" : "http://creativecommons.org/licenses/by-nc/2.0/",
+    "dct:title" : "EARTh",
+    "exampleResource" : "http://linkeddata.ge.imati.cnr.it:2020/resource/EARTh/100000",
+    "sparqlEndpoint" : "http://linkeddata.ge.imati.cnr.it:2020/sparql",
+    "triples" : "133315",
+    "uriSpace" : "http://linkeddata.ge.imati.cnr.it:2020/resource/EARTh/",
+    "rdfs:label" : "environmental-applications-reference-thesaurus",
+    "distribution" : [ "http://purl.oclc.org/NET/EARThVOID", "http://purl.oclc.org/net/DumpEarthRDF", "http://linkeddata.ge.imati.cnr.it:2020/sparql" ],
+    "keyword" : [ "lld", "license-metadata", "thesaurus", "no-proprietary-vocab", "vocab-mappings", "format-skos", "schemata", "format-rdf", "provenance-metadata", "geographic", "lod", "published-by-third-party", "void-sparql-endpoint" ],
+    "landingPage" : "http://datahub.io/dataset/environmental-applications-reference-thesaurus"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#links_agrovoc-skos",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/agrovoc-skos",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#dataset",
+    "triples" : "1458"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#dataset",
+    "triples" : "1862"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#links_eurovoc-in-skos",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/eurovoc-in-skos",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#dataset",
+    "triples" : "1346"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#links_gemet",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/gemet/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#dataset",
+    "triples" : "4365"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#links_umthes",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/umthes/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/environmental-applications-reference-thesaurus/dataid#dataset",
+    "triples" : "2970"
+  }, {
+    "@id" : "http://linkeddata.ge.imati.cnr.it:2020/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://linkeddata.ge.imati.cnr.it:2020/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://purl.oclc.org/NET/EARThVOID",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.oclc.org/NET/EARThVOID",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://purl.oclc.org/net/DumpEarthRDF",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.oclc.org/net/DumpEarthRDF",
+    "mediaType" : "text/n3"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

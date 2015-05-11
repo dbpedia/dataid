@@ -1,0 +1,73 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/eu-parliament-media/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/eu-parliament-media/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://eupmedia.publicdata.eu/dump/eup_media_assets.ttl">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://eupmedia.publicdata.eu/dump/eup_media_assets.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://api.talis.com/stores/eupmedia/services/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://api.talis.com/stores/eupmedia/services/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://eupmedia.publicdata.eu/void.ttl">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://eupmedia.publicdata.eu/void.ttl"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/eu-parliament-media/dataid#dataset">
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>government</dcat:keyword>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dcat:keyword>format-places</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/eu-parliament-media/dataid#creator">
+        <foaf:name>Knud Möller</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:distribution rdf:resource="http://api.talis.com/stores/eupmedia/services/sparql"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >eu-parliament-media</rdfs:label>
+    <dcat:keyword>format-nfo</dcat:keyword>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:keyword>politics</dcat:keyword>
+    <void:exampleResource rdf:resource="http://eupmedia.publicdata.eu/data/video/eu_parliament/9cbc7cbf-4a97-41b9-91a4-14baad45bb94.rdf"/>
+    <void:uriSpace>http://eupmedia.publicdata.eu/data/</void:uriSpace>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This dataset contains information about multi-media content published by the European Parliament at http://audiovisual.europarl.europa.eu/. Media assets of type video, audio and image are contained. All assests are annotated with primary metadata (e.g., length, resolution, size, etc.), as well as topic metadata. Where topics are people, those are represented as complex resources in their own right, with names, roles in organisations, etc. Organisations are located in countries according to the Kasabi country dataset.
+</dct:description>
+    <dcat:distribution rdf:resource="http://eupmedia.publicdata.eu/void.ttl"/>
+    <dcat:keyword>latc</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/eu-parliament-media"/>
+    <void:sparqlEndpoint rdf:resource="http://api.talis.com/stores/eupmedia/services/sparql"/>
+    <dcat:keyword>eu-institution</dcat:keyword>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:distribution rdf:resource="http://eupmedia.publicdata.eu/dump/eup_media_assets.ttl"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >EU Parliament Media Library</dct:title>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <dcat:keyword>eu</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eu-parliament-media/dataid#links_eu-who-is-who">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eu-parliament-media/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1000</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >532957</void:triples>
+    <dcat:keyword>media</dcat:keyword>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dcat:keyword>eu-parliament</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

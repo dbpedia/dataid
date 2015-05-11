@@ -1,0 +1,138 @@
+{
+  "@graph" : [ {
+    "@id" : "ftp://ext-ftp.fao.org/GI/Reserved/Agris/LOD/RDF_Output.tar.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "ftp://ext-ftp.fao.org/GI/Reserved/Agris/LOD/RDF_Output.tar.gz",
+    "mediaType" : "application/x-tgz"
+  }, {
+    "@id" : "http://202.45.142.113:10035/repositories/agris",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://202.45.142.113:10035/repositories/agris",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://agris.fao.org/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://agris.fao.org/void.ttl",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/agris/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/agris/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/agris/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:fabrizio.celli@fao.org",
+    "name" : "FAO-OEKC"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/agris/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:agris@fao.org",
+    "name" : "FAO OEKC"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/agris/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/agris/dataid#creator", "http://dataid.dbpedia.org/lod/agris/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/agris/dataid#links_fao-geopolitical-ontology", "http://dataid.dbpedia.org/lod/agris/dataid#links_agrovoc-skos", "http://dataid.dbpedia.org/lod/agris/dataid#links_dbpedia" ],
+    "dct:description" : "AGRIS is one of the most important world-wide information systems in the area of the agricultural sciences. AGRIS is an initiative that was set up by FAO of the United Nations in 1974 to make information on agriculture research globally available. The historical overall objective of AGRIS is to improve access and exchange of information serving “the information needs of developed and developing countries on a partnership basis”.",
+    "license" : "http://creativecommons.org/licenses/by-nc/2.0/",
+    "dct:title" : "AGRIS",
+    "exampleResource" : "http://agris.fao.org/aos/records/data/JP2010001379?output=xml",
+    "sparqlEndpoint" : "http://202.45.142.113:10035/repositories/agris",
+    "triples" : "112500000",
+    "rdfs:label" : "agris",
+    "distribution" : [ "http://agris.fao.org/void.ttl", "http://202.45.142.113:10035/repositories/agris", "ftp://ext-ftp.fao.org/GI/Reserved/Agris/LOD/RDF_Output.tar.gz" ],
+    "keyword" : [ "forestry", "publications", "published-by-third-party", "hunger", "deref-vocab", "agriculture", "fisheries", "lod" ],
+    "landingPage" : "http://datahub.io/dataset/agris"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/agris/dataid#links_agrovoc-skos",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/agrovoc-skos",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/agris/dataid#dataset",
+    "triples" : "10000000"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/agris/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/agris/dataid#dataset",
+    "triples" : "3000000"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/agris/dataid#links_fao-geopolitical-ontology",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/fao-geopolitical-ontology",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/agris/dataid#dataset",
+    "triples" : "500000"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

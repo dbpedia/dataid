@@ -1,0 +1,64 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/southampton-ac-uk-apps/dataid#dataset">
+    <dcat:keyword>lodcloud.unconnected</dcat:keyword>
+    <dct:license rdf:resource="http://reference.data.gov.uk/id/open-government-licence"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dataset from University of Southampton Open Data Service. A catalog of known websites, web widgets, phone apps and other tools using our datasets.</dct:description>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://sparql.data.southampton.ac.uk/">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://sparql.data.southampton.ac.uk/"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dcat:keyword>lodcloud.nolinks</dcat:keyword>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <dcat:distribution rdf:resource="http://sparql.data.southampton.ac.uk/"/>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dcat:keyword>no-deref-vocab</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/southampton-ac-uk-apps/dataid#contributor">
+        <foaf:mbox>mailto:cjg@ecs.soton.ac.uk</foaf:mbox>
+        <foaf:name>Christopher Gutteridge</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://id.southampton.ac.uk/dataset/apps/latest.ttl">
+        <dcat:mediaType>text/turtle</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://id.southampton.ac.uk/dataset/apps/latest.ttl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://data.southampton.ac.uk/apps.html">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://data.southampton.ac.uk/apps.html"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://id.southampton.ac.uk/dataset/apps/latest.rdf">
+        <dcat:mediaType>RDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://id.southampton.ac.uk/dataset/apps/latest.rdf"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Apps using our data (University of Southampton)</dct:title>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >200</void:triples>
+    <void:exampleResource rdf:resource="http://id.southampton.ac.uk/app/soton-map-embed"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >southampton-ac-uk-apps</rdfs:label>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/southampton-ac-uk-apps"/>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/southampton-ac-uk-apps/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/southampton-ac-uk-apps/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

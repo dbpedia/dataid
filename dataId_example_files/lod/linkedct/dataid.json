@@ -1,0 +1,158 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.linkedct.org/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.linkedct.org/",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://data.linkedct.org/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://data.linkedct.org/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linkedct/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/linkedct/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linkedct/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:oktie@cs.toronto.edu ",
+    "name" : "Oktie Hassanzadeh"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linkedct/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:oktie@cs.toronto.edu",
+    "name" : "Oktie Hassanzadeh"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linkedct/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/linkedct/dataid#creator", "http://dataid.dbpedia.org/lod/linkedct/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/linkedct/dataid#links_bio2rdf-pubmed", "http://dataid.dbpedia.org/lod/linkedct/dataid#links_fu-berlin-drugbank", "http://dataid.dbpedia.org/lod/linkedct/dataid#links_tcmgenedit_dataset", "http://dataid.dbpedia.org/lod/linkedct/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/linkedct/dataid#links_fu-berlin-diseasome", "http://dataid.dbpedia.org/lod/linkedct/dataid#links_fu-berlin-dailymed" ],
+    "dct:description" : "Data exposed: Linked Clinical Trials\n\nSize of dump and data set: ~25 million triples as of April 2011. 4.8GB NTriples dump\n\n###CC by-nc-sa license\n\nYou are free to copy, distribute, transmit, and adapt the work for non-commercial purposes. However, you need to follow the terms and conditions available at http://www.clinicaltrials.gov/ct2/info/terms\n\nAccording to OKD (http://www.opendefinition.org/okd/) the data is not considered open.",
+    "license" : "http://creativecommons.org/licenses/by-nc/2.0/",
+    "dct:title" : "LinkedCT",
+    "exampleResource" : "http://linkedct.org/resource/condition/chronic-myeloproliferative-disorders/",
+    "sparqlEndpoint" : "http://data.linkedct.org/sparql",
+    "triples" : "24653008",
+    "uriSpace" : "http://linkedct.org/resource/",
+    "rdfs:label" : "linkedct",
+    "distribution" : [ "http://www.cs.toronto.edu/%7Eoktie/linkedct/linkedct-live-dump-latest.nt.bz2", "http://data.linkedct.org/", "http://data.linkedct.org/sparql" ],
+    "keyword" : [ "health", "ckanupload.esw.200910", "linkeddata", "rdf", "published-by-third-party", "no-license-metadata", "deref-vocab", "lod", "lifesciences", "format-linkedct", "size-gb", "no-provenance-metadata", "format-rdf" ],
+    "landingPage" : "http://datahub.io/dataset/linkedct"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linkedct/dataid#links_bio2rdf-pubmed",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/bio2rdf-pubmed/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/linkedct/dataid#dataset",
+    "triples" : "76483"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linkedct/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/linkedct/dataid#dataset",
+    "triples" : "25476"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linkedct/dataid#links_fu-berlin-dailymed",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/fu-berlin-dailymed/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/linkedct/dataid#dataset",
+    "triples" : "37600"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linkedct/dataid#links_fu-berlin-diseasome",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/fu-berlin-diseasome/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/linkedct/dataid#dataset",
+    "triples" : "1325"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linkedct/dataid#links_fu-berlin-drugbank",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/fu-berlin-drugbank/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/linkedct/dataid#dataset",
+    "triples" : "26047"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linkedct/dataid#links_tcmgenedit_dataset",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/linkedct/dataid#dataset",
+    "triples" : "141"
+  }, {
+    "@id" : "http://www.cs.toronto.edu/%7Eoktie/linkedct/linkedct-live-dump-latest.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.cs.toronto.edu/%7Eoktie/linkedct/linkedct-live-dump-latest.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

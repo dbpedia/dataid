@@ -1,0 +1,36 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/npg-data-citations/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:developers@nature.com" ;
+        foaf:name  "NPG" .
+
+<http://dataid.dbpedia.org/lod/npg-data-citations/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:developers@nature.com" ;
+        foaf:name  "NPG Developers" .
+
+<http://dataid.dbpedia.org/lod/npg-data-citations/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "npg-data-citations"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/npg-data-citations/dataid#contributor> , <http://dataid.dbpedia.org/lod/npg-data-citations/dataid#creator> ;
+        dct:description         "Graph of npg:DataCitation triples. The npg:DataCitation objects model journal article data references. "^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "Nature Publishing Group - Data Citations"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dcat:distribution       <http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph<http://ns.nature.com/graphs/data-citations>{?s?p?o.}}limit25> ;
+        dcat:keyword            "published-by-producer" , "format-rdf" , "sciences" , "academic" , "health sciences" , "science" , "journals" , "publications" , "bibliographic" , "life sciences" , "format-npg" , "physical sciences" ;
+        dcat:landingPage        <http://datahub.io/dataset/npg-data-citations> .
+
+<http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph<http://ns.nature.com/graphs/data-citations>{?s?p?o.}}limit25>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph<http://ns.nature.com/graphs/data-citations>{?s?p?o.}}limit25> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/npg-data-citations/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/npg-data-citations/dataid#dataset" .

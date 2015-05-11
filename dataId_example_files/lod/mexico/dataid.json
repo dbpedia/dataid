@@ -1,0 +1,88 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.sfb673.org/mexico/mexico-1.0.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.sfb673.org/mexico/mexico-1.0.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/mexico/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/mexico/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/mexico/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:pmenke@TechFak.Uni-Bielefeld.DE",
+    "name" : "Peter Menke"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/mexico/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:pmenke@TechFak.Uni-Bielefeld.DE",
+    "name" : "Peter Menke"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/mexico/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/mexico/dataid#creator", "http://dataid.dbpedia.org/lod/mexico/dataid#contributor" ],
+    "dct:description" : "MExiCo (short for \"Multimodal Experiment Corpora\") is a data model for data collections containing multimodal linguistic and interaction annotations.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "MExiCo",
+    "exampleResource" : "http://data.sfb673.org/mexico/mexico-example.ttl",
+    "triples" : "100",
+    "rdfs:label" : "mexico",
+    "distribution" : "http://data.sfb673.org/mexico/mexico-1.0.ttl",
+    "keyword" : [ "published-by-producer", "format-owl", "rdf", "format-xsd", "format-dc", "format-foaf", "format-rdf", "linguistics", "schemata", "lod", "format-prov" ],
+    "landingPage" : "http://datahub.io/dataset/mexico"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

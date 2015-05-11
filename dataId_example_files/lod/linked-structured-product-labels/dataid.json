@@ -1,0 +1,148 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:rdb20@pitt.edu",
+    "name" : "Richard D Boyce"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:rdb20@pitt.edu",
+    "name" : "Richard D Boyce"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#creator", "http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#links_rxnorm", "http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#links_bio2rdf.org", "http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#links_chebi", "http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#links_drugbank" ],
+    "dct:description" : "Linked Structured Product Labels (LinkedSPLs) publishes all sections of FDA-approved prescription and over the counter drug package inserts from DailyMed for use by NLP and Semantic Web researchers. Currently, only data from the product labels of prescription drugs and a subset of over the counter medications is provided. A powerful feature of LinkedSPLs is that all active moieties and product labels are mapped to RxNORM PURLs provided by the NCBO Bioportal SPARQL endpoint. Also, this site's SPL data is updated weekly and all SPLs retain DailyMed versioning data so that researchers can record the provenance of the text and sections they work with. LinkedSPLs is provided as a service as part of the Drug Interaction Knowledge Base (DIKB) project.\n\nNOTE: This resource shows content present in the Structured Product Labels provided by the National Library of Medicine's (NLM) DailyMed resource. The NLM requests that all users of DailyMed content to provide attribution to the NLM and DailyMed as is requested on the following page http://www.nlm.nih.gov/copyright.html.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "Linked Structured Product Labels",
+    "exampleResource" : "http://dbmi-icode-01.dbmi.pitt.edu/linkedSPLs/resource/structuredProductLabelMetadata/0005e2a8-3ab9-4173-a46f-9c53881379e2",
+    "sparqlEndpoint" : "http://dbmi-icode-01.dbmi.pitt.edu/linkedSPLs/sparql",
+    "rdfs:label" : "linked-structured-product-labels",
+    "distribution" : [ "http://dbmi-icode-01.dbmi.pitt.edu/dikb-evidence/linkedSPLs-dump.nt.bz2", "http://dbmi-icode-01.dbmi.pitt.edu/linkedSPLs/", "http://purl.org/net/linkedSPLs", "http://dbmi-icode-01.dbmi.pitt.edu/linkedSPLs/sparql" ],
+    "keyword" : [ "lod", "published-by-third-party", "deref-vocab", "provenance-metadata", "license-metadata", "lifesciences", "medications-safety", "drugs" ],
+    "landingPage" : "http://datahub.io/dataset/linked-structured-product-labels"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#links_bio2rdf.org",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/bio2rdf.org/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#dataset",
+    "triples" : "1412"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#links_chebi",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/chebi/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#dataset",
+    "triples" : "4234"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#links_drugbank",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/drugbank/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#dataset",
+    "triples" : "706"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#links_rxnorm",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rxnorm/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#dataset",
+    "triples" : "20000"
+  }, {
+    "@id" : "http://dbmi-icode-01.dbmi.pitt.edu/dikb-evidence/linkedSPLs-dump.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://dbmi-icode-01.dbmi.pitt.edu/dikb-evidence/linkedSPLs-dump.nt.bz2",
+    "mediaType" : "nt"
+  }, {
+    "@id" : "http://dbmi-icode-01.dbmi.pitt.edu/linkedSPLs/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://dbmi-icode-01.dbmi.pitt.edu/linkedSPLs/",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://dbmi-icode-01.dbmi.pitt.edu/linkedSPLs/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://dbmi-icode-01.dbmi.pitt.edu/linkedSPLs/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://purl.org/net/linkedSPLs",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/net/linkedSPLs",
+    "mediaType" : "HTML"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

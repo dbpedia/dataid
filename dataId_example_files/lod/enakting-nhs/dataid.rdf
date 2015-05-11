@@ -1,0 +1,57 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/enakting-nhs/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/enakting-nhs/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://nhs.psi.enakting.org/id/void">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://nhs.psi.enakting.org/id/void"/>
+  </dataid:Distribution>
+  <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/enakting-nhs/dataid#links_ordnance-survey-linked-data">
+    <void:objectsTarget rdf:resource="http://datahub.io/dataset/ordnance-survey-linked-data"/>
+    <void:subjectsTarget>
+      <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/enakting-nhs/dataid#dataset">
+        <dcat:distribution rdf:resource="http://nhs.psi.enakting.org/id/void"/>
+        <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >National Health Service (waiting times) performance data  published by the UK Department of Health for the year 2008/09. </dct:description>
+        <void:uriSpace>http://nhs.psi.enakting.org/id/nhs/</void:uriSpace>
+        <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >enakting-nhs</rdfs:label>
+        <dataid:associatedAgent>
+          <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/enakting-nhs/dataid#creator">
+            <foaf:mbox>mailto:t.omitola@ecs.soton.ac.uk</foaf:mbox>
+            <foaf:name>Tope Omitola</foaf:name>
+          </dataid:Creator>
+        </dataid:associatedAgent>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >23828953</void:triples>
+        <dcat:keyword>format-rdf</dcat:keyword>
+        <dataid:containsLinks rdf:resource="http://dataid.dbpedia.org/lod/enakting-nhs/dataid#links_ordnance-survey-linked-data"/>
+        <dcat:keyword>lod</dcat:keyword>
+        <dcat:landingPage rdf:resource="http://datahub.io/dataset/enakting-nhs"/>
+        <dcat:keyword>government</dcat:keyword>
+        <dcat:keyword>published-by-third-party</dcat:keyword>
+        <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >EnAKTing NHS Dataset</dct:title>
+        <dataid:associatedAgent>
+          <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/enakting-nhs/dataid#contributor">
+            <foaf:mbox>mailto:t.omitola@ecs.soton.ac.uk</foaf:mbox>
+            <foaf:name>Tope Omitola</foaf:name>
+          </dataid:Contributor>
+        </dataid:associatedAgent>
+        <dcat:keyword>format-xhtml</dcat:keyword>
+        <void:exampleResource rdf:resource="http://nhs.psi.enakting.org/id/nhs/NHS_RXH"/>
+        <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+      </dataid:Dataset>
+    </void:subjectsTarget>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >280</void:triples>
+  </dataid:Linkset>
+</rdf:RDF>

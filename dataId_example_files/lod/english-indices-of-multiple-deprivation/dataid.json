@@ -1,0 +1,99 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/english-indices-of-multiple-deprivation/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/english-indices-of-multiple-deprivation/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/english-indices-of-multiple-deprivation/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:hello@publishmydata.com",
+    "name" : "PublishMyData"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/english-indices-of-multiple-deprivation/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:bill@swirrl.com",
+    "name" : "Bill Roberts"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/english-indices-of-multiple-deprivation/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/english-indices-of-multiple-deprivation/dataid#creator", "http://dataid.dbpedia.org/lod/english-indices-of-multiple-deprivation/dataid#contributor" ],
+    "dct:description" : "This package is a collection and common access point to a group of Linked Data datasets representing the English Indices of Multiple Deprivation data.\n\n",
+    "license" : "http://reference.data.gov.uk/id/open-government-licence",
+    "dct:title" : "English Indices of Multiple Deprivation",
+    "exampleResource" : "http://opendatacommunities.org/resources/data.ordnancesurvey.co.uk/id/postcodeunit/M41HN?format=rdf",
+    "sparqlEndpoint" : "http://opendatacommunities.org/sparql",
+    "uriSpace" : "http://opendatacommunities.org/resources/",
+    "rdfs:label" : "english-indices-of-multiple-deprivation",
+    "distribution" : [ "http://opendatacommunities.org/sparql", "http://publishmydata.com/api" ],
+    "keyword" : [ "employment", "health", "lodcloud.needstriplecount", "opendatachallenge", "lodcloud.needsinfo", "income", "housing", "deprivation", "lod", "published-by-third-party", "government", "lodcloud.nolinks", "environment", "imd", "linkeddata", "education", "crime", "format-rdf", "lodcloud.unconnected", "deref-vocab" ],
+    "landingPage" : "http://datahub.io/dataset/english-indices-of-multiple-deprivation"
+  }, {
+    "@id" : "http://opendatacommunities.org/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://opendatacommunities.org/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://publishmydata.com/api",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://publishmydata.com/api",
+    "mediaType" : "HTML"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

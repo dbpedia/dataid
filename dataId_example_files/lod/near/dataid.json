@@ -1,0 +1,150 @@
+{
+  "@graph" : [ {
+    "@id" : "http://archive.org/download/kasabi/near.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://archive.org/download/kasabi/near.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/near/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/near/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/near/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:tom.heath@theodi.org",
+    "name" : "Tom Heath"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/near/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Tom Heath"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/near/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/near/dataid#creator", "http://dataid.dbpedia.org/lod/near/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/near/dataid#links_geonames-edubase", "http://dataid.dbpedia.org/lod/near/dataid#links_edubase", "http://dataid.dbpedia.org/lod/near/dataid#links_edubase-dbpedia", "http://dataid.dbpedia.org/lod/near/dataid#links_geonames-dbpedia", "http://dataid.dbpedia.org/lod/near/dataid#links_dbpedia-edubase", "http://dataid.dbpedia.org/lod/near/dataid#links_edubase-geonames", "http://dataid.dbpedia.org/lod/near/dataid#links_dbpedia-geonames", "http://dataid.dbpedia.org/lod/near/dataid#links_geonames-semantic-web", "http://dataid.dbpedia.org/lod/near/dataid#links_dbpedia" ],
+    "dct:description" : "The Near dataset provides \"near\" links connecting points of interest that are geographically close to each other. The data set currently cross-links items in DBpedia, Geonames and Edubase.\n\n*Note* this dataset is no longer updated, it was taken off-line during the shutdown of Kasabi. A dump of the dataset has been [uploaded to the Internet Archive](http://archive.org/details/kasabi)",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "Near",
+    "exampleResource" : "http://rdfize.com/geo/point/52.467358/-1.7167/",
+    "triples" : "335022481",
+    "rdfs:label" : "near",
+    "distribution" : [ "http://rdfize.com/geo/point/", "http://archive.org/download/kasabi/near.gz" ],
+    "keyword" : [ "requires-auth", "geodata", "geographic", "published-by-producer", "geography", "no-proprietary-vocab", "proximity", "near", "lod", "format-rdf" ],
+    "landingPage" : "http://datahub.io/dataset/near"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/near/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/near/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/near/dataid#links_dbpedia-edubase",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia-edubase/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/near/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/near/dataid#links_dbpedia-geonames",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia-geonames/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/near/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/near/dataid#links_edubase",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/edubase/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/near/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/near/dataid#links_edubase-dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/edubase-dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/near/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/near/dataid#links_edubase-geonames",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/edubase-geonames/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/near/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/near/dataid#links_geonames-dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames-dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/near/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/near/dataid#links_geonames-edubase",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames-edubase/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/near/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/near/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/near/dataid#dataset"
+  }, {
+    "@id" : "http://rdfize.com/geo/point/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdfize.com/geo/point/",
+    "mediaType" : "api"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

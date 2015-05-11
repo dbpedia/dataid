@@ -1,0 +1,38 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/mexico/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:pmenke@TechFak.Uni-Bielefeld.DE" ;
+        foaf:name  "Peter Menke" .
+
+<http://dataid.dbpedia.org/lod/mexico/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:pmenke@TechFak.Uni-Bielefeld.DE" ;
+        foaf:name  "Peter Menke" .
+
+<http://dataid.dbpedia.org/lod/mexico/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/mexico/dataid#dataset" .
+
+<http://data.sfb673.org/mexico/mexico-1.0.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.sfb673.org/mexico/mexico-1.0.ttl> ;
+        dcat:mediaType    "text/turtle" .
+
+<http://dataid.dbpedia.org/lod/mexico/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "mexico"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/mexico/dataid#creator> , <http://dataid.dbpedia.org/lod/mexico/dataid#contributor> ;
+        dct:description         "MExiCo (short for \"Multimodal Experiment Corpora\") is a data model for data collections containing multimodal linguistic and interaction annotations."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by-sa> ;
+        dct:title               "MExiCo"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://data.sfb673.org/mexico/mexico-example.ttl> ;
+        void:triples            "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:distribution       <http://data.sfb673.org/mexico/mexico-1.0.ttl> ;
+        dcat:keyword            "published-by-producer" , "format-owl" , "rdf" , "format-xsd" , "format-dc" , "format-foaf" , "format-rdf" , "linguistics" , "schemata" , "lod" , "format-prov" ;
+        dcat:landingPage        <http://datahub.io/dataset/mexico> .

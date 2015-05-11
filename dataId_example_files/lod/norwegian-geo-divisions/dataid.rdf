@@ -1,0 +1,82 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/norwegian-geo-divisions/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/norwegian-geo-divisions/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://data.lenka.no/dumps/kommune-navn.ttl">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://data.lenka.no/dumps/kommune-navn.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://data.lenka.no/dumps/fylke-geonames.ttl">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://data.lenka.no/dumps/fylke-geonames.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://data.lenka.no/">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://data.lenka.no/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://data.lenka.no/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://data.lenka.no/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://data.lenka.no/dumps/kommunesentre-geonames.ttl">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://data.lenka.no/dumps/kommunesentre-geonames.ttl"/>
+  </dataid:Distribution>
+  <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/norwegian-geo-divisions/dataid#links_geonames-semantic-web">
+    <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset"/>
+    <void:subjectsTarget>
+      <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/norwegian-geo-divisions/dataid#dataset">
+        <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+        <dataid:associatedAgent>
+          <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/norwegian-geo-divisions/dataid#creator">
+            <foaf:name>Kjetil Kjernsmo</foaf:name>
+          </dataid:Creator>
+        </dataid:associatedAgent>
+        <dataid:containsLinks rdf:resource="http://dataid.dbpedia.org/lod/norwegian-geo-divisions/dataid#links_geonames-semantic-web"/>
+        <void:uriSpace>http://data.lenka.no/geo</void:uriSpace>
+        <dcat:keyword>topic.geographic</dcat:keyword>
+        <dcat:distribution rdf:resource="http://data.lenka.no/dumps/kommune-navn.ttl"/>
+        <dcat:keyword>format-rdf</dcat:keyword>
+        <void:sparqlEndpoint rdf:resource="http://data.lenka.no/sparql"/>
+        <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >A dataset with Norwegian Administrative Divisions and their administrative centers.</dct:description>
+        <dcat:distribution rdf:resource="http://data.lenka.no/dumps/fylke-geonames.ttl"/>
+        <void:exampleResource rdf:resource="http://data.lenka.no/geo/sted/60196"/>
+        <dcat:distribution rdf:resource="http://data.lenka.no/dumps/kommunesentre-geonames.ttl"/>
+        <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+        <dcat:keyword>format-owl</dcat:keyword>
+        <dcat:distribution rdf:resource="http://data.lenka.no/"/>
+        <dcat:distribution rdf:resource="http://data.lenka.no/sparql"/>
+        <dcat:keyword>format-ngeoi</dcat:keyword>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >norwegian-geo-divisions</rdfs:label>
+        <dcat:keyword>license-metadata</dcat:keyword>
+        <dcat:keyword>format-cc</dcat:keyword>
+        <dcat:keyword>lod</dcat:keyword>
+        <dcat:keyword>format-geonames</dcat:keyword>
+        <dcat:keyword>format-dct</dcat:keyword>
+        <dcat:keyword>format-geo</dcat:keyword>
+        <dcat:keyword>published-by-third-party</dcat:keyword>
+        <dcat:keyword>format-rdfs</dcat:keyword>
+        <dcat:keyword>provenance-metadata</dcat:keyword>
+        <dcat:keyword>geographic</dcat:keyword>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >8399</void:triples>
+        <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Norwegian geo-divisions</dct:title>
+        <void:exampleResource rdf:resource="http://data.lenka.no/geo/inndeling/06"/>
+        <dcat:landingPage rdf:resource="http://datahub.io/dataset/norwegian-geo-divisions"/>
+      </dataid:Dataset>
+    </void:subjectsTarget>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >835</void:triples>
+  </dataid:Linkset>
+</rdf:RDF>

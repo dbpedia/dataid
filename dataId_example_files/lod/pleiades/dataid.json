@@ -1,0 +1,114 @@
+{
+  "@graph" : [ {
+    "@id" : "http://atlantides.org/downloads/pleiades/rdf/pleiades-latest.tar.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://atlantides.org/downloads/pleiades/rdf/pleiades-latest.tar.gz",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://atlantides.org/downloads/pleiades/rdf/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://atlantides.org/downloads/pleiades/rdf/void.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/pleiades/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/pleiades/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/pleiades/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:sean.gillies@nyu.edu",
+    "name" : "Sean Gillies"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/pleiades/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:pleiades.admin@nyu.edu",
+    "name" : "Pleiades Project"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/pleiades/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/pleiades/dataid#contributor", "http://dataid.dbpedia.org/lod/pleiades/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/pleiades/dataid#links_dbpedia",
+    "dct:description" : "Pleiades is a gazetteer for ancient world studies operated by NYU's Institute for the Study of the Ancient World and supported by the US National Endowment for the Humanities. It is derived originally from the Barrington Atlas of the Greek and Roman World and continually adds new resources. Features include:\n\n * 31,000+ ancient places\n * 26,000+ ancient names and name variants with time periods\n * 31,000+ ancient locations\n * Permanent, cool URIs for these resources (http://pleiades.stoa.org/places/912910 for example)\n * Maps and KML, GeoJSON, Turtle and RDF+XML variants of resources (http://pleiades.stoa.org/news/recently-modified.kml for example)\n * Spatial search\n * Daily tabular snapshots of location, name, and place data and metadata at http://atlantides.org/downloads/pleiades/dumps\n\nThere is a detailed [README.txt][readme] with the dumps.\n\n[readme]: http://atlantides.org/downloads/pleiades/dumps/README.txt\n\n\n#### Description of geodata from the [kml file][kml]\n\n> This KML file, for use with Google Earth and other compatible systems, contains basic coordinate and name information for ancient Greek and Roman places judged publication-ready by the Managing Editors of the Ancient World Mapping Center's Pleiades community ( http://pleiades.stoa.org ). In this edition, it comprises point features in Lycia/Pamphylia and Cyrenaica only, footprints corresponding to Barrington Atlas Maps 38 and 65. Future editions will expand the spatial coverage of this dataset, and will add more information to the individual placemark descriptions. \n> \n> This content is original work of the staff of the Ancient World Mapping Center and members of the Pleiades Community. It is built in part on information that was compiled by the American Philological Association's Classical Atlas Project (1988-2000), which was used during development with the permission of the APA.\n> \n> Despite our best efforts, Pleiades content may contain errors or omissions.  These should be assumed to be the responsibility of the project director, and not to reflect the quality and completeness of Classical Atlas Project data nor the opinions of the Atlas Project's scholarly compilers and editors. Pleiades will open to public participation in early 2008. At this time, it will be easy for users to highlight and correct errors and omissions, and to update obsolete information.\n> \n> Coordinate accuracy and precision are discussed at http://icon.stoa.org/trac/pleiades/wiki/DataPrecisionAndAccuracy . \n\n### Openness: OPEN\n\n  * License: cc-by (e.g. see bottom of <http://www.unc.edu/awmc/pleiades/bibliography/> or in [kml file][kml])\n  * Access: bulk and search\n    * geodata: kml (and single web page) <http://www.unc.edu/awmc/pleiades/data/kml/places-all.kml>\n    * biblio: html <http://www.unc.edu/awmc/pleiades/bibliography/>\n    * thesaurus: html <http://pleiades.stoa.org/names/all> with details on <http://pleiades.stoa.org/thesaurus>\n\n[kml]: http://www.unc.edu/awmc/pleiades/data/kml/places-all.kml\n\n\n",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Pleiades",
+    "exampleResource" : "http://pleiades.stoa.org/places/1043/turtle",
+    "triples" : "2600000",
+    "uriSpace" : "http://pleiades.stoa.org/places/ http://pleiades.stoa.org/places/vocab# http://atlantides.org/capgrids/",
+    "rdfs:label" : "pleiades",
+    "distribution" : [ "http://atlantides.org/downloads/pleiades/rdf/pleiades-latest.tar.gz", "http://atlantides.org/downloads/pleiades/rdf/void.ttl" ],
+    "keyword" : [ "geography", "no-proprietary-vocab", "format-spatial", "roman", "thesaurus", "no-provenance-metadata", "geodata", "format-skos", "no-licence-metadata", "historyhackday", "lod", "archaeology", "ancient", "geographic", "format-foaf", "format-rdf", "greek", "format-spacerel", "published-by-producer", "format-geo", "classics" ],
+    "landingPage" : "http://datahub.io/dataset/pleiades"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/pleiades/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/pleiades/dataid#dataset",
+    "triples" : "127"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

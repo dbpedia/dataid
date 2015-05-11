@@ -1,0 +1,75 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/linked-open-camera/dataid#dataset">
+    <dcat:keyword>format-dbo</dcat:keyword>
+    <dcat:keyword>linkeddata</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >5400</void:triples>
+    <dcat:keyword>format-vcard</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/linked-open-camera/dataid#creator">
+        <foaf:name>linkedopendata.it</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>rdf</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://void.linkedopendata.it/loc">
+        <dcat:mediaType>meta/void</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://void.linkedopendata.it/loc"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:keyword>format-gr</dcat:keyword>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://sparql.linkedopendata.it/loc">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://sparql.linkedopendata.it/loc"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Contractors and suppliers of the chamber of deputies in italy in 2010.
+
+More details are available at [http://www.linkedopendata.it/datasets/loc](http://www.linkedopendata.it/datasets/loc)
+
+The ontology is documented at [http://purl.org/net7/locs/v1](http://purl.org/net7/locs/v1)
+</dct:description>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >linked-open-camera</rdfs:label>
+    <dcat:keyword>lodcloud.unconnected</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/linked-open-camera"/>
+    <void:exampleResource rdf:resource="http://data.linkedopendata.it/loc/resource/Previsione2"/>
+    <dcat:distribution rdf:resource="http://sparql.linkedopendata.it/loc"/>
+    <dcat:keyword>country-italy</dcat:keyword>
+    <dcat:keyword>format-dc</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <dcat:keyword>linked-open-data</dcat:keyword>
+    <dcat:keyword>government</dcat:keyword>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>void-sparql-endpoint</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Linked Open Camera (LinkedOpenData.it)</dct:title>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://dump.linkedopendata.it/loc">
+        <dcat:mediaType>RDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://dump.linkedopendata.it/loc"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <void:uriSpace>http://purl.org/net7/vocab/locs/v1#</void:uriSpace>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>lodcloud.nolinks</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/linked-open-camera/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/linked-open-camera/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

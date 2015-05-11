@@ -1,0 +1,113 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/near/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/near/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://archive.org/download/kasabi/near.gz">
+    <dcat:mediaType>gzip::nquads</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://archive.org/download/kasabi/near.gz"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/near/dataid#dataset">
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://rdfize.com/geo/point/">
+        <dcat:mediaType>api</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://rdfize.com/geo/point/"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Near dataset provides "near" links connecting points of interest that are geographically close to each other. The data set currently cross-links items in DBpedia, Geonames and Edubase.
+
+*Note* this dataset is no longer updated, it was taken off-line during the shutdown of Kasabi. A dump of the dataset has been [uploaded to the Internet Archive](http://archive.org/details/kasabi)</dct:description>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >335022481</void:triples>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/near"/>
+    <dcat:keyword>requires-auth</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <dcat:keyword>geodata</dcat:keyword>
+    <dcat:keyword>geographic</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/near/dataid#creator">
+        <foaf:name>Tom Heath</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >near</rdfs:label>
+    <dcat:keyword>geography</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/near/dataid#links_geonames-edubase">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geonames-edubase/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/near/dataid#dataset"/>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/near/dataid#links_edubase">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/edubase/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/near/dataid#dataset"/>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/near/dataid#links_edubase-dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/edubase-dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/near/dataid#dataset"/>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/near/dataid#links_geonames-dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geonames-dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/near/dataid#dataset"/>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/near/dataid#links_dbpedia-edubase">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia-edubase/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/near/dataid#dataset"/>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/near/dataid#links_edubase-geonames">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/edubase-geonames/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/near/dataid#dataset"/>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://archive.org/download/kasabi/near.gz"/>
+    <dcat:keyword>proximity</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Near</dct:title>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/near/dataid#links_dbpedia-geonames">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia-geonames/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/near/dataid#dataset"/>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/near/dataid#links_geonames-semantic-web">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/near/dataid#dataset"/>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/near/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/near/dataid#dataset"/>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>near</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/near/dataid#contributor">
+        <foaf:mbox>mailto:tom.heath@theodi.org</foaf:mbox>
+        <foaf:name>Tom Heath</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <void:exampleResource rdf:resource="http://rdfize.com/geo/point/52.467358/-1.7167/"/>
+  </dataid:Dataset>
+</rdf:RDF>

@@ -1,0 +1,138 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/pscs-catalogue/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/pscs-catalogue/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/pscs-catalogue/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:josem.alvarez@weso.es",
+    "name" : "Jose María Alvarez Rodríguez"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/pscs-catalogue/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:josem.alvarez@weso.es",
+    "name" : "Jose María Alvarez Rodríguez at WESO (University of Oviedo)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/pscs-catalogue/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/pscs-catalogue/dataid#creator", "http://dataid.dbpedia.org/lod/pscs-catalogue/dataid#contributor" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/pscs-catalogue/dataid#links_productontology",
+    "dct:description" : "This dataset contains several product scheme classifications that have been transformed to linked data. This dataset is a “catalogue” dataset; the individual classifications are:\n\n* dataset:combined-nomenclature-2012\n* dataset:isic-v4\n* dataset:cpa-2008\n* dataset:cpc-2008\n* dataset:cpv-2003\n* dataset:cpv-2008\n* dataset:naics-2007\n* dataset:naics-2012\n* dataset:sitc-v4\n\nAuthors:\n\n-Jose María Alvarez Rodríguez & Jose Emilio Labra Gayo\n\nWESO-University of Oviedo",
+    "license" : "http://www.opendefinition.org/licenses/odc-odbl",
+    "dct:title" : "Product Scheme Classifications Catalogue",
+    "exampleResource" : "http://purl.org/weso/pscs/data/naics/2007/resource/11111?output=xml",
+    "sparqlEndpoint" : "http://purl.org/weso/sparql",
+    "triples" : "1842053",
+    "uriSpace" : "http://purl.org/weso/pscs/resource",
+    "rdfs:label" : "pscs-catalogue",
+    "distribution" : [ "http://purl.org/weso/pscs/resource/ds", "http://purl.org/weso/pscs/data/resource/ds?output=ttl", "http://purl.org/weso/sparql", "http://purl.org/weso/datasets/pscs/psc-ontology.ttl", "http://purl.org/weso/pscs/" ],
+    "keyword" : [ "government", "naics-2007", "uniovi", "format-skos", "format-dc", "pscs", "naics", "cpa", "published-by-third-party", "geodata", "university-of-oviedo", "isic", "vocab-mappings", "lod", "deref-vocab", "format-dcterms", "weso", "license-metadata", "provenance-metadata", "e-procurement", "oviedo", "cpc", "linkeddata", "public_contracts", "cpv", "10ders", "format-gr", "procurement", "format-skosxl", "euroalert", "linkedopendata", "sitc" ],
+    "landingPage" : "http://datahub.io/dataset/pscs-catalogue"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/pscs-catalogue/dataid#links_productontology",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/productontology/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/pscs-catalogue/dataid#dataset",
+    "triples" : "149112"
+  }, {
+    "@id" : "http://purl.org/weso/datasets/pscs/psc-ontology.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/datasets/pscs/psc-ontology.ttl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/weso/pscs/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/pscs/",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://purl.org/weso/pscs/data/resource/ds?output=ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/pscs/data/resource/ds?output=ttl",
+    "mediaType" : "text/rdf+n3"
+  }, {
+    "@id" : "http://purl.org/weso/pscs/resource/ds",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/pscs/resource/ds",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://purl.org/weso/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://purl.org/weso/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

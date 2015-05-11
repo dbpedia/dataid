@@ -1,0 +1,66 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/thesaurus-datenwissen/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/thesaurus-datenwissen/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/thesaurus-datenwissen/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Angelo Veltens"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/thesaurus-datenwissen/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/thesaurus-datenwissen/dataid#creator",
+    "dct:description" : "This service exposes the data from openthesaurus.de as Linked Data.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Thesaurus Datenwissen",
+    "exampleResource" : "http://thesaurus.datenwissen.de/hervorragend#term",
+    "triples" : "64154",
+    "rdfs:label" : "thesaurus-datenwissen",
+    "keyword" : [ "published-by-third-party", "lodcloud.needsinfo", "no-proprietary-vocab", "publications", "lodcloud.nolinks", "lodcloud.unconnected", "lod", "no-vocab-mappings" ],
+    "landingPage" : "http://datahub.io/dataset/thesaurus-datenwissen"
+  } ],
+  "@context" : {
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

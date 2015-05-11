@@ -1,0 +1,75 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/j-ucs-journal-of-universal-computer-science/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/j-ucs-journal-of-universal-computer-science/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/j-ucs-journal-of-universal-computer-science/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "name" : "Journal of Universal Computer Science(J.UCS)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/j-ucs-journal-of-universal-computer-science/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Journal of Universal Computer Science(J.UCS)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/j-ucs-journal-of-universal-computer-science/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/j-ucs-journal-of-universal-computer-science/dataid#contributor", "http://dataid.dbpedia.org/lod/j-ucs-journal-of-universal-computer-science/dataid#creator" ],
+    "dct:description" : "D2R Server publishing the Journal of Universal Computer Science(J.UCS) Bibliography Database, hosted at J.UCS Server.\nThis data sets has external links with Linked Data resources (DBLP - D2R sever at FU Berlin, DBLP D2R server at L3S,  DBPedia, CAF-SIAL) and conventional Web (CiteULike, Facteted DBLP and JUCS) resources.\n\nFor example:\nhttp://jucs.org:8181/d2rq/page/Papers/1117\n\n",
+    "license" : "http://www.opendefinition.org/licenses/gfdl",
+    "dct:title" : "J.UCS Journal of Universal Computer Science",
+    "rdfs:label" : "j-ucs-journal-of-universal-computer-science",
+    "distribution" : "http://jucs.org:8181/d2rq/snorql/",
+    "keyword" : [ "publications", "lodcloud.candidate", "lod" ],
+    "landingPage" : "http://datahub.io/dataset/j-ucs-journal-of-universal-computer-science"
+  }, {
+    "@id" : "http://jucs.org:8181/d2rq/snorql/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://jucs.org:8181/d2rq/snorql/",
+    "mediaType" : "rdf+xml"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

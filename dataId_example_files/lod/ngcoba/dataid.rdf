@@ -1,0 +1,52 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/ngcoba/dataid#dataset">
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/ngcoba/dataid#contributor">
+        <foaf:mbox>mailto:rufus.pollock@okfn.org</foaf:mbox>
+        <foaf:name>Rufus Pollock</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-pddl"/>
+    <dcat:keyword>death-dates</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A catalog all deceased authors, all authors of books published before 1964, and at least some more recent authors, including their full name(s), date of death, date of birth, pseudonyms, sex &amp; nationality (for those who died from 1920 onwards), and their books published before 1964.
+
+This is a large project, and is only partially complete.  The online webpages currently catalog over 139 000 authors out of what is estimated to be at least 500 000 deceased authors, and over 250 000 (32 000 of them online) out of what is estimated to be at least 2 500 000 books published before 1964.
+
+### Openness: Open
+
+Philip Harper the creator of the site and the extractor of the data provided the dump linked in the resource to Rufus Pollock in 2009 and has kindly agreed for it to be made available openly available under the license designated for this dataset.
+
+He requests citation of the form:
+
+Extract of NGCOBA, dated 2009 March; provided by P K S Harper.</dct:description>
+    <dcat:keyword>bibliography</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >New General Catalog of Old Books &amp; Authors</dct:title>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/ngcoba"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/ngcoba/dataid#creator">
+        <foaf:name>Phillip Harper</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>bibliographic</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ngcoba</rdfs:label>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ckan.net/storage/f/file/e696d857-e997-41c8-be08-408697168ca8">
+        <dcat:mediaType>TXT</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ckan.net/storage/f/file/e696d857-e997-41c8-be08-408697168ca8"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/ngcoba/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/ngcoba/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

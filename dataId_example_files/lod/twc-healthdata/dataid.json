@@ -1,0 +1,152 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/twc-healthdata/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/twc-healthdata/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/twc-healthdata/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "James McCusker"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/twc-healthdata/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/twc-healthdata/dataid#creator",
+    "dct:description" : "Linked Data version of the metadata and data listed at http://hub.healthdata.gov.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "HealthData.gov Platform (HDP) on the Semantic Web",
+    "exampleResource" : "http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/version/2012-Jul-17/provider/010054",
+    "sparqlEndpoint" : "http://healthdata.tw.rpi.edu/sparql",
+    "triples" : "1934046908",
+    "uriSpace" : "http://purl.org/twc/health/",
+    "rdfs:label" : "twc-healthdata",
+    "distribution" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns#", "http://purl.org/twc/health/source/hub-healthdata-gov/file/2008-basic-stand-alone-skilled/version/2012-Mar-15/conversion/hub-healthdata-gov-2008-basic-stand-alone-skilled-2012-Mar-15.void.ttl.gz", "http://www.w3.org/ns/prov#", "http://xmlns.com/foaf/0.1/", "http://www.w3.org/2000/10/swap/pim/contact#", "http://www.w3.org/2002/07/owl#", "http://usefulinc.com/ns/doap#", "http://healthdata.tw.rpi.edu/void", "http://www.w3.org/2000/01/rdf-schema#", "http://www.w3.org/2006/vcard/ns#", "http://purl.org/vocab/vann/", "http://purl.org/linked-data/cube#", "http://healthdata.tw.rpi.edu/sparql" ],
+    "keyword" : [ "vocab-mappings", "format-foaf", "format-doap", "published-by-third-party", "format-con", "lifesciences", "government", "format-owl", "provenance-metadata", "ecommerce", "format-vann", "format-vcard", "format-prov", "geographic", "format-rdf", "lod", "no-license-metadata", "schemata", "deref-vocab", "format-qb", "format-rdfs" ],
+    "landingPage" : "http://datahub.io/dataset/twc-healthdata"
+  }, {
+    "@id" : "http://healthdata.tw.rpi.edu/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://healthdata.tw.rpi.edu/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://healthdata.tw.rpi.edu/void",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://healthdata.tw.rpi.edu/void",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://purl.org/linked-data/cube#",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/linked-data/cube#",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/twc/health/source/hub-healthdata-gov/file/2008-basic-stand-alone-skilled/version/2012-Mar-15/conversion/hub-healthdata-gov-2008-basic-stand-alone-skilled-2012-Mar-15.void.ttl.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/twc/health/source/hub-healthdata-gov/file/2008-basic-stand-alone-skilled/version/2012-Mar-15/conversion/hub-healthdata-gov-2008-basic-stand-alone-skilled-2012-Mar-15.void.ttl.gz",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://purl.org/vocab/vann/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/vocab/vann/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://usefulinc.com/ns/doap#",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://usefulinc.com/ns/doap#",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/2000/01/rdf-schema#",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/2000/10/swap/pim/contact#",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/2000/10/swap/pim/contact#",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/2002/07/owl#",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/2002/07/owl#",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/2006/vcard/ns#",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/2006/vcard/ns#",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/ns/prov#",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/ns/prov#",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://xmlns.com/foaf/0.1/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://xmlns.com/foaf/0.1/",
+    "mediaType" : "meta/rdf-schema"
+  } ],
+  "@context" : {
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

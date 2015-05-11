@@ -1,0 +1,109 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/intervalue/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/intervalue/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/intervalue/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Kavargiris Kostas and Bratsas Charalampos "
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/intervalue/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/intervalue/dataid#creator",
+    "containsLinks" : "http://dataid.dbpedia.org/lod/intervalue/dataid#links_dbpedia",
+    "dct:description" : "INTERVALUE data using LOD principle.\nINTERVALUE project (http://www.urenio.org/intervalue/) aims to bridge the gap between R&D creators, producers, financiers and marketers by creating a trans-national mechanism that facilitates the valorization of research results. In other words INTERVALUE aims to connect R&D Institutions and their projects with the business sector and the market. ",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "intervalue",
+    "exampleResource" : "http://greek-lod.math.auth.gr/intervalue/data/projects/170?output=rdfxml",
+    "sparqlEndpoint" : "http://greek-lod.math.auth.gr/intervalue/sparql",
+    "uriSpace" : "http://www.greek-lod.gr/intervalue/",
+    "rdfs:label" : "intervalue",
+    "distribution" : [ "http://greek-lod.math.auth.gr/intervalue/sparql", "http://www.greek-lod.gr/intervalue/" ],
+    "keyword" : [ "deref-vocab", "lod", "format-rdf", "sparql-endpoint", "published-by-producer", "crossdomain", "void-sparql-endpoint" ],
+    "landingPage" : "http://datahub.io/dataset/intervalue"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/intervalue/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/intervalue/dataid#dataset"
+  }, {
+    "@id" : "http://greek-lod.math.auth.gr/intervalue/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://greek-lod.math.auth.gr/intervalue/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://www.greek-lod.gr/intervalue/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.greek-lod.gr/intervalue/"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

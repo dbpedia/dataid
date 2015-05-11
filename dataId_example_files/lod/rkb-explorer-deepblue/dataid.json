@@ -1,0 +1,156 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Hugh Glaser"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#links_rkb-explorer-rae2001", "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#links_rkb-explorer-wiki", "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#links_rkb-explorer-eprints", "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#links_rkb-explorer-cordis", "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#links_rkb-explorer-dblp", "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#links_rkb-explorer-acm" ],
+    "dct:description" : "",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Deep Blue (RKBExplorer)",
+    "exampleResource" : "http://deepblue.rkbexplorer.com/id/person-0d961f4145be8efdede333a02e0e5596",
+    "sparqlEndpoint" : "http://deepblue.rkbexplorer.com/sparql/",
+    "triples" : "39421",
+    "uriSpace" : "http://deepblue.rkbexplorer.com/id/",
+    "rdfs:label" : "rkb-explorer-deepblue",
+    "distribution" : [ "http://deepblue.rkbexplorer.com/models/void.ttl", "http://deepblue.rkbexplorer.com/models/dump.tgz", "http://deepblue.rkbexplorer.com/sitemap.xml", "http://deepblue.rkbexplorer.com/sparql/" ],
+    "keyword" : [ "format-dc", "published-by-third-party", "no-license-metadata", "lod", "no-vocab-mappings", "lodcloud.unconnected", "provenance-metadata", "deref-vocab", "void-sparql-endpoint", "publications", "format-akt", "debug-tinylod", "format-rdf" ],
+    "landingPage" : "http://datahub.io/dataset/rkb-explorer-deepblue"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#links_rkb-explorer-acm",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-acm/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#dataset",
+    "triples" : "8"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#links_rkb-explorer-cordis",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-cordis/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#dataset",
+    "triples" : "1"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#links_rkb-explorer-dblp",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-dblp/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#dataset",
+    "triples" : "1"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#links_rkb-explorer-eprints",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-eprints/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#dataset",
+    "triples" : "1"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#links_rkb-explorer-rae2001",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-rae2001/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#dataset",
+    "triples" : "1"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#links_rkb-explorer-wiki",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-wiki/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-deepblue/dataid#dataset",
+    "triples" : "3"
+  }, {
+    "@id" : "http://deepblue.rkbexplorer.com/models/dump.tgz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://deepblue.rkbexplorer.com/models/dump.tgz",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://deepblue.rkbexplorer.com/models/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://deepblue.rkbexplorer.com/models/void.ttl",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://deepblue.rkbexplorer.com/sitemap.xml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://deepblue.rkbexplorer.com/sitemap.xml",
+    "mediaType" : "meta/sitemap"
+  }, {
+    "@id" : "http://deepblue.rkbexplorer.com/sparql/",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://deepblue.rkbexplorer.com/sparql/",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

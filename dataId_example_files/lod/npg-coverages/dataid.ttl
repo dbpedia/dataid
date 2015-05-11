@@ -1,0 +1,36 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/npg-coverages/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/npg-coverages/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/npg-coverages/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "npg-coverages"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/npg-coverages/dataid#creator> , <http://dataid.dbpedia.org/lod/npg-coverages/dataid#contributor> ;
+        dct:description         "Graph of npg:Coverage triples. The npg:Coverage objects model product (journal titles, etc) extents. "^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "Nature Publishing Group - Coverages"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dcat:distribution       <http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph<http://ns.nature.com/graphs/coverages>{?s?p?o.}}limit25> ;
+        dcat:keyword            "bibliographic" , "publications" , "physical sciences" , "science" , "sciences" , "life sciences" , "health sciences" , "academic" , "published-by-producer" , "journals" ;
+        dcat:landingPage        <http://datahub.io/dataset/npg-coverages> .
+
+<http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph<http://ns.nature.com/graphs/coverages>{?s?p?o.}}limit25>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph<http://ns.nature.com/graphs/coverages>{?s?p?o.}}limit25> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/npg-coverages/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:developers@nature.com" ;
+        foaf:name  "NPG Developers" .
+
+<http://dataid.dbpedia.org/lod/npg-coverages/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:developers@nature.com" ;
+        foaf:name  "NPG" .

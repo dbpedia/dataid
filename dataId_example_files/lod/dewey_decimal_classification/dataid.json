@@ -1,0 +1,95 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:panzerm@oclc.org",
+    "name" : "Michael Panzer"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:http://www.oclc.org/dewey/",
+    "name" : "OCLC Online Computer Library Center, Inc."
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#contributor", "http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#creator" ],
+    "dct:description" : "Dewey.info is an experimental space for linked DDC data. The intention of the dewey.info prototype is to be a platform for Dewey data on the Web.\n\nIncluded as linked data are the DDC Summaries (the top three levels of the DDC) of Edition 22 in 11 languages and all assignable numbers of Abridged Edition 14 in three languages. Classification semantics are encoded in RDF using SKOS and other element vocabularies. \n\nEvery class also has an HTML representation (XHTML+RDFa) and several RDF serializations (RDF/XML, Turtle, JSON).\n\nA SPARQL endpoint is available.\n\nThe data is reusable under the Creative Commons BY-NC-ND license.\n",
+    "license" : "http://creativecommons.org/licenses/by-nc/2.0/",
+    "dct:title" : "Dewey Decimal Classification (DDC)",
+    "exampleResource" : [ "http://dewey.info/class/641.5/a14/about.ttl", "http://dewey.info/class/6/2009/03/about.de.html", "http://dewey.info/class/641/about.rdf" ],
+    "sparqlEndpoint" : "http://dewey.info/sparql.php",
+    "triples" : "402288",
+    "uriSpace" : "http://dewey.info/",
+    "rdfs:label" : "dewey_decimal_classification",
+    "distribution" : "http://dewey.info/sparql.php",
+    "keyword" : [ "no-proprietary-vocab", "format-skos", "lld", "published-by-producer", "lod", "format-rdf", "linkeddata", "publications", "format-dcterm", "lodcloud.nolinks", "license-metadata", "format-cc", "classification", "publication", "schemata" ],
+    "landingPage" : "http://datahub.io/dataset/dewey_decimal_classification"
+  }, {
+    "@id" : "http://dewey.info/sparql.php",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://dewey.info/sparql.php",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "@graph" : [ {
+    "@id" : "http://api.talis.com/stores/smcjournals/services/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://api.talis.com/stores/smcjournals/services/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Keith Alexander"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_data-incubator-climb", "http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_ordnance-survey-linked-data", "http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_geonames-semantic-web" ],
+    "dct:description" : " This is a Linked Data representation of a digital archive of 'Scottish Mountaineering Club Journal Issues 1 to 36, 1890-1901', which was created by Alan Dawson, Centre for Digital Library Research, University of Strathclyde, with funding from the Scottish Mountaineering Trust.\n  The Linked Data representation currently covers the relationships between places, people, journal issues and articles gathered from the Cumulative Indexes of Authors, Hills, People and Articles.\n  \n  TODO:\n    \n  (from the Cumulative Indexes)\n  Events\n  Illustrations\n  Reviews\n  Topics  \n\n  And:\n\n  \"The SMC in 1894: Rules, officers, members\" (http://gdl.cdlr.strath.ac.uk/smcj/smc1894.htm)\n\n",
+    "license" : "http://www.opendefinition.org/licenses/odc-pddl",
+    "dct:title" : "Scottish Mountaineering Council Journals Issues 1-36",
+    "exampleResource" : [ "http://smcjournals.dataincubator.org/hills/A'cailliach.rdf", "http://smcjournals.dataincubator.org/hills/A'cailliach" ],
+    "sparqlEndpoint" : "http://api.talis.com/stores/smcjournals/services/sparql",
+    "triples" : "15801",
+    "uriSpace" : "http://smcjournals.dataincubator.org/",
+    "rdfs:label" : "data-incubator-smcjournals",
+    "distribution" : [ "http://smcjournals.dataincubator.org/", "http://api.talis.com/stores/smcjournals/services/sparql" ],
+    "keyword" : [ "format-rdf", "journals", "format-geovocab", "format-foaf", "no-proprietary-vocab", "published-by-third-party", "lod", "format-bib", "license-metadata", "club", "geographic", "mountaineering", "lld", "19thcentury", "provenance-metadata", "climbing", "sport" ],
+    "landingPage" : "http://datahub.io/dataset/data-incubator-smcjournals"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_data-incubator-climb",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/data-incubator-climb",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#dataset",
+    "triples" : "123"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#dataset",
+    "triples" : "11"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/geonames-semantic-web",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#dataset",
+    "triples" : "10"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_ordnance-survey-linked-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/ordnance-survey-linked-data",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#dataset",
+    "triples" : "11"
+  }, {
+    "@id" : "http://smcjournals.dataincubator.org/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://smcjournals.dataincubator.org/",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

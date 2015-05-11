@@ -1,0 +1,113 @@
+{
+  "@graph" : [ {
+    "@id" : "http://bnb.data.bl.uk/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://bnb.data.bl.uk/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/jiscopenbib-bl_bnb-1/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/jiscopenbib-bl_bnb-1/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/jiscopenbib-bl_bnb-1/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:mark.macgillivray@okfn.org",
+    "name" : "Mark MacGillivray"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/jiscopenbib-bl_bnb-1/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "British Library"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/jiscopenbib-bl_bnb-1/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/jiscopenbib-bl_bnb-1/dataid#creator", "http://dataid.dbpedia.org/lod/jiscopenbib-bl_bnb-1/dataid#contributor" ],
+    "dct:description" : "British Library British National Bibliography package, with records of all new books published in the UK since 1950.\n\nUse of Data: This data is being made available under a Creative Commons CC0 1.0 Universal Public Domain Dedication licence. This means that the British Library Board makes no copyright, related or neighbouring rights claims to the data and does not apply any restrictions on subsequent use and reuse of the data. The British Library accepts no liability for damages from any use of the supplied data. For more detail please see the terms of the licence.\n\nSupport: The British Library is committed to providing high quality services and accurate data. If you have any queries or identify any problems with the data please contact metadata@bl.uk.\n\nShare knowledge: We are also very interested to hear the ways in which you have used this data so we can understand more fully the benefits of sharing it and improve our services. Please contact metadata@bl.uk if you wish to share your experiences with us and those that are using this service.\n\nGive Credit Where Credit is Due: The British Library has a responsibility to maintain its bibliographic data on the nation’s behalf. Please credit all use of this data to the British Library and link back to www.bl.uk/bibliographic/datafree.html in order that this information can be shared and developed with today’s Internet users as well as future generations.\n\nDuplicate of package:bluk-bnb",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "JISC Open Bibliography British National Bibliography dataset",
+    "exampleResource" : "http://bnb.data.bl.uk/id/agent/%C3%89ditionsdeLaMartini%C3%A8re",
+    "sparqlEndpoint" : "http://bnb.data.bl.uk/sparql",
+    "triples" : "18376419",
+    "uriSpace" : "http://bnb.bibliographica.org/",
+    "rdfs:label" : "jiscopenbib-bl_bnb-1",
+    "distribution" : [ "http://www.bl.uk/bibliographic/pdfs/british_library_data_model_v1-00.pdf", "http://openbiblio.commondatastorage.googleapis.com/BL-BNB-dataset.zip", "http://www.bl.uk/bibliographic/datafree.html", "http://bnb.data.bl.uk/sparql" ],
+    "keyword" : [ "format-xml", "lod", "format-rdf", "bibliographic", "published-by-producer", "no-proprietary-vocab", "format-xhtml", "meta.duplicate", "library", "bibliography", "cc0", "publications" ],
+    "landingPage" : "http://datahub.io/dataset/jiscopenbib-bl_bnb-1"
+  }, {
+    "@id" : "http://openbiblio.commondatastorage.googleapis.com/BL-BNB-dataset.zip",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://openbiblio.commondatastorage.googleapis.com/BL-BNB-dataset.zip",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://www.bl.uk/bibliographic/datafree.html",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.bl.uk/bibliographic/datafree.html",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://www.bl.uk/bibliographic/pdfs/british_library_data_model_v1-00.pdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.bl.uk/bibliographic/pdfs/british_library_data_model_v1-00.pdf",
+    "mediaType" : "PDF"
+  } ],
+  "@context" : {
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

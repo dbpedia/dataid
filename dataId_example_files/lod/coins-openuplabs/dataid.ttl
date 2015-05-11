@@ -1,0 +1,39 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/coins-openuplabs/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/coins-openuplabs/dataid#dataset" .
+
+<http://gov.tso.co.uk/coins/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://gov.tso.co.uk/coins/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/coins-openuplabs/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "The Stationery Office Limited" .
+
+<http://source.data.gov.uk/finance/coins/2010-06-14/schema>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://source.data.gov.uk/finance/coins/2010-06-14/schema> ;
+        dcat:mediaType    "meta/rdf+schema" .
+
+<http://dataid.dbpedia.org/lod/coins-openuplabs/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "coins-openuplabs"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/coins-openuplabs/dataid#creator> ;
+        dct:description         "COINS – the Combined On-line Information System – is used by the Treasury to collect financial data from across the public sector to support fiscal management, the production of Parliamentary Supply Estimates and public expenditure statistics, the preparation of Whole of Government Accounts (WGA) and to meet data requirements of the Office for National Statistics (ONS). Up to nine years of data are actively maintained : five historic (or outturn) years, the current year and up to three future (or plan) years depending on the timing of the latest spending review. COINS is a consolidation system rather than an accounts application, so it does not hold details of individual financial transactions by departments.\n\n\npart of package:openuplabs"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://reference.data.gov.uk/id/open-government-licence> ;
+        dct:title               "OpenUpLabs COINS"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://finance.data.gov.uk/def/coins/department-code/des022> ;
+        void:sparqlEndpoint     <http://gov.tso.co.uk/coins/sparql> ;
+        void:triples            "5000000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://finance.data.gov.uk/def/coins/" ;
+        dcat:distribution       <http://gov.tso.co.uk/coins/sparql> , <http://source.data.gov.uk/finance/coins/2010-06-14/schema> ;
+        dcat:keyword            "lod" , "no-deref-vocab" , "lodcloud.unconnected" , "country.uk" , "government" , "lodcloud.nolinks" , "published-by-third-party" ;
+        dcat:landingPage        <http://datahub.io/dataset/coins-openuplabs> .

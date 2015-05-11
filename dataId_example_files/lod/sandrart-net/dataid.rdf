@@ -1,0 +1,78 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/sandrart-net/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/sandrart-net/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://ta.sandrart.net/data/lod.rdf.gz">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://ta.sandrart.net/data/lod.rdf.gz"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/sandrart-net/dataid#dataset">
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >140000</void:triples>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/sandrart-net/dataid#contributor">
+        <foaf:mbox>mailto:carsten@bluem.net</foaf:mbox>
+        <foaf:name>Carsten Blüm</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>art</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/sandrart-net"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/sandrart-net/dataid#links_viaf">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/viaf/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/sandrart-net/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2880</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://ta.sandrart.net/data/lod.rdf.gz"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/sandrart-net/dataid#links_geonames-semantic-web">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/sandrart-net/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >425</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:exampleResource rdf:resource="http://ta.sandrart.net/-person-2162"/>
+    <dcat:keyword>format-geonames</dcat:keyword>
+    <dcat:keyword>format-ecrm</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sandrart.net</dct:title>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This dataset offers objects (persons, places, works of art, bibliographic items as well as their relations) from an online edition of Joachim von Sandrart’s “Teutsche Academie der Bau-, Bild- und Mahlerey-Künste”, a German three-volume book from the late 17th century.
+
+Please note: Data is not yet complete.</dct:description>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/sandrart-net/dataid#links_dnb-gemeinsame-normdatei">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/sandrart-net/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2970</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/sandrart-net/dataid#creator">
+        <foaf:name>Various</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>format-rdaGr2</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sandrart-net</rdfs:label>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-odbl"/>
+    <dcat:keyword>arts</dcat:keyword>
+    <dcat:keyword>art-history</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

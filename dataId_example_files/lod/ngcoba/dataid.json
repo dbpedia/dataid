@@ -1,0 +1,77 @@
+{
+  "@graph" : [ {
+    "@id" : "http://ckan.net/storage/f/file/e696d857-e997-41c8-be08-408697168ca8",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ckan.net/storage/f/file/e696d857-e997-41c8-be08-408697168ca8",
+    "mediaType" : "TXT"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ngcoba/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/ngcoba/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ngcoba/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:rufus.pollock@okfn.org",
+    "name" : "Rufus Pollock"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ngcoba/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Phillip Harper"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ngcoba/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/ngcoba/dataid#contributor", "http://dataid.dbpedia.org/lod/ngcoba/dataid#creator" ],
+    "dct:description" : "A catalog all deceased authors, all authors of books published before 1964, and at least some more recent authors, including their full name(s), date of death, date of birth, pseudonyms, sex & nationality (for those who died from 1920 onwards), and their books published before 1964.\n\nThis is a large project, and is only partially complete.  The online webpages currently catalog over 139 000 authors out of what is estimated to be at least 500 000 deceased authors, and over 250 000 (32 000 of them online) out of what is estimated to be at least 2 500 000 books published before 1964.\n\n### Openness: Open\n\nPhilip Harper the creator of the site and the extractor of the data provided the dump linked in the resource to Rufus Pollock in 2009 and has kindly agreed for it to be made available openly available under the license designated for this dataset.\n\nHe requests citation of the form:\n\nExtract of NGCOBA, dated 2009 March; provided by P K S Harper.",
+    "license" : "http://www.opendefinition.org/licenses/odc-pddl",
+    "dct:title" : "New General Catalog of Old Books & Authors",
+    "rdfs:label" : "ngcoba",
+    "distribution" : "http://ckan.net/storage/f/file/e696d857-e997-41c8-be08-408697168ca8",
+    "keyword" : [ "death-dates", "bibliography", "bibliographic" ],
+    "landingPage" : "http://datahub.io/dataset/ngcoba"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

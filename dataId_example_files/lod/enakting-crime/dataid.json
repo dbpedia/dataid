@@ -1,0 +1,109 @@
+{
+  "@graph" : [ {
+    "@id" : "http://crime.psi.enakting.org/id/void",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://crime.psi.enakting.org/id/void",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-crime/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/enakting-crime/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-crime/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:t.omitola@ecs.soton.ac.uk",
+    "name" : "Tope Omitola"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-crime/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:t.omitola@ecs.soton.ac.uk",
+    "name" : "Tope Omitola"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-crime/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/enakting-crime/dataid#creator", "http://dataid.dbpedia.org/lod/enakting-crime/dataid#contributor" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/enakting-crime/dataid#links_ordnance-survey-linked-data",
+    "dct:description" : "UK Crime statistics per region for the year 2008/09, provided by the UK Home Office.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "EnAKTing Crime Dataset",
+    "exampleResource" : "http://crime.psi.enakting.org/",
+    "triples" : "4988",
+    "uriSpace" : "http://crime.psi.enakting.org/id/",
+    "rdfs:label" : "enakting-crime",
+    "distribution" : "http://crime.psi.enakting.org/id/void",
+    "keyword" : [ "government", "published-by-third-party", "lod", "deref-vocab", "format-rdf" ],
+    "landingPage" : "http://datahub.io/dataset/enakting-crime"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-crime/dataid#links_ordnance-survey-linked-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/ordnance-survey-linked-data",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/enakting-crime/dataid#dataset",
+    "triples" : "133"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

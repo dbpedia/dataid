@@ -1,0 +1,51 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/oclc-fast/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "oclc-fast"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/oclc-fast/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/oclc-fast/dataid#links_lcsh> , <http://dataid.dbpedia.org/lod/oclc-fast/dataid#links_geonames> ;
+        dct:description         "FAST (Faceted Application of Subject Terminology) is an enumerative, faceted subject heading schema derived from the Library of Congress Subject Headings (LCSH). Its purpose is to be easier to understand, control, apply, and use than LCSH. Any valid set of LC subject headings can be converted to FAST headings.\n\nFAST contains 1.6M authority records.\n\nThe triple count (30M) is a rough estimate based on the number of authority records. The LCSH link count is based on the observation that many but not all of the authority records have LCSH links. The Geonames link count is based on [this account](http://www.oclc.org/nextspace/018/research.htm) that states 100k total geographic entities with 60% matched to Geonames."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-by> ;
+        dct:title               "Faceted Application of Subject Terminology"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://id.worldcat.org/fast/1411628> ;
+        void:triples            "30000000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://id.worldcat.org/fast/" ;
+        dcat:distribution       <http://fast.oclc.org/fast/void/0.1/> , <http://experimental.worldcat.org/fast/xsl/FastOpenSearch.xml> ;
+        dcat:keyword            "provenance-metadata" , "format-void" , "authorities" , "publications" , "format-dc" , "license-metadata" , "lodcloud" , "lod" , "format-skos" , "published-by-producer" , "no-proprietary-vocab" , "format-foaf" ;
+        dcat:landingPage        <http://datahub.io/dataset/oclc-fast> .
+
+<http://experimental.worldcat.org/fast/xsl/FastOpenSearch.xml>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://experimental.worldcat.org/fast/xsl/FastOpenSearch.xml> ;
+        dcat:mediaType    "api/opensearch" .
+
+<http://fast.oclc.org/fast/void/0.1/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://fast.oclc.org/fast/void/0.1/> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/oclc-fast/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "OCLC Research" .
+
+<http://dataid.dbpedia.org/lod/oclc-fast/dataid#links_lcsh>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/lcsh/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/oclc-fast/dataid#dataset> ;
+        void:triples         "1600000"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/oclc-fast/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/oclc-fast/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/oclc-fast/dataid#links_geonames>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/geonames/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/oclc-fast/dataid#dataset> ;
+        void:triples         "60000"^^<http://www.w3.org/2001/XMLSchema#int> .

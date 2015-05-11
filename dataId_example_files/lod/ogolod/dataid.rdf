@@ -1,0 +1,87 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/ogolod/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/ogolod/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://miuras.inf.um.es/lod/ogolod2.owl">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://miuras.inf.um.es/lod/ogolod2.owl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://miuras.inf.um.es/lod/voidogolod.ttl">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://miuras.inf.um.es/lod/voidogolod.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://miuras.inf.um.es/sitemap_index.xml">
+    <dcat:mediaType>meta/sitemap</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://miuras.inf.um.es/sitemap_index.xml"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/ogolod/dataid#dataset">
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >38035102</void:triples>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://miuras.inf.um.es/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://miuras.inf.um.es/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>lifesciences</dcat:keyword>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:distribution rdf:resource="http://miuras.inf.um.es/sitemap_index.xml"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/ogolod/dataid#creator">
+        <foaf:mbox>mailto:megana@fi.upm.es</foaf:mbox>
+        <foaf:name>José Antonio Miñarro Gimenez and Mikel Egaña Aranguren</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/ogolod"/>
+    <void:exampleResource rdf:resource="http://miuras.inf.um.es/dump/dump.rdf"/>
+    <dcat:keyword>format-ogo</dcat:keyword>
+    <dcat:distribution rdf:resource="http://miuras.inf.um.es/lod/voidogolod.ttl"/>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Orthology and Diseases Information - OGO</dct:title>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The OGOLOD system, an extension of the OGO Knowledge Base, publishes ortholog/diseases information using Linked Data. This gives the scientists the ability to query the structured information in connection with other Linked
+Data and to discover new information in the cloud, related to orthologs and human diseases.</dct:description>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/ogolod/dataid#contributor">
+        <foaf:mbox>mailto:boris.villazon@terrazas.name</foaf:mbox>
+        <foaf:name>Boris Villazón-Terrazas</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dcat:keyword>diseases-information-orthology</dcat:keyword>
+    <dcat:distribution rdf:resource="http://miuras.inf.um.es/lod/ogolod2.owl"/>
+    <void:sparqlEndpoint rdf:resource="http://miuras.inf.um.es/sparql"/>
+    <void:uriSpace>http:miuras.inf.um.es/ogolod/resource/Gene/67440</void:uriSpace>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/ogolod/dataid#links_bio2rdf-omim">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bio2rdf-omim/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/ogolod/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >18141</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>lod</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ogolod</rdfs:label>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/ogolod/dataid#links_bio2rdf-chebi">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bio2rdf-chebi/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/ogolod/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3456570</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+  </dataid:Dataset>
+</rdf:RDF>

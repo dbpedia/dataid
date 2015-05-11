@@ -1,0 +1,58 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-ctd/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/bio2rdf-ctd/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-ctd/dataid#dataset">
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-ctd/dataid#contributor">
+        <foaf:mbox>mailto:michel.dumontier@gmail.com</foaf:mbox>
+        <foaf:name>Michel Dumontier</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CTD includes manually curated data describing cross-species chemical-gene/protein interactions and chemical- and gene-disease relationships to illuminate molecular mechanisms underlying variable susceptibility and environmentally influenced diseases.</dct:description>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://download.bio2rdf.org/current/ctd/">
+        <dcat:mediaType>application/x-ntriples</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://download.bio2rdf.org/current/ctd/"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bio2RDF::CTD</dct:title>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://download.bio2rdf.org/current/ctd/ctd.html">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://download.bio2rdf.org/current/ctd/ctd.html"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ctd.bio2rdf.org/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://ctd.bio2rdf.org/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bio2rdf-ctd</rdfs:label>
+    <dcat:keyword>lifesciences</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>bio2rdf</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/bio2rdf-ctd"/>
+    <void:sparqlEndpoint rdf:resource="http://ctd.bio2rdf.org/sparql"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-ctd/dataid#creator">
+        <foaf:mbox>mailto:bio2rdf@googlegroups.com</foaf:mbox>
+        <foaf:name>Bio2RDF</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:uriSpace>http://bio2rdf.org/ctd:</void:uriSpace>
+  </dataid:Dataset>
+</rdf:RDF>

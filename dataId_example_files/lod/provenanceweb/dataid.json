@@ -1,0 +1,257 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/provenanceweb/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/provenanceweb/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/provenanceweb/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:lebot@rpi.edu",
+    "name" : "Timothy Lebo"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/provenanceweb/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Rensselaer Polytechnic Institute / Tetherless World Constellation"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/provenanceweb/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/provenanceweb/dataid#contributor", "http://dataid.dbpedia.org/lod/provenanceweb/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/provenanceweb/dataid#links_dbpedia",
+    "dct:description" : "Linked Data provenance and explanation.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "provenanceweb",
+    "sparqlEndpoint" : "http://provenanceweb.org/sparql",
+    "triples" : "2494630",
+    "uriSpace" : "http://provenanceweb.org/",
+    "rdfs:label" : "provenanceweb",
+    "distribution" : [ "http://provenanceweb.org/source/provenanceweb/file/cr-aggregated-params/version/latest/conversion/provenanceweb-cr-aggregated-params-latest.ttl.gz", "http://open.vocab.org/terms/", "http://www.w3.org/2002/07/owl", "http://www.w3.org/2004/02/skos/core", "http://provenanceweb.org/source/provenanceweb/file/cr-sitemap/version/latest/conversion/sitemap.xml", "http://inference-web.org/2.0/pml-provenance.owl", "http://usefulinc.com/ns/doap", "http://purl.org/net/provenance/ns", "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://semanticscience.org/resource/", "http://reference.data.gov.uk/technical-registry/", "http://www.holygoat.co.uk/owl/redwood/0.1/tags/", "http://provenanceweb.org/ns/pml", "http://dbpedia.org/resource/", "http://rdfs.org/ns/void", "http://www.w3.org/ns/dcat", "http://www.w3.org/2000/10/swap/pim/contact", "http://xmlns.com/foaf/0.1/", "http://inference-web.org/2.0/pml-justification.owl", "http://www.w3.org/2000/01/rdf-schema", "http://purl.org/vocab/vann/", "http://www.w3.org/ns/prov", "http://provenanceweb.org/sparql", "http://purl.org/twc/vocab/conversion/", "http://provenanceweb.org/void.ttl", "http://purl.org/twc/vocab/datafaqs", "http://purl.org/dc/terms/", "http://obofoundry.org/ro/ro.owl", "http://openprovenance.org/ontology", "http://provenanceweb.org/source/provenanceweb/file/cr-full-dump/version/latest/conversion/provenanceweb-org.nt.gz" ],
+    "keyword" : [ "crossdomain", "format-pmlp", "format-tag", "prizms", "format-pronom", "format-pml", "format-conv", "format-con", "format-pmlj", "format-dcterm", "format-rdfs", "format-skos", "vocab-mappings", "format-void", "no-license-metadata", "format-doap", "format-rdf", "lod", "provenance-metadata", "format-dcat", "format-dbpedia", "deref-vocab", "format-dc", "format-vann", "format-owl", "format-oboro", "format-prov", "format-foaf", "format-sio", "format-datafaqs", "format-opm", "published-by-third-party", "format-ov" ],
+    "landingPage" : "http://datahub.io/dataset/provenanceweb"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/provenanceweb/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/provenanceweb/dataid#dataset",
+    "triples" : "2"
+  }, {
+    "@id" : "http://dbpedia.org/resource/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://dbpedia.org/resource/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://inference-web.org/2.0/pml-justification.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://inference-web.org/2.0/pml-justification.owl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://inference-web.org/2.0/pml-provenance.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://inference-web.org/2.0/pml-provenance.owl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://obofoundry.org/ro/ro.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://obofoundry.org/ro/ro.owl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://open.vocab.org/terms/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://open.vocab.org/terms/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://openprovenance.org/ontology",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://openprovenance.org/ontology",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://provenanceweb.org/ns/pml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://provenanceweb.org/ns/pml",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://provenanceweb.org/source/provenanceweb/file/cr-aggregated-params/version/latest/conversion/provenanceweb-cr-aggregated-params-latest.ttl.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://provenanceweb.org/source/provenanceweb/file/cr-aggregated-params/version/latest/conversion/provenanceweb-cr-aggregated-params-latest.ttl.gz",
+    "mediaType" : "mapping/twc-conversion"
+  }, {
+    "@id" : "http://provenanceweb.org/source/provenanceweb/file/cr-full-dump/version/latest/conversion/provenanceweb-org.nt.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://provenanceweb.org/source/provenanceweb/file/cr-full-dump/version/latest/conversion/provenanceweb-org.nt.gz",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://provenanceweb.org/source/provenanceweb/file/cr-sitemap/version/latest/conversion/sitemap.xml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://provenanceweb.org/source/provenanceweb/file/cr-sitemap/version/latest/conversion/sitemap.xml",
+    "mediaType" : "meta/sitemap"
+  }, {
+    "@id" : "http://provenanceweb.org/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://provenanceweb.org/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://provenanceweb.org/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://provenanceweb.org/void.ttl",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://purl.org/dc/terms/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/dc/terms/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/net/provenance/ns",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/net/provenance/ns",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/twc/vocab/conversion/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/twc/vocab/conversion/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/twc/vocab/datafaqs",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/twc/vocab/datafaqs",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/vocab/vann/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/vocab/vann/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://rdfs.org/ns/void",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdfs.org/ns/void",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://reference.data.gov.uk/technical-registry/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://reference.data.gov.uk/technical-registry/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://semanticscience.org/resource/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://semanticscience.org/resource/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://usefulinc.com/ns/doap",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://usefulinc.com/ns/doap",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.holygoat.co.uk/owl/redwood/0.1/tags/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.holygoat.co.uk/owl/redwood/0.1/tags/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/2000/01/rdf-schema",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/2000/10/swap/pim/contact",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/2000/10/swap/pim/contact",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/2002/07/owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/2002/07/owl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/2004/02/skos/core",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/2004/02/skos/core",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/ns/dcat",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/ns/dcat",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/ns/prov",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/ns/prov",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://xmlns.com/foaf/0.1/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://xmlns.com/foaf/0.1/",
+    "mediaType" : "meta/rdf-schema"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

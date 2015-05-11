@@ -1,0 +1,210 @@
+{
+  "@graph" : [ {
+    "@id" : "http://cr.eionet.europa.eu/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://cr.eionet.europa.eu/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprtr/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/eprtr/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprtr/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Søren Roug"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprtr/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/eprtr/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/eprtr/dataid#links_eionet-rdf", "http://dataid.dbpedia.org/lod/eprtr/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/eprtr/dataid#links_eea-rod", "http://dataid.dbpedia.org/lod/eprtr/dataid#links_eurostat-linked-data", "http://dataid.dbpedia.org/lod/eprtr/dataid#links_telegraphis" ],
+    "dct:description" : "The European Pollutant Release and Transfer Register (E-PRTR) is a Europe-wide register that provides easily accessible key environmental data from industrial facilities in European Union Member States and in Iceland, Liechtenstein, Norway, Serbia and Switzerland.",
+    "license" : "http://www.opendefinition.org/licenses/odc-by",
+    "dct:title" : "European Pollutant Release and Transfer Register (E-PRTR)",
+    "exampleResource" : "http://prtr.ec.europa.eu/rdf/facility/11338",
+    "sparqlEndpoint" : "http://cr.eionet.europa.eu/sparql",
+    "triples" : "14500000",
+    "uriSpace" : "http://prtr.ec.europa.eu/rdf/",
+    "rdfs:label" : "eprtr",
+    "distribution" : [ "http://prtr.ec.europa.eu/rdf/ExternalLinks.rdf", "http://prtr.ec.europa.eu/rdf/void.rdf", "http://prtr.ec.europa.eu/rdf/Facility.rdf", "http://prtr.ec.europa.eu/rdf/PollutantRelease.rdf", "http://prtr.ec.europa.eu/rdf/FacilityReport.rdf", "http://prtr.ec.europa.eu/rdf/CompetentAuthority.rdf", "http://prtr.ec.europa.eu/rdf/FacilityID_Changes.rdf", "http://prtr.ec.europa.eu/rdf/PollutantTransfer.rdf", "http://cr.eionet.europa.eu/sparql", "http://prtr.ec.europa.eu/rdf/Activity.rdf", "http://prtr.ec.europa.eu/rdf/PollutantTransferMethodUsed.rdf", "http://prtr.ec.europa.eu/rdf/UploadedReports.rdf", "http://prtr.ec.europa.eu/rdf/lookuptables.rdf", "http://prtr.ec.europa.eu/rdf/WasteTransferMethodUsed.rdf", "http://prtr.ec.europa.eu/rdf/WasteTransfer.rdf", "http://prtr.ec.europa.eu/rdf/PollutantReleaseMethodUsed.rdf" ],
+    "keyword" : [ "published-by-producer", "format-rdf", "pollution", "environment", "waste" ],
+    "landingPage" : "http://datahub.io/dataset/eprtr"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprtr/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprtr/dataid#dataset",
+    "triples" : "317"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprtr/dataid#links_eea-rod",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/eea-rod",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprtr/dataid#dataset",
+    "triples" : "66"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprtr/dataid#links_eionet-rdf",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/eionet-rdf",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprtr/dataid#dataset",
+    "triples" : "3222"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprtr/dataid#links_eurostat-linked-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/eurostat-linked-data",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprtr/dataid#dataset",
+    "triples" : "2833"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprtr/dataid#links_telegraphis",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/telegraphis",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprtr/dataid#dataset",
+    "triples" : "69"
+  }, {
+    "@id" : "http://prtr.ec.europa.eu/rdf/Activity.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://prtr.ec.europa.eu/rdf/Activity.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://prtr.ec.europa.eu/rdf/CompetentAuthority.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://prtr.ec.europa.eu/rdf/CompetentAuthority.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://prtr.ec.europa.eu/rdf/ExternalLinks.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://prtr.ec.europa.eu/rdf/ExternalLinks.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://prtr.ec.europa.eu/rdf/Facility.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://prtr.ec.europa.eu/rdf/Facility.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://prtr.ec.europa.eu/rdf/FacilityID_Changes.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://prtr.ec.europa.eu/rdf/FacilityID_Changes.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://prtr.ec.europa.eu/rdf/FacilityReport.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://prtr.ec.europa.eu/rdf/FacilityReport.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://prtr.ec.europa.eu/rdf/PollutantRelease.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://prtr.ec.europa.eu/rdf/PollutantRelease.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://prtr.ec.europa.eu/rdf/PollutantReleaseMethodUsed.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://prtr.ec.europa.eu/rdf/PollutantReleaseMethodUsed.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://prtr.ec.europa.eu/rdf/PollutantTransfer.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://prtr.ec.europa.eu/rdf/PollutantTransfer.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://prtr.ec.europa.eu/rdf/PollutantTransferMethodUsed.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://prtr.ec.europa.eu/rdf/PollutantTransferMethodUsed.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://prtr.ec.europa.eu/rdf/UploadedReports.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://prtr.ec.europa.eu/rdf/UploadedReports.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://prtr.ec.europa.eu/rdf/WasteTransfer.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://prtr.ec.europa.eu/rdf/WasteTransfer.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://prtr.ec.europa.eu/rdf/WasteTransferMethodUsed.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://prtr.ec.europa.eu/rdf/WasteTransferMethodUsed.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://prtr.ec.europa.eu/rdf/lookuptables.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://prtr.ec.europa.eu/rdf/lookuptables.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://prtr.ec.europa.eu/rdf/void.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://prtr.ec.europa.eu/rdf/void.rdf",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

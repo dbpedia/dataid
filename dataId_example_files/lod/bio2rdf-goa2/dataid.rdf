@@ -1,0 +1,65 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-goa2/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/bio2rdf-goa2/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-goa2/dataid#dataset">
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <void:uriSpace>http://bio2rdf.org/goa:</void:uriSpace>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://download.bio2rdf.org/current/goa/bio2rdf-goa-statistics.nt.gz">
+        <dcat:mediaType>application/n-triples</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://download.bio2rdf.org/current/goa/bio2rdf-goa-statistics.nt.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>bio2rdf</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://goa.bio2rdf.org/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://goa.bio2rdf.org/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://download.bio2rdf.org/release/2/goa/goa_uniprot.nt.gz">
+        <dcat:mediaType>application/n-triples</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://download.bio2rdf.org/release/2/goa/goa_uniprot.nt.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-goa2/dataid#contributor">
+        <foaf:mbox>mailto:michel.dumontier@gmail.com</foaf:mbox>
+        <foaf:name>Michel Dumontier</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bio2RDF::GOA</dct:title>
+    <void:sparqlEndpoint rdf:resource="http://goa.bio2rdf.org/sparql"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The GOA (Gene Ontology Annotation) project provides high-quality Gene Ontology (GO) annotations to proteins in the UniProt Knowledgebase (UniProtKB) and International Protein Index (IPI). This involves electronic annotation and the integration of high-quality manual GO annotation from all GO Consortium model organism groups and specialist groups.</dct:description>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-goa2/dataid#creator">
+        <foaf:mbox>mailto:bio2rdf@googlegroups.com</foaf:mbox>
+        <foaf:name>Bio2RDF</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bio2rdf-goa2</rdfs:label>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/bio2rdf-goa2"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://download.bio2rdf.org/current/goa/goa.html">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://download.bio2rdf.org/current/goa/goa.html"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>rdf</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

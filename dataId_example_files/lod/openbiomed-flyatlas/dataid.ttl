@@ -1,0 +1,56 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://www.open-biomed.org.uk/service/flyatlas/assays>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.open-biomed.org.uk/service/flyatlas/assays> ;
+        dcat:mediaType    "api" .
+
+<http://dataid.dbpedia.org/lod/openbiomed-flyatlas/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Jun Zhao" .
+
+<http://www.open-biomed.org.uk/service/flyatlas/assays/fbgn/{fbgn}>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.open-biomed.org.uk/service/flyatlas/assays/fbgn/{fbgn}> ;
+        dcat:mediaType    "api" .
+
+<http://dataid.dbpedia.org/lod/openbiomed-flyatlas/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/openbiomed-flyatlas/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/openbiomed-flyatlas/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:name  "Jun Zhao" .
+
+<http://www.open-biomed.org.uk/open-biomed-data/flyatlas-201102.tar.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.open-biomed.org.uk/open-biomed-data/flyatlas-201102.tar.gz> ;
+        dcat:mediaType    "rdf/turtle" .
+
+<http://www.open-biomed.org.uk/sparql/endpoint/flyatlas>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://www.open-biomed.org.uk/sparql/endpoint/flyatlas> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/openbiomed-flyatlas/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "openbiomed-flyatlas"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/openbiomed-flyatlas/dataid#creator> , <http://dataid.dbpedia.org/lod/openbiomed-flyatlas/dataid#contributor> ;
+        dct:description         ""^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "flyatlas"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:sparqlEndpoint     <http://www.open-biomed.org.uk/sparql/endpoint/flyatlas> ;
+        void:triples            "14770954"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:distribution       <http://www.open-biomed.org.uk/sparql/endpoint/flyatlas> , <http://www.open-biomed.org.uk/service/flyatlas/assays> , <http://www.open-biomed.org.uk/open-biomed-data/flyatlas-201102.tar.gz> , <http://www.open-biomed.org.uk/service/flyatlas/assays/name/{name}> , <http://www.open-biomed.org.uk/service/flyatlas/assays/fbgn/{fbgn}> ;
+        dcat:keyword            "linktoflybase" , "linkeddata" , "open-biomed" , "flyatlas" ;
+        dcat:landingPage        <http://datahub.io/dataset/openbiomed-flyatlas> .
+
+<http://www.open-biomed.org.uk/service/flyatlas/assays/name/{name}>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.open-biomed.org.uk/service/flyatlas/assays/name/{name}> ;
+        dcat:mediaType    "api" .

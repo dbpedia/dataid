@@ -1,0 +1,210 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://purl.org/vocab/vann/">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/vocab/vann/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://rdfs.org/sioc/ns">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://rdfs.org/sioc/ns"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/twc/lodcloud">
+    <dcat:mediaType>HTML</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/twc/lodcloud"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.w3.org/ns/sparql-service-description">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.w3.org/ns/sparql-service-description"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.w3.org/ns/dcat">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.w3.org/ns/dcat"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.w3.org/2004/02/skos/core">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://openprovenance.org/ontology">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://openprovenance.org/ontology"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://inference-web.org/2.0/pml-justification.owl">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://inference-web.org/2.0/pml-justification.owl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://rdfs.org/ns/void">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://rdfs.org/ns/void"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/twc/vocab/conversion/">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/twc/vocab/conversion/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.w3.org/2002/07/owl">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.w3.org/2002/07/owl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.w3.org/2000/01/rdf-schema">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.ontologydesignpatterns.org/ont/web/irw.owl">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.ontologydesignpatterns.org/ont/web/irw.owl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/dc/terms/">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/dc/terms/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/twc/vocab/datafaqs">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/twc/vocab/datafaqs"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://provenanceweb.org/ns/pml">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://provenanceweb.org/ns/pml"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="https://github.com/timrdf/lodcloud">
+    <dcat:mediaType>HTML</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="https://github.com/timrdf/lodcloud"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://open.vocab.org/terms/">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://open.vocab.org/terms/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://xmlns.com/foaf/0.1/">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://xmlns.com/foaf/0.1/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.w3.org/ns/prov">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.w3.org/ns/prov"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/twc/lodcloud/source/tw-rpi-edu/file/cr-full-dump/version/latest/conversion/purl-org-twc-lodcloud.nt.gz">
+    <dcat:mediaType>application/x-ntriples</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/twc/lodcloud/source/tw-rpi-edu/file/cr-full-dump/version/latest/conversion/purl-org-twc-lodcloud.nt.gz"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://obofoundry.org/ro/ro.owl">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://obofoundry.org/ro/ro.owl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://inference-web.org/2.0/pml-provenance.owl">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://inference-web.org/2.0/pml-provenance.owl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://usefulinc.com/ns/doap">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://usefulinc.com/ns/doap"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://semanticscience.org/resource/">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://semanticscience.org/resource/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.w3.org/2000/10/swap/pim/contact">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.w3.org/2000/10/swap/pim/contact"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/net/provenance/ns">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/net/provenance/ns"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#dataset">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >the-living-lod-cloud</rdfs:label>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3639</void:triples>
+    <dcat:keyword>format-sio</dcat:keyword>
+    <dcat:keyword>format-con</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/the-living-lod-cloud"/>
+    <dcat:keyword>format-pmlj</dcat:keyword>
+    <dcat:keyword>format-vann</dcat:keyword>
+    <dcat:keyword>linked data</dcat:keyword>
+    <dcat:distribution rdf:resource="http://www.w3.org/ns/dcat"/>
+    <dcat:distribution rdf:resource="http://www.w3.org/2000/10/swap/pim/contact"/>
+    <dcat:distribution rdf:resource="http://purl.org/twc/vocab/conversion/"/>
+    <dcat:keyword>format-dcat</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A lodcloud diagram, automatically. Based on quality standards.</dct:description>
+    <dcat:distribution rdf:resource="http://semanticscience.org/resource/"/>
+    <dcat:keyword>format-datafaqs</dcat:keyword>
+    <dcat:distribution rdf:resource="http://rdfs.org/ns/void"/>
+    <dcat:distribution rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
+    <dcat:distribution rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+    <dcat:distribution rdf:resource="http://purl.org/twc/lodcloud"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#links_twc-logd">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/twc-logd/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Living LOD Cloud</dct:title>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <dcat:distribution rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns"/>
+    <dcat:distribution rdf:resource="http://purl.org/twc/lodcloud/source/tw-rpi-edu/file/cr-full-dump/version/latest/conversion/purl-org-twc-lodcloud.nt.gz"/>
+    <dcat:keyword>format-prov</dcat:keyword>
+    <dcat:keyword>format-dc</dcat:keyword>
+    <dcat:distribution rdf:resource="http://rdfs.org/sioc/ns"/>
+    <dcat:distribution rdf:resource="http://www.w3.org/ns/prov"/>
+    <dcat:keyword>format-opm</dcat:keyword>
+    <dcat:distribution rdf:resource="http://purl.org/vocab/vann/"/>
+    <dcat:distribution rdf:resource="https://github.com/timrdf/lodcloud"/>
+    <dcat:distribution rdf:resource="http://provenanceweb.org/ns/pml"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#creator">
+        <foaf:name>Timothy Lebo</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:distribution rdf:resource="http://usefulinc.com/ns/doap"/>
+    <dcat:distribution rdf:resource="http://www.w3.org/2002/07/owl"/>
+    <dcat:distribution rdf:resource="http://purl.org/dc/terms/"/>
+    <dcat:keyword>format-owl</dcat:keyword>
+    <dcat:keyword>format-pml</dcat:keyword>
+    <dcat:keyword>format-irw</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-oboro</dcat:keyword>
+    <dcat:keyword>format-conv</dcat:keyword>
+    <dcat:keyword>format-sioc</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>format-pmlp</dcat:keyword>
+    <dcat:distribution rdf:resource="http://purl.org/net/provenance/ns"/>
+    <dcat:distribution rdf:resource="http://purl.org/twc/vocab/datafaqs"/>
+    <dcat:distribution rdf:resource="http://inference-web.org/2.0/pml-justification.owl"/>
+    <dcat:distribution rdf:resource="http://www.ontologydesignpatterns.org/ont/web/irw.owl"/>
+    <dcat:distribution rdf:resource="http://inference-web.org/2.0/pml-provenance.owl"/>
+    <dcat:keyword>format-sd</dcat:keyword>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dcat:keyword>format-ov</dcat:keyword>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:keyword>format-doap</dcat:keyword>
+    <dcat:keyword>format-void</dcat:keyword>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dcat:distribution rdf:resource="http://open.vocab.org/terms/"/>
+    <dcat:distribution rdf:resource="http://www.w3.org/ns/sparql-service-description"/>
+    <dcat:distribution rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <dcat:distribution rdf:resource="http://openprovenance.org/ontology"/>
+    <dcat:distribution rdf:resource="http://obofoundry.org/ro/ro.owl"/>
+  </dataid:Dataset>
+</rdf:RDF>

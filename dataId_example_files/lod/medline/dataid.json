@@ -1,0 +1,102 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/medline/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/medline/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/medline/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:ww@eris.okfn.org",
+    "name" : "William Waites"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/medline/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/medline/dataid#contributor",
+    "containsLinks" : "http://dataid.dbpedia.org/lod/medline/dataid#links_doi",
+    "dct:description" : "RDF representation of the Medline catalogue. Information about 19 million articles linked to http://dx.doi.org/ with article identifiers and http://crossref.org/ with journal identifiers.",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "medline",
+    "triples" : "1016652223",
+    "rdfs:label" : "medline",
+    "distribution" : [ "http://purl.org/okfn/medline/catalogue", "http://purl.org/okfn/medline/records" ],
+    "keyword" : [ "format-foaf", "lod", "format-dcat", "format-void", "format-rdfs", "format-bibo", "format-rdf", "lld" ],
+    "landingPage" : "http://datahub.io/dataset/medline"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/medline/dataid#links_doi",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/doi/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/medline/dataid#dataset",
+    "triples" : "137232958"
+  }, {
+    "@id" : "http://purl.org/okfn/medline/catalogue",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/okfn/medline/catalogue",
+    "mediaType" : "api/dcat"
+  }, {
+    "@id" : "http://purl.org/okfn/medline/records",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/okfn/medline/records",
+    "mediaType" : "auto"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

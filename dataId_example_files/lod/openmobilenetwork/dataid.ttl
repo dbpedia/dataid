@@ -1,0 +1,64 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/openmobilenetwork/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#dataset" .
+
+<http://www.openmobilenetwork.org/resource/void>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.openmobilenetwork.org/resource/void> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#dataset> ;
+        void:triples         "137"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#links_linkedfood>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/linkedfood/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#dataset> ;
+        void:triples         "10120"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:abdulbaki.m.uzun@tu-berlin.de" ;
+        foaf:name  "Abdulbaki Uzun, Service-centric Networking, TU Berlin" .
+
+<http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "openmobilenetwork"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#contributor> , <http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#links_linkedgeodata> , <http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#links_linkedfood> , <http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#links_dbpedia> ;
+        dct:description         "The OpenMobileNetwork is a dataset for mobile networks and devices, which is semantically modeled using the Linked Data principles. It provides structured RDF data describing mobile networks, their topology and components (e.g., base stations, mobile devices or WiFi access points). Utilizing this dataset in combination with interlinked information that is present in the LOD Cloud, various applications can be realized that depend on mobile network and positioning data (e.g., Semantic Location-based Services or Power Management in Mobile Networks)."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by-sa> ;
+        dct:title               "OpenMobileNetwork"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://www.openmobilenetwork.org/page/cell2159549_5275_262_1.rdf> ;
+        void:sparqlEndpoint     <http://sparql.openmobilenetwork.org> ;
+        void:triples            "13639433"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://www.openmobilenetwork.org/resource/" ;
+        dcat:distribution       <http://sparql.openmobilenetwork.org> , <http://www.openmobilenetwork.org/resource/void> ;
+        dcat:keyword            "sparql" , "no-deref-vocab" , "mobile-phone" , "format-rdf" , "published-by-producer" , "lod" , "provenance-metadata" , "format-owl" , "license-metadata" , "base-station" , "format-geo" , "mobile-network" , "wireless-network" , "geographic" , "cell" ;
+        dcat:landingPage        <http://datahub.io/dataset/openmobilenetwork> .
+
+<http://sparql.openmobilenetwork.org>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://sparql.openmobilenetwork.org> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#links_linkedgeodata>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/linkedgeodata/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#dataset> ;
+        void:triples         "1131072"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:abdulbaki.m.uzun@tu-berlin.de" ;
+        foaf:name  "Abdulbaki Uzun, Service-centric Networking, TU Berlin" .

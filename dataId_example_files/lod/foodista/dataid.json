@@ -1,0 +1,85 @@
+{
+  "@graph" : [ {
+    "@id" : "http://archive.org/download/kasabi/foodista.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://archive.org/download/kasabi/foodista.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/foodista/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/foodista/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/foodista/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:leigh@ldodds.com",
+    "name" : "Leigh Dodds"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/foodista/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:leigh@ldodds.com",
+    "name" : "Leigh Dodds"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/foodista/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/foodista/dataid#creator", "http://dataid.dbpedia.org/lod/foodista/dataid#contributor" ],
+    "dct:description" : "Foodista is a community edited recipe wiki, published under a Creative Common Attribution license. The wiki contains information on foods, tools, techniques, and recipes.\n\nThis dataset was based on a crawl of the Foodista website, extracting the metadata from the service. Since the crawl was completed the Foodista site has significantly changed, so refreshing the data is more difficult. \n\n*Note* this dataset is no longer updated, it was taken off-line during the shutdown of Kasabi. A dump of the dataset has been [uploaded to the Internet Archive](http://archive.org/details/kasabi)",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Foodista",
+    "triples" : "8129900",
+    "uriSpace" : "http://data.kasabi.com/dataset/foodista",
+    "rdfs:label" : "foodista",
+    "distribution" : "http://archive.org/download/kasabi/foodista.gz",
+    "keyword" : [ "usergeneratedcontent", "food", "format-rdf" ],
+    "landingPage" : "http://datahub.io/dataset/foodista"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

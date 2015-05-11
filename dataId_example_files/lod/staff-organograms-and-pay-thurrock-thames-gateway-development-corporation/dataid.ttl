@@ -1,0 +1,44 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:name  "Thurrock Thames Gateway Development Corporation" .
+
+<http://www.thurrocktgdc.org.uk/data/Transparency/government-staff-and-salary-data---March-2011---ThurrockTGDC.xml>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.thurrocktgdc.org.uk/data/Transparency/government-staff-and-salary-data---March-2011---ThurrockTGDC.xml> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Thurrock Thames Gateway Development Corporation" .
+
+<http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid#links_uk-organogram>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/uk-organogram/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid#dataset> ;
+        void:triples         "45"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "staff-organograms-and-pay-thurrock-thames-gateway-development-corporation"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid#creator> , <http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid#links_uk-organogram> ;
+        dct:description         "A list of most Senior Civil Service posts in the Thurrock Thames Gateway Development Corporation including title, contact details, their line manager, and where disclosed, the name of the officer. Vacant posts are listed as \"Vacant\", and posts where the jobholder is not disclosed are listed as \"N/D\". Note that a number of officers are not listed for security reasons.\n\nAuthorization required:\nhttp://organogram.data.gov.uk/data/thurrocktgdc/2011-03-31/government-staff-and-salary-data---March-2011---ThurrockTGDC#totalPay4\n\n"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://reference.data.gov.uk/id/open-government-licence> ;
+        dct:title               "Organogram and staff pay data for Thurrock Thames Gateway Development Corporation"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://organogram.data.gov.uk/data/thurrocktgdc/2011-03-31/government-staff-and-salary-data---March-2011---ThurrockTGDC#totalPay1> ;
+        void:triples            "310"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://organogram.data.gov.uk/data/thurrocktgdc" ;
+        dcat:distribution       <http://www.thurrocktgdc.org.uk/data/Transparency/government-staff-and-salary-data---March-2011---ThurrockTGDC.xml> ;
+        dcat:keyword            "eutransparency" , "british-civil-service" , "senior-civil-service" , "format-foaf" , "format-owl" , "data.gov.uk" , "format-sdmxa" , "format-organogram" , "lodcloud.unconnected" , "no-deref-vocab" , "format-qb" , "format-sdmxc" , "thurrock-thames-gateway-development-corporation" , "format-org" , "format-opmv" , "format-dct" , "format-rdfs" , "civil-service" , "format-dgu" , "lodcloud.nolinks" , "format-copmv" , "format-poststatus" , "debug-tinylod" , "format-payband" , "format-grade" , "format-time" , "government" , "format-rdf" , "organogram" , "lod" , "format-skos" , "accountability" , "transparency" , "organograms-and-salaries" , "published-by-producer" , "format-gov" , "format-void" ;
+        dcat:landingPage        <http://datahub.io/dataset/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation> .

@@ -1,0 +1,114 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/geowordnet/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/geowordnet/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://sourceforge.net/projects/s-match/files/datasets/geowordnet-rdf-20110330.zip/download">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://sourceforge.net/projects/s-match/files/datasets/geowordnet-rdf-20110330.zip/download"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://sourceforge.net/projects/s-match/files/datasets/geowordnet-dict-full-20110330.zip/download">
+    <dcat:mediaType>wordnet</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://sourceforge.net/projects/s-match/files/datasets/geowordnet-dict-full-20110330.zip/download"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/geowordnet/dataid#dataset">
+    <dcat:keyword>english</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/geowordnet/dataid#links_vu-wordnet">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/vu-wordnet/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geowordnet/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2054873</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >geowordnet</rdfs:label>
+    <dcat:keyword>linguistic</dcat:keyword>
+    <dcat:keyword>format-wordnet</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >GeoWordNet is a semantic resource built from the full integration of WordNet, GeoNames and the Italian part of MultiWordNet.
+
+GeoWordNet Public Dataset contains 3,698,238 entities, 3,698,237 part-of relations between entities, 334 concepts, 182 relations between concepts, 3,698,238 relations between instances and concepts, and 13,562 (English and Italian) alternative entity names.
+
+CC-BY licence, please refer to 
+Giunchiglia, Fausto and Maltese, Vincenzo and Farazi, Feroz and Dutta, Biswanath. GeoWordNet: A Resource for Geo-spatial Applications. Technical Report DIT-09-071, Department of Information Engineering and Computer Science, University of Trento. In Proc. of 7th Extended Semantic Web Conference, ESWC 2010, Heraklion, Crete, Greece, pp. 121-136.</dct:description>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://geowordnet.semanticmatching.org/void.rdf">
+        <dcat:mediaType>meta/void</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://geowordnet.semanticmatching.org/void.rdf"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>format-w3c-wordnet</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/geowordnet"/>
+    <dcat:keyword>format-dc</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <void:exampleResource rdf:resource="http://geowordnet.semanticmatching.org/synset-dependent_political_entity-noun-1.rdf"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://geowordnet.semanticmatching.org/sitemap.xml">
+        <dcat:mediaType>meta/sitemap</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://geowordnet.semanticmatching.org/sitemap.xml"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >GeoWordNet</dct:title>
+    <void:uriSpace>http://geowordnet.semanticmatching.org/3.0/</void:uriSpace>
+    <dcat:keyword>format-vu-wordnet</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/geowordnet/dataid#creator">
+        <foaf:mbox>mailto:http://disi.unitn.it/~fausto/</foaf:mbox>
+        <foaf:name>Fausto Giunchiglia</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>italian</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/geowordnet/dataid#contributor">
+        <foaf:mbox>mailto:http://autayeu.com</foaf:mbox>
+        <foaf:name>Aliaksandr Autayeu</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://geowordnet.semanticmatching.org/synset-dependent_political_entity-noun-1.html">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://geowordnet.semanticmatching.org/synset-dependent_political_entity-noun-1.html"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>format-wn20schema</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/geowordnet/dataid#links_geonames-semantic-web">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geowordnet/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >7396476</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>no-deref-vocab</dcat:keyword>
+    <dcat:keyword>geographic</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:distribution rdf:resource="http://sourceforge.net/projects/s-match/files/datasets/geowordnet-dict-full-20110330.zip/download"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://sourceforge.net/projects/s-match/files/datasets/geowordnet-public-20101123.zip/download">
+        <dcat:mediaType>CSV</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://sourceforge.net/projects/s-match/files/datasets/geowordnet-public-20101123.zip/download"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dcat:keyword>wordnet</dcat:keyword>
+    <dcat:distribution rdf:resource="http://sourceforge.net/projects/s-match/files/datasets/geowordnet-rdf-20110330.zip/download"/>
+    <dcat:keyword>nlp</dcat:keyword>
+    <dcat:keyword>linguistics</dcat:keyword>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dcat:keyword>geonames</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >53390969</void:triples>
+  </dataid:Dataset>
+</rdf:RDF>

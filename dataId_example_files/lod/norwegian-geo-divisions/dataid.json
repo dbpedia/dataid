@@ -1,0 +1,131 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.lenka.no/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.lenka.no/",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://data.lenka.no/dumps/fylke-geonames.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.lenka.no/dumps/fylke-geonames.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://data.lenka.no/dumps/kommune-navn.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.lenka.no/dumps/kommune-navn.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://data.lenka.no/dumps/kommunesentre-geonames.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.lenka.no/dumps/kommunesentre-geonames.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://data.lenka.no/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://data.lenka.no/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/norwegian-geo-divisions/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/norwegian-geo-divisions/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/norwegian-geo-divisions/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Kjetil Kjernsmo"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/norwegian-geo-divisions/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/norwegian-geo-divisions/dataid#creator",
+    "containsLinks" : "http://dataid.dbpedia.org/lod/norwegian-geo-divisions/dataid#links_geonames-semantic-web",
+    "dct:description" : "A dataset with Norwegian Administrative Divisions and their administrative centers.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Norwegian geo-divisions",
+    "exampleResource" : [ "http://data.lenka.no/geo/sted/60196", "http://data.lenka.no/geo/inndeling/06" ],
+    "sparqlEndpoint" : "http://data.lenka.no/sparql",
+    "triples" : "8399",
+    "uriSpace" : "http://data.lenka.no/geo",
+    "rdfs:label" : "norwegian-geo-divisions",
+    "distribution" : [ "http://data.lenka.no/dumps/kommune-navn.ttl", "http://data.lenka.no/dumps/fylke-geonames.ttl", "http://data.lenka.no/dumps/kommunesentre-geonames.ttl", "http://data.lenka.no/", "http://data.lenka.no/sparql" ],
+    "keyword" : [ "no-proprietary-vocab", "topic.geographic", "format-rdf", "format-owl", "format-ngeoi", "license-metadata", "format-cc", "lod", "format-geonames", "format-dct", "format-geo", "published-by-third-party", "format-rdfs", "provenance-metadata", "geographic" ],
+    "landingPage" : "http://datahub.io/dataset/norwegian-geo-divisions"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/norwegian-geo-divisions/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/norwegian-geo-divisions/dataid#dataset",
+    "triples" : "835"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

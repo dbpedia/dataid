@@ -1,0 +1,56 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/medline/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/medline/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://purl.org/okfn/medline/records">
+    <dcat:mediaType>auto</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/okfn/medline/records"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/okfn/medline/catalogue">
+    <dcat:mediaType>api/dcat</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/okfn/medline/catalogue"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/medline/dataid#dataset">
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1016652223</void:triples>
+    <dcat:distribution rdf:resource="http://purl.org/okfn/medline/catalogue"/>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/medline"/>
+    <dcat:distribution rdf:resource="http://purl.org/okfn/medline/records"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >RDF representation of the Medline catalogue. Information about 19 million articles linked to http://dx.doi.org/ with article identifiers and http://crossref.org/ with journal identifiers.</dct:description>
+    <dcat:keyword>format-dcat</dcat:keyword>
+    <dcat:keyword>format-void</dcat:keyword>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/medline/dataid#contributor">
+        <foaf:mbox>mailto:ww@eris.okfn.org</foaf:mbox>
+        <foaf:name>William Waites</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >medline</dct:title>
+    <dcat:keyword>format-bibo</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/medline/dataid#links_doi">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/doi/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/medline/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >137232958</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>lld</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >medline</rdfs:label>
+  </dataid:Dataset>
+</rdf:RDF>

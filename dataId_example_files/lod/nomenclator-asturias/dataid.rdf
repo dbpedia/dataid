@@ -1,0 +1,132 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://purl.org/weso/nomenclator/">
+    <dcat:mediaType>HTML</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/weso/nomenclator/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/weso/static/nomenclator/datasets/nomenclator-observations.ttl">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/weso/static/nomenclator/datasets/nomenclator-observations.ttl"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#dataset">
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>weso</dcat:keyword>
+    <dcat:keyword>format-qb</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nomenclator-asturias</rdfs:label>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#contributor">
+        <foaf:mbox>mailto:josem.alvarez@weso.es</foaf:mbox>
+        <foaf:name>Jose María Alvarez Rodríguez</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://purl.org/weso/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://purl.org/weso/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>format-dcterms</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/nomenclator-asturias"/>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dcat:keyword>government</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This dataset created by the SADEI contains information about the populated places of my area, Asturias in the period 2005-2010, including:
+
+-Codes to identify the type of a populated place: CC/PP/EE (C: code of first level division called “Concejo”, P: code of second level division called Parroquia Rural and EE: code of third level division the real place)
+
+-Name in Spanish and Asturian
+
+-Statistics about: altitude, distance, area, men, women and number of apartments (main and not main)
+
+The dataset has been transformed by WESO Research Group at the University of Oviedo.</dct:description>
+    <dcat:keyword>format-dc</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Nomenclator Asturias</dct:title>
+    <dcat:keyword>oviedo</dcat:keyword>
+    <dcat:keyword>format-skosxl</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#links_reference-data-gov-uk">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/reference-data-gov-uk/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >377582</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>vocab-mappings</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#creator">
+        <foaf:mbox>mailto:josem.alvarez@weso.es</foaf:mbox>
+        <foaf:name>Jose María Alvarez Rodríguez at WESO (University of Oviedo)</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>uniovi</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#links_sdmx-concept">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/sdmx-concept/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >377582</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>linkedopendata</dcat:keyword>
+    <dcat:distribution rdf:resource="http://purl.org/weso/static/nomenclator/datasets/nomenclator-observations.ttl"/>
+    <void:exampleResource rdf:resource="http://purl.org/weso/nomenclator/asturias/observation/population/m1018"/>
+    <dcat:keyword>linkeddata</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://purl.org/weso/sparql"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://purl.org/weso/static/nomenclator/datasets/entities-places.ttl">
+        <dcat:mediaType>text/turtle</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://purl.org/weso/static/nomenclator/datasets/entities-places.ttl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution rdf:resource="http://purl.org/weso/nomenclator/"/>
+    <dcat:keyword>geodata</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://purl.org/weso/static/nomenclator/datasets/nomenclator-onto.ttl">
+        <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://purl.org/weso/static/nomenclator/datasets/nomenclator-onto.ttl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>lod</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-odbl"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://purl.org/weso/nomenclator/ls">
+        <dcat:mediaType>meta/void</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://purl.org/weso/nomenclator/ls"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >4508050</void:triples>
+    <void:uriSpace>http://purl.org/weso/nomenclator/</void:uriSpace>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#links_geolinkeddata">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geolinkeddata/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >29</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >78859</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+  </dataid:Dataset>
+</rdf:RDF>

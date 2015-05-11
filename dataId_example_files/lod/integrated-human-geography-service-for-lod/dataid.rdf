@@ -1,0 +1,69 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/integrated-human-geography-service-for-lod/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/integrated-human-geography-service-for-lod/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/integrated-human-geography-service-for-lod/dataid#dataset">
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/integrated-human-geography-service-for-lod/dataid#contributor">
+        <foaf:mbox>mailto:jokm@frotoma.com</foaf:mbox>
+        <foaf:name>FROTOMA Co., LTD.</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>geo</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/integrated-human-geography-service-for-lod/dataid#creator">
+        <foaf:mbox>mailto:kwg1234@korea.kr</foaf:mbox>
+        <foaf:name>National Geographic Information Institute(NGII), Korea</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/integrated-human-geography-service-for-lod"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://data.ngii.go.kr/rdfSiteMap/">
+        <dcat:mediaType>meta/sitemap</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://data.ngii.go.kr/rdfSiteMap/"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Integrated Human Geography Service for LOD by National Geographic Information Institute, Korea</dct:title>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >integrated-human-geography-service-for-lod</rdfs:label>
+    <dcat:keyword>lodcloud.unconnected</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://data.ngii.go.kr/SPARQL/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://data.ngii.go.kr/SPARQL/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NGII is an open data service system based on an ontology in which spatial information and human geography information are integrated.
+
+Collecting and analyzing human geography information of the whole Jeju-do about 11 categories (geological features, climate, ecologic environment, hydrologic condition, history and culture, society, tourism and leisure, industry, resource, transportation and telecommunication, and public service) and associating the information to geographic locations,  we has constructed a database and an ontology.  
+
+The ontology is published in LOD. The data on national geography and human geography information is open to users and outlinked to Dbpedia, Geonames, Openstreetmap (OSM). We established a foundation for the reuse of data and for link and share of information. 
+
+The current NGII covers human geography on Jeju-do only, however, the coverage is going to be extended to include nationwide human geography. Personal users, businesses and institutions can make use of standardized open format information based on semantic web.</dct:description>
+    <dcat:keyword>lodcloud.nolinks</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://data.ngii.go.kr/SPARQL/sparql"/>
+    <dcat:keyword>jeju</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dcat:keyword>korea</dcat:keyword>
+    <void:exampleResource rdf:resource="http://data.ngii.go.kr/id/data/Mountain/00001"/>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>geographic</dcat:keyword>
+    <dcat:keyword>geodata</dcat:keyword>
+    <dcat:keyword>jeju-do</dcat:keyword>
+    <void:exampleResource rdf:resource="http://data.ngii.go.kr/rdfSiteMap/ngii_belongToAge.nt"/>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>jeju-island</dcat:keyword>
+    <dcat:keyword>void-sparql-endpoint</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

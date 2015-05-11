@@ -1,0 +1,140 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://red.gnoss.com/voidCITA.n3">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://red.gnoss.com/voidCITA.n3"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#dataset">
+    <dcat:keyword>padres</dcat:keyword>
+    <dcat:keyword>pedagogos</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#creator">
+        <foaf:mbox>mailto:gnoss@gnoss.com</foaf:mbox>
+        <foaf:name>GNOSS Team</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>format-dcam</dcat:keyword>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >930765</void:triples>
+    <dcat:keyword>recursos educativos</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;p&gt;
+&lt;a href="http://red.gnoss.com/comunidad/Biblioteca-Escolar-Digital"&gt;Biblioteca Escolar Digital&lt;/a&gt; is an educational tool for teachers, students, parents, educators and researchers in the world of education created by the &lt;a href="http://cita.fundaciongsr.com/"&gt;Centro Internacional de Tecnologías Avanzadas (CITA)&lt;/a&gt; of the foundation in Peñaranda de Bracamonte (Salamanca, España).
+&lt;/p&gt;
+&lt;p&gt;
+The Biblioteca Escolar Digital’s repository works with &lt;a href="http://gnoss.com/"&gt;GNOSS software (RIAM Intelearning Lab)&lt;/a&gt;. RIAM is a company that develops semantic technology for the creation of specialized networks and linked markets. The project includes a faceted-based search engine and enriched contexts. Both are developments by GNOSS.
+&lt;/p&gt;
+
+&lt;p&gt;
+La &lt;a href="http://red.gnoss.com/comunidad/Biblioteca-Escolar-Digital"&gt;Biblioteca Escolar Digital&lt;/a&gt; es una herramienta didáctica para profesores, alumnos, padres, pedagogos e investigadores del mundo de la educación creada por el &lt;a href="http://cita.fundaciongsr.com/"&gt;Centro Internacional de Tecnologías Avanzadas (CITA)&lt;/a&gt; de la Fundación en Peñaranda de Bracamonte (Salamanca, España).
+&lt;/p&gt;
+&lt;p&gt;
+El repositorio trabaja con &lt;a href="http://gnoss.com/"&gt;software de GNOSS (RIAM Intelearning Lab)&lt;/a&gt;. RIAM es una compañía que desarrolla tecnología semántica para la creación de redes especializadas y mercados enlazados. El proyecto incluye un buscador facetado y contextos enriquecidos.
+&lt;/p&gt;</dct:description>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:keyword>foaf</dcat:keyword>
+    <dcat:keyword>Biblioteca Escolar Digital</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#links_geonames-semantic-web">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/geonames-semantic-web"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >96</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dcat:keyword>dc</dcat:keyword>
+    <dcat:keyword>sp</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dcat:keyword>schemata</dcat:keyword>
+    <dcat:keyword>socialweb</dcat:keyword>
+    <dcat:keyword>country.es</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#links_nytimes-linked-open-data">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/nytimes-linked-open-data"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >4148</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>sioc</dcat:keyword>
+    <dcat:keyword>profesores</dcat:keyword>
+    <dcat:distribution rdf:resource="http://red.gnoss.com/voidCITA.n3"/>
+    <dcat:keyword>gnoss</dcat:keyword>
+    <dcat:keyword>format-rdfg</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#links_didactalia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/didactalia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >30000</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-dc</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Biblioteca Escolar Digital CITA</dct:title>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/biblioteca-escolar-digital-cita"/>
+    <void:exampleResource rdf:resource="http://red.gnoss.com/en/community/Biblioteca-Escolar-Digital/resource/Aprendemos-a-cuidarnos/cf7c7aaa-9a5f-4241-b07d-2134fe0fdc79?rdf"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >4367</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>spain</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://gnoss.com/gnoss.owl">
+        <dcat:mediaType>meta/void</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://gnoss.com/gnoss.owl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>country-spain</dcat:keyword>
+    <dcat:keyword>alumnos</dcat:keyword>
+    <void:exampleResource rdf:resource="http://red.gnoss.com/en/community/Biblioteca-Escolar-Digital/resource/El-caracol-Serafin/cd673145-1ecc-4c17-be5d-e4aa59e7543a?rdf"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#links_freebase">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/freebase/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >12355</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:keyword>language-spa</dcat:keyword>
+    <dcat:keyword>usergeneratedcontent</dcat:keyword>
+    <dcat:keyword>corporate excellence</dcat:keyword>
+    <void:exampleResource rdf:resource="http://red.gnoss.com/en/community/Biblioteca-Escolar-Digital/advanced-search/tag/clase?rdf"/>
+    <dcat:keyword>format-wot</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#contributor">
+        <foaf:mbox>mailto:gnoss@gnoss.com</foaf:mbox>
+        <foaf:name>GNOSS Team</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>Centro Internacional de Tecnologías Avanzadas</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >biblioteca-escolar-digital-cita</rdfs:label>
+    <dcat:keyword>skos</dcat:keyword>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/"/>
+    <dcat:keyword>laboratorio de ideas</dcat:keyword>
+    <dcat:keyword>wrapper</dcat:keyword>
+    <dcat:keyword>CITA</dcat:keyword>
+    <void:uriSpace>http://red.gnoss.com/comunidad/Biblioteca-Escolar-Digital</void:uriSpace>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dcat:keyword>format-sioc</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

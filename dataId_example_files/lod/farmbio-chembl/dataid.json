@@ -1,0 +1,144 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.kasabi.com/dataset/chembl-rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.kasabi.com/dataset/chembl-rdf",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/farmbio-chembl/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Egon Willighagen"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-chebi", "http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-kegg-enzyme", "http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-pubmed", "http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-uniprot" ],
+    "dct:description" : "RDF version of the CC-SA-BY ChEMBL database by the team of John Overington at the EBI, Hinxton/UK (http://www.ebi.ac.uk/chembl/).",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "ChEMBL-RDF (@ Uppsala University)",
+    "exampleResource" : [ "http://linkedchemistry.info/chembl/activity/a935292", "http://linkedchemistry.info/chembl/resource/r371", "http://linkedchemistry.info/chembl/molecule/m100431", "http://linkedchemistry.info/chembl/target/t158", "http://data.kasabi.com/dataset/chembl-rdf/molecule/m100431.html", "http://linkedchemistry.info/chembl/assay/a93337", "http://linkedchemistry.info/chembl/journal/j2d9cdf677b52f45100278f594cd7198a" ],
+    "sparqlEndpoint" : "http://rdf.farmbio.uu.se/chembl/sparql",
+    "triples" : "25111377",
+    "uriSpace" : "http://rdf.farmbio.uu.se/chembl/",
+    "rdfs:label" : "farmbio-chembl",
+    "distribution" : [ "http://rdf.farmbio.uu.se/chembl/sparql", "http://semantics.bigcat.unimaas.nl/chembl/v13_5/", "http://data.kasabi.com/dataset/chembl-rdf", "http://rest.bioontology.org/bioportal/ontologies/download/45415?apikey=4ea81d74-8960-4525-810b-fa1baab576ff" ],
+    "keyword" : [ "sparql-endpoint", "no-provenance-metadata", "no-deref-vocab", "no-license-metadata", "lifesciences", "backlink", "format-rdf", "published-by-third-party", "lod" ],
+    "landingPage" : "http://datahub.io/dataset/farmbio-chembl"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-chebi",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bio2rdf-chebi",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#dataset",
+    "triples" : "517261"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-kegg-enzyme",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bio2rdf-kegg-enzyme",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#dataset",
+    "triples" : "661"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-pubmed",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bio2rdf-pubmed",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#dataset",
+    "triples" : "30039"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-uniprot",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bio2rdf-uniprot",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#dataset",
+    "triples" : "4356"
+  }, {
+    "@id" : "http://rdf.farmbio.uu.se/chembl/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://rdf.farmbio.uu.se/chembl/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://rest.bioontology.org/bioportal/ontologies/download/45415?apikey=4ea81d74-8960-4525-810b-fa1baab576ff",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rest.bioontology.org/bioportal/ontologies/download/45415?apikey=4ea81d74-8960-4525-810b-fa1baab576ff",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://semantics.bigcat.unimaas.nl/chembl/v13_5/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://semantics.bigcat.unimaas.nl/chembl/v13_5/",
+    "mediaType" : "text/n3"
+  } ],
+  "@context" : {
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

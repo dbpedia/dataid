@@ -1,0 +1,133 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/http-health-tourism-cpe-ku-ac-th-huahin-hhtriple-healthtour-owl/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/http-health-tourism-cpe-ku-ac-th-huahin-hhtriple-healthtour-owl/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/http-health-tourism-cpe-ku-ac-th-huahin-hhtriple-healthtour-owl/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:fengcnc@ku.ac.th, cchoksuchat@hotmail.com",
+    "name" : "chantana chantrapornchai, chidchanok choksuchat"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/http-health-tourism-cpe-ku-ac-th-huahin-hhtriple-healthtour-owl/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:fengcnc@ku.ac.th",
+    "name" : "chantana chantrapornchai"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/http-health-tourism-cpe-ku-ac-th-huahin-hhtriple-healthtour-owl/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/http-health-tourism-cpe-ku-ac-th-huahin-hhtriple-healthtour-owl/dataid#creator", "http://dataid.dbpedia.org/lod/http-health-tourism-cpe-ku-ac-th-huahin-hhtriple-healthtour-owl/dataid#contributor" ],
+    "dct:description" : " We  design the ontology  of health tourism data in Hua Hin and Cha-am.    We focus on the health tourism where one of the popular kinds is the spa service. International SPA Association (ISPA) has divided spa services into six kinds : club spa, day spa, destination spa, medical spa, mineral springs spa and resort/hotel spa. In our prototype area, namely, Hua-Hin, there are four kinds. In this work we design the ontology focused on these four categories.\n\n\n•\tHotel and resort spa: a spa located within a resort or hotel providing wellness components.\n\n•\tDestination spa: a facility with the main purpose is guided individual spa-goers to develop their healthy habits. \n\n•\tDay spa: a spa offers to clients a variety of professionally administered spa services on a day-use basis.\n\n•\tMedical spa: a spa poses an on-site source of natural mineral, thermal or \nseawater used in hydrotherapy treatments.\n",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "Hua Hin Health Tourism data set",
+    "exampleResource" : "http://health-tourism.cpe.ku.ac.th/huahin/example/rdf+xml/healthtour.owl",
+    "rdfs:label" : "http-health-tourism-cpe-ku-ac-th-huahin-hhtriple-healthtour-owl",
+    "distribution" : [ "http://health-tourism.cpe.ku.ac.th/huahin/application/rdf+xml/healthtour.owl", "http://health-tourism.cpe.ku.ac.th/huahin/text/turtle/healthtour.ttl", "http://health-tourism.cpe.ku.ac.th/huahin/example/ntriples/healthtour.nt", "https://ckannet-storage.commondatastorage.googleapis.com/2014-05-24T16:02:58.163Z/sponsors.png", "http://health-tourism.cpe.ku.ac.th/huahin/application/x-ntriples/healthtour.nt", "http://health-tourism.cpe.ku.ac.th/huahin/validator-results.html", "http://health-tourism.info/huahin/index.html", "http://health-tourism.cpe.ku.ac.th/huahin/metadata/voidhealth-tourism.ttl", "http://health-tourism.cpe.ku.ac.th/huahin/mapping/owl/healthtour.owl", "https://ckannet-storage.commondatastorage.googleapis.com/2014-05-24T15:34:07.017Z/interface.png", "http://health-tourism.cpe.ku.ac.th/huahin/index.html#floating-contact" ],
+    "keyword" : [ "lod", "limited-sparql-endpoint", "format-dcterm", "format-dbpedia", "format-dc", "format-nt", "lod-cloud", "format-dbo", "topic-schemata", "pictures", "provenance-metadata", "vocab-mappings", "format-bio", "Thailand", "format-rdf", "license-metadata", "ontologies", "published-by-producer", "format-foaf", "Hua Hin", "schemata", "format-void", "Health tourism", "format-owl", "format-hhtour", "no-deref-vocab" ],
+    "landingPage" : "http://datahub.io/dataset/http-health-tourism-cpe-ku-ac-th-huahin-hhtriple-healthtour-owl"
+  }, {
+    "@id" : "http://health-tourism.cpe.ku.ac.th/huahin/application/rdf+xml/healthtour.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://health-tourism.cpe.ku.ac.th/huahin/application/rdf+xml/healthtour.owl",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://health-tourism.cpe.ku.ac.th/huahin/application/x-ntriples/healthtour.nt",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://health-tourism.cpe.ku.ac.th/huahin/application/x-ntriples/healthtour.nt",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://health-tourism.cpe.ku.ac.th/huahin/example/ntriples/healthtour.nt",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://health-tourism.cpe.ku.ac.th/huahin/example/ntriples/healthtour.nt",
+    "mediaType" : "nt"
+  }, {
+    "@id" : "http://health-tourism.cpe.ku.ac.th/huahin/index.html#floating-contact",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://health-tourism.cpe.ku.ac.th/huahin/index.html#floating-contact",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://health-tourism.cpe.ku.ac.th/huahin/mapping/owl/healthtour.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://health-tourism.cpe.ku.ac.th/huahin/mapping/owl/healthtour.owl",
+    "mediaType" : "OWL"
+  }, {
+    "@id" : "http://health-tourism.cpe.ku.ac.th/huahin/metadata/voidhealth-tourism.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://health-tourism.cpe.ku.ac.th/huahin/metadata/voidhealth-tourism.ttl",
+    "mediaType" : "BIN"
+  }, {
+    "@id" : "http://health-tourism.cpe.ku.ac.th/huahin/text/turtle/healthtour.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://health-tourism.cpe.ku.ac.th/huahin/text/turtle/healthtour.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://health-tourism.cpe.ku.ac.th/huahin/validator-results.html",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://health-tourism.cpe.ku.ac.th/huahin/validator-results.html",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://health-tourism.info/huahin/index.html",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://health-tourism.info/huahin/index.html",
+    "mediaType" : "meta/owl"
+  }, {
+    "@id" : "https://ckannet-storage.commondatastorage.googleapis.com/2014-05-24T15:34:07.017Z/interface.png",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://ckannet-storage.commondatastorage.googleapis.com/2014-05-24T15:34:07.017Z/interface.png",
+    "mediaType" : "PNG"
+  }, {
+    "@id" : "https://ckannet-storage.commondatastorage.googleapis.com/2014-05-24T16:02:58.163Z/sponsors.png",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://ckannet-storage.commondatastorage.googleapis.com/2014-05-24T16:02:58.163Z/sponsors.png",
+    "mediaType" : "PNG"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

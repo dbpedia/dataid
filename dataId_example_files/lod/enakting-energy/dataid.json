@@ -1,0 +1,115 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-energy/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/enakting-energy/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-energy/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:t.omitola@ecs.soton.ac.uk",
+    "name" : "Tope Omitola"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-energy/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:t.omitola@ecs.soton.ac.uk",
+    "name" : "Tope Omitola"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-energy/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/enakting-energy/dataid#creator", "http://dataid.dbpedia.org/lod/enakting-energy/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/enakting-energy/dataid#links_ordnance-survey-linked-data", "http://dataid.dbpedia.org/lod/enakting-energy/dataid#links_purl" ],
+    "dct:description" : "UK's Road Transportation consumption data provided by the UK Department for Business, Enterprise and Regulatory Reform ( BERR). This data covers the whole UK territory from 2002 to 2007.\n",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "EnAKTing Energy Dataset",
+    "exampleResource" : "http://energy.psi.enakting.org/def/EnergyConsumptionStatItem",
+    "triples" : "2316831",
+    "uriSpace" : "http://energy.psi.enakting.org/def/",
+    "rdfs:label" : "enakting-energy",
+    "distribution" : "http://energy.psi.enakting.org/id/void",
+    "keyword" : [ "government", "deref-vocab", "format-rdf", "lod", "published-by-third-party", "statistics" ],
+    "landingPage" : "http://datahub.io/dataset/enakting-energy"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-energy/dataid#links_ordnance-survey-linked-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/ordnance-survey-linked-data",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/enakting-energy/dataid#dataset",
+    "triples" : "368"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-energy/dataid#links_purl",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/purl",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/enakting-energy/dataid#dataset",
+    "triples" : "1"
+  }, {
+    "@id" : "http://energy.psi.enakting.org/id/void",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://energy.psi.enakting.org/id/void",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

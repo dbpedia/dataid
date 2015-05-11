@@ -1,0 +1,76 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/flyted/dataid#dataset">
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/flyted/dataid#creator">
+        <foaf:name>Jun Zhao</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></dct:description>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.open-biomed.org.uk/open-biomed-data/flyted-release-fm3-20110210.tar.gz">
+        <dcat:mediaType>rdf/turtle</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.open-biomed.org.uk/open-biomed-data/flyted-release-fm3-20110210.tar.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>linktoflybase</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >63004</void:triples>
+    <dcat:keyword>open-biomed</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.open-biomed.org.uk/service/flyted/records/probe/{probe}">
+        <dcat:mediaType>api</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.open-biomed.org.uk/service/flyted/records/probe/{probe}"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/flyted/dataid#contributor">
+        <foaf:name>Jun Zhao</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/flyted"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://http://www.open-biomed.org.uk/service/flyted/probes">
+        <dcat:mediaType>api</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://http://www.open-biomed.org.uk/service/flyted/probes"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>linkeddata</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >flyted</rdfs:label>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.open-biomed.org.uk/service/flyted/records/flybase/{fbgn}">
+        <dcat:mediaType>api</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.open-biomed.org.uk/service/flyted/records/flybase/{fbgn}"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.open-biomed.org.uk/sparql/endpoint/flyted">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://www.open-biomed.org.uk/sparql/endpoint/flyted"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <void:sparqlEndpoint rdf:resource="http://www.open-biomed.org.uk/sparql/endpoint/flyted"/>
+    <dcat:keyword>flyted</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.open-biomed.org.uk/service/flyted/probes/flybase/{fbgn}">
+        <dcat:mediaType>api</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.open-biomed.org.uk/service/flyted/probes/flybase/{fbgn}"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Flyted</dct:title>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/flyted/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/flyted/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

@@ -1,0 +1,55 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "global-hunger-index-2011"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#contributor> , <http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#links_geonames-semantic-web> ;
+        dct:description         "The Global Hunger Index (GHI) offers a useful multidimensional overview of global hunger. The 2011 GHI is the sixth in an annual series that records the state of global, regional, and national hunger.\n\nThe GHI captures three dimensions of hunger: insufficient availability of calories, shortfalls in the nutritional status of children, and child mortality. Accordingly, the Index includes the following three equally weighted indicators: the proportion of people who are undernourished, as estimated by the Food and Agriculture Organization of the United Nations (FAO); the prevalence of underweight in children under the age of five, as compiled by the World Health Organization (WHO); and the under-five mortality rate, as reported by the United Nations Children’s Fund (UNICEF). The 2011 index includes GHI values for four time periods, recalculated using the latest source data, to allow an exploration of change over time. "^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "Global Hunger Index (2011)"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:triples            "19369"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://data.kasabi.com/dataset/global-hunger-index" ;
+        dcat:distribution       <http://data.ifpri.org/rdf/ghi/raw/Global-Hunger-Index-2011.rdf> , <http://data.kasabi.com/dataset/global-hunger-index> , <http://www.ifpri.org/sites/default/files/ghi2011data.xlsx> ;
+        dcat:keyword            "lod" , "hunger" , "development" , "crossdomain" , "format-qb" , "no-proprietary-vocab" , "lodcloud" , "license-metadata" , "food" , "published-by-producer" ;
+        dcat:landingPage        <http://datahub.io/dataset/global-hunger-index-2011> .
+
+<http://data.ifpri.org/rdf/ghi/raw/Global-Hunger-Index-2011.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.ifpri.org/rdf/ghi/raw/Global-Hunger-Index-2011.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://data.kasabi.com/dataset/global-hunger-index>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.kasabi.com/dataset/global-hunger-index> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:ifpri@cgiar.org" ;
+        foaf:name  "International Food Policy Research Institute" .
+
+<http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:tim@practicalparticipation.co.uk" ;
+        foaf:name  "Tim Davies" .
+
+<http://www.ifpri.org/sites/default/files/ghi2011data.xlsx>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.ifpri.org/sites/default/files/ghi2011data.xlsx> ;
+        dcat:mediaType    "XLS" .
+
+<http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#links_geonames-semantic-web>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#dataset> ;
+        void:triples         "260"^^<http://www.w3.org/2001/XMLSchema#int> .

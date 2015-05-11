@@ -1,0 +1,78 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/ontos-news-portal/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#dataset">
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >6935</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.ontosearch.com/api/ent-rdf?id=EID-3b6e3fb1eb4bef8e669277e73d2e7d56">
+        <dcat:mediaType>RDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.ontosearch.com/api/ent-rdf?id=EID-3b6e3fb1eb4bef8e669277e73d2e7d56"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>semantic-web</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#links_geonames-semantic-web">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >90</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ontos News Portal</dct:title>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2677965</void:triples>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dcat:keyword>rdf</dcat:keyword>
+    <void:uriSpace>http://www.ontosearch.com/2008/01/identification#</void:uriSpace>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ontos-news-portal</rdfs:label>
+    <dcat:keyword>no-deref-vocab</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/ontos-news-portal"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Ontos News Portal extracts facts (objects as e. g. persons or organizations as well as relations between them, e. g. a person is working for an organization or living at a location). The facts are merged together and build a huge information-network including references to the respective articles. The portal can manually be searched at news.ontos.com. For all objects, Ontos provides dereferencable GUIDs. The interface at www.ontosearch.com allows to easily generate RDF/XML or HTML information. </dct:description>
+    <dcat:keyword>media</dcat:keyword>
+    <dcat:keyword>format-dcterm</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#creator">
+        <foaf:name>Ontos AG (Christian Ehrlich)</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>linguistics</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#links_freebase">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/freebase/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >30025</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>nlp</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.ontosearch.com/dumps/dump.ttl.zip">
+        <dcat:mediaType>text/turtle</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.ontosearch.com/dumps/dump.ttl.zip"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>news</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

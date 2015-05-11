@@ -1,0 +1,48 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://prefix.cc/about/api>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://prefix.cc/about/api> ;
+        dcat:mediaType    "HTML" .
+
+<http://prefix.cc/popular/all.file.json>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://prefix.cc/popular/all.file.json> ;
+        dcat:mediaType    "JSON" .
+
+<http://prefix.cc/popular/all.file.vann>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://prefix.cc/popular/all.file.vann> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/prefix-cc/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "prefix-cc"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/prefix-cc/dataid#creator> ;
+        dct:description         "A community-curated collection of namespace prefix mappings for use in RDF applications.\n\nFeatures a lookup API and bulk download."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "prefix.cc"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://prefix.cc/foaf.file.vann> ;
+        void:triples            "8000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://prefix.cc/" ;
+        dcat:distribution       <http://prefix.cc/popular/all.file.vann> , <http://prefix.cc/about/api> , <http://prefix.cc/popular/all.file.csv> , <http://prefix.cc/popular/all.file.json> ;
+        dcat:keyword            "prefix" , "namespace" , "published-by-producer" , "usergeneratedcontent" , "lod" , "format-owl" , "no-proprietary-vocab" , "format-foaf" , "no-provenance-metadata" , "rdf" , "format-vann" , "no-license-metadata" , "format-rdf" ;
+        dcat:landingPage        <http://datahub.io/dataset/prefix-cc> .
+
+<http://dataid.dbpedia.org/lod/prefix-cc/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/prefix-cc/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/prefix-cc/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Richard Cyganiak" .
+
+<http://prefix.cc/popular/all.file.csv>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://prefix.cc/popular/all.file.csv> ;
+        dcat:mediaType    "CSV" .

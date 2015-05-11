@@ -1,0 +1,90 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/lofd/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/lofd/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/lofd/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:lebot@rpi.edu",
+    "name" : "Timothy Lebo"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/lofd/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:lebot@rpi.edu",
+    "name" : "Timothy Lebo"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/lofd/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/lofd/dataid#creator", "http://dataid.dbpedia.org/lod/lofd/dataid#contributor" ],
+    "dct:description" : "Linked Open Financial Data",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "lofd",
+    "sparqlEndpoint" : "http://lofd.tw.rpi.edu/sparql",
+    "triples" : "27537",
+    "uriSpace" : "http://lofd.tw.rpi.edu/",
+    "rdfs:label" : "lofd",
+    "distribution" : "http://lofd.tw.rpi.edu/sparql",
+    "keyword" : [ "prizms", "ecommerce", "published-by-third-party", "lod" ],
+    "landingPage" : "http://datahub.io/dataset/lofd"
+  }, {
+    "@id" : "http://lofd.tw.rpi.edu/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://lofd.tw.rpi.edu/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

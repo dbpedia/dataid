@@ -1,0 +1,37 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/legislation-openuplabs/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "The Stationery Office Limited" .
+
+<http://gov.tso.co.uk/legislation/void>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://gov.tso.co.uk/legislation/void> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/legislation-openuplabs/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/legislation-openuplabs/dataid#dataset" .
+
+<http://gov.tso.co.uk/legislation/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://gov.tso.co.uk/legislation/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/legislation-openuplabs/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "legislation-openuplabs"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/legislation-openuplabs/dataid#creator> ;
+        dct:description         "The data includes details of items of legislation, their versions and related documents. The legislation data is bibliographic, and the linked data representation makes use of bibliographic concepts defined in Functional Requirements for Bibliographic Records (FRBR). This gives a clear vocabulary which distinguishes the abstract notion of a particular piece of legislation from its expression in words and its manifestation as a document. The Metalex vocabulary includes similar concepts to those in FRBR, and the legislation linked data uses both together.\n\npart of package:openuplabs"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://reference.data.gov.uk/id/open-government-licence> ;
+        dct:title               "OpenUpLabs Legislation"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://legislation.data.gov.uk/uksi/2011/1540/made/data.rdf> ;
+        void:sparqlEndpoint     <http://gov.tso.co.uk/legislation/sparql> ;
+        dcat:distribution       <http://gov.tso.co.uk/legislation/sparql> , <http://gov.tso.co.uk/legislation/void> ;
+        dcat:keyword            "license-metadata" , "lod" , "lodcloud.nolinks" , "no-proprietary-vocab" , "government" , "lodcloud.needsinfo" , "published-by-third-party" , "format-rdf" , "format-rdfs" , "lodcloud.unconnected" , "lodcloud.needstriplecount" ;
+        dcat:landingPage        <http://datahub.io/dataset/legislation-openuplabs> .

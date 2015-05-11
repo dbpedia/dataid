@@ -1,0 +1,72 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://www.ifpri.org/sites/default/files/ghi2011data.xlsx">
+    <dcat:mediaType>XLS</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.ifpri.org/sites/default/files/ghi2011data.xlsx"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://data.kasabi.com/dataset/global-hunger-index">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://data.kasabi.com/dataset/global-hunger-index"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://data.ifpri.org/rdf/ghi/raw/Global-Hunger-Index-2011.rdf">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://data.ifpri.org/rdf/ghi/raw/Global-Hunger-Index-2011.rdf"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#dataset">
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#contributor">
+        <foaf:mbox>mailto:tim@practicalparticipation.co.uk</foaf:mbox>
+        <foaf:name>Tim Davies</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Global Hunger Index (2011)</dct:title>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>hunger</dcat:keyword>
+    <dcat:keyword>development</dcat:keyword>
+    <dcat:distribution rdf:resource="http://data.ifpri.org/rdf/ghi/raw/Global-Hunger-Index-2011.rdf"/>
+    <dcat:distribution rdf:resource="http://data.kasabi.com/dataset/global-hunger-index"/>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <dcat:keyword>format-qb</dcat:keyword>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#links_geonames-semantic-web">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >260</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:uriSpace>http://data.kasabi.com/dataset/global-hunger-index</void:uriSpace>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >19369</void:triples>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >global-hunger-index-2011</rdfs:label>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Global Hunger Index (GHI) offers a useful multidimensional overview of global hunger. The 2011 GHI is the sixth in an annual series that records the state of global, regional, and national hunger.
+
+The GHI captures three dimensions of hunger: insufficient availability of calories, shortfalls in the nutritional status of children, and child mortality. Accordingly, the Index includes the following three equally weighted indicators: the proportion of people who are undernourished, as estimated by the Food and Agriculture Organization of the United Nations (FAO); the prevalence of underweight in children under the age of five, as compiled by the World Health Organization (WHO); and the under-five mortality rate, as reported by the United Nations Children’s Fund (UNICEF). The 2011 index includes GHI values for four time periods, recalculated using the latest source data, to allow an exploration of change over time. </dct:description>
+    <dcat:keyword>lodcloud</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/global-hunger-index-2011"/>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dcat:distribution rdf:resource="http://www.ifpri.org/sites/default/files/ghi2011data.xlsx"/>
+    <dcat:keyword>food</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#creator">
+        <foaf:mbox>mailto:ifpri@cgiar.org</foaf:mbox>
+        <foaf:name>International Food Policy Research Institute</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+  </dataid:Dataset>
+</rdf:RDF>

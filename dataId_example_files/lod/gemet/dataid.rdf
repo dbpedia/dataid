@@ -1,0 +1,102 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/gemet/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/gemet/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://www.eionet.europa.eu/gemet/void.rdf">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.eionet.europa.eu/gemet/void.rdf"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/gemet/dataid#dataset">
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://cr3.eionet.europa.eu/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://cr3.eionet.europa.eu/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <void:exampleResource rdf:resource="http://rdfdata.eionet.europa.eu/eea/languages/fi"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.eionet.europa.eu/gemet/rdf?langcode=en">
+        <dcat:downloadURL rdf:resource="http://www.eionet.europa.eu/gemet/rdf?langcode=en"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/gemet/dataid#creator">
+        <foaf:mbox>mailto:gemet@eea.europa.eu</foaf:mbox>
+        <foaf:name>European Environment Agency</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/gemet/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/gemet/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3005</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>thesaurus</dcat:keyword>
+    <dcat:keyword>schemata</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/gemet"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >GEneral Multilingual Environmental Thesaurus</dct:title>
+    <dcat:keyword>lld</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <void:uriSpace>http://www.eionet.europa.eu/gemet/</void:uriSpace>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/gemet/dataid#links_umthes">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/umthes/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/gemet/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3483</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/gemet/dataid#contributor">
+        <foaf:mbox>mailto:soren.roug@eea.europa.eu</foaf:mbox>
+        <foaf:name>Søren Roug</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>lod</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >### About
+
+A thesaurus in 20+ languages for terms related to the environment and environmental data. Published by the European Environment Agency.
+
+Available in RDF without reuse constraints. 
+
+### Openness
+
+ No explicit information found.</dct:description>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <void:exampleResource rdf:resource="http://www.eionet.europa.eu/gemet/gemet-backbone.rdf"/>
+    <dcat:distribution rdf:resource="http://www.eionet.europa.eu/gemet/void.rdf"/>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://cr3.eionet.europa.eu/sparql"/>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:keyword>european</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gemet</rdfs:label>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >20229105</void:triples>
+    <dcat:keyword>format-xhtml</dcat:keyword>
+    <dcat:keyword>environment</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/gemet/dataid#links_agrovoc-skos">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/agrovoc-skos/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/gemet/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1199</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+  </dataid:Dataset>
+</rdf:RDF>

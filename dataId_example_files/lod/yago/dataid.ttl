@@ -1,0 +1,68 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoTypes.ttl.7z>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoTypes.ttl.7z> ;
+        dcat:mediaType    "7z:ttl" .
+
+<http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoSchema.ttl.7z>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoSchema.ttl.7z> ;
+        dcat:mediaType    "7z:ttl" .
+
+<http://dataid.dbpedia.org/lod/yago/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:name  "YAGO Team" .
+
+<http://dataid.dbpedia.org/lod/yago/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/yago/dataid#dataset" .
+
+<http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yago2s_tsv.7z>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yago2s_tsv.7z> ;
+        dcat:mediaType    "text/tab-separated-values" .
+
+<http://dataid.dbpedia.org/lod/yago/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "yago"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/yago/dataid#contributor> , <http://dataid.dbpedia.org/lod/yago/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/yago/dataid#links_dbpedia> ;
+        dct:description         "YAGO2s is a huge semantic knowledge base, derived from Wikipedia WordNet and GeoNames. Currently, YAGO2s has knowledge of more than 10 million entities (like persons, organizations, cities, etc.) and contains more than 120 million facts about these entities."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "YAGO"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:triples            "120000000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://yago-knowledge.org/resource/" ;
+        dcat:distribution       <http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yago2s_tsv.7z> , <http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoSchema.ttl.7z> , <http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoTypes.ttl.7z> , <http://www.mpi-inf.mpg.de/yago-naga/yago/downloads.html> , <http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoTaxonomy.ttl.7z> , <http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yago2s_ttl.7z> ;
+        dcat:keyword            "published-by-producer" , "no-license-metadata" , "lod" , "no-provenance-metadata" , "format-rdf" , "linkeddata" , "no-deref-vocab" , "ontology" , "crossdomain" , "ckanupload.esw.200910" ;
+        dcat:landingPage        <http://datahub.io/dataset/yago> .
+
+<http://dataid.dbpedia.org/lod/yago/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/yago/dataid#dataset> ;
+        void:triples         "2625671"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yago2s_ttl.7z>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yago2s_ttl.7z> ;
+        dcat:mediaType    "text/turtle" .
+
+<http://dataid.dbpedia.org/lod/yago/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "YAGO Team" .
+
+<http://www.mpi-inf.mpg.de/yago-naga/yago/downloads.html>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.mpi-inf.mpg.de/yago-naga/yago/downloads.html> ;
+        dcat:mediaType    "HTML" .
+
+<http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoTaxonomy.ttl.7z>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoTaxonomy.ttl.7z> ;
+        dcat:mediaType    "7z:ttl" .

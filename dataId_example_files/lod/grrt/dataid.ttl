@@ -1,0 +1,55 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/grrt/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:name  "Linkedopendata.it" .
+
+<http://dump.linkedopendata.it/grrt>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://dump.linkedopendata.it/grrt> ;
+        dcat:mediaType    "RDF" .
+
+<http://sparql.linkedopendata.it/grrt>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://sparql.linkedopendata.it/grrt> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/grrt/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "grrt"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/grrt/dataid#creator> , <http://dataid.dbpedia.org/lod/grrt/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/grrt/dataid#links_dbpedia> ;
+        dct:description         "List of accommodations in Tuscany, Italy.\nThe dataset uses GoodRelations and vcard and includes addresses, contact information (where available) and geo-reference. Note: geo-reference is provided in a best effort way, might contain errors."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by-sa> ;
+        dct:title               "Accommodations in Tuscany (LinkedOpenData.it)"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://data.linkedopendata.it/grrt/resource/HOTEL_HERMITAGE_2> ;
+        void:sparqlEndpoint     <http://sparql.linkedopendata.it/grrt> ;
+        void:triples            "434714"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://data.linkedopendata.it/grrt/resource/" ;
+        dcat:distribution       <http://sparql.linkedopendata.it/grrt> , <http://dump.linkedopendata.it/grrt> , <http://void.linkedopendata.it/grrt> ;
+        dcat:keyword            "italy" , "published-by-third-party" , "license-metadata" , "format-rdf" , "provenance-metadata" , "deref-vocab" , "format-gr" , "tourism" , "lod" , "accommodation" , "hotels" , "goodrelations" , "linkeddata" , "lodcloud.unconnected" , "government" , "void-sparql-endpoint" , "format-vcard" , "tuscany" ;
+        dcat:landingPage        <http://datahub.io/dataset/grrt> .
+
+<http://dataid.dbpedia.org/lod/grrt/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/grrt/dataid#dataset> ;
+        void:triples         "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://void.linkedopendata.it/grrt>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://void.linkedopendata.it/grrt> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/grrt/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/grrt/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/grrt/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Linkedopendata.it" .

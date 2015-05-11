@@ -1,0 +1,106 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/cap-italy-rdf/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/cap-italy-rdf/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/cap-italy-rdf/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "name" : "Linkedopendata.it"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/cap-italy-rdf/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Linkedopendata.it"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/cap-italy-rdf/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/cap-italy-rdf/dataid#contributor", "http://dataid.dbpedia.org/lod/cap-italy-rdf/dataid#creator" ],
+    "dct:description" : "List of postal codes in Italy. Includes street names, city and administrative regions.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "Postal codes Italy (LinkedOpenData.it)",
+    "exampleResource" : "http://data.linkedopendata.it/cap/resource/ANCONA-VIA_ACHILLE_BARILATTI",
+    "sparqlEndpoint" : "http://sparql.linkedopendata.it/cap",
+    "triples" : "436603",
+    "uriSpace" : "http://data.linkedopendata.it/cap/resource/",
+    "rdfs:label" : "cap-italy-rdf",
+    "distribution" : [ "http://sparql.linkedopendata.it/cap", "http://dump.linkedopendata.it/cap", "http://void.linkedopendata.it/cap" ],
+    "keyword" : [ "italy", "deref-vocab", "postal-code", "cap", "lodcloud.unconnected", "geographic", "linkeddata", "lod", "published-by-producer", "format-rdf", "void-sparql-endpoint", "country.it", "provenance-metadata", "format-vcard", "license-metadata", "lodcloud.nolinks" ],
+    "landingPage" : "http://datahub.io/dataset/cap-italy-rdf"
+  }, {
+    "@id" : "http://dump.linkedopendata.it/cap",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://dump.linkedopendata.it/cap",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://sparql.linkedopendata.it/cap",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://sparql.linkedopendata.it/cap",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://void.linkedopendata.it/cap",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://void.linkedopendata.it/cap",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

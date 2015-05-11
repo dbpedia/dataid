@@ -1,0 +1,81 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/finnish-municipalities/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/finnish-municipalities/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/finnish-municipalities/dataid#dataset">
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Finnish municipalities and regional classifications</dct:title>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:keyword>municipal</dcat:keyword>
+    <dcat:keyword>regions</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An RDF vocabulary describing Finnish municipalities and many regional classifications, including 
+
+* Centres for Economic Development, Transport and the Environment
+* Provinces
+* Regional State Administrative Agencies
+* Regions
+* Major regions
+* Statistical grouping of municipalities
+* Employment and economic development centres
+
+The data is based on classifications by Statistics Finland. The format is SKOS-based, but extends SKOS by defining separate classes (subclasses of skos:Concept) for each entity type and similarly uses subproperties of SKOS properties to relate the entities.
+
+Links to DBpedia and Wikipedia are also provided for the municipalities.</dct:description>
+    <dcat:keyword>geographic</dcat:keyword>
+    <dcat:keyword>opendatachallenge</dcat:keyword>
+    <dcat:keyword>vocab-mappings</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/finnish-municipalities/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/finnish-municipalities/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >336</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>regional</dcat:keyword>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>country-finland</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >finnish-municipalities</rdfs:label>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <void:uriSpace>http://www.yso.fi/onto/kunnat/</void:uriSpace>
+    <dcat:keyword>local-government</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/finnish-municipalities"/>
+    <void:exampleResource rdf:resource="http://www.yso.fi/onto/kunnat/k91"/>
+    <dcat:keyword>government</dcat:keyword>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >11380</void:triples>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/finnish-municipalities/dataid#links_wikipedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/wikipedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/finnish-municipalities/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >336</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/finnish-municipalities/dataid#creator">
+        <foaf:name>Osma Suominen</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://onki.fi/en/browser/downloadfile/kunnat?o=http%3A%2F%2Fwww.yso.fi%2Fonto%2Fkunnat&amp;f=kunnat%2Fkunnat2011-skos.ttl">
+        <dcat:mediaType>text/turtle</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://onki.fi/en/browser/downloadfile/kunnat?o=http%3A%2F%2Fwww.yso.fi%2Fonto%2Fkunnat&amp;f=kunnat%2Fkunnat2011-skos.ttl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>lod</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

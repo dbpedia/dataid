@@ -1,0 +1,52 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/nvd/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/nvd/dataid#dataset" .
+
+<http://api.talis.com/stores/nvd/services/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://api.talis.com/stores/nvd/services/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/nvd/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/nvd/dataid#dataset> ;
+        void:triples         "502"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.ntnu.no/ub/data/nvd/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.ntnu.no/ub/data/nvd/> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/nvd/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:rurik.greenall@ub.ntnu.no" ;
+        foaf:name  "Rurik Thomas Greenall" .
+
+<http://dataid.dbpedia.org/lod/nvd/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:support@ub.ntnu.no" ;
+        foaf:name  "rurik.greenall@ub.ntnu.no" .
+
+<http://dataid.dbpedia.org/lod/nvd/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "nvd"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/nvd/dataid#contributor> , <http://dataid.dbpedia.org/lod/nvd/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/nvd/dataid#links_dbpedia> ;
+        dct:description         "Norwegian classification of scientific disciplines as linked data (2003 edition)."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-pddl> ;
+        dct:title               "Norsk inndeling av vitenskapsdisipliner"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://api.talis.com/stores/nvd/meta?about=http://www.ntnu.no/ub/data/nvd/2003/012&output=rdf> ;
+        void:sparqlEndpoint     <http://api.talis.com/stores/nvd/services/sparql> ;
+        void:triples            "2114"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://www.ntnu.no/ub/data/nvd/2003/" ;
+        dcat:distribution       <http://api.talis.com/stores/nvd/services/sparql> , <http://www.ntnu.no/ub/data/nvd/> ;
+        dcat:keyword            "lod" , "lld" , "format-rdfs" , "norwegian" , "duplicate-dmoz_rdf_dump" , "no-license-metadata" , "format-dc" , "publications" , "no-provenance-metadata" , "library" , "format-skos" , "format-rdf" , "ontology" , "no-proprietary-vocab" , "published-by-producer" , "format-owl" , "english" , "linkedopendata" ;
+        dcat:landingPage        <http://datahub.io/dataset/nvd> .

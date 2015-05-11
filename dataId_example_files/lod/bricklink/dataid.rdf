@@ -1,0 +1,59 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/bricklink/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/bricklink/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://archive.org/download/kasabi/bricklink.gz">
+    <dcat:mediaType>application/x-nquads</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://archive.org/download/kasabi/bricklink.gz"/>
+  </dataid:Distribution>
+  <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bricklink/dataid#links_dbpedia">
+    <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+    <void:subjectsTarget>
+      <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/bricklink/dataid#dataset">
+        <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+        <dataid:containsLinks rdf:resource="http://dataid.dbpedia.org/lod/bricklink/dataid#links_dbpedia"/>
+        <dcat:keyword>format-rdf</dcat:keyword>
+        <dcat:landingPage rdf:resource="http://datahub.io/dataset/bricklink"/>
+        <dcat:keyword>published-by-third-party</dcat:keyword>
+        <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Bricklink is an unofficial lego marketplace. Essentially it is the EBay for lego, where you can buy or sell anything to do with Lego. The lego community maintain a number of fantastic resources that catalogue all of the Lego products, often down to the detail of the number, colour and type of each part in a lego set. The catalogue that powers the Bricklink website is available for download and reuse and has been used to create this dataset.
+
+Currently the dataset consists of descriptions of over 9000 Lego sets and over 23,000 Lego parts. A number of the lego sets have detailed inventories including number, type and colour of parts. There are also links to sets, instructions and part images.
+
+*Note* this dataset is no longer updated, it was taken off-line during the shutdown of Kasabi. A dump of the dataset has been [uploaded to the Internet Archive](http://archive.org/details/kasabi)
+</dct:description>
+        <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Bricklink</dct:title>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3314214</void:triples>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >bricklink</rdfs:label>
+        <void:uriSpace>http://data.kasabi.com/dataset/bricklink/</void:uriSpace>
+        <dcat:distribution rdf:resource="http://archive.org/download/kasabi/bricklink.gz"/>
+        <dcat:keyword>published</dcat:keyword>
+        <dataid:associatedAgent>
+          <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/bricklink/dataid#creator">
+            <foaf:mbox>mailto:leigh@ldodds.com</foaf:mbox>
+            <foaf:name>Leigh Dodds</foaf:name>
+          </dataid:Creator>
+        </dataid:associatedAgent>
+        <dcat:keyword>media</dcat:keyword>
+        <dataid:associatedAgent>
+          <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/bricklink/dataid#contributor">
+            <foaf:mbox>mailto:leigh@ldodds.com</foaf:mbox>
+            <foaf:name>Leigh Dodds</foaf:name>
+          </dataid:Contributor>
+        </dataid:associatedAgent>
+      </dataid:Dataset>
+    </void:subjectsTarget>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >25797</void:triples>
+  </dataid:Linkset>
+</rdf:RDF>

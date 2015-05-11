@@ -1,0 +1,138 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/yovisto/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/yovisto/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/yovisto/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:joerg@yovisto.com, harald.sack@hpi.uni-potsdam.de",
+    "name" : "Jörg Waitelonis, Harald Sack"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/yovisto/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:info@yovisto.com",
+    "name" : "Yovisto.com"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/yovisto/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/yovisto/dataid#contributor", "http://dataid.dbpedia.org/lod/yovisto/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/yovisto/dataid#links_dbpedia",
+    "dct:description" : "Yovisto is a video search engine specialized in academic lecture recordings and conference talks. Unlike other video search engines, Yovisto provides a time based video index,\nwhich allows to search within the videos’ content. Automated analysis techniques such as scene detection\nand intelligent character recognition are used for metadata generation. Time dependent collaborative annotation enables the user to annotate tags and comments at any\npoint within a video.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "Yovisto - academic video search",
+    "exampleResource" : "http://www.yovisto.com/resource/speaker/470",
+    "sparqlEndpoint" : "http://sparql.yovisto.com/",
+    "triples" : "4932352",
+    "uriSpace" : "http://www.yovisto.com/resource",
+    "rdfs:label" : "yovisto",
+    "distribution" : [ "http://sparql.yovisto.com/", "http://www.yovisto.com/", "http://www.yovisto.com/labs/dumps/latest.ttl.tar.gz", "http://www.yovisto.com/ontology/0.9/index.owl", "http://www.yovisto.com/sitemapext.xml" ],
+    "keyword" : [ "format-cc", "multimedia", "video", "crossdomain", "e-learning", "no-vocab-mappings", "format-rdf", "void-sparql-endpoint", "science", "deref-vocab", "format-mpeg7", "format-foaf", "format-dcterm", "format-dc", "academic", "format-tag", "no-license-metadata", "no-provenance-metadata", "published-by-producer", "usergeneratedcontent", "education", "lod" ],
+    "landingPage" : "http://datahub.io/dataset/yovisto"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/yovisto/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/yovisto/dataid#dataset",
+    "triples" : "300"
+  }, {
+    "@id" : "http://sparql.yovisto.com/",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://sparql.yovisto.com/",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://www.yovisto.com/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.yovisto.com/",
+    "mediaType" : "html+rdfa"
+  }, {
+    "@id" : "http://www.yovisto.com/labs/dumps/latest.ttl.tar.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.yovisto.com/labs/dumps/latest.ttl.tar.gz",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://www.yovisto.com/ontology/0.9/index.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.yovisto.com/ontology/0.9/index.owl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.yovisto.com/sitemapext.xml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.yovisto.com/sitemapext.xml",
+    "mediaType" : "meta/sitemap"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

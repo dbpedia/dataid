@@ -1,0 +1,52 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://www.purl.org/asit/RDF>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.purl.org/asit/RDF> ;
+        dcat:mediaType    "XML" .
+
+<http://dataid.dbpedia.org/lod/asit/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/asit/dataid#dataset> ;
+        void:triples         "130"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/asit/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:name  "Gianmaria Silvello" .
+
+<http://ims.dei.unipd.it/websites/ASIt/RDF/asit-data.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://ims.dei.unipd.it/websites/ASIt/RDF/asit-data.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/asit/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/asit/dataid#dataset" .
+
+<http://www.purl.org/ASIt/RDF/asit-schema.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.purl.org/ASIt/RDF/asit-schema.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/asit/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "asit"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/asit/dataid#creator> , <http://dataid.dbpedia.org/lod/asit/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/asit/dataid#links_dbpedia> ;
+        dct:description         "The Atlante Sintattico d'Italia, Syntactic Atlas of Italy (ASIt) enterprise builds on a long standing tradition of collecting and analysing linguistic corpora, which has originated different efforts and projects over the years. ASIt accounts for minimally different variants within a sample of closely related languages, thus it does not need a thorough part of speech (POS) disambiguation, since the \"trivial\" identification of basic POS (e.g. Nouns vs Verbs) is not enough to capture cross-linguistic differences between closely related languages. Secondly, the linguistic variants cannot be reduced to lexical distinctions only, i.e. syntactic differences are in general unpredictable on the basis of the properties of single lexical items. A specific tag set designed to capture sentence-level phenomena without taking into consideration POS tags is needed. As a consequence, while other tag sets are designed to carry out a gross linguistic analysis of a vast corpus, the ASIt tag set aims to capture fine-grained grammatical differences by comparing various dialectal translations of the same sentence. Moreover, in order to pin down these subtle asymmetries, the linguistic analysis must be carried out manually.\n\nTo explain why the needs for ASIt are so special we have to take into consideration two different aspects: the nature of Italian dialects, and the kind of linguistic theory ASIt aims to interact with. The Italian dialectal area presents a kind of variation that involves parametric choices affecting many general aspects of syntax, morphology, and phonology. The kind of information we want to gather involves not only the presence of a certain element, but also the absence of an element; an element can be omitted only in some constructions and in conjunction with specific characteristics of the language. For this reason, ASIt proposed the creation of a specific set of tags starting from a universal core shared by all languages (on the basis of the work done by DynaSAND), and subsequently developing a language-specific periphery which is compatible with other projects.\n\nDialectal data stored in the ASIt were gathered during a twenty-year-long survey investigating the distribution of several grammatical phenomena across the dialects of Italy. These data and information were collected by means of questionnaires formed by sets of Italian sentences: dialectal speakers were asked to translate them into their dialects and write their translations in the questionnaire; therefore, each questionnaire is associated with many parallel dialectal translations. At present, there are eight different questionnaires written in Italian and almost 500 questionnaires, corresponding to the eight Italian questionnaires, written in more than 240 different dialects, for a total of more than 54,000 sentences and more than 40,000 tags stored in the data resource managed by the ASIt digital library system."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by-sa> ;
+        dct:title               "Atlante Sintattico d'Italia (ASIt)"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:triples            "420000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:distribution       <http://ims.dei.unipd.it/websites/ASIt/RDF/asit-data.rdf> , <http://www.purl.org/asit/RDF> , <http://www.purl.org/ASIt/RDF/asit-schema.rdf> ;
+        dcat:keyword            "dialect" , "Italian" , "questionnaire" , "linguistics" , "llod" , "lod" , "corpus" , "syntax" ;
+        dcat:landingPage        <http://datahub.io/dataset/asit> .
+
+<http://dataid.dbpedia.org/lod/asit/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Gianmaria Silvello" .

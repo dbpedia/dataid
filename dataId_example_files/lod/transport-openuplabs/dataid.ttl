@@ -1,0 +1,32 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/transport-openuplabs/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "The Stationery Office Limited" .
+
+<http://dataid.dbpedia.org/lod/transport-openuplabs/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "transport-openuplabs"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/transport-openuplabs/dataid#creator> ;
+        dct:description         "The Transport dataset is based on NapTan and traffic flow data. These datasets are compiled by the Department for Transport.\n\nDetails on Transport data can be found at http://www.dft.gov.uk\n\nThe data was sourced from http://upload.data.gov.uk/data/transport "^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://reference.data.gov.uk/id/open-government-licence> ;
+        dct:title               "OpenUpLabs Transport"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://transport.data.gov.uk/doc/stop-point/490011810W.rdf> ;
+        void:sparqlEndpoint     <http://gov.tso.co.uk/transport/sparql> ;
+        dcat:distribution       <http://gov.tso.co.uk/transport/sparql> ;
+        dcat:keyword            "lodcloud.unconnected" , "format-geo" , "format-foaf" , "format-rdf" , "format-rdfs" , "lodcloud.nolinks" , "government" , "format-skos" , "lodcloud.needsinfo" , "lodcloud.needstriplecount" , "published-by-third-party" , "lod" , "transportation" , "deref-vocab" ;
+        dcat:landingPage        <http://datahub.io/dataset/transport-openuplabs> .
+
+<http://dataid.dbpedia.org/lod/transport-openuplabs/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/transport-openuplabs/dataid#dataset" .
+
+<http://gov.tso.co.uk/transport/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://gov.tso.co.uk/transport/sparql> ;
+        dcat:mediaType  "api/sparql" .

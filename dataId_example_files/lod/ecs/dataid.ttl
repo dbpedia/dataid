@@ -1,0 +1,33 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/ecs/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/ecs/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/ecs/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "School of Electronics and Computer Science Webmaster" .
+
+<http://dataid.dbpedia.org/lod/ecs/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "ecs"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/ecs/dataid#creator> ;
+        dct:description         "Note: The number of triple is a wild guess based on the 2600 RDF documents found in Sindice and an assumption of ~20 triples per page.http://rdf.ecs.soton.ac.uk/ontology/ecs#"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "School of Electronics and Computer Science, University of Southampton"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://rdf.ecs.soton.ac.uk/location/UoS/site/HighfieldCampus> , <http://rdf.ecs.soton.ac.uk/person/1248> ;
+        void:triples            "50000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://rdf.ecs.soton.ac.uk/ontology/ecs#" ;
+        dcat:distribution       <http://rdf.ecs.soton.ac.uk/ontology/ecs> ;
+        dcat:keyword            "publications" , "published-by-third-party" , "lodcloud.nolinks" , "no-vocab-mappings" , "deref-vocab" , "no-license-metadata" , "format-foaf" , "higher-education" , "format-rdf" , "format-geo" , "format-cc" , "no-provenance-metadata" , "lod" , "education" ;
+        dcat:landingPage        <http://datahub.io/dataset/ecs> .
+
+<http://rdf.ecs.soton.ac.uk/ontology/ecs>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://rdf.ecs.soton.ac.uk/ontology/ecs> ;
+        dcat:mediaType    "meta/rdf-schema" .

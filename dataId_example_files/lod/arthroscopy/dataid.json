@@ -1,0 +1,144 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/arthroscopy/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/arthroscopy/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:gnoss@gnoss.com",
+    "name" : "GNOSS Team"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/arthroscopy/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:gnoss@gnoss.com",
+    "name" : "GNOSS Team"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/arthroscopy/dataid#contributor", "http://dataid.dbpedia.org/lod/arthroscopy/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_nytimes-linked-open-data", "http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_freebase", "http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_gnoss", "http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_geonames-semantic-web", "http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_dblp-deusto-gnoss" ],
+    "dct:description" : "<p> The arthroscopy community is the adecuate space for all those who take part on the arthroscopic surgical procedures of the locomotor system. Its meaning is to create and share knowledge concerning the answers to the current and effective matters on these kind of arthroscopic proceedings: surgical, anesthesic, rehabilitative or even organizing ones.</p>\n<p>The arthroscopy community works with <a href=\"http://gnoss.com/\">GNOSS software (RIAM Intelearning Lab)</a>. RIAM is a company that develops semantic technology for the creation of specialized networks and linked markets. It includes a facet-based search engine and enriched contexts. Both are developments by GNOSS.</p>\n\n<p> Portal de Artroscopia es un espacio de aprendizaje para todas las personas que participan en los procedimientos quirúrgicos artroscópicos del aparato locomotor. El propósito es generar y compartir conocimiento sobre las soluciones a los problemas reales y concretos en este tipo procedimientos, sean estos quirúrgicos, de anestesia, de rehabilitación o de organización. </p><p> Portal de Artroscopia trabaja con <a href=\"http://gnoss.com/\">software de GNOSS (RIAM Intelearning Lab)</a>. RIAM es una compañía que desarrolla tecnología semántica para la creación de redes especializadas y mercados enlazados. El proyecto Incluye un buscador facetado y contextos enriquecidos. Ambos son desarrollos de GNOSS.\n</p>",
+    "license" : "http://creativecommons.org/licenses/by-nc/2.0/",
+    "dct:title" : "Arthroscopy community",
+    "exampleResource" : [ "http://arthroscopyportal.com/en/community/Arthroscopy/resource/Reconstruccion-de-LCA-mediante-tendones-isquiotibi/267556b2-67f0-4264-8071-1932151c8439", "http://arthroscopyportal.com/en/community/Arthroscopy/resource/Reparacion-de-cartilago-en-la-rodilla/a7617f64-8a3c-4913-aea1-17657100cc45?rdf", "http://arthroscopyportal.com/en/community/Arthroscopy/advanced-search/tag/Arthroscopy?rdf" ],
+    "triples" : "62355",
+    "uriSpace" : "http://gnoss.com/comunidad/Arthroscopy",
+    "rdfs:label" : "arthroscopy",
+    "distribution" : [ "http://gnoss.com/gnoss.owl", "http://museos.gnoss.com/voidArtroscopyGNOSS.n3" ],
+    "keyword" : [ "format-dc", "socialweb", "format-sioc", "usergeneratedcontent", "sioc", "foaf", "country.es", "country-spain", "license-metadata", "Arthroscopy", "spain", "no-vocab-mappings", "lod", "corporate excellence", "procesos quirúrgicos", "schemata", "format-rdfg", "artrocopia", "provenance-metadata", "dc", "skos", "format-foaf", "format-dcam", "sp", "laboratorio de ideas", "published-by-third-party", "format-skos", "format-wot", "no-proprietary-vocab", "arthroscopic proceedings", "health", "aparato locomotor", "language-spa", "locomotor system", "wrapper", "surgical procedures" ],
+    "landingPage" : "http://datahub.io/dataset/arthroscopy"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_dblp-deusto-gnoss",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset",
+    "triples" : "789"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset",
+    "triples" : "9580"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_freebase",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset",
+    "triples" : "2232"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/geonames-semantic-web",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset",
+    "triples" : "2"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_gnoss",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/gnoss",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset",
+    "triples" : "2"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_nytimes-linked-open-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/nytimes-linked-open-data",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset",
+    "triples" : "8749"
+  }, {
+    "@id" : "http://gnoss.com/gnoss.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://gnoss.com/gnoss.owl",
+    "mediaType" : "meta/owl"
+  }, {
+    "@id" : "http://museos.gnoss.com/voidArtroscopyGNOSS.n3",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://museos.gnoss.com/voidArtroscopyGNOSS.n3",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

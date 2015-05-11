@@ -1,0 +1,130 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://red.gnoss.com/voidAEGP.n3">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://red.gnoss.com/voidAEGP.n3"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://red.gnoss.com/en/community/buscaempresas/Empresas/tag/s?rdf">
+    <dcat:mediaType>meta/owl</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://red.gnoss.com/en/community/buscaempresas/Empresas/tag/s?rdf"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#dataset">
+    <dcat:keyword>format-rdfg</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dcat:keyword>format-wot</dcat:keyword>
+    <dcat:keyword>aegp</dcat:keyword>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://gnoss.com/gnoss.owl">
+        <dcat:mediaType>meta/owl</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://gnoss.com/gnoss.owl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>usergeneratedcontent</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;p&gt;
+Semantic catalog of the &lt;a href="http://www.agrupaciontextil.org/"&gt;Spanish Textile and Clothing Association (AEGP) companies&lt;/a&gt;. AEGP is a voluntary professional national association that promotes the competitiveness of its companies through the promotion, defense and representation of their professional, economic and work interests. It offers specialized services that enhance their position in the environment. The catalog includes 2,500 textile and clothing companies.
+&lt;/p&gt;
+&lt;p&gt;
+AEGP works with &lt;a href="http://gnoss.com/"&gt;GNOSS software (RIAM Intelearning Lab)&lt;/a&gt;. RIAM is a company that develops semantic technology for the creation of specialized networks and linked markets. The project includes a faceted-based search engine and enriched contexts. Both are developments by GNOSS.
+&lt;/p&gt;
+
+&lt;p&gt;
+Catálogo semántico de las empresas de la &lt;a href="http://www.agrupaciontextil.org/"&gt;Agrupación Española del Género de Punto (AEGP)&lt;/a&gt;. AEGP es una asociación profesional voluntaria de ámbito estatal cuyo objetivo es impulsar la competitividad de las empresas asociadas, a través del fomento, la defensa y la representación de sus intereses laborales, profesionales y económicos y, mediante una oferta de servicios especializados que les permitan mejorar su posición en el entorno. El catálogo recoge 2500 empresas del sector.
+&lt;/p&gt;
+&lt;p&gt;
+AEGP trabaja con &lt;a href="http://gnoss.com/"&gt;software de GNOSS (RIAM Intelearning Lab)&lt;/a&gt;. RIAM es una compañía que desarrolla tecnología semántica para la creación de redes especializadas y mercados enlazados. El proyecto incluye un buscador facetado y contextos enriquecidos.
+&lt;/p&gt;</dct:description>
+    <dcat:distribution rdf:resource="http://red.gnoss.com/en/community/buscaempresas/Empresas/tag/s?rdf"/>
+    <dcat:keyword>foaf</dcat:keyword>
+    <dcat:keyword>sioc</dcat:keyword>
+    <dcat:keyword>spain</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AEGP, Spanish Textile and Clothing Association</dct:title>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_freebase">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/freebase/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3933</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:uriSpace>http://red.gnoss.com/comunidad/buscaempresas</void:uriSpace>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >191</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>country.es</dcat:keyword>
+    <dcat:keyword>wrapper</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:keyword>gnoss</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dcat:keyword>format-dcam</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >88645</void:triples>
+    <dcat:keyword>format-dc</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_nytimes-linked-open-data">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/nytimes-linked-open-data"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >223</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >aegp-spanish-textile-and-clothing-association</rdfs:label>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#contributor">
+        <foaf:mbox>mailto:gnoss@gnoss.com</foaf:mbox>
+        <foaf:name>GNOSS Team</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>empresas</dcat:keyword>
+    <dcat:distribution rdf:resource="http://red.gnoss.com/voidAEGP.n3"/>
+    <dcat:keyword>format-sioc</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>schemata</dcat:keyword>
+    <dcat:keyword>dc</dcat:keyword>
+    <dcat:keyword>socialweb</dcat:keyword>
+    <dcat:keyword>sp</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/aegp-spanish-textile-and-clothing-association"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_geonames-semantic-web">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/geonames-semantic-web"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >7547</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>language-spa</dcat:keyword>
+    <dcat:keyword>corporate excellence</dcat:keyword>
+    <void:exampleResource rdf:resource="http://red.gnoss.com/en/community/buscaempresas/resource/GRIMARDI-SL/e652d94e-03cf-4814-9757-ea748b14b503?rdf"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#creator">
+        <foaf:mbox>mailto:gnoss@gnoss.com</foaf:mbox>
+        <foaf:name>GNOSS Team</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>country-spain</dcat:keyword>
+    <dcat:keyword>laboratorio de ideas</dcat:keyword>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <void:exampleResource rdf:resource="http://red.gnoss.com/en/community/buscaempresas/resource/TRICONOVA-SL/77117998-7718-40ce-8642-b600330465bd?rdf"/>
+    <dcat:keyword>skos</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

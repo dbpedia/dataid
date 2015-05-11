@@ -1,0 +1,88 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo-cu-boulder/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/vivo-cu-boulder/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo-cu-boulder/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:vivo@colorado.edu",
+    "name" : "Alex Viggio"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo-cu-boulder/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:vivo@colorado.edu",
+    "name" : "Liz Tomich"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo-cu-boulder/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/vivo-cu-boulder/dataid#creator", "http://dataid.dbpedia.org/lod/vivo-cu-boulder/dataid#contributor" ],
+    "dct:description" : "Information about University of Colorado Boulder faculty and researchers across all disciplines, departments and colleges. Available as RDF dump and Linked Data. This is a part of package:vivo.\n",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "VIVO CU-Boulder",
+    "rdfs:label" : "vivo-cu-boulder",
+    "distribution" : [ "http://vivoweb.org/ontology/core", "http://vivo.colorado.edu/individual?uri=http%3A%2F%2Fvivo.colorado.edu%2Ffisid_113253&format=rdfxml", "http://vivo.colorado.edu/individual?uri=http%3A%2F%2Fvivo.colorado.edu%2Fdeptid_10180&format=rdfxml" ],
+    "keyword" : [ "no-license-metadata", "published-by-producer", "lod", "no-vocab-mappings", "vivo", "format-rdf", "education", "format-rdfs", "deref-vocab", "no-provenance-metadata", "social-networks", "format-vitro", "science", "publications" ],
+    "landingPage" : "http://datahub.io/dataset/vivo-cu-boulder"
+  }, {
+    "@id" : "http://vivo.colorado.edu/individual?uri=http%3A%2F%2Fvivo.colorado.edu%2Fdeptid_10180&format=rdfxml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://vivo.colorado.edu/individual?uri=http%3A%2F%2Fvivo.colorado.edu%2Fdeptid_10180&format=rdfxml",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://vivo.colorado.edu/individual?uri=http%3A%2F%2Fvivo.colorado.edu%2Ffisid_113253&format=rdfxml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://vivo.colorado.edu/individual?uri=http%3A%2F%2Fvivo.colorado.edu%2Ffisid_113253&format=rdfxml",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://vivoweb.org/ontology/core",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://vivoweb.org/ontology/core",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

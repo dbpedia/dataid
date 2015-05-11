@@ -1,0 +1,158 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:striffler@hebis.uni-frankfurt.de",
+    "name" : "Hessisches BibliotheksInformationsSystem (HeBIS)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:striffler@hebis.uni-frankfurt.de",
+    "name" : "Hessisches BibliotheksInformationsSystem (HeBIS)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#creator", "http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#contributor" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#links_dnb-gemeinsame-normdatei",
+    "dct:description" : "This site contains links to metadata about all types of publications (print media, E-books, E-journals,online resources) originating from the central union database of HeBIS. HeBIS - The Hessische BibliotheksInformationsSystem is one of the six regional library unions in Germany. It is the electronic information and service union of academic libraries in Hessen and parts of the Rhineland Palatinate. The metadata was catalogued by 27 independent cataloging libraries/library systems which are active within the union.\n\nAdditional information about the producer of this data can be found here:\n\nhttp://www.hebis.de/eng/englisch_index.php",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "HeBIS - Bibliographic Resources of the Library Union Catalogues of Hessen and parts of the Rhineland Palatinate",
+    "exampleResource" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-07-18T131849/06073998.rdf",
+    "sparqlEndpoint" : "http://lod.hebis.de/sparql",
+    "triples" : "267038676",
+    "uriSpace" : "http://lod.hebis.de/resource/",
+    "rdfs:label" : "hebis-bibliographic-resources",
+    "distribution" : [ "http://lod.hebis.de/lod/hebis-13050074-21257739.rdf.gz", "https://commondatastorage.googleapis.com/ckannet-storage/2012-07-17T084118/hebis-00000001-05051126.rdf.gz", "http://lod.hebis.de/lod/hebis-26887668-29873805.rdf.gz", "http://www.hebis.de/de/1ueber_uns/projekte/lod/lod_download.php", "http://lod.hebis.de/lod/hebis-10174116-13050073.rdf.gz", "http://lod.hebis.de/lod/hebis-05051128-10174115.rdf.gz", "http://lod.hebis.de/sparql", "http://lod.hebis.de/lod/void.ttl", "http://lod.hebis.de/lod/hebis-21257740-26887667.rdf.gz" ],
+    "keyword" : [ "hessen", "format-wdrs", "format-frbr", "bibliographic", "lld", "format-hartigprov", "no-provenance-metadata", "format-doap", "format-dcterms", "license-metadata", "format-dcterm", "format-prvt", "format-bibo", "publications", "format-owl", "published-by-producer", "format-dc", "germany", "library", "lod", "format-rdf", "university", "hesse", "frankfurt", "no-proprietary-vocab" ],
+    "landingPage" : "http://datahub.io/dataset/hebis-bibliographic-resources"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#links_dnb-gemeinsame-normdatei",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#dataset",
+    "triples" : "15315081"
+  }, {
+    "@id" : "http://lod.hebis.de/lod/hebis-05051128-10174115.rdf.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.hebis.de/lod/hebis-05051128-10174115.rdf.gz",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://lod.hebis.de/lod/hebis-10174116-13050073.rdf.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.hebis.de/lod/hebis-10174116-13050073.rdf.gz",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://lod.hebis.de/lod/hebis-13050074-21257739.rdf.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.hebis.de/lod/hebis-13050074-21257739.rdf.gz",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://lod.hebis.de/lod/hebis-21257740-26887667.rdf.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.hebis.de/lod/hebis-21257740-26887667.rdf.gz",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://lod.hebis.de/lod/hebis-26887668-29873805.rdf.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.hebis.de/lod/hebis-26887668-29873805.rdf.gz",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://lod.hebis.de/lod/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.hebis.de/lod/void.ttl",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://lod.hebis.de/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://lod.hebis.de/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://www.hebis.de/de/1ueber_uns/projekte/lod/lod_download.php",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.hebis.de/de/1ueber_uns/projekte/lod/lod_download.php",
+    "mediaType" : "php"
+  }, {
+    "@id" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-07-17T084118/hebis-00000001-05051126.rdf.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-07-17T084118/hebis-00000001-05051126.rdf.gz",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

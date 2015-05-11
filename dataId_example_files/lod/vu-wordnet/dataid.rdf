@@ -1,0 +1,108 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/vu-wordnet/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/vu-wordnet/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://purl.org/vocabularies/princeton/wn30/synset-chair-noun-1.rdf">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/vocabularies/princeton/wn30/synset-chair-noun-1.rdf"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/vu-wordnet/dataid#dataset">
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://semanticweb.cs.vu.nl/lod/wn30/rdf/void.ttl">
+        <dcat:mediaType>meta/void</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://semanticweb.cs.vu.nl/lod/wn30/rdf/void.ttl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <dcat:keyword>wordnet</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/vu-wordnet/dataid#links_lexvo">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/lexvo"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/vu-wordnet/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >117659</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://eculture.cs.vu.nl/git/public/?p=vocs/wordnet.git;a=tree;f=rdf;hb=HEAD">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://eculture.cs.vu.nl/git/public/?p=vocs/wordnet.git;a=tree;f=rdf;hb=HEAD"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution rdf:resource="http://purl.org/vocabularies/princeton/wn30/synset-chair-noun-1.rdf"/>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/vu-wordnet/dataid#creator">
+        <foaf:mbox>mailto:Jacco.van.Ossenbruggen@cwi.nl</foaf:mbox>
+        <foaf:name>Mark van Assem, Antoine Isaac, Jacco van Ossenbruggen</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/vu-wordnet"/>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/vu-wordnet/dataid#contributor">
+        <foaf:mbox>mailto:Jacco.van.Ossenbruggen@cwi.nl</foaf:mbox>
+        <foaf:name>Jacco van Ossenbruggen</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >RDF conversion of Princeton's package:wordnet, version 3.0. With many links to package:w3c-wordnet, package:lexvo and the Dutch package:cornetto .</dct:description>
+    <dcat:keyword>linkeddata</dcat:keyword>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://purl.org/vocabularies/princeton/wn30/synset-chair-noun-1">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://purl.org/vocabularies/princeton/wn30/synset-chair-noun-1"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/vu-wordnet/dataid#links_w3c-wordnet">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/w3c-wordnet"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/vu-wordnet/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >112788</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>rdf</dcat:keyword>
+    <dcat:keyword>vu</dcat:keyword>
+    <void:uriSpace>http://purl.org/vocabularies/princeton/wn30</void:uriSpace>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vu-wordnet</rdfs:label>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >4573749</void:triples>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/vu-wordnet/dataid#links_cornetto">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/cornetto"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/vu-wordnet/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >84473</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>thesaurus</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >WordNet 3.0 (VU Amsterdam)</dct:title>
+    <dcat:keyword>language</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>format-wn20schema</dcat:keyword>
+    <dcat:keyword>linguistics</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://semanticweb.cs.vu.nl/europeana/sparql/">
+        <dcat:mediaType>XML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://semanticweb.cs.vu.nl/europeana/sparql/"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+  </dataid:Dataset>
+</rdf:RDF>

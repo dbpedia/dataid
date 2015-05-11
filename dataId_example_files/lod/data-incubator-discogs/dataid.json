@@ -1,0 +1,109 @@
+{
+  "@graph" : [ {
+    "@id" : "http://archive.org/download/kasabi/discogs.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://archive.org/download/kasabi/discogs.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-incubator-discogs/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/data-incubator-discogs/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-incubator-discogs/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Leigh Dodds"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-incubator-discogs/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/data-incubator-discogs/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/data-incubator-discogs/dataid#links_bbc-music", "http://dataid.dbpedia.org/lod/data-incubator-discogs/dataid#links_dbtune-myspace", "http://dataid.dbpedia.org/lod/data-incubator-discogs/dataid#links_dbpedia" ],
+    "dct:description" : "This dataset contains information about audio recordings, including commercial releases, promotional releases and bootleg or off-label releases. Discogs is one of the largest online databases of electronic music releases and of releases on vinyl media. The source data comes from submissions contributed by users who have registered accounts on discogs.com. This version is based on the regularly monthly data releases from the website which have been placed into the Public Domain.\n\n*Note* this RDF version of Discogs is no longer updated, it was taken off-line during the shutdown of Kasabi. A dump of the dataset has been [uploaded to the Internet Archive](http://archive.org/details/kasabi)",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "Discogs in RDF",
+    "triples" : "191968935",
+    "uriSpace" : "http://kasabi.com/dataset/discogs",
+    "rdfs:label" : "data-incubator-discogs",
+    "distribution" : "http://archive.org/download/kasabi/discogs.gz",
+    "keyword" : [ "format-owl", "media", "format-dc", "records", "format-mo", "format-exif", "format-sioc", "music", "license-metadata", "format-foaf", "format-rdf" ],
+    "landingPage" : "http://datahub.io/dataset/data-incubator-discogs"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-incubator-discogs/dataid#links_bbc-music",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bbc-music",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/data-incubator-discogs/dataid#dataset",
+    "triples" : "1740"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-incubator-discogs/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/data-incubator-discogs/dataid#dataset",
+    "triples" : "5169"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-incubator-discogs/dataid#links_dbtune-myspace",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbtune-myspace",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/data-incubator-discogs/dataid#dataset",
+    "triples" : "6350"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

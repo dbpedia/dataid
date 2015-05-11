@@ -1,0 +1,64 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "data-incubator-smcjournals"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_dbpedia> , <http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_data-incubator-climb> , <http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_ordnance-survey-linked-data> , <http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_geonames-semantic-web> ;
+        dct:description         " This is a Linked Data representation of a digital archive of 'Scottish Mountaineering Club Journal Issues 1 to 36, 1890-1901', which was created by Alan Dawson, Centre for Digital Library Research, University of Strathclyde, with funding from the Scottish Mountaineering Trust.\n  The Linked Data representation currently covers the relationships between places, people, journal issues and articles gathered from the Cumulative Indexes of Authors, Hills, People and Articles.\n  \n  TODO:\n    \n  (from the Cumulative Indexes)\n  Events\n  Illustrations\n  Reviews\n  Topics  \n\n  And:\n\n  \"The SMC in 1894: Rules, officers, members\" (http://gdl.cdlr.strath.ac.uk/smcj/smc1894.htm)\n\n"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-pddl> ;
+        dct:title               "Scottish Mountaineering Council Journals Issues 1-36"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://smcjournals.dataincubator.org/hills/A'cailliach.rdf> , <http://smcjournals.dataincubator.org/hills/A'cailliach> ;
+        void:sparqlEndpoint     <http://api.talis.com/stores/smcjournals/services/sparql> ;
+        void:triples            "15801"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://smcjournals.dataincubator.org/" ;
+        dcat:distribution       <http://smcjournals.dataincubator.org/> , <http://api.talis.com/stores/smcjournals/services/sparql> ;
+        dcat:keyword            "format-rdf" , "journals" , "format-geovocab" , "format-foaf" , "no-proprietary-vocab" , "published-by-third-party" , "lod" , "format-bib" , "license-metadata" , "club" , "geographic" , "mountaineering" , "lld" , "19thcentury" , "provenance-metadata" , "climbing" , "sport" ;
+        dcat:landingPage        <http://datahub.io/dataset/data-incubator-smcjournals> .
+
+<http://api.talis.com/stores/smcjournals/services/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://api.talis.com/stores/smcjournals/services/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#dataset> ;
+        void:triples         "11"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_geonames-semantic-web>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/geonames-semantic-web> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#dataset> ;
+        void:triples         "10"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_ordnance-survey-linked-data>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/ordnance-survey-linked-data> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#dataset> ;
+        void:triples         "11"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://smcjournals.dataincubator.org/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://smcjournals.dataincubator.org/> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Keith Alexander" .
+
+<http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_data-incubator-climb>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/data-incubator-climb> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#dataset> ;
+        void:triples         "123"^^<http://www.w3.org/2001/XMLSchema#int> .

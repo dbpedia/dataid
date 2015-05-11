@@ -1,0 +1,88 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/vivo/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/vivo/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://thedatahub.org/dataset/vivo-ponce/resource/7c353a8e-92f4-4aa5-8af5-53857d6c483c">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://thedatahub.org/dataset/vivo-ponce/resource/7c353a8e-92f4-4aa5-8af5-53857d6c483c"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://vivo.iu.edu/IU-VIVO.n3">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://vivo.iu.edu/IU-VIVO.n3"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://vivo.ufl.edu/data/all.n3">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://vivo.ufl.edu/data/all.n3"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://vivo.cornell.edu/Cornell-VIVO.n3">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://vivo.cornell.edu/Cornell-VIVO.n3"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://vivo-onto.slis.indiana.edu/sitemap.xml">
+    <dcat:mediaType>meta/sitemap</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://vivo-onto.slis.indiana.edu/sitemap.xml"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/vivo/dataid#dataset">
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vivo</rdfs:label>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/vivo/dataid#creator">
+        <foaf:mbox>mailto:dingying@indiana.edu</foaf:mbox>
+        <foaf:name>VIVO</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:uriSpace>http://vivo.cornell.edu/individual/</void:uriSpace>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >VIVO</dct:title>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/vivo/dataid#contributor">
+        <foaf:mbox>mailto:hanjia@indiana.edu</foaf:mbox>
+        <foaf:name>Han Jia</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:distribution rdf:resource="http://vivo.ufl.edu/data/all.n3"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/vivo/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/vivo/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >58</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://vivo.cornell.edu/Cornell-VIVO.n3"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >VIVO has been funded by NIH to create a semantic Facebook for scientist. It utilizes Semantic Web technologies to model scientists and provides federated search to enhance the discovery of researchers and collaborators across the country. The PI is the lead for the VIVO ontology team that is developing a core ontology for modeling scientists, publications, resources, grants, locations, and services. There are 236 classes in VIVO core version 1.0 ontology with 278 object properties and 222 data properties, incorporating classes from popular ontologies, such as BIBO, Dublin Core, Event, FOAF, geopolitical, and SKOS. VIVO data is based on high quality personnel data for VIVO partner institutions (i.e., University of Florida, Cornell University, Indiana University, Washington University, Weill Cornell Medical College, Scripps, and Ponce School of Medicine) that comes primarily from faculty annual reports, with additional publication data from Scopus and PubMed. VIVO data is for scientists with a focus on research (i.e., educational background, publications, expertise, grants), teaching (i.e., courses, seminars, training), and service (i.e., organizing conferences, editorial boards, other community services).
+
+Individual packages are available:
+
+* package:vivo-cornell-university
+* package:vivo-indiana-university
+* package:vivo-university-of-florida</dct:description>
+    <dcat:distribution rdf:resource="http://vivo-onto.slis.indiana.edu/sitemap.xml"/>
+    <dcat:distribution rdf:resource="http://vivo.iu.edu/IU-VIVO.n3"/>
+    <dcat:keyword>education</dcat:keyword>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/vivo"/>
+    <dcat:keyword>lod</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >4514025</void:triples>
+    <dcat:distribution rdf:resource="http://thedatahub.org/dataset/vivo-ponce/resource/7c353a8e-92f4-4aa5-8af5-53857d6c483c"/>
+    <dcat:keyword>void-sparql-endpoint</dcat:keyword>
+    <dcat:keyword>social-networks</dcat:keyword>
+    <dcat:keyword>dataset-collection</dcat:keyword>
+    <void:exampleResource rdf:resource="http://vivo.ufl.edu/display/n1622"/>
+    <dcat:keyword>science</dcat:keyword>
+    <dcat:keyword>vivo</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

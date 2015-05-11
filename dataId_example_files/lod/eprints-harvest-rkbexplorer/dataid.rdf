@@ -1,0 +1,203 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://foreign.rkbexplorer.com/sparql/">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://foreign.rkbexplorer.com/sparql/"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://foreign.rkbexplorer.com/sitemap.xml">
+    <dcat:downloadURL rdf:resource="http://foreign.rkbexplorer.com/sitemap.xml"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://foreign.rkbexplorer.com/models/void.ttl">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://foreign.rkbexplorer.com/models/void.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://foreign.rkbexplorer.com/">
+    <dcat:mediaType>HTML</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://foreign.rkbexplorer.com/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://foreign.rkbexplorer.com/crs/">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://foreign.rkbexplorer.com/crs/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://foreign.rkbexplorer.com/browse/?type=resource&amp;forceLocal=true&amp;uri=http%3A%2F%2Fresearchrepository.napier.ac.uk%2Fid%2Feprint%2F1615">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://foreign.rkbexplorer.com/browse/?type=resource&amp;forceLocal=true&amp;uri=http%3A%2F%2Fresearchrepository.napier.ac.uk%2Fid%2Feprint%2F1615"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset">
+    <dcat:keyword>lod</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://foreign.rkbexplorer.com/sparql/"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >337</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-jisc">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/rkb-explorer-jisc"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >19</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-eprints">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/rkb-explorer-eprints"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >48944</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-citeseer">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/rkb-explorer-citeseer"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >115</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>sparql</dcat:keyword>
+    <dcat:distribution rdf:resource="http://foreign.rkbexplorer.com/browse/?type=resource&amp;forceLocal=true&amp;uri=http%3A%2F%2Fresearchrepository.napier.ac.uk%2Fid%2Feprint%2F1615"/>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/eprints-harvest-rkbexplorer"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_ordnance-survey-linked-data">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/ordnance-survey-linked-data"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >155</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://foreign.rkbexplorer.com/sparql/"/>
+    <dcat:distribution rdf:resource="http://foreign.rkbexplorer.com/sitemap.xml"/>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#contributor">
+        <foaf:mbox>mailto:hg@ecs.soton.ac.uk</foaf:mbox>
+        <foaf:name>Hugh Glaser</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_semanticweb-org">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/semanticweb-org"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2291</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-kisti">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/rkb-explorer-kisti"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >52</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ePrints Harvest (RKBExplorer)</dct:title>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-dblp">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/rkb-explorer-dblp"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1275</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-dc</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-southampton">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/rkb-explorer-southampton"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >25584</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://foreign.rkbexplorer.com/crs/"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-dotac">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/rkb-explorer-dotac"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >100</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://foreign.rkbexplorer.com/models/void.ttl"/>
+    <dcat:distribution rdf:resource="http://foreign.rkbexplorer.com/"/>
+    <dcat:keyword>sparql-endpoint</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The data here comes from harvesting ePrints Open Archives, as listed at [http://roar.eprints.org](http://roar.eprints.org).
+
+There is a [list of the 190 repositories](http://foreign.rkbexplorer.com/models/sites.html) we have managed to harvest.
+
+We can't provide a typical URI to resolve, as none of the URIs are ours. You can use this URI to do a SPARQL query: http://researchrepository.napier.ac.uk/id/eprint/1615</dct:description>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-oai">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/rkb-explorer-oai"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >567620</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>bibliographic data</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-biolit">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/rkb-explorer-biolit"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >100</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_l3s-dblp">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/l3s-dblp"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >15</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-acm">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/rkb-explorer-acm"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >490</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >eprints-harvest-rkbexplorer</rdfs:label>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-rae2001">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/rkb-explorer-rae2001"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >75</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#creator">
+        <foaf:mbox>mailto:hg@ecs.soton.ac.uk</foaf:mbox>
+        <foaf:name>Hugh Glaser</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_ southampton-ecs-eprints">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/ southampton-ecs-eprints"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >49979</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+  </dataid:Dataset>
+</rdf:RDF>

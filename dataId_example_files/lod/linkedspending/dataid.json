@@ -1,0 +1,90 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/linkedspending/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/linkedspending/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linkedspending/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Konrad Höffner"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linkedspending/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/linkedspending/dataid#creator",
+    "dct:description" : "A transformation the openspending.org datasets to RDF using the RDF DataCube vocabulary. Available as browsable OntoWiki, SPARQL endpoint, and tar.gz compressed RDF/ntriple dump. There will also be a publication about it with more details.",
+    "license" : "http://www.opendefinition.org/licenses/odc-pddl",
+    "dct:title" : "LinkedSpending: OpenSpending becomes Linked Open Data",
+    "sparqlEndpoint" : "http://linkedspending.aksw.org/sparql",
+    "rdfs:label" : "linkedspending",
+    "distribution" : [ "http://linkedspending.aksw.org/", "http://linkedspending.aksw.org/extensions/page/page/export/lscomplete-0.1.tar.gz", "http://linkedspending.aksw.org/sparql" ],
+    "keyword" : [ "transparency", "finances", "rdf", "governement", "openspending", "budget", "public expenditure" ],
+    "landingPage" : "http://datahub.io/dataset/linkedspending"
+  }, {
+    "@id" : "http://linkedspending.aksw.org/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://linkedspending.aksw.org/",
+    "mediaType" : "api/ontowiki"
+  }, {
+    "@id" : "http://linkedspending.aksw.org/extensions/page/page/export/lscomplete-0.1.tar.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://linkedspending.aksw.org/extensions/page/page/export/lscomplete-0.1.tar.gz",
+    "mediaType" : ".tar.gz"
+  }, {
+    "@id" : "http://linkedspending.aksw.org/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://linkedspending.aksw.org/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

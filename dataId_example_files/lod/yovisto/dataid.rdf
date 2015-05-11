@@ -1,0 +1,98 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/yovisto/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/yovisto/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://sparql.yovisto.com/">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://sparql.yovisto.com/"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.yovisto.com/labs/dumps/latest.ttl.tar.gz">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.yovisto.com/labs/dumps/latest.ttl.tar.gz"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.yovisto.com/">
+    <dcat:mediaType>html+rdfa</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.yovisto.com/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.yovisto.com/ontology/0.9/index.owl">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.yovisto.com/ontology/0.9/index.owl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.yovisto.com/sitemapext.xml">
+    <dcat:mediaType>meta/sitemap</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.yovisto.com/sitemapext.xml"/>
+  </dataid:Distribution>
+  <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/yovisto/dataid#links_dbpedia">
+    <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+    <void:subjectsTarget>
+      <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/yovisto/dataid#dataset">
+        <dcat:distribution rdf:resource="http://sparql.yovisto.com/"/>
+        <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Yovisto - academic video search</dct:title>
+        <dcat:keyword>format-cc</dcat:keyword>
+        <dataid:associatedAgent>
+          <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/yovisto/dataid#contributor">
+            <foaf:mbox>mailto:joerg@yovisto.com, harald.sack@hpi.uni-potsdam.de</foaf:mbox>
+            <foaf:name>Jörg Waitelonis, Harald Sack</foaf:name>
+          </dataid:Contributor>
+        </dataid:associatedAgent>
+        <dcat:keyword>multimedia</dcat:keyword>
+        <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Yovisto is a video search engine specialized in academic lecture recordings and conference talks. Unlike other video search engines, Yovisto provides a time based video index,
+which allows to search within the videos’ content. Automated analysis techniques such as scene detection
+and intelligent character recognition are used for metadata generation. Time dependent collaborative annotation enables the user to annotate tags and comments at any
+point within a video.</dct:description>
+        <dcat:keyword>video</dcat:keyword>
+        <dcat:keyword>crossdomain</dcat:keyword>
+        <dcat:keyword>e-learning</dcat:keyword>
+        <void:sparqlEndpoint rdf:resource="http://sparql.yovisto.com/"/>
+        <dcat:keyword>no-vocab-mappings</dcat:keyword>
+        <dcat:keyword>format-rdf</dcat:keyword>
+        <dcat:keyword>void-sparql-endpoint</dcat:keyword>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >yovisto</rdfs:label>
+        <dcat:keyword>science</dcat:keyword>
+        <void:uriSpace>http://www.yovisto.com/resource</void:uriSpace>
+        <dataid:associatedAgent>
+          <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/yovisto/dataid#creator">
+            <foaf:mbox>mailto:info@yovisto.com</foaf:mbox>
+            <foaf:name>Yovisto.com</foaf:name>
+          </dataid:Creator>
+        </dataid:associatedAgent>
+        <dcat:keyword>deref-vocab</dcat:keyword>
+        <dcat:keyword>format-mpeg7</dcat:keyword>
+        <dcat:keyword>format-foaf</dcat:keyword>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >4932352</void:triples>
+        <void:exampleResource rdf:resource="http://www.yovisto.com/resource/speaker/470"/>
+        <dcat:distribution rdf:resource="http://www.yovisto.com/"/>
+        <dcat:landingPage rdf:resource="http://datahub.io/dataset/yovisto"/>
+        <dcat:keyword>format-dcterm</dcat:keyword>
+        <dcat:keyword>format-dc</dcat:keyword>
+        <dcat:keyword>academic</dcat:keyword>
+        <dcat:distribution rdf:resource="http://www.yovisto.com/labs/dumps/latest.ttl.tar.gz"/>
+        <dcat:keyword>format-tag</dcat:keyword>
+        <dataid:containsLinks rdf:resource="http://dataid.dbpedia.org/lod/yovisto/dataid#links_dbpedia"/>
+        <dcat:keyword>no-license-metadata</dcat:keyword>
+        <dcat:keyword>no-provenance-metadata</dcat:keyword>
+        <dcat:distribution rdf:resource="http://www.yovisto.com/ontology/0.9/index.owl"/>
+        <dcat:keyword>published-by-producer</dcat:keyword>
+        <dcat:keyword>usergeneratedcontent</dcat:keyword>
+        <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+        <dcat:distribution rdf:resource="http://www.yovisto.com/sitemapext.xml"/>
+        <dcat:keyword>education</dcat:keyword>
+        <dcat:keyword>lod</dcat:keyword>
+      </dataid:Dataset>
+    </void:subjectsTarget>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >300</void:triples>
+  </dataid:Linkset>
+</rdf:RDF>

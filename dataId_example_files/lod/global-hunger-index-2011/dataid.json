@@ -1,0 +1,114 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.ifpri.org/rdf/ghi/raw/Global-Hunger-Index-2011.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.ifpri.org/rdf/ghi/raw/Global-Hunger-Index-2011.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://data.kasabi.com/dataset/global-hunger-index",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.kasabi.com/dataset/global-hunger-index",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:tim@practicalparticipation.co.uk",
+    "name" : "Tim Davies"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:ifpri@cgiar.org",
+    "name" : "International Food Policy Research Institute"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#contributor", "http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#links_geonames-semantic-web",
+    "dct:description" : "The Global Hunger Index (GHI) offers a useful multidimensional overview of global hunger. The 2011 GHI is the sixth in an annual series that records the state of global, regional, and national hunger.\n\nThe GHI captures three dimensions of hunger: insufficient availability of calories, shortfalls in the nutritional status of children, and child mortality. Accordingly, the Index includes the following three equally weighted indicators: the proportion of people who are undernourished, as estimated by the Food and Agriculture Organization of the United Nations (FAO); the prevalence of underweight in children under the age of five, as compiled by the World Health Organization (WHO); and the under-five mortality rate, as reported by the United Nations Children’s Fund (UNICEF). The 2011 index includes GHI values for four time periods, recalculated using the latest source data, to allow an exploration of change over time. ",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Global Hunger Index (2011)",
+    "triples" : "19369",
+    "uriSpace" : "http://data.kasabi.com/dataset/global-hunger-index",
+    "rdfs:label" : "global-hunger-index-2011",
+    "distribution" : [ "http://data.ifpri.org/rdf/ghi/raw/Global-Hunger-Index-2011.rdf", "http://data.kasabi.com/dataset/global-hunger-index", "http://www.ifpri.org/sites/default/files/ghi2011data.xlsx" ],
+    "keyword" : [ "lod", "hunger", "development", "crossdomain", "format-qb", "no-proprietary-vocab", "lodcloud", "license-metadata", "food", "published-by-producer" ],
+    "landingPage" : "http://datahub.io/dataset/global-hunger-index-2011"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/global-hunger-index-2011/dataid#dataset",
+    "triples" : "260"
+  }, {
+    "@id" : "http://www.ifpri.org/sites/default/files/ghi2011data.xlsx",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.ifpri.org/sites/default/files/ghi2011data.xlsx",
+    "mediaType" : "XLS"
+  } ],
+  "@context" : {
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

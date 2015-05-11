@@ -1,0 +1,83 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/agrinepaldata/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/agrinepaldata/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://agrinepaldata.com/downloads/agrinepal.zip">
+    <dcat:mediaType>rdf-turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://agrinepaldata.com/downloads/agrinepal.zip"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://agrinepaldata.com/download/void.ttl">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://agrinepaldata.com/download/void.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://agrinepaldata.com/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://agrinepaldata.com/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/agrinepaldata/dataid#dataset">
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ontology Based Data Access and Integration for Improving the Effectiveness of Farming in Nepal</dct:description>
+    <dcat:keyword>aksw</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >agrinepaldata</rdfs:label>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/agrinepaldata/dataid#links_agrovoc">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/agrovoc"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/agrinepaldata/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >32294</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/agrinepaldata/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/agrinepaldata/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >38469</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/agrinepaldata/dataid#creator">
+        <foaf:mbox>mailto:sherif@informatic.uni-leipzig.de</foaf:mbox>
+        <foaf:name>Mohamed Sherif</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/agrinepaldata/dataid#contributor">
+        <foaf:mbox>mailto:pokharel@informatik.uni-leipzig.de</foaf:mbox>
+        <foaf:name>Suresh Pokharel</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:distribution rdf:resource="http://agrinepaldata.com/sparql"/>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/agrinepaldata"/>
+    <dcat:keyword>lod</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1433631</void:triples>
+    <dcat:distribution rdf:resource="http://agrinepaldata.com/downloads/agrinepal.zip"/>
+    <void:sparqlEndpoint rdf:resource="http://agrinepaldata.com/sparql"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AgriNepalData</dct:title>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://agrinepaldata.com/download/agrinepaldataont.owl">
+        <dcat:mediaType>meta/owl</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://agrinepaldata.com/download/agrinepaldataont.owl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://agrinepaldata.com/">
+        <dcat:downloadURL rdf:resource="http://agrinepaldata.com/"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution rdf:resource="http://agrinepaldata.com/download/void.ttl"/>
+    <void:uriSpace>http://agrinepaldata.com/</void:uriSpace>
+  </dataid:Dataset>
+</rdf:RDF>

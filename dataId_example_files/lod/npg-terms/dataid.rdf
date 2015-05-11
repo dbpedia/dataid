@@ -1,0 +1,51 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/npg-terms/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/npg-terms/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/npg-terms/dataid#dataset">
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Nature Publishing Group - Terms</dct:title>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Graph for npg:Term triples.
+The npg:Term objects model terms from the NPG terms ontology. These terms constitute the [npg:](http://ns.nature.com/terms/) (http://ns.nature.com/terms/) namespace.</dct:description>
+    <dcat:keyword>journals</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >npg-terms</rdfs:label>
+    <dcat:keyword>physical sciences</dcat:keyword>
+    <dcat:keyword>bibliographic</dcat:keyword>
+    <dcat:keyword>sciences</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <dcat:keyword>publications</dcat:keyword>
+    <dcat:keyword>science</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph&lt;http://ns.nature.com/graphs/terms&gt;{?s?p?o.}}limit25">
+        <dcat:mediaType>RDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph&lt;http://ns.nature.com/graphs/terms&gt;{?s?p?o.}}limit25"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/npg-terms/dataid#creator">
+        <foaf:mbox>mailto:developers@nature.com</foaf:mbox>
+        <foaf:name>NPG</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>life sciences</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/npg-terms"/>
+    <dcat:keyword>academic</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/npg-terms/dataid#contributor">
+        <foaf:mbox>mailto:developers@nature.com</foaf:mbox>
+        <foaf:name>NPG Developers</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>health sciences</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

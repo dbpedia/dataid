@@ -1,0 +1,169 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/diavgeia/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/diavgeia/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:spiros.alexiou@gmail.com",
+    "name" : "Spiros Alexiou"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/diavgeia/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:spiros.alexiou@gmail.com",
+    "name" : "Spiros Alexiou"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/diavgeia/dataid#contributor", "http://dataid.dbpedia.org/lod/diavgeia/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/diavgeia/dataid#links_hellenic-fire-brigade", "http://dataid.dbpedia.org/lod/diavgeia/dataid#links_dbpedia-el", "http://dataid.dbpedia.org/lod/diavgeia/dataid#links_kalikratis-municipalities", "http://dataid.dbpedia.org/lod/diavgeia/dataid#links_hellenic-police", "http://dataid.dbpedia.org/lod/diavgeia/dataid#links_eurostat", "http://dataid.dbpedia.org/lod/diavgeia/dataid#links_dbpedia" ],
+    "dct:description" : "The Clarity program introduces for the first time in Greece the obligation to publish all the decisions on the Internet, with the exception of decisions that contain sensitive personal data and/or information on national security. It is quite an innovative program, even by European standards, aiming first of all to bring about the maximum publicity of the government policy and administrative action. The use of Internet guarantees wide publicity and access to information, progressively contributing to a culture change in the whole of the Public Administration.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "Diavgeia",
+    "exampleResource" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-08-27T164505/Diavgeia_demo_RDF_XML.rdf",
+    "triples" : "48051108",
+    "uriSpace" : "http://diavgeia.math.auth.gr/resource/",
+    "rdfs:label" : "diavgeia",
+    "distribution" : [ "http://www.greek-lod.gr/DiavgeiaTreeMap/dapanes/General.html", "https://commondatastorage.googleapis.com/ckannet-storage/2012-08-27T164145/Diavgeia_demo_NTriples.nt", "https://ckannet-storage.commondatastorage.googleapis.com/2013-02-08T154930/MinistriesSpending2012_1.csv", "https://commondatastorage.googleapis.com/ckannet-storage/2012-09-27T161432/void.ttl", "https://commondatastorage.googleapis.com/ckannet-storage/2012-08-27T163756/Diavgeia_demo_RDF_XML.rdf", "http://diavgeia.math.auth.gr/sparql", "https://ckannet-storage.commondatastorage.googleapis.com/2013-02-08T164424/PolicePerRegion_1.csv" ],
+    "keyword" : [ "greece", "format-owl", "lod", "format-skos", "format-dc", "published-by-third-party", "greek", "opendata", "clarity", "openspending", "format-foaf", "provenance-metadata", "license-metadata", "government", "diavgeia", "linked data", "no-proprietary-vocab", "format-rdf" ],
+    "landingPage" : "http://datahub.io/dataset/diavgeia"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/diavgeia/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset",
+    "triples" : "13"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/diavgeia/dataid#links_dbpedia-el",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia-el",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset",
+    "triples" : "676"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/diavgeia/dataid#links_eurostat",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/eurostat",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset",
+    "triples" : "12"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/diavgeia/dataid#links_hellenic-fire-brigade",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/hellenic-fire-brigade",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset",
+    "triples" : "156"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/diavgeia/dataid#links_hellenic-police",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/hellenic-police",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset",
+    "triples" : "45"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/diavgeia/dataid#links_kalikratis-municipalities",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/kalikratis-municipalities",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset",
+    "triples" : "355"
+  }, {
+    "@id" : "http://diavgeia.math.auth.gr/sparql",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://diavgeia.math.auth.gr/sparql",
+    "mediaType" : "CSV"
+  }, {
+    "@id" : "http://www.greek-lod.gr/DiavgeiaTreeMap/dapanes/General.html",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.greek-lod.gr/DiavgeiaTreeMap/dapanes/General.html",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-02-08T154930/MinistriesSpending2012_1.csv",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-02-08T154930/MinistriesSpending2012_1.csv",
+    "mediaType" : "XLS"
+  }, {
+    "@id" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-02-08T164424/PolicePerRegion_1.csv",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-02-08T164424/PolicePerRegion_1.csv",
+    "mediaType" : "XLS"
+  }, {
+    "@id" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-08-27T163756/Diavgeia_demo_RDF_XML.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-08-27T163756/Diavgeia_demo_RDF_XML.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-08-27T164145/Diavgeia_demo_NTriples.nt",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-08-27T164145/Diavgeia_demo_NTriples.nt",
+    "mediaType" : "TXT"
+  }, {
+    "@id" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-09-27T161432/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-09-27T161432/void.ttl",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

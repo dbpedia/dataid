@@ -1,0 +1,60 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/twc-logd/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:difrad@rpi.edu" ;
+        foaf:name  "Dominic DiFranzo" .
+
+<http://dataid.dbpedia.org/lod/twc-logd/dataid#links_geonames-semantic-web>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/twc-logd/dataid#dataset> ;
+        void:triples         "1839"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/twc-logd/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/twc-logd/dataid#dataset> ;
+        void:triples         "2039"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/twc-logd/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/twc-logd/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/twc-logd/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Tetherless World Constellation, Rensselaer Polytechnic Institute" .
+
+<http://dataid.dbpedia.org/lod/twc-logd/dataid#links_govtrack>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/govtrack/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/twc-logd/dataid#dataset> ;
+        void:triples         "1909"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://logd.tw.rpi.edu/twc-logd>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://logd.tw.rpi.edu/twc-logd> .
+
+<http://logd.tw.rpi.edu/sparql>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://logd.tw.rpi.edu/sparql> ;
+        dcat:mediaType    "api/query" .
+
+<http://dataid.dbpedia.org/lod/twc-logd/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "twc-logd"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/twc-logd/dataid#contributor> , <http://dataid.dbpedia.org/lod/twc-logd/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/twc-logd/dataid#links_govtrack> , <http://dataid.dbpedia.org/lod/twc-logd/dataid#links_geonames-semantic-web> , <http://dataid.dbpedia.org/lod/twc-logd/dataid#links_dbpedia> ;
+        dct:description         "The Tetherless World Constellation (TWC) at Rensselaer Polytechnic Institute (RPI) maintains Linked Open Government Data (LOGD), an RDF version of the datasets published by package:data-gov and other government-related sources.\n\nLOGD replaces the old TWC Data-gov Corpus published in May 2010."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "TWC: Linking Open Government Data"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://logd.tw.rpi.edu/source/dfid-gov-uk/dataset/statistics-on-international-development-2009/version/2009-Nov-10/foreignAid_158_6> ;
+        void:uriSpace           "http://logd.tw.rpi.edu/" ;
+        dcat:distribution       <http://logd.tw.rpi.edu/twc-logd> , <http://logd.tw.rpi.edu/sparql> ;
+        dcat:keyword            "no-license-metadata" , "no-provenance-metadata" , "published-by-third-party" , "government" , "country-us" , "no-vocab-mappings" , "format-rdf" , "deref-vocab" , "lod" ;
+        dcat:landingPage        <http://datahub.io/dataset/twc-logd> .

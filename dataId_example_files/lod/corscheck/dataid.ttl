@@ -1,0 +1,31 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://eris.okfn.org/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://eris.okfn.org/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/corscheck/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "William Waites" .
+
+<http://dataid.dbpedia.org/lod/corscheck/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/corscheck/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/corscheck/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "corscheck"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/corscheck/dataid#creator> ;
+        dct:description         "Cross-Origin Resource Sharing (CORS) is a specification that enables a true open access across domain-boundaries. More information about what this means and why it is useful is available at the Enable CORS website.\n\nThis dataset is produced by a script which effects an HTTP HEAD request for each sparqlEndpoint and exampleResource in the CKAN RDF Dataset and records the HTTP headers that are returned."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-odbl> ;
+        dct:title               "CORS Check - HTTP Header Logs for Linked Open Data"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:sparqlEndpoint     <http://eris.okfn.org/sparql> ;
+        dcat:distribution       <http://eris.okfn.org/sparql> ;
+        dcat:keyword            "access-http" , "format-void" , "format-rdfs" , "published-by-producer" , "format-rdf" , "rdf" ;
+        dcat:landingPage        <http://datahub.io/dataset/corscheck> .

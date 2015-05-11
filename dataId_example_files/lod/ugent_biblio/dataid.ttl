@@ -1,0 +1,47 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/ugent_biblio/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/ugent_biblio/dataid#dataset" .
+
+<https://biblio.ugent.be/exports/export_big.txt>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://biblio.ugent.be/exports/export_big.txt> ;
+        dcat:mediaType    "TXT" .
+
+<http://biblio.ugent.be/input/home?func=developer>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://biblio.ugent.be/input/home?func=developer> ;
+        dcat:mediaType    "HTML" .
+
+<http://dataid.dbpedia.org/lod/ugent_biblio/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "ugent_biblio"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/ugent_biblio/dataid#contributor> , <http://dataid.dbpedia.org/lod/ugent_biblio/dataid#creator> ;
+        dct:description         "The Ghent University Academic Bibliography, containing all\nresearch papers of the university, as well as information on people and departments, in several formats including MARC, RDF, RSS, OAI-ORE."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-odbl> ;
+        dct:title               "Ghent University Bibliography"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:uriSpace           "https://biblio.ugent.be/" ;
+        dcat:distribution       <https://biblio.ugent.be/exports/export_big.txt> , <http://biblio.ugent.be/input/home?func=developer> , <https://biblio.ugent.be/record/678283> ;
+        dcat:keyword            "format-rdf" , "bibliography" , "repository" , "lodcloud.unresolvable" , "university" , "rdf" ;
+        dcat:landingPage        <http://datahub.io/dataset/ugent_biblio> .
+
+<https://biblio.ugent.be/record/678283>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://biblio.ugent.be/record/678283> ;
+        dcat:mediaType    "XML" .
+
+<http://dataid.dbpedia.org/lod/ugent_biblio/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:libservice@ugent.be" ;
+        foaf:name  "Patrick Hochstenbach" .
+
+<http://dataid.dbpedia.org/lod/ugent_biblio/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:libservice@ugent.be" ;
+        foaf:name  "Ghent University" .

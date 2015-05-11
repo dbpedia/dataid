@@ -1,0 +1,64 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/vivo-scripps-research-institute/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/vivo-scripps-research-institute/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="https://commondatastorage.googleapis.com/ckannet-storage/2012-04-02T150245/scripps_export.rdf">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="https://commondatastorage.googleapis.com/ckannet-storage/2012-04-02T150245/scripps_export.rdf"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/vivo-scripps-research-institute/dataid#dataset">
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/vivo-scripps-research-institute/dataid#links_dbpedia ">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia "/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/vivo-scripps-research-institute/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >58</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-vitro</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dcat:distribution rdf:resource="https://commondatastorage.googleapis.com/ckannet-storage/2012-04-02T150245/scripps_export.rdf"/>
+    <dcat:keyword>social-networks</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >VIVO is a research-focused discovery tool that enables collaboration among scientists across all disciplines.
+
+Browse or search information on people, departments, courses, grants, and publications.</dct:description>
+    <dcat:keyword>education</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/vivo-scripps-research-institute/dataid#contributor">
+        <foaf:mbox>mailto:hanjia@indiana.edu</foaf:mbox>
+        <foaf:name>Han Jia</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >45000</void:triples>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>publications</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vivo-scripps-research-institute</rdfs:label>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/vivo-scripps-research-institute/dataid#creator">
+        <foaf:name>VIVO</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >VIVO Scripps Research Institute</dct:title>
+    <dcat:keyword>vivo</dcat:keyword>
+    <dcat:keyword>science</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/vivo-scripps-research-institute"/>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

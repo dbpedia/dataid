@@ -1,0 +1,81 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/ce4r/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:gnoss@gnoss.com" ;
+        foaf:name  "GNOSS Team" .
+
+<http://dataid.dbpedia.org/lod/ce4r/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "ce4r"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/ce4r/dataid#creator> , <http://dataid.dbpedia.org/lod/ce4r/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/ce4r/dataid#links_freebase> , <http://dataid.dbpedia.org/lod/ce4r/dataid#links_prospect-and-trends-gnoss> , <http://dataid.dbpedia.org/lod/ce4r/dataid#links_gnoss> , <http://dataid.dbpedia.org/lod/ce4r/dataid#links_nytimes-linked-open-data> , <http://dataid.dbpedia.org/lod/ce4r/dataid#links_dbpedia> , <http://dataid.dbpedia.org/lod/ce4r/dataid#links_geonames-semantic-web> ;
+        dct:description         "<p> Knowledge plataform launched by Corporate Excellence – Centre for reputation leadership, a new think tank to professionalize management of intangible assets and contribute to the development of strong brands with good reputation and able to compete in to the global market. In this community, members will be able to access to a lot of contents as article, thesis, insights, cases and so on, related to intangible management. In addition, It is possible to share knowledge and make comments.</p>\n<p>CE4R works with <a href=\"http://gnoss.com/\">GNOSS software (RIAM Intelearning Lab)</a>. RIAM is a company that develops semantic technology for the creation of specialized networks and linked markets. It includes a facet-based search engine and enriched contexts. Both are developments by GNOSS.</p>\n\n<p> Plataforma de conocimiento impulsada por Corporate Excellence – Centre for reputation leadership, un laboratorio de ideas para profesionalizar la gestión de los activos intangibles y para contribuir al desarrollo de marcas con una reputación excelente capaces de competir en los mercados globales. En la comunidad podrás acceder a numerosos contenidos (artículos, casos, noticias, tesis, insights, etc.) en torno a la gestión de intangibles, así como comentarlos y compartirlos.</p>\n<p>CE4R trabaja con <a href=\"http://gnoss.com/\">software de GNOSS (RIAM Intelearning Lab)</a>. RIAM es una compañía que desarrolla tecnología semántica para la creación de redes especializadas y mercados enlazados. El proyecto Incluye un buscador facetado y contextos enriquecidos. Ambos son desarrollos de GNOSS.</p>"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://creativecommons.org/licenses/by-nc/2.0/> ;
+        dct:title               "CE4R Knowledge Centre Corporate Excellence – Centre for Reputation Leadership"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://corporateexcellence.net/en/community/patronato/advanced-search/tag/stakeholders?rdf> , <http://corporateexcellence.net/en/community/patronato/resource/Study-The-Chief-Communications-Officer-Korn-Ferr/b032b83c-93f7-4200-ba8b-2d5be7389247?rdf> , <http://corporateexcellence.net/en/community/patronato/resource/Tesis-Creacion-de-una-nueva-metodologia-multistak/46f6bdff-6268-4b82-9ed7-7359c4036285> ;
+        void:triples            "4866"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://corporateexcellence.net/en/community/patronato" ;
+        dcat:distribution       <http://gnoss.com/gnoss.owl> , <http://museos.gnoss.com/voidLaboratorioDeIdeas.n3> ;
+        dcat:keyword            "provenance-metadata" , "no-vocab-mappings" , "sioc" , "métricas" , "public affairs" , "format-dcam" , "intangibles" , "centre for reputation leadership" , "Brand" , "format-rdfg" , "skos" , "format-foaf" , "reputación" , "Corporate gobernance" , "reputation" , "RSC" , "marca" , "usergeneratedcontent" , "country reputation" , "socialweb" , "communication" , "marca país" , "reputation economy" , "schemata" , "country.es" , "format-dc" , "country-spain" , "lod" , "foaf" , "no-proprietary-vocab" , "reputación país" , "corporate Excellence" , "published-by-third-party" , "format-sioc" , "ética" , "wrapper" , "intangible assets" , "format-wot" , "comunicación" , "economía de la reputación" , "language-spa" , "scr" , "laboratorio de ideas" , "format-skos" , "metrics" , "license-metadata" , "asuntos públicos" , "gobierno corporativo" , "corporate excellence" , "sp" , "spain" , "dc" ;
+        dcat:landingPage        <http://datahub.io/dataset/ce4r> .
+
+<http://gnoss.com/gnoss.owl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://gnoss.com/gnoss.owl> ;
+        dcat:mediaType    "meta/owl" .
+
+<http://dataid.dbpedia.org/lod/ce4r/dataid#links_freebase>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/freebase/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/ce4r/dataid#dataset> ;
+        void:triples         "169"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/ce4r/dataid#links_prospect-and-trends-gnoss>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/prospect-and-trends-gnoss> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/ce4r/dataid#dataset> ;
+        void:triples         "128"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://museos.gnoss.com/voidLaboratorioDeIdeas.n3>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://museos.gnoss.com/voidLaboratorioDeIdeas.n3> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/ce4r/dataid#links_nytimes-linked-open-data>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/nytimes-linked-open-data> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/ce4r/dataid#dataset> ;
+        void:triples         "178"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/ce4r/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:gnoss@gnoss.com" ;
+        foaf:name  "GNOSS Team" .
+
+<http://dataid.dbpedia.org/lod/ce4r/dataid#links_gnoss>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/gnoss> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/ce4r/dataid#dataset> ;
+        void:triples         "144"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/ce4r/dataid#links_geonames-semantic-web>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/geonames-semantic-web> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/ce4r/dataid#dataset> ;
+        void:triples         "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/ce4r/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/ce4r/dataid#dataset> ;
+        void:triples         "181"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/ce4r/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/ce4r/dataid#dataset" .

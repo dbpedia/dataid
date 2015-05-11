@@ -1,0 +1,82 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/linked-user-feedback/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/linked-user-feedback/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://soa4all.isoco.net/luf/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://soa4all.isoco.net/luf/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://soa4all.isoco.net/luf/about/downloads/luf_statements.zip">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://soa4all.isoco.net/luf/about/downloads/luf_statements.zip"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/linked-user-feedback/dataid#dataset">
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/linked-user-feedback/dataid#contributor">
+        <foaf:mbox>mailto:galvaro@isoco.com</foaf:mbox>
+        <foaf:name>LUF team</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <void:uriSpace>http://soa4all.isoco.net/luf/</void:uriSpace>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/linked-user-feedback/dataid#links_iserve">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/iserve/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/linked-user-feedback/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >150</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-tag</dcat:keyword>
+    <dcat:keyword>reviews</dcat:keyword>
+    <void:exampleResource rdf:resource="http://soa4all.isoco.net/luf/data/taggings/17fcbb512192004a909505e447a9ffca?output=xml"/>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://soa4all.isoco.net/luf/sparql"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Linked User Feedback (LUF) dataset contains user-generated feedback in the form of ratings, comments and taggings, which are gathered via an API that third party applications can make use of.</dct:description>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >240000</void:triples>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >linked-user-feedback</rdfs:label>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dcat:keyword>usergeneratedcontent</dcat:keyword>
+    <dcat:distribution rdf:resource="http://soa4all.isoco.net/luf/sparql"/>
+    <dcat:keyword>format-rev</dcat:keyword>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:distribution rdf:resource="http://soa4all.isoco.net/luf/about/downloads/luf_statements.zip"/>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/linked-user-feedback"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/linked-user-feedback/dataid#creator">
+        <foaf:mbox>mailto:galvaro@isoco.com</foaf:mbox>
+        <foaf:name>LUF team</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:exampleResource rdf:resource="http://soa4all.isoco.net/luf/data/ratings/10a7060888668fcedcc02328a3d1a041?output=xml"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/linked-user-feedback/dataid#links_linkedmdb">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/linkedmdb/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/linked-user-feedback/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >523</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-hartigprov</dcat:keyword>
+    <void:exampleResource rdf:resource="http://soa4all.isoco.net/luf/data/comments/47fce8e735a1bfea56ef6efce145aad2?output=xml"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Linked User Feedback</dct:title>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+  </dataid:Dataset>
+</rdf:RDF>

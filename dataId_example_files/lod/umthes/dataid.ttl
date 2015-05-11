@@ -1,0 +1,39 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/umthes/dataid#links_gemet>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/gemet/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/umthes/dataid#dataset> ;
+        void:triples         "3483"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/umthes/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:thomas.bandholtz@innoq.com" ;
+        foaf:name  "Thomas Bandholtz " .
+
+<http://dataid.dbpedia.org/lod/umthes/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:joachim.fock@uba.de" ;
+        foaf:name  "Joachim Fock" .
+
+<http://dataid.dbpedia.org/lod/umthes/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "umthes"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/umthes/dataid#contributor> , <http://dataid.dbpedia.org/lod/umthes/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/umthes/dataid#links_gemet> ;
+        dct:description         "A German-centric thesaurus about environmental protection, maintained by the Federal Environment Agency, Germany. Includes English translations of most terms.\n\n2011-08-10 Service unreachable "^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "UMTHES"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://data.uba.de/umt/_00100204.ttl> ;
+        void:triples            "300000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:keyword            "thesaurus" , "lld" , "lodcloud.needsfixing" , "no-deref-vocab" , "government" , "published-by-producer" , "access-notavailable" , "topic.schemata" , "lod" , "topic.government" , "format-skos" , "environment" ;
+        dcat:landingPage        <http://datahub.io/dataset/umthes> .
+
+<http://dataid.dbpedia.org/lod/umthes/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/umthes/dataid#dataset" .

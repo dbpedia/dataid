@@ -1,0 +1,57 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:aksw@informatik.uni-leipzig.de" ;
+        foaf:name  "Agile Knowledge and Semantic Web Research Group (AKSW)" .
+
+<http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "beneficiaries-of-the-european-commission"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#creator> , <http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#links_dbpedia> ;
+        dct:description         "The names of the beneficiaries of ca. €10 billion of grants and other forms of support, awarded (in budgetary terms: 'committed') by the Commission every year, either directly or through 'executive agencies' set up to help it run EU funded programmes. The site also contains certain procurement contracts, excluding for the moment those linked to administrative expenditure of the Commission.\nThis information is separate from information on funds managed by EU or non-EU national governments or other parties on the behalf of the Commission.\nThe original site of the European Commission shows only lists of awarded amounts and beneficiaries - it does not provide amounts consolidated per country, budget line, etc. .\nThe original dataset can be found at EU Commission Financial Transparency System which is also listed at ckan."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "EU: fintrans.publicdata.eu"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://fintrans.publicdata.eu/ec/resource/su/SCR.706541.1> ;
+        void:sparqlEndpoint     <http://fintrans.publicdata.eu/sparql> ;
+        void:triples            "1897840"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://fintrans.publicdata.eu/ec/resource/" ;
+        dcat:distribution       <http://fintrans.publicdata.eu/sparql> , <http://fintrans.publicdata.eu/ec/> , <http://fintrans.publicdata.eu/> ;
+        dcat:keyword            "date-2007" , "format-html" , "published-by-third-party" , "procurement" , "date-2009" , "linked-data" , "deref-vocab" , "financial" , "eu" , "finance" , "region-eu" , "date-2008" , "transparency" , "system" , "format-foaf" , "latc" , "ontowiki" , "format-rdf" , "government" , "budget" , "lod" , "fts" , "european-commission" , "business" ;
+        dcat:landingPage        <http://datahub.io/dataset/beneficiaries-of-the-european-commission> .
+
+<http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#dataset> ;
+        void:triples         "199168"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://fintrans.publicdata.eu/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://fintrans.publicdata.eu/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:martin@informatik.uni-leipzig.de" ;
+        foaf:name  "Michael Martin" .
+
+<http://fintrans.publicdata.eu/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://fintrans.publicdata.eu/> ;
+        dcat:mediaType    "html+rdfa" .
+
+<http://fintrans.publicdata.eu/ec/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://fintrans.publicdata.eu/ec/> ;
+        dcat:mediaType    "html+rdfa" .

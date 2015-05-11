@@ -1,0 +1,140 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/event-media/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/event-media/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://www.eurecom.fr/~troncy/ic2011/Venues_sameAs.nt">
+    <dcat:mediaType>application/x-ntriples</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.eurecom.fr/~troncy/ic2011/Venues_sameAs.nt"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://linkedevents.org/ontology/2010-10-07/rdfxml/">
+    <dcat:mediaType>mapping/owl</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://linkedevents.org/ontology/2010-10-07/rdfxml/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.eurecom.fr/~troncy/ic2011/Events_sameAs.nt">
+    <dcat:mediaType>application/x-ntriples</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.eurecom.fr/~troncy/ic2011/Events_sameAs.nt"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.eurecom.fr/~troncy/ldtc2010/">
+    <dcat:downloadURL rdf:resource="http://www.eurecom.fr/~troncy/ldtc2010/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.eurecom.fr/~troncy/ic2011/Artists_sameAs.nt">
+    <dcat:mediaType>application/x-ntriples</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.eurecom.fr/~troncy/ic2011/Artists_sameAs.nt"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://eventmedia.eurecom.fr/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://eventmedia.eurecom.fr/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/event-media/dataid#dataset">
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/event-media/dataid#creator">
+        <foaf:mbox>mailto:raphael.troncy@eurecom.fr</foaf:mbox>
+        <foaf:name>Raphael Troncy</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>events</dcat:keyword>
+    <dcat:keyword>media</dcat:keyword>
+    <dcat:distribution rdf:resource="http://eventmedia.eurecom.fr/sparql"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >event-media</rdfs:label>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/event-media/dataid#links_uberblic">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/uberblic"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/event-media/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >40498</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/event-media/dataid#links_geonames-semantic-web">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/geonames-semantic-web"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/event-media/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >955</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-ma</dcat:keyword>
+    <void:uriSpace>http://data.linkedevents.org/</void:uriSpace>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/event-media/dataid#contributor">
+        <foaf:mbox>mailto:raphael.troncy@eurecom.fr</foaf:mbox>
+        <foaf:name>Raphael Troncy</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:distribution rdf:resource="http://www.eurecom.fr/~troncy/ic2011/Events_sameAs.nt"/>
+    <dcat:distribution rdf:resource="http://www.eurecom.fr/~troncy/ldtc2010/"/>
+    <void:sparqlEndpoint rdf:resource="http://eventmedia.eurecom.fr/sparql"/>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.w3.org/ns/ma-ont#">
+        <dcat:mediaType>mapping/owl</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.w3.org/ns/ma-ont#"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>lod</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/event-media/dataid#links_dbtune-musicbrainz">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbtune-musicbrainz"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/event-media/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >42889</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>format-lode</dcat:keyword>
+    <dcat:distribution rdf:resource="http://linkedevents.org/ontology/2010-10-07/rdfxml/"/>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:distribution rdf:resource="http://www.eurecom.fr/~troncy/ic2011/Venues_sameAs.nt"/>
+    <dcat:keyword>format-dc</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/event-media"/>
+    <dcat:keyword>usergeneratedcontent</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >EventMedia</dct:title>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <dcat:keyword>format-sioc</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/event-media/dataid#links_nytimes-linked-open-data">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/nytimes-linked-open-data"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/event-media/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >21</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This dataset is composed of events and media descriptions associated with these events. It is obtained from three large public event directories (last.fm, eventful and upcoming) represented with the LODE ontology and from large media directories (flickr, youtube) represented with the W3C Media Ontology. It is interlinked with the larger Linked Open Data cloud and in particular with DBpedia, Freebase, Geonames. It also contains links to numerous related web pages, including MusicBrainz, Geonames, Last.fm, Eventful, Upcoming and Foursquare.
+
+</dct:description>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>vocab-mappings</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >36274454</void:triples>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/event-media/dataid#links_flickr-wrappr">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/flickr-wrappr"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/event-media/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >14000000</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dcat:distribution rdf:resource="http://www.eurecom.fr/~troncy/ic2011/Artists_sameAs.nt"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/event-media/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/event-media/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >15420</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:exampleResource rdf:resource="http://data.linkedevents.org/agent/0a5a771a-5410-4c15-b695-b8059616e52f"/>
+  </dataid:Dataset>
+</rdf:RDF>

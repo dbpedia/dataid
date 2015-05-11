@@ -1,0 +1,108 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/finnish-municipalities/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/finnish-municipalities/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/finnish-municipalities/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Osma Suominen"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/finnish-municipalities/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/finnish-municipalities/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/finnish-municipalities/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/finnish-municipalities/dataid#links_wikipedia" ],
+    "dct:description" : "An RDF vocabulary describing Finnish municipalities and many regional classifications, including \n\n* Centres for Economic Development, Transport and the Environment\n* Provinces\n* Regional State Administrative Agencies\n* Regions\n* Major regions\n* Statistical grouping of municipalities\n* Employment and economic development centres\n\nThe data is based on classifications by Statistics Finland. The format is SKOS-based, but extends SKOS by defining separate classes (subclasses of skos:Concept) for each entity type and similarly uses subproperties of SKOS properties to relate the entities.\n\nLinks to DBpedia and Wikipedia are also provided for the municipalities.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Finnish municipalities and regional classifications",
+    "exampleResource" : "http://www.yso.fi/onto/kunnat/k91",
+    "triples" : "11380",
+    "uriSpace" : "http://www.yso.fi/onto/kunnat/",
+    "rdfs:label" : "finnish-municipalities",
+    "distribution" : "http://onki.fi/en/browser/downloadfile/kunnat?o=http%3A%2F%2Fwww.yso.fi%2Fonto%2Fkunnat&f=kunnat%2Fkunnat2011-skos.ttl",
+    "keyword" : [ "format-rdf", "provenance-metadata", "municipal", "regions", "geographic", "opendatachallenge", "vocab-mappings", "regional", "deref-vocab", "country-finland", "published-by-third-party", "format-skos", "local-government", "government", "format-rdfs", "lod" ],
+    "landingPage" : "http://datahub.io/dataset/finnish-municipalities"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/finnish-municipalities/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/finnish-municipalities/dataid#dataset",
+    "triples" : "336"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/finnish-municipalities/dataid#links_wikipedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/wikipedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/finnish-municipalities/dataid#dataset",
+    "triples" : "336"
+  }, {
+    "@id" : "http://onki.fi/en/browser/downloadfile/kunnat?o=http%3A%2F%2Fwww.yso.fi%2Fonto%2Fkunnat&f=kunnat%2Fkunnat2011-skos.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://onki.fi/en/browser/downloadfile/kunnat?o=http%3A%2F%2Fwww.yso.fi%2Fonto%2Fkunnat&f=kunnat%2Fkunnat2011-skos.ttl",
+    "mediaType" : "text/turtle"
+  } ],
+  "@context" : {
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

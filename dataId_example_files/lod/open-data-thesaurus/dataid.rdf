@@ -1,0 +1,76 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/open-data-thesaurus/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/open-data-thesaurus/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://vocabulary.semantic-web.at/PoolParty/sparql/OpenData">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://vocabulary.semantic-web.at/PoolParty/sparql/OpenData"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://ckan.net/storage/f/file/12be3509-4cd1-4fc5-8c95-d0d3a7121766">
+    <dcat:mediaType>application/x-ntriples</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://ckan.net/storage/f/file/12be3509-4cd1-4fc5-8c95-d0d3a7121766"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/open-data-thesaurus/dataid#dataset">
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/open-data-thesaurus"/>
+    <void:exampleResource rdf:resource="http://vocabulary.semantic-web.at/OpenData/CKAN"/>
+    <void:sparqlEndpoint rdf:resource="http://vocabulary.semantic-web.at/PoolParty/sparql/OpenData"/>
+    <dcat:keyword>ogd</dcat:keyword>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dcat:distribution rdf:resource="http://vocabulary.semantic-web.at/PoolParty/sparql/OpenData"/>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >open-data-thesaurus</rdfs:label>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/open-data-thesaurus/dataid#contributor">
+        <foaf:mbox>mailto:a.blumauer@semantic-web.at</foaf:mbox>
+        <foaf:name>Andreas Blumauer</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/open-data-thesaurus/dataid#links_freebase">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/freebase/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/open-data-thesaurus/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >40</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-owl</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/open-data-thesaurus/dataid#creator">
+        <foaf:mbox>mailto:office@semantic-web.at</foaf:mbox>
+        <foaf:name>OGD Austria</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Open Data Thesaurus</dct:title>
+    <dcat:keyword>lod</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Open Data Thesaurus is a collection of key concepts and entities, their definitions and semantic links. Following the principle of “eat your own dog food” this thesaurus is available in machine-readable form based on open W3C standards and under a Creative Commons license. The thesaurus can thus be integrated into other applications, such as for creating mashups, or for indexing of documents. The thesaurus is available in English and German.</dct:description>
+    <dcat:distribution rdf:resource="http://ckan.net/storage/f/file/12be3509-4cd1-4fc5-8c95-d0d3a7121766"/>
+    <dcat:keyword>technology</dcat:keyword>
+    <dcat:keyword>opendata</dcat:keyword>
+    <dcat:keyword>thesaurus</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/open-data-thesaurus/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/open-data-thesaurus/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >50</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:uriSpace>http://vocabulary.semantic-web.at/OpenData/</void:uriSpace>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >8000</void:triples>
+  </dataid:Dataset>
+</rdf:RDF>

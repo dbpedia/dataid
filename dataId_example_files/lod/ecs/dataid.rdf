@@ -1,0 +1,52 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/ecs/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/ecs/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/ecs/dataid#dataset">
+    <dcat:keyword>publications</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>lodcloud.nolinks</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://rdf.ecs.soton.ac.uk/ontology/ecs">
+        <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://rdf.ecs.soton.ac.uk/ontology/ecs"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Note: The number of triple is a wild guess based on the 2600 RDF documents found in Sindice and an assumption of ~20 triples per page.http://rdf.ecs.soton.ac.uk/ontology/ecs#</dct:description>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ecs</rdfs:label>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >School of Electronics and Computer Science, University of Southampton</dct:title>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/ecs"/>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <void:exampleResource rdf:resource="http://rdf.ecs.soton.ac.uk/location/UoS/site/HighfieldCampus"/>
+    <void:uriSpace>http://rdf.ecs.soton.ac.uk/ontology/ecs#</void:uriSpace>
+    <dcat:keyword>higher-education</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>format-geo</dcat:keyword>
+    <dcat:keyword>format-cc</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/ecs/dataid#creator">
+        <foaf:name>School of Electronics and Computer Science Webmaster</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >50000</void:triples>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>education</dcat:keyword>
+    <void:exampleResource rdf:resource="http://rdf.ecs.soton.ac.uk/person/1248"/>
+  </dataid:Dataset>
+</rdf:RDF>

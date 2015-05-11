@@ -1,0 +1,123 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/courts-thesaurus/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/courts-thesaurus/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/courts-thesaurus/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:office@semantic-web.at",
+    "name" : "Semantic Web Company"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/courts-thesaurus/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:cdirschl@wolterskluwer.de",
+    "name" : "Wolters Kluwer Deutschland GmbH"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/courts-thesaurus/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/courts-thesaurus/dataid#contributor", "http://dataid.dbpedia.org/lod/courts-thesaurus/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/courts-thesaurus/dataid#links_dbpedia",
+    "dct:description" : "Courts thesaurus is structuring German and European courts in a hierarchical fashion and includes e.g. address information. This thesaurus is not only dedicated to parties interested in legal matters, but also to developers developing geo data applications. Information concerning courts and their roles and responsibilities can become an interesting aspect of many applications in the future.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Courts thesaurus",
+    "exampleResource" : "http://vocabulary.wolterskluwer.de/court/10017.rdf",
+    "sparqlEndpoint" : "http://vocabulary.wolterskluwer.de/PoolParty/sparql/court",
+    "triples" : "30387",
+    "uriSpace" : "http://vocabulary.wolterskluwer.de/court",
+    "rdfs:label" : "courts-thesaurus",
+    "distribution" : [ "http://vocabulary.wolterskluwer.de/court/export/court.rdf", "http://vocabulary.wolterskluwer.de/PoolParty/sparql/court" ],
+    "keyword" : [ "published-by-producer", "license-metadata", "germany", "media", "format-dcterms", "courts", "format-skos", "provenance-metadata", "united nations", "eu", "format-vcard", "lod", "no-proprietary-vocab" ],
+    "landingPage" : "http://datahub.io/dataset/courts-thesaurus"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/courts-thesaurus/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/courts-thesaurus/dataid#dataset",
+    "triples" : "997"
+  }, {
+    "@id" : "http://vocabulary.wolterskluwer.de/PoolParty/sparql/court",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://vocabulary.wolterskluwer.de/PoolParty/sparql/court",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://vocabulary.wolterskluwer.de/court/export/court.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://vocabulary.wolterskluwer.de/court/export/court.rdf",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "@graph" : [ {
+    "@id" : "http://156.35.82.103/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://156.35.82.103/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/isic-v4/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/isic-v4/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/isic-v4/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:josem.alvarez@weso.es",
+    "name" : "Jose María Alvarez Rodríguez"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/isic-v4/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:josem.alvarez@weso.es",
+    "name" : "Jose María Alvarez Rodríguez at WESO (University of Oviedo)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/isic-v4/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/isic-v4/dataid#contributor", "http://dataid.dbpedia.org/lod/isic-v4/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/isic-v4/dataid#links_http://productontology.org",
+    "dct:description" : "International Standard Industrial Classification of All Economic Activities, United Nations Statistics Division is a product scheme classification used by the United Nations to create statistics. \n\nAuthors:\n\nJose María Alvarez Rodríguez & Jose Emilio Labra Gayo \n\nWESO-University of Oviedo",
+    "license" : "http://www.opendefinition.org/licenses/odc-odbl",
+    "dct:title" : "ISIC V4",
+    "exampleResource" : "http://purl.org/weso/pscs/data/isic/v4/resource/0116?output=xml",
+    "sparqlEndpoint" : "http://156.35.82.103/sparql",
+    "triples" : "18986",
+    "uriSpace" : "http://purl.org/weso/pscs/isic/v4/resource",
+    "rdfs:label" : "isic-v4",
+    "distribution" : [ "http://purl.org/weso/pscs/isic/v4/resource/ds", "http://purl.org/weso/datasets/pscs/psc-ontology.ttl", "http://156.35.82.103/sparql", "http://purl.org/weso/pscs/data/isic/v4/resource/ds?output=ttl", "http://purl.org/weso/datasets/pscs/isic/v4/isic-v4.ttl" ],
+    "keyword" : [ "weso", "procurement", "format-dc", "government", "uniovi", "license-metadata", "format-dcterms", "published-by-third-party", "lod", "format-gr", "isic", "euroalert", "provenance-metadata", "linkedopendata", "format-skosxl", "oviedo", "10ders", "pscs", "linkeddata", "deref-vocab", "university-of-oviedo", "v4", "format-skos", "public_contracts", "e-procurement", "vocab-mappings", "geodata" ],
+    "landingPage" : "http://datahub.io/dataset/isic-v4"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/isic-v4/dataid#links_http://productontology.org",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/http://productontology.org/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/isic-v4/dataid#dataset",
+    "triples" : "2995"
+  }, {
+    "@id" : "http://purl.org/weso/datasets/pscs/isic/v4/isic-v4.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/datasets/pscs/isic/v4/isic-v4.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://purl.org/weso/datasets/pscs/psc-ontology.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/datasets/pscs/psc-ontology.ttl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/weso/pscs/data/isic/v4/resource/ds?output=ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/pscs/data/isic/v4/resource/ds?output=ttl",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://purl.org/weso/pscs/isic/v4/resource/ds",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/pscs/isic/v4/resource/ds",
+    "mediaType" : "HTML"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

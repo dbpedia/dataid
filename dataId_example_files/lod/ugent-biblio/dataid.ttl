@@ -1,0 +1,36 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/ugent-biblio/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "ugent-biblio"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/ugent-biblio/dataid#creator> ;
+        dct:description         ""^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-odbl> ;
+        dct:title               "UGent Biblio"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dcat:distribution       <http://biblio.ugent.be/exports/export_big.txt> , <https://biblio.ugent.be/site/about.rdf> ;
+        dcat:keyword            "bibliographic" ;
+        dcat:landingPage        <http://datahub.io/dataset/ugent-biblio> .
+
+<http://dataid.dbpedia.org/lod/ugent-biblio/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:Patrick.Hochstenbach@UGent.be" ;
+        foaf:name  "Ghent University" .
+
+<http://dataid.dbpedia.org/lod/ugent-biblio/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/ugent-biblio/dataid#dataset" .
+
+<https://biblio.ugent.be/site/about.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://biblio.ugent.be/site/about.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://biblio.ugent.be/exports/export_big.txt>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://biblio.ugent.be/exports/export_big.txt> ;
+        dcat:mediaType    "CSV" .

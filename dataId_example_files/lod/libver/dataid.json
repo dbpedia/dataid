@@ -1,0 +1,144 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/libver/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/libver/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/libver/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:s.karampatakis@gmail.com",
+    "name" : "Sotiris Karampatakis"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/libver/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:s.karampatakis@gmail.com",
+    "name" : "Sotiris Karampatakis"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/libver/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/libver/dataid#contributor", "http://dataid.dbpedia.org/lod/libver/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/libver/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/libver/dataid#links_dbpedia-el" ],
+    "dct:description" : "Public Library of Veroia Linked Open Data Project. This is the first effort of a Greek Library to expose it's Bibliographic Data as Linked Open Data.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "Public Library of Veroia",
+    "exampleResource" : "http://libver.math.auth.gr/data/agent3911.rdf",
+    "sparqlEndpoint" : "http://libver.math.auth.gr/sparql",
+    "triples" : "1285417",
+    "uriSpace" : "http://libver.math.auth.gr/resource",
+    "rdfs:label" : "libver",
+    "distribution" : [ "http://libver.math.auth.gr/fct", "http://libver.math.auth.gr/sparql", "https://commondatastorage.googleapis.com/ckannet-storage/2012-09-25T143058/void.ttl", "http://libver.math.auth.gr/page/agent3911", "https://commondatastorage.googleapis.com/ckannet-storage/2012-09-06T043619/record1_10.rdf" ],
+    "keyword" : [ "no-license-metadata", "no-proprietary-vocab", "format-rdfs", "no-provenance-metadata", "published-by-third-party", "lod", "bibliographic", "lld", "format-bibo", "format-rdf", "format-dcterm", "media", "publications" ],
+    "landingPage" : "http://datahub.io/dataset/libver"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/libver/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/libver/dataid#dataset",
+    "triples" : "2915"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/libver/dataid#links_dbpedia-el",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia-el/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/libver/dataid#dataset",
+    "triples" : "4197"
+  }, {
+    "@id" : "http://libver.math.auth.gr/fct",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://libver.math.auth.gr/fct",
+    "mediaType" : "api/search"
+  }, {
+    "@id" : "http://libver.math.auth.gr/page/agent3911",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://libver.math.auth.gr/page/agent3911",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://libver.math.auth.gr/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://libver.math.auth.gr/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-09-06T043619/record1_10.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-09-06T043619/record1_10.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-09-25T143058/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-09-25T143058/void.ttl",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,78 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#dataset">
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-pddl"/>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/data-incubator-nasa"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#links_bbc-programmes">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bbc-programmes"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>nasa</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >97974</void:triples>
+    <dcat:keyword>government</dcat:keyword>
+    <dcat:keyword>space</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#creator">
+        <foaf:mbox>mailto:leigh@ldodds.com</foaf:mbox>
+        <foaf:name>Leigh Dodds</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >data-incubator-nasa</rdfs:label>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#contributor">
+        <foaf:mbox>mailto:leigh@ldodds.com</foaf:mbox>
+        <foaf:name>Leigh Dodds</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >### Description
+
+Conversion of various NASA datasets into RDF, starting 
+with the spacecraft data from the NSSDC master catalog.
+
+This dataset consists of a conversion of the NASA NSSDC Master Catalog and extracts of the Apollo By Numbers statistics.
+
+Currently the data consists of all of the Spacecraft from the NSSDC database which is a comprehensive list of orbital, suborbital, and interplanetary spacecraft launches dataing from the 1950s to the present day. Entries are not limited to NASA missions, but include spacecraft launched by various agencies from around the globe.
+
+*Note* this dataset is no longer updated, it was taken off-line during the shutdown of Kasabi. A dump of the dataset has been [uploaded to the Internet Archive](http://archive.org/details/kasabi)</dct:description>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >61</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-po</dcat:keyword>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NASA Space Flight &amp; Astronaut data in RDF</dct:title>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://archive.org/download/kasabi/nasa.gz">
+        <dcat:mediaType>gzip::nquads</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://archive.org/download/kasabi/nasa.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>format-owl</dcat:keyword>
+    <void:uriSpace>http://data.kasabi.com/dataset/nasa</void:uriSpace>
+    <dcat:keyword>format-dc</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

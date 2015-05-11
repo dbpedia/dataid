@@ -1,0 +1,87 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://lod.hebis.de/lod/hebis-13050074-21257739.rdf.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://lod.hebis.de/lod/hebis-13050074-21257739.rdf.gz> ;
+        dcat:mediaType    "RDF" .
+
+<http://lod.hebis.de/lod/void.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://lod.hebis.de/lod/void.ttl> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:striffler@hebis.uni-frankfurt.de" ;
+        foaf:name  "Hessisches BibliotheksInformationsSystem (HeBIS)" .
+
+<http://lod.hebis.de/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://lod.hebis.de/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "hebis-bibliographic-resources"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#creator> , <http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#links_dnb-gemeinsame-normdatei> ;
+        dct:description         "This site contains links to metadata about all types of publications (print media, E-books, E-journals,online resources) originating from the central union database of HeBIS. HeBIS - The Hessische BibliotheksInformationsSystem is one of the six regional library unions in Germany. It is the electronic information and service union of academic libraries in Hessen and parts of the Rhineland Palatinate. The metadata was catalogued by 27 independent cataloging libraries/library systems which are active within the union.\n\nAdditional information about the producer of this data can be found here:\n\nhttp://www.hebis.de/eng/englisch_index.php"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "HeBIS - Bibliographic Resources of the Library Union Catalogues of Hessen and parts of the Rhineland Palatinate"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <https://commondatastorage.googleapis.com/ckannet-storage/2012-07-18T131849/06073998.rdf> ;
+        void:sparqlEndpoint     <http://lod.hebis.de/sparql> ;
+        void:triples            "267038676"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://lod.hebis.de/resource/" ;
+        dcat:distribution       <http://lod.hebis.de/lod/hebis-13050074-21257739.rdf.gz> , <https://commondatastorage.googleapis.com/ckannet-storage/2012-07-17T084118/hebis-00000001-05051126.rdf.gz> , <http://lod.hebis.de/lod/hebis-26887668-29873805.rdf.gz> , <http://www.hebis.de/de/1ueber_uns/projekte/lod/lod_download.php> , <http://lod.hebis.de/lod/hebis-10174116-13050073.rdf.gz> , <http://lod.hebis.de/lod/hebis-05051128-10174115.rdf.gz> , <http://lod.hebis.de/sparql> , <http://lod.hebis.de/lod/void.ttl> , <http://lod.hebis.de/lod/hebis-21257740-26887667.rdf.gz> ;
+        dcat:keyword            "hessen" , "format-wdrs" , "format-frbr" , "bibliographic" , "lld" , "format-hartigprov" , "no-provenance-metadata" , "format-doap" , "format-dcterms" , "license-metadata" , "format-dcterm" , "format-prvt" , "format-bibo" , "publications" , "format-owl" , "published-by-producer" , "format-dc" , "germany" , "library" , "lod" , "format-rdf" , "university" , "hesse" , "frankfurt" , "no-proprietary-vocab" ;
+        dcat:landingPage        <http://datahub.io/dataset/hebis-bibliographic-resources> .
+
+<https://commondatastorage.googleapis.com/ckannet-storage/2012-07-17T084118/hebis-00000001-05051126.rdf.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://commondatastorage.googleapis.com/ckannet-storage/2012-07-17T084118/hebis-00000001-05051126.rdf.gz> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#links_dnb-gemeinsame-normdatei>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#dataset> ;
+        void:triples         "15315081"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://lod.hebis.de/lod/hebis-21257740-26887667.rdf.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://lod.hebis.de/lod/hebis-21257740-26887667.rdf.gz> ;
+        dcat:mediaType    "RDF" .
+
+<http://lod.hebis.de/lod/hebis-05051128-10174115.rdf.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://lod.hebis.de/lod/hebis-05051128-10174115.rdf.gz> ;
+        dcat:mediaType    "RDF" .
+
+<http://lod.hebis.de/lod/hebis-10174116-13050073.rdf.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://lod.hebis.de/lod/hebis-10174116-13050073.rdf.gz> ;
+        dcat:mediaType    "RDF" .
+
+<http://lod.hebis.de/lod/hebis-26887668-29873805.rdf.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://lod.hebis.de/lod/hebis-26887668-29873805.rdf.gz> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:striffler@hebis.uni-frankfurt.de" ;
+        foaf:name  "Hessisches BibliotheksInformationsSystem (HeBIS)" .
+
+<http://www.hebis.de/de/1ueber_uns/projekte/lod/lod_download.php>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.hebis.de/de/1ueber_uns/projekte/lod/lod_download.php> ;
+        dcat:mediaType    "php" .
+
+<http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#dataset" .

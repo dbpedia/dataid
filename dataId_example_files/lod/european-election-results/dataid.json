@@ -1,0 +1,123 @@
+{
+  "@graph" : [ {
+    "@id" : "http://api.talis.com/stores/elections/services/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://api.talis.com/stores/elections/services/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/european-election-results/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/european-election-results/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/european-election-results/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:tim.hodson@kasabi.com",
+    "name" : "Tim Hodson"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/european-election-results/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:tim.hodson@kasabi.com",
+    "name" : "Tim Hodson"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/european-election-results/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/european-election-results/dataid#contributor", "http://dataid.dbpedia.org/lod/european-election-results/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/european-election-results/dataid#links_eurostat-linked-data",
+    "dct:description" : "EU Election Results from 2009.",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "European Election Results",
+    "exampleResource" : [ "http://elections.publicdata.eu/data/2009/national_parties/observation/7", "http://elections.publicdata.eu/data/country/nl", "http://elections.publicdata.eu/data/political_group/efd" ],
+    "sparqlEndpoint" : "http://api.talis.com/stores/elections/services/sparql",
+    "triples" : "3165",
+    "uriSpace" : "http://elections.publicdata.eu/data/",
+    "rdfs:label" : "european-election-results",
+    "distribution" : [ "http://elections.publicdata.eu/void.ttl", "http://api.talis.com/stores/elections/services/sparql" ],
+    "keyword" : [ "government", "european parliament", "europe", "provenance-metadata", "published-by-third-party", "eu-institution", "lod", "format-rdfs", "deref-vocab", "lodcloud", "format-qb", "eu", "format-skos", "linkeddata", "latc", "license-metadata", "geographic", "rdf" ],
+    "landingPage" : "http://datahub.io/dataset/european-election-results"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/european-election-results/dataid#links_eurostat-linked-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/eurostat-linked-data",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/european-election-results/dataid#dataset",
+    "triples" : "27"
+  }, {
+    "@id" : "http://elections.publicdata.eu/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://elections.publicdata.eu/void.ttl",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

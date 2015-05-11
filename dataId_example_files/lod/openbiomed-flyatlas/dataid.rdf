@@ -1,0 +1,70 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/openbiomed-flyatlas/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/openbiomed-flyatlas/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/openbiomed-flyatlas/dataid#dataset">
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >flyatlas</dct:title>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.open-biomed.org.uk/sparql/endpoint/flyatlas">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://www.open-biomed.org.uk/sparql/endpoint/flyatlas"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>linktoflybase</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></dct:description>
+    <dcat:keyword>linkeddata</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.open-biomed.org.uk/service/flyatlas/assays">
+        <dcat:mediaType>api</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.open-biomed.org.uk/service/flyatlas/assays"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>open-biomed</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://www.open-biomed.org.uk/sparql/endpoint/flyatlas"/>
+    <dcat:keyword>flyatlas</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >14770954</void:triples>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.open-biomed.org.uk/open-biomed-data/flyatlas-201102.tar.gz">
+        <dcat:mediaType>rdf/turtle</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.open-biomed.org.uk/open-biomed-data/flyatlas-201102.tar.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.open-biomed.org.uk/service/flyatlas/assays/name/{name}">
+        <dcat:mediaType>api</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.open-biomed.org.uk/service/flyatlas/assays/name/{name}"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/openbiomed-flyatlas/dataid#creator">
+        <foaf:name>Jun Zhao</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.open-biomed.org.uk/service/flyatlas/assays/fbgn/{fbgn}">
+        <dcat:mediaType>api</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.open-biomed.org.uk/service/flyatlas/assays/fbgn/{fbgn}"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/openbiomed-flyatlas/dataid#contributor">
+        <foaf:name>Jun Zhao</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >openbiomed-flyatlas</rdfs:label>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/openbiomed-flyatlas"/>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+  </dataid:Dataset>
+</rdf:RDF>

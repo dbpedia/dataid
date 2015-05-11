@@ -1,0 +1,61 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/bluk-bnb-basic/dataid#dataset">
+    <dcat:keyword>bibliography</dcat:keyword>
+    <dcat:keyword>format-xml</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/bluk-bnb-basic"/>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.bl.uk/bibliographic/download.html#basicbnb">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.bl.uk/bibliographic/download.html#basicbnb"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/bluk-bnb-basic/dataid#creator">
+        <foaf:mbox>mailto:metadata@bl.uk</foaf:mbox>
+        <foaf:name>The British Library Metadata Services</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>british-library</dcat:keyword>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <dcat:keyword>library</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.bl.uk/bibliographic/pdfs/mappingmarc2basicrdf.pdf">
+        <dcat:mediaType>PDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.bl.uk/bibliographic/pdfs/mappingmarc2basicrdf.pdf"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >British National Bibliography (BNB) published by the British Library as basic (unmodelled) RDF/XML without URIs. The dataset is broader in scope than the BNB - Linked Open Data, i.e. includes books together with serials, forthcoming publications etc.
+
+Current release includes descriptions of over 3 million UK publications created over the last 60 years and will be regularly updated.
+</dct:description>
+    <dcat:keyword>publications</dcat:keyword>
+    <dcat:keyword>bibliographic data</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >British National Bibliography (BNB) - Basic Representation</dct:title>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dcat:keyword>bibliographic</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/bluk-bnb-basic/dataid#contributor">
+        <foaf:mbox>mailto:metadata@bl.uk</foaf:mbox>
+        <foaf:name>The British Library Metadata Services</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bluk-bnb-basic</rdfs:label>
+    <dcat:keyword>cc0</dcat:keyword>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/bluk-bnb-basic/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/bluk-bnb-basic/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

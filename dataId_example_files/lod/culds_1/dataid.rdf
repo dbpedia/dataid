@@ -1,0 +1,59 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/culds_1/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/culds_1/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/culds_1/dataid#dataset">
+    <dcat:keyword>lld</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://data.lib.cam.ac.uk/endpoint.php?query=SELECT+*+WHERE+{%0D%0A++GRAPH+%3Chttp%3A%2F%2Fdata.lib.cam.ac.uk%2Fcontext%2Fdataset%2Fcambridge%2Fbib%3E+{+%3Fs+%3Fp+%3Fo+.+}%0D%0A}%0D%0ALIMIT+1000&amp;output=htmltab&amp;jsonp=&amp;key=&amp;show_inline=1">
+        <dcat:mediaType>SPARQL</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://data.lib.cam.ac.uk/endpoint.php?query=SELECT+*+WHERE+{%0D%0A++GRAPH+%3Chttp%3A%2F%2Fdata.lib.cam.ac.uk%2Fcontext%2Fdataset%2Fcambridge%2Fbib%3E+{+%3Fs+%3Fp+%3Fo+.+}%0D%0A}%0D%0ALIMIT+1000&amp;output=htmltab&amp;jsonp=&amp;key=&amp;show_inline=1"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This data marks the first major out put of the COMET project. COMET is a JISC funded collaboration between Cambridge University Library and CARET, University of Cambridge. It is funded under the JISC Infrastructure for Resource Discovery programme.
+
+It represents work over a 20+ year period which contains a number of changes in practices and cataloguing tools. No attempt has been made to screen for quaility of records other than the Voyager export process.
+
+This data also includes the 180,000 'Tower Project' records published under the JISC Open Bibliography Project.
+
+</dct:description>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/culds_1/dataid#creator">
+        <foaf:name>Ed Chamberlain</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://data.lib.cam.ac.uk/data/cambridge.mrc.gz">
+        <dcat:mediaType>marc21</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://data.lib.cam.ac.uk/data/cambridge.mrc.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://data.lib.cam.ac.uk/data/cambridge.nt.tgz">
+        <dcat:mediaType>rdf/nt</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://data.lib.cam.ac.uk/data/cambridge.nt.tgz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >culds_1</rdfs:label>
+    <dcat:keyword>library</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/culds_1"/>
+    <dcat:keyword>jisc</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>format-marc</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-pddl"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cambridge University Library dataset #1</dct:title>
+    <dcat:keyword>cambridge</dcat:keyword>
+    <dcat:keyword>comet</dcat:keyword>
+    <dcat:keyword>sparql-endpoint</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

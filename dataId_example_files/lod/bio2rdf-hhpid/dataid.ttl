@@ -1,0 +1,48 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://download.bio2rdf.org/current/hhpid/hhpid.nt.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://download.bio2rdf.org/current/hhpid/hhpid.nt.gz> ;
+        dcat:mediaType    "application/x-ntriples" .
+
+<http://dataid.dbpedia.org/lod/bio2rdf-hhpid/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/bio2rdf-hhpid/dataid#dataset" .
+
+<http://hhpid.bio2rdf.org/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://hhpid.bio2rdf.org/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://download.bio2rdf.org/current/hhpid/hhpid.html>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://download.bio2rdf.org/current/hhpid/hhpid.html> ;
+        dcat:mediaType    "HTML" .
+
+<http://dataid.dbpedia.org/lod/bio2rdf-hhpid/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:bio2rdf@googlegroups.com" ;
+        foaf:name  "Bio2RDF" .
+
+<http://dataid.dbpedia.org/lod/bio2rdf-hhpid/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "bio2rdf-hhpid"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/bio2rdf-hhpid/dataid#creator> , <http://dataid.dbpedia.org/lod/bio2rdf-hhpid/dataid#contributor> ;
+        dct:description         "A database of HIV-1 human protein interactions that was created to catalog all interactions between HIV-1 and human proteins published in the peer-reviewed literature. The database serves the scientific community exploring the discovery of novel HIV vaccine candidates and therapeutic targets."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "Bio2RDF::HHPID"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:sparqlEndpoint     <http://hhpid.bio2rdf.org/sparql> ;
+        void:uriSpace           "http://bio2rdf.org/hhpid" ;
+        dcat:distribution       <http://download.bio2rdf.org/current/hhpid/hhpid.html> , <http://hhpid.bio2rdf.org/sparql> , <http://download.bio2rdf.org/current/hhpid/hhpid.nt.gz> ;
+        dcat:keyword            "rdf" , "bio2rdf" , "published by third party." , "lod" , "semanticweb" ;
+        dcat:landingPage        <http://datahub.io/dataset/bio2rdf-hhpid> .
+
+<http://dataid.dbpedia.org/lod/bio2rdf-hhpid/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:michel.dumontier@gmail.com" ;
+        foaf:name  "Michel Dumontier" .

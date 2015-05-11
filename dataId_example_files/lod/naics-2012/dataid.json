@@ -1,0 +1,133 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/naics-2012/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/naics-2012/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/naics-2012/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:josem.alvarez@weso.es",
+    "name" : "Jose María Alvarez Rodríguez"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/naics-2012/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:josem.alvarez@weso.es",
+    "name" : "Jose María Alvarez Rodríguez at WESO (University of Oviedo)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/naics-2012/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/naics-2012/dataid#contributor", "http://dataid.dbpedia.org/lod/naics-2012/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/naics-2012/dataid#links_http://productontology.org",
+    "dct:description" : "The North American Industry Classification System (NAICS) is the standard used by Federal statistical agencies in classifying business establishments for the purpose of collecting, analyzing, and publishing statistical data related to the U.S. business economy.\n\nAuthors of the linked data version:\n\n-Jose María Alvarez Rodríguez & Jose Emilio Labra Gayo\n\nWESO-University of Oviedo",
+    "license" : "http://www.opendefinition.org/licenses/odc-odbl",
+    "dct:title" : "NAICS 2012",
+    "exampleResource" : "http://purl.org/weso/pscs/data/naics/2012/resource/111150?output=xml",
+    "sparqlEndpoint" : "http://purl.org/weso/sparql",
+    "triples" : "35390",
+    "uriSpace" : "http://purl.org/weso/pscs/naics/2012/resource",
+    "rdfs:label" : "naics-2012",
+    "distribution" : [ "http://purl.org/weso/datasets/pscs/naics/2012/naics-2012.ttl", "http://purl.org/weso/pscs/naics/2012/resource/ds", "http://purl.org/weso/datasets/pscs/psc-ontology.ttl", "http://purl.org/weso/sparql" ],
+    "keyword" : [ "e-procurement", "pscs", "published-by-third-party", "deref-vocab", "procurement", "format-skosxl", "linkeddata", "university-of-oviedo", "government", "naics", "euroalert", "weso", "provenance-metadata", "format-dc", "vocab-mappings", "naics-2012", "uniovi", "format-skos", "10ders", "license-metadata", "lod", "geodata", "format-gr", "oviedo", "linkedopendata", "format-dcterms", "public_contracts" ],
+    "landingPage" : "http://datahub.io/dataset/naics-2012"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/naics-2012/dataid#links_http://productontology.org",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/http://productontology.org/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/naics-2012/dataid#dataset",
+    "triples" : "8037"
+  }, {
+    "@id" : "http://purl.org/weso/datasets/pscs/naics/2012/naics-2012.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/datasets/pscs/naics/2012/naics-2012.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://purl.org/weso/datasets/pscs/psc-ontology.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/datasets/pscs/psc-ontology.ttl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/weso/pscs/naics/2012/resource/ds",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/pscs/naics/2012/resource/ds",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://purl.org/weso/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://purl.org/weso/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,106 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/diavgeia/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:spiros.alexiou@gmail.com" ;
+        foaf:name  "Spiros Alexiou" .
+
+<https://commondatastorage.googleapis.com/ckannet-storage/2012-09-27T161432/void.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://commondatastorage.googleapis.com/ckannet-storage/2012-09-27T161432/void.ttl> ;
+        dcat:mediaType    "meta/void" .
+
+<https://commondatastorage.googleapis.com/ckannet-storage/2012-08-27T163756/Diavgeia_demo_RDF_XML.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://commondatastorage.googleapis.com/ckannet-storage/2012-08-27T163756/Diavgeia_demo_RDF_XML.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://www.greek-lod.gr/DiavgeiaTreeMap/dapanes/General.html>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.greek-lod.gr/DiavgeiaTreeMap/dapanes/General.html> ;
+        dcat:mediaType    "HTML" .
+
+<http://dataid.dbpedia.org/lod/diavgeia/dataid#links_kalikratis-municipalities>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/kalikratis-municipalities> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset> ;
+        void:triples         "355"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<https://commondatastorage.googleapis.com/ckannet-storage/2012-08-27T164145/Diavgeia_demo_NTriples.nt>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://commondatastorage.googleapis.com/ckannet-storage/2012-08-27T164145/Diavgeia_demo_NTriples.nt> ;
+        dcat:mediaType    "TXT" .
+
+<http://dataid.dbpedia.org/lod/diavgeia/dataid#links_dbpedia-el>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia-el> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset> ;
+        void:triples         "676"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<https://ckannet-storage.commondatastorage.googleapis.com/2013-02-08T164424/PolicePerRegion_1.csv>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://ckannet-storage.commondatastorage.googleapis.com/2013-02-08T164424/PolicePerRegion_1.csv> ;
+        dcat:mediaType    "XLS" .
+
+<http://dataid.dbpedia.org/lod/diavgeia/dataid#links_eurostat>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/eurostat> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset> ;
+        void:triples         "12"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://diavgeia.math.auth.gr/sparql>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://diavgeia.math.auth.gr/sparql> ;
+        dcat:mediaType    "CSV" .
+
+<http://dataid.dbpedia.org/lod/diavgeia/dataid#links_hellenic-fire-brigade>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/hellenic-fire-brigade> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset> ;
+        void:triples         "156"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "diavgeia"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/diavgeia/dataid#contributor> , <http://dataid.dbpedia.org/lod/diavgeia/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/diavgeia/dataid#links_hellenic-fire-brigade> , <http://dataid.dbpedia.org/lod/diavgeia/dataid#links_dbpedia-el> , <http://dataid.dbpedia.org/lod/diavgeia/dataid#links_kalikratis-municipalities> , <http://dataid.dbpedia.org/lod/diavgeia/dataid#links_hellenic-police> , <http://dataid.dbpedia.org/lod/diavgeia/dataid#links_eurostat> , <http://dataid.dbpedia.org/lod/diavgeia/dataid#links_dbpedia> ;
+        dct:description         "The Clarity program introduces for the first time in Greece the obligation to publish all the decisions on the Internet, with the exception of decisions that contain sensitive personal data and/or information on national security. It is quite an innovative program, even by European standards, aiming first of all to bring about the maximum publicity of the government policy and administrative action. The use of Internet guarantees wide publicity and access to information, progressively contributing to a culture change in the whole of the Public Administration."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by-sa> ;
+        dct:title               "Diavgeia"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <https://commondatastorage.googleapis.com/ckannet-storage/2012-08-27T164505/Diavgeia_demo_RDF_XML.rdf> ;
+        void:triples            "48051108"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://diavgeia.math.auth.gr/resource/" ;
+        dcat:distribution       <http://www.greek-lod.gr/DiavgeiaTreeMap/dapanes/General.html> , <https://commondatastorage.googleapis.com/ckannet-storage/2012-08-27T164145/Diavgeia_demo_NTriples.nt> , <https://ckannet-storage.commondatastorage.googleapis.com/2013-02-08T154930/MinistriesSpending2012_1.csv> , <https://commondatastorage.googleapis.com/ckannet-storage/2012-09-27T161432/void.ttl> , <https://commondatastorage.googleapis.com/ckannet-storage/2012-08-27T163756/Diavgeia_demo_RDF_XML.rdf> , <http://diavgeia.math.auth.gr/sparql> , <https://ckannet-storage.commondatastorage.googleapis.com/2013-02-08T164424/PolicePerRegion_1.csv> ;
+        dcat:keyword            "greece" , "format-owl" , "lod" , "format-skos" , "format-dc" , "published-by-third-party" , "greek" , "opendata" , "clarity" , "openspending" , "format-foaf" , "provenance-metadata" , "license-metadata" , "government" , "diavgeia" , "linked data" , "no-proprietary-vocab" , "format-rdf" ;
+        dcat:landingPage        <http://datahub.io/dataset/diavgeia> .
+
+<http://dataid.dbpedia.org/lod/diavgeia/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset> ;
+        void:triples         "13"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<https://ckannet-storage.commondatastorage.googleapis.com/2013-02-08T154930/MinistriesSpending2012_1.csv>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://ckannet-storage.commondatastorage.googleapis.com/2013-02-08T154930/MinistriesSpending2012_1.csv> ;
+        dcat:mediaType    "XLS" .
+
+<http://dataid.dbpedia.org/lod/diavgeia/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/diavgeia/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:spiros.alexiou@gmail.com" ;
+        foaf:name  "Spiros Alexiou" .
+
+<http://dataid.dbpedia.org/lod/diavgeia/dataid#links_hellenic-police>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/hellenic-police> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset> ;
+        void:triples         "45"^^<http://www.w3.org/2001/XMLSchema#int> .

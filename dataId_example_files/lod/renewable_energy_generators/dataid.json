@@ -1,0 +1,105 @@
+{
+  "@graph" : [ {
+    "@id" : "http://archive.org/download/kasabi/renewable-energy-generators.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://archive.org/download/kasabi/renewable-energy-generators.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/renewable_energy_generators/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/renewable_energy_generators/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/renewable_energy_generators/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:leigh@ldodds.com",
+    "name" : "Leigh Dodds"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/renewable_energy_generators/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/renewable_energy_generators/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/renewable_energy_generators/dataid#links_statistics-data-gov-uk", "http://dataid.dbpedia.org/lod/renewable_energy_generators/dataid#links_ordnance-survey-linked-data" ],
+    "dct:description" : "The Renewable Energy Federation maintains an online database of renewable energy generators located in the United Kingdom. The dataset consists of over 5500 generators around the UK, including both on-shore and off-shore installations. The generators have all been categorized based on type and many of them include details of their address, geographic location, and details of the organizations that developed, operate, or own the site. Some wind turbine installations also include details on the number, size and type of turbines.\n\n*Note* this dataset is no longer updated, it was taken off-line during the shutdown of Kasabi. A dump of the dataset has been [uploaded to the Internet Archive](http://archive.org/details/kasabi)",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "Renewable Energy Generators",
+    "triples" : "99917",
+    "uriSpace" : "http://data.kasabi.com/dataset/renewable-energy-generators",
+    "rdfs:label" : "renewable_energy_generators",
+    "distribution" : "http://archive.org/download/kasabi/renewable-energy-generators.gz",
+    "keyword" : [ "geographic", "government", "format-rdf", "geodata", "format-foaf", "deref-vocab", "published-by-third-party" ],
+    "landingPage" : "http://datahub.io/dataset/renewable_energy_generators"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/renewable_energy_generators/dataid#links_ordnance-survey-linked-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/ordnance-survey-linked-data/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/renewable_energy_generators/dataid#dataset",
+    "triples" : "991"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/renewable_energy_generators/dataid#links_statistics-data-gov-uk",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/statistics-data-gov-uk/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/renewable_energy_generators/dataid#dataset",
+    "triples" : "5539"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

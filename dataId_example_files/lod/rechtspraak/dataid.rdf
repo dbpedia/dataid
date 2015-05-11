@@ -1,0 +1,91 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/rechtspraak/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/rechtspraak/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://eculture2.cs.vu.nl:5020/sparql/">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://eculture2.cs.vu.nl:5020/sparql/"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.best-project.nl/rechtspraak.ttl">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.best-project.nl/rechtspraak.ttl"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/rechtspraak/dataid#dataset">
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/rechtspraak/dataid#contributor">
+        <foaf:mbox>mailto:hoekstra@few.vu.nl</foaf:mbox>
+        <foaf:name>Rinke Hoekstra</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>format-geo</dcat:keyword>
+    <dcat:keyword>government</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1931860</void:triples>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dcat:distribution rdf:resource="http://www.best-project.nl/rechtspraak.ttl"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rechtspraak</rdfs:label>
+    <void:exampleResource rdf:resource="http://linkeddata.few.vu.nl/rechtspraak/uitspraak/BM4461"/>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rechtspraak/dataid#links_geonames-semantic-web">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rechtspraak/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >220058</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://eculture2.cs.vu.nl:5020/sparql/"/>
+    <dcat:keyword>format-geonames</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <void:uriSpace>http://linkeddata.few.vu.nl/rechtspraak/</void:uriSpace>
+    <dcat:keyword>format-metalex</dcat:keyword>
+    <dcat:keyword>broken_link</dcat:keyword>
+    <dcat:keyword>law</dcat:keyword>
+    <dcat:keyword>format-dbpedia</dcat:keyword>
+    <dcat:keyword>vu</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >RDF version of the official case law dataset of the Netherlands Council of the Judiciary (at [http://www.rechtspraak.nl](http://www.rechtspraak.nl)). It contains approximately 145k descriptions of court proceedings, linked to DBPedia and Geonames (places mentioned in cases). It contains all Dutch courts and their locations.
+
+URIs are dereferenceable.
+
+Example: [http://linkeddata.few.vu.nl/rechtspraak/uitspraak/BM4461](http://linkeddata.few.vu.nl/rechtspraak/uitspraak/BM4461)
+
+This dataset was developed within the BEST project at the VU University Amsterdam.</dct:description>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/rechtspraak"/>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>case-law</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://eculture2.cs.vu.nl:5020/sparql/"/>
+    <dcat:keyword>format-owl</dcat:keyword>
+    <dcat:keyword>void-sparql-endpoint</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/rechtspraak/dataid#creator">
+        <foaf:mbox>mailto:hoekstra@few.vu.nl</foaf:mbox>
+        <foaf:name>Rinke Hoekstra</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:keyword>format-dbo</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Rechtspraak.nl</dct:title>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rechtspraak/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rechtspraak/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >575</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+  </dataid:Dataset>
+</rdf:RDF>

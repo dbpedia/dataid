@@ -1,0 +1,113 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/pleiades/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/pleiades/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://atlantides.org/downloads/pleiades/rdf/pleiades-latest.tar.gz">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://atlantides.org/downloads/pleiades/rdf/pleiades-latest.tar.gz"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://atlantides.org/downloads/pleiades/rdf/void.ttl">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://atlantides.org/downloads/pleiades/rdf/void.ttl"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/pleiades/dataid#dataset">
+    <dcat:keyword>geography</dcat:keyword>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dcat:keyword>format-spatial</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/pleiades/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/pleiades/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >127</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pleiades</dct:title>
+    <void:uriSpace>http://pleiades.stoa.org/places/ http://pleiades.stoa.org/places/vocab# http://atlantides.org/capgrids/</void:uriSpace>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2600000</void:triples>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/pleiades/dataid#contributor">
+        <foaf:mbox>mailto:sean.gillies@nyu.edu</foaf:mbox>
+        <foaf:name>Sean Gillies</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>roman</dcat:keyword>
+    <dcat:keyword>thesaurus</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/pleiades"/>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <dcat:keyword>geodata</dcat:keyword>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dcat:keyword>no-licence-metadata</dcat:keyword>
+    <dcat:keyword>historyhackday</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/pleiades/dataid#creator">
+        <foaf:mbox>mailto:pleiades.admin@nyu.edu</foaf:mbox>
+        <foaf:name>Pleiades Project</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:distribution rdf:resource="http://atlantides.org/downloads/pleiades/rdf/pleiades-latest.tar.gz"/>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>archaeology</dcat:keyword>
+    <dcat:distribution rdf:resource="http://atlantides.org/downloads/pleiades/rdf/void.ttl"/>
+    <dcat:keyword>ancient</dcat:keyword>
+    <dcat:keyword>geographic</dcat:keyword>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <void:exampleResource rdf:resource="http://pleiades.stoa.org/places/1043/turtle"/>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>greek</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pleiades is a gazetteer for ancient world studies operated by NYU's Institute for the Study of the Ancient World and supported by the US National Endowment for the Humanities. It is derived originally from the Barrington Atlas of the Greek and Roman World and continually adds new resources. Features include:
+
+ * 31,000+ ancient places
+ * 26,000+ ancient names and name variants with time periods
+ * 31,000+ ancient locations
+ * Permanent, cool URIs for these resources (http://pleiades.stoa.org/places/912910 for example)
+ * Maps and KML, GeoJSON, Turtle and RDF+XML variants of resources (http://pleiades.stoa.org/news/recently-modified.kml for example)
+ * Spatial search
+ * Daily tabular snapshots of location, name, and place data and metadata at http://atlantides.org/downloads/pleiades/dumps
+
+There is a detailed [README.txt][readme] with the dumps.
+
+[readme]: http://atlantides.org/downloads/pleiades/dumps/README.txt
+
+
+#### Description of geodata from the [kml file][kml]
+
+&gt; This KML file, for use with Google Earth and other compatible systems, contains basic coordinate and name information for ancient Greek and Roman places judged publication-ready by the Managing Editors of the Ancient World Mapping Center's Pleiades community ( http://pleiades.stoa.org ). In this edition, it comprises point features in Lycia/Pamphylia and Cyrenaica only, footprints corresponding to Barrington Atlas Maps 38 and 65. Future editions will expand the spatial coverage of this dataset, and will add more information to the individual placemark descriptions. 
+&gt; 
+&gt; This content is original work of the staff of the Ancient World Mapping Center and members of the Pleiades Community. It is built in part on information that was compiled by the American Philological Association's Classical Atlas Project (1988-2000), which was used during development with the permission of the APA.
+&gt; 
+&gt; Despite our best efforts, Pleiades content may contain errors or omissions.  These should be assumed to be the responsibility of the project director, and not to reflect the quality and completeness of Classical Atlas Project data nor the opinions of the Atlas Project's scholarly compilers and editors. Pleiades will open to public participation in early 2008. At this time, it will be easy for users to highlight and correct errors and omissions, and to update obsolete information.
+&gt; 
+&gt; Coordinate accuracy and precision are discussed at http://icon.stoa.org/trac/pleiades/wiki/DataPrecisionAndAccuracy . 
+
+### Openness: OPEN
+
+  * License: cc-by (e.g. see bottom of &lt;http://www.unc.edu/awmc/pleiades/bibliography/&gt; or in [kml file][kml])
+  * Access: bulk and search
+    * geodata: kml (and single web page) &lt;http://www.unc.edu/awmc/pleiades/data/kml/places-all.kml&gt;
+    * biblio: html &lt;http://www.unc.edu/awmc/pleiades/bibliography/&gt;
+    * thesaurus: html &lt;http://pleiades.stoa.org/names/all&gt; with details on &lt;http://pleiades.stoa.org/thesaurus&gt;
+
+[kml]: http://www.unc.edu/awmc/pleiades/data/kml/places-all.kml
+
+
+</dct:description>
+    <dcat:keyword>format-spacerel</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pleiades</rdfs:label>
+    <dcat:keyword>format-geo</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dcat:keyword>classics</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

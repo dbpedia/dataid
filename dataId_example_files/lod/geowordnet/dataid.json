@@ -1,0 +1,140 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/geowordnet/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/geowordnet/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/geowordnet/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:http://autayeu.com",
+    "name" : "Aliaksandr Autayeu"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/geowordnet/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:http://disi.unitn.it/~fausto/",
+    "name" : "Fausto Giunchiglia"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/geowordnet/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/geowordnet/dataid#creator", "http://dataid.dbpedia.org/lod/geowordnet/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/geowordnet/dataid#links_vu-wordnet", "http://dataid.dbpedia.org/lod/geowordnet/dataid#links_geonames-semantic-web" ],
+    "dct:description" : "GeoWordNet is a semantic resource built from the full integration of WordNet, GeoNames and the Italian part of MultiWordNet.\n\nGeoWordNet Public Dataset contains 3,698,238 entities, 3,698,237 part-of relations between entities, 334 concepts, 182 relations between concepts, 3,698,238 relations between instances and concepts, and 13,562 (English and Italian) alternative entity names.\n\nCC-BY licence, please refer to \nGiunchiglia, Fausto and Maltese, Vincenzo and Farazi, Feroz and Dutta, Biswanath. GeoWordNet: A Resource for Geo-spatial Applications. Technical Report DIT-09-071, Department of Information Engineering and Computer Science, University of Trento. In Proc. of 7th Extended Semantic Web Conference, ESWC 2010, Heraklion, Crete, Greece, pp. 121-136.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "GeoWordNet",
+    "exampleResource" : "http://geowordnet.semanticmatching.org/synset-dependent_political_entity-noun-1.rdf",
+    "triples" : "53390969",
+    "uriSpace" : "http://geowordnet.semanticmatching.org/3.0/",
+    "rdfs:label" : "geowordnet",
+    "distribution" : [ "http://geowordnet.semanticmatching.org/void.rdf", "http://geowordnet.semanticmatching.org/sitemap.xml", "http://geowordnet.semanticmatching.org/synset-dependent_political_entity-noun-1.html", "http://sourceforge.net/projects/s-match/files/datasets/geowordnet-dict-full-20110330.zip/download", "http://sourceforge.net/projects/s-match/files/datasets/geowordnet-public-20101123.zip/download", "http://sourceforge.net/projects/s-match/files/datasets/geowordnet-rdf-20110330.zip/download" ],
+    "keyword" : [ "english", "provenance-metadata", "linguistic", "format-wordnet", "lod", "format-w3c-wordnet", "format-dc", "published-by-producer", "format-vu-wordnet", "italian", "format-wn20schema", "no-deref-vocab", "geographic", "format-rdf", "format-rdfs", "wordnet", "nlp", "linguistics", "format-skos", "geonames", "license-metadata" ],
+    "landingPage" : "http://datahub.io/dataset/geowordnet"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/geowordnet/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/geowordnet/dataid#dataset",
+    "triples" : "7396476"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/geowordnet/dataid#links_vu-wordnet",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/vu-wordnet/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/geowordnet/dataid#dataset",
+    "triples" : "2054873"
+  }, {
+    "@id" : "http://geowordnet.semanticmatching.org/sitemap.xml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://geowordnet.semanticmatching.org/sitemap.xml",
+    "mediaType" : "meta/sitemap"
+  }, {
+    "@id" : "http://geowordnet.semanticmatching.org/synset-dependent_political_entity-noun-1.html",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://geowordnet.semanticmatching.org/synset-dependent_political_entity-noun-1.html",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://geowordnet.semanticmatching.org/void.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://geowordnet.semanticmatching.org/void.rdf",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://sourceforge.net/projects/s-match/files/datasets/geowordnet-dict-full-20110330.zip/download",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://sourceforge.net/projects/s-match/files/datasets/geowordnet-dict-full-20110330.zip/download",
+    "mediaType" : "wordnet"
+  }, {
+    "@id" : "http://sourceforge.net/projects/s-match/files/datasets/geowordnet-public-20101123.zip/download",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://sourceforge.net/projects/s-match/files/datasets/geowordnet-public-20101123.zip/download",
+    "mediaType" : "CSV"
+  }, {
+    "@id" : "http://sourceforge.net/projects/s-match/files/datasets/geowordnet-rdf-20110330.zip/download",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://sourceforge.net/projects/s-match/files/datasets/geowordnet-rdf-20110330.zip/download",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

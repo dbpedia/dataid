@@ -1,0 +1,36 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/licensedb/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:kuno@frob.nl" ;
+        foaf:name  "Kuno Woudt" .
+
+<http://dataid.dbpedia.org/lod/licensedb/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "licensedb"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/licensedb/dataid#contributor> ;
+        dct:description         " Welcome to the License Database project (aka LicenseDB). Our goal is to build a structured database of all copyright (and related rights) licenses used in the free software / open source / free culture communities.\n\nVarious tools can benefit from a full set of machine-readable licenses, including tools which we haven't thought of yet. Feel free to contact us if you have ideas to make this project useful for a particular use-case. "^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "The License Database"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dcat:distribution       <https://licensedb.org/id/> , <https://licensedb.org/dl/license-database.tar.gz> ;
+        dcat:keyword            "rdf" , "license" , "format-json" , "license-metadata" , "format-rdf" , "license-metadata linked-data" ;
+        dcat:landingPage        <http://datahub.io/dataset/licensedb> .
+
+<https://licensedb.org/id/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://licensedb.org/id/> ;
+        dcat:mediaType    "HTML" .
+
+<https://licensedb.org/dl/license-database.tar.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://licensedb.org/dl/license-database.tar.gz> ;
+        dcat:mediaType    "json-ld" .
+
+<http://dataid.dbpedia.org/lod/licensedb/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/licensedb/dataid#dataset" .

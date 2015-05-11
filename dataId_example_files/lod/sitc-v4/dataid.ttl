@@ -1,0 +1,62 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/sitc-v4/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "sitc-v4"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/sitc-v4/dataid#contributor> , <http://dataid.dbpedia.org/lod/sitc-v4/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/sitc-v4/dataid#links_http://productontology.org> ;
+        dct:description         "The Standard International Trade Classification V4 is used by the United Nations to create statistics. \n\nAuthors of the linked data version:\n\n-Jose María Alvarez Rodríguez & Jose Emilio Labra Gayo\n\nWESO-University of Oviedo\n"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-odbl> ;
+        dct:title               "SITC-V4"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://purl.org/weso/pscs/data/sitc/v4/resource/01112?output=xml> ;
+        void:sparqlEndpoint     <http://purl.org/weso/sparql> ;
+        void:triples            "70887"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://purl.org/weso/pscs/sitc/v4/resource" ;
+        dcat:distribution       <http://purl.org/weso/datasets/pscs/psc-ontology.ttl> , <http://purl.org/weso/sparql> , <http://purl.org/weso/datasets/pscs/sitc/v4/sitc-v4.ttl> , <http://purl.org/weso/pscs/sitc/v4/resource/ds> ;
+        dcat:keyword            "public_contracts" , "oviedo" , "procurement" , "vocab-mappings" , "linkeddata" , "provenance-metadata" , "university-of-oviedo" , "format-gr" , "license-metadata" , "euroalert" , "linkedopendata" , "format-skos" , "format-dcterms" , "published-by-third-party" , "pscs" , "v4" , "deref-vocab" , "10ders" , "weso" , "format-dc" , "uniovi" , "format-skosxl" , "stic" , "geodata" , "e-procurement" , "lod" , "government" ;
+        dcat:landingPage        <http://datahub.io/dataset/sitc-v4> .
+
+<http://purl.org/weso/datasets/pscs/sitc/v4/sitc-v4.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/weso/datasets/pscs/sitc/v4/sitc-v4.ttl> ;
+        dcat:mediaType    "text/turtle" .
+
+<http://purl.org/weso/pscs/sitc/v4/resource/ds>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/weso/pscs/sitc/v4/resource/ds> ;
+        dcat:mediaType    "HTML" .
+
+<http://dataid.dbpedia.org/lod/sitc-v4/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:josem.alvarez@weso.es" ;
+        foaf:name  "Jose María Alvarez Rodríguez at WESO (University of Oviedo)" .
+
+<http://dataid.dbpedia.org/lod/sitc-v4/dataid#links_http://productontology.org>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/http://productontology.org/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/sitc-v4/dataid#dataset> ;
+        void:triples         "23534"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/sitc-v4/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:josem.alvarez@weso.es" ;
+        foaf:name  "Jose María Alvarez Rodríguez" .
+
+<http://purl.org/weso/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://purl.org/weso/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://purl.org/weso/datasets/pscs/psc-ontology.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/weso/datasets/pscs/psc-ontology.ttl> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://dataid.dbpedia.org/lod/sitc-v4/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/sitc-v4/dataid#dataset" .

@@ -1,0 +1,158 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_ southampton-ecs-eprints>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/ southampton-ecs-eprints> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset> ;
+        void:triples         "49979"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://foreign.rkbexplorer.com/crs/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://foreign.rkbexplorer.com/crs/> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_ordnance-survey-linked-data>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/ordnance-survey-linked-data> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset> ;
+        void:triples         "155"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://foreign.rkbexplorer.com/sitemap.xml>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://foreign.rkbexplorer.com/sitemap.xml> .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset> ;
+        void:triples         "337"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-dblp>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/rkb-explorer-dblp> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset> ;
+        void:triples         "1275"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://foreign.rkbexplorer.com/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://foreign.rkbexplorer.com/> ;
+        dcat:mediaType    "HTML" .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-rae2001>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/rkb-explorer-rae2001> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset> ;
+        void:triples         "75"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "eprints-harvest-rkbexplorer"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#contributor> , <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_dbpedia> , <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-jisc> , <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-eprints> , <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-citeseer> , <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_ordnance-survey-linked-data> , <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_semanticweb-org> , <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-kisti> , <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-dblp> , <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-southampton> , <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-dotac> , <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-oai> , <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-biolit> , <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_l3s-dblp> , <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-acm> , <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-rae2001> , <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_ southampton-ecs-eprints> ;
+        dct:description         "The data here comes from harvesting ePrints Open Archives, as listed at [http://roar.eprints.org](http://roar.eprints.org).\n\nThere is a [list of the 190 repositories](http://foreign.rkbexplorer.com/models/sites.html) we have managed to harvest.\n\nWe can't provide a typical URI to resolve, as none of the URIs are ours. You can use this URI to do a SPARQL query: http://researchrepository.napier.ac.uk/id/eprint/1615"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "ePrints Harvest (RKBExplorer)"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:sparqlEndpoint     <http://foreign.rkbexplorer.com/sparql/> ;
+        dcat:distribution       <http://foreign.rkbexplorer.com/browse/?type=resource&forceLocal=true&uri=http%3A%2F%2Fresearchrepository.napier.ac.uk%2Fid%2Feprint%2F1615> , <http://foreign.rkbexplorer.com/sparql/> , <http://foreign.rkbexplorer.com/sitemap.xml> , <http://foreign.rkbexplorer.com/crs/> , <http://foreign.rkbexplorer.com/models/void.ttl> , <http://foreign.rkbexplorer.com/> ;
+        dcat:keyword            "lod" , "format-rdf" , "sparql" , "format-dc" , "sparql-endpoint" , "bibliographic data" ;
+        dcat:landingPage        <http://datahub.io/dataset/eprints-harvest-rkbexplorer> .
+
+<http://foreign.rkbexplorer.com/sparql/>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://foreign.rkbexplorer.com/sparql/> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-oai>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/rkb-explorer-oai> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset> ;
+        void:triples         "567620"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-kisti>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/rkb-explorer-kisti> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset> ;
+        void:triples         "52"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_l3s-dblp>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/l3s-dblp> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset> ;
+        void:triples         "15"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-dotac>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/rkb-explorer-dotac> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset> ;
+        void:triples         "100"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_semanticweb-org>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/semanticweb-org> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset> ;
+        void:triples         "2291"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:hg@ecs.soton.ac.uk" ;
+        foaf:name  "Hugh Glaser" .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-biolit>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/rkb-explorer-biolit> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset> ;
+        void:triples         "100"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-acm>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/rkb-explorer-acm> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset> ;
+        void:triples         "490"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-eprints>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/rkb-explorer-eprints> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset> ;
+        void:triples         "48944"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-citeseer>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/rkb-explorer-citeseer> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset> ;
+        void:triples         "115"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://foreign.rkbexplorer.com/browse/?type=resource&forceLocal=true&uri=http%3A%2F%2Fresearchrepository.napier.ac.uk%2Fid%2Feprint%2F1615>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://foreign.rkbexplorer.com/browse/?type=resource&forceLocal=true&uri=http%3A%2F%2Fresearchrepository.napier.ac.uk%2Fid%2Feprint%2F1615> ;
+        dcat:mediaType    "RDF" .
+
+<http://foreign.rkbexplorer.com/models/void.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://foreign.rkbexplorer.com/models/void.ttl> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:hg@ecs.soton.ac.uk" ;
+        foaf:name  "Hugh Glaser" .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-jisc>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/rkb-explorer-jisc> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset> ;
+        void:triples         "19"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-southampton>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/rkb-explorer-southampton> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset> ;
+        void:triples         "25584"^^<http://www.w3.org/2001/XMLSchema#int> .

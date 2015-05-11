@@ -1,0 +1,67 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/yovisto/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:info@yovisto.com" ;
+        foaf:name  "Yovisto.com" .
+
+<http://www.yovisto.com/ontology/0.9/index.owl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.yovisto.com/ontology/0.9/index.owl> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://dataid.dbpedia.org/lod/yovisto/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/yovisto/dataid#dataset" .
+
+<http://www.yovisto.com/sitemapext.xml>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.yovisto.com/sitemapext.xml> ;
+        dcat:mediaType    "meta/sitemap" .
+
+<http://www.yovisto.com/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.yovisto.com/> ;
+        dcat:mediaType    "html+rdfa" .
+
+<http://dataid.dbpedia.org/lod/yovisto/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/yovisto/dataid#dataset> ;
+        void:triples         "300"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.yovisto.com/labs/dumps/latest.ttl.tar.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.yovisto.com/labs/dumps/latest.ttl.tar.gz> ;
+        dcat:mediaType    "text/turtle" .
+
+<http://sparql.yovisto.com/>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://sparql.yovisto.com/> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/yovisto/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:joerg@yovisto.com, harald.sack@hpi.uni-potsdam.de" ;
+        foaf:name  "Jörg Waitelonis, Harald Sack" .
+
+<http://dataid.dbpedia.org/lod/yovisto/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "yovisto"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/yovisto/dataid#contributor> , <http://dataid.dbpedia.org/lod/yovisto/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/yovisto/dataid#links_dbpedia> ;
+        dct:description         "Yovisto is a video search engine specialized in academic lecture recordings and conference talks. Unlike other video search engines, Yovisto provides a time based video index,\nwhich allows to search within the videos’ content. Automated analysis techniques such as scene detection\nand intelligent character recognition are used for metadata generation. Time dependent collaborative annotation enables the user to annotate tags and comments at any\npoint within a video."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by-sa> ;
+        dct:title               "Yovisto - academic video search"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://www.yovisto.com/resource/speaker/470> ;
+        void:sparqlEndpoint     <http://sparql.yovisto.com/> ;
+        void:triples            "4932352"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://www.yovisto.com/resource" ;
+        dcat:distribution       <http://sparql.yovisto.com/> , <http://www.yovisto.com/> , <http://www.yovisto.com/labs/dumps/latest.ttl.tar.gz> , <http://www.yovisto.com/ontology/0.9/index.owl> , <http://www.yovisto.com/sitemapext.xml> ;
+        dcat:keyword            "format-cc" , "multimedia" , "video" , "crossdomain" , "e-learning" , "no-vocab-mappings" , "format-rdf" , "void-sparql-endpoint" , "science" , "deref-vocab" , "format-mpeg7" , "format-foaf" , "format-dcterm" , "format-dc" , "academic" , "format-tag" , "no-license-metadata" , "no-provenance-metadata" , "published-by-producer" , "usergeneratedcontent" , "education" , "lod" ;
+        dcat:landingPage        <http://datahub.io/dataset/yovisto> .

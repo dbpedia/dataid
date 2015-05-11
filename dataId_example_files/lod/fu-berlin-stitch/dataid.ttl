@@ -1,0 +1,59 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:anja@anjeve.de" ;
+        foaf:name  "Anja Jentzsch" .
+
+<http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "fu-berlin-stitch"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#contributor> , <http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#links_bio2rdf-pubchem> , <http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#links_dbpedia> , <http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#links_bio2rdf-chebi> ;
+        dct:description         "Linked Data version of STITCH which contains information on chemicals and proteins as well as their interactions and links. The links were derived from experiments, databases and the literature. STITCH contains interactions for over 68,000 chemicals and over 1.5 million proteins in 373 species."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "STITCH: Chemical-Protein Interactions"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://www4.wiwiss.fu-berlin.de/stitch/resource/organisms/Aeropyrum_pernix> ;
+        void:sparqlEndpoint     <http://www4.wiwiss.fu-berlin.de/stitch/sparql> ;
+        void:triples            "55099700"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://www4.wiwiss.fu-berlin.de/stitch/resource/" ;
+        dcat:distribution       <http://www4.wiwiss.fu-berlin.de/stitch/sparql> ;
+        dcat:keyword            "vocab-mappings" , "no-license-metadata" , "format-rdf" , "published-by-third-party" , "no-provenance-metadata" , "lod" , "lifesciences" , "deref-vocab" ;
+        dcat:landingPage        <http://datahub.io/dataset/fu-berlin-stitch> .
+
+<http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#dataset" .
+
+<http://www4.wiwiss.fu-berlin.de/stitch/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://www4.wiwiss.fu-berlin.de/stitch/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#dataset> ;
+        void:triples         "123"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:anja@anjeve.de" ;
+        foaf:name  "Anja Jentzsch" .
+
+<http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#links_bio2rdf-pubchem>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/bio2rdf-pubchem/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#dataset> ;
+        void:triples         "9840"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#links_bio2rdf-chebi>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/bio2rdf-chebi/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#dataset> ;
+        void:triples         "6882"^^<http://www.w3.org/2001/XMLSchema#int> .

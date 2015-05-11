@@ -1,0 +1,37 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/npg/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "npg"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/npg/dataid#creator> , <http://dataid.dbpedia.org/lod/npg/dataid#contributor> ;
+        dct:description         "Bibliographic data from around 900,000 articles published by Nature Publishing Group (NPG) from 1845 through to the present day. Additionally the datasets include NPG products and subjects ontologies. Datasets include:\n\n* [npg:Article](npg-articles)\n* [npg:Catalog](npg-catalogs)\n* [npg:Citation](npg-citations)\n* [npg:Contributor](npg-contributors)\n* [npg:Coverage](npg-coverages)\n* [npg:DataCitation](npg-data-citations)\n* [npg:Graph](npg-graphs)\n* [npg:Product](npg-products)\n* [npg:Publication](npg-publications)\n* [npg:Subject](npg-subjects)\n* [npg:Technique](npg-techniques)\n* [npg:Term](npg-terms)\n\nClass and property URIs in the [npg:](http://ns.nature.com/terms/) namespace are not dereferenceable.\n"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "Nature Publishing Group - ALL"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:sparqlEndpoint     <http://data.nature.com/query> ;
+        dcat:distribution       <http://data.nature.com/query> ;
+        dcat:keyword            "life sciences" , "format-prism" , "lodcloud.candidate" , "publications" , "no-deref-vocab" , "science" , "published-by-producer" , "bibliographic" , "lodcloud" , "nature" , "sciences" , "journals" , "sparql" , "physical sciences" , "format-dc" , "format-foaf" , "health sciences" , "format-void" , "format-npg" , "lod" , "academic" , "format-bibo" ;
+        dcat:landingPage        <http://datahub.io/dataset/npg> .
+
+<http://dataid.dbpedia.org/lod/npg/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/npg/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/npg/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:developers@nature.com" ;
+        foaf:name  "NPG" .
+
+<http://dataid.dbpedia.org/lod/npg/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:developers@nature.com" ;
+        foaf:name  "NPG Developers" .
+
+<http://data.nature.com/query>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://data.nature.com/query> ;
+        dcat:mediaType  "api/sparql" .

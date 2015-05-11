@@ -1,0 +1,270 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/twc-hub/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/twc-hub/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/twc-hub/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "name" : "Alexei Bulazel"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/twc-hub/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Tetherless World Constellation, RPI"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/twc-hub/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/twc-hub/dataid#creator", "http://dataid.dbpedia.org/lod/twc-hub/dataid#contributor" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/twc-hub/dataid#links_dbpedia",
+    "dct:description" : "Linked Data representations of common entities and concepts that occur in many datasets.",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "Instance Hub (all)",
+    "exampleResource" : "http://purl.org/twc/hub/id/us/fed/agency/Department_of_Agriculture/crop/apples",
+    "sparqlEndpoint" : "http://purl.org/twc/hub/sparql",
+    "triples" : "101092",
+    "uriSpace" : "http://purl.org/twc/hub/",
+    "rdfs:label" : "twc-hub",
+    "distribution" : [ "http://openprovenance.org/ontology", "http://inference-web.org/2.0/pml-justification.owl", "http://www.w3.org/2002/07/owl", "http://www.ontologydesignpatterns.org/ont/web/irw.owl", "http://obofoundry.org/ro/ro.owl", "http://purl.org/vocab/vann/", "http://open.vocab.org/terms/", "http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf", "http://www.w3.org/ns/dcat", "http://xmlns.com/foaf/0.1/", "http://purl.org/twc/vocab/datafaqs", "http://dbpedia.org/resource/", "http://www.w3.org/2004/02/skos/core", "http://www.w3.org/2000/10/swap/pim/contact", "http://purl.org/dc/terms/", "http://www.w3.org/ns/prov", "http://rdfs.org/sioc/ns", "http://purl.org/net/provenance/ns", "http://www.w3.org/2000/01/rdf-schema", "http://purl.org/twc/hub/source/hub/file/cr-sitemap/version/latest/conversion/sitemap.xml", "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://purl.org/twc/hub/sparql", "http://purl.org/twc/vocab/conversion/", "http://www.holygoat.co.uk/owl/redwood/0.1/tags/", "http://usefulinc.com/ns/doap", "http://semanticscience.org/resource/", "http://provenanceweb.org/ns/pml", "http://purl.org/twc/hub/source/hub/file/cr-aggregated-params/version/latest/conversion/hub-cr-aggregated-params-latest.ttl.gz", "http://purl.org/twc/hub/void.ttl", "http://inference-web.org/2.0/pml-provenance.owl", "http://rdfs.org/ns/void", "http://purl.org/twc/hub/source/hub/file/cr-full-dump/version/latest/conversion/purl-org-twc-hub.nt.gz" ],
+    "keyword" : [ "format-pmlp", "format-irw", "format-vann", "format-oboro", "format-pmlj", "provenance-metadata", "format-ov", "format-dbpedia", "format-con", "format-dcat", "prizms", "format-doap", "format-tag", "format-dc", "lod", "published-by-producer", "no-license-metadata", "deref-vocab", "format-sio", "crossdomain", "format-datafaqs", "format-void", "format-owl", "format-prov", "format-opm", "format-pml", "vocab-mappings", "format-foaf", "format-dgtwc", "format-conv", "format-rdfs", "format-rdf", "format-sioc", "format-skos" ],
+    "landingPage" : "http://datahub.io/dataset/twc-hub"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/twc-hub/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/twc-hub/dataid#dataset",
+    "triples" : "2"
+  }, {
+    "@id" : "http://dbpedia.org/resource/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://dbpedia.org/resource/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://inference-web.org/2.0/pml-justification.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://inference-web.org/2.0/pml-justification.owl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://inference-web.org/2.0/pml-provenance.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://inference-web.org/2.0/pml-provenance.owl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://obofoundry.org/ro/ro.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://obofoundry.org/ro/ro.owl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://open.vocab.org/terms/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://open.vocab.org/terms/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://openprovenance.org/ontology",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://openprovenance.org/ontology",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://provenanceweb.org/ns/pml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://provenanceweb.org/ns/pml",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/dc/terms/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/dc/terms/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/net/provenance/ns",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/net/provenance/ns",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/twc/hub/source/hub/file/cr-aggregated-params/version/latest/conversion/hub-cr-aggregated-params-latest.ttl.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/twc/hub/source/hub/file/cr-aggregated-params/version/latest/conversion/hub-cr-aggregated-params-latest.ttl.gz",
+    "mediaType" : "mapping/twc-conversion"
+  }, {
+    "@id" : "http://purl.org/twc/hub/source/hub/file/cr-full-dump/version/latest/conversion/purl-org-twc-hub.nt.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/twc/hub/source/hub/file/cr-full-dump/version/latest/conversion/purl-org-twc-hub.nt.gz",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://purl.org/twc/hub/source/hub/file/cr-sitemap/version/latest/conversion/sitemap.xml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/twc/hub/source/hub/file/cr-sitemap/version/latest/conversion/sitemap.xml",
+    "mediaType" : "meta/sitemap"
+  }, {
+    "@id" : "http://purl.org/twc/hub/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://purl.org/twc/hub/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://purl.org/twc/hub/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/twc/hub/void.ttl",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://purl.org/twc/vocab/conversion/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/twc/vocab/conversion/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/twc/vocab/datafaqs",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/twc/vocab/datafaqs",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/vocab/vann/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/vocab/vann/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://rdfs.org/ns/void",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdfs.org/ns/void",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://rdfs.org/sioc/ns",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdfs.org/sioc/ns",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://semanticscience.org/resource/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://semanticscience.org/resource/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://usefulinc.com/ns/doap",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://usefulinc.com/ns/doap",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.holygoat.co.uk/owl/redwood/0.1/tags/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.holygoat.co.uk/owl/redwood/0.1/tags/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.ontologydesignpatterns.org/ont/web/irw.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.ontologydesignpatterns.org/ont/web/irw.owl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/2000/01/rdf-schema",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/2000/10/swap/pim/contact",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/2000/10/swap/pim/contact",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/2002/07/owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/2002/07/owl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/2004/02/skos/core",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/2004/02/skos/core",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/ns/dcat",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/ns/dcat",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/ns/prov",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/ns/prov",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://xmlns.com/foaf/0.1/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://xmlns.com/foaf/0.1/",
+    "mediaType" : "meta/rdf-schema"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

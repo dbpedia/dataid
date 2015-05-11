@@ -1,0 +1,51 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/eu-who-is-who/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "eu-who-is-who"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#links_eu-institutions> ;
+        dct:description         "Data scraped from [EU Whoiswho](http://europa.eu/whoiswho/public/index.cfm?lang=en), the official directory of the European Union. The dataset contains people, organisations and organisational hierarchy."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-pddl> ;
+        dct:title               "EU Who Is Who"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://whoiswho.publicdata.eu/data/institutions/1063.rdf> ;
+        void:sparqlEndpoint     <http://api.talis.com/stores/whoiswho/services/sparql> ;
+        void:triples            "198786"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://whoiswho.publicdata.eu/data/" ;
+        dcat:distribution       <http://api.talis.com/stores/whoiswho/services/sparql> , <http://whoiswho.publicdata.eu/void.ttl> , <http://whoiswho.publicdata.eu/dump/whoiswho.nt> ;
+        dcat:keyword            "no-deref-vocab" , "government" , "no-license-metadata" , "lod" , "politics" , "published-by-third-party" , "format-foaf" , "eu-institution" , "eu" , "latc" , "format-dct" , "provenance-metadata" ;
+        dcat:landingPage        <http://datahub.io/dataset/eu-who-is-who> .
+
+<http://whoiswho.publicdata.eu/dump/whoiswho.nt>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://whoiswho.publicdata.eu/dump/whoiswho.nt> ;
+        dcat:mediaType    "application/x-ntriples" .
+
+<http://whoiswho.publicdata.eu/void.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://whoiswho.publicdata.eu/void.ttl> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Keith Alexander" .
+
+<http://api.talis.com/stores/whoiswho/services/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://api.talis.com/stores/whoiswho/services/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#links_eu-institutions>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/eu-institutions/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#dataset> ;
+        void:triples         "3260"^^<http://www.w3.org/2001/XMLSchema#int> .

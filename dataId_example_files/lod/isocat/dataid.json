@@ -1,0 +1,81 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/isocat/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/isocat/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/isocat/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "S.E. Wright, M. Kemps-Snijders, M.A. Windhouwer"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/isocat/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/isocat/dataid#creator",
+    "dct:description" : "ISO 12620 provides a framework for defining data categories compliant with the ISO/IEC 11179 family of standards. According to this model, each data category is assigned a unique administrative identifier, together with information on the status or decision-making process associated with the data category. In addition, data category specifications in the DCR contain linguistic descriptions, such as data category definitions, statements of associated value domains, and examples. Data category specifications can be associated with a variety of data element names and with language-specific versions of definitions, names, value domains and other attributes.\n\nThe RDF dumps of different profiles are dynamically generated at query time over the https://catalog.clarin.eu/isocat/rest/profile/$x.rdf with $x being the profile number.\n\nTriple counts on May 16, 2014:\n3.rdf 2647\n5.rdf 12358\n6.rdf 4492\n7.rdf 366\n10.rdf 2629\n11.rdf 712\n13.rdf 58\n14.rdf 572\n15.rdf 131\n16.rdf 76\n17.rdf 149\n19.rdf 383\n20.rdf 561\n22.rdf 6",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "ISOcat",
+    "exampleResource" : "http://www.isocat.org/rest/dc/1333.rdf",
+    "triples" : "25000",
+    "rdfs:label" : "isocat",
+    "distribution" : "http://www.isocat.org/datcat/DC-1333",
+    "keyword" : [ "lod", "linguistics", "isocat", "crossdomain" ],
+    "landingPage" : "http://datahub.io/dataset/isocat"
+  }, {
+    "@id" : "http://www.isocat.org/datcat/DC-1333",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.isocat.org/datcat/DC-1333",
+    "mediaType" : "html, rdf, dcif"
+  } ],
+  "@context" : {
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

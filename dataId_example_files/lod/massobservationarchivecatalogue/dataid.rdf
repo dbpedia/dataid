@@ -1,0 +1,59 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/massobservationarchivecatalogue/dataid#dataset">
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <dcat:keyword>jisc</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/massobservationarchivecatalogue/dataid#creator">
+        <foaf:mbox>mailto:K.L.Watson@sussex.ac.uk</foaf:mbox>
+        <foaf:name>Karen Watson</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/massobservationarchivecatalogue"/>
+    <dcat:keyword>war</dcat:keyword>
+    <dcat:keyword>history</dcat:keyword>
+    <dcat:keyword>lodcloud.unconnected</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://data.lib.sussex.ac.uk/files/massobservation/rdf/">
+        <dcat:mediaType>RDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://data.lib.sussex.ac.uk/files/massobservation/rdf/"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/massobservationarchivecatalogue/dataid#contributor">
+        <foaf:mbox>mailto:c.j.keene@sussex.ac.uk</foaf:mbox>
+        <foaf:name>Chris Keene</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mass Observation Archive catalogue</dct:title>
+    <dcat:keyword>lodcloud.nolinks</dcat:keyword>
+    <dcat:keyword>archives</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >massobservationarchivecatalogue</rdfs:label>
+    <dcat:keyword>format-xhtml</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The data is the catalogue records of the Mass Observation Archive, a Designated collection. The Mass Observation Archive is a written record of everyday life in Britain 1937-55. It's a unique insight in to life during the Second World War. 
+
+http://data.lib.sussex.ac.uk/data/mass-observation/
+
+http://www.massobs.org.uk/a_brief_history.htm
+
+The conversion to Linked Data was carried out as part of the JISC funded SALDA project by the University of Sussex Library with key support from Eduserv.</dct:description>
+    <dcat:keyword>lod</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-pddl"/>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >428035</void:triples>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/massobservationarchivecatalogue/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/massobservationarchivecatalogue/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

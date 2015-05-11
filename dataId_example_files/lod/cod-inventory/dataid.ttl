@@ -1,0 +1,57 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://www.crystallography.net:2020/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.crystallography.net:2020/> ;
+        dcat:mediaType    "HTML" .
+
+<http://www.crystallography.net:2020/snorql/>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://www.crystallography.net:2020/snorql/> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/cod-inventory/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:grazulis@ibt.lt" ;
+        foaf:name  "Saulius Gražulis" .
+
+<http://www.crystallography.net/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.crystallography.net/> ;
+        dcat:mediaType    "HTML" .
+
+<http://www.crystallography.net/archives/cod-rdf.nt.xz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.crystallography.net/archives/cod-rdf.nt.xz> ;
+        dcat:mediaType    "application/x-ntriples" .
+
+<http://www.crystallography.net/archives/cod-rdf.xml.xz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.crystallography.net/archives/cod-rdf.xml.xz> ;
+        dcat:mediaType    "application/x-xz" .
+
+<http://dataid.dbpedia.org/lod/cod-inventory/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/cod-inventory/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/cod-inventory/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:grazulis@ibt.lt" ;
+        foaf:name  "Saulius Gražulis" .
+
+<http://dataid.dbpedia.org/lod/cod-inventory/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "cod-inventory"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/cod-inventory/dataid#creator> , <http://dataid.dbpedia.org/lod/cod-inventory/dataid#contributor> ;
+        dct:description         "Lists all data records in the Crystallography Open Database release. Releases are as a rule updated quarterly."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "COD inventory"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:sparqlEndpoint     <http://www.crystallography.net:2020/snorql/> ;
+        dcat:distribution       <http://www.crystallography.net/archives/cod-rdf.nt.xz> , <http://www.crystallography.net:2020/> , <http://www.crystallography.net/> , <http://www.crystallography.net/archives/cod-rdf.xml.xz> , <http://www.crystallography.net:2020/snorql/> ;
+        dcat:keyword            "crystallography" , "lod" , "rdf" , "science" , "lod2" ;
+        dcat:landingPage        <http://datahub.io/dataset/cod-inventory> .

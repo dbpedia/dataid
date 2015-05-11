@@ -1,0 +1,176 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/my-family-lineage/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/my-family-lineage/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/my-family-lineage/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:bruce@whealton.info",
+    "name" : "Bruce Whealton"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/my-family-lineage/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:bruce@whealton.info",
+    "name" : "Bruce Whealton"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/my-family-lineage/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/my-family-lineage/dataid#creator", "http://dataid.dbpedia.org/lod/my-family-lineage/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_yago", "http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_geonames", "http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_freebase" ],
+    "dct:description" : "<h2>My Family Lineage</h2>\n<h3>Note: We have added Content Negotiation</h3>\n<p>The addition of content negotiation, allows for serving RDF to clients that request RDF and HTML for clients that request html pages.</p> \n<p><strong>\"My Family Lineage\"</strong> is a Genealogy Application using MediaWiki and the Semantic MediaWiki Bundle.  In addition, we use the Fuseki Triple Store which has a SPARQL query form available at: http://futurewavehosting.com:3030 \nwhere one would use the Control Panel and select the dataset my-family-lineage.  The website is community driven and through the import of GEDCOM files (Genealogical Data Communication) wiki pages are created, an accompanying RDF file is created and the data is added to the triple store. </p><br />\n<p> We use the latest GEDCOM standard version 5.5 which is used by various Genealogy software applications.  </p>\n\n<p>We have a void file available at: http://my-family-lineage.com/void.ttl \nwhich provides information about vocabularies used, licensing, example resources, and link sets.  </p>\n\n<p>We collect information about Places that correspond to events in an individual/person's life or in the life of a family.  It is here that there are the most triples linking to other data sets that are part of the current LOD Cloud.  Nearly 50,000 triples describe Places, of those over 7300 triples are links to external data sets, including dbpedia, geonames, freebase and yago.</p>\n\n<p>We have included a great deal of information from public genealogy (GEDCOM) files including the genealogy of famous people, e.g. royalty, US Presidents, Authors like Stephen King and more. </p>",
+    "license" : "http://www.opendefinition.org/licenses/odc-by",
+    "dct:title" : "My Family Lineage",
+    "exampleResource" : "http://my-family-lineage.com/w/images/d/d0/Adams.rdf",
+    "sparqlEndpoint" : "http://futurewavehosting.com:3030/my-family-lineage/sparql",
+    "triples" : "3000000",
+    "uriSpace" : "http://my-family-lineage.com/wiki/",
+    "rdfs:label" : "my-family-lineage",
+    "distribution" : [ "http://futurewavehosting.com:3030/my-family-lineage/sparql", "http://my-family-lineage.com/void.ttl", "http://my-family-lineage.com/w/images/6/6c/Sangster_family_tree_2012-06-30.rdf", "http://xmlns.com/foaf/spec/index.rdf", "http://futurewavehosting.com:3030/my-family-lineage/query", "http://www.opendatacommons.org/odc-public-domain-dedication-and-licence/", "http://my-family-lineage.com/w/RDF/classes.rdf", "http://my-family-lineage.com/w/images/a/af/BruceWhealtonJr.rdf", "http://my-family-lineage.com/w/sitemap/sitemap-index-whealton_wiki.xml" ],
+    "keyword" : [ "format-rel", "format-rdfs", "no-proprietary-vocab", "no-vocab-mappings", "published-by-producer", "format-bio", "deref-vocab", "lod", "format-foaf", "no-provenance-metadata", "format-dbpedia-owl", "family history", "license-metadata", "genealogy", "format-rdf", "usergeneratedcontent", "geographic", "relationships" ],
+    "landingPage" : "http://datahub.io/dataset/my-family-lineage"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/my-family-lineage/dataid#dataset",
+    "triples" : "2254"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_freebase",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/my-family-lineage/dataid#dataset",
+    "triples" : "2253"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_geonames",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/my-family-lineage/dataid#dataset",
+    "triples" : "377"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_yago",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/yago/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/my-family-lineage/dataid#dataset",
+    "triples" : "2048"
+  }, {
+    "@id" : "http://futurewavehosting.com:3030/my-family-lineage/query",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://futurewavehosting.com:3030/my-family-lineage/query",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://futurewavehosting.com:3030/my-family-lineage/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://futurewavehosting.com:3030/my-family-lineage/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://my-family-lineage.com/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://my-family-lineage.com/void.ttl",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://my-family-lineage.com/w/RDF/classes.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://my-family-lineage.com/w/RDF/classes.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://my-family-lineage.com/w/images/6/6c/Sangster_family_tree_2012-06-30.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://my-family-lineage.com/w/images/6/6c/Sangster_family_tree_2012-06-30.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://my-family-lineage.com/w/images/a/af/BruceWhealtonJr.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://my-family-lineage.com/w/images/a/af/BruceWhealtonJr.rdf",
+    "mediaType" : "application/rdf xml"
+  }, {
+    "@id" : "http://my-family-lineage.com/w/sitemap/sitemap-index-whealton_wiki.xml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://my-family-lineage.com/w/sitemap/sitemap-index-whealton_wiki.xml",
+    "mediaType" : "meta/sitemap"
+  }, {
+    "@id" : "http://www.opendatacommons.org/odc-public-domain-dedication-and-licence/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.opendatacommons.org/odc-public-domain-dedication-and-licence/",
+    "mediaType" : "license-metadata"
+  }, {
+    "@id" : "http://xmlns.com/foaf/spec/index.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://xmlns.com/foaf/spec/index.rdf",
+    "mediaType" : "meta/rdf-schema"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

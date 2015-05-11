@@ -1,0 +1,63 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-interpro/dataid#dataset">
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bio2RDF::InterPro</dct:title>
+    <void:uriSpace>http://bio2rdf.org/interpro:</void:uriSpace>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dcat:keyword>lifesciences</dcat:keyword>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-interpro/dataid#creator">
+        <foaf:mbox>mailto:bio2rdf@googlegroups.com</foaf:mbox>
+        <foaf:name>Bio2RDF</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>format-bio2rdf</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://download.bio2rdf.org/current/interpro/interpro.html">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://download.bio2rdf.org/current/interpro/interpro.html"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>bio2rdf</dcat:keyword>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://interpro.bio2rdf.org/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://interpro.bio2rdf.org/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <void:exampleResource rdf:resource="http://bio2rdf.org/interpro:IPR013315"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >InterPro is an integrated database of predictive protein "signatures" used for the classification and automatic annotation of proteins and genomes. InterPro classifies sequences at superfamily, family and subfamily levels, predicting the occurrence of functional domains, repeats and important sites.</dct:description>
+    <dcat:keyword>lod</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bio2rdf-interpro</rdfs:label>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-interpro/dataid#contributor">
+        <foaf:mbox>mailto:michel.dumontier@gmail.com</foaf:mbox>
+        <foaf:name>Michel Dumontier</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:distribution rdf:resource="http://interpro.bio2rdf.org/sparql"/>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/bio2rdf-interpro"/>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://download.bio2rdf.org/current/interpro/interpro.nt.gz">
+        <dcat:mediaType>application/x-ntriples</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://download.bio2rdf.org/current/interpro/interpro.nt.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-interpro/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/bio2rdf-interpro/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

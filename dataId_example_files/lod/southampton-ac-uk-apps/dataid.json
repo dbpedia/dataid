@@ -1,0 +1,107 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.southampton.ac.uk/apps.html",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.southampton.ac.uk/apps.html",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/southampton-ac-uk-apps/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/southampton-ac-uk-apps/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/southampton-ac-uk-apps/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:cjg@ecs.soton.ac.uk",
+    "name" : "Christopher Gutteridge"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/southampton-ac-uk-apps/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/southampton-ac-uk-apps/dataid#contributor",
+    "dct:description" : "Dataset from University of Southampton Open Data Service. A catalog of known websites, web widgets, phone apps and other tools using our datasets.",
+    "license" : "http://reference.data.gov.uk/id/open-government-licence",
+    "dct:title" : "Apps using our data (University of Southampton)",
+    "exampleResource" : "http://id.southampton.ac.uk/app/soton-map-embed",
+    "sparqlEndpoint" : "http://sparql.data.southampton.ac.uk/",
+    "triples" : "200",
+    "rdfs:label" : "southampton-ac-uk-apps",
+    "distribution" : [ "http://sparql.data.southampton.ac.uk/", "http://id.southampton.ac.uk/dataset/apps/latest.ttl", "http://data.southampton.ac.uk/apps.html", "http://id.southampton.ac.uk/dataset/apps/latest.rdf" ],
+    "keyword" : [ "lodcloud.unconnected", "lodcloud.nolinks", "crossdomain", "published-by-producer", "no-deref-vocab", "lod", "format-rdf" ],
+    "landingPage" : "http://datahub.io/dataset/southampton-ac-uk-apps"
+  }, {
+    "@id" : "http://id.southampton.ac.uk/dataset/apps/latest.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://id.southampton.ac.uk/dataset/apps/latest.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://id.southampton.ac.uk/dataset/apps/latest.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://id.southampton.ac.uk/dataset/apps/latest.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://sparql.data.southampton.ac.uk/",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://sparql.data.southampton.ac.uk/",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

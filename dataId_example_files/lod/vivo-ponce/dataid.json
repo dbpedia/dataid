@@ -1,0 +1,101 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo-ponce/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/vivo-ponce/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo-ponce/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:hanjia@indiana.edu",
+    "name" : "Han Jia"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo-ponce/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "VIVO"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo-ponce/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/vivo-ponce/dataid#contributor", "http://dataid.dbpedia.org/lod/vivo-ponce/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/vivo-ponce/dataid#links_dbpedia ",
+    "dct:description" : "Ponce School of Medicine is a private medical school located in the city of Ponce in Puerto Rico, U.S. The school is accredited by the Liaison Committee on Medical Education (LCME), and classified as a United States Medical School. It holds nationally accredited graduate programs in the disciplines of Medicine, Clinical Psychology, and Biomedical Sciences, and Public Health. Ponce School of Medicine is also distinguished by its strong support of graduate medical education through several consortia agreements in south eastern Puerto Rico.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "VIVO Ponce",
+    "triples" : "6490",
+    "rdfs:label" : "vivo-ponce",
+    "distribution" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-04-02T140643/vivopsmexport.rdf",
+    "keyword" : [ "no-vocab-mappings", "format-vitro", "social-networks", "vivo", "science", "published-by-producer", "lod", "publications", "no-provenance-metadata", "no-license-metadata", "deref-vocab", "format-rdfs", "education", "format-rdf" ],
+    "landingPage" : "http://datahub.io/dataset/vivo-ponce"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo-ponce/dataid#links_dbpedia ",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia ",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/vivo-ponce/dataid#dataset",
+    "triples" : "58"
+  }, {
+    "@id" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-04-02T140643/vivopsmexport.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-04-02T140643/vivopsmexport.rdf",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

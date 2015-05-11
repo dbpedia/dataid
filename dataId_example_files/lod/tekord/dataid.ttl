@@ -1,0 +1,39 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/tekord/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:rurik.greenall@ub.ntnu.no" ;
+        foaf:name  "NTNU University Library" .
+
+<http://www.ntnu.no/ub/data/tekord>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.ntnu.no/ub/data/tekord> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/tekord/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/tekord/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/tekord/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "tekord"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/tekord/dataid#contributor> , <http://dataid.dbpedia.org/lod/tekord/dataid#creator> ;
+        dct:description         "RDF-ized controlled vocabulary of Norwegian terms with Universal Decimal Classification numbers; library metadata from the Norwegian University of Science and Technology."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-pddl> ;
+        dct:title               "TEKORD"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://www.ntnu.no/ub/data/tekord#NTUB01506> ;
+        void:triples            "100000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://www.ntnu.no/ub/data/tekord" ;
+        dcat:distribution       <http://www.ntnu.no/ub/data/tekord> ;
+        dcat:keyword            "rdf" , "no-provenance-metadata" , "lld" , "crossdomain" , "no-proprietary-vocab" , "no-license-metadata" , "format-skos" , "norwegian" , "controlled-vocabulary" , "lodcloud.nolinks" , "published-by-producer" , "lodcloud.unconnected" , "lod" , "format-rdf" , "library" ;
+        dcat:landingPage        <http://datahub.io/dataset/tekord> .
+
+<http://dataid.dbpedia.org/lod/tekord/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:support@ub.ntnu.no" ;
+        foaf:name  "rurik.greenall@ub.ntnu.no" .

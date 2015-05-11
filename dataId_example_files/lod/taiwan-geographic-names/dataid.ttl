@@ -1,0 +1,43 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/taiwan-geographic-names/dataid#links_geonames-semantic-web>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/taiwan-geographic-names/dataid#dataset> ;
+        void:triples         "3000"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/taiwan-geographic-names/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "taiwan-geographic-names"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/taiwan-geographic-names/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/taiwan-geographic-names/dataid#links_geonames-semantic-web> ;
+        dct:description         "This is a Taiwan geographic name(台灣地名) linked open data service. This service aims to provide a unique ID for linking Taiwan place names."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-odbl> ;
+        dct:title               "Taiwan geographic names"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:sparqlEndpoint     <http://pomelo.iis.sinica.edu.tw:2020/sparql> ;
+        dcat:distribution       <http://pomelo.iis.sinica.edu.tw:2020/sparql> , <http://pomelo.iis.sinica.edu.tw:2020> ;
+        dcat:keyword            "taiwan" , "lod" , "台灣" , "geospatial" , "format.geonames" ;
+        dcat:landingPage        <http://datahub.io/dataset/taiwan-geographic-names> .
+
+<http://dataid.dbpedia.org/lod/taiwan-geographic-names/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/taiwan-geographic-names/dataid#dataset" .
+
+<http://pomelo.iis.sinica.edu.tw:2020>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://pomelo.iis.sinica.edu.tw:2020> ;
+        dcat:mediaType    "RDF" .
+
+<http://pomelo.iis.sinica.edu.tw:2020/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://pomelo.iis.sinica.edu.tw:2020/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/taiwan-geographic-names/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Dongpo Deng" .

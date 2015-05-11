@@ -1,0 +1,46 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://vivo.colorado.edu/individual?uri=http%3A%2F%2Fvivo.colorado.edu%2Ffisid_113253&format=rdfxml>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://vivo.colorado.edu/individual?uri=http%3A%2F%2Fvivo.colorado.edu%2Ffisid_113253&format=rdfxml> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/vivo-cu-boulder/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:vivo@colorado.edu" ;
+        foaf:name  "Alex Viggio" .
+
+<http://dataid.dbpedia.org/lod/vivo-cu-boulder/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/vivo-cu-boulder/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/vivo-cu-boulder/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "vivo-cu-boulder"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/vivo-cu-boulder/dataid#creator> , <http://dataid.dbpedia.org/lod/vivo-cu-boulder/dataid#contributor> ;
+        dct:description         "Information about University of Colorado Boulder faculty and researchers across all disciplines, departments and colleges. Available as RDF dump and Linked Data. This is a part of package:vivo.\n"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "VIVO CU-Boulder"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dcat:distribution       <http://vivoweb.org/ontology/core> , <http://vivo.colorado.edu/individual?uri=http%3A%2F%2Fvivo.colorado.edu%2Ffisid_113253&format=rdfxml> , <http://vivo.colorado.edu/individual?uri=http%3A%2F%2Fvivo.colorado.edu%2Fdeptid_10180&format=rdfxml> ;
+        dcat:keyword            "no-license-metadata" , "published-by-producer" , "lod" , "no-vocab-mappings" , "vivo" , "format-rdf" , "education" , "format-rdfs" , "deref-vocab" , "no-provenance-metadata" , "social-networks" , "format-vitro" , "science" , "publications" ;
+        dcat:landingPage        <http://datahub.io/dataset/vivo-cu-boulder> .
+
+<http://vivo.colorado.edu/individual?uri=http%3A%2F%2Fvivo.colorado.edu%2Fdeptid_10180&format=rdfxml>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://vivo.colorado.edu/individual?uri=http%3A%2F%2Fvivo.colorado.edu%2Fdeptid_10180&format=rdfxml> ;
+        dcat:mediaType    "RDF" .
+
+<http://vivoweb.org/ontology/core>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://vivoweb.org/ontology/core> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/vivo-cu-boulder/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:vivo@colorado.edu" ;
+        foaf:name  "Liz Tomich" .

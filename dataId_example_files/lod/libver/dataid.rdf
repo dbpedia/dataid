@@ -1,0 +1,94 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/libver/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/libver/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://libver.math.auth.gr/page/agent3911">
+    <dcat:mediaType>HTML</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://libver.math.auth.gr/page/agent3911"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://libver.math.auth.gr/fct">
+    <dcat:mediaType>api/search</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://libver.math.auth.gr/fct"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="https://commondatastorage.googleapis.com/ckannet-storage/2012-09-06T043619/record1_10.rdf">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="https://commondatastorage.googleapis.com/ckannet-storage/2012-09-06T043619/record1_10.rdf"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="https://commondatastorage.googleapis.com/ckannet-storage/2012-09-25T143058/void.ttl">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="https://commondatastorage.googleapis.com/ckannet-storage/2012-09-25T143058/void.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://libver.math.auth.gr/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://libver.math.auth.gr/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/libver/dataid#dataset">
+    <dcat:distribution rdf:resource="http://libver.math.auth.gr/fct"/>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:distribution rdf:resource="http://libver.math.auth.gr/sparql"/>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/libver/dataid#contributor">
+        <foaf:mbox>mailto:s.karampatakis@gmail.com</foaf:mbox>
+        <foaf:name>Sotiris Karampatakis</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>bibliographic</dcat:keyword>
+    <dcat:distribution rdf:resource="https://commondatastorage.googleapis.com/ckannet-storage/2012-09-25T143058/void.ttl"/>
+    <dcat:distribution rdf:resource="http://libver.math.auth.gr/page/agent3911"/>
+    <void:uriSpace>http://libver.math.auth.gr/resource</void:uriSpace>
+    <dcat:keyword>lld</dcat:keyword>
+    <dcat:keyword>format-bibo</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Public Library of Veroia</dct:title>
+    <void:exampleResource rdf:resource="http://libver.math.auth.gr/data/agent3911.rdf"/>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/libver"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Public Library of Veroia Linked Open Data Project. This is the first effort of a Greek Library to expose it's Bibliographic Data as Linked Open Data.</dct:description>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/libver/dataid#creator">
+        <foaf:mbox>mailto:s.karampatakis@gmail.com</foaf:mbox>
+        <foaf:name>Sotiris Karampatakis</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >libver</rdfs:label>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/libver/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/libver/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2915</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>format-dcterm</dcat:keyword>
+    <dcat:keyword>media</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://libver.math.auth.gr/sparql"/>
+    <dcat:distribution rdf:resource="https://commondatastorage.googleapis.com/ckannet-storage/2012-09-06T043619/record1_10.rdf"/>
+    <dcat:keyword>publications</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1285417</void:triples>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/libver/dataid#links_dbpedia-el">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia-el/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/libver/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >4197</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+  </dataid:Dataset>
+</rdf:RDF>

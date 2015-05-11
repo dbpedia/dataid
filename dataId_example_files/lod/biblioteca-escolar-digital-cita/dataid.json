@@ -1,0 +1,138 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:gnoss@gnoss.com",
+    "name" : "GNOSS Team"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:gnoss@gnoss.com",
+    "name" : "GNOSS Team"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#creator", "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#links_geonames-semantic-web", "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#links_nytimes-linked-open-data", "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#links_didactalia", "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#links_freebase" ],
+    "dct:description" : "<p>\n<a href=\"http://red.gnoss.com/comunidad/Biblioteca-Escolar-Digital\">Biblioteca Escolar Digital</a> is an educational tool for teachers, students, parents, educators and researchers in the world of education created by the <a href=\"http://cita.fundaciongsr.com/\">Centro Internacional de Tecnologías Avanzadas (CITA)</a> of the foundation in Peñaranda de Bracamonte (Salamanca, España).\n</p>\n<p>\nThe Biblioteca Escolar Digital’s repository works with <a href=\"http://gnoss.com/\">GNOSS software (RIAM Intelearning Lab)</a>. RIAM is a company that develops semantic technology for the creation of specialized networks and linked markets. The project includes a faceted-based search engine and enriched contexts. Both are developments by GNOSS.\n</p>\n\n<p>\nLa <a href=\"http://red.gnoss.com/comunidad/Biblioteca-Escolar-Digital\">Biblioteca Escolar Digital</a> es una herramienta didáctica para profesores, alumnos, padres, pedagogos e investigadores del mundo de la educación creada por el <a href=\"http://cita.fundaciongsr.com/\">Centro Internacional de Tecnologías Avanzadas (CITA)</a> de la Fundación en Peñaranda de Bracamonte (Salamanca, España).\n</p>\n<p>\nEl repositorio trabaja con <a href=\"http://gnoss.com/\">software de GNOSS (RIAM Intelearning Lab)</a>. RIAM es una compañía que desarrolla tecnología semántica para la creación de redes especializadas y mercados enlazados. El proyecto incluye un buscador facetado y contextos enriquecidos.\n</p>",
+    "license" : "http://creativecommons.org/licenses/by-nc/2.0/",
+    "dct:title" : "Biblioteca Escolar Digital CITA",
+    "exampleResource" : [ "http://red.gnoss.com/en/community/Biblioteca-Escolar-Digital/resource/Aprendemos-a-cuidarnos/cf7c7aaa-9a5f-4241-b07d-2134fe0fdc79?rdf", "http://red.gnoss.com/en/community/Biblioteca-Escolar-Digital/resource/El-caracol-Serafin/cd673145-1ecc-4c17-be5d-e4aa59e7543a?rdf", "http://red.gnoss.com/en/community/Biblioteca-Escolar-Digital/advanced-search/tag/clase?rdf" ],
+    "triples" : "930765",
+    "uriSpace" : "http://red.gnoss.com/comunidad/Biblioteca-Escolar-Digital",
+    "rdfs:label" : "biblioteca-escolar-digital-cita",
+    "distribution" : [ "http://red.gnoss.com/voidCITA.n3", "http://gnoss.com/gnoss.owl" ],
+    "keyword" : [ "padres", "pedagogos", "format-dcam", "no-vocab-mappings", "recursos educativos", "published-by-third-party", "provenance-metadata", "foaf", "Biblioteca Escolar Digital", "format-skos", "dc", "sp", "license-metadata", "schemata", "socialweb", "country.es", "sioc", "profesores", "gnoss", "format-rdfg", "format-dc", "spain", "country-spain", "alumnos", "format-foaf", "language-spa", "usergeneratedcontent", "corporate excellence", "format-wot", "Centro Internacional de Tecnologías Avanzadas", "skos", "laboratorio de ideas", "wrapper", "CITA", "no-proprietary-vocab", "format-sioc", "lod" ],
+    "landingPage" : "http://datahub.io/dataset/biblioteca-escolar-digital-cita"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#dataset",
+    "triples" : "4367"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#links_didactalia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/didactalia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#dataset",
+    "triples" : "30000"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#links_freebase",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#dataset",
+    "triples" : "12355"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/geonames-semantic-web",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#dataset",
+    "triples" : "96"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#links_nytimes-linked-open-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/nytimes-linked-open-data",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/biblioteca-escolar-digital-cita/dataid#dataset",
+    "triples" : "4148"
+  }, {
+    "@id" : "http://gnoss.com/gnoss.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://gnoss.com/gnoss.owl",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://red.gnoss.com/voidCITA.n3",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://red.gnoss.com/voidCITA.n3",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

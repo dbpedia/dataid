@@ -1,0 +1,129 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/rechtspraak/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/rechtspraak/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rechtspraak/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:hoekstra@few.vu.nl",
+    "name" : "Rinke Hoekstra"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rechtspraak/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:hoekstra@few.vu.nl",
+    "name" : "Rinke Hoekstra"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rechtspraak/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/rechtspraak/dataid#contributor", "http://dataid.dbpedia.org/lod/rechtspraak/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/rechtspraak/dataid#links_geonames-semantic-web", "http://dataid.dbpedia.org/lod/rechtspraak/dataid#links_dbpedia" ],
+    "dct:description" : "RDF version of the official case law dataset of the Netherlands Council of the Judiciary (at [http://www.rechtspraak.nl](http://www.rechtspraak.nl)). It contains approximately 145k descriptions of court proceedings, linked to DBPedia and Geonames (places mentioned in cases). It contains all Dutch courts and their locations.\n\nURIs are dereferenceable.\n\nExample: [http://linkeddata.few.vu.nl/rechtspraak/uitspraak/BM4461](http://linkeddata.few.vu.nl/rechtspraak/uitspraak/BM4461)\n\nThis dataset was developed within the BEST project at the VU University Amsterdam.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Rechtspraak.nl",
+    "exampleResource" : "http://linkeddata.few.vu.nl/rechtspraak/uitspraak/BM4461",
+    "sparqlEndpoint" : "http://eculture2.cs.vu.nl:5020/sparql/",
+    "triples" : "1931860",
+    "uriSpace" : "http://linkeddata.few.vu.nl/rechtspraak/",
+    "rdfs:label" : "rechtspraak",
+    "distribution" : [ "http://www.best-project.nl/rechtspraak.ttl", "http://eculture2.cs.vu.nl:5020/sparql/" ],
+    "keyword" : [ "no-license-metadata", "lod", "format-rdf", "format-geo", "government", "no-vocab-mappings", "published-by-third-party", "format-geonames", "format-metalex", "broken_link", "law", "format-dbpedia", "vu", "deref-vocab", "case-law", "format-owl", "void-sparql-endpoint", "provenance-metadata", "format-dbo" ],
+    "landingPage" : "http://datahub.io/dataset/rechtspraak"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rechtspraak/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rechtspraak/dataid#dataset",
+    "triples" : "575"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rechtspraak/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rechtspraak/dataid#dataset",
+    "triples" : "220058"
+  }, {
+    "@id" : "http://eculture2.cs.vu.nl:5020/sparql/",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://eculture2.cs.vu.nl:5020/sparql/",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://www.best-project.nl/rechtspraak.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.best-project.nl/rechtspraak.ttl",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

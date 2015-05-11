@@ -1,0 +1,54 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/transport-openuplabs/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/transport-openuplabs/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/transport-openuplabs/dataid#dataset">
+    <void:exampleResource rdf:resource="http://transport.data.gov.uk/doc/stop-point/490011810W.rdf"/>
+    <dcat:keyword>lodcloud.unconnected</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >transport-openuplabs</rdfs:label>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/transport-openuplabs/dataid#creator">
+        <foaf:name>The Stationery Office Limited</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://gov.tso.co.uk/transport/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://gov.tso.co.uk/transport/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dcat:keyword>format-geo</dcat:keyword>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dcat:keyword>lodcloud.nolinks</dcat:keyword>
+    <dcat:keyword>government</dcat:keyword>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dcat:keyword>lodcloud.needsinfo</dcat:keyword>
+    <dcat:keyword>lodcloud.needstriplecount</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>transportation</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OpenUpLabs Transport</dct:title>
+    <dct:license rdf:resource="http://reference.data.gov.uk/id/open-government-licence"/>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/transport-openuplabs"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Transport dataset is based on NapTan and traffic flow data. These datasets are compiled by the Department for Transport.
+
+Details on Transport data can be found at http://www.dft.gov.uk
+
+The data was sourced from http://upload.data.gov.uk/data/transport </dct:description>
+    <dcat:distribution rdf:resource="http://gov.tso.co.uk/transport/sparql"/>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

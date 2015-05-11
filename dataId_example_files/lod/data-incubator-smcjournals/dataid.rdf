@@ -1,0 +1,109 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://smcjournals.dataincubator.org/">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://smcjournals.dataincubator.org/"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#dataset">
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Scottish Mountaineering Council Journals Issues 1-36</dct:title>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >15801</void:triples>
+    <dcat:keyword>journals</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    > This is a Linked Data representation of a digital archive of 'Scottish Mountaineering Club Journal Issues 1 to 36, 1890-1901', which was created by Alan Dawson, Centre for Digital Library Research, University of Strathclyde, with funding from the Scottish Mountaineering Trust.
+  The Linked Data representation currently covers the relationships between places, people, journal issues and articles gathered from the Cumulative Indexes of Authors, Hills, People and Articles.
+  
+  TODO:
+    
+  (from the Cumulative Indexes)
+  Events
+  Illustrations
+  Reviews
+  Topics  
+
+  And:
+
+  "The SMC in 1894: Rules, officers, members" (http://gdl.cdlr.strath.ac.uk/smcj/smc1894.htm)
+
+</dct:description>
+    <dcat:keyword>format-geovocab</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-pddl"/>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <void:uriSpace>http://smcjournals.dataincubator.org/</void:uriSpace>
+    <void:exampleResource rdf:resource="http://smcjournals.dataincubator.org/hills/A&apos;cailliach.rdf"/>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:distribution rdf:resource="http://smcjournals.dataincubator.org/"/>
+    <dcat:keyword>format-bib</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/data-incubator-smcjournals"/>
+    <dcat:keyword>club</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >11</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_data-incubator-climb">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/data-incubator-climb"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >123</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >data-incubator-smcjournals</rdfs:label>
+    <void:exampleResource rdf:resource="http://smcjournals.dataincubator.org/hills/A&apos;cailliach"/>
+    <dcat:keyword>geographic</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_ordnance-survey-linked-data">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/ordnance-survey-linked-data"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >11</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#links_geonames-semantic-web">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/geonames-semantic-web"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >10</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>mountaineering</dcat:keyword>
+    <dcat:keyword>lld</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://api.talis.com/stores/smcjournals/services/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://api.talis.com/stores/smcjournals/services/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>19thcentury</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://api.talis.com/stores/smcjournals/services/sparql"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/data-incubator-smcjournals/dataid#creator">
+        <foaf:name>Keith Alexander</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:keyword>climbing</dcat:keyword>
+    <dcat:keyword>sport</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

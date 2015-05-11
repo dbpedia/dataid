@@ -1,0 +1,779 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:support@bioontology.org",
+    "name" : "BioPortal project on behalf of ontology owner."
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Michel Dumontier"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#contributor", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-cco", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-natpro", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-gaz", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-omrse", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-efo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-clo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-bro_x1", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-nigo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-tok", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ncit", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-mf", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-sep", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-pma", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-nmr", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ontodm", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-npo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-cpr", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-hpio", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-so_x1", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-oae", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-go_x1", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-rnao", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-mao", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-rcd", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-peo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-cogpo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-mo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-mdr", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-pedterm", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-galen", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-nif_cell", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ep", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ero", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ndfrt", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-who", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-snomedct", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-obi", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-birnlex", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-idomal", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-bootstrep", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-cao", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ino", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ocre", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-pvonto", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-pr", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-bdo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-vo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-rex", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ogms", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-icpc2p", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-medlineplus", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-teo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-sao", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-gfo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-gro_x2", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-sdo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-mi", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ddi", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-flu", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-omim", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ogi", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-mccl_x1", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-msh", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-jerm", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-bfo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-nif", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-icnp", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-neomark", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-mesh-owl", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-biomodels", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-go_x2", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-aero", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-odgi", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-vivo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-lnc", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-bt", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-swo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-iao", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-oboe-sbc", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-sitbac", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-neumore", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-propreo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-pato", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ecg", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-acgt", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-bao", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-sopharm", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-idobru", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-cheminf", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-nif_dysfunction", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-rid", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-hl7", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-bcgo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-sbo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-snpo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-fbcv", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-tmo", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-dikb-evidence", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-opl", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ido", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-cogat", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-nemo_x1", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-miro", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-csp", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-chebi", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ehda", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-canco", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-mfoem", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-cst", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-syn", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-gfo-bio", "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-phare" ],
+    "dct:description" : "The semanticscience integrated ontology (SIO) provides a simple, integrated upper level ontology (types, relations) for consistent knowledge representation across physical, processual and informational entities. It provides vocabulary for the Bio2RDF (http://bio2rdf.org) and SADI (http://sadiframework.org) projects.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "SemanticScience Integrated Ontology",
+    "triples" : "8123",
+    "rdfs:label" : "bioportal-sio",
+    "distribution" : [ "http://www.bioontology.org/wiki/index.php/BioPortal_REST_services", "http://sparql.bioontology.org/", "http://rest.bioontology.org/bioportal/ontologies/download/47135?apikey=BP_API_KEY", "http://semanticscience.org/ontology/sio.owl" ],
+    "keyword" : [ "format-rdf", "lod", "format-owl", "published-by-third-party", "ontology", "bioportal", "biomedicine" ],
+    "landingPage" : "http://datahub.io/dataset/bioportal-sio"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-acgt",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-acgt",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "66"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-aero",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-aero/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "65"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-bao",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-bao",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "67"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-bcgo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-bcgo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "13"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-bdo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-bdo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "56"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-bfo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-bfo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "15"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-biomodels",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-biomodels",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "23"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-birnlex",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-birnlex",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "58"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-bootstrep",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-bootstrep",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "39"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-bro_x1",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-bro_x1",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "11"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-bt",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "30"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-canco",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-canco",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "160"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-cao",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-cao",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "25"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-cco",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-cco",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "13"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-chebi",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-chebi",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "137"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-cheminf",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-cheminf/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "63"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-clo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-clo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "48"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-cogat",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-cogat",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "22"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-cogpo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-cogpo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "55"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-cpr",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-cpr",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "43"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-csp",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-csp",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "138"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-cst",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-cst",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "13"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ddi",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-ddi",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "91"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-dikb-evidence",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-dikb-evidence",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "12"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ecg",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-ecg",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "28"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-efo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-efo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "75"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ehda",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-ehda",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "12"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ep",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-ep",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "61"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ero",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-ero",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "45"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-fbcv",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-fbcv",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "16"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-flu",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-flu",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "62"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-galen",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-galen",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "103"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-gaz",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-gaz",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "12"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-gfo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-gfo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "13"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-gfo-bio",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-gfo-bio",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "29"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-go_x1",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-go_x1",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "18"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-go_x2",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-go_x2",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "18"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-gro_x2",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-gro_x2",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "39"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-hl7",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-hl7",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "71"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-hpio",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-hpio",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "25"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-iao",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-iao",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "30"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-icnp",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-icnp",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "48"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-icpc2p",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-icpc2p",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "12"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ido",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-ido",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "28"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-idobru",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-idobru",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "42"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-idomal",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-idomal",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "24"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ino",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-ino",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "22"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-jerm",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-jerm",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "18"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-lnc",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-lnc",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "154"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-mao",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-mao",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "11"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-mccl_x1",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-mccl_x1",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "19"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-mdr",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-mdr",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "23"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-medlineplus",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-medlineplus",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "10"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-mesh-owl",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-mesh-owl",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "147"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-mf",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-mf",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "46"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-mfoem",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-mfoem",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "72"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-mi",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-mi",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "29"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-miro",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-miro",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "16"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-mo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-mo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "13"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-msh",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-msh",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "140"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-natpro",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-natpro",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "12"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ncit",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-ncit",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "483"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ndfrt",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-ndfrt",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "19"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-nemo_x1",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-nemo_x1",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "53"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-neomark",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-neomark",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "12"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-neumore",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-neumore",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "15"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-nif",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-nif",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "215"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-nif_cell",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-nif_cell",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "66"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-nif_dysfunction",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-nif_dysfunction",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "66"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-nigo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-nigo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "10"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-nmr",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-nmr",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "18"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-npo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-npo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "186"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-oae",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-oae",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "19"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-obi",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-obi",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "91"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-oboe-sbc",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-oboe-sbc",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "30"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ocre",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-ocre",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "19"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-odgi",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-odgi",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "37"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ogi",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-ogi",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "39"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ogms",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-ogms",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "23"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-omim",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-omim",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "16"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-omrse",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-omrse",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "21"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-ontodm",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-ontodm",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "56"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-opl",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-opl",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "24"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-pato",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-pato",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "42"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-pedterm",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-pedterm",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "11"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-peo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-peo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "12"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-phare",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-phare",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "32"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-pma",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-pma",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "13"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-pr",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-pr",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "12"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-propreo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-propreo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "12"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-pvonto",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-pvonto",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "15"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-rcd",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-rcd",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "109"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-rex",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-rex",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "12"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-rid",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-rid",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "32"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-rnao",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-rnao",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "28"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-sao",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-sao",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "24"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-sbo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-sbo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "31"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-sdo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-sdo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "46"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-sep",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-sep",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "19"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-sitbac",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-sitbac",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "10"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-snomedct",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-snomedct",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "266"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-snpo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-snpo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "38"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-so_x1",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-so_x1",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "31"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-sopharm",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-sopharm",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "99"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-swo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-swo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "12"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-syn",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-syn",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "20"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-teo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-teo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "58"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-tmo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-tmo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "74"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-tok",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-tok",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "14"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-vivo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-vivo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "36"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-vo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-vo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "37"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#links_bioportal-who",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-who",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset",
+    "triples" : "10"
+  }, {
+    "@id" : "http://rest.bioontology.org/bioportal/ontologies/download/47135?apikey=BP_API_KEY",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rest.bioontology.org/bioportal/ontologies/download/47135?apikey=BP_API_KEY"
+  }, {
+    "@id" : "http://semanticscience.org/ontology/sio.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://semanticscience.org/ontology/sio.owl",
+    "mediaType" : "OWL"
+  }, {
+    "@id" : "http://sparql.bioontology.org/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://sparql.bioontology.org/"
+  }, {
+    "@id" : "http://www.bioontology.org/wiki/index.php/BioPortal_REST_services",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.bioontology.org/wiki/index.php/BioPortal_REST_services"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

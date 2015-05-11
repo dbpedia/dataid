@@ -1,0 +1,137 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/mlsa/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/mlsa/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/mlsa/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "  Interest Group on German Sentiment Analysis (IGGSA)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/mlsa/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/mlsa/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/mlsa/dataid#links_lexvo", "http://dataid.dbpedia.org/lod/mlsa/dataid#links_wiktionary-dbpedia-org", "http://dataid.dbpedia.org/lod/mlsa/dataid#links_wals", "http://dataid.dbpedia.org/lod/mlsa/dataid#links_glottolog-langdoc" ],
+    "dct:description" : "Sentence-layer annotation represents the most coarse-grained annotation in this\ncorpus. We adhere to definitions of objectivity and subjectivity introduced in\n(Wiebe et al., 2005). Additionally, we followed guidelines drawn from (Balahur &\nSteinberger, 2009). Their clarifications proved to be quite effective, raising\ninter-annotator agreement in a sentence-layer polarity annotation task from\nabout 50% to >80%. All sentences were annotated in two dimensions.\n\nThe first dimension covers the factual nature of the sentence, i.e. whether it\nprovides objective information or if it is intended to express an opinion,\nbelief or subjective argument. Therefore, it is either objective or subjective.\nThe second dimension covers the semantic orientation of the sentence, i.e. its\npolarity. Thus, it is either positive, negative or neutral.\n\nIn the second layer, we model the contextually interpreted sentiments on the\nlevels of words and NP/PP phrases. That is, the annotation decisions\nare based on the meaning of the words in the context of the sentence.\n\nWord sentiment markers:\nThe sentiments on the level of individual words are expressed by\nsingle character markers added at the end of the words.\n\nA word might be positive (+), negative(-), neutral(empty), a shifter\n(~), an intensifier (^), or a diminisher (%).\n\nIf a word ends with a hyphen (e.g., \"auf beziehungs-_ bzw.\npartnerschaftliche Probleme-\", an underscore is added to the word in\norder to prevent missinterpretations of the hyphen as a negative\nmarker.\n\nCurrently, only words that are part of an NP/PP are marked with\nsentiment markers. Annotated words are nouns, adjectives, negation\nparticles, prepositions, adverbs.\n\nThe world level annotation was done by 3 persons individually. The\nindividual results were harmonized into a single reference annotation.\n\n\nPhrase level markers:\n\nEach phrase is marked up textually by brackets, e.g. \"[auf\nbeziehungs-_ bzw. partnerschaftliche Probleme-]\". The type of a phrase\n(NP/PP) is not written to the brackets. We follow largely the\nannotation model of TIGER for structuring embedded NPs and PPs.\n\nCurrently, the following limitations with regard to TIGER exist: (1)\nAdjectival phrases are not marked up (2) Relative or infinitival\nsentences are not included in NPs/PPs if they appear at the end of a\nphrase or if the are discontiguous. We do not only annotate the\nphrases which immediately contain words that are marked up as polar.\nAny dependent subphrase (NP/PP) is integrated into all its dominating\nNPs/PPs, e.g. \"[Die tieferen Ursachen [der Faszination+]]\". Dependent\nsubphrases without any polar words are also included, however, there\nis no internal bracketing for them, e.g. \"[hohe+ Ansprüche an Qualität\nund Lage]\"\n\nAt the level of phrases, we distinguish the following markers:\npositive (+), negative (-), neutral(0), bipolar (#). The category\n'bipolar' is used mainly for coordinations where negative and positive\nsentiments of something are kept in balance by the writer. This is\nquite common for a lot of binomial constructions as \"Krieg und\nFrieden\".",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "MLSA - A Multi-layered Reference Corpus for German Sentiment Analysis",
+    "exampleResource" : "http://mlode.nlp2rdf.org/sparql?default-graph-uri=http%3A%2F%2Fmlode.nlp2rdf.org&query=DESCRIBE+%3Chttp%3A%2F%2Fasv.informatik.uni-leipzig.de%2Fmlsa%2Fsentence%2F1%3E&format=text%2Fturtle",
+    "sparqlEndpoint" : "http://mlode.nlp2rdf.org/sparql",
+    "triples" : "21000",
+    "rdfs:label" : "mlsa",
+    "distribution" : [ "https://dl.dropbox.com/u/65483422/mlsa-model-diagram.png", "http://mlode.nlp2rdf.org/downloads/mlsa.nt.gz", "http://mlode.nlp2rdf.org/sparql" ],
+    "keyword" : [ "crossdomain", "sentiment", "lod", "linguistics" ],
+    "landingPage" : "http://datahub.io/dataset/mlsa"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/mlsa/dataid#links_glottolog-langdoc",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/glottolog-langdoc/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/mlsa/dataid#dataset",
+    "triples" : "2373"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/mlsa/dataid#links_lexvo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/lexvo/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/mlsa/dataid#dataset",
+    "triples" : "2373"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/mlsa/dataid#links_wals",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/wals/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/mlsa/dataid#dataset",
+    "triples" : "2373"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/mlsa/dataid#links_wiktionary-dbpedia-org",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/wiktionary-dbpedia-org/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/mlsa/dataid#dataset",
+    "triples" : "1371"
+  }, {
+    "@id" : "http://mlode.nlp2rdf.org/downloads/mlsa.nt.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://mlode.nlp2rdf.org/downloads/mlsa.nt.gz",
+    "mediaType" : "text/n3"
+  }, {
+    "@id" : "http://mlode.nlp2rdf.org/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://mlode.nlp2rdf.org/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "https://dl.dropbox.com/u/65483422/mlsa-model-diagram.png",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://dl.dropbox.com/u/65483422/mlsa-model-diagram.png",
+    "mediaType" : "PNG"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

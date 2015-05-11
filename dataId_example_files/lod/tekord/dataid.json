@@ -1,0 +1,90 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/tekord/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/tekord/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/tekord/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:support@ub.ntnu.no",
+    "name" : "rurik.greenall@ub.ntnu.no"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/tekord/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:rurik.greenall@ub.ntnu.no",
+    "name" : "NTNU University Library"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/tekord/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/tekord/dataid#contributor", "http://dataid.dbpedia.org/lod/tekord/dataid#creator" ],
+    "dct:description" : "RDF-ized controlled vocabulary of Norwegian terms with Universal Decimal Classification numbers; library metadata from the Norwegian University of Science and Technology.",
+    "license" : "http://www.opendefinition.org/licenses/odc-pddl",
+    "dct:title" : "TEKORD",
+    "exampleResource" : "http://www.ntnu.no/ub/data/tekord#NTUB01506",
+    "triples" : "100000",
+    "uriSpace" : "http://www.ntnu.no/ub/data/tekord",
+    "rdfs:label" : "tekord",
+    "distribution" : "http://www.ntnu.no/ub/data/tekord",
+    "keyword" : [ "rdf", "no-provenance-metadata", "lld", "crossdomain", "no-proprietary-vocab", "no-license-metadata", "format-skos", "norwegian", "controlled-vocabulary", "lodcloud.nolinks", "published-by-producer", "lodcloud.unconnected", "lod", "format-rdf", "library" ],
+    "landingPage" : "http://datahub.io/dataset/tekord"
+  }, {
+    "@id" : "http://www.ntnu.no/ub/data/tekord",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.ntnu.no/ub/data/tekord",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

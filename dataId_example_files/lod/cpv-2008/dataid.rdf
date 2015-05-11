@@ -1,0 +1,108 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/cpv-2008/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/cpv-2008/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://purl.org/weso/pscs/data/cpv/2008/resource/ds?output=ttl">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/weso/pscs/data/cpv/2008/resource/ds?output=ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/weso/datasets/pscs/cpv/cpv-ontology.ttl">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/weso/datasets/pscs/cpv/cpv-ontology.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/weso/pscs/cpv/2008/resource/ds">
+    <dcat:mediaType>HTML</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/weso/pscs/cpv/2008/resource/ds"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/weso/datasets/pscs/cpv/2008/cpv-2008.ttl">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/weso/datasets/pscs/cpv/2008/cpv-2008.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/weso/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://purl.org/weso/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/cpv-2008/dataid#links_http://productontology.org">
+    <void:objectsTarget rdf:resource="http://datahub.io/dataset/http://productontology.org"/>
+    <void:subjectsTarget>
+      <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/cpv-2008/dataid#dataset">
+        <dcat:keyword>10ders</dcat:keyword>
+        <dataid:associatedAgent>
+          <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/cpv-2008/dataid#creator">
+            <foaf:mbox>mailto:josem.alvarez@weso.es</foaf:mbox>
+            <foaf:name>Jose María Alvarez Rodríguez at WESO (University of Oviedo)</foaf:name>
+          </dataid:Creator>
+        </dataid:associatedAgent>
+        <dcat:keyword>euroalert</dcat:keyword>
+        <dcat:keyword>university-of-oviedo</dcat:keyword>
+        <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The Common Procurement Vocabulary (CPV) establishes a single classification system for public procurement aimed at standardising the references used by contracting authorities and entities to describe the subject of procurement contracts.
+
+The dataset created is comprised of CPV 2008 and CPV 2003 codes and the mappings between them. 
+
+Authors:
+
+Authors:
+
+Jose María Alvarez Rodríguez &amp; Jose Emilio Labra Gayo 
+
+WESO-University of Oviedo</dct:description>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >cpv-2008</rdfs:label>
+        <dcat:keyword>deref-vocab</dcat:keyword>
+        <dcat:keyword>oviedo</dcat:keyword>
+        <dcat:keyword>format-skos</dcat:keyword>
+        <void:exampleResource rdf:resource="http://purl.org/weso/pscs/data/cpv/2008/resource/18000000?output=xml"/>
+        <dcat:keyword>linkeddata</dcat:keyword>
+        <dcat:distribution rdf:resource="http://purl.org/weso/pscs/cpv/2008/resource/ds"/>
+        <dcat:keyword>published-by-third-party</dcat:keyword>
+        <dcat:keyword>lod</dcat:keyword>
+        <dcat:keyword>provenance-metadata</dcat:keyword>
+        <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >CPV 2008</dct:title>
+        <dcat:keyword>public_contracts</dcat:keyword>
+        <dcat:keyword>uniovi</dcat:keyword>
+        <dcat:keyword>format-qb</dcat:keyword>
+        <void:sparqlEndpoint rdf:resource="http://purl.org/weso/sparql"/>
+        <dcat:keyword>university</dcat:keyword>
+        <dcat:distribution rdf:resource="http://purl.org/weso/pscs/data/cpv/2008/resource/ds?output=ttl"/>
+        <dcat:keyword>weso</dcat:keyword>
+        <dcat:keyword>license-metadata</dcat:keyword>
+        <dcat:keyword>government</dcat:keyword>
+        <void:uriSpace>http://purl.org/weso/pscs/cpv/2008/resource</void:uriSpace>
+        <dataid:associatedAgent>
+          <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/cpv-2008/dataid#contributor">
+            <foaf:mbox>mailto:josem.alvarez@weso.es</foaf:mbox>
+            <foaf:name>Jose María Alvarez Rodríguez</foaf:name>
+          </dataid:Contributor>
+        </dataid:associatedAgent>
+        <dcat:keyword>linkedopendata</dcat:keyword>
+        <dcat:keyword>format-dc</dcat:keyword>
+        <dcat:distribution rdf:resource="http://purl.org/weso/datasets/pscs/cpv/cpv-ontology.ttl"/>
+        <dcat:distribution rdf:resource="http://purl.org/weso/datasets/pscs/cpv/2008/cpv-2008.ttl"/>
+        <dcat:keyword>format-skosxl</dcat:keyword>
+        <dataid:containsLinks rdf:resource="http://dataid.dbpedia.org/lod/cpv-2008/dataid#links_http://productontology.org"/>
+        <dcat:keyword>e-procurement</dcat:keyword>
+        <dcat:landingPage rdf:resource="http://datahub.io/dataset/cpv-2008"/>
+        <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-odbl"/>
+        <dcat:keyword>vocab-mappings</dcat:keyword>
+        <dcat:distribution rdf:resource="http://purl.org/weso/sparql"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >803311</void:triples>
+        <dcat:keyword>format-dcterms</dcat:keyword>
+        <dcat:keyword>procurement</dcat:keyword>
+        <dcat:keyword>geodata</dcat:keyword>
+      </dataid:Dataset>
+    </void:subjectsTarget>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >27224</void:triples>
+  </dataid:Linkset>
+</rdf:RDF>

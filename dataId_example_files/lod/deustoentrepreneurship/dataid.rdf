@@ -1,0 +1,131 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://deusto.gnoss.com/voidDeustoEntrepreneurship.n3">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://deusto.gnoss.com/voidDeustoEntrepreneurship.n3"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset">
+    <dcat:keyword>universidad de deusto</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_freebase">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/freebase/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >656</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>sharing business knowledge</dcat:keyword>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dcat:keyword>wrapper</dcat:keyword>
+    <dcat:keyword>business knowledge</dcat:keyword>
+    <dcat:keyword>country.es</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#creator">
+        <foaf:mbox>mailto:gnoss@gnoss.com</foaf:mbox>
+        <foaf:name>GNOSS Team</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>schemata</dcat:keyword>
+    <dcat:keyword>socialweb</dcat:keyword>
+    <dcat:keyword>business angels</dcat:keyword>
+    <dcat:keyword>format-rdfg</dcat:keyword>
+    <dcat:keyword>language-spa</dcat:keyword>
+    <dcat:keyword>country-spain</dcat:keyword>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <void:exampleResource rdf:resource="http://deusto.gnoss.com/en/community/deustoentrepreneurship/resource/Manual-basico-para-emprender-SPRI/eb1254c3-04ce-448b-b9f4-3193e757d328?rdf"/>
+    <void:exampleResource rdf:resource="http://deusto.gnoss.com/en/community/deustoentrepreneurship/resource/Entrepreneurship-and-Technology-The-adventure-of-/521bd532-8791-4930-8889-812dfbaff580?rdf"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_geonames-semantic-web">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/geonames-semantic-web"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>emprendimiento</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/deustoentrepreneurship"/>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#contributor">
+        <foaf:mbox>mailto:gnoss@gnoss.com</foaf:mbox>
+        <foaf:name>GNOSS Team</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dcat:keyword>format-dc</dcat:keyword>
+    <dcat:keyword>business models</dcat:keyword>
+    <dcat:keyword>format-sioc</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;p&gt;
+&lt;a href="http://deusto.gnoss.com/comunidad/deustoentrepreneurship"&gt;Deusto Entrepreneurship: sharing business knowledge&lt;/a&gt;, promoted by the Deusto Entrepreneurship Center at the University of Deusto, aims to update and connect knowledge of entrepreneurs, researchers and professionals on entrepreneurship and business. 
+&lt;/p&gt;
+&lt;p&gt;
+Deusto Entrepreneurship works with &lt;a href="http://gnoss.com/"&gt;GNOSS software (RIAM Intelearning Lab)&lt;/a&gt;. RIAM is a company that develops semantic technology for the creation of specialized networks and linked markets. Deusto Entrepreneurship is a source of information and opinion especially recommended for people who visualize an opportunity and need inspiration, approach and support to launch a business. It offers a selection of 257 resources on entrepreneurship (September 2012).
+&lt;/p&gt;</dct:description>
+    <dcat:distribution rdf:resource="http://deusto.gnoss.com/voidDeustoEntrepreneurship.n3"/>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >20873</void:triples>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://gnoss.com/gnoss.owl">
+        <dcat:mediaType>meta/owl</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://gnoss.com/gnoss.owl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:keyword>deusto</dcat:keyword>
+    <dcat:keyword>usergeneratedcontent</dcat:keyword>
+    <dcat:keyword>format-wot</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >986</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:exampleResource rdf:resource="http://deusto.gnoss.com/en/community/deustoentrepreneurship/advanced-search/tag/innovation?rdf"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_nytimes-linked-open-data">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/nytimes-linked-open-data"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >912</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>skos</dcat:keyword>
+    <dcat:keyword>sp</dcat:keyword>
+    <dcat:keyword>dc</dcat:keyword>
+    <dcat:keyword>deusto entrepreneurship</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >deustoentrepreneurship</rdfs:label>
+    <dcat:keyword>entrepreneurship</dcat:keyword>
+    <void:uriSpace>http://deusto.gnoss.com/en/community/deustoEntrepreneurship</void:uriSpace>
+    <dcat:keyword>format-dcam</dcat:keyword>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Deusto Entrepreneurship: sharing business knowledge</dct:title>
+    <dcat:keyword>foaf</dcat:keyword>
+    <dcat:keyword>spain</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_gnoss">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/gnoss"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >13</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>sioc</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

@@ -1,0 +1,107 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/ecb-statistics-linked-data/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/ecb-statistics-linked-data/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ecb-statistics-linked-data/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Keith Alexander"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ecb-statistics-linked-data/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/ecb-statistics-linked-data/dataid#creator",
+    "containsLinks" : "http://dataid.dbpedia.org/lod/ecb-statistics-linked-data/dataid#links_data-gov-uk-time-intervals",
+    "dct:description" : "This dataset is a Linked Data conversion of the European Central Bank  Statistical Warehouse. It consists of SPARQLable metadata, and URIs to the individual /series/ that dereference to on-the-fly conversion to RDFa.",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "European Central Bank Statistics (PublicData.eu)",
+    "exampleResource" : "http://ecb.publicdata.eu/series/127_RA_M_4F_N_4_Z20_N_A1_E.html",
+    "sparqlEndpoint" : "http://ecb.publicdata.eu/sparql",
+    "triples" : "10000000",
+    "uriSpace" : "http://ecb.publicdata.eu/",
+    "rdfs:label" : "ecb-statistics-linked-data",
+    "distribution" : "http://ecb.publicdata.eu/sparql",
+    "keyword" : [ "exchange rates", "GDP", "published-by-third-party", "finance", "lod", "latc", "eu-institution", "european union", "no-proprietary-vocab", "government", "eu", "linked data", "bank", "europe", "statistics", "format-qb" ],
+    "landingPage" : "http://datahub.io/dataset/ecb-statistics-linked-data"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ecb-statistics-linked-data/dataid#links_data-gov-uk-time-intervals",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/data-gov-uk-time-intervals",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ecb-statistics-linked-data/dataid#dataset",
+    "triples" : "100000"
+  }, {
+    "@id" : "http://ecb.publicdata.eu/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://ecb.publicdata.eu/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,59 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/tekord/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/tekord/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/tekord/dataid#dataset">
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >100000</void:triples>
+    <dcat:keyword>rdf</dcat:keyword>
+    <void:exampleResource rdf:resource="http://www.ntnu.no/ub/data/tekord#NTUB01506"/>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <dcat:keyword>lld</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/tekord/dataid#contributor">
+        <foaf:mbox>mailto:support@ub.ntnu.no</foaf:mbox>
+        <foaf:name>rurik.greenall@ub.ntnu.no</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TEKORD</dct:title>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >RDF-ized controlled vocabulary of Norwegian terms with Universal Decimal Classification numbers; library metadata from the Norwegian University of Science and Technology.</dct:description>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.ntnu.no/ub/data/tekord">
+        <dcat:mediaType>RDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.ntnu.no/ub/data/tekord"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-pddl"/>
+    <dcat:keyword>norwegian</dcat:keyword>
+    <dcat:keyword>controlled-vocabulary</dcat:keyword>
+    <dcat:keyword>lodcloud.nolinks</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tekord</rdfs:label>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dcat:keyword>lodcloud.unconnected</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/tekord"/>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/tekord/dataid#creator">
+        <foaf:mbox>mailto:rurik.greenall@ub.ntnu.no</foaf:mbox>
+        <foaf:name>NTNU University Library</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>library</dcat:keyword>
+    <void:uriSpace>http://www.ntnu.no/ub/data/tekord</void:uriSpace>
+  </dataid:Dataset>
+</rdf:RDF>

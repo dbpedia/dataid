@@ -1,0 +1,72 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/traffic-scotland/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/traffic-scotland/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://trafficscotland.dataincubator.org/">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://trafficscotland.dataincubator.org/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://api.talis.com/stores/trafficscotland/services/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://api.talis.com/stores/trafficscotland/services/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/traffic-scotland/dataid#links_transport-data-gov-uk">
+    <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/transport-data-gov-uk/dataid#dataset"/>
+    <void:subjectsTarget>
+      <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/traffic-scotland/dataid#dataset">
+        <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Data from http://trafficscotland.org converted to RDF regularly. Currently the data is only the current incidents, but hopefully this should expand.</dct:description>
+        <dcat:distribution rdf:resource="http://api.talis.com/stores/trafficscotland/services/sparql"/>
+        <dataid:associatedAgent>
+          <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/traffic-scotland/dataid#contributor">
+            <foaf:mbox>mailto:keithalexander@keithalexander.co.uk</foaf:mbox>
+            <foaf:name>Keith Alexander</foaf:name>
+          </dataid:Contributor>
+        </dataid:associatedAgent>
+        <dcat:keyword>traffic</dcat:keyword>
+        <dcat:keyword>government</dcat:keyword>
+        <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-pddl"/>
+        <dcat:keyword>license-metadata</dcat:keyword>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >40798</void:triples>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >traffic-scotland</rdfs:label>
+        <dcat:keyword>air-transport</dcat:keyword>
+        <dcat:landingPage rdf:resource="http://datahub.io/dataset/traffic-scotland"/>
+        <dcat:keyword>roads</dcat:keyword>
+        <dcat:distribution rdf:resource="http://trafficscotland.dataincubator.org/"/>
+        <dcat:keyword>format-rdf</dcat:keyword>
+        <dcat:keyword>format-foaf</dcat:keyword>
+        <dcat:keyword>published-by-third-party</dcat:keyword>
+        <dataid:associatedAgent>
+          <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/traffic-scotland/dataid#creator">
+            <foaf:mbox>mailto:keithalexander@keithalexander.co.uk</foaf:mbox>
+            <foaf:name>Keith Alexander</foaf:name>
+          </dataid:Creator>
+        </dataid:associatedAgent>
+        <dcat:keyword>format-owl</dcat:keyword>
+        <void:sparqlEndpoint rdf:resource="http://api.talis.com/stores/trafficscotland/services/sparql"/>
+        <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Traffic Scotland</dct:title>
+        <dcat:keyword>no-deref-vocab</dcat:keyword>
+        <void:exampleResource rdf:resource="http://trafficscotland.dataincubator.org/incidents/204358"/>
+        <void:uriSpace>http://trafficscotland.dataincubator.org/</void:uriSpace>
+        <dcat:keyword>geographic</dcat:keyword>
+        <dcat:keyword>scotland</dcat:keyword>
+        <dcat:keyword>format-compass</dcat:keyword>
+        <dcat:keyword>road-transport</dcat:keyword>
+        <dataid:containsLinks rdf:resource="http://dataid.dbpedia.org/lod/traffic-scotland/dataid#links_transport-data-gov-uk"/>
+      </dataid:Dataset>
+    </void:subjectsTarget>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >151</void:triples>
+  </dataid:Linkset>
+</rdf:RDF>

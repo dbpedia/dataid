@@ -1,0 +1,71 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data-gov.tw.rpi.edu/wiki/TWC_Data-Gov_Corpus",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data-gov.tw.rpi.edu/wiki/TWC_Data-Gov_Corpus",
+    "mediaType" : "rdf (gzipped)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/twc-data-gov/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/twc-data-gov/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/twc-data-gov/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Tetherless World Constellation, RPI"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/twc-data-gov/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/twc-data-gov/dataid#creator",
+    "dct:description" : "duplicate of package:twc-logd",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "TWC Data-gov",
+    "rdfs:label" : "twc-data-gov",
+    "distribution" : "http://data-gov.tw.rpi.edu/wiki/TWC_Data-Gov_Corpus",
+    "keyword" : [ "government", "format-rdf", "statistics", "housing", "rdf", "energy", "library", "labour", "medical", "population", "environment", "meta.duplicate", "ckanupload.esw.200910", "linkeddata" ],
+    "landingPage" : "http://datahub.io/dataset/twc-data-gov"
+  } ],
+  "@context" : {
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

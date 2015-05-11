@@ -1,0 +1,62 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/ecb-statistics-linked-data/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/ecb-statistics-linked-data/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://ecb.publicdata.eu/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://ecb.publicdata.eu/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/ecb-statistics-linked-data/dataid#dataset">
+    <dcat:keyword>exchange rates</dcat:keyword>
+    <dcat:keyword>GDP</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>finance</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>latc</dcat:keyword>
+    <dcat:distribution rdf:resource="http://ecb.publicdata.eu/sparql"/>
+    <dcat:keyword>eu-institution</dcat:keyword>
+    <void:uriSpace>http://ecb.publicdata.eu/</void:uriSpace>
+    <dcat:keyword>european union</dcat:keyword>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dcat:keyword>government</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://ecb.publicdata.eu/sparql"/>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >10000000</void:triples>
+    <dcat:keyword>eu</dcat:keyword>
+    <dcat:keyword>linked data</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ecb-statistics-linked-data</rdfs:label>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >European Central Bank Statistics (PublicData.eu)</dct:title>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/ecb-statistics-linked-data/dataid#creator">
+        <foaf:name>Keith Alexander</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This dataset is a Linked Data conversion of the European Central Bank  Statistical Warehouse. It consists of SPARQLable metadata, and URIs to the individual /series/ that dereference to on-the-fly conversion to RDFa.</dct:description>
+    <dcat:keyword>bank</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/ecb-statistics-linked-data"/>
+    <dcat:keyword>europe</dcat:keyword>
+    <dcat:keyword>statistics</dcat:keyword>
+    <dcat:keyword>format-qb</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/ecb-statistics-linked-data/dataid#links_data-gov-uk-time-intervals">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/data-gov-uk-time-intervals"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/ecb-statistics-linked-data/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >100000</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:exampleResource rdf:resource="http://ecb.publicdata.eu/series/127_RA_M_4F_N_4_Z20_N_A1_E.html"/>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+  </dataid:Dataset>
+</rdf:RDF>

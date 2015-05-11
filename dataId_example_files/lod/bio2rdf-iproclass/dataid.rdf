@@ -1,0 +1,59 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-iproclass/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/bio2rdf-iproclass/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-iproclass/dataid#dataset">
+    <dcat:keyword>lifesciences</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://download.bio2rdf.org/current/iproclass/iproclass.html">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://download.bio2rdf.org/current/iproclass/iproclass.html"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/bio2rdf-iproclass"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-iproclass/dataid#creator">
+        <foaf:mbox>mailto:bio2rdf@googlegroups.com</foaf:mbox>
+        <foaf:name>Bio2RDF</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://iproclass.bio2rdf.org/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://iproclass.bio2rdf.org/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The iProClass database provides value-added information reports for UniProtKB and unique UniParc proteins, with links to over 90 biological databases, including databases for protein families, functions and pathways, interactions, structures and structural classifications, genes and genomes, ontologies, literature, and taxonomy.</dct:description>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-iproclass/dataid#contributor">
+        <foaf:mbox>mailto:michel.dumontier@gmail.com</foaf:mbox>
+        <foaf:name>Michel Dumontier</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bio2rdf-iproclass</rdfs:label>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bio2RDF::IProClass</dct:title>
+    <dcat:keyword>bio2rdf</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:distribution rdf:resource="http://iproclass.bio2rdf.org/sparql"/>
+    <void:uriSpace>http://bio2rdf.org/iproclass:</void:uriSpace>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://download.bio2rdf.org/current/iproclass/iproclass.nt.gz">
+        <dcat:mediaType>application/x-ntriples</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://download.bio2rdf.org/current/iproclass/iproclass.nt.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+  </dataid:Dataset>
+</rdf:RDF>

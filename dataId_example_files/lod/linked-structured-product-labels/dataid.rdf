@@ -1,0 +1,102 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://dbmi-icode-01.dbmi.pitt.edu/dikb-evidence/linkedSPLs-dump.nt.bz2">
+    <dcat:mediaType>nt</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://dbmi-icode-01.dbmi.pitt.edu/dikb-evidence/linkedSPLs-dump.nt.bz2"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#dataset">
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#links_rxnorm">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rxnorm/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >20000</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:distribution rdf:resource="http://dbmi-icode-01.dbmi.pitt.edu/dikb-evidence/linkedSPLs-dump.nt.bz2"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#creator">
+        <foaf:mbox>mailto:rdb20@pitt.edu</foaf:mbox>
+        <foaf:name>Richard D Boyce</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#links_bio2rdf.org">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bio2rdf.org/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1412</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <void:exampleResource rdf:resource="http://dbmi-icode-01.dbmi.pitt.edu/linkedSPLs/resource/structuredProductLabelMetadata/0005e2a8-3ab9-4173-a46f-9c53881379e2"/>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#links_chebi">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/chebi/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >4234</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://dbmi-icode-01.dbmi.pitt.edu/linkedSPLs/">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://dbmi-icode-01.dbmi.pitt.edu/linkedSPLs/"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#links_drugbank">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/drugbank/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >706</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://purl.org/net/linkedSPLs">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://purl.org/net/linkedSPLs"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://dbmi-icode-01.dbmi.pitt.edu/linkedSPLs/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://dbmi-icode-01.dbmi.pitt.edu/linkedSPLs/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/linked-structured-product-labels"/>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/linked-structured-product-labels/dataid#contributor">
+        <foaf:mbox>mailto:rdb20@pitt.edu</foaf:mbox>
+        <foaf:name>Richard D Boyce</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:distribution rdf:resource="http://dbmi-icode-01.dbmi.pitt.edu/linkedSPLs/sparql"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Linked Structured Product Labels (LinkedSPLs) publishes all sections of FDA-approved prescription and over the counter drug package inserts from DailyMed for use by NLP and Semantic Web researchers. Currently, only data from the product labels of prescription drugs and a subset of over the counter medications is provided. A powerful feature of LinkedSPLs is that all active moieties and product labels are mapped to RxNORM PURLs provided by the NCBO Bioportal SPARQL endpoint. Also, this site's SPL data is updated weekly and all SPLs retain DailyMed versioning data so that researchers can record the provenance of the text and sections they work with. LinkedSPLs is provided as a service as part of the Drug Interaction Knowledge Base (DIKB) project.
+
+NOTE: This resource shows content present in the Structured Product Labels provided by the National Library of Medicine's (NLM) DailyMed resource. The NLM requests that all users of DailyMed content to provide attribution to the NLM and DailyMed as is requested on the following page http://www.nlm.nih.gov/copyright.html.</dct:description>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dcat:keyword>lifesciences</dcat:keyword>
+    <dcat:keyword>medications-safety</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Linked Structured Product Labels</dct:title>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >linked-structured-product-labels</rdfs:label>
+    <dcat:keyword>drugs</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

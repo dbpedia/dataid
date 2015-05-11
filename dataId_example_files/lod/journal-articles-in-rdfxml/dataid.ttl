@@ -1,0 +1,36 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/journal-articles-in-rdfxml/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/journal-articles-in-rdfxml/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/journal-articles-in-rdfxml/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:metadata@bl.uk" ;
+        foaf:name  "The British Library Metadata Services" .
+
+<http://dataid.dbpedia.org/lod/journal-articles-in-rdfxml/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "journal-articles-in-rdfxml"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/journal-articles-in-rdfxml/dataid#creator> , <http://dataid.dbpedia.org/lod/journal-articles-in-rdfxml/dataid#contributor> ;
+        dct:description         "Journal article subsets made available by the British Library published as basic (unmodelled) RDFXML without URIs. Subsets can be made available in a wide range of subject areas."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "Journal Articles in RDFXML"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dcat:distribution       <https://commondatastorage.googleapis.com/ckannet-storage/2012-03-08T135949/BL_Palaeontology_Articles.zip> ;
+        dcat:keyword            "publications" , "bibliographic data" , "bibliography" , "format-rdf" , "library" , "published-by-producer" , "british-library" , "bibliographic" , "cc0" , "format-xml" ;
+        dcat:landingPage        <http://datahub.io/dataset/journal-articles-in-rdfxml> .
+
+<https://commondatastorage.googleapis.com/ckannet-storage/2012-03-08T135949/BL_Palaeontology_Articles.zip>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://commondatastorage.googleapis.com/ckannet-storage/2012-03-08T135949/BL_Palaeontology_Articles.zip> ;
+        dcat:mediaType    "application/x-zip-compressed" .
+
+<http://dataid.dbpedia.org/lod/journal-articles-in-rdfxml/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:metadata@bl.uk" ;
+        foaf:name  "The British Library Metadata Services" .

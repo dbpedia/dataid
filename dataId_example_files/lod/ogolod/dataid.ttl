@@ -1,0 +1,68 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://miuras.inf.um.es/lod/voidogolod.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://miuras.inf.um.es/lod/voidogolod.ttl> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/ogolod/dataid#links_bio2rdf-omim>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/bio2rdf-omim/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/ogolod/dataid#dataset> ;
+        void:triples         "18141"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/ogolod/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:boris.villazon@terrazas.name" ;
+        foaf:name  "Boris Villazón-Terrazas" .
+
+<http://miuras.inf.um.es/sitemap_index.xml>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://miuras.inf.um.es/sitemap_index.xml> ;
+        dcat:mediaType    "meta/sitemap" .
+
+<http://miuras.inf.um.es/lod/ogolod2.owl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://miuras.inf.um.es/lod/ogolod2.owl> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://dataid.dbpedia.org/lod/ogolod/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "ogolod"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/ogolod/dataid#creator> , <http://dataid.dbpedia.org/lod/ogolod/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/ogolod/dataid#links_bio2rdf-omim> , <http://dataid.dbpedia.org/lod/ogolod/dataid#links_bio2rdf-chebi> ;
+        dct:description         "The OGOLOD system, an extension of the OGO Knowledge Base, publishes ortholog/diseases information using Linked Data. This gives the scientists the ability to query the structured information in connection with other Linked\nData and to discover new information in the cloud, related to orthologs and human diseases."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "Orthology and Diseases Information - OGO"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://miuras.inf.um.es/dump/dump.rdf> ;
+        void:sparqlEndpoint     <http://miuras.inf.um.es/sparql> ;
+        void:triples            "38035102"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http:miuras.inf.um.es/ogolod/resource/Gene/67440" ;
+        dcat:distribution       <http://miuras.inf.um.es/sparql> , <http://miuras.inf.um.es/sitemap_index.xml> , <http://miuras.inf.um.es/lod/voidogolod.ttl> , <http://miuras.inf.um.es/lod/ogolod2.owl> ;
+        dcat:keyword            "published-by-third-party" , "no-vocab-mappings" , "provenance-metadata" , "lifesciences" , "deref-vocab" , "format-ogo" , "no-license-metadata" , "diseases-information-orthology" , "lod" ;
+        dcat:landingPage        <http://datahub.io/dataset/ogolod> .
+
+<http://dataid.dbpedia.org/lod/ogolod/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/ogolod/dataid#dataset" .
+
+<http://miuras.inf.um.es/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://miuras.inf.um.es/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/ogolod/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:megana@fi.upm.es" ;
+        foaf:name  "José Antonio Miñarro Gimenez and Mikel Egaña Aranguren" .
+
+<http://dataid.dbpedia.org/lod/ogolod/dataid#links_bio2rdf-chebi>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/bio2rdf-chebi/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/ogolod/dataid#dataset> ;
+        void:triples         "3456570"^^<http://www.w3.org/2001/XMLSchema#int> .

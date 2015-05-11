@@ -1,0 +1,81 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_nytimes-linked-open-data>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/nytimes-linked-open-data> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset> ;
+        void:triples         "8749"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/arthroscopy/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/arthroscopy/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:gnoss@gnoss.com" ;
+        foaf:name  "GNOSS Team" .
+
+<http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset> ;
+        void:triples         "9580"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "arthroscopy"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/arthroscopy/dataid#contributor> , <http://dataid.dbpedia.org/lod/arthroscopy/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_nytimes-linked-open-data> , <http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_freebase> , <http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_dbpedia> , <http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_gnoss> , <http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_geonames-semantic-web> , <http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_dblp-deusto-gnoss> ;
+        dct:description         "<p> The arthroscopy community is the adecuate space for all those who take part on the arthroscopic surgical procedures of the locomotor system. Its meaning is to create and share knowledge concerning the answers to the current and effective matters on these kind of arthroscopic proceedings: surgical, anesthesic, rehabilitative or even organizing ones.</p>\n<p>The arthroscopy community works with <a href=\"http://gnoss.com/\">GNOSS software (RIAM Intelearning Lab)</a>. RIAM is a company that develops semantic technology for the creation of specialized networks and linked markets. It includes a facet-based search engine and enriched contexts. Both are developments by GNOSS.</p>\n\n<p> Portal de Artroscopia es un espacio de aprendizaje para todas las personas que participan en los procedimientos quirúrgicos artroscópicos del aparato locomotor. El propósito es generar y compartir conocimiento sobre las soluciones a los problemas reales y concretos en este tipo procedimientos, sean estos quirúrgicos, de anestesia, de rehabilitación o de organización. </p><p> Portal de Artroscopia trabaja con <a href=\"http://gnoss.com/\">software de GNOSS (RIAM Intelearning Lab)</a>. RIAM es una compañía que desarrolla tecnología semántica para la creación de redes especializadas y mercados enlazados. El proyecto Incluye un buscador facetado y contextos enriquecidos. Ambos son desarrollos de GNOSS.\n</p>"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://creativecommons.org/licenses/by-nc/2.0/> ;
+        dct:title               "Arthroscopy community"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://arthroscopyportal.com/en/community/Arthroscopy/resource/Reconstruccion-de-LCA-mediante-tendones-isquiotibi/267556b2-67f0-4264-8071-1932151c8439> , <http://arthroscopyportal.com/en/community/Arthroscopy/resource/Reparacion-de-cartilago-en-la-rodilla/a7617f64-8a3c-4913-aea1-17657100cc45?rdf> , <http://arthroscopyportal.com/en/community/Arthroscopy/advanced-search/tag/Arthroscopy?rdf> ;
+        void:triples            "62355"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://gnoss.com/comunidad/Arthroscopy" ;
+        dcat:distribution       <http://gnoss.com/gnoss.owl> , <http://museos.gnoss.com/voidArtroscopyGNOSS.n3> ;
+        dcat:keyword            "format-dc" , "socialweb" , "format-sioc" , "usergeneratedcontent" , "sioc" , "foaf" , "country.es" , "country-spain" , "license-metadata" , "Arthroscopy" , "spain" , "no-vocab-mappings" , "lod" , "corporate excellence" , "procesos quirúrgicos" , "schemata" , "format-rdfg" , "artrocopia" , "provenance-metadata" , "dc" , "skos" , "format-foaf" , "format-dcam" , "sp" , "laboratorio de ideas" , "published-by-third-party" , "format-skos" , "format-wot" , "no-proprietary-vocab" , "arthroscopic proceedings" , "health" , "aparato locomotor" , "language-spa" , "locomotor system" , "wrapper" , "surgical procedures" ;
+        dcat:landingPage        <http://datahub.io/dataset/arthroscopy> .
+
+<http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_freebase>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/freebase/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset> ;
+        void:triples         "2232"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_geonames-semantic-web>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/geonames-semantic-web> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset> ;
+        void:triples         "2"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://gnoss.com/gnoss.owl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://gnoss.com/gnoss.owl> ;
+        dcat:mediaType    "meta/owl" .
+
+<http://dataid.dbpedia.org/lod/arthroscopy/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:gnoss@gnoss.com" ;
+        foaf:name  "GNOSS Team" .
+
+<http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_gnoss>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/gnoss> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset> ;
+        void:triples         "2"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://museos.gnoss.com/voidArtroscopyGNOSS.n3>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://museos.gnoss.com/voidArtroscopyGNOSS.n3> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_dblp-deusto-gnoss>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset> ;
+        void:triples         "789"^^<http://www.w3.org/2001/XMLSchema#int> .

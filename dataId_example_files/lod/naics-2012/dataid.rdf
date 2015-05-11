@@ -1,0 +1,101 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/naics-2012/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/naics-2012/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://purl.org/weso/datasets/pscs/psc-ontology.ttl">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/weso/datasets/pscs/psc-ontology.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/weso/pscs/naics/2012/resource/ds">
+    <dcat:mediaType>HTML</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/weso/pscs/naics/2012/resource/ds"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/weso/datasets/pscs/naics/2012/naics-2012.ttl">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/weso/datasets/pscs/naics/2012/naics-2012.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/weso/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://purl.org/weso/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/naics-2012/dataid#links_http://productontology.org">
+    <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/http://productontology.org/dataid#dataset"/>
+    <void:subjectsTarget>
+      <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/naics-2012/dataid#dataset">
+        <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The North American Industry Classification System (NAICS) is the standard used by Federal statistical agencies in classifying business establishments for the purpose of collecting, analyzing, and publishing statistical data related to the U.S. business economy.
+
+Authors of the linked data version:
+
+-Jose María Alvarez Rodríguez &amp; Jose Emilio Labra Gayo
+
+WESO-University of Oviedo</dct:description>
+        <dcat:keyword>e-procurement</dcat:keyword>
+        <dcat:keyword>pscs</dcat:keyword>
+        <dcat:keyword>published-by-third-party</dcat:keyword>
+        <dcat:keyword>deref-vocab</dcat:keyword>
+        <dcat:keyword>procurement</dcat:keyword>
+        <dcat:landingPage rdf:resource="http://datahub.io/dataset/naics-2012"/>
+        <dcat:keyword>format-skosxl</dcat:keyword>
+        <dcat:keyword>linkeddata</dcat:keyword>
+        <void:sparqlEndpoint rdf:resource="http://purl.org/weso/sparql"/>
+        <dcat:distribution rdf:resource="http://purl.org/weso/datasets/pscs/naics/2012/naics-2012.ttl"/>
+        <dcat:keyword>university-of-oviedo</dcat:keyword>
+        <dcat:keyword>government</dcat:keyword>
+        <dcat:keyword>naics</dcat:keyword>
+        <dcat:keyword>euroalert</dcat:keyword>
+        <dcat:distribution rdf:resource="http://purl.org/weso/pscs/naics/2012/resource/ds"/>
+        <dcat:keyword>weso</dcat:keyword>
+        <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-odbl"/>
+        <dcat:distribution rdf:resource="http://purl.org/weso/datasets/pscs/psc-ontology.ttl"/>
+        <dataid:associatedAgent>
+          <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/naics-2012/dataid#contributor">
+            <foaf:mbox>mailto:josem.alvarez@weso.es</foaf:mbox>
+            <foaf:name>Jose María Alvarez Rodríguez</foaf:name>
+          </dataid:Contributor>
+        </dataid:associatedAgent>
+        <dcat:keyword>provenance-metadata</dcat:keyword>
+        <dcat:keyword>format-dc</dcat:keyword>
+        <dcat:keyword>vocab-mappings</dcat:keyword>
+        <dcat:keyword>naics-2012</dcat:keyword>
+        <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >NAICS 2012</dct:title>
+        <void:exampleResource rdf:resource="http://purl.org/weso/pscs/data/naics/2012/resource/111150?output=xml"/>
+        <dataid:associatedAgent>
+          <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/naics-2012/dataid#creator">
+            <foaf:mbox>mailto:josem.alvarez@weso.es</foaf:mbox>
+            <foaf:name>Jose María Alvarez Rodríguez at WESO (University of Oviedo)</foaf:name>
+          </dataid:Creator>
+        </dataid:associatedAgent>
+        <dcat:keyword>uniovi</dcat:keyword>
+        <dcat:keyword>format-skos</dcat:keyword>
+        <dcat:keyword>10ders</dcat:keyword>
+        <dcat:keyword>license-metadata</dcat:keyword>
+        <dcat:distribution rdf:resource="http://purl.org/weso/sparql"/>
+        <dcat:keyword>lod</dcat:keyword>
+        <dcat:keyword>geodata</dcat:keyword>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >naics-2012</rdfs:label>
+        <dcat:keyword>format-gr</dcat:keyword>
+        <void:uriSpace>http://purl.org/weso/pscs/naics/2012/resource</void:uriSpace>
+        <dcat:keyword>oviedo</dcat:keyword>
+        <dcat:keyword>linkedopendata</dcat:keyword>
+        <dcat:keyword>format-dcterms</dcat:keyword>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >35390</void:triples>
+        <dataid:containsLinks rdf:resource="http://dataid.dbpedia.org/lod/naics-2012/dataid#links_http://productontology.org"/>
+        <dcat:keyword>public_contracts</dcat:keyword>
+      </dataid:Dataset>
+    </void:subjectsTarget>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >8037</void:triples>
+  </dataid:Linkset>
+</rdf:RDF>

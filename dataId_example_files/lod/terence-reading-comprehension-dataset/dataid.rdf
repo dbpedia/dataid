@@ -1,0 +1,70 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/terence-reading-comprehension-dataset/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/terence-reading-comprehension-dataset/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/terence-reading-comprehension-dataset/dataid#dataset">
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/terence-reading-comprehension-dataset/dataid#creator">
+        <foaf:mbox>mailto:alrifai@L3S.de</foaf:mbox>
+        <foaf:name>Mohammad Alrifai</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://asev.l3s.uni-hannover.de:8085/openrdf-sesame/repositories/TERENCE_STORY">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://asev.l3s.uni-hannover.de:8085/openrdf-sesame/repositories/TERENCE_STORY"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dcat:keyword>NLP</dcat:keyword>
+    <dcat:keyword>reading-comprehension</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/terence-reading-comprehension-dataset"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This dataset was created by the European project TERENCE (http://terenceproject.eu). TERENCE dataset includes a collection of narrative stories especially created for (hearing and hearing-impaired) children in the age of 7 to 11 years, who have poor reading comprehension skills. The stories are associated with some reasoning tasks about the story characters and events in the form of multiple-choice questions.
+
+The collection of stories and reasoning tasks is used for performing intervention therapy plans in class to assess and stimulate children's abilities to comprehend texts. In particular, the tasks focus on fostering inference-making skills and reasoning about temporal and causal relations between story events.
+
+The stories are provided in four different levels of complexity. More description about the TERENCE story model can be found here: http://www.terenceproject.eu/c/document_library/get_file?p_l_id=16136&amp;folderId=12950&amp;name=DLFE-1927.pdf.
+
+All stories and games are provided in two languages: English and Italian.
+
+Story texts were semi-automatically annotated using NLP tools developed in the project for both English and Italian. TERENCE annotation language (http://www.terenceproject.eu/c/document_library/get_file?p_l_id=16136&amp;folderId=12950&amp;name=DLFE-1910.pdf) was built on top of TimeML for annotating characters, story events and temporal/causal relations between those events. The annotations are then used by TERENCE game generation tools to automatically generate reasoning tasks.</dct:description>
+    <dcat:distribution rdf:resource="http://asev.l3s.uni-hannover.de:8085/openrdf-sesame/repositories/TERENCE_STORY"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TERENCE Reading Comprehension Dataset</dct:title>
+    <dcat:keyword>lod</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-by"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >terence-reading-comprehension-dataset</rdfs:label>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/terence-reading-comprehension-dataset/dataid#contributor">
+        <foaf:mbox>mailto:gtran@L3S.de</foaf:mbox>
+        <foaf:name>Giang Binh Tran</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://terence.l3s.uni-hannover.de/resource/StoryText/StoryText_EN_1-5-0">
+        <dcat:mediaType>XML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://terence.l3s.uni-hannover.de/resource/StoryText/StoryText_EN_1-5-0"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>terence</dcat:keyword>
+    <dcat:keyword>linkedup</dcat:keyword>
+    <dcat:keyword>sparql</dcat:keyword>
+    <dcat:keyword>education</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://terence.l3s.uni-hannover.de/schema">
+        <dcat:mediaType>XML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://terence.l3s.uni-hannover.de/schema"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+  </dataid:Dataset>
+</rdf:RDF>

@@ -1,0 +1,50 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/education-openuplabs/dataid#dataset">
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://openuplabs.tso.co.uk/sparql/gov-education">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://openuplabs.tso.co.uk/sparql/gov-education"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OpenUpLabs Education</dct:title>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >education-openuplabs</rdfs:label>
+    <dcat:keyword>lodcloud.needstriplecount</dcat:keyword>
+    <dct:license rdf:resource="http://reference.data.gov.uk/id/open-government-licence"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Using the Education Data
+
+The education dataset is based on Edubase data. This dataset is now compiled by the newly formed Education Department. Details on Edubase can be found at http://www.edubase.gov.uk. (Previously it was the Department for Children, Schools and Families.)
+
+Part of package:openuplabs</dct:description>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>lodcloud.needsinfo</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dcat:keyword>government</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://openuplabs.tso.co.uk/sparql/gov-education"/>
+    <void:exampleResource rdf:resource="http://education.data.gov.uk/doc/school/110158.rdf"/>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/education-openuplabs"/>
+    <dcat:keyword>lodcloud.nolinks</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>lodcloud.unconnected</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/education-openuplabs/dataid#creator">
+        <foaf:name>The Stationery Office Limited</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/education-openuplabs/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/education-openuplabs/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

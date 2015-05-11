@@ -1,0 +1,189 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/lobid-resources/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://lobid.org/download/dumps/DE-605/updates/lod/">
+    <dcat:mediaType>HTML</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://lobid.org/download/dumps/DE-605/updates/lod/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://lobid.org/download/dumps/DE-605/enrich/">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://lobid.org/download/dumps/DE-605/enrich/"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset">
+    <dcat:keyword>library</dcat:keyword>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dcat:keyword>bibliographic</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >667675574</void:triples>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/lobid-resources"/>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_lobid-organisations">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/lobid-organisations/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >32286583</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://lobid.org/download/dumps/DE-605/enrich/"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_zdb">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/zdb/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >702886</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-bibo</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_gutenberg">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/gutenberg/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >5467</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_dnb-gemeinsame-normdatei">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >22711732</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://lobid.org/sparql/">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://lobid.org/sparql/"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>format-skos-state</dcat:keyword>
+    <void:exampleResource rdf:resource="http://lobid.org/resource/HT002948556"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >5794</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_oclc">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/oclc/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >426404</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://lobid.org/dataset/resource/about.ttl">
+        <dcat:mediaType>meta/void</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://lobid.org/dataset/resource/about.ttl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <void:uriSpace>http://lobid.org/resource/</void:uriSpace>
+    <dcat:keyword>format-frbr</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/lobid-resources/dataid#creator">
+        <foaf:mbox>mailto:semweb@hbz-nrw.de</foaf:mbox>
+        <foaf:name>North Rhine-Westphalian Library Service Center (hbz)</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:distribution rdf:resource="http://lobid.org/sparql/"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lobid-resources is a service which offers access to metadata in RDF about bibliographic resources (books, articles, pdfs etc.) with more than 15.5 million frbr:manifestations with more than 32 million frbr:items.
+We also provide a raw data dump at http://thedatahub.org/dataset/hbz_unioncatalog .
+
+Links to other datasets are provided in separate files, see below.
+
+You can find additional information about this data [here](https://wiki1.hbz-nrw.de/display/SEM/2010/08/31/Linked-Open-hbz-Data).
+</dct:description>
+    <dcat:keyword>format-owl</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/lobid-resources/dataid#contributor">
+        <foaf:mbox>mailto:semweb@hbz-nrw.de</foaf:mbox>
+        <foaf:name>North Rhine-Westphalian Library Service Center (hbz)</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:keyword>void-sparql-endpoint</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lobid-Bibliographic Resources</dct:title>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_dbpedia-de">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia-de/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >6179</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dcat:distribution rdf:resource="http://lobid.org/download/dumps/DE-605/updates/lod/"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_iso-639-2">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/iso-639-2/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >8060339</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_deutsche-nationalbibliografie-dnb">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/deutsche-nationalbibliografie-dnb/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >267769</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://lobid.org/download/dumps/DE-605/hbzlod.nt.tar.bz2">
+        <dcat:mediaType>text/ntriples</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://lobid.org/download/dumps/DE-605/hbzlod.nt.tar.bz2"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_dewey_decimal_classification">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >198906</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_open-library">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/open-library/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1258070</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>germany</dcat:keyword>
+    <dcat:keyword>publications</dcat:keyword>
+    <dcat:keyword>lld</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_b3kat">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/b3kat/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >71550</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-geo</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lobid-resources</rdfs:label>
+    <dcat:keyword>format-dc</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

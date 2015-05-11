@@ -1,0 +1,49 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/bio2rdf-homologene/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:bio2rdf@googlegroups.com" ;
+        foaf:name  "Bio2RDF" .
+
+<http://homologene.bio2rdf.org/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://homologene.bio2rdf.org/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://download.bio2rdf.org/current/homologene/homologene.html>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://download.bio2rdf.org/current/homologene/homologene.html> ;
+        dcat:mediaType    "HTML" .
+
+<http://dataid.dbpedia.org/lod/bio2rdf-homologene/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/bio2rdf-homologene/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/bio2rdf-homologene/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:michel.dumontier@gmail.com" ;
+        foaf:name  "Michel Dumontier" .
+
+<http://dataid.dbpedia.org/lod/bio2rdf-homologene/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "bio2rdf-homologene"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/bio2rdf-homologene/dataid#creator> , <http://dataid.dbpedia.org/lod/bio2rdf-homologene/dataid#contributor> ;
+        dct:description         "HomoloGene, a tool of the National Center for Biotechnology Information (NCBI), is a system for automated detection of homologs (similarity attributable to descent from a common ancestor) among the annotated genes of several completely sequenced eukaryotic genomes. The HomoloGene processing consists of the protein analysis from the input organisms. Sequences are compared using blastp, then matched up and put into groups, using a taxonomic tree built from sequence similarity, where closer related organisms are matched up first, and then further organisms are added to the tree. \n\nLinks to bio2rdf-gene: 244378\nLinks to bio2rdf-symbol: 244378\n"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by-sa> ;
+        dct:title               "Bio2RDF::HomoloGene"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://bio2rdf.org/homologene:813> ;
+        void:sparqlEndpoint     <http://homologene.bio2rdf.org/sparql> ;
+        void:uriSpace           "http://bio2rdf.org/homologene:" ;
+        dcat:distribution       <http://homologene.bio2rdf.org/sparql> , <http://download.bio2rdf.org/current/homologene/homologene.html> , <http://download.bio2rdf.org/current/homologene/homologene.nt.gz> ;
+        dcat:keyword            "lifesciences" , "format-rdf" , "bio2rdf" , "format-rdfs" , "published-by-third-party" , "lod" ;
+        dcat:landingPage        <http://datahub.io/dataset/bio2rdf-homologene> .
+
+<http://download.bio2rdf.org/current/homologene/homologene.nt.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://download.bio2rdf.org/current/homologene/homologene.nt.gz> ;
+        dcat:mediaType    "application/x-ntriples" .

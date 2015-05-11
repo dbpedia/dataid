@@ -1,0 +1,100 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/linked-nuts/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/linked-nuts/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linked-nuts/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:gc3@ecs.soton.ac.uk",
+    "name" : "Gianluca Correndo"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linked-nuts/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:gc3@ecs.soton.ac.uk",
+    "name" : "Gianluca Correndo"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linked-nuts/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/linked-nuts/dataid#creator", "http://dataid.dbpedia.org/lod/linked-nuts/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/linked-nuts/dataid#links_statistics-data-gov-uk", "http://dataid.dbpedia.org/lod/linked-nuts/dataid#links_freebase" ],
+    "dct:description" : "The present data set contains all the versions of the NUTS statistical regions in linked data format. For the UK the NUTS3 level is further aligned to the local administrative units (or LAU) geography provided by http://statistics.data.gov.uk. \n\nThe NUTS regions are described along with their temporal validity. Changes in the coding reflect both the changes in the composition of the European Union and the internal reorganization of some areas. Such changes have been extracted by the Eurostat site and represented in linked data format.\n\nThe regions belonging to the current version of NUTS has additional links to the shape files (geoJson and KML format) describing their phisical extent.\n\nThe number of links to statistics.data.gov.uk is estimated by assuming 200 NUTS codes in the UK with 50 spacerel:contains links each.\n\nThe number of triples is estimated as 15 triples for each of the 2000 NUTS codes, plus an extra 10,000 for the spacerel:contains triples in the UK.",
+    "license" : "http://www.opendefinition.org/licenses/odc-by",
+    "dct:title" : "Linked NUTS",
+    "exampleResource" : [ "http://nuts.psi.enakting.org/def/NUTSRegion", "http://nuts.psi.enakting.org/id/UK/rdf", "http://nuts.psi.enakting.org/id/UK/ttl" ],
+    "triples" : "40000",
+    "uriSpace" : "http://nuts.psi.enakting.org/id/",
+    "rdfs:label" : "linked-nuts",
+    "keyword" : [ "published-by-third-party", "government", "format-rdf", "lod", "lodcloud.unconnected", "geography", "opendatachallenge", "lodcloud.nolinks", "eurostat", "nuts", "deref-vocab" ],
+    "landingPage" : "http://datahub.io/dataset/linked-nuts"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linked-nuts/dataid#links_freebase",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/linked-nuts/dataid#dataset",
+    "triples" : "1106"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linked-nuts/dataid#links_statistics-data-gov-uk",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/statistics-data-gov-uk/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/linked-nuts/dataid#dataset",
+    "triples" : "10000"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

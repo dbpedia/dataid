@@ -1,0 +1,82 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/asjp/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/asjp/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://cldbstest.eva.mpg.de/asjp/downloads/families.rdf.zip">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://cldbstest.eva.mpg.de/asjp/downloads/families.rdf.zip"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://cldbstest.eva.mpg.de/asjp/downloads/senses.rdf.zip">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://cldbstest.eva.mpg.de/asjp/downloads/senses.rdf.zip"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://cldbstest.eva.mpg.de/asjp/downloads/languoids.rdf.zip">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://cldbstest.eva.mpg.de/asjp/downloads/languoids.rdf.zip"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://cldbstest.eva.mpg.de/asjp/downloads/renderings.ttl.zip">
+    <dcat:mediaType>application/x-ntriples</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://cldbstest.eva.mpg.de/asjp/downloads/renderings.ttl.zip"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://cldbstest.eva.mpg.de/asjp/ontologies/asjp.owl">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://cldbstest.eva.mpg.de/asjp/ontologies/asjp.owl"/>
+  </dataid:Distribution>
+  <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/asjp/dataid#links_lexvo">
+    <void:objectsTarget rdf:resource="http://datahub.io/dataset/lexvo"/>
+    <void:subjectsTarget>
+      <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/asjp/dataid#dataset">
+        <void:exampleResource rdf:resource="http://cldbstest.eva.mpg.de/asjp/resource/distance/id/d13-468.rdf"/>
+        <dcat:keyword>format-glottolog</dcat:keyword>
+        <dcat:distribution rdf:resource="http://cldbstest.eva.mpg.de/asjp/downloads/languoids.rdf.zip"/>
+        <dcat:landingPage rdf:resource="http://datahub.io/dataset/asjp"/>
+        <dcat:keyword>format-dcterms</dcat:keyword>
+        <void:exampleResource rdf:resource="http://cldbstest.eva.mpg.de/asjp/resource/sense/id/s40.rdf"/>
+        <void:exampleResource rdf:resource="http://cldbstest.eva.mpg.de/asjp/resource/language/id/l99.rdf"/>
+        <dcat:keyword>linguistic</dcat:keyword>
+        <void:exampleResource rdf:resource="http://cldbstest.eva.mpg.de/asjp/resource/rendering/id/r1234.rdf"/>
+        <dcat:distribution rdf:resource="http://cldbstest.eva.mpg.de/asjp/downloads/senses.rdf.zip"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >5000000</void:triples>
+        <dcat:distribution rdf:resource="http://cldbstest.eva.mpg.de/asjp/downloads/families.rdf.zip"/>
+        <dcat:keyword>vocab-mappings</dcat:keyword>
+        <dcat:keyword>publications</dcat:keyword>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >asjp</rdfs:label>
+        <dcat:distribution rdf:resource="http://cldbstest.eva.mpg.de/asjp/downloads/renderings.ttl.zip"/>
+        <dcat:keyword>format-lexvo</dcat:keyword>
+        <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >ASJP collects 40 words from 5500 languages in a simplified phonetic representation. More background can be found at http://email.eva.mpg.de/~wichmann/ASJPHomePage.htm</dct:description>
+        <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+        <dcat:keyword>lod</dcat:keyword>
+        <dcat:keyword>provenance-metadata</dcat:keyword>
+        <dcat:distribution rdf:resource="http://cldbstest.eva.mpg.de/asjp/ontologies/asjp.owl"/>
+        <dcat:keyword>deref-vocab</dcat:keyword>
+        <dcat:keyword>LOD</dcat:keyword>
+        <dataid:associatedAgent>
+          <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/asjp/dataid#contributor">
+            <foaf:mbox>mailto:sebastian_nordhoff@eva.mpg.de</foaf:mbox>
+            <foaf:name>Sebastian Nordhoff</foaf:name>
+          </dataid:Contributor>
+        </dataid:associatedAgent>
+        <dcat:keyword>linguistics</dcat:keyword>
+        <void:exampleResource rdf:resource="http://cldbstest.eva.mpg.de/asjp/resource/family/id/fROMANCE.rdf"/>
+        <dataid:containsLinks rdf:resource="http://dataid.dbpedia.org/lod/asjp/dataid#links_lexvo"/>
+        <dcat:keyword>published-by-producer</dcat:keyword>
+        <dcat:keyword>typology</dcat:keyword>
+        <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Automated Similarity Judgment Program lexical data</dct:title>
+        <dcat:keyword>license-metadata</dcat:keyword>
+      </dataid:Dataset>
+    </void:subjectsTarget>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >5000</void:triples>
+  </dataid:Linkset>
+</rdf:RDF>

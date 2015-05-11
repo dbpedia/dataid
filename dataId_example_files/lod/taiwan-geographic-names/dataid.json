@@ -1,0 +1,108 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/taiwan-geographic-names/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/taiwan-geographic-names/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/taiwan-geographic-names/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Dongpo Deng"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/taiwan-geographic-names/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/taiwan-geographic-names/dataid#creator",
+    "containsLinks" : "http://dataid.dbpedia.org/lod/taiwan-geographic-names/dataid#links_geonames-semantic-web",
+    "dct:description" : "This is a Taiwan geographic name(台灣地名) linked open data service. This service aims to provide a unique ID for linking Taiwan place names.",
+    "license" : "http://www.opendefinition.org/licenses/odc-odbl",
+    "dct:title" : "Taiwan geographic names",
+    "sparqlEndpoint" : "http://pomelo.iis.sinica.edu.tw:2020/sparql",
+    "rdfs:label" : "taiwan-geographic-names",
+    "distribution" : [ "http://pomelo.iis.sinica.edu.tw:2020/sparql", "http://pomelo.iis.sinica.edu.tw:2020" ],
+    "keyword" : [ "taiwan", "lod", "台灣", "geospatial", "format.geonames" ],
+    "landingPage" : "http://datahub.io/dataset/taiwan-geographic-names"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/taiwan-geographic-names/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/taiwan-geographic-names/dataid#dataset",
+    "triples" : "3000"
+  }, {
+    "@id" : "http://pomelo.iis.sinica.edu.tw:2020",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://pomelo.iis.sinica.edu.tw:2020",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://pomelo.iis.sinica.edu.tw:2020/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://pomelo.iis.sinica.edu.tw:2020/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

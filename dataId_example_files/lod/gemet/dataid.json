@@ -1,0 +1,139 @@
+{
+  "@graph" : [ {
+    "@id" : "http://cr3.eionet.europa.eu/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://cr3.eionet.europa.eu/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/gemet/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/gemet/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/gemet/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:soren.roug@eea.europa.eu",
+    "name" : "Søren Roug"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/gemet/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:gemet@eea.europa.eu",
+    "name" : "European Environment Agency"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/gemet/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/gemet/dataid#creator", "http://dataid.dbpedia.org/lod/gemet/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/gemet/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/gemet/dataid#links_umthes", "http://dataid.dbpedia.org/lod/gemet/dataid#links_agrovoc-skos" ],
+    "dct:description" : "### About\n\nA thesaurus in 20+ languages for terms related to the environment and environmental data. Published by the European Environment Agency.\n\nAvailable in RDF without reuse constraints. \n\n### Openness\n\n No explicit information found.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "GEneral Multilingual Environmental Thesaurus",
+    "exampleResource" : [ "http://rdfdata.eionet.europa.eu/eea/languages/fi", "http://www.eionet.europa.eu/gemet/gemet-backbone.rdf" ],
+    "sparqlEndpoint" : "http://cr3.eionet.europa.eu/sparql",
+    "triples" : "20229105",
+    "uriSpace" : "http://www.eionet.europa.eu/gemet/",
+    "rdfs:label" : "gemet",
+    "distribution" : [ "http://cr3.eionet.europa.eu/sparql", "http://www.eionet.europa.eu/gemet/rdf?langcode=en", "http://www.eionet.europa.eu/gemet/void.rdf" ],
+    "keyword" : [ "deref-vocab", "thesaurus", "schemata", "lld", "published-by-third-party", "format-rdf", "lod", "license-metadata", "format-skos", "provenance-metadata", "european", "format-xhtml", "environment" ],
+    "landingPage" : "http://datahub.io/dataset/gemet"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/gemet/dataid#links_agrovoc-skos",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/agrovoc-skos/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/gemet/dataid#dataset",
+    "triples" : "1199"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/gemet/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/gemet/dataid#dataset",
+    "triples" : "3005"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/gemet/dataid#links_umthes",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/umthes/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/gemet/dataid#dataset",
+    "triples" : "3483"
+  }, {
+    "@id" : "http://www.eionet.europa.eu/gemet/rdf?langcode=en",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.eionet.europa.eu/gemet/rdf?langcode=en"
+  }, {
+    "@id" : "http://www.eionet.europa.eu/gemet/void.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.eionet.europa.eu/gemet/void.rdf",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

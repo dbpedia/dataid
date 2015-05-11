@@ -1,0 +1,101 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/europeana-sparql/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/europeana-sparql/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/europeana-sparql/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:boyan.simeonov@ontotext.com",
+    "name" : "Boyan Simeonov"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/europeana-sparql/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Ontotext"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/europeana-sparql/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/europeana-sparql/dataid#creator", "http://dataid.dbpedia.org/lod/europeana-sparql/dataid#contributor" ],
+    "dct:description" : "Europeana EDM data loaded to OWLIM, with SPARQL and visualization. \nContinuing development as part of @eCreativeEU",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "Europeana SPARQL",
+    "exampleResource" : "http://europeana.ontotext.com/download/n3?uri=http://data.europeana.eu/item/01004/E17BBC456775874D778D9540864548CF298254C4&format=n3&inference=all",
+    "sparqlEndpoint" : "http://europeana.ontotext.com/sparql",
+    "rdfs:label" : "europeana-sparql",
+    "distribution" : [ "http://europeana.ontotext.com/sparql", "http://europeana.ontotext.com/europeana/tab?uri=http%3A%2F%2Fdata.europeana.eu%2Fitem%2F01004%2FE17BBC456775874D778D9540864548CF298254C4&role=CHO", "http://europeana.ontotext.com/europeana/tab?uri=http%3A%2F%2Fdata.europeana.eu%2Fitem%2F01004%2FE17BBC456775874D778D9540864548CF298254C4&role=Graph&inference=all" ],
+    "keyword" : [ "edm", "format-edm", "sparql", "europeana", "sparql-endpoint", "europeana data model" ],
+    "landingPage" : "http://datahub.io/dataset/europeana-sparql"
+  }, {
+    "@id" : "http://europeana.ontotext.com/europeana/tab?uri=http%3A%2F%2Fdata.europeana.eu%2Fitem%2F01004%2FE17BBC456775874D778D9540864548CF298254C4&role=CHO",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://europeana.ontotext.com/europeana/tab?uri=http%3A%2F%2Fdata.europeana.eu%2Fitem%2F01004%2FE17BBC456775874D778D9540864548CF298254C4&role=CHO",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://europeana.ontotext.com/europeana/tab?uri=http%3A%2F%2Fdata.europeana.eu%2Fitem%2F01004%2FE17BBC456775874D778D9540864548CF298254C4&role=Graph&inference=all",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://europeana.ontotext.com/europeana/tab?uri=http%3A%2F%2Fdata.europeana.eu%2Fitem%2F01004%2FE17BBC456775874D778D9540864548CF298254C4&role=Graph&inference=all",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://europeana.ontotext.com/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://europeana.ontotext.com/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,94 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://govwild.hpi-web.de/downloads/govwild-json-2012-01-30.zip">
+    <dcat:mediaType>JSON</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://govwild.hpi-web.de/downloads/govwild-json-2012-01-30.zip"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#dataset">
+    <dcat:distribution rdf:resource="http://govwild.hpi-web.de/downloads/govwild-json-2012-01-30.zip"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://govwild.hpi-web.de/0.6/GWOntology.rdf">
+        <dcat:mediaType>RDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://govwild.hpi-web.de/0.6/GWOntology.rdf"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <void:uriSpace>http://govwild.org/id/</void:uriSpace>
+    <dcat:keyword>gov</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://govwild.org/rdf/">
+        <dcat:mediaType>rdf endpoint</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://govwild.org/rdf/"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#links_freebase">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/freebase/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >132953</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://govwild.org/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://govwild.org/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/government-web-integration-for-linked-data"/>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#creator">
+        <foaf:name>GovWild.org</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >42773056</void:triples>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://govwild.hpi-web.de/downloads/govwild-rdf-2012-01-30.zip">
+        <dcat:mediaType>text/n3</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://govwild.hpi-web.de/downloads/govwild-rdf-2012-01-30.zip"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >5845</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#links_nytimes-linked-open-data">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/nytimes-linked-open-data/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >6702</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >GovWILD - Government Web Integration for Linked Data</dct:title>
+    <dcat:keyword>government</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >GovWILD integrates Open Government Data about politicians, parties, government agencies, funds, companies, and industrial leaders into a clean and consistent data set. This interlinked data is visualized on a Web interface to be explored by citizens and is available for download and further analysis. It can be used to uncover hidden connections between individuals in government and industry, to aggregate financial data, and to deep-dive into the network of politics and industry.</dct:description>
+    <dcat:distribution rdf:resource="http://govwild.org/sparql"/>
+    <dcat:keyword>opendatachallenge</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >government-web-integration-for-linked-data</rdfs:label>
+    <void:exampleResource rdf:resource="http://govwild.org/rdf/?uri=http%3A%2F%2Fgovwild.org%2Fid%2Fperson%2FAngela_Merkel_deBundestag_370_P"/>
+    <dcat:keyword>no-deref-vocab</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

@@ -1,0 +1,50 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/italian-public-schools-linkedopendata-it/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:info@linkedopendata.it" ;
+        foaf:name  "linkedopendata.it" .
+
+<http://dataid.dbpedia.org/lod/italian-public-schools-linkedopendata-it/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "italian-public-schools-linkedopendata-it"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/italian-public-schools-linkedopendata-it/dataid#creator> , <http://dataid.dbpedia.org/lod/italian-public-schools-linkedopendata-it/dataid#contributor> ;
+        dct:description         "Contains addresses, type, contacts and other info about more 50.000 public schools in italy.\n\nThe dataset is currently in alpha stage: its quality needs to be improved and schools are not yet georeferenced.\n\nMore information at [http://www.linkedopendata.it/datasets/scuole](http://www.linkedopendata.it/datasets/scuole)"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by-sa> ;
+        dct:title               "Italian public schools (LinkedOpenData.it)"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://data.linkedopendata.it/scuole/resource/RMTA047015> ;
+        void:sparqlEndpoint     <http://sparql.linkedopendata.it/scuole> ;
+        void:triples            "168638"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://data.linkedopendata.it/scuole/resource/" ;
+        dcat:distribution       <http://dump.linkedopendata.it/scuole> , <http://void.linkedopendata.it/scuole> , <http://sparql.linkedopendata.it/scuole> ;
+        dcat:keyword            "lodcloud.nolinks" , "lod" , "published-by-producer" , "publications" , "no-vocab-mappings" , "void-sparql-endpoint" , "license-metadata" , "country-italy" , "pre-schools" , "format-rdf" , "provenance-metadata" , "linkeddata" , "no-proprietary-vocab" , "education" , "format-vcard" ;
+        dcat:landingPage        <http://datahub.io/dataset/italian-public-schools-linkedopendata-it> .
+
+<http://dump.linkedopendata.it/scuole>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://dump.linkedopendata.it/scuole> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/italian-public-schools-linkedopendata-it/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/italian-public-schools-linkedopendata-it/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/italian-public-schools-linkedopendata-it/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:info@linkedopendata.it" ;
+        foaf:name  "linkedopendata.it" .
+
+<http://void.linkedopendata.it/scuole>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://void.linkedopendata.it/scuole> ;
+        dcat:mediaType    "meta/void" .
+
+<http://sparql.linkedopendata.it/scuole>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://sparql.linkedopendata.it/scuole> ;
+        dcat:mediaType  "api/sparql" .

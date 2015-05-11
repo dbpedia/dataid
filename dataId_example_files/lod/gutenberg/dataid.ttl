@@ -1,0 +1,47 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/gutenberg/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:http://www.gutenberg.org/wiki/Gutenberg:Contact_Information" ;
+        foaf:name  "Project Gutenberg" .
+
+<http://www.gutenberg.org/wiki/Gutenberg:Information_About_Robot_Access_to_our_Pages#Getting_All_EBook_Files>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.gutenberg.org/wiki/Gutenberg:Information_About_Robot_Access_to_our_Pages#Getting_All_EBook_Files> .
+
+<http://dataid.dbpedia.org/lod/gutenberg/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/gutenberg/dataid#dataset" .
+
+<http://www.gutenberg.org/feeds/catalog.rdf.bz2>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.gutenberg.org/feeds/catalog.rdf.bz2> ;
+        dcat:mediaType    "bz2" .
+
+<http://dataid.dbpedia.org/lod/gutenberg/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:http://www.gutenberg.org/wiki/Gutenberg:Contact_Information" ;
+        foaf:name  "Project Gutenberg" .
+
+<http://dataid.dbpedia.org/lod/gutenberg/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "gutenberg"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/gutenberg/dataid#contributor> , <http://dataid.dbpedia.org/lod/gutenberg/dataid#creator> ;
+        dct:description         "Overview: \n\nProject Gutenberg is the first and largest single collection of free electronic books, or eBooks.\n\nStatistics: \nOver 100,000 titles, some duplication, of course.\n\nLicense:\nMajority of works in public domain. Works posted with permission from copyright holders are licensed under the Project Gutenberg license.\n\nFormats:\nMost Project Gutenberg eBooks are available in plain text,\njust so they can be used with nearly any hardware/software,\nand many are also available in a variety of other formats.\n\nOver 30,000 eBooks in over 50 languages at gutenberg.org\n\nOver 75,000 eBooks in over 100 languages at gutenberg.cc\n\n\nThis is my first attempt to rewrite this little blurb,\nso I will keep it brief for now to see what happens.\n\n\nMichael S. Hart\nFounder\nProject Gutenberg,\nInventor of eBooks\nhttp://www.gutenberg.org/wiki/Michael_S._Hart"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "Project Gutenberg"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://www.gutenberg.org/ebooks/12345.rdf> ;
+        void:triples            "5450115"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://www.gutenberg.org/" ;
+        dcat:distribution       <http://www.gutenberg.org/wiki/Gutenberg:Information_About_Robot_Access_to_our_Pages#Getting_All_EBook_Files> , <http://www.gutenberg.cc> , <http://www.gutenberg.org/feeds/catalog.rdf.bz2> ;
+        dcat:keyword            "access-http" , "access-ftp" , "lod" , "format-pgterms" , "access-rsync" , "book" , "bibliographic" , "ebook" , "format-dcterm" , "format-dcmit" , "format-rdf" , "access-bulk" , "format-dcam" ;
+        dcat:landingPage        <http://datahub.io/dataset/gutenberg> .
+
+<http://www.gutenberg.cc>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.gutenberg.cc> .

@@ -1,0 +1,140 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/gesis-thesoz/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/gesis-thesoz/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/gesis-thesoz/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:benjamin.zapilko@gesis.org",
+    "name" : "Benjamin Zapilko"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/gesis-thesoz/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:http://www.gesis.org",
+    "name" : "GESIS - Leibniz Institute for the Social Sciences"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/gesis-thesoz/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/gesis-thesoz/dataid#creator", "http://dataid.dbpedia.org/lod/gesis-thesoz/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/gesis-thesoz/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/gesis-thesoz/dataid#links_stw-thesaurus-for-economics", "http://dataid.dbpedia.org/lod/gesis-thesoz/dataid#links_agrovoc-skos" ],
+    "dct:description" : "The Thesaurus for the Social Sciences (Thesaurus Sozialwissenschaften) contains about 12,000 entries, of which more than 8,000 are descriptors (authorised keywords) and about 4,000 non-descriptors. Topics in all of the social science disciplines are included. This SKOS version of the thesaurus uses also SKOS-XL and additionally defined extensions.\n",
+    "license" : "http://creativecommons.org/licenses/by-nc/2.0/",
+    "dct:title" : "TheSoz Thesaurus for the Social Sciences (GESIS)",
+    "exampleResource" : "http://lod.gesis.org/thesoz/concept/10041741",
+    "sparqlEndpoint" : "http://lod.gesis.org/thesoz/sparql",
+    "triples" : "425124",
+    "uriSpace" : "http://lod.gesis.org/thesoz/",
+    "rdfs:label" : "gesis-thesoz",
+    "distribution" : [ "http://lod.gesis.org/thesoz/sparql", "http://lod.gesis.org/thesoz/ext/thesoz_ext.rdf", "http://lod.gesis.org/thesoz/void.ttl" ],
+    "keyword" : [ "lod", "lld", "void-sparql-endpoint", "socialsciences", "social", "publications", "published-by-producer", "library", "no-vocab-mappings", "germany", "format-dc", "deref-vocab", "format-rdf", "thesaurus", "linkeddata", "format-skos" ],
+    "landingPage" : "http://datahub.io/dataset/gesis-thesoz"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/gesis-thesoz/dataid#links_agrovoc-skos",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/agrovoc-skos/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/gesis-thesoz/dataid#dataset",
+    "triples" : "846"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/gesis-thesoz/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/gesis-thesoz/dataid#dataset",
+    "triples" : "5024"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/gesis-thesoz/dataid#links_stw-thesaurus-for-economics",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/stw-thesaurus-for-economics/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/gesis-thesoz/dataid#dataset",
+    "triples" : "4927"
+  }, {
+    "@id" : "http://lod.gesis.org/thesoz/ext/thesoz_ext.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.gesis.org/thesoz/ext/thesoz_ext.rdf",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://lod.gesis.org/thesoz/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://lod.gesis.org/thesoz/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://lod.gesis.org/thesoz/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.gesis.org/thesoz/void.ttl",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

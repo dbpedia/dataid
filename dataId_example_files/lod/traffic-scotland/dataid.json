@@ -1,0 +1,123 @@
+{
+  "@graph" : [ {
+    "@id" : "http://api.talis.com/stores/trafficscotland/services/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://api.talis.com/stores/trafficscotland/services/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/traffic-scotland/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/traffic-scotland/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/traffic-scotland/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:keithalexander@keithalexander.co.uk",
+    "name" : "Keith Alexander"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/traffic-scotland/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:keithalexander@keithalexander.co.uk",
+    "name" : "Keith Alexander"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/traffic-scotland/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/traffic-scotland/dataid#contributor", "http://dataid.dbpedia.org/lod/traffic-scotland/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/traffic-scotland/dataid#links_transport-data-gov-uk",
+    "dct:description" : "Data from http://trafficscotland.org converted to RDF regularly. Currently the data is only the current incidents, but hopefully this should expand.",
+    "license" : "http://www.opendefinition.org/licenses/odc-pddl",
+    "dct:title" : "Traffic Scotland",
+    "exampleResource" : "http://trafficscotland.dataincubator.org/incidents/204358",
+    "sparqlEndpoint" : "http://api.talis.com/stores/trafficscotland/services/sparql",
+    "triples" : "40798",
+    "uriSpace" : "http://trafficscotland.dataincubator.org/",
+    "rdfs:label" : "traffic-scotland",
+    "distribution" : [ "http://api.talis.com/stores/trafficscotland/services/sparql", "http://trafficscotland.dataincubator.org/" ],
+    "keyword" : [ "traffic", "government", "license-metadata", "air-transport", "roads", "format-rdf", "format-foaf", "published-by-third-party", "format-owl", "no-deref-vocab", "geographic", "scotland", "format-compass", "road-transport" ],
+    "landingPage" : "http://datahub.io/dataset/traffic-scotland"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/traffic-scotland/dataid#links_transport-data-gov-uk",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/transport-data-gov-uk/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/traffic-scotland/dataid#dataset",
+    "triples" : "151"
+  }, {
+    "@id" : "http://trafficscotland.dataincubator.org/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://trafficscotland.dataincubator.org/",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

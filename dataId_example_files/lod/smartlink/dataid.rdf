@@ -1,0 +1,71 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/smartlink/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/smartlink/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://smartlink.open.ac.uk/smartlink/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://smartlink.open.ac.uk/smartlink/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/smartlink/service-nfp">
+    <dcat:mediaType>XML</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/smartlink/service-nfp"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/smartlink/dataid#dataset">
+    <dcat:keyword>format-geo</dcat:keyword>
+    <dcat:distribution rdf:resource="http://smartlink.open.ac.uk/smartlink/sparql"/>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://smartlink.open.ac.uk/smartlink/sparql"/>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>format-sawsdl</dcat:keyword>
+    <dcat:keyword>iserve</dcat:keyword>
+    <dcat:keyword>format-api</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dcat:keyword>sparql-endpoint</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >smartlink</rdfs:label>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>format-http</dcat:keyword>
+    <dcat:distribution rdf:resource="http://purl.org/smartlink/service-nfp"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SmartLink: Linked Services Non-Functional Properties</dct:title>
+    <void:uriSpace>http://smartlink.open.ac.uk/smartlink/resource/</void:uriSpace>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/smartlink/dataid#links_iserve">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/iserve/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/smartlink/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >233</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/smartlink/dataid#creator">
+        <foaf:mbox>mailto:stefan.dietze@gmx.de</foaf:mbox>
+        <foaf:name>SmartLink team </foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/smartlink"/>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2829</void:triples>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/smartlink/dataid#contributor">
+        <foaf:mbox>mailto:stefan.dietze@gmx.de</foaf:mbox>
+        <foaf:name>SmartLink team</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SmartLink exposes Linked Data about publicly available Web services and Web APIs. In particular, the SmartLink data set extends existing service description schemas with a light-weight schema for non-functional properties. </dct:description>
+    <void:exampleResource rdf:resource="http://smartlink.open.ac.uk/smartlink/resource/services/3a76bf75-5cfc-411d-940d-bab8a4a407f1#LUPEDIA-Lookup-Service"/>
+    <dcat:keyword>sparql</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

@@ -1,0 +1,101 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://data.totl.net/tarot-rwcs/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.totl.net/tarot-rwcs/> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#dataset" .
+
+<http://data.totl.net/planet/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.totl.net/planet/> ;
+        dcat:mediaType    "RDF" .
+
+<http://data.totl.net/playingcards/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.totl.net/playingcards/> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "temple-ov-thee-lemur-datasets"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#links_dbpedia> , <http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#links_semantictweet> ;
+        dct:description         "This resource provides 3 groups of RDF datasets. 1. Esoteric subjects such as tarot and alchemy. These all interlink and the Horoscope, Tarot, Planets and Elements sets link into DBPedia resources for Starsigns, Metals, Tarot Suits, Planets, Gems, and the Narnia novels(!)\n\n2. Descriptions of Game States such as tic-tac-toe and chess. Do not attmpt to spider these as they are effectively infinite.\n\n3. Deliberately perverse datasets including Daily Mail cancer. Where possible, the causes and preventions of cancer are linked to their DBPedia indentifiers. Other perverse datasets are considered 'toys' and not linked here. They are listed on the homepage."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "Temple ov thee Lemur"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://data.totl.net/playingcards/deck> ;
+        void:triples            "10000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://data.totl.net/" ;
+        dcat:distribution       <http://data.totl.net/kabbalah/> , <http://data.totl.net/tarot/> , <http://data.totl.net/tictactoe/> , <http://data.totl.net/planet/> , <http://data.totl.net/4inarow/> , <http://data.totl.net/chess/> , <http://data.totl.net/playingcards/> , <http://data.totl.net/tarot-rwcs/> , <http://data.totl.net/he/> , <http://data.totl.net/element/> , <http://data.totl.net/cancer_causes.rdf> , <http://data.totl.net/zodiac/> ;
+        dcat:keyword            "chess" , "no-provenance-metadata" , "published-by-producer" , "no-vocab-mappings" , "lod" , "crossdomain" , "format-dc" , "format-owl" , "perverse" , "humour" , "tarot" , "no-license-metadata" , "format-rdf" , "deref-vocab" , "games" , "format-foaf" , "occult" ;
+        dcat:landingPage        <http://datahub.io/dataset/temple-ov-thee-lemur-datasets> .
+
+<http://data.totl.net/tarot/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.totl.net/tarot/> ;
+        dcat:mediaType    "RDF" .
+
+<http://data.totl.net/4inarow/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.totl.net/4inarow/> ;
+        dcat:mediaType    "RDF" .
+
+<http://data.totl.net/he/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.totl.net/he/> ;
+        dcat:mediaType    "RDF" .
+
+<http://data.totl.net/tictactoe/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.totl.net/tictactoe/> ;
+        dcat:mediaType    "RDF" .
+
+<http://data.totl.net/chess/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.totl.net/chess/> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Christopher Gutteridge" .
+
+<http://data.totl.net/element/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.totl.net/element/> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#links_semantictweet>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/semantictweet/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#dataset> ;
+        void:triples         "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://data.totl.net/zodiac/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.totl.net/zodiac/> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#dataset> ;
+        void:triples         "500"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://data.totl.net/kabbalah/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.totl.net/kabbalah/> ;
+        dcat:mediaType    "RDF" .
+
+<http://data.totl.net/cancer_causes.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.totl.net/cancer_causes.rdf> ;
+        dcat:mediaType    "RDF" .

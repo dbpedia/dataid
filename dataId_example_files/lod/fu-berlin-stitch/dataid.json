@@ -1,0 +1,126 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:anja@anjeve.de",
+    "name" : "Anja Jentzsch"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:anja@anjeve.de",
+    "name" : "Anja Jentzsch"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#contributor", "http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#links_bio2rdf-pubchem", "http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#links_bio2rdf-chebi" ],
+    "dct:description" : "Linked Data version of STITCH which contains information on chemicals and proteins as well as their interactions and links. The links were derived from experiments, databases and the literature. STITCH contains interactions for over 68,000 chemicals and over 1.5 million proteins in 373 species.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "STITCH: Chemical-Protein Interactions",
+    "exampleResource" : "http://www4.wiwiss.fu-berlin.de/stitch/resource/organisms/Aeropyrum_pernix",
+    "sparqlEndpoint" : "http://www4.wiwiss.fu-berlin.de/stitch/sparql",
+    "triples" : "55099700",
+    "uriSpace" : "http://www4.wiwiss.fu-berlin.de/stitch/resource/",
+    "rdfs:label" : "fu-berlin-stitch",
+    "distribution" : "http://www4.wiwiss.fu-berlin.de/stitch/sparql",
+    "keyword" : [ "vocab-mappings", "no-license-metadata", "format-rdf", "published-by-third-party", "no-provenance-metadata", "lod", "lifesciences", "deref-vocab" ],
+    "landingPage" : "http://datahub.io/dataset/fu-berlin-stitch"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#links_bio2rdf-chebi",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/bio2rdf-chebi/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#dataset",
+    "triples" : "6882"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#links_bio2rdf-pubchem",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/bio2rdf-pubchem/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#dataset",
+    "triples" : "9840"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#dataset",
+    "triples" : "123"
+  }, {
+    "@id" : "http://www4.wiwiss.fu-berlin.de/stitch/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://www4.wiwiss.fu-berlin.de/stitch/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

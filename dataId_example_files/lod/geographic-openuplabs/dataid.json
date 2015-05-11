@@ -1,0 +1,81 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/geographic-openuplabs/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/geographic-openuplabs/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/geographic-openuplabs/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "The Stationery Office Limited"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/geographic-openuplabs/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/geographic-openuplabs/dataid#creator",
+    "dct:description" : "The Geographic data is provided by Ordnance Survey, Great Britain's national mapping agency. This dataset contains the up-to-date geographic data, relied on by government, business and individuals.\n\nMore Information about this geographic data can be found at http://data.ordnancesurvey.co.uk/",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "OpenUpLabs Geographic",
+    "exampleResource" : "http://data.ordnancesurvey.co.uk/doc/geometry/122961.rdf",
+    "sparqlEndpoint" : "http://os.services.tso.co.uk/geo/sparql",
+    "rdfs:label" : "geographic-openuplabs",
+    "distribution" : "http://os.services.tso.co.uk/geo/sparql",
+    "keyword" : [ "government", "lodcloud.nolinks", "lodcloud.needsinfo", "lod", "deref-vocab", "published-by-third-party", "format-rdf", "lodcloud.unconnected", "lodcloud.needstriplecount" ],
+    "landingPage" : "http://datahub.io/dataset/geographic-openuplabs"
+  }, {
+    "@id" : "http://os.services.tso.co.uk/geo/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://os.services.tso.co.uk/geo/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

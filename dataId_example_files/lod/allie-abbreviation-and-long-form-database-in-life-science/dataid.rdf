@@ -1,0 +1,78 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://data.allie.dbcls.jp/">
+    <dcat:mediaType>HTML</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://data.allie.dbcls.jp/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://allie.dbcls.jp/void.ttl">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://allie.dbcls.jp/void.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://data.allie.dbcls.jp/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://data.allie.dbcls.jp/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/allie/cgi-bin/getfile.cgi?file=allieRDF">
+    <dcat:mediaType>text/n3</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/allie/cgi-bin/getfile.cgi?file=allieRDF"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#dataset">
+    <dcat:distribution rdf:resource="http://data.allie.dbcls.jp/"/>
+    <dcat:distribution rdf:resource="http://purl.org/allie/cgi-bin/getfile.cgi?file=allieRDF"/>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >94420988</void:triples>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >95280</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:sparqlEndpoint rdf:resource="http://data.allie.dbcls.jp/sparql"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >allie-abbreviation-and-long-form-database-in-life-science</rdfs:label>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A database of abbreviations and long forms utilized in Lifesciences. It provides a solution to the issue that many abbreviations are used in the literature, and polysemous or synonymous abbreviations appear frequently, making it difficult to read and understand scientific papers that are not relevant to the reader's expertise. Allie contains abbreviations and their corresponding long forms extracted from titles and abstracts in the entire MEDLINE®, a database of the U.S. National Library of Medicine. MEDLINE stores over 20 million bibliographic information in life science and is suitable for extracting domain specific abbreviations and their long forms appearing in actual literature. </dct:description>
+    <dcat:distribution rdf:resource="http://allie.dbcls.jp/void.ttl"/>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dcat:distribution rdf:resource="http://data.allie.dbcls.jp/sparql"/>
+    <dcat:keyword>format-owl</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#contributor">
+        <foaf:mbox>mailto:yy AT dbcls.rois.ac.jp</foaf:mbox>
+        <foaf:name>Yasunori Yamamoto</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <void:uriSpace>http://purl.org/allie/</void:uriSpace>
+    <dcat:keyword>biomedical</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dcat:keyword>dictionary</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/allie-abbreviation-and-long-form-database-in-life-science"/>
+    <dcat:keyword>abbreviation</dcat:keyword>
+    <dcat:keyword>lifesciences</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Allie Abbreviation And Long Form Database in Life Science</dct:title>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#creator">
+        <foaf:mbox>mailto:info AT dbcls.rois.ac.jp</foaf:mbox>
+        <foaf:name>Database Center for Life Science</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:exampleResource rdf:resource="http://purl.org/allie/id/longform/531855"/>
+  </dataid:Dataset>
+</rdf:RDF>

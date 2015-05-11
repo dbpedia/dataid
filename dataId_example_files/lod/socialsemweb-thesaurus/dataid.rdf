@@ -1,0 +1,90 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://vocabulary.semantic-web.at/semweb.rdf">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://vocabulary.semantic-web.at/semweb.rdf"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://vocabulary.semantic-web.at/PoolParty/sparql/semweb">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://vocabulary.semantic-web.at/PoolParty/sparql/semweb"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://ckan.net/storage/f/file/80d5f096-e1ad-489f-9ff4-793e6f5f04d2">
+    <dcat:mediaType>application/x-ntriples</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://ckan.net/storage/f/file/80d5f096-e1ad-489f-9ff4-793e6f5f04d2"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#dataset">
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >300</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dcat:distribution rdf:resource="http://vocabulary.semantic-web.at/PoolParty/sparql/semweb"/>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >socialsemweb-thesaurus</rdfs:label>
+    <dcat:keyword>socialweb</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <void:uriSpace>http://vocabulary.semantic-web.at/semweb/</void:uriSpace>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >People, organisations, applications and technologies etc. relevant for the area of the Social Semantic Web</dct:description>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/socialsemweb-thesaurus"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Social Semantic Web Thesaurus</dct:title>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >20000</void:triples>
+    <dcat:keyword>semanticweb</dcat:keyword>
+    <dcat:keyword>research</dcat:keyword>
+    <dcat:keyword>thesaurus</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#contributor">
+        <foaf:name>Semantic Web Company</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <void:exampleResource rdf:resource="http://vocabulary.semantic-web.at/semweb/253"/>
+    <dcat:distribution rdf:resource="http://vocabulary.semantic-web.at/semweb.rdf"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#links_geonames-semantic-web">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >100</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:sparqlEndpoint rdf:resource="http://vocabulary.semantic-web.at/PoolParty/sparql/semweb"/>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:distribution rdf:resource="http://ckan.net/storage/f/file/80d5f096-e1ad-489f-9ff4-793e6f5f04d2"/>
+    <dcat:keyword>usergeneratedcontent</dcat:keyword>
+    <dcat:keyword>format-owl</dcat:keyword>
+    <dcat:keyword>people</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <dcat:keyword>technology</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#creator">
+        <foaf:name>Semantic Web Company</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#links_freebase">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/freebase/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >200</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+  </dataid:Dataset>
+</rdf:RDF>

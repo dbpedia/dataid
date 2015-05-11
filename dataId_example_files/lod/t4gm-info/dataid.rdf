@@ -1,0 +1,80 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/t4gm-info/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/t4gm-info/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://www.t4gm.info/linkset">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.t4gm.info/linkset"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.t4gm.info">
+    <dcat:mediaType>application/xhtml+xml</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.t4gm.info"/>
+  </dataid:Distribution>
+  <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/t4gm-info/dataid#links_lcsh">
+    <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/lcsh/dataid#dataset"/>
+    <void:subjectsTarget>
+      <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/t4gm-info/dataid#dataset">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >t4gm-info</rdfs:label>
+        <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-odbl"/>
+        <dcat:keyword>lld</dcat:keyword>
+        <dataid:containsLinks rdf:resource="http://dataid.dbpedia.org/lod/t4gm-info/dataid#links_lcsh"/>
+        <dcat:keyword>ckanupload.esw.200910</dcat:keyword>
+        <dcat:keyword>decommissioned</dcat:keyword>
+        <dcat:distribution rdf:resource="http://www.t4gm.info/linkset"/>
+        <dcat:keyword>lod</dcat:keyword>
+        <dcat:landingPage rdf:resource="http://datahub.io/dataset/t4gm-info"/>
+        <dcat:keyword>format-dc</dcat:keyword>
+        <dcat:keyword>thesaurus</dcat:keyword>
+        <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Thesaurus for Graphic Materials (t4gm.info)</dct:title>
+        <dcat:keyword>library</dcat:keyword>
+        <dataid:associatedAgent>
+          <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/t4gm-info/dataid#creator">
+            <foaf:mbox>mailto:bradley.p.allen@gmail.com</foaf:mbox>
+            <foaf:name>Bradley P. Allen &lt;http://bradleypallen.org&gt;</foaf:name>
+          </dataid:Creator>
+        </dataid:associatedAgent>
+        <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+        <dcat:keyword>no-provenance-metadata</dcat:keyword>
+        <dcat:keyword>linkeddata</dcat:keyword>
+        <dcat:keyword>published-by-third-party</dcat:keyword>
+        <dcat:keyword>format-skos</dcat:keyword>
+        <dcat:keyword>rdf</dcat:keyword>
+        <void:uriSpace>http://www.t4gm.info/</void:uriSpace>
+        <dataid:associatedAgent>
+          <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/t4gm-info/dataid#contributor">
+            <foaf:mbox>mailto:bradley.p.allen@gmail.com</foaf:mbox>
+            <foaf:name>Bradley P. Allen &lt;http://bradleypallen.org&gt;</foaf:name>
+          </dataid:Contributor>
+        </dataid:associatedAgent>
+        <dcat:keyword>format-rdf</dcat:keyword>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >12057</void:triples>
+        <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Published in 2009, t4gm.info was a Linked Data rendering in RDFa of the Library of Congress' Thesaurus for Graphic Materials. It is now an early example of [a linked data set that has been permanently removed from the Web][1], since it has been superceded by the U.S. Library of Congress' own [Thesaurus for Graphic Materials][2], now provided as part of the Library of Congress's linked data services. t4gm.info was unpublished in 2012.
+
+[This page][3] provides a brief [VoiD][4] description of the t4gm.info dataset and its relationship to the equivalent information at id.loc.gov, expressed in RDFa. In addition, this site provides a specific mapping of resources from t4gm.info to id.loc.gov as [a VoiD linkset][5]. Both the VoiD dataset and linkset descriptions can be retrieved through content negotiation in a variety of linked data formats (i.e., in either RDF/XML, Turtle, or N-Triples.) GET requests for t4gm.info concept resources are redirected as 301 Moved Permanently to the equivalent resource at id.loc.gov. GET requests for any other resources that were part of the original t4gm.info site are returned as 410 Gone.
+
+ [1]: http://patterns.dataincubator.org/book/unpublish.html
+ [2]: http://id.loc.gov/vocabulary/graphicMaterials.html
+ [3]: http://www.t4gm.info
+ [4]: http://www.w3.org/TR/void/
+ [5]: http://www.t4gm.info/linkset
+ [6]: http://bradleypallen.org
+ [7]: http://thedatahub.org/en/dataset/t4gm-info</dct:description>
+        <dcat:keyword>publications</dcat:keyword>
+        <dcat:distribution rdf:resource="http://www.t4gm.info"/>
+      </dataid:Dataset>
+    </void:subjectsTarget>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >12045</void:triples>
+  </dataid:Linkset>
+</rdf:RDF>

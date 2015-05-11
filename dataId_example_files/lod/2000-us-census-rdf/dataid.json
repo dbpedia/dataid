@@ -1,0 +1,101 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/2000-us-census-rdf/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/2000-us-census-rdf/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/2000-us-census-rdf/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Joshua Tauberer"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/2000-us-census-rdf/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/2000-us-census-rdf/dataid#creator",
+    "dct:description" : "2000 U.S. Census converted into over a billion RDF triples.\n\nPopulation statistics at various geographic levels, from the U.S. as a whole, down through states, counties, sub-counties (roughly, cities and incorporated towns)\n\nNotes: also found in the of SPARQL Endpoints.\n\nFrom home page:\n\n> * For the detailed Census statistics, you'll have to download the raw Census data files from the Census Bureau, my Perl script and the patch file below and run it yourself because the files are too big for me to offer as a download!\n> \n> * The data and scripts can be reused under Creative Commons Attribution-NonCommercial-ShareAlike.\n",
+    "license" : "http://creativecommons.org/licenses/by-nc/2.0/",
+    "dct:title" : "2000 U.S. Census in RDF (rdfabout.com)",
+    "exampleResource" : "http://www.rdfabout.com/rdf/usgov/geo/us/ny",
+    "sparqlEndpoint" : "http://www.rdfabout.com/sparql",
+    "triples" : "1002848918",
+    "uriSpace" : "http://www.rdfabout.com/rdf/usgov/geo/",
+    "rdfs:label" : "2000-us-census-rdf",
+    "distribution" : [ "http://www.rdfabout.com/sparql", "http://www.rdfabout.com/demo/census/", "http://www.rdfabout.com/sitemap.xml" ],
+    "keyword" : [ "lod", "deref-vocab", "no-provenance-metadata", "format-politico", "format-dc", "us", "geographic", "statistics", "rdf", "linkeddata", "lodcloud.nolinks", "no-license-metadata", "format-geonames", "published-by-third-party", "format-rdf", "data", "demographics", "census", "no-vocab-mappings", "population" ],
+    "landingPage" : "http://datahub.io/dataset/2000-us-census-rdf"
+  }, {
+    "@id" : "http://www.rdfabout.com/demo/census/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.rdfabout.com/demo/census/"
+  }, {
+    "@id" : "http://www.rdfabout.com/sitemap.xml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.rdfabout.com/sitemap.xml",
+    "mediaType" : "meta/sitemap"
+  }, {
+    "@id" : "http://www.rdfabout.com/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://www.rdfabout.com/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

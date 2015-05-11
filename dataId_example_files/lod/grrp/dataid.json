@@ -1,0 +1,123 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/grrp/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/grrp/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/grrp/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "name" : "Linkedopendata.it"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/grrp/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Linkedopendata.it"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/grrp/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/grrp/dataid#creator", "http://dataid.dbpedia.org/lod/grrp/dataid#contributor" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/grrp/dataid#links_geonames-semantic-web",
+    "dct:description" : "List of accommodations in Piedmont, Italy. The dataset uses GoodRelations and vcard and includes addresses, contact information (where available) and geo-reference. Note: geo-reference is provided in a best effort way, might contain errors.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "Accommodations in Piedmont (LinkedOpenData.it)",
+    "exampleResource" : "http://data.linkedopendata.it/grrp/resource/AFFITTACAMERE_ARCOBALENO_2",
+    "sparqlEndpoint" : "http://sparql.linkedopendata.it/grrp",
+    "triples" : "153935",
+    "rdfs:label" : "grrp",
+    "distribution" : [ "http://void.linkedopendata.it/grrp", "http://sparql.linkedopendata.it/grrp", "http://dump.linkedopendata.it/grrp" ],
+    "keyword" : [ "geographic", "provenance-metadata", "goodrelations", "piemonte", "format-gr", "published-by-third-party", "format-rdf", "void-sparql-endpoint", "accommodation", "lod", "format-vcard", "linkeddata", "license-metadata", "country-italy", "hotel", "piedmont", "deref-vocab" ],
+    "landingPage" : "http://datahub.io/dataset/grrp"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/grrp/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/grrp/dataid#dataset",
+    "triples" : "934"
+  }, {
+    "@id" : "http://dump.linkedopendata.it/grrp",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://dump.linkedopendata.it/grrp",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://sparql.linkedopendata.it/grrp",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://sparql.linkedopendata.it/grrp",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://void.linkedopendata.it/grrp",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://void.linkedopendata.it/grrp",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/gutenberg/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/gutenberg/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/gutenberg/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:http://www.gutenberg.org/wiki/Gutenberg:Contact_Information",
+    "name" : "Project Gutenberg"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/gutenberg/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:http://www.gutenberg.org/wiki/Gutenberg:Contact_Information",
+    "name" : "Project Gutenberg"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/gutenberg/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/gutenberg/dataid#contributor", "http://dataid.dbpedia.org/lod/gutenberg/dataid#creator" ],
+    "dct:description" : "Overview: \n\nProject Gutenberg is the first and largest single collection of free electronic books, or eBooks.\n\nStatistics: \nOver 100,000 titles, some duplication, of course.\n\nLicense:\nMajority of works in public domain. Works posted with permission from copyright holders are licensed under the Project Gutenberg license.\n\nFormats:\nMost Project Gutenberg eBooks are available in plain text,\njust so they can be used with nearly any hardware/software,\nand many are also available in a variety of other formats.\n\nOver 30,000 eBooks in over 50 languages at gutenberg.org\n\nOver 75,000 eBooks in over 100 languages at gutenberg.cc\n\n\nThis is my first attempt to rewrite this little blurb,\nso I will keep it brief for now to see what happens.\n\n\nMichael S. Hart\nFounder\nProject Gutenberg,\nInventor of eBooks\nhttp://www.gutenberg.org/wiki/Michael_S._Hart",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Project Gutenberg",
+    "exampleResource" : "http://www.gutenberg.org/ebooks/12345.rdf",
+    "triples" : "5450115",
+    "uriSpace" : "http://www.gutenberg.org/",
+    "rdfs:label" : "gutenberg",
+    "distribution" : [ "http://www.gutenberg.org/wiki/Gutenberg:Information_About_Robot_Access_to_our_Pages#Getting_All_EBook_Files", "http://www.gutenberg.cc", "http://www.gutenberg.org/feeds/catalog.rdf.bz2" ],
+    "keyword" : [ "access-http", "access-ftp", "lod", "format-pgterms", "access-rsync", "book", "bibliographic", "ebook", "format-dcterm", "format-dcmit", "format-rdf", "access-bulk", "format-dcam" ],
+    "landingPage" : "http://datahub.io/dataset/gutenberg"
+  }, {
+    "@id" : "http://www.gutenberg.cc",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.gutenberg.cc"
+  }, {
+    "@id" : "http://www.gutenberg.org/feeds/catalog.rdf.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.gutenberg.org/feeds/catalog.rdf.bz2",
+    "mediaType" : "bz2"
+  }, {
+    "@id" : "http://www.gutenberg.org/wiki/Gutenberg:Information_About_Robot_Access_to_our_Pages#Getting_All_EBook_Files",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.gutenberg.org/wiki/Gutenberg:Information_About_Robot_Access_to_our_Pages#Getting_All_EBook_Files"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

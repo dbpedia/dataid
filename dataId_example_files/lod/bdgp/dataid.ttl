@@ -1,0 +1,51 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/bdgp/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "bdgp"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/bdgp/dataid#contributor> , <http://dataid.dbpedia.org/lod/bdgp/dataid#creator> ;
+        dct:description         ""^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "Bdgp"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:sparqlEndpoint     <http://www.open-biomed.org.uk/sparql/endpoint/bdgp_20081030> ;
+        void:triples            "1080060"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:distribution       <http://www.open-biomed.org.uk/service/bdgp/images/gene/{gene}> , <http://www.open-biomed.org.uk/sparql/endpoint/bdgp_20081030> , <http://www.open-biomed.org.uk/open-biomed-data/bdgp-images-all-20110211.tar.gz> , <http://www.open-biomed.org.uk/service/bdgp/geneproducts> ;
+        dcat:keyword            "open-biomed" , "bdgp" , "linkeddata" ;
+        dcat:landingPage        <http://datahub.io/dataset/bdgp> .
+
+<http://dataid.dbpedia.org/lod/bdgp/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/bdgp/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/bdgp/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Jun Zhao" .
+
+<http://www.open-biomed.org.uk/open-biomed-data/bdgp-images-all-20110211.tar.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.open-biomed.org.uk/open-biomed-data/bdgp-images-all-20110211.tar.gz> ;
+        dcat:mediaType    "rdf/turtle" .
+
+<http://dataid.dbpedia.org/lod/bdgp/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:name  "Jun Zhao" .
+
+<http://www.open-biomed.org.uk/service/bdgp/geneproducts>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.open-biomed.org.uk/service/bdgp/geneproducts> ;
+        dcat:mediaType    "api" .
+
+<http://www.open-biomed.org.uk/sparql/endpoint/bdgp_20081030>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://www.open-biomed.org.uk/sparql/endpoint/bdgp_20081030> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://www.open-biomed.org.uk/service/bdgp/images/gene/{gene}>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.open-biomed.org.uk/service/bdgp/images/gene/{gene}> ;
+        dcat:mediaType    "api" .

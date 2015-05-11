@@ -1,0 +1,97 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.ngii.go.kr/SPARQL/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://data.ngii.go.kr/SPARQL/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://data.ngii.go.kr/rdfSiteMap/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.ngii.go.kr/rdfSiteMap/",
+    "mediaType" : "meta/sitemap"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/integrated-human-geography-service-for-lod/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/integrated-human-geography-service-for-lod/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/integrated-human-geography-service-for-lod/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:jokm@frotoma.com",
+    "name" : "FROTOMA Co., LTD."
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/integrated-human-geography-service-for-lod/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:kwg1234@korea.kr",
+    "name" : "National Geographic Information Institute(NGII), Korea"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/integrated-human-geography-service-for-lod/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/integrated-human-geography-service-for-lod/dataid#contributor", "http://dataid.dbpedia.org/lod/integrated-human-geography-service-for-lod/dataid#creator" ],
+    "dct:description" : "NGII is an open data service system based on an ontology in which spatial information and human geography information are integrated.\n\nCollecting and analyzing human geography information of the whole Jeju-do about 11 categories (geological features, climate, ecologic environment, hydrologic condition, history and culture, society, tourism and leisure, industry, resource, transportation and telecommunication, and public service) and associating the information to geographic locations,  we has constructed a database and an ontology.  \n\nThe ontology is published in LOD. The data on national geography and human geography information is open to users and outlinked to Dbpedia, Geonames, Openstreetmap (OSM). We established a foundation for the reuse of data and for link and share of information. \n\nThe current NGII covers human geography on Jeju-do only, however, the coverage is going to be extended to include nationwide human geography. Personal users, businesses and institutions can make use of standardized open format information based on semantic web.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Integrated Human Geography Service for LOD by National Geographic Information Institute, Korea",
+    "exampleResource" : [ "http://data.ngii.go.kr/id/data/Mountain/00001", "http://data.ngii.go.kr/rdfSiteMap/ngii_belongToAge.nt" ],
+    "sparqlEndpoint" : "http://data.ngii.go.kr/SPARQL/sparql",
+    "rdfs:label" : "integrated-human-geography-service-for-lod",
+    "distribution" : [ "http://data.ngii.go.kr/rdfSiteMap/", "http://data.ngii.go.kr/SPARQL/sparql" ],
+    "keyword" : [ "geo", "lodcloud.unconnected", "published-by-producer", "lodcloud.nolinks", "jeju", "korea", "deref-vocab", "geographic", "geodata", "jeju-do", "lod", "jeju-island", "void-sparql-endpoint" ],
+    "landingPage" : "http://datahub.io/dataset/integrated-human-geography-service-for-lod"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

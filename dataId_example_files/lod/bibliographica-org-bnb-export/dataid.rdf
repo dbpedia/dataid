@@ -1,0 +1,149 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/bibliographica-org-bnb-export/dataid#dataset">
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc13.xml.nquads.gz">
+        <dcat:mediaType>gzip::nquads</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc13.xml.nquads.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/bibliographica-org-bnb-export/dataid#contributor">
+        <foaf:mbox>mailto:bosteen@gmail.com</foaf:mbox>
+        <foaf:name>Ben O'Steen</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc04.xml.nquads.gz">
+        <dcat:mediaType>gzip::nquads</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc04.xml.nquads.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc15.xml.nquads.gz">
+        <dcat:mediaType>gzip::nquads</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc15.xml.nquads.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc12.xml.nquads.gz">
+        <dcat:mediaType>gzip::nquads</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc12.xml.nquads.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc10.xml.nquads.gz">
+        <dcat:mediaType>gzip::nquads</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc10.xml.nquads.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bibliographica.org BNB export</dct:title>
+    <dcat:keyword>bibliography</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc14.xml.nquads.gz">
+        <dcat:mediaType>gzip::nquads</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc14.xml.nquads.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc05.xml.nquads.gz">
+        <dcat:mediaType>gzip::nquads</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc05.xml.nquads.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/bibliographica-org-bnb-export/dataid#creator">
+        <foaf:mbox>mailto:bosteen@gmail.com</foaf:mbox>
+        <foaf:name>Ben O'Steen</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc07.xml.nquads.gz">
+        <dcat:mediaType>gzip::nquads</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc07.xml.nquads.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc02.xml.nquads.gz">
+        <dcat:mediaType>gzip::nquads</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc02.xml.nquads.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc09.xml.nquads.gz">
+        <dcat:mediaType>gzip::nquads</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc09.xml.nquads.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bibliographica-org-bnb-export</rdfs:label>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc17.xml.nquads.gz">
+        <dcat:mediaType>gzip::nquads</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc17.xml.nquads.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>bibliographic</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/bibliographica-org-bnb-export"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc03.xml.nquads.gz">
+        <dcat:mediaType>gzip::nquads</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc03.xml.nquads.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc06.xml.nquads.gz">
+        <dcat:mediaType>gzip::nquads</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc06.xml.nquads.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc16.xml.nquads.gz">
+        <dcat:mediaType>gzip::nquads</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc16.xml.nquads.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc01.xml.nquads.gz">
+        <dcat:mediaType>gzip::nquads</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc01.xml.nquads.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An NQuads representation of the British National Bibliography (BNB) dataset from the British Library. (http://ckan.net/package/jiscopenbib-bl_bnb-1)
+
+Main differences:
+
+- The blank nodes used for the record, people and organisations within the set have been given simple URIs (of the form /entry/BB1000 for a record for example)
+
+- Birth date and Death date for authors have been recorded in the RDF, rather than left as text fields.
+
+- Series has also been given a URI rather than a blank node, so that they can be referenced.
+
+- All 'Entities' (people, organisations) are have RDF information about themselves within their own graph, as this allows for later alterations/corrections/etc.</dct:description>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc11.xml.nquads.gz">
+        <dcat:mediaType>gzip::nquads</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc11.xml.nquads.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc08.xml.nquads.gz">
+        <dcat:mediaType>gzip::nquads</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc08.xml.nquads.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/bibliographica-org-bnb-export/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/bibliographica-org-bnb-export/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

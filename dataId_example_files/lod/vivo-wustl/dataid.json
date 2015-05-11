@@ -1,0 +1,101 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo-wustl/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/vivo-wustl/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo-wustl/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:hanjia@indiana.edu",
+    "name" : "Han Jia"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo-wustl/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "VIVO"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo-wustl/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/vivo-wustl/dataid#contributor", "http://dataid.dbpedia.org/lod/vivo-wustl/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/vivo-wustl/dataid#links_dbpedia ",
+    "dct:description" : "VIVO is a research-focused discovery tool that enables collaboration among scientists across all disciplines.\n\nBrowse or search information on people, departments, courses, grants, and publications.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "VIVO WUSTL",
+    "triples" : "161000",
+    "rdfs:label" : "vivo-wustl",
+    "distribution" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-04-09T135834/ProductionRDF.n3",
+    "keyword" : [ "science", "no-provenance-metadata", "social-networks", "deref-vocab", "lod", "education", "publications", "published-by-producer", "no-license-metadata", "format-rdfs", "format-rdf", "vivo", "format-vitro", "no-vocab-mappings" ],
+    "landingPage" : "http://datahub.io/dataset/vivo-wustl"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo-wustl/dataid#links_dbpedia ",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia ",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/vivo-wustl/dataid#dataset",
+    "triples" : "58"
+  }, {
+    "@id" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-04-09T135834/ProductionRDF.n3",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-04-09T135834/ProductionRDF.n3",
+    "mediaType" : "text/turtle"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

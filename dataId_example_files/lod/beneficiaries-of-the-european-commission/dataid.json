@@ -1,0 +1,128 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:aksw@informatik.uni-leipzig.de",
+    "name" : "Agile Knowledge and Semantic Web Research Group (AKSW)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:martin@informatik.uni-leipzig.de",
+    "name" : "Michael Martin"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#creator", "http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#contributor" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#links_dbpedia",
+    "dct:description" : "The names of the beneficiaries of ca. €10 billion of grants and other forms of support, awarded (in budgetary terms: 'committed') by the Commission every year, either directly or through 'executive agencies' set up to help it run EU funded programmes. The site also contains certain procurement contracts, excluding for the moment those linked to administrative expenditure of the Commission.\nThis information is separate from information on funds managed by EU or non-EU national governments or other parties on the behalf of the Commission.\nThe original site of the European Commission shows only lists of awarded amounts and beneficiaries - it does not provide amounts consolidated per country, budget line, etc. .\nThe original dataset can be found at EU Commission Financial Transparency System which is also listed at ckan.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "EU: fintrans.publicdata.eu",
+    "exampleResource" : "http://fintrans.publicdata.eu/ec/resource/su/SCR.706541.1",
+    "sparqlEndpoint" : "http://fintrans.publicdata.eu/sparql",
+    "triples" : "1897840",
+    "uriSpace" : "http://fintrans.publicdata.eu/ec/resource/",
+    "rdfs:label" : "beneficiaries-of-the-european-commission",
+    "distribution" : [ "http://fintrans.publicdata.eu/sparql", "http://fintrans.publicdata.eu/ec/", "http://fintrans.publicdata.eu/" ],
+    "keyword" : [ "date-2007", "format-html", "published-by-third-party", "procurement", "date-2009", "linked-data", "deref-vocab", "financial", "eu", "finance", "region-eu", "date-2008", "transparency", "system", "format-foaf", "latc", "ontowiki", "format-rdf", "government", "budget", "lod", "fts", "european-commission", "business" ],
+    "landingPage" : "http://datahub.io/dataset/beneficiaries-of-the-european-commission"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#dataset",
+    "triples" : "199168"
+  }, {
+    "@id" : "http://fintrans.publicdata.eu/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://fintrans.publicdata.eu/",
+    "mediaType" : "html+rdfa"
+  }, {
+    "@id" : "http://fintrans.publicdata.eu/ec/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://fintrans.publicdata.eu/ec/",
+    "mediaType" : "html+rdfa"
+  }, {
+    "@id" : "http://fintrans.publicdata.eu/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://fintrans.publicdata.eu/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

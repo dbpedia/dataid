@@ -1,0 +1,65 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://archive.org/download/kasabi/yahoo-geoplanet.gz">
+    <dcat:downloadURL rdf:resource="http://archive.org/download/kasabi/yahoo-geoplanet.gz"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#dataset">
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >248</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>geodata</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>geographic</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This is a Linked Data version of the publically available data dumps from the Yahoo! GeoPlanet database. GeoPlanet helps bridge the gap between the real and virtual worlds by providing an open, permanent, and intelligent infrastructure for geo-referencing data on the Internet. By exposing it as Linked Data we enable additional cross-linking between more data sources.
+
+*Note* this RDF version of the dataset is no longer updated, it was taken off-line during the shutdown of Kasabi. A dump of the dataset has been [uploaded to the Internet Archive](http://archive.org/details/kasabi)</dct:description>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Yahoo Geoplanet RDF</dct:title>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#links_ordnance-survey-linked-data">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/ordnance-survey-linked-data"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >9591825</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://archive.org/download/kasabi/yahoo-geoplanet.gz"/>
+    <void:uriSpace>http://data.kasabi.com/dataset/yahoo-geoplanet</void:uriSpace>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >yahoo_geoplanet</rdfs:label>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/yahoo_geoplanet"/>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#contributor">
+        <foaf:mbox>mailto:leigh@ldodds.com</foaf:mbox>
+        <foaf:name>Leigh Dodds</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#links_telegraphis">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/telegraphis"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >248</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >49734022</void:triples>
+    <dcat:keyword>format-rdf</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

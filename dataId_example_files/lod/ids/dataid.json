@@ -1,0 +1,143 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/ids/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/ids/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ids/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:bibiko@eva.mpg.de",
+    "name" : "Hans-Jörg Bibiko"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ids/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Bernard Comrie"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ids/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/ids/dataid#contributor", "http://dataid.dbpedia.org/lod/ids/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/ids/dataid#links_wiktionary-dbpedia-org", "http://dataid.dbpedia.org/lod/ids/dataid#links_wals", "http://dataid.dbpedia.org/lod/ids/dataid#links_lexvo", "http://dataid.dbpedia.org/lod/ids/dataid#links_glottolog-langdoc" ],
+    "dct:description" : "1200 words in 200 languages",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "Intercontinental Dictionary Series",
+    "exampleResource" : "http://mlode.nlp2rdf.org/resource/data/ids/entry/e110-c17?output=ttl",
+    "sparqlEndpoint" : "http://mlode.nlp2rdf.org/sparql",
+    "triples" : "2000000",
+    "rdfs:label" : "ids",
+    "distribution" : [ "http://mlode.nlp2rdf.org/datasets/ids.nt.gz", "https://dl.dropbox.com/u/65483422/ids-model-diagram.png", "http://mlode.nlp2rdf.org/sparql" ],
+    "keyword" : [ "LOD", "linguistics", "typology", "published-by-producer", "linguistic", "lod", "crossdomain" ],
+    "landingPage" : "http://datahub.io/dataset/ids"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ids/dataid#links_glottolog-langdoc",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/glottolog-langdoc/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ids/dataid#dataset",
+    "triples" : "216"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ids/dataid#links_lexvo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/lexvo/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ids/dataid#dataset",
+    "triples" : "217"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ids/dataid#links_wals",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/wals/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ids/dataid#dataset",
+    "triples" : "216"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ids/dataid#links_wiktionary-dbpedia-org",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/wiktionary-dbpedia-org/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ids/dataid#dataset",
+    "triples" : "1832"
+  }, {
+    "@id" : "http://mlode.nlp2rdf.org/datasets/ids.nt.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://mlode.nlp2rdf.org/datasets/ids.nt.gz",
+    "mediaType" : "text/n3"
+  }, {
+    "@id" : "http://mlode.nlp2rdf.org/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://mlode.nlp2rdf.org/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "https://dl.dropbox.com/u/65483422/ids-model-diagram.png",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://dl.dropbox.com/u/65483422/ids-model-diagram.png",
+    "mediaType" : "PNG"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

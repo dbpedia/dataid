@@ -1,0 +1,139 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/ogolod/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/ogolod/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ogolod/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:boris.villazon@terrazas.name",
+    "name" : "Boris Villazón-Terrazas"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ogolod/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:megana@fi.upm.es",
+    "name" : "José Antonio Miñarro Gimenez and Mikel Egaña Aranguren"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ogolod/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/ogolod/dataid#creator", "http://dataid.dbpedia.org/lod/ogolod/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/ogolod/dataid#links_bio2rdf-omim", "http://dataid.dbpedia.org/lod/ogolod/dataid#links_bio2rdf-chebi" ],
+    "dct:description" : "The OGOLOD system, an extension of the OGO Knowledge Base, publishes ortholog/diseases information using Linked Data. This gives the scientists the ability to query the structured information in connection with other Linked\nData and to discover new information in the cloud, related to orthologs and human diseases.",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "Orthology and Diseases Information - OGO",
+    "exampleResource" : "http://miuras.inf.um.es/dump/dump.rdf",
+    "sparqlEndpoint" : "http://miuras.inf.um.es/sparql",
+    "triples" : "38035102",
+    "uriSpace" : "http:miuras.inf.um.es/ogolod/resource/Gene/67440",
+    "rdfs:label" : "ogolod",
+    "distribution" : [ "http://miuras.inf.um.es/sparql", "http://miuras.inf.um.es/sitemap_index.xml", "http://miuras.inf.um.es/lod/voidogolod.ttl", "http://miuras.inf.um.es/lod/ogolod2.owl" ],
+    "keyword" : [ "published-by-third-party", "no-vocab-mappings", "provenance-metadata", "lifesciences", "deref-vocab", "format-ogo", "no-license-metadata", "diseases-information-orthology", "lod" ],
+    "landingPage" : "http://datahub.io/dataset/ogolod"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ogolod/dataid#links_bio2rdf-chebi",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/bio2rdf-chebi/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ogolod/dataid#dataset",
+    "triples" : "3456570"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ogolod/dataid#links_bio2rdf-omim",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/bio2rdf-omim/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ogolod/dataid#dataset",
+    "triples" : "18141"
+  }, {
+    "@id" : "http://miuras.inf.um.es/lod/ogolod2.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://miuras.inf.um.es/lod/ogolod2.owl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://miuras.inf.um.es/lod/voidogolod.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://miuras.inf.um.es/lod/voidogolod.ttl",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://miuras.inf.um.es/sitemap_index.xml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://miuras.inf.um.es/sitemap_index.xml",
+    "mediaType" : "meta/sitemap"
+  }, {
+    "@id" : "http://miuras.inf.um.es/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://miuras.inf.um.es/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

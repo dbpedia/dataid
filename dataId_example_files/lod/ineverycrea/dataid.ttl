@@ -1,0 +1,87 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_geonames-semantic-web>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/ineverycrea/dataid#dataset> ;
+        void:triples         "143"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/ineverycrea/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:gnoss@gnoss.com" ;
+        foaf:name  "GNOSS Team" .
+
+<http://dataid.dbpedia.org/lod/ineverycrea/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "ineverycrea"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/ineverycrea/dataid#creator> , <http://dataid.dbpedia.org/lod/ineverycrea/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_geonames-semantic-web> , <http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_freebase> , <http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_gnoss> , <http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_nytimes-linked-open-data> , <http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_dbpedia> , <http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_ineverycrea-argentina> , <http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_didactalia> ;
+        dct:description         "<p>\n<a href=\"http://ineverycrea.net/\">IneveryCREA (Santillana)</a> is the community of educational creativity for teachers and education professionals to create, develop and share original educational resources in Spain.\n</p>\n<p>\nSantillana is the leading textbook and general-interest publishing group in Spain and Latin America, and the most prestigious publisher of literary works in Spanish. With more than 108 million books sold in 2010, the company has been synonymous with quality, innovation and service to teaching staff since its inception in 1960.\n</p>\n<p>\nIneveryCREA (Santillana) works with <a href=\"http://gnoss.com/\">GNOSS software (RIAM Intelearning Lab)</a>. RIAM is a company that develops semantic technology for the creation of specialized networks and linked markets. IneveryCREA offers a selection of 2,554 resources (November 2012). It includes a facet-based search engine and enriched contexts. Both are developments by GNOSS.\n</p>\n\n<p>\n<a href=\"http://ineverycrea.net/\">IneveryCREA (Santillana)</a> es la comunidad de la creatividad educativa para profesores y profesionales de la educación que crean, desarrollan y comparten recursos educativos originales.\n</p>\n<p> Santillana es el grupo editorial líder en texto escolar y ediciones generales en España y América Latina, y la referencia en el campo de la creación literaria en lengua española. Con más de 108 millones de libros vendidos en el año 2010, es sinónimo de calidad, innovación y servicio al profesorado desde su creación en 1960.</p>\n<p>\nIneveryCREA (Santillana) trabaja con <a href=\"http://gnoss.com/\">software de GNOSS (RIAM Intelearning Lab)</a>. RIAM es una compañía que desarrolla tecnología semántica para la creación de redes especializadas y mercados enlazados. IneveryCREA ofrece en este caso una selección de 2.554 recursos (Noviembre 2012). Incluye un buscador facetado y contextos enriquecidos. Ambos son desarrollos de GNOSS.\n</p>"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://creativecommons.org/licenses/by-nc/2.0/> ;
+        dct:title               "IneveryCREA, la comunidad de la creatividad educativa"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://ineverycrea.net/en/community/ineverycrea/advanced-search/tag/TIC?rdf> , <http://ineverycrea.net/comunidad/ineverycrea/recurso/Trabajas-en-tu-aula-con-herramientas-del-entorno-/a56fcf5f-86c9-44fd-8a34-27cfc8936cd8?rdf> , <http://ineverycrea.net/comunidad/ineverycrea/recurso/Tecnicas-de-desarrollo-de-la-Creatividad-Mapas-Me/4a196d2c-a32a-4cef-9d07-dced34ef05e6?rdf> ;
+        void:triples            "3494839"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://ineverycrea.net/" ;
+        dcat:distribution       <http://ineverycrea.net/voidIneveryCREAGNOSS.n3> , <http://gnoss.com/gnoss.owl> ;
+        dcat:keyword            "format-wot" , "actividades interactivas" , "bachillerato" , "recursos educativos originales" , "wrapper" , "herramientas 2.0" , "educación" , "format-sioc" , "format-rdfg" , "red educativa" , "schemata" , "published-by-third-party" , "country-spain" , "country.es" , "format-tsioc" , "no-vocab-mappings" , "proyecto colaborativo" , "format-cc" , "spain" , "educación infantil" , "format-rdf" , "material educativo" , "unidades didácticas" , "educación 2.0" , "format-dcam" , "pedagogía" , "skos" , "lod" , "license-metadata" , "pizarra digital" , "language-spa" , "format-foaf" , "usergeneratedcontent" , "educación primaria" , "sioc" , "innovación educativa" , "videos educativos" , "format-dc" , "foaf" , "ESO" , "creatividad educativa" , "provenance-metadata" , "plataforma educativa" , "dc" , "no-proprietary-vocab" , "escuela 2.0" , "socialweb" , "sp" , "format-skos" , "format-rdfs" , "format-dcterm" , "profesores" ;
+        dcat:landingPage        <http://datahub.io/dataset/ineverycrea> .
+
+<http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_gnoss>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/gnoss/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/ineverycrea/dataid#dataset> ;
+        void:triples         "1327"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://gnoss.com/gnoss.owl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://gnoss.com/gnoss.owl> ;
+        dcat:mediaType    "meta/owl" .
+
+<http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_didactalia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/didactalia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/ineverycrea/dataid#dataset> ;
+        void:triples         "18245"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_ineverycrea-argentina>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/ineverycrea-argentina/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/ineverycrea/dataid#dataset> ;
+        void:triples         "12140"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_nytimes-linked-open-data>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/nytimes-linked-open-data/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/ineverycrea/dataid#dataset> ;
+        void:triples         "1115"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/ineverycrea/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:gnoss@gnoss.com" ;
+        foaf:name  "GNOSS Team" .
+
+<http://dataid.dbpedia.org/lod/ineverycrea/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/ineverycrea/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_freebase>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/freebase/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/ineverycrea/dataid#dataset> ;
+        void:triples         "3709"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/ineverycrea/dataid#dataset> ;
+        void:triples         "1279"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://ineverycrea.net/voidIneveryCREAGNOSS.n3>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://ineverycrea.net/voidIneveryCREAGNOSS.n3> ;
+        dcat:mediaType    "meta/void" .

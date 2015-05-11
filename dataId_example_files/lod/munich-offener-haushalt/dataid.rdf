@@ -1,0 +1,49 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/munich-offener-haushalt/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/munich-offener-haushalt/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/munich-offener-haushalt/dataid#dataset">
+    <dcat:keyword>lodcloud.nolinks</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/munich-offener-haushalt"/>
+    <void:exampleResource rdf:resource="http://bund.offenerhaushalt.de/110453222-254.rdf"/>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >munich-offener-haushalt</rdfs:label>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://muenchen.offenerhaushalt.de/Ergebnishaushalt_2011_und_Produkte.ods">
+        <dcat:mediaType>application/ods</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://muenchen.offenerhaushalt.de/Ergebnishaushalt_2011_und_Produkte.ods"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>budget</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/munich-offener-haushalt/dataid#creator">
+        <foaf:name>Thomas Pfeiffer</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:uriSpace>http://bund.offenerhaushalt.de/</void:uriSpace>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bund Offener Haushalt shows the complex data Munich's budget. It also gives access to the data in an open and re-usable format.
+
+part of package:offener-haushalt
+</dct:description>
+    <dcat:keyword>lod</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dcat:keyword>government</dcat:keyword>
+    <dcat:keyword>no-deref-vocab</dcat:keyword>
+    <dcat:keyword>lodcloud.unconnected</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Munich Offener Haushalt</dct:title>
+    <dcat:keyword>munich</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

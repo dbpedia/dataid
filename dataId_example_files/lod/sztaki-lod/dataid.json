@@ -1,0 +1,141 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/sztaki-lod/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/sztaki-lod/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/sztaki-lod/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:webmaster@dsd.sztaki.hu",
+    "name" : "SZTAKI DSD"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/sztaki-lod/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:webmaster@dsd.sztaki.hu",
+    "name" : "SZTAKI DSD"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/sztaki-lod/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/sztaki-lod/dataid#creator", "http://dataid.dbpedia.org/lod/sztaki-lod/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/sztaki-lod/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/sztaki-lod/dataid#links_lexvo", "http://dataid.dbpedia.org/lod/sztaki-lod/dataid#links_viaf", "http://dataid.dbpedia.org/lod/sztaki-lod/dataid#links_hungarian-national-library-catalog" ],
+    "dct:description" : "This dataset aims at publishing the contents of Hungarian archives as Linked Open Data based on the National Digital Data Archive of Hungary. The dataset contains information about books, movies, articles published in Hungary and some of its resources are linked to other datasets (e.g. DBpedia, VIAF, NSZL).",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "National Digital Data Archive of Hungary (partial)",
+    "exampleResource" : "http://lod.sztaki.hu/data/auth/287922.xml",
+    "sparqlEndpoint" : "http://lod.sztaki.hu/sparql",
+    "triples" : "11000000",
+    "uriSpace" : "http://lod.sztaki.hu/data/",
+    "rdfs:label" : "sztaki-lod",
+    "distribution" : [ "http://lod.sztaki.hu/sparql", "http://lod.sztaki.hu/data/item/146675.xml" ],
+    "keyword" : [ "format-rdf", "format-dc", "format-dbpedia", "catalog", "no-proprietary-vocab", "no-license-metadata", "lod", "linkeddata", "no-provenance-metadata", "rdf", "publications", "country-hungary", "format-dcterm", "published-by-producer", "sparql", "format-foaf", "format-bibo" ],
+    "landingPage" : "http://datahub.io/dataset/sztaki-lod"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/sztaki-lod/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/sztaki-lod/dataid#dataset",
+    "triples" : "13034"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/sztaki-lod/dataid#links_hungarian-national-library-catalog",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/hungarian-national-library-catalog/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/sztaki-lod/dataid#dataset",
+    "triples" : "99709"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/sztaki-lod/dataid#links_lexvo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/lexvo/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/sztaki-lod/dataid#dataset",
+    "triples" : "388854"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/sztaki-lod/dataid#links_viaf",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/viaf/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/sztaki-lod/dataid#dataset",
+    "triples" : "59356"
+  }, {
+    "@id" : "http://lod.sztaki.hu/data/item/146675.xml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.sztaki.hu/data/item/146675.xml",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://lod.sztaki.hu/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://lod.sztaki.hu/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

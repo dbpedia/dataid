@@ -1,0 +1,41 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://www.bl.uk/bibliographic/download.html#basicbnb>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.bl.uk/bibliographic/download.html#basicbnb> ;
+        dcat:mediaType    "HTML" .
+
+<http://dataid.dbpedia.org/lod/bluk-bnb-basic/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:metadata@bl.uk" ;
+        foaf:name  "The British Library Metadata Services" .
+
+<http://dataid.dbpedia.org/lod/bluk-bnb-basic/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:metadata@bl.uk" ;
+        foaf:name  "The British Library Metadata Services" .
+
+<http://dataid.dbpedia.org/lod/bluk-bnb-basic/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/bluk-bnb-basic/dataid#dataset" .
+
+<http://www.bl.uk/bibliographic/pdfs/mappingmarc2basicrdf.pdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.bl.uk/bibliographic/pdfs/mappingmarc2basicrdf.pdf> ;
+        dcat:mediaType    "PDF" .
+
+<http://dataid.dbpedia.org/lod/bluk-bnb-basic/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "bluk-bnb-basic"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/bluk-bnb-basic/dataid#creator> , <http://dataid.dbpedia.org/lod/bluk-bnb-basic/dataid#contributor> ;
+        dct:description         "British National Bibliography (BNB) published by the British Library as basic (unmodelled) RDF/XML without URIs. The dataset is broader in scope than the BNB - Linked Open Data, i.e. includes books together with serials, forthcoming publications etc.\n\nCurrent release includes descriptions of over 3 million UK publications created over the last 60 years and will be regularly updated.\n"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "British National Bibliography (BNB) - Basic Representation"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dcat:distribution       <http://www.bl.uk/bibliographic/download.html#basicbnb> , <http://www.bl.uk/bibliographic/pdfs/mappingmarc2basicrdf.pdf> ;
+        dcat:keyword            "bibliography" , "format-xml" , "no-proprietary-vocab" , "british-library" , "crossdomain" , "library" , "publications" , "bibliographic data" , "published-by-producer" , "bibliographic" , "format-rdf" , "cc0" ;
+        dcat:landingPage        <http://datahub.io/dataset/bluk-bnb-basic> .

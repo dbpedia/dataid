@@ -1,0 +1,76 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/corscheck/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/corscheck/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/corscheck/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "William Waites"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/corscheck/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/corscheck/dataid#creator",
+    "dct:description" : "Cross-Origin Resource Sharing (CORS) is a specification that enables a true open access across domain-boundaries. More information about what this means and why it is useful is available at the Enable CORS website.\n\nThis dataset is produced by a script which effects an HTTP HEAD request for each sparqlEndpoint and exampleResource in the CKAN RDF Dataset and records the HTTP headers that are returned.",
+    "license" : "http://www.opendefinition.org/licenses/odc-odbl",
+    "dct:title" : "CORS Check - HTTP Header Logs for Linked Open Data",
+    "sparqlEndpoint" : "http://eris.okfn.org/sparql",
+    "rdfs:label" : "corscheck",
+    "distribution" : "http://eris.okfn.org/sparql",
+    "keyword" : [ "access-http", "format-void", "format-rdfs", "published-by-producer", "format-rdf", "rdf" ],
+    "landingPage" : "http://datahub.io/dataset/corscheck"
+  }, {
+    "@id" : "http://eris.okfn.org/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://eris.okfn.org/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

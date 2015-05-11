@@ -1,0 +1,104 @@
+{
+  "@graph" : [ {
+    "@id" : "http://archive.org/download/kasabi/bricklink.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://archive.org/download/kasabi/bricklink.gz",
+    "mediaType" : "application/x-nquads"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bricklink/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/bricklink/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bricklink/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:leigh@ldodds.com",
+    "name" : "Leigh Dodds"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bricklink/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:leigh@ldodds.com",
+    "name" : "Leigh Dodds"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bricklink/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/bricklink/dataid#creator", "http://dataid.dbpedia.org/lod/bricklink/dataid#contributor" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/bricklink/dataid#links_dbpedia",
+    "dct:description" : "Bricklink is an unofficial lego marketplace. Essentially it is the EBay for lego, where you can buy or sell anything to do with Lego. The lego community maintain a number of fantastic resources that catalogue all of the Lego products, often down to the detail of the number, colour and type of each part in a lego set. The catalogue that powers the Bricklink website is available for download and reuse and has been used to create this dataset.\n\nCurrently the dataset consists of descriptions of over 9000 Lego sets and over 23,000 Lego parts. A number of the lego sets have detailed inventories including number, type and colour of parts. There are also links to sets, instructions and part images.\n\n*Note* this dataset is no longer updated, it was taken off-line during the shutdown of Kasabi. A dump of the dataset has been [uploaded to the Internet Archive](http://archive.org/details/kasabi)\n",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Bricklink",
+    "triples" : "3314214",
+    "uriSpace" : "http://data.kasabi.com/dataset/bricklink/",
+    "rdfs:label" : "bricklink",
+    "distribution" : "http://archive.org/download/kasabi/bricklink.gz",
+    "keyword" : [ "format-rdf", "published-by-third-party", "published", "media" ],
+    "landingPage" : "http://datahub.io/dataset/bricklink"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bricklink/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bricklink/dataid#dataset",
+    "triples" : "25797"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

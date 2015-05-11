@@ -1,0 +1,38 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/oxpoints/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:oxpoints@oucs.ox.ac.uk" ;
+        foaf:name  "IT Services, University of Oxford" .
+
+<http://dataid.dbpedia.org/lod/oxpoints/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:oxpoints@oucs.ox.ac.uk" ;
+        foaf:name  "IT Services, University of Oxford" .
+
+<https://data.ox.ac.uk/sparql/>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <https://data.ox.ac.uk/sparql/> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/oxpoints/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/oxpoints/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/oxpoints/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "oxpoints"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/oxpoints/dataid#creator> , <http://dataid.dbpedia.org/lod/oxpoints/dataid#contributor> ;
+        dct:description         "OxPoints is the University's geospatial, temporal and organisational RDF store.\nOxPoints aims to contain information about most political and built entities within the University, including college, department, building and rooms."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "OxPoints (University of Oxford)"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:sparqlEndpoint     <https://data.ox.ac.uk/sparql/> ;
+        void:uriSpace           "http://oxpoints.oucs.ox.ac.uk/id/" ;
+        dcat:distribution       <https://data.ox.ac.uk/sparql/> ;
+        dcat:keyword            "oxford" , "lod" , "university" ;
+        dcat:landingPage        <http://datahub.io/dataset/oxpoints> .

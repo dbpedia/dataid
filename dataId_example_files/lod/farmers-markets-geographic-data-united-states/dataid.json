@@ -1,0 +1,133 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/farmers-markets-geographic-data-united-states/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/farmers-markets-geographic-data-united-states/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/farmers-markets-geographic-data-united-states/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Tim Lebo"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/farmers-markets-geographic-data-united-states/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/farmers-markets-geographic-data-united-states/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/farmers-markets-geographic-data-united-states/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/farmers-markets-geographic-data-united-states/dataid#links_govtrack", "http://dataid.dbpedia.org/lod/farmers-markets-geographic-data-united-states/dataid#links_geonames-semantic-web" ],
+    "dct:description" : "Longitude and latitude, state, address, name, and zip code of Farmers Markets in the United States, converted to RDF format.\n\nReferences [154 URIs](http://logd.tw.rpi.edu/sparql.php?query-option=text&query=PREFIX+owl%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0D%0APREFIX+conversion%3A+%3Chttp%3A%2F%2Fpurl.org%2Ftwc%2Fvocab%2Fconversion%2F%3E%0D%0ASELECT+distinct+%3Fexternal%0D%0AWHERE+%7B%0D%0A++GRAPH+%3Chttp%3A%2F%2Flogd.tw.rpi.edu%2Fsource%2Fdata-gov%2Fdataset%2F4383%2Fversion%2F2011-Nov-29%3E++%7B%0D%0A++++%3Flocal+owl%3AsameAs+%3Fexternal%0D%0A++%7D%0D%0A%7D%0D%0Aorder+by+%3Fexternal&service-uri=&output=html&callback=&tqx=&tp=) in DBPedia, GovTrack, and Geonames.\n\n[7,223 farmers market URIs](http://logd.tw.rpi.edu/sparql.php?query-option=text&query=PREFIX+conversion%3A+%3Chttp%3A%2F%2Fpurl.org%2Ftwc%2Fvocab%2Fconversion%2F%3E%0D%0APREFIX+ds4383_vocab%3A+%3Chttp%3A%2F%2Flogd.tw.rpi.edu%2Fsource%2Fdata-gov%2Fdataset%2F4383%2Fvocab%2F%3E%0D%0ASELECT+distinct+%3Fmarket%0D%0AWHERE+%7B%0D%0A++GRAPH+%3Chttp%3A%2F%2Flogd.tw.rpi.edu%2Fsource%2Fdata-gov%2Fdataset%2F4383%2Fversion%2F2011-Nov-29%3E+%7B%0D%0A++++%3Fmarket+a+ds4383_vocab%3AFarmersMarket+%0D%0A++%7D%0D%0A%7Dorder+by+%3Fmarket&service-uri=&output=html&callback=&tqx=&tp=) dereference to RDF/XML (e.g., see [vapour report](http://validator.linkeddata.org/vapour?vocabUri=http%3A%2F%2Flogd.tw.rpi.edu%2Fsource%2Fdata-gov%2Fdataset%2F4383%2Fversion%2F2011-Nov-29%2FfarmersMarket_1019&classUri=http%3A%2F%2F&propertyUri=http%3A%2F%2F&instanceUri=http%3A%2F%2F&defaultResponse=dontmind&userAgent=vapour.sourceforge.net) for [farmersMarket_1019](http://logd.tw.rpi.edu/source/data-gov/dataset/4383/version/2011-Nov-29/farmersMarket_1019)).",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Farmers Markets Geographic Data (United States)",
+    "exampleResource" : "http://logd.tw.rpi.edu/source/data-gov/file/4383/version/2011-Nov-29/conversion/data-gov-4383-2011-Nov-29.e1.sample.ttl",
+    "sparqlEndpoint" : "http://logd.tw.rpi.edu/sparql",
+    "triples" : "130005",
+    "uriSpace" : "http://logd.tw.rpi.edu/source/data-gov/dataset/4383/version/2011-Nov-29/",
+    "rdfs:label" : "farmers-markets-geographic-data-united-states",
+    "distribution" : [ "http://logd.tw.rpi.edu/sparql", "http://logd.tw.rpi.edu/source/data-gov/file/4383/version/2011-Nov-29/conversion/data-gov-4383-2011-Nov-29.ttl", "http://logd.tw.rpi.edu/source/data-gov/file/4383/version/2011-Nov-29/conversion/data-gov-4383-2011-Nov-29.void.ttl" ],
+    "keyword" : [ "format-conversion", "lod", "format-ov", "format-wgs", "helpme", "no-deref-vocab", "published-by-third-party", "format-dc", "format-void", "geographic", "format-owl", "provenance-metadata", "format-con", "vocab-mappings" ],
+    "landingPage" : "http://datahub.io/dataset/farmers-markets-geographic-data-united-states"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/farmers-markets-geographic-data-united-states/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/farmers-markets-geographic-data-united-states/dataid#dataset",
+    "triples" : "52"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/farmers-markets-geographic-data-united-states/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/geonames-semantic-web",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/farmers-markets-geographic-data-united-states/dataid#dataset",
+    "triples" : "50"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/farmers-markets-geographic-data-united-states/dataid#links_govtrack",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/govtrack",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/farmers-markets-geographic-data-united-states/dataid#dataset",
+    "triples" : "52"
+  }, {
+    "@id" : "http://logd.tw.rpi.edu/source/data-gov/file/4383/version/2011-Nov-29/conversion/data-gov-4383-2011-Nov-29.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://logd.tw.rpi.edu/source/data-gov/file/4383/version/2011-Nov-29/conversion/data-gov-4383-2011-Nov-29.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://logd.tw.rpi.edu/source/data-gov/file/4383/version/2011-Nov-29/conversion/data-gov-4383-2011-Nov-29.void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://logd.tw.rpi.edu/source/data-gov/file/4383/version/2011-Nov-29/conversion/data-gov-4383-2011-Nov-29.void.ttl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://logd.tw.rpi.edu/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://logd.tw.rpi.edu/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

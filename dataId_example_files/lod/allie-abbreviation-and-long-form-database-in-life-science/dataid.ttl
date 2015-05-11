@@ -1,0 +1,62 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://data.allie.dbcls.jp/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://data.allie.dbcls.jp/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#dataset> ;
+        void:triples         "95280"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://allie.dbcls.jp/void.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://allie.dbcls.jp/void.ttl> ;
+        dcat:mediaType    "meta/void" .
+
+<http://data.allie.dbcls.jp/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.allie.dbcls.jp/> ;
+        dcat:mediaType    "HTML" .
+
+<http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:yy AT dbcls.rois.ac.jp" ;
+        foaf:name  "Yasunori Yamamoto" .
+
+<http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:info AT dbcls.rois.ac.jp" ;
+        foaf:name  "Database Center for Life Science" .
+
+<http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "allie-abbreviation-and-long-form-database-in-life-science"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#contributor> , <http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#links_dbpedia> ;
+        dct:description         "A database of abbreviations and long forms utilized in Lifesciences. It provides a solution to the issue that many abbreviations are used in the literature, and polysemous or synonymous abbreviations appear frequently, making it difficult to read and understand scientific papers that are not relevant to the reader's expertise. Allie contains abbreviations and their corresponding long forms extracted from titles and abstracts in the entire MEDLINE®, a database of the U.S. National Library of Medicine. MEDLINE stores over 20 million bibliographic information in life science and is suitable for extracting domain specific abbreviations and their long forms appearing in actual literature. "^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "Allie Abbreviation And Long Form Database in Life Science"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://purl.org/allie/id/longform/531855> ;
+        void:sparqlEndpoint     <http://data.allie.dbcls.jp/sparql> ;
+        void:triples            "94420988"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://purl.org/allie/" ;
+        dcat:distribution       <http://data.allie.dbcls.jp/> , <http://purl.org/allie/cgi-bin/getfile.cgi?file=allieRDF> , <http://allie.dbcls.jp/void.ttl> , <http://data.allie.dbcls.jp/sparql> ;
+        dcat:keyword            "provenance-metadata" , "no-proprietary-vocab" , "format-owl" , "lod" , "published-by-producer" , "biomedical" , "license-metadata" , "dictionary" , "abbreviation" , "lifesciences" ;
+        dcat:landingPage        <http://datahub.io/dataset/allie-abbreviation-and-long-form-database-in-life-science> .
+
+<http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#dataset" .
+
+<http://purl.org/allie/cgi-bin/getfile.cgi?file=allieRDF>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/allie/cgi-bin/getfile.cgi?file=allieRDF> ;
+        dcat:mediaType    "text/n3" .

@@ -1,0 +1,157 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Jun Zhao"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_fu-berlin-drugbank", "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_fu-berlin-dailymed", "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_linkedct", "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_fu-berlin-sider", "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_entrez_gene", "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_fu-berlin-diseasome" ],
+    "dct:description" : "Data exposed: Traditional Chinese medicine, gene and disease association dataset and a linkset mapping TCM gene symbols to Extrez Gene IDs created by Neurocommons\n\nSize of dump and data set: 288kb compressed\n\nNotes: Creative Commons with Attributions",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "TCMGeneDIT Dataset",
+    "exampleResource" : "http://purl.org/net/tcm/tcm.lifescience.ntu.edu.tw/id/disease/Hyperthyroidism",
+    "sparqlEndpoint" : "http://www.open-biomed.org.uk/sparql/endpoint/tcm",
+    "triples" : "117643",
+    "uriSpace" : "http://purl.org/net/tcm/",
+    "rdfs:label" : "tcmgenedit_dataset",
+    "distribution" : [ "http://www.open-biomed.org.uk/tcmdata/tcm_rdf_data_release3_190609_turtle.tar.gz", "http://www.open-biomed.org.uk/sparql/endpoint/tcm", "http://www.open-biomed.org.uk/tcmdata/tcm_rdf_data_release3_190609.tar.gz" ],
+    "keyword" : [ "lod", "no-license-metadata", "size-kb", "ckanupload.esw.200910", "published-by-third-party", "format-rdf", "medical", "no-provenance-metadata", "rdf", "no-deref-vocab", "no-vocab-mappings", "lifesciences", "genetics", "linkeddata" ],
+    "landingPage" : "http://datahub.io/dataset/tcmgenedit_dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset",
+    "triples" : "1400"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_entrez_gene",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/entrez_gene/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset",
+    "triples" : "944"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_fu-berlin-dailymed",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/fu-berlin-dailymed/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset",
+    "triples" : "21"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_fu-berlin-diseasome",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/fu-berlin-diseasome/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset",
+    "triples" : "376"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_fu-berlin-drugbank",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/fu-berlin-drugbank/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset",
+    "triples" : "385"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_fu-berlin-sider",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/fu-berlin-sider/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset",
+    "triples" : "171"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_linkedct",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/linkedct/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset",
+    "triples" : "141"
+  }, {
+    "@id" : "http://www.open-biomed.org.uk/sparql/endpoint/tcm",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://www.open-biomed.org.uk/sparql/endpoint/tcm",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://www.open-biomed.org.uk/tcmdata/tcm_rdf_data_release3_190609.tar.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.open-biomed.org.uk/tcmdata/tcm_rdf_data_release3_190609.tar.gz",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://www.open-biomed.org.uk/tcmdata/tcm_rdf_data_release3_190609_turtle.tar.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.open-biomed.org.uk/tcmdata/tcm_rdf_data_release3_190609_turtle.tar.gz",
+    "mediaType" : "text/turtle"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

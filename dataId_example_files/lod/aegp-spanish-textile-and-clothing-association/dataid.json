@@ -1,0 +1,137 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:gnoss@gnoss.com",
+    "name" : "GNOSS Team"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:gnoss@gnoss.com",
+    "name" : "GNOSS Team"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#contributor", "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_freebase", "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_nytimes-linked-open-data", "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_geonames-semantic-web" ],
+    "dct:description" : "<p>\nSemantic catalog of the <a href=\"http://www.agrupaciontextil.org/\">Spanish Textile and Clothing Association (AEGP) companies</a>. AEGP is a voluntary professional national association that promotes the competitiveness of its companies through the promotion, defense and representation of their professional, economic and work interests. It offers specialized services that enhance their position in the environment. The catalog includes 2,500 textile and clothing companies.\n</p>\n<p>\nAEGP works with <a href=\"http://gnoss.com/\">GNOSS software (RIAM Intelearning Lab)</a>. RIAM is a company that develops semantic technology for the creation of specialized networks and linked markets. The project includes a faceted-based search engine and enriched contexts. Both are developments by GNOSS.\n</p>\n\n<p>\nCatálogo semántico de las empresas de la <a href=\"http://www.agrupaciontextil.org/\">Agrupación Española del Género de Punto (AEGP)</a>. AEGP es una asociación profesional voluntaria de ámbito estatal cuyo objetivo es impulsar la competitividad de las empresas asociadas, a través del fomento, la defensa y la representación de sus intereses laborales, profesionales y económicos y, mediante una oferta de servicios especializados que les permitan mejorar su posición en el entorno. El catálogo recoge 2500 empresas del sector.\n</p>\n<p>\nAEGP trabaja con <a href=\"http://gnoss.com/\">software de GNOSS (RIAM Intelearning Lab)</a>. RIAM es una compañía que desarrolla tecnología semántica para la creación de redes especializadas y mercados enlazados. El proyecto incluye un buscador facetado y contextos enriquecidos.\n</p>",
+    "license" : "http://creativecommons.org/licenses/by-nc/2.0/",
+    "dct:title" : "AEGP, Spanish Textile and Clothing Association",
+    "exampleResource" : [ "http://red.gnoss.com/en/community/buscaempresas/resource/GRIMARDI-SL/e652d94e-03cf-4814-9757-ea748b14b503?rdf", "http://red.gnoss.com/en/community/buscaempresas/resource/TRICONOVA-SL/77117998-7718-40ce-8642-b600330465bd?rdf" ],
+    "triples" : "88645",
+    "uriSpace" : "http://red.gnoss.com/comunidad/buscaempresas",
+    "rdfs:label" : "aegp-spanish-textile-and-clothing-association",
+    "distribution" : [ "http://gnoss.com/gnoss.owl", "http://red.gnoss.com/en/community/buscaempresas/Empresas/tag/s?rdf", "http://red.gnoss.com/voidAEGP.n3" ],
+    "keyword" : [ "format-rdfg", "license-metadata", "format-wot", "aegp", "format-foaf", "usergeneratedcontent", "foaf", "sioc", "spain", "no-vocab-mappings", "country.es", "wrapper", "provenance-metadata", "gnoss", "published-by-third-party", "no-proprietary-vocab", "format-dcam", "format-dc", "empresas", "format-sioc", "lod", "schemata", "dc", "socialweb", "sp", "language-spa", "corporate excellence", "country-spain", "laboratorio de ideas", "format-skos", "skos" ],
+    "landingPage" : "http://datahub.io/dataset/aegp-spanish-textile-and-clothing-association"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#dataset",
+    "triples" : "191"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_freebase",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#dataset",
+    "triples" : "3933"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/geonames-semantic-web",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#dataset",
+    "triples" : "7547"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_nytimes-linked-open-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/nytimes-linked-open-data",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#dataset",
+    "triples" : "223"
+  }, {
+    "@id" : "http://gnoss.com/gnoss.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://gnoss.com/gnoss.owl",
+    "mediaType" : "meta/owl"
+  }, {
+    "@id" : "http://red.gnoss.com/en/community/buscaempresas/Empresas/tag/s?rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://red.gnoss.com/en/community/buscaempresas/Empresas/tag/s?rdf",
+    "mediaType" : "meta/owl"
+  }, {
+    "@id" : "http://red.gnoss.com/voidAEGP.n3",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://red.gnoss.com/voidAEGP.n3",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

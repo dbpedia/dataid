@@ -1,0 +1,123 @@
+{
+  "@graph" : [ {
+    "@id" : "http://api.kasabi.com/dataset/ecco-tcp-eighteenth-century-collections-online-texts/apis/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://api.kasabi.com/dataset/ecco-tcp-eighteenth-century-collections-online-texts/apis/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://data.kasabi.com/dataset/ecco-tcp-eighteenth-century-collections-online-texts",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.kasabi.com/dataset/ecco-tcp-eighteenth-century-collections-online-texts",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ecco-tcp-linked-data/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/ecco-tcp-linked-data/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ecco-tcp-linked-data/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:keithalexander@keithalexander.co.uk",
+    "name" : "Keith Alexander"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ecco-tcp-linked-data/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:keithalexander@keithalexander.co.uk",
+    "name" : "Keith Alexander"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ecco-tcp-linked-data/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/ecco-tcp-linked-data/dataid#creator", "http://dataid.dbpedia.org/lod/ecco-tcp-linked-data/dataid#contributor" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/ecco-tcp-linked-data/dataid#links_dbpedia",
+    "dct:description" : "Linked Data conversion of the metadata about the texts in the ECCO-TCP Eighteenth Century Collections Online Texts dataset.\n\nThe conversion was done from the csv and plain text files linked to from http://ckan.net/package/tcp-ecco-18th-century-texts",
+    "license" : "http://www.opendefinition.org/licenses/odc-pddl",
+    "dct:title" : "ECCO-TCP Eighteenth Century Texts Linked Data",
+    "exampleResource" : [ "http://data.kasabi.com/dataset/ecco-tcp-eighteenth-century-collections-online-texts/person/Susanna_Centlivre_1667-1723", "http://data.kasabi.com/dataset/ecco-tcp-eighteenth-century-collections-online-texts/text/CW110133203" ],
+    "sparqlEndpoint" : "http://api.kasabi.com/dataset/ecco-tcp-eighteenth-century-collections-online-texts/apis/sparql",
+    "triples" : "35215",
+    "uriSpace" : "http://data.kasabi.com/dataset/ecco-tcp-eighteenth-century-collections-online-texts/",
+    "rdfs:label" : "ecco-tcp-linked-data",
+    "distribution" : [ "http://api.kasabi.com/dataset/ecco-tcp-eighteenth-century-collections-online-texts/apis/sparql", "http://data.kasabi.com/dataset/ecco-tcp-eighteenth-century-collections-online-texts" ],
+    "keyword" : [ "literature", "publications", "format-bibo", "books", "publishing", "texts", "format-foaf", "format-rdf", "18thc", "deref-vocab", "lod", "eighteenth-century", "published-by-third-party" ],
+    "landingPage" : "http://datahub.io/dataset/ecco-tcp-linked-data"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ecco-tcp-linked-data/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ecco-tcp-linked-data/dataid#dataset",
+    "triples" : "50"
+  } ],
+  "@context" : {
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

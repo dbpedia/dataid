@@ -1,0 +1,32 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://muenchen.offenerhaushalt.de/Ergebnishaushalt_2011_und_Produkte.ods>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://muenchen.offenerhaushalt.de/Ergebnishaushalt_2011_und_Produkte.ods> ;
+        dcat:mediaType    "application/ods" .
+
+<http://dataid.dbpedia.org/lod/munich-offener-haushalt/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Thomas Pfeiffer" .
+
+<http://dataid.dbpedia.org/lod/munich-offener-haushalt/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "munich-offener-haushalt"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/munich-offener-haushalt/dataid#creator> ;
+        dct:description         "Bund Offener Haushalt shows the complex data Munich's budget. It also gives access to the data in an open and re-usable format.\n\npart of package:offener-haushalt\n"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "Munich Offener Haushalt"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://bund.offenerhaushalt.de/110453222-254.rdf> ;
+        void:uriSpace           "http://bund.offenerhaushalt.de/" ;
+        dcat:distribution       <http://muenchen.offenerhaushalt.de/Ergebnishaushalt_2011_und_Produkte.ods> ;
+        dcat:keyword            "lodcloud.nolinks" , "no-license-metadata" , "published-by-third-party" , "budget" , "provenance-metadata" , "lod" , "government" , "no-deref-vocab" , "lodcloud.unconnected" , "munich" , "format-rdf" ;
+        dcat:landingPage        <http://datahub.io/dataset/munich-offener-haushalt> .
+
+<http://dataid.dbpedia.org/lod/munich-offener-haushalt/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/munich-offener-haushalt/dataid#dataset" .

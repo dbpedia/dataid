@@ -1,0 +1,88 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/near/dataid#links_geonames-edubase>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/geonames-edubase/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/near/dataid#dataset> .
+
+<http://rdfize.com/geo/point/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://rdfize.com/geo/point/> ;
+        dcat:mediaType    "api" .
+
+<http://archive.org/download/kasabi/near.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://archive.org/download/kasabi/near.gz> ;
+        dcat:mediaType    "gzip::nquads" .
+
+<http://dataid.dbpedia.org/lod/near/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:tom.heath@theodi.org" ;
+        foaf:name  "Tom Heath" .
+
+<http://dataid.dbpedia.org/lod/near/dataid#links_dbpedia-geonames>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia-geonames/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/near/dataid#dataset> .
+
+<http://dataid.dbpedia.org/lod/near/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "near"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/near/dataid#creator> , <http://dataid.dbpedia.org/lod/near/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/near/dataid#links_geonames-edubase> , <http://dataid.dbpedia.org/lod/near/dataid#links_edubase> , <http://dataid.dbpedia.org/lod/near/dataid#links_edubase-dbpedia> , <http://dataid.dbpedia.org/lod/near/dataid#links_geonames-dbpedia> , <http://dataid.dbpedia.org/lod/near/dataid#links_dbpedia-edubase> , <http://dataid.dbpedia.org/lod/near/dataid#links_edubase-geonames> , <http://dataid.dbpedia.org/lod/near/dataid#links_dbpedia-geonames> , <http://dataid.dbpedia.org/lod/near/dataid#links_geonames-semantic-web> , <http://dataid.dbpedia.org/lod/near/dataid#links_dbpedia> ;
+        dct:description         "The Near dataset provides \"near\" links connecting points of interest that are geographically close to each other. The data set currently cross-links items in DBpedia, Geonames and Edubase.\n\n*Note* this dataset is no longer updated, it was taken off-line during the shutdown of Kasabi. A dump of the dataset has been [uploaded to the Internet Archive](http://archive.org/details/kasabi)"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by-sa> ;
+        dct:title               "Near"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://rdfize.com/geo/point/52.467358/-1.7167/> ;
+        void:triples            "335022481"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:distribution       <http://rdfize.com/geo/point/> , <http://archive.org/download/kasabi/near.gz> ;
+        dcat:keyword            "requires-auth" , "geodata" , "geographic" , "published-by-producer" , "geography" , "no-proprietary-vocab" , "proximity" , "near" , "lod" , "format-rdf" ;
+        dcat:landingPage        <http://datahub.io/dataset/near> .
+
+<http://dataid.dbpedia.org/lod/near/dataid#links_edubase>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/edubase/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/near/dataid#dataset> .
+
+<http://dataid.dbpedia.org/lod/near/dataid#links_geonames-dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/geonames-dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/near/dataid#dataset> .
+
+<http://dataid.dbpedia.org/lod/near/dataid#links_geonames-semantic-web>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/near/dataid#dataset> .
+
+<http://dataid.dbpedia.org/lod/near/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Tom Heath" .
+
+<http://dataid.dbpedia.org/lod/near/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/near/dataid#dataset> .
+
+<http://dataid.dbpedia.org/lod/near/dataid#links_dbpedia-edubase>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia-edubase/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/near/dataid#dataset> .
+
+<http://dataid.dbpedia.org/lod/near/dataid#links_edubase-geonames>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/edubase-geonames/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/near/dataid#dataset> .
+
+<http://dataid.dbpedia.org/lod/near/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/near/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/near/dataid#links_edubase-dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/edubase-dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/near/dataid#dataset> .

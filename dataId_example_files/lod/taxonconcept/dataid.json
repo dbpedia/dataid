@@ -1,0 +1,269 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:pdevries@wisc.edu",
+    "name" : "Peter J. DeVries"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:pdevries@wisc.edu",
+    "name" : "Peter J. DeVries University of Wisconsin-Madison"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/taxonconcept/dataid#creator", "http://dataid.dbpedia.org/lod/taxonconcept/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_eunis", "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_opencyc", "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_fishes-of-texas", "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_gni", "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_bbc-wildlife-finder", "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_geospecies", "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_umbel", "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_eol", "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_freebase", "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_bio2rdf", "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_uniprot" ],
+    "dct:description" : "Species are known by many different names. The TaxonConcept Knowledge Base provides informative Linked Open Data URI's for species concepts that improve the quality and stability of links between a species and data about that species. There are currently 108,175 species concepts and a and 1,000 records for species occurrences. There are also a few examples of references, and image galleries. I have added links below for an insect, mammal, bird and tree to serve as examples of the interlinking etc. The occurrence records are interlinked with GeoNames. \n\nA species can have several different classifications, for instance it's classification in NCBI and DBpedia, are different. To allow multiple classifications, the species model is separate from any specific classification. However many want these two aspects connected together. To make this easy, I have created an additional owl:sameAs RDF dump file which makes the #Taxonomy the same as the #Species. This is particularly useful for browsing SPARQL query results with Microsoft Pivot. In addition, it is also possible to create similar mapping files that can be used to \ntie the species to alternative classifications.\n\nThe data set and related vocabularies have been changed as of June 11, 2013. See the sitemap.xml or void file for the full list of RDF dumps",
+    "license" : "http://www.opendefinition.org/licenses/odc-pddl",
+    "dct:title" : "TaxonConcept Knowledge Base",
+    "exampleResource" : [ "http://lod.taxonconcept.org/ses/tnJr6.rdf", "http://ocs.taxonconcept.org/ocs/f522444a-2dd9-400e-be59-47213ef38cb9.rdf", "http://lod.taxonconcept.org/ses/iuCXz.rdf", "http://lod.taxonconcept.org/ses/EY8Z6.rdf", "http://lod.taxonconcept.org/ses/v6n7p.rdf", "http://lod.taxonconcept.org/ses/mCcSp.rdf" ],
+    "sparqlEndpoint" : "http://lsd.taxonconcept.org/sparql",
+    "triples" : "34394994",
+    "uriSpace" : "http://lod.taxonconcept.org/",
+    "rdfs:label" : "taxonconcept",
+    "distribution" : [ "http://lod.taxonconcept.org/rdf/txn_ocs.ttl.gz", "http://ocs.taxonconcept.org/ocs/index.html", "http://lod.taxonconcept.org/rdf/txn_distribution.ttl.gz", "http://lod.taxonconcept.org/ontology/txn.owl", "http://eol.taxonconcept.org/data/eol/eol_000001.ttl", "http://lod.taxonconcept.org/rdf/usda_plants_000001.ttl", "http://lsd.taxonconcept.org/sparql", "http://lod.taxonconcept.org/rdf/txn_misc.ttl.gz", "http://lod.taxonconcept.org/rdf/txn_ses_000002.ttl", "http://lod.taxonconcept.org/sitemap.xml", "http://lod.taxonconcept.org/rdf/txn_ses_000001.ttl", "http://ocs.taxonconcept.org/ocs/f522444a-2dd9-400e-be59-47213ef38cb9.html", "http://eol.taxonconcept.org/dos/771311fa322891f987ed366d8000d42b.ttl", "http://eol.taxonconcept.org/data/anno/anno_000001.ttl", "http://lod.taxonconcept.org/ontology/void.rdf", "http://www.taxonconcept.org/", "http://lod.taxonconcept.org/rdf/txn_images.ttl.gz", "http://lod.taxonconcept.org/ontology/doc/index.html" ],
+    "keyword" : [ "format-txn", "format-time", "format-wdrs", "format-geospecies", "format-foaf", "deref-vocab", "lod", "format-wo", "published-by-producer", "format-umbel", "biodiversity", "format-owl", "format-rdf", "license-metadata", "sparql-endpoint", "format-dbpedia", "void-sparql-endpoint", "format-skos", "format-cc", "format-rdfs", "format-geonames", "lifesciences", "geographic", "format-dbo", "format-geo", "format-dc", "format-bibo", "provenance-metadata" ],
+    "landingPage" : "http://datahub.io/dataset/taxonconcept"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_bbc-wildlife-finder",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/bbc-wildlife-finder/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset",
+    "triples" : "318"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_bio2rdf",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/bio2rdf/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset",
+    "triples" : "43889"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset",
+    "triples" : "147877"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_eol",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/eol/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset",
+    "triples" : "108175"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_eunis",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/eunis/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset",
+    "triples" : "9489"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_fishes-of-texas",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/fishes-of-texas/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset",
+    "triples" : "611"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_freebase",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset",
+    "triples" : "18743"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_geospecies",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geospecies/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset",
+    "triples" : "17814"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_gni",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/gni/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset",
+    "triples" : "100000"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_opencyc",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/opencyc/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset",
+    "triples" : "26"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_umbel",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/umbel/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset",
+    "triples" : "9"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_uniprot",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/uniprot/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset",
+    "triples" : "43919"
+  }, {
+    "@id" : "http://eol.taxonconcept.org/data/anno/anno_000001.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://eol.taxonconcept.org/data/anno/anno_000001.ttl",
+    "mediaType" : "ttl"
+  }, {
+    "@id" : "http://eol.taxonconcept.org/data/eol/eol_000001.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://eol.taxonconcept.org/data/eol/eol_000001.ttl",
+    "mediaType" : "ttl"
+  }, {
+    "@id" : "http://eol.taxonconcept.org/dos/771311fa322891f987ed366d8000d42b.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://eol.taxonconcept.org/dos/771311fa322891f987ed366d8000d42b.ttl",
+    "mediaType" : "ttl"
+  }, {
+    "@id" : "http://lod.taxonconcept.org/ontology/doc/index.html",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.taxonconcept.org/ontology/doc/index.html",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://lod.taxonconcept.org/ontology/txn.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.taxonconcept.org/ontology/txn.owl",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://lod.taxonconcept.org/ontology/void.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.taxonconcept.org/ontology/void.rdf",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://lod.taxonconcept.org/rdf/txn_distribution.ttl.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.taxonconcept.org/rdf/txn_distribution.ttl.gz",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://lod.taxonconcept.org/rdf/txn_images.ttl.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.taxonconcept.org/rdf/txn_images.ttl.gz",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://lod.taxonconcept.org/rdf/txn_misc.ttl.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.taxonconcept.org/rdf/txn_misc.ttl.gz",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://lod.taxonconcept.org/rdf/txn_ocs.ttl.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.taxonconcept.org/rdf/txn_ocs.ttl.gz",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://lod.taxonconcept.org/rdf/txn_ses_000001.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.taxonconcept.org/rdf/txn_ses_000001.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://lod.taxonconcept.org/rdf/txn_ses_000002.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.taxonconcept.org/rdf/txn_ses_000002.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://lod.taxonconcept.org/rdf/usda_plants_000001.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.taxonconcept.org/rdf/usda_plants_000001.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://lod.taxonconcept.org/sitemap.xml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lod.taxonconcept.org/sitemap.xml",
+    "mediaType" : "meta/sitemap"
+  }, {
+    "@id" : "http://lsd.taxonconcept.org/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://lsd.taxonconcept.org/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://ocs.taxonconcept.org/ocs/f522444a-2dd9-400e-be59-47213ef38cb9.html",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ocs.taxonconcept.org/ocs/f522444a-2dd9-400e-be59-47213ef38cb9.html",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://ocs.taxonconcept.org/ocs/index.html",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ocs.taxonconcept.org/ocs/index.html",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://www.taxonconcept.org/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.taxonconcept.org/",
+    "mediaType" : "HTML"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

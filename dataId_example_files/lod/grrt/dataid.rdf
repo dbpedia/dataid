@@ -1,0 +1,80 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/grrt/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/grrt/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://dump.linkedopendata.it/grrt">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://dump.linkedopendata.it/grrt"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://void.linkedopendata.it/grrt">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://void.linkedopendata.it/grrt"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://sparql.linkedopendata.it/grrt">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://sparql.linkedopendata.it/grrt"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/grrt/dataid#dataset">
+    <dcat:keyword>italy</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/grrt"/>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >List of accommodations in Tuscany, Italy.
+The dataset uses GoodRelations and vcard and includes addresses, contact information (where available) and geo-reference. Note: geo-reference is provided in a best effort way, might contain errors.</dct:description>
+    <dcat:keyword>format-gr</dcat:keyword>
+    <void:uriSpace>http://data.linkedopendata.it/grrt/resource/</void:uriSpace>
+    <dcat:keyword>tourism</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:distribution rdf:resource="http://sparql.linkedopendata.it/grrt"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/grrt/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/grrt/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://dump.linkedopendata.it/grrt"/>
+    <dcat:keyword>accommodation</dcat:keyword>
+    <dcat:keyword>hotels</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/grrt/dataid#creator">
+        <foaf:name>Linkedopendata.it</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>goodrelations</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >434714</void:triples>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Accommodations in Tuscany (LinkedOpenData.it)</dct:title>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/grrt/dataid#contributor">
+        <foaf:name>Linkedopendata.it</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>linkeddata</dcat:keyword>
+    <dcat:keyword>lodcloud.unconnected</dcat:keyword>
+    <dcat:keyword>government</dcat:keyword>
+    <dcat:distribution rdf:resource="http://void.linkedopendata.it/grrt"/>
+    <void:sparqlEndpoint rdf:resource="http://sparql.linkedopendata.it/grrt"/>
+    <dcat:keyword>void-sparql-endpoint</dcat:keyword>
+    <void:exampleResource rdf:resource="http://data.linkedopendata.it/grrt/resource/HOTEL_HERMITAGE_2"/>
+    <dcat:keyword>format-vcard</dcat:keyword>
+    <dcat:keyword>tuscany</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >grrt</rdfs:label>
+  </dataid:Dataset>
+</rdf:RDF>

@@ -1,0 +1,123 @@
+{
+  "@graph" : [ {
+    "@id" : "http://api.talis.com/stores/nvd/services/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://api.talis.com/stores/nvd/services/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/nvd/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/nvd/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/nvd/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:support@ub.ntnu.no",
+    "name" : "rurik.greenall@ub.ntnu.no"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/nvd/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:rurik.greenall@ub.ntnu.no",
+    "name" : "Rurik Thomas Greenall"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/nvd/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/nvd/dataid#contributor", "http://dataid.dbpedia.org/lod/nvd/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/nvd/dataid#links_dbpedia",
+    "dct:description" : "Norwegian classification of scientific disciplines as linked data (2003 edition).",
+    "license" : "http://www.opendefinition.org/licenses/odc-pddl",
+    "dct:title" : "Norsk inndeling av vitenskapsdisipliner",
+    "exampleResource" : "http://api.talis.com/stores/nvd/meta?about=http://www.ntnu.no/ub/data/nvd/2003/012&output=rdf",
+    "sparqlEndpoint" : "http://api.talis.com/stores/nvd/services/sparql",
+    "triples" : "2114",
+    "uriSpace" : "http://www.ntnu.no/ub/data/nvd/2003/",
+    "rdfs:label" : "nvd",
+    "distribution" : [ "http://api.talis.com/stores/nvd/services/sparql", "http://www.ntnu.no/ub/data/nvd/" ],
+    "keyword" : [ "lod", "lld", "format-rdfs", "norwegian", "duplicate-dmoz_rdf_dump", "no-license-metadata", "format-dc", "publications", "no-provenance-metadata", "library", "format-skos", "format-rdf", "ontology", "no-proprietary-vocab", "published-by-producer", "format-owl", "english", "linkedopendata" ],
+    "landingPage" : "http://datahub.io/dataset/nvd"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/nvd/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/nvd/dataid#dataset",
+    "triples" : "502"
+  }, {
+    "@id" : "http://www.ntnu.no/ub/data/nvd/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.ntnu.no/ub/data/nvd/",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

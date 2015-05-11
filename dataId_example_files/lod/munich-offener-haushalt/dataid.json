@@ -1,0 +1,78 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/munich-offener-haushalt/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/munich-offener-haushalt/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/munich-offener-haushalt/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Thomas Pfeiffer"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/munich-offener-haushalt/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/munich-offener-haushalt/dataid#creator",
+    "dct:description" : "Bund Offener Haushalt shows the complex data Munich's budget. It also gives access to the data in an open and re-usable format.\n\npart of package:offener-haushalt\n",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Munich Offener Haushalt",
+    "exampleResource" : "http://bund.offenerhaushalt.de/110453222-254.rdf",
+    "uriSpace" : "http://bund.offenerhaushalt.de/",
+    "rdfs:label" : "munich-offener-haushalt",
+    "distribution" : "http://muenchen.offenerhaushalt.de/Ergebnishaushalt_2011_und_Produkte.ods",
+    "keyword" : [ "lodcloud.nolinks", "no-license-metadata", "published-by-third-party", "budget", "provenance-metadata", "lod", "government", "no-deref-vocab", "lodcloud.unconnected", "munich", "format-rdf" ],
+    "landingPage" : "http://datahub.io/dataset/munich-offener-haushalt"
+  }, {
+    "@id" : "http://muenchen.offenerhaushalt.de/Ergebnishaushalt_2011_und_Produkte.ods",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://muenchen.offenerhaushalt.de/Ergebnishaushalt_2011_und_Produkte.ods",
+    "mediaType" : "application/ods"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

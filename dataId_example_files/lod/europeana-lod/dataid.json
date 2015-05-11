@@ -1,0 +1,249 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.europeana.eu/data/item/09404/C3C50BD0958EE18ECE1B8F93780DC84D8273664F",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/data/item/09404/C3C50BD0958EE18ECE1B8F93780DC84D8273664F",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.0/datasets/nt/92022_Ag_EU_TEL_a0430E.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.0/datasets/nt/92022_Ag_EU_TEL_a0430E.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/08601_Ag_EU_EFG_DFI.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/08601_Ag_EU_EFG_DFI.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/08603_Ag_EU_EFG_FilmArchiv.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/08603_Ag_EU_EFG_FilmArchiv.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/09405e_Ag_UK_ELocal_TWAM-CS.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/09405e_Ag_UK_ELocal_TWAM-CS.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/09405f_Ag_UK_ELocal_TWAM-MN.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/09405f_Ag_UK_ELocal_TWAM-MN.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/09405g_Ag_UK_ELocal_TWAM-JL.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/09405g_Ag_UK_ELocal_TWAM-JL.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/09405h_Ag_UK_ELocal_TWAM-DB.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/09405h_Ag_UK_ELocal_TWAM-DB.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/09405i_Ag_UK_ELocal_TWAM-AOL.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/09405i_Ag_UK_ELocal_TWAM-AOL.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/09405j_Ag_UK_ELocal_TWAM-GF.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/09405j_Ag_UK_ELocal_TWAM-GF.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/09405p_Ag_UK_ELocal_TyneWearImagine.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/09405p_Ag_UK_ELocal_TyneWearImagine.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/09407a_Ag_ES_ELocal_esegen.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/09407a_Ag_ES_ELocal_esegen.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/09414b_Ag_NO_ELocal_Foto-SF.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/09414b_Ag_NO_ELocal_Foto-SF.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/09421a_Ag_BE_Elocal_Bokrijk.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/09421a_Ag_BE_Elocal_Bokrijk.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/91611_Ag_SE_SwedishNationalHeritage_fornvannen.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/91611_Ag_SE_SwedishNationalHeritage_fornvannen.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/91622_Ag_SE_SwedishNationalHeritage_raa_kmb.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/91622_Ag_SE_SwedishNationalHeritage_raa_kmb.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/92003_Ag_EU_TEL_a0078_TEL_NKP_kramerius.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/92003_Ag_EU_TEL_a0078_TEL_NKP_kramerius.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/92019_Ag_EU_TEL_a0425E.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/92019_Ag_EU_TEL_a0425E.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/92037_Ag_EU_TEL_a0444_BritishLibrary.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/92037_Ag_EU_TEL_a0444_BritishLibrary.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/92038_Ag_EU_TEL_a0327_Luxemburg.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/92038_Ag_EU_TEL_a0327_Luxemburg.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/92039_Ag_EU_TEL_a0005_Portugal.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/92039_Ag_EU_TEL_a0005_Portugal.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/92040_Ag_EU_TEL_a0155_Serbia.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/92040_Ag_EU_TEL_a0155_Serbia.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/datasets/nt/92060_Ag_EU_TEL_a0478_Austria.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/datasets/nt/92060_Ag_EU_TEL_a0478_Austria.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/download/1.1/europeana_lod_1.1.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/download/1.1/europeana_lod_1.1.nt.bz2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://data.europeana.eu/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.europeana.eu/void.ttl",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/europeana-lod/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/europeana-lod/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/europeana-lod/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Bernhard Haslhofer and Antoine Isaac"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/europeana-lod/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/europeana-lod/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/europeana-lod/dataid#links_gemet", "http://dataid.dbpedia.org/lod/europeana-lod/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/europeana-lod/dataid#links_geonames-semantic-web", "http://dataid.dbpedia.org/lod/europeana-lod/dataid#links_swedish-open-cultural-heritage" ],
+    "dct:description" : "<a href=\"http://data.europeana.eu\">data.europeana.eu</a> currently contains <b><a href=\"http://creativecommons.org/publicdomain/zero/1.0/\">open</a></b> metadata on 2.4 million texts, images, videos and sounds gathered by Europeana. These objects come from data providers who have reacted early and positively to Europeana's initiative of promoting more open data and new data exchange agreements. These collections come from 8 direct Europeana providers encompassing over 200 cultural institutions from 15 countries. They cover a great variety of heritage objects, such as this <a href=\"http://data.europeana.eu/item/92056/BD9D5C6C6B02248F187238E9D7CC09EAF17BEA59\">slovenian version of O Sole Mio</a> from the National Library of Slovenia, or Neil Robson's <a href=\"http://data.europeana.eu/item/09405f/533F9A826CB038D02C05A9814CF97E5D1B49BBEE\">memories of the herring business</a> from the Tyne and Wear Archives & Museums. \n\nHere is an example URI to get started with:\nhttp://data.europeana.eu/item/92037/25F9104787668C4B5148BE8E5AB8DBEF5BE5FE03\n\nThe project has been described in a <a href=\"http://dcevents.dublincore.org/index.php/IntConf/dc-2011/paper/view/55\">paper</a> presented at the Dublin Core 2011 conference.",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "Europeana Linked Open Data",
+    "sparqlEndpoint" : "http://europeana.ontotext.com/sparql",
+    "triples" : "117000000",
+    "uriSpace" : "http://data.europeana.eu",
+    "rdfs:label" : "europeana-lod",
+    "distribution" : [ "http://data.europeana.eu/download/1.1/datasets/nt/92040_Ag_EU_TEL_a0155_Serbia.nt.bz2", "http://data.europeana.eu/download/1.1/datasets/nt/92060_Ag_EU_TEL_a0478_Austria.nt.bz2", "http://data.europeana.eu/download/1.1/datasets/nt/09405j_Ag_UK_ELocal_TWAM-GF.nt.bz2", "http://data.europeana.eu/download/1.1/datasets/nt/09405i_Ag_UK_ELocal_TWAM-AOL.nt.bz2", "http://data.europeana.eu/download/1.1/europeana_lod_1.1.nt.bz2", "http://data.europeana.eu/download/1.1/datasets/nt/92039_Ag_EU_TEL_a0005_Portugal.nt.bz2", "http://data.europeana.eu/data/item/09404/C3C50BD0958EE18ECE1B8F93780DC84D8273664F", "http://data.europeana.eu/void.ttl", "http://data.europeana.eu/download/1.1/datasets/nt/09405f_Ag_UK_ELocal_TWAM-MN.nt.bz2", "http://data.europeana.eu/download/1.1/datasets/nt/92019_Ag_EU_TEL_a0425E.nt.bz2", "http://data.europeana.eu/download/1.1/datasets/nt/09405h_Ag_UK_ELocal_TWAM-DB.nt.bz2", "http://data.europeana.eu/download/1.1/datasets/nt/08601_Ag_EU_EFG_DFI.nt.bz2", "http://europeana.ontotext.com/sparql", "http://data.europeana.eu/download/1.1/datasets/nt/09407a_Ag_ES_ELocal_esegen.nt.bz2", "http://data.europeana.eu/download/1.1/datasets/nt/91611_Ag_SE_SwedishNationalHeritage_fornvannen.nt.bz2", "http://data.europeana.eu/download/1.1/datasets/nt/09421a_Ag_BE_Elocal_Bokrijk.nt.bz2", "http://data.europeana.eu/download/1.1/datasets/nt/92037_Ag_EU_TEL_a0444_BritishLibrary.nt.bz2", "http://data.europeana.eu/download/1.1/datasets/nt/09414b_Ag_NO_ELocal_Foto-SF.nt.bz2", "http://data.europeana.eu/download/1.1/datasets/nt/92038_Ag_EU_TEL_a0327_Luxemburg.nt.bz2", "http://data.europeana.eu/download/1.1/datasets/nt/92003_Ag_EU_TEL_a0078_TEL_NKP_kramerius.nt.bz2", "http://data.europeana.eu/download/1.1/datasets/nt/09405g_Ag_UK_ELocal_TWAM-JL.nt.bz2", "http://data.europeana.eu/download/1.0/datasets/nt/92022_Ag_EU_TEL_a0430E.nt.bz2", "http://data.europeana.eu/download/1.1/datasets/nt/09405p_Ag_UK_ELocal_TyneWearImagine.nt.bz2", "http://data.europeana.eu/download/1.1/datasets/nt/09405e_Ag_UK_ELocal_TWAM-CS.nt.bz2", "http://data.europeana.eu/download/1.1/datasets/nt/91622_Ag_SE_SwedishNationalHeritage_raa_kmb.nt.bz2", "http://data.europeana.eu/download/1.1/datasets/nt/08603_Ag_EU_EFG_FilmArchiv.nt.bz2" ],
+    "keyword" : [ "europeana", "europe", "format-rdf", "lod", "published-by-producer", "library", "void-sparql-endpoint", "lld", "license-metadata", "provenance-metadata", "no-vocab-mappings", "format-ore", "metadata", "no-deref-vocab", "eu", "culturalheritage", "format-foaf", "format-dcterm", "culture", "format-dc", "format-edm", "publications" ],
+    "landingPage" : "http://datahub.io/dataset/europeana-lod"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/europeana-lod/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/europeana-lod/dataid#dataset",
+    "triples" : "1304"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/europeana-lod/dataid#links_gemet",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/gemet/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/europeana-lod/dataid#dataset",
+    "triples" : "863247"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/europeana-lod/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/geonames-semantic-web",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/europeana-lod/dataid#dataset",
+    "triples" : "1650634"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/europeana-lod/dataid#links_swedish-open-cultural-heritage",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/swedish-open-cultural-heritage",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/europeana-lod/dataid#dataset",
+    "triples" : "100489"
+  }, {
+    "@id" : "http://europeana.ontotext.com/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://europeana.ontotext.com/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

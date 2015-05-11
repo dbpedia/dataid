@@ -1,0 +1,139 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/arthroscopy/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://museos.gnoss.com/voidArtroscopyGNOSS.n3">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://museos.gnoss.com/voidArtroscopyGNOSS.n3"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset">
+    <dcat:keyword>format-dc</dcat:keyword>
+    <dcat:keyword>socialweb</dcat:keyword>
+    <dcat:keyword>format-sioc</dcat:keyword>
+    <dcat:keyword>usergeneratedcontent</dcat:keyword>
+    <dcat:keyword>sioc</dcat:keyword>
+    <dcat:keyword>foaf</dcat:keyword>
+    <dcat:keyword>country.es</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/arthroscopy/dataid#contributor">
+        <foaf:mbox>mailto:gnoss@gnoss.com</foaf:mbox>
+        <foaf:name>GNOSS Team</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/arthroscopy"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >arthroscopy</rdfs:label>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Arthroscopy community</dct:title>
+    <dcat:keyword>country-spain</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_nytimes-linked-open-data">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/nytimes-linked-open-data"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >8749</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>Arthroscopy</dcat:keyword>
+    <dcat:keyword>spain</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_freebase">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/freebase/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2232</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>corporate excellence</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >9580</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>procesos quirúrgicos</dcat:keyword>
+    <dcat:keyword>schemata</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_gnoss">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/gnoss"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-rdfg</dcat:keyword>
+    <dcat:keyword>artrocopia</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >62355</void:triples>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/"/>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:keyword>dc</dcat:keyword>
+    <dcat:keyword>skos</dcat:keyword>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:keyword>format-dcam</dcat:keyword>
+    <dcat:keyword>sp</dcat:keyword>
+    <dcat:keyword>laboratorio de ideas</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <void:exampleResource rdf:resource="http://arthroscopyportal.com/en/community/Arthroscopy/resource/Reconstruccion-de-LCA-mediante-tendones-isquiotibi/267556b2-67f0-4264-8071-1932151c8439"/>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dcat:keyword>format-wot</dcat:keyword>
+    <void:exampleResource rdf:resource="http://arthroscopyportal.com/en/community/Arthroscopy/resource/Reparacion-de-cartilago-en-la-rodilla/a7617f64-8a3c-4913-aea1-17657100cc45?rdf"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;p&gt; The arthroscopy community is the adecuate space for all those who take part on the arthroscopic surgical procedures of the locomotor system. Its meaning is to create and share knowledge concerning the answers to the current and effective matters on these kind of arthroscopic proceedings: surgical, anesthesic, rehabilitative or even organizing ones.&lt;/p&gt;
+&lt;p&gt;The arthroscopy community works with &lt;a href="http://gnoss.com/"&gt;GNOSS software (RIAM Intelearning Lab)&lt;/a&gt;. RIAM is a company that develops semantic technology for the creation of specialized networks and linked markets. It includes a facet-based search engine and enriched contexts. Both are developments by GNOSS.&lt;/p&gt;
+
+&lt;p&gt; Portal de Artroscopia es un espacio de aprendizaje para todas las personas que participan en los procedimientos quirúrgicos artroscópicos del aparato locomotor. El propósito es generar y compartir conocimiento sobre las soluciones a los problemas reales y concretos en este tipo procedimientos, sean estos quirúrgicos, de anestesia, de rehabilitación o de organización. &lt;/p&gt;&lt;p&gt; Portal de Artroscopia trabaja con &lt;a href="http://gnoss.com/"&gt;software de GNOSS (RIAM Intelearning Lab)&lt;/a&gt;. RIAM es una compañía que desarrolla tecnología semántica para la creación de redes especializadas y mercados enlazados. El proyecto Incluye un buscador facetado y contextos enriquecidos. Ambos son desarrollos de GNOSS.
+&lt;/p&gt;</dct:description>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://gnoss.com/gnoss.owl">
+        <dcat:mediaType>meta/owl</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://gnoss.com/gnoss.owl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_geonames-semantic-web">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/geonames-semantic-web"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:uriSpace>http://gnoss.com/comunidad/Arthroscopy</void:uriSpace>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/arthroscopy/dataid#creator">
+        <foaf:mbox>mailto:gnoss@gnoss.com</foaf:mbox>
+        <foaf:name>GNOSS Team</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dcat:keyword>arthroscopic proceedings</dcat:keyword>
+    <dcat:keyword>health</dcat:keyword>
+    <dcat:keyword>aparato locomotor</dcat:keyword>
+    <dcat:distribution rdf:resource="http://museos.gnoss.com/voidArtroscopyGNOSS.n3"/>
+    <dcat:keyword>language-spa</dcat:keyword>
+    <dcat:keyword>locomotor system</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/arthroscopy/dataid#links_dblp-deusto-gnoss">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/arthroscopy/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >789</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>wrapper</dcat:keyword>
+    <dcat:keyword>surgical procedures</dcat:keyword>
+    <void:exampleResource rdf:resource="http://arthroscopyportal.com/en/community/Arthroscopy/advanced-search/tag/Arthroscopy?rdf"/>
+  </dataid:Dataset>
+</rdf:RDF>

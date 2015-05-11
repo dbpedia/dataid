@@ -1,0 +1,123 @@
+{
+  "@graph" : [ {
+    "@id" : "http://api.talis.com/stores/pbac/services/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://api.talis.com/stores/pbac/services/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/printed-book-auction-catalogues/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/printed-book-auction-catalogues/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/printed-book-auction-catalogues/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:keithalexander@keithalexander.co.uk",
+    "name" : "Keith Alexander"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/printed-book-auction-catalogues/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:keithalexander@keithalexander.co.uk",
+    "name" : "Keith Alexander"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/printed-book-auction-catalogues/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/printed-book-auction-catalogues/dataid#contributor", "http://dataid.dbpedia.org/lod/printed-book-auction-catalogues/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/printed-book-auction-catalogues/dataid#links_dbpedia",
+    "dct:description" : "The books are those listed in the English language section of Dutch printed book auction catalogues of collections of scholars and religious ministers. In some cases, the prior owner of the books listed was from England; in others they were of dutch nationality. For more information about printed book auction catalogues, see http://bibliopolis.nl",
+    "license" : "http://www.opendefinition.org/licenses/odc-pddl",
+    "dct:title" : "English Language Books listed in Printed Book Auction Catalogues from 17th Century Holland",
+    "exampleResource" : "http://keithalexander.co.uk/pbac/identified/agents/405.rdf",
+    "sparqlEndpoint" : "http://api.talis.com/stores/pbac/services/sparql",
+    "triples" : "55214",
+    "uriSpace" : "http://keithalexander.co.uk/pbac",
+    "rdfs:label" : "printed-book-auction-catalogues",
+    "distribution" : [ "http://api.talis.com/stores/pbac/services/sparql", "http://keithalexander.co.uk/pbac" ],
+    "keyword" : [ "dutch", "format-rdf", "lld", "catalogue", "format-rdfs", "lod", "bibliographic", "deref-vocab", "license-metadata", "book", "historical", "printed", "published-by-third-party", "holland", "no-vocab-mappings", "publications", "puritans", "auction", "english", "provenance-metadata" ],
+    "landingPage" : "http://datahub.io/dataset/printed-book-auction-catalogues"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/printed-book-auction-catalogues/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/printed-book-auction-catalogues/dataid#dataset",
+    "triples" : "1607"
+  }, {
+    "@id" : "http://keithalexander.co.uk/pbac",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://keithalexander.co.uk/pbac",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

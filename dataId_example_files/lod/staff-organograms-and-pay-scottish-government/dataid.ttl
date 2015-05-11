@@ -1,0 +1,32 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/staff-organograms-and-pay-scottish-government/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/staff-organograms-and-pay-scottish-government/dataid#dataset" .
+
+<http://www.scotland.gov.uk/Resource/Doc/930/0118325.txt>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.scotland.gov.uk/Resource/Doc/930/0118325.txt> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/staff-organograms-and-pay-scottish-government/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Scottish Government" .
+
+<http://dataid.dbpedia.org/lod/staff-organograms-and-pay-scottish-government/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "staff-organograms-and-pay-scottish-government"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/staff-organograms-and-pay-scottish-government/dataid#creator> ;
+        dct:description         "A list of most Senior Civil Service posts in the Scottish Government including title, contact details, their line manager, and where disclosed, the name of the officer. Vacant posts are listed as \"Vacant\", and posts where the jobholder is not disclosed are listed as \"N/D\". Note that a number of officers are not listed for security reasons. This data has been updated with a snapshot of the organisation on 31/03/2011. The senior staff data is now presented in one CSV file. Positions that have been removed in between the exercises in October 2010 and spring 2011 are listed as \"Eliminated\"."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://reference.data.gov.uk/id/open-government-licence> ;
+        dct:title               "Organogram and staff pay data for The Scottish Government"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://organogram.data.gov.uk/data/scotland/2011-03-31/March-2011-Organogram#person37> ;
+        void:uriSpace           "http://organogram.data.gov.uk/data/scotland/" ;
+        dcat:distribution       <http://www.scotland.gov.uk/Resource/Doc/930/0118325.txt> ;
+        dcat:keyword            "format-opmv" , "format-sdmxa" , "published-by-producer" , "format-payband" , "format-gov" , "format-qb" , "format-void" , "format-foaf" , "format-dct" , "format-xsd" , "lodcloud.needsfixing" , "format-org" , "no-deref-vocab" , "format-organogram" , "government" , "format-skos" , "format-vcard" , "lodcloud.nolinks" , "format-poststatus" , "lodcloud.unconnected" , "format-copmv" , "format-grade" , "format-rdfs" , "format-sdmxc" , "format-dgu" , "data.gov.uk" , "lod" , "format-rdf" , "format-owl" , "format-time" ;
+        dcat:landingPage        <http://datahub.io/dataset/staff-organograms-and-pay-scottish-government> .

@@ -1,0 +1,508 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://rest.bioontology.org/bioportal/ontologies/download/47296?apikey=BP_API_KEY">
+    <dcat:downloadURL rdf:resource="http://rest.bioontology.org/bioportal/ontologies/download/47296?apikey=BP_API_KEY"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.bioontology.org/wiki/index.php/BioPortal_REST_services">
+    <dcat:downloadURL rdf:resource="http://www.bioontology.org/wiki/index.php/BioPortal_REST_services"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://sparql.bioontology.org/">
+    <dcat:downloadURL rdf:resource="http://sparql.bioontology.org/"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset">
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-rid">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-rid"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >346</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-lnc">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-lnc"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >199</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>bioportal</dcat:keyword>
+    <dcat:distribution rdf:resource="http://rest.bioontology.org/bioportal/ontologies/download/47296?apikey=BP_API_KEY"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-imr">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-imr"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >49</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Orphanet Ontology of Rare Diseases</dct:title>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-pr">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-pr"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >616</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bioportal-ontoorpha</rdfs:label>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-icpc">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-icpc"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >20</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-ogmd">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-ogmd"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >19</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-icnp">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-icnp"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-sopharm">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-sopharm"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >337</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-efo">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-efo"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >314</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-acgt">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-acgt"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >14</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-biomodels">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-biomodels"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >21</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-omim">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-omim"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3207</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-snomedct">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-snomedct"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3477</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-hp_x1">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-hp_x1"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >666</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-ctx">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-ctx"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >12</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-icd10">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-icd10"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >287</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-mccl_x1">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-mccl_x1"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >728</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#creator">
+        <foaf:name>Ferdinand Dhombres</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>format-owl</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-nif_dysfunction">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-nif_dysfunction"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >109</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-nif">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-nif"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1456</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-rcd">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-rcd"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1371</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-who">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-who"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >155</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-nbo">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-nbo"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >11</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://sparql.bioontology.org/"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-ev">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-ev"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >75</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-doid">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-doid"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1056</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-idomal">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-idomal"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >12</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>biomedicine</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-ctcae">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-ctcae"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >58</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-vo">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-vo"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >11</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-ndfrt">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-ndfrt"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1124</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-canco">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-canco"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >329</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-msh">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-msh"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2684</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-hl7">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-hl7"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >15</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://www.bioontology.org/wiki/index.php/BioPortal_REST_services"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-birnlex">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-birnlex"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >71</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>lod</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-icpc2p">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-icpc2p"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >262</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OntoOrpha is an ontology of Rare Diseases that includes clinical signs (phenotypes) and genes. The full Orphanet nomenclature (labels, synonyms) is provided in six languages with external references annotations (ICD, OMIM, HGNC, Genatlas, Swissprot). This version now includes epidemiology data related to rare diseases in Europe (class of prevalence, average age of onset, average age at death) extracted from the literature.
+&lt;br /&gt;
+Part of an ongoing research project, this ontology is developed to support editorial procedures of &lt;a href="http://www.orpha.net"&gt;Orphanet knowledge bases and services&lt;/a&gt;. Current alpha version is under active development. The version provided on bioportal contains only the main english labels. A version on the ontology with the full nomenclature of rare diseases (labels and synonyms in 6 languages based on skos annotations) is available on demand.
+&lt;br /&gt;&lt;br /&gt;
+&lt;img src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" alt="Creative Commons : Attribution - Non Commercial - No Derivs " /&gt;
+&lt;br /&gt;
+&lt;a href="http://creativecommons.org/licenses/by-nc-nd/3.0/"&gt;OntoOrpha is available under Creative Commons license ''Attribution-Non-Commercial-No Derivative Works 3.0''&lt;/a&gt;</dct:description>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-medlineplus">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-medlineplus"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >227</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-pdq">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-pdq"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >110</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-icd9cm">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-icd9cm"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >296</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-ncit">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-ncit"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1599</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-mp">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-mp"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >217</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-mccl">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-mccl"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >23</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-mesh-owl">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-mesh-owl"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3893</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-go_x2">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-go_x2"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >12</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-omit">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-omit"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >16</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-mpath">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-mpath"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >88</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/bioportal-ontoorpha"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-bdo">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-bdo"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >824</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >367109</void:triples>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-go_x1">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-go_x1"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >12</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-natpro">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-natpro"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >744</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-mdr">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-mdr"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1054</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-sso">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-sso"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >11</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-csp">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-csp"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >587</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>ontology</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-ehda">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-ehda"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-cst">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-cst"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >190</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-pedterm">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-pedterm"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >41</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-icd10cm">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-icd10cm"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >629</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-air">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-air"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >41</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-cco">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-cco"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >108</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#contributor">
+        <foaf:mbox>mailto:support@bioontology.org</foaf:mbox>
+        <foaf:name>BioPortal project on behalf of ontology owner.</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#links_bioportal-galen">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-galen"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-ontoorpha/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >253</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+  </dataid:Dataset>
+</rdf:RDF>

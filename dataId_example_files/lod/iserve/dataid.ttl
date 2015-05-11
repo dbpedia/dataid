@@ -1,0 +1,62 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/iserve/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "iserve"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/iserve/dataid#contributor> , <http://dataid.dbpedia.org/lod/iserve/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/iserve/dataid#links_revyu> ;
+        dct:description         "iServe is the place on the Web where linked data meets services. In a nutshell, iServe is a platform for publishing Semantic Web Services as linked data, no matter their original format."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by-sa> ;
+        dct:title               "iServe: Linked Services Registry"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://iserve.kmi.open.ac.uk/iserve/data/services/00cf65ab-bc93-4cdd-b163-eeaf0148fdbf> ;
+        void:sparqlEndpoint     <http://iserve.kmi.open.ac.uk/iserve/sparql> ;
+        void:triples            "31799"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://iserve.kmi.open.ac.uk/iserve/resource/" ;
+        dcat:distribution       <http://iserve.kmi.open.ac.uk/downloads/all.zip> , <http://iserve.kmi.open.ac.uk/sitemap.xml> , <http://iserve.kmi.open.ac.uk/iserve/sparql> , <http://cms-wg.sti2.org/ns/minimal-service-model/index.rdfxml> ;
+        dcat:keyword            "no-vocab-mappings" , "void-sparql-endpoint" , "no-license-metadata" , "format-hrests" , "deref-vocab" , "format-rdf" , "lod" , "published-by-producer" , "format-wl" , "format-msm" , "crossdomain" , "format-sawsdl" , "broken_link" , "no-provenance-metadata" , "format-http" ;
+        dcat:landingPage        <http://datahub.io/dataset/iserve> .
+
+<http://iserve.kmi.open.ac.uk/iserve/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://iserve.kmi.open.ac.uk/iserve/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://cms-wg.sti2.org/ns/minimal-service-model/index.rdfxml>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://cms-wg.sti2.org/ns/minimal-service-model/index.rdfxml> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://dataid.dbpedia.org/lod/iserve/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:c.pedrinaci@open.ac.uk" ;
+        foaf:name  "Carlos Pedrinaci" .
+
+<http://dataid.dbpedia.org/lod/iserve/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:iserve-general@googlegroups.com" ;
+        foaf:name  "iServe Team" .
+
+<http://iserve.kmi.open.ac.uk/sitemap.xml>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://iserve.kmi.open.ac.uk/sitemap.xml> ;
+        dcat:mediaType    "meta/sitemap" .
+
+<http://iserve.kmi.open.ac.uk/downloads/all.zip>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://iserve.kmi.open.ac.uk/downloads/all.zip> ;
+        dcat:mediaType    "application/x-ntriples" .
+
+<http://dataid.dbpedia.org/lod/iserve/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/iserve/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/iserve/dataid#links_revyu>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/revyu/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/iserve/dataid#dataset> ;
+        void:triples         "70"^^<http://www.w3.org/2001/XMLSchema#int> .

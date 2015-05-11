@@ -1,0 +1,113 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/bioportal-bp/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/bioportal-bp/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/bioportal-bp/dataid#dataset">
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://sparql.bioontology.org/">
+        <dcat:downloadURL rdf:resource="http://sparql.bioontology.org/"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-sbo">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-sbo"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-bp/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >10</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-mi">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-mi"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-bp/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >11</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dcat:keyword>format-owl</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1230</void:triples>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.bioontology.org/wiki/index.php/BioPortal_REST_services">
+        <dcat:downloadURL rdf:resource="http://www.bioontology.org/wiki/index.php/BioPortal_REST_services"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The BioPAX ontology (www.biopax.org) is a standard language for formally representing biological pathways. BioPAX Level 3 supports the representation of metabolic pathways, signal transduction pathways, protein-protein interaction networks, gene regulatory networks and genetic interactions.</dct:description>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bioportal-bp</rdfs:label>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/bioportal-bp/dataid#contributor">
+        <foaf:mbox>mailto:support@bioontology.org</foaf:mbox>
+        <foaf:name>BioPortal project on behalf of ontology owner.</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-nif">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-nif"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-bp/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >10</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-dikb-evidence">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-dikb-evidence"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-bp/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >29</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/bioportal-bp/dataid#creator">
+        <foaf:name>Dr Emek Demir</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-ncit">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-ncit"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-bp/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >34</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>biomedicine</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >BioPAX</dct:title>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-chem2bio2owl">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-chem2bio2owl"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-bp/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >35</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://rest.bioontology.org/bioportal/ontologies/download/44167?apikey=BP_API_KEY">
+        <dcat:downloadURL rdf:resource="http://rest.bioontology.org/bioportal/ontologies/download/44167?apikey=BP_API_KEY"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>bioportal</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-canco">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bioportal-canco"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bioportal-bp/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >10</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/bioportal-bp"/>
+    <dcat:keyword>ontology</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

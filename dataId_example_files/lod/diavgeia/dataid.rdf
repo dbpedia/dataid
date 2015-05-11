@@ -1,0 +1,145 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/diavgeia/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://diavgeia.math.auth.gr/sparql">
+    <dcat:mediaType>CSV</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://diavgeia.math.auth.gr/sparql"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset">
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.greek-lod.gr/DiavgeiaTreeMap/dapanes/General.html">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.greek-lod.gr/DiavgeiaTreeMap/dapanes/General.html"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/diavgeia/dataid#links_hellenic-fire-brigade">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/hellenic-fire-brigade"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >156</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/diavgeia/dataid#links_dbpedia-el">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia-el"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >676</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>greece</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/diavgeia/dataid#contributor">
+        <foaf:mbox>mailto:spiros.alexiou@gmail.com</foaf:mbox>
+        <foaf:name>Spiros Alexiou</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/diavgeia"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="https://commondatastorage.googleapis.com/ckannet-storage/2012-08-27T164145/Diavgeia_demo_NTriples.nt">
+        <dcat:mediaType>TXT</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="https://commondatastorage.googleapis.com/ckannet-storage/2012-08-27T164145/Diavgeia_demo_NTriples.nt"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>format-owl</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >48051108</void:triples>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/diavgeia/dataid#links_kalikratis-municipalities">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/kalikratis-municipalities"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >355</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>lod</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Diavgeia</dct:title>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="https://ckannet-storage.commondatastorage.googleapis.com/2013-02-08T154930/MinistriesSpending2012_1.csv">
+        <dcat:mediaType>XLS</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="https://ckannet-storage.commondatastorage.googleapis.com/2013-02-08T154930/MinistriesSpending2012_1.csv"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/diavgeia/dataid#links_hellenic-police">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/hellenic-police"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >45</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-dc</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/diavgeia/dataid#links_eurostat">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/eurostat"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >12</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>greek</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/diavgeia/dataid#creator">
+        <foaf:mbox>mailto:spiros.alexiou@gmail.com</foaf:mbox>
+        <foaf:name>Spiros Alexiou</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >diavgeia</rdfs:label>
+    <dcat:keyword>opendata</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <dcat:keyword>clarity</dcat:keyword>
+    <dcat:keyword>openspending</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="https://commondatastorage.googleapis.com/ckannet-storage/2012-09-27T161432/void.ttl">
+        <dcat:mediaType>meta/void</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="https://commondatastorage.googleapis.com/ckannet-storage/2012-09-27T161432/void.ttl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Clarity program introduces for the first time in Greece the obligation to publish all the decisions on the Internet, with the exception of decisions that contain sensitive personal data and/or information on national security. It is quite an innovative program, even by European standards, aiming first of all to bring about the maximum publicity of the government policy and administrative action. The use of Internet guarantees wide publicity and access to information, progressively contributing to a culture change in the whole of the Public Administration.</dct:description>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="https://commondatastorage.googleapis.com/ckannet-storage/2012-08-27T163756/Diavgeia_demo_RDF_XML.rdf">
+        <dcat:mediaType>RDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="https://commondatastorage.googleapis.com/ckannet-storage/2012-08-27T163756/Diavgeia_demo_RDF_XML.rdf"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <void:exampleResource rdf:resource="https://commondatastorage.googleapis.com/ckannet-storage/2012-08-27T164505/Diavgeia_demo_RDF_XML.rdf"/>
+    <dcat:keyword>government</dcat:keyword>
+    <dcat:distribution rdf:resource="http://diavgeia.math.auth.gr/sparql"/>
+    <dcat:keyword>diavgeia</dcat:keyword>
+    <dcat:keyword>linked data</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="https://ckannet-storage.commondatastorage.googleapis.com/2013-02-08T164424/PolicePerRegion_1.csv">
+        <dcat:mediaType>XLS</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="https://ckannet-storage.commondatastorage.googleapis.com/2013-02-08T164424/PolicePerRegion_1.csv"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <void:uriSpace>http://diavgeia.math.auth.gr/resource/</void:uriSpace>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/diavgeia/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/diavgeia/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >13</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-rdf</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

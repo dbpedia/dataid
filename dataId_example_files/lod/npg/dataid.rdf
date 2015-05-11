@@ -1,0 +1,80 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/npg/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/npg/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/npg/dataid#dataset">
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/npg/dataid#creator">
+        <foaf:mbox>mailto:developers@nature.com</foaf:mbox>
+        <foaf:name>NPG</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>life sciences</dcat:keyword>
+    <dcat:keyword>format-prism</dcat:keyword>
+    <dcat:keyword>lodcloud.candidate</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/npg/dataid#contributor">
+        <foaf:mbox>mailto:developers@nature.com</foaf:mbox>
+        <foaf:name>NPG Developers</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>publications</dcat:keyword>
+    <dcat:keyword>no-deref-vocab</dcat:keyword>
+    <dcat:keyword>science</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://data.nature.com/query">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://data.nature.com/query"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dcat:keyword>bibliographic</dcat:keyword>
+    <dcat:keyword>lodcloud</dcat:keyword>
+    <dcat:keyword>nature</dcat:keyword>
+    <dcat:distribution rdf:resource="http://data.nature.com/query"/>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >npg</rdfs:label>
+    <dcat:keyword>sciences</dcat:keyword>
+    <dcat:keyword>journals</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bibliographic data from around 900,000 articles published by Nature Publishing Group (NPG) from 1845 through to the present day. Additionally the datasets include NPG products and subjects ontologies. Datasets include:
+
+* [npg:Article](npg-articles)
+* [npg:Catalog](npg-catalogs)
+* [npg:Citation](npg-citations)
+* [npg:Contributor](npg-contributors)
+* [npg:Coverage](npg-coverages)
+* [npg:DataCitation](npg-data-citations)
+* [npg:Graph](npg-graphs)
+* [npg:Product](npg-products)
+* [npg:Publication](npg-publications)
+* [npg:Subject](npg-subjects)
+* [npg:Technique](npg-techniques)
+* [npg:Term](npg-terms)
+
+Class and property URIs in the [npg:](http://ns.nature.com/terms/) namespace are not dereferenceable.
+</dct:description>
+    <dcat:keyword>sparql</dcat:keyword>
+    <dcat:keyword>physical sciences</dcat:keyword>
+    <dcat:keyword>format-dc</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/npg"/>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:keyword>health sciences</dcat:keyword>
+    <dcat:keyword>format-void</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Nature Publishing Group - ALL</dct:title>
+    <dcat:keyword>format-npg</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>academic</dcat:keyword>
+    <dcat:keyword>format-bibo</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

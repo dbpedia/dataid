@@ -1,0 +1,103 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/farmbio-chembl/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://semantics.bigcat.unimaas.nl/chembl/v13_5/">
+    <dcat:mediaType>text/n3</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://semantics.bigcat.unimaas.nl/chembl/v13_5/"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#dataset">
+    <dcat:keyword>sparql-endpoint</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-chebi">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bio2rdf-chebi"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >517261</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >RDF version of the CC-SA-BY ChEMBL database by the team of John Overington at the EBI, Hinxton/UK (http://www.ebi.ac.uk/chembl/).</dct:description>
+    <void:exampleResource rdf:resource="http://linkedchemistry.info/chembl/activity/a935292"/>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >25111377</void:triples>
+    <void:exampleResource rdf:resource="http://linkedchemistry.info/chembl/resource/r371"/>
+    <void:exampleResource rdf:resource="http://linkedchemistry.info/chembl/molecule/m100431"/>
+    <dcat:keyword>no-deref-vocab</dcat:keyword>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://rdf.farmbio.uu.se/chembl/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://rdf.farmbio.uu.se/chembl/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/farmbio-chembl"/>
+    <dcat:keyword>lifesciences</dcat:keyword>
+    <dcat:keyword>backlink</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-kegg-enzyme">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bio2rdf-kegg-enzyme"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >661</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-pubmed">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bio2rdf-pubmed"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >30039</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <void:exampleResource rdf:resource="http://linkedchemistry.info/chembl/target/t158"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#creator">
+        <foaf:name>Egon Willighagen</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:exampleResource rdf:resource="http://data.kasabi.com/dataset/chembl-rdf/molecule/m100431.html"/>
+    <dcat:distribution rdf:resource="http://rdf.farmbio.uu.se/chembl/sparql"/>
+    <dcat:distribution rdf:resource="http://semantics.bigcat.unimaas.nl/chembl/v13_5/"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://data.kasabi.com/dataset/chembl-rdf">
+        <dcat:mediaType>meta/void</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://data.kasabi.com/dataset/chembl-rdf"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-uniprot">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bio2rdf-uniprot"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >4356</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:uriSpace>http://rdf.farmbio.uu.se/chembl/</void:uriSpace>
+    <void:exampleResource rdf:resource="http://linkedchemistry.info/chembl/assay/a93337"/>
+    <void:exampleResource rdf:resource="http://linkedchemistry.info/chembl/journal/j2d9cdf677b52f45100278f594cd7198a"/>
+    <dcat:keyword>lod</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >farmbio-chembl</rdfs:label>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ChEMBL-RDF (@ Uppsala University)</dct:title>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://rest.bioontology.org/bioportal/ontologies/download/45415?apikey=4ea81d74-8960-4525-810b-fa1baab576ff">
+        <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://rest.bioontology.org/bioportal/ontologies/download/45415?apikey=4ea81d74-8960-4525-810b-fa1baab576ff"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+  </dataid:Dataset>
+</rdf:RDF>

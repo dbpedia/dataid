@@ -1,0 +1,122 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://lod.hebis.de/lod/hebis-13050074-21257739.rdf.gz">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://lod.hebis.de/lod/hebis-13050074-21257739.rdf.gz"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.hebis.de/de/1ueber_uns/projekte/lod/lod_download.php">
+    <dcat:mediaType>php</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.hebis.de/de/1ueber_uns/projekte/lod/lod_download.php"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://lod.hebis.de/lod/hebis-21257740-26887667.rdf.gz">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://lod.hebis.de/lod/hebis-21257740-26887667.rdf.gz"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://lod.hebis.de/lod/hebis-10174116-13050073.rdf.gz">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://lod.hebis.de/lod/hebis-10174116-13050073.rdf.gz"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://lod.hebis.de/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://lod.hebis.de/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://lod.hebis.de/lod/hebis-26887668-29873805.rdf.gz">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://lod.hebis.de/lod/hebis-26887668-29873805.rdf.gz"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="https://commondatastorage.googleapis.com/ckannet-storage/2012-07-17T084118/hebis-00000001-05051126.rdf.gz">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="https://commondatastorage.googleapis.com/ckannet-storage/2012-07-17T084118/hebis-00000001-05051126.rdf.gz"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://lod.hebis.de/lod/void.ttl">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://lod.hebis.de/lod/void.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://lod.hebis.de/lod/hebis-05051128-10174115.rdf.gz">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://lod.hebis.de/lod/hebis-05051128-10174115.rdf.gz"/>
+  </dataid:Distribution>
+  <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#links_dnb-gemeinsame-normdatei">
+    <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#dataset"/>
+    <void:subjectsTarget>
+      <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#dataset">
+        <void:sparqlEndpoint rdf:resource="http://lod.hebis.de/sparql"/>
+        <dcat:keyword>hessen</dcat:keyword>
+        <dcat:keyword>format-wdrs</dcat:keyword>
+        <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+        <dcat:keyword>format-frbr</dcat:keyword>
+        <dcat:distribution rdf:resource="http://lod.hebis.de/lod/hebis-13050074-21257739.rdf.gz"/>
+        <dcat:keyword>bibliographic</dcat:keyword>
+        <dcat:distribution rdf:resource="https://commondatastorage.googleapis.com/ckannet-storage/2012-07-17T084118/hebis-00000001-05051126.rdf.gz"/>
+        <dcat:distribution rdf:resource="http://lod.hebis.de/lod/hebis-26887668-29873805.rdf.gz"/>
+        <dcat:keyword>lld</dcat:keyword>
+        <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >This site contains links to metadata about all types of publications (print media, E-books, E-journals,online resources) originating from the central union database of HeBIS. HeBIS - The Hessische BibliotheksInformationsSystem is one of the six regional library unions in Germany. It is the electronic information and service union of academic libraries in Hessen and parts of the Rhineland Palatinate. The metadata was catalogued by 27 independent cataloging libraries/library systems which are active within the union.
+
+Additional information about the producer of this data can be found here:
+
+http://www.hebis.de/eng/englisch_index.php</dct:description>
+        <dcat:keyword>format-hartigprov</dcat:keyword>
+        <dcat:keyword>no-provenance-metadata</dcat:keyword>
+        <void:exampleResource rdf:resource="https://commondatastorage.googleapis.com/ckannet-storage/2012-07-18T131849/06073998.rdf"/>
+        <dcat:keyword>format-doap</dcat:keyword>
+        <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >HeBIS - Bibliographic Resources of the Library Union Catalogues of Hessen and parts of the Rhineland Palatinate</dct:title>
+        <dcat:distribution rdf:resource="http://www.hebis.de/de/1ueber_uns/projekte/lod/lod_download.php"/>
+        <dcat:keyword>format-dcterms</dcat:keyword>
+        <dcat:keyword>license-metadata</dcat:keyword>
+        <void:uriSpace>http://lod.hebis.de/resource/</void:uriSpace>
+        <dcat:keyword>format-dcterm</dcat:keyword>
+        <dcat:distribution rdf:resource="http://lod.hebis.de/lod/hebis-10174116-13050073.rdf.gz"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >hebis-bibliographic-resources</rdfs:label>
+        <dataid:containsLinks rdf:resource="http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#links_dnb-gemeinsame-normdatei"/>
+        <dcat:keyword>format-prvt</dcat:keyword>
+        <dataid:associatedAgent>
+          <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#creator">
+            <foaf:mbox>mailto:striffler@hebis.uni-frankfurt.de</foaf:mbox>
+            <foaf:name>Hessisches BibliotheksInformationsSystem (HeBIS)</foaf:name>
+          </dataid:Creator>
+        </dataid:associatedAgent>
+        <dcat:keyword>format-bibo</dcat:keyword>
+        <dcat:keyword>publications</dcat:keyword>
+        <dcat:keyword>format-owl</dcat:keyword>
+        <dcat:keyword>published-by-producer</dcat:keyword>
+        <dcat:keyword>format-dc</dcat:keyword>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >267038676</void:triples>
+        <dcat:distribution rdf:resource="http://lod.hebis.de/lod/hebis-05051128-10174115.rdf.gz"/>
+        <dcat:distribution rdf:resource="http://lod.hebis.de/sparql"/>
+        <dcat:keyword>germany</dcat:keyword>
+        <dcat:keyword>library</dcat:keyword>
+        <dcat:landingPage rdf:resource="http://datahub.io/dataset/hebis-bibliographic-resources"/>
+        <dcat:keyword>lod</dcat:keyword>
+        <dataid:associatedAgent>
+          <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/hebis-bibliographic-resources/dataid#contributor">
+            <foaf:mbox>mailto:striffler@hebis.uni-frankfurt.de</foaf:mbox>
+            <foaf:name>Hessisches BibliotheksInformationsSystem (HeBIS)</foaf:name>
+          </dataid:Contributor>
+        </dataid:associatedAgent>
+        <dcat:distribution rdf:resource="http://lod.hebis.de/lod/void.ttl"/>
+        <dcat:keyword>format-rdf</dcat:keyword>
+        <dcat:keyword>university</dcat:keyword>
+        <dcat:keyword>hesse</dcat:keyword>
+        <dcat:distribution rdf:resource="http://lod.hebis.de/lod/hebis-21257740-26887667.rdf.gz"/>
+        <dcat:keyword>frankfurt</dcat:keyword>
+        <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+      </dataid:Dataset>
+    </void:subjectsTarget>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >15315081</void:triples>
+  </dataid:Linkset>
+</rdf:RDF>

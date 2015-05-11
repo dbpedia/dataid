@@ -1,0 +1,126 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/unescothes/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/unescothes/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/unescothes/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:pastor@um.es",
+    "name" : "Juan-Antonio Pastor-Sánchez"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/unescothes/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:pastor@um.es",
+    "name" : "Juan-Antonio Pastor-Sánchez"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/unescothes/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/unescothes/dataid#contributor", "http://dataid.dbpedia.org/lod/unescothes/dataid#creator" ],
+    "dct:description" : "The UNESCO Thesaurus is a controlled and structured list of terms used in subject analysis and retrieval of documents and publications in the fields of education, culture, natural sciences, social and human sciences, communication and information. The Thesaurus is structured into seven major subject fields, or domains, broken down into microthesauri which allow you to gain a quick overview of the subject matter.",
+    "license" : "http://creativecommons.org/licenses/by-nc/2.0/",
+    "dct:title" : "UNESCO Thesaurus",
+    "exampleResource" : [ "http://skos.um.es/unescothes/C01194/turtle", "http://skos.um.es/unescothes/C01194/rdfxml", "http://skos.um.es/unescothes/C01194/n3" ],
+    "sparqlEndpoint" : "http://skos.um.es/sparql/",
+    "rdfs:label" : "unescothes",
+    "distribution" : [ "http://skos.um.es/unescothes/C01194/html", "http://skos.um.es/sparql/", "http://skos.um.es/unescothes", "http://skos.um.es/unescothes/C01194/jsonld", "http://skos.um.es/unescothes/unescothes.rdf", "http://skos.um.es/unescothes/C01194/json", "http://skos.um.es/unescothes/unescothes.ttl", "http://skos.um.es/unescothes/void.ttl" ],
+    "keyword" : [ "void", "UNESCO", "thesaurus", "format-skos", "json", "skos", "turtle", "classification", "rdf", "lld" ],
+    "landingPage" : "http://datahub.io/dataset/unescothes"
+  }, {
+    "@id" : "http://skos.um.es/sparql/",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://skos.um.es/sparql/",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://skos.um.es/unescothes",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://skos.um.es/unescothes",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://skos.um.es/unescothes/C01194/html",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://skos.um.es/unescothes/C01194/html",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://skos.um.es/unescothes/C01194/json",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://skos.um.es/unescothes/C01194/json",
+    "mediaType" : "JSON"
+  }, {
+    "@id" : "http://skos.um.es/unescothes/C01194/jsonld",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://skos.um.es/unescothes/C01194/jsonld"
+  }, {
+    "@id" : "http://skos.um.es/unescothes/unescothes.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://skos.um.es/unescothes/unescothes.rdf",
+    "mediaType" : "XML"
+  }, {
+    "@id" : "http://skos.um.es/unescothes/unescothes.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://skos.um.es/unescothes/unescothes.ttl",
+    "mediaType" : "rdf/turtle"
+  }, {
+    "@id" : "http://skos.um.es/unescothes/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://skos.um.es/unescothes/void.ttl",
+    "mediaType" : "rdf/turtle"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

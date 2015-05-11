@@ -1,0 +1,122 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://www.open-biomed.org.uk/sparql/endpoint/tcm">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://www.open-biomed.org.uk/sparql/endpoint/tcm"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.open-biomed.org.uk/tcmdata/tcm_rdf_data_release3_190609_turtle.tar.gz">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.open-biomed.org.uk/tcmdata/tcm_rdf_data_release3_190609_turtle.tar.gz"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.open-biomed.org.uk/tcmdata/tcm_rdf_data_release3_190609.tar.gz">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.open-biomed.org.uk/tcmdata/tcm_rdf_data_release3_190609.tar.gz"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset">
+    <void:exampleResource rdf:resource="http://purl.org/net/tcm/tcm.lifescience.ntu.edu.tw/id/disease/Hyperthyroidism"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#creator">
+        <foaf:name>Jun Zhao</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_fu-berlin-drugbank">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/fu-berlin-drugbank/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >385</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>size-kb</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tcmgenedit_dataset</rdfs:label>
+    <dcat:keyword>ckanupload.esw.200910</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>medical</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >117643</void:triples>
+    <dcat:distribution rdf:resource="http://www.open-biomed.org.uk/tcmdata/tcm_rdf_data_release3_190609_turtle.tar.gz"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_fu-berlin-dailymed">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/fu-berlin-dailymed/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >21</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1400</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_linkedct">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/linkedct/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >141</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:uriSpace>http://purl.org/net/tcm/</void:uriSpace>
+    <void:sparqlEndpoint rdf:resource="http://www.open-biomed.org.uk/sparql/endpoint/tcm"/>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <dcat:distribution rdf:resource="http://www.open-biomed.org.uk/sparql/endpoint/tcm"/>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/tcmgenedit_dataset"/>
+    <dcat:keyword>rdf</dcat:keyword>
+    <dcat:keyword>no-deref-vocab</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TCMGeneDIT Dataset</dct:title>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Data exposed: Traditional Chinese medicine, gene and disease association dataset and a linkset mapping TCM gene symbols to Extrez Gene IDs created by Neurocommons
+
+Size of dump and data set: 288kb compressed
+
+Notes: Creative Commons with Attributions</dct:description>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_fu-berlin-sider">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/fu-berlin-sider/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >171</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>lifesciences</dcat:keyword>
+    <dcat:distribution rdf:resource="http://www.open-biomed.org.uk/tcmdata/tcm_rdf_data_release3_190609.tar.gz"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_entrez_gene">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/entrez_gene/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >944</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#links_fu-berlin-diseasome">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/fu-berlin-diseasome/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >376</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>genetics</dcat:keyword>
+    <dcat:keyword>linkeddata</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

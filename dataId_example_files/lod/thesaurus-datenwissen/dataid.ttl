@@ -1,0 +1,26 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/thesaurus-datenwissen/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Angelo Veltens" .
+
+<http://dataid.dbpedia.org/lod/thesaurus-datenwissen/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "thesaurus-datenwissen"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/thesaurus-datenwissen/dataid#creator> ;
+        dct:description         "This service exposes the data from openthesaurus.de as Linked Data."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "Thesaurus Datenwissen"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://thesaurus.datenwissen.de/hervorragend#term> ;
+        void:triples            "64154"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:keyword            "published-by-third-party" , "lodcloud.needsinfo" , "no-proprietary-vocab" , "publications" , "lodcloud.nolinks" , "lodcloud.unconnected" , "lod" , "no-vocab-mappings" ;
+        dcat:landingPage        <http://datahub.io/dataset/thesaurus-datenwissen> .
+
+<http://dataid.dbpedia.org/lod/thesaurus-datenwissen/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/thesaurus-datenwissen/dataid#dataset" .

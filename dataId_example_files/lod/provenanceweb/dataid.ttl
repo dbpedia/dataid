@@ -1,0 +1,188 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://purl.org/twc/vocab/conversion/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/twc/vocab/conversion/> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://dataid.dbpedia.org/lod/provenanceweb/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:lebot@rpi.edu" ;
+        foaf:name  "Timothy Lebo" .
+
+<http://obofoundry.org/ro/ro.owl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://obofoundry.org/ro/ro.owl> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://usefulinc.com/ns/doap>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://usefulinc.com/ns/doap> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://provenanceweb.org/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://provenanceweb.org/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/provenanceweb/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Rensselaer Polytechnic Institute / Tetherless World Constellation" .
+
+<http://www.holygoat.co.uk/owl/redwood/0.1/tags/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://www.w3.org/ns/dcat>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/ns/dcat> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://dataid.dbpedia.org/lod/provenanceweb/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/provenanceweb/dataid#dataset" .
+
+<http://www.w3.org/ns/prov>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/ns/prov> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://provenanceweb.org/ns/pml>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://provenanceweb.org/ns/pml> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://inference-web.org/2.0/pml-justification.owl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://inference-web.org/2.0/pml-justification.owl> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://openprovenance.org/ontology>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://openprovenance.org/ontology> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+dct:    a                 dataid:Distribution ;
+        dcat:downloadURL  dct: ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://provenanceweb.org/source/provenanceweb/file/cr-full-dump/version/latest/conversion/provenanceweb-org.nt.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://provenanceweb.org/source/provenanceweb/file/cr-full-dump/version/latest/conversion/provenanceweb-org.nt.gz> ;
+        dcat:mediaType    "application/x-ntriples" .
+
+<http://www.w3.org/2002/07/owl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/2002/07/owl> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://reference.data.gov.uk/technical-registry/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://reference.data.gov.uk/technical-registry/> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://provenanceweb.org/source/provenanceweb/file/cr-aggregated-params/version/latest/conversion/provenanceweb-cr-aggregated-params-latest.ttl.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://provenanceweb.org/source/provenanceweb/file/cr-aggregated-params/version/latest/conversion/provenanceweb-cr-aggregated-params-latest.ttl.gz> ;
+        dcat:mediaType    "mapping/twc-conversion" .
+
+<http://inference-web.org/2.0/pml-provenance.owl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://inference-web.org/2.0/pml-provenance.owl> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://provenanceweb.org/source/provenanceweb/file/cr-sitemap/version/latest/conversion/sitemap.xml>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://provenanceweb.org/source/provenanceweb/file/cr-sitemap/version/latest/conversion/sitemap.xml> ;
+        dcat:mediaType    "meta/sitemap" .
+
+<http://open.vocab.org/terms/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://open.vocab.org/terms/> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://dbpedia.org/resource/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://dbpedia.org/resource/> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://purl.org/twc/vocab/datafaqs>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/twc/vocab/datafaqs> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://dataid.dbpedia.org/lod/provenanceweb/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/provenanceweb/dataid#dataset> ;
+        void:triples         "2"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.w3.org/2000/01/rdf-schema>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/2000/01/rdf-schema> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://rdfs.org/ns/void>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://rdfs.org/ns/void> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://semanticscience.org/resource/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://semanticscience.org/resource/> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://www.w3.org/2004/02/skos/core>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/2004/02/skos/core> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://dataid.dbpedia.org/lod/provenanceweb/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "provenanceweb"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/provenanceweb/dataid#contributor> , <http://dataid.dbpedia.org/lod/provenanceweb/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/provenanceweb/dataid#links_dbpedia> ;
+        dct:description         "Linked Data provenance and explanation."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "provenanceweb"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:sparqlEndpoint     <http://provenanceweb.org/sparql> ;
+        void:triples            "2494630"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://provenanceweb.org/" ;
+        dcat:distribution       <http://provenanceweb.org/source/provenanceweb/file/cr-aggregated-params/version/latest/conversion/provenanceweb-cr-aggregated-params-latest.ttl.gz> , <http://open.vocab.org/terms/> , <http://www.w3.org/2002/07/owl> , <http://www.w3.org/2004/02/skos/core> , <http://provenanceweb.org/source/provenanceweb/file/cr-sitemap/version/latest/conversion/sitemap.xml> , <http://inference-web.org/2.0/pml-provenance.owl> , <http://usefulinc.com/ns/doap> , <http://purl.org/net/provenance/ns> , <http://www.w3.org/1999/02/22-rdf-syntax-ns> , <http://semanticscience.org/resource/> , <http://reference.data.gov.uk/technical-registry/> , <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> , <http://provenanceweb.org/ns/pml> , <http://dbpedia.org/resource/> , <http://rdfs.org/ns/void> , <http://www.w3.org/ns/dcat> , <http://www.w3.org/2000/10/swap/pim/contact> , foaf: , <http://inference-web.org/2.0/pml-justification.owl> , <http://www.w3.org/2000/01/rdf-schema> , <http://purl.org/vocab/vann/> , <http://www.w3.org/ns/prov> , <http://provenanceweb.org/sparql> , <http://purl.org/twc/vocab/conversion/> , <http://provenanceweb.org/void.ttl> , <http://purl.org/twc/vocab/datafaqs> , dct: , <http://obofoundry.org/ro/ro.owl> , <http://openprovenance.org/ontology> , <http://provenanceweb.org/source/provenanceweb/file/cr-full-dump/version/latest/conversion/provenanceweb-org.nt.gz> ;
+        dcat:keyword            "crossdomain" , "format-pmlp" , "format-tag" , "prizms" , "format-pronom" , "format-pml" , "format-conv" , "format-con" , "format-pmlj" , "format-dcterm" , "format-rdfs" , "format-skos" , "vocab-mappings" , "format-void" , "no-license-metadata" , "format-doap" , "format-rdf" , "lod" , "provenance-metadata" , "format-dcat" , "format-dbpedia" , "deref-vocab" , "format-dc" , "format-vann" , "format-owl" , "format-oboro" , "format-prov" , "format-foaf" , "format-sio" , "format-datafaqs" , "format-opm" , "published-by-third-party" , "format-ov" ;
+        dcat:landingPage        <http://datahub.io/dataset/provenanceweb> .
+
+<http://purl.org/net/provenance/ns>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/net/provenance/ns> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/1999/02/22-rdf-syntax-ns> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://www.w3.org/2000/10/swap/pim/contact>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/2000/10/swap/pim/contact> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+foaf:   a                 dataid:Distribution ;
+        dcat:downloadURL  foaf: ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://provenanceweb.org/void.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://provenanceweb.org/void.ttl> ;
+        dcat:mediaType    "meta/void" .
+
+<http://purl.org/vocab/vann/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/vocab/vann/> ;
+        dcat:mediaType    "meta/rdf-schema" .

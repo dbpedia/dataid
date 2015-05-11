@@ -1,0 +1,88 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/core/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/core/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://core-project.kmi.open.ac.uk/files/download_20120123.rdf">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://core-project.kmi.open.ac.uk/files/download_20120123.rdf"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://core-project.kmi.open.ac.uk/data-description">
+    <dcat:mediaType>PNG</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://core-project.kmi.open.ac.uk/data-description"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://core-project.kmi.open.ac.uk/files/core-voiD.n3">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://core-project.kmi.open.ac.uk/files/core-voiD.n3"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://core.kmi.open.ac.uk/squery">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://core.kmi.open.ac.uk/squery"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/core/dataid#links_rkb-explorer-oai">
+    <void:objectsTarget rdf:resource="http://datahub.io/dataset/rkb-explorer-oai"/>
+    <void:subjectsTarget>
+      <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/core/dataid#dataset">
+        <void:sparqlEndpoint rdf:resource="http://core.kmi.open.ac.uk/squery"/>
+        <dataid:containsLinks rdf:resource="http://dataid.dbpedia.org/lod/core/dataid#links_rkb-explorer-oai"/>
+        <void:exampleResource rdf:resource="http://core-project.kmi.open.ac.uk/files/example-link.rdf"/>
+        <dcat:keyword>oai</dcat:keyword>
+        <dcat:keyword>lod</dcat:keyword>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >core</rdfs:label>
+        <dcat:landingPage rdf:resource="http://datahub.io/dataset/core"/>
+        <dcat:keyword>no-provenance-metadata</dcat:keyword>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >101526714</void:triples>
+        <dcat:keyword>published-by-producer</dcat:keyword>
+        <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+        <dataid:associatedAgent>
+          <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/core/dataid#creator">
+            <foaf:mbox>mailto:p.knoth@open.ac.uk</foaf:mbox>
+            <foaf:name>Petr Knoth</foaf:name>
+          </dataid:Creator>
+        </dataid:associatedAgent>
+        <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The CORE dataset contains information about similarities between scientific papers stored across Open Access repositories. The similarities are calculated using Natural Language Processing techniques based on the full-text.  The similarities are provided only for research articles with an accessible and machine readable full-text. More information about the data structure can be found at:http://core-project-local.kmi.open.ac.uk/data-description.
+
+#### RDF Statistics
+
+At the moment we expose more than 92 million RDF triples describing similarities calculated on a set of more than 400k full-text articles harvested from over 230 Open Access repositories.
+
+#### Links
+
+The data about the similarities are represented using the  MuSIM ontology (http://kakapo.dcs.qmul.ac.uk/ontology/musim/0.2/musim.html) BIBO ontologies (http://bibliontology.com/) with links to the OAI (RKBExplorer) repository available in the Linked Data cloud. </dct:description>
+        <void:exampleResource rdf:resource="http://core-project.kmi.open.ac.uk/files/test.rdf"/>
+        <void:uriSpace>http://core.kmi.open.ac.uk/data/</void:uriSpace>
+        <dcat:keyword>publications</dcat:keyword>
+        <dcat:distribution rdf:resource="http://core-project.kmi.open.ac.uk/data-description"/>
+        <dcat:distribution rdf:resource="http://core.kmi.open.ac.uk/squery"/>
+        <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >CORE - Semantic Similarity of Open Access publications</dct:title>
+        <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+        <dcat:distribution rdf:resource="http://core-project.kmi.open.ac.uk/files/download_20120123.rdf"/>
+        <dcat:keyword>format-rdfs</dcat:keyword>
+        <dcat:keyword>openuniversity</dcat:keyword>
+        <dcat:keyword>license-metadata</dcat:keyword>
+        <dcat:keyword>similarity</dcat:keyword>
+        <dataid:associatedAgent>
+          <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/core/dataid#contributor">
+            <foaf:mbox>mailto:p.knoth@open.ac.uk</foaf:mbox>
+            <foaf:name>Petr Knoth</foaf:name>
+          </dataid:Contributor>
+        </dataid:associatedAgent>
+        <dcat:keyword>bibliographic</dcat:keyword>
+        <dcat:distribution rdf:resource="http://core-project.kmi.open.ac.uk/files/core-voiD.n3"/>
+      </dataid:Dataset>
+    </void:subjectsTarget>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >200000</void:triples>
+  </dataid:Linkset>
+</rdf:RDF>

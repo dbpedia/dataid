@@ -1,0 +1,127 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/museums-in-italy/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/museums-in-italy/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/museums-in-italy/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "linkedopendata.it"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/museums-in-italy/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/museums-in-italy/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/museums-in-italy/dataid#links_geonames-semantic-web", "http://dataid.dbpedia.org/lod/museums-in-italy/dataid#links_dbpedia" ],
+    "dct:description" : "List of geo-referenced italian museums. Places are linked to Geonames. Museum categories are linked to dbpedia.\nMore info at [http://www.linkedopendata.it/datasets/musei](http://www.linkedopendata.it/datasets/musei)",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "Italian Museums",
+    "exampleResource" : "http://data.linkedopendata.it/musei/resource/Musei_Vaticani_Collezione_d%27arte_religiosa_Moderna-Roma",
+    "sparqlEndpoint" : "http://sparql.linkedopendata.it/musei",
+    "triples" : "49897",
+    "uriSpace" : "http://data.linkedopendata.it/data/musei/resource/",
+    "rdfs:label" : "museums-in-italy",
+    "distribution" : [ "http://void.linkedopendata.it/musei", "http://dump.linkedopendata.it/musei", "http://sparql.linkedopendata.it/musei" ],
+    "keyword" : [ "deref-vocab", "linked-open-data", "format-vcard", "linkeddata", "lod", "license-metadata", "country-italy", "void-sparql-endpoint", "published-by-producer", "museum", "format-rdf", "provenance-metadata", "media", "rdf", "crossdomain" ],
+    "landingPage" : "http://datahub.io/dataset/museums-in-italy"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/museums-in-italy/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/museums-in-italy/dataid#dataset",
+    "triples" : "2894"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/museums-in-italy/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/museums-in-italy/dataid#dataset",
+    "triples" : "1570"
+  }, {
+    "@id" : "http://dump.linkedopendata.it/musei",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://dump.linkedopendata.it/musei",
+    "mediaType" : "rdf+xml"
+  }, {
+    "@id" : "http://sparql.linkedopendata.it/musei",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://sparql.linkedopendata.it/musei",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://void.linkedopendata.it/musei",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://void.linkedopendata.it/musei",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

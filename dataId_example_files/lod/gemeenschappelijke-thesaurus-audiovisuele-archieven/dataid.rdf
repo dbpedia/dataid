@@ -1,0 +1,66 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/gemeenschappelijke-thesaurus-audiovisuele-archieven/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/gemeenschappelijke-thesaurus-audiovisuele-archieven/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://semanticweb.cs.vu.nl/lod/beeldengeluid/GTAA-25aug2010.ttl.gz">
+    <dcat:mediaType>GZ</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://semanticweb.cs.vu.nl/lod/beeldengeluid/GTAA-25aug2010.ttl.gz"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/gemeenschappelijke-thesaurus-audiovisuele-archieven/dataid#dataset">
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>gtaa</dcat:keyword>
+    <dcat:keyword>digital-humanities</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gemeenschappelijke Thesaurus Audiovisuele Archieven – Common Thesaurus Audiovisual Archives</dct:title>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >992797</void:triples>
+    <dcat:keyword>schemata</dcat:keyword>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/gemeenschappelijke-thesaurus-audiovisuele-archieven/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/gemeenschappelijke-thesaurus-audiovisuele-archieven/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >25844</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:exampleResource rdf:resource="http://data.beeldengeluid.nl/gtaa/173390"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gemeenschappelijke-thesaurus-audiovisuele-archieven</rdfs:label>
+    <void:exampleResource rdf:resource="http://data.beeldengeluid.nl/gtaa/GTAA"/>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>thesaurus</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Netherlands Institute for Sound and Vision
+&lt;http://portal.beeldengeluid.nl/&gt; is the Dutch archive for public broadcast television. They employ the GTAA, which is a Dutch acronym for Common Thesaurus [for] Audiovisual Archives, to index and disclose their
+audiovisaul documents.
+
+The GTAA closely follows the ISO-2788 standard for
+thesaurus structures. The thesaurus consists of several facets for describing TV programs: subjects; people mentioned; named entities (Corporation names, music bands etc); locations; genres; makers and presentators.
+
+The GTAA contains approximately 160.000 terms: ~3800 Subjects, ~97.000 Persons, ~27.000 Names, ~14.000 Locations, 113 Genres and ~18.000 Makers, and is continually updated as new concepts emerge on TV.
+</dct:description>
+    <dcat:keyword>media</dcat:keyword>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <void:uriSpace>http://data.beeldengeluid.nl/gtaa/</void:uriSpace>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/gemeenschappelijke-thesaurus-audiovisuele-archieven/dataid#creator">
+        <foaf:name>Johan Oomen</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-odbl"/>
+    <dcat:distribution rdf:resource="http://semanticweb.cs.vu.nl/lod/beeldengeluid/GTAA-25aug2010.ttl.gz"/>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/gemeenschappelijke-thesaurus-audiovisuele-archieven"/>
+  </dataid:Dataset>
+</rdf:RDF>

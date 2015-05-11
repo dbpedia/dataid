@@ -1,0 +1,137 @@
+{
+  "@graph" : [ {
+    "@id" : "http://ckan.net/storage/f/file/80d5f096-e1ad-489f-9ff4-793e6f5f04d2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ckan.net/storage/f/file/80d5f096-e1ad-489f-9ff4-793e6f5f04d2",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "name" : "Semantic Web Company"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Semantic Web Company"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#contributor", "http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#links_geonames-semantic-web", "http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#links_freebase" ],
+    "dct:description" : "People, organisations, applications and technologies etc. relevant for the area of the Social Semantic Web",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "Social Semantic Web Thesaurus",
+    "exampleResource" : "http://vocabulary.semantic-web.at/semweb/253",
+    "sparqlEndpoint" : "http://vocabulary.semantic-web.at/PoolParty/sparql/semweb",
+    "triples" : "20000",
+    "uriSpace" : "http://vocabulary.semantic-web.at/semweb/",
+    "rdfs:label" : "socialsemweb-thesaurus",
+    "distribution" : [ "http://vocabulary.semantic-web.at/PoolParty/sparql/semweb", "http://vocabulary.semantic-web.at/semweb.rdf", "http://ckan.net/storage/f/file/80d5f096-e1ad-489f-9ff4-793e6f5f04d2" ],
+    "keyword" : [ "format-skos", "crossdomain", "socialweb", "lod", "semanticweb", "research", "thesaurus", "published-by-producer", "deref-vocab", "usergeneratedcontent", "format-owl", "people", "technology" ],
+    "landingPage" : "http://datahub.io/dataset/socialsemweb-thesaurus"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#dataset",
+    "triples" : "300"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#links_freebase",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#dataset",
+    "triples" : "200"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#dataset",
+    "triples" : "100"
+  }, {
+    "@id" : "http://vocabulary.semantic-web.at/PoolParty/sparql/semweb",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://vocabulary.semantic-web.at/PoolParty/sparql/semweb",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://vocabulary.semantic-web.at/semweb.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://vocabulary.semantic-web.at/semweb.rdf",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

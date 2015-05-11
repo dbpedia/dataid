@@ -1,0 +1,123 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:skkim@kiom.re.kr",
+    "name" : "Sang-Kyun Kim"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:hcjang@kiom.re.kr",
+    "name" : "Hyunchul Jang"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid#creator", "http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid#contributor" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid#links_bioportal-ncbitaxon",
+    "dct:description" : "Traditional Korean medicine (Hangul: 한의학, Hanja: 韓醫學) developed with the influence of other traditional medicine. Its techniques in treatment and diagnosis are both similar and unique to other traditional medicine. (Visit Wikipedia, http://en.wikipedia.org/wiki/Traditional_Korean_medicine.)\n\n\"Ontology-based Traditional Korean Medicine Knowledge Framework\" project is systematization of core knowledge of TKM and enhancing the applicability of the knowledge. This project is supported by Korean government and Korea Institute of Oriental Medicine is pursuing this project since 2009.\n\nTo achieve this, our group is constructing ontology for TKM, in particular, patient status and medicinal treatment for them. The center is conceptualizing disease, pattern, symptom and medical test result to define patient status and medicinal materials, formulas, acupuncture and moxibustion for treatment method.\n\nFor information about terms of traditional medicine in the area of East Asia, read this WHO standard, http://tkm.kiom.re.kr/ontology/doc/WHO-IST.pdf. This paper can be found at http://www.wpro.who.int/publications/PUB_9789290612487.htm. (Last check: Dec. 17th, 2009)\n\nAs a first step for construction, the center is focusing on medicinal materials including biological materials (plants and animals), minerals (stone and metal resources).",
+    "license" : "http://www.opendefinition.org/licenses/gfdl",
+    "dct:title" : "Traditional Korean Medicine Ontology",
+    "exampleResource" : [ "http://tkm.kiom.re.kr/ontology/get?query=MM%E4%BA%BA%E8%94%98", "http://ontology.kiom.re.kr/ontology/ginseng_example.rdf" ],
+    "sparqlEndpoint" : "http://tkm.kiom.re.kr/ontology/sparql",
+    "triples" : "51932",
+    "uriSpace" : "http://tkm.kiom.re.kr/tkmedicine",
+    "rdfs:label" : "traditional-korean-medicine",
+    "distribution" : [ "http://tkm.kiom.re.kr/ontology/sparql", "http://ontology.kiom.re.kr/ontology/lod.rdf" ],
+    "keyword" : [ "format-foaf", "lod", "no-vocab-mappings", "lifesciences", "medicines", "no-provenance-metadata", "published-by-producer", "no-deref-vocab", "format-rdf", "linked-data", "format-ncbitaxon" ],
+    "landingPage" : "http://datahub.io/dataset/traditional-korean-medicine"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid#links_bioportal-ncbitaxon",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-ncbitaxon/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/traditional-korean-medicine/dataid#dataset",
+    "triples" : "2119"
+  }, {
+    "@id" : "http://ontology.kiom.re.kr/ontology/lod.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ontology.kiom.re.kr/ontology/lod.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://tkm.kiom.re.kr/ontology/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://tkm.kiom.re.kr/ontology/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

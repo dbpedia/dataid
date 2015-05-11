@@ -1,0 +1,110 @@
+{
+  "@graph" : [ {
+    "@id" : "http://archive.org/download/kasabi/nasa.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://archive.org/download/kasabi/nasa.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:leigh@ldodds.com",
+    "name" : "Leigh Dodds"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:leigh@ldodds.com",
+    "name" : "Leigh Dodds"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#creator", "http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#links_bbc-programmes", "http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#links_dbpedia" ],
+    "dct:description" : "### Description\n\nConversion of various NASA datasets into RDF, starting \nwith the spacecraft data from the NSSDC master catalog.\n\nThis dataset consists of a conversion of the NASA NSSDC Master Catalog and extracts of the Apollo By Numbers statistics.\n\nCurrently the data consists of all of the Spacecraft from the NSSDC database which is a comprehensive list of orbital, suborbital, and interplanetary spacecraft launches dataing from the 1950s to the present day. Entries are not limited to NASA missions, but include spacecraft launched by various agencies from around the globe.\n\n*Note* this dataset is no longer updated, it was taken off-line during the shutdown of Kasabi. A dump of the dataset has been [uploaded to the Internet Archive](http://archive.org/details/kasabi)",
+    "license" : "http://www.opendefinition.org/licenses/odc-pddl",
+    "dct:title" : "NASA Space Flight & Astronaut data in RDF",
+    "triples" : "97974",
+    "uriSpace" : "http://data.kasabi.com/dataset/nasa",
+    "rdfs:label" : "data-incubator-nasa",
+    "distribution" : "http://archive.org/download/kasabi/nasa.gz",
+    "keyword" : [ "nasa", "government", "space", "format-rdf", "published-by-third-party", "format-po", "format-foaf", "deref-vocab", "format-owl", "format-dc" ],
+    "landingPage" : "http://datahub.io/dataset/data-incubator-nasa"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#links_bbc-programmes",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bbc-programmes",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#dataset",
+    "triples" : "1"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/data-incubator-nasa/dataid#dataset",
+    "triples" : "61"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

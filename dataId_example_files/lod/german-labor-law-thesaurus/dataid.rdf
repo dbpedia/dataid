@@ -1,0 +1,110 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://vocabulary.wolterskluwer.de/arbeitsrecht.rdf">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://vocabulary.wolterskluwer.de/arbeitsrecht.rdf"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://vocabulary.wolterskluwer.de/arbeitsrecht/export/arbeitsrecht.trig">
+    <dcat:mediaType>appliation/x-trig</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://vocabulary.wolterskluwer.de/arbeitsrecht/export/arbeitsrecht.trig"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://vocabulary.wolterskluwer.de/PoolParty/sparql/arbeitsrecht">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://vocabulary.wolterskluwer.de/PoolParty/sparql/arbeitsrecht"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://vocabulary.wolterskluwer.de/arbeitsrecht/export/arbeitsrecht.rdf">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://vocabulary.wolterskluwer.de/arbeitsrecht/export/arbeitsrecht.rdf"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#dataset">
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://vocabulary.wolterskluwer.de/PoolParty/sparql/arbeitsrecht"/>
+    <dcat:keyword>lod2</dcat:keyword>
+    <dcat:distribution rdf:resource="http://vocabulary.wolterskluwer.de/arbeitsrecht/export/arbeitsrecht.trig"/>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dcat:distribution rdf:resource="http://vocabulary.wolterskluwer.de/PoolParty/sparql/arbeitsrecht"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#creator">
+        <foaf:mbox>mailto:cdirschl@wolterskluwer.de</foaf:mbox>
+        <foaf:name>Wolters Kluwer Deutschland GmbH</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >german-labor-law-thesaurus</rdfs:label>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Labor law thesaurus covers all main areas of labor law, like the roles of employee and employer; legal aspects around labor contracts and dismissal; also co-determination and industrial action. Therefore, this thesaurus is interesting and relevant for all parties, who are dealing with labor law – professionals like specialized lawyers as well as for employees looking for definitions of legal terms. Linking to thematically similar thesauri (Linked Open Data paradigm) has already taken place and is therefore available as well. Thesauri are linked with
+
+*   Standard Thesaurus für Wirtschaft, ZBW (zbw.eu/stw/)
+*   Wikipedia / DBpedia
+*   TheSoz from Leibniz Gesellschaft für Sozialwissenschaften (www.gesis.org)
+*    EuroVoc - Multilingual Thesaurus of the European Union
+</dct:description>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_eurovoc">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eurovoc/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >247</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>law</dcat:keyword>
+    <dcat:keyword>germany</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >776</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#contributor">
+        <foaf:mbox>mailto:office@semantic-web.at</foaf:mbox>
+        <foaf:name>Semantic Web Company</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>media</dcat:keyword>
+    <dcat:keyword>lodcloud</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_zbw.eu/stw">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/zbw.eu/stw/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >289</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_gesis-thesoz">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/gesis-thesoz/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >443</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://vocabulary.wolterskluwer.de/arbeitsrecht.rdf"/>
+    <void:uriSpace>http://vocabulary.wolterskluwer.de/arbeitsrecht</void:uriSpace>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >106891</void:triples>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/german-labor-law-thesaurus"/>
+    <dcat:keyword>format-dcterms</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >German labor law thesaurus</dct:title>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dcat:distribution rdf:resource="http://vocabulary.wolterskluwer.de/arbeitsrecht/export/arbeitsrecht.rdf"/>
+    <void:exampleResource rdf:resource="http://vocabulary.wolterskluwer.de/arbeitsrecht/10924.rdf"/>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

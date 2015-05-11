@@ -1,0 +1,39 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/the-kazan-university-museum-as-linked-open-data-in-the-europeana-data-model/dataid#dataset">
+    <dcat:keyword>edm</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Kazan University Museum dataset describes more than 10.000 cultural heritage objects related to the history of Kazan University described by the museum.</dct:description>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/the-kazan-university-museum-as-linked-open-data-in-the-europeana-data-model"/>
+    <dcat:keyword>linked data</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <dcat:keyword>museum</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <void:exampleResource rdf:resource="http://data.cll.niimm.ksu.ru/mhku.rdf"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Kazan University Museum as Linked Open Data in the Europeana Data Model</dct:title>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/the-kazan-university-museum-as-linked-open-data-in-the-europeana-data-model/dataid#creator">
+        <foaf:mbox>mailto:jr.pathfinder@gmail.com</foaf:mbox>
+        <foaf:name>Rustem Takalov</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/the-kazan-university-museum-as-linked-open-data-in-the-europeana-data-model/dataid#contributor">
+        <foaf:mbox>mailto:jr.pathfinder@gmail.com</foaf:mbox>
+        <foaf:name>Rustem Takalov</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >the-kazan-university-museum-as-linked-open-data-in-the-europeana-data-model</rdfs:label>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/the-kazan-university-museum-as-linked-open-data-in-the-europeana-data-model/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/the-kazan-university-museum-as-linked-open-data-in-the-europeana-data-model/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

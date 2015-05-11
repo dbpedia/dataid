@@ -1,0 +1,78 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph<http://ns.nature.com/graphs/techniques>{?s?p?o.}}limit25",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph<http://ns.nature.com/graphs/techniques>{?s?p?o.}}limit25",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/npg-techniques/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/npg-techniques/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/npg-techniques/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:developers@nature.com",
+    "name" : "NPG Developers"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/npg-techniques/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:developers@nature.com",
+    "name" : "NPG"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/npg-techniques/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/npg-techniques/dataid#contributor", "http://dataid.dbpedia.org/lod/npg-techniques/dataid#creator" ],
+    "dct:description" : "Graph of npg:Technique triples.\nThe npg:Technique objects model techniques from the NPG techniques ontology.",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "Nature Publishing Group - Techniques",
+    "rdfs:label" : "npg-techniques",
+    "distribution" : "http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph<http://ns.nature.com/graphs/techniques>{?s?p?o.}}limit25",
+    "keyword" : [ "format-dcterm", "publications", "format-npg", "bibliographic", "life sciences", "format-rdf", "science", "format-skos", "health sciences", "sciences", "physical sciences", "format-rdfs", "journals", "published-by-producer", "academic" ],
+    "landingPage" : "http://datahub.io/dataset/npg-techniques"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

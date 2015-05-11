@@ -1,0 +1,56 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/enakting-crime/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/enakting-crime/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://crime.psi.enakting.org/id/void">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://crime.psi.enakting.org/id/void"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/enakting-crime/dataid#dataset">
+    <dcat:keyword>government</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <void:uriSpace>http://crime.psi.enakting.org/id/</void:uriSpace>
+    <dcat:keyword>lod</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/enakting-crime/dataid#creator">
+        <foaf:mbox>mailto:t.omitola@ecs.soton.ac.uk</foaf:mbox>
+        <foaf:name>Tope Omitola</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/enakting-crime/dataid#contributor">
+        <foaf:mbox>mailto:t.omitola@ecs.soton.ac.uk</foaf:mbox>
+        <foaf:name>Tope Omitola</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/enakting-crime/dataid#links_ordnance-survey-linked-data">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/ordnance-survey-linked-data"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/enakting-crime/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >133</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >4988</void:triples>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >UK Crime statistics per region for the year 2008/09, provided by the UK Home Office.</dct:description>
+    <dcat:distribution rdf:resource="http://crime.psi.enakting.org/id/void"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >EnAKTing Crime Dataset</dct:title>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/enakting-crime"/>
+    <void:exampleResource rdf:resource="http://crime.psi.enakting.org/"/>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >enakting-crime</rdfs:label>
+  </dataid:Dataset>
+</rdf:RDF>

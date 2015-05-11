@@ -1,0 +1,46 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/enakting-crime/dataid#links_ordnance-survey-linked-data>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/ordnance-survey-linked-data> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/enakting-crime/dataid#dataset> ;
+        void:triples         "133"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/enakting-crime/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:t.omitola@ecs.soton.ac.uk" ;
+        foaf:name  "Tope Omitola" .
+
+<http://dataid.dbpedia.org/lod/enakting-crime/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:t.omitola@ecs.soton.ac.uk" ;
+        foaf:name  "Tope Omitola" .
+
+<http://dataid.dbpedia.org/lod/enakting-crime/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/enakting-crime/dataid#dataset" .
+
+<http://crime.psi.enakting.org/id/void>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://crime.psi.enakting.org/id/void> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/enakting-crime/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "enakting-crime"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/enakting-crime/dataid#creator> , <http://dataid.dbpedia.org/lod/enakting-crime/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/enakting-crime/dataid#links_ordnance-survey-linked-data> ;
+        dct:description         "UK Crime statistics per region for the year 2008/09, provided by the UK Home Office."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "EnAKTing Crime Dataset"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://crime.psi.enakting.org/> ;
+        void:triples            "4988"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://crime.psi.enakting.org/id/" ;
+        dcat:distribution       <http://crime.psi.enakting.org/id/void> ;
+        dcat:keyword            "government" , "published-by-third-party" , "lod" , "deref-vocab" , "format-rdf" ;
+        dcat:landingPage        <http://datahub.io/dataset/enakting-crime> .

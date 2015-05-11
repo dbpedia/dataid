@@ -1,0 +1,67 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://ckan.net/storage/f/file/80d5f096-e1ad-489f-9ff4-793e6f5f04d2>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://ckan.net/storage/f/file/80d5f096-e1ad-489f-9ff4-793e6f5f04d2> ;
+        dcat:mediaType    "application/x-ntriples" .
+
+<http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "socialsemweb-thesaurus"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#contributor> , <http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#links_dbpedia> , <http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#links_geonames-semantic-web> , <http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#links_freebase> ;
+        dct:description         "People, organisations, applications and technologies etc. relevant for the area of the Social Semantic Web"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by-sa> ;
+        dct:title               "Social Semantic Web Thesaurus"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://vocabulary.semantic-web.at/semweb/253> ;
+        void:sparqlEndpoint     <http://vocabulary.semantic-web.at/PoolParty/sparql/semweb> ;
+        void:triples            "20000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://vocabulary.semantic-web.at/semweb/" ;
+        dcat:distribution       <http://vocabulary.semantic-web.at/PoolParty/sparql/semweb> , <http://vocabulary.semantic-web.at/semweb.rdf> , <http://ckan.net/storage/f/file/80d5f096-e1ad-489f-9ff4-793e6f5f04d2> ;
+        dcat:keyword            "format-skos" , "crossdomain" , "socialweb" , "lod" , "semanticweb" , "research" , "thesaurus" , "published-by-producer" , "deref-vocab" , "usergeneratedcontent" , "format-owl" , "people" , "technology" ;
+        dcat:landingPage        <http://datahub.io/dataset/socialsemweb-thesaurus> .
+
+<http://vocabulary.semantic-web.at/PoolParty/sparql/semweb>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://vocabulary.semantic-web.at/PoolParty/sparql/semweb> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#dataset> ;
+        void:triples         "300"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#links_geonames-semantic-web>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#dataset> ;
+        void:triples         "100"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://vocabulary.semantic-web.at/semweb.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://vocabulary.semantic-web.at/semweb.rdf> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Semantic Web Company" .
+
+<http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#links_freebase>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/freebase/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#dataset> ;
+        void:triples         "200"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:name  "Semantic Web Company" .
+
+<http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/socialsemweb-thesaurus/dataid#dataset" .

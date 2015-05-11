@@ -1,0 +1,61 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/mesh-finnish/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/mesh-finnish/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/mesh-finnish/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Osma Suominen"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/mesh-finnish/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/mesh-finnish/dataid#creator",
+    "dct:description" : "MeSH is the National Library of Medicine's controlled vocabulary thesaurus. It consists of sets of terms naming descriptors in a hierarchical structure that permits searching at various levels of specificity.\n\nThis package translates the terms into finnish.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Finnish translation of mesh",
+    "exampleResource" : "http://www.yso.fi/onto/mesh/D004261?rdf=xml",
+    "rdfs:label" : "mesh-finnish",
+    "keyword" : [ "lodcloud.nolinks", "lodcloud.unconnected", "license-metadata", "lodcloud.needsinfo", "lod", "format-rdf", "publications", "health", "no-proprietary-vocab", "published-by-third-party" ],
+    "landingPage" : "http://datahub.io/dataset/mesh-finnish"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

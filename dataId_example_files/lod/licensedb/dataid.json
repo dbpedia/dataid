@@ -1,0 +1,78 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/licensedb/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/licensedb/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/licensedb/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:kuno@frob.nl",
+    "name" : "Kuno Woudt"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/licensedb/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/licensedb/dataid#contributor",
+    "dct:description" : " Welcome to the License Database project (aka LicenseDB). Our goal is to build a structured database of all copyright (and related rights) licenses used in the free software / open source / free culture communities.\n\nVarious tools can benefit from a full set of machine-readable licenses, including tools which we haven't thought of yet. Feel free to contact us if you have ideas to make this project useful for a particular use-case. ",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "The License Database",
+    "rdfs:label" : "licensedb",
+    "distribution" : [ "https://licensedb.org/id/", "https://licensedb.org/dl/license-database.tar.gz" ],
+    "keyword" : [ "rdf", "license", "format-json", "license-metadata", "format-rdf", "license-metadata linked-data" ],
+    "landingPage" : "http://datahub.io/dataset/licensedb"
+  }, {
+    "@id" : "https://licensedb.org/dl/license-database.tar.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://licensedb.org/dl/license-database.tar.gz",
+    "mediaType" : "json-ld"
+  }, {
+    "@id" : "https://licensedb.org/id/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://licensedb.org/id/",
+    "mediaType" : "HTML"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

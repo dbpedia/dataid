@@ -1,0 +1,113 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:m.meimaris@gmail.com" ;
+        foaf:name  "Marios Meimaris" .
+
+<https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T105843/2011-q1.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T105843/2011-q1.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#links_dbpedia-el>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia-el/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#dataset> ;
+        void:triples         "402"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T104422/2011-q4.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T104422/2011-q4.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T165441/2012-q1.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T165441/2012-q1.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#dataset> ;
+        void:triples         "402"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#links_weso>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/weso/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#dataset> ;
+        void:triples         "9454"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "public-spending-in-greece"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#creator> , <http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#links_weso> , <http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#links_geonames> , <http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#links_dbpedia> , <http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#links_dbpedia-el> ;
+        dct:description         "The “publingspending” initiative is a free, open, neutral and objective web application. It aims to provide efficient visualizations along with research data of the Hellenic public expenditure."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-odbl> ;
+        dct:title               "Public Spending in Greece"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:sparqlEndpoint     <http://publicspending.medialab.ntua.gr/sparql> ;
+        void:uriSpace           "http://publicspending.medialab.ntua.gr/resource/" ;
+        dcat:distribution       <https://ckannet-storage.commondatastorage.googleapis.com/2012-11-12T112247/dump2010valid.csv> , <http://publicspending.medialab.ntua.gr/sparql> , <https://ckannet-storage.commondatastorage.googleapis.com/2012-11-12T115323/dump2010.rdf> , <https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T131017/2012-q4.rdf> , <https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T151730/2012-q3.rdf> , <https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T165441/2012-q1.rdf> , <https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T104845/2011-q3.rdf> , <https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T154723/2012-q2.rdf> , <https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T105843/2011-q1.rdf> , <https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T105525/2011-q2.rdf> , <https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T104422/2011-q4.rdf> ;
+        dcat:keyword            "Greece" , "public spending" , "spending" , "linked-open-data" , "linkedopendata" ;
+        dcat:landingPage        <http://datahub.io/dataset/public-spending-in-greece> .
+
+<https://ckannet-storage.commondatastorage.googleapis.com/2012-11-12T112247/dump2010valid.csv>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://ckannet-storage.commondatastorage.googleapis.com/2012-11-12T112247/dump2010valid.csv> ;
+        dcat:mediaType    "CSV" .
+
+<https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T104845/2011-q3.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T104845/2011-q3.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://publicspending.medialab.ntua.gr/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://publicspending.medialab.ntua.gr/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<https://ckannet-storage.commondatastorage.googleapis.com/2012-11-12T115323/dump2010.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://ckannet-storage.commondatastorage.googleapis.com/2012-11-12T115323/dump2010.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T154723/2012-q2.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T154723/2012-q2.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T151730/2012-q3.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T151730/2012-q3.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T131017/2012-q4.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T131017/2012-q4.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T105525/2011-q2.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T105525/2011-q2.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:m.meimaris@gmail.com" ;
+        foaf:name  "Marios Meimaris" .
+
+<http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#links_geonames>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/geonames/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#dataset> ;
+        void:triples         "402"^^<http://www.w3.org/2001/XMLSchema#int> .

@@ -1,0 +1,77 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/linkedgeodata-aerodromes/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/linkedgeodata-aerodromes/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linkedgeodata-aerodromes/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:cstadler@informatik.uni-leipzig.de",
+    "name" : "Claus Stadler"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/linkedgeodata-aerodromes/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/linkedgeodata-aerodromes/dataid#contributor",
+    "dct:description" : "An excerpt of the LinkenGeoData-Live dataset containing Aerodromes and Airports as of 2012-01-12.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "LinkedGeoData: Aerodromes",
+    "rdfs:label" : "linkedgeodata-aerodromes",
+    "distribution" : [ "http://live.linkedgeodata.org/sparql", "https://commondatastorage.googleapis.com/ckannet-storage/2012-02-02T125838/lgd-aerodromes-plus-ontology-2012-01-12.nt.bz2" ],
+    "keyword" : [ "published-by-third-party", "no-provenance-metadata", "no-license-metadata", "format-geo", "geographic", "lod", "deref-vocab", "sparql", "no-vocab-mappings", "format-rdf" ],
+    "landingPage" : "http://datahub.io/dataset/linkedgeodata-aerodromes"
+  }, {
+    "@id" : "http://live.linkedgeodata.org/sparql",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://live.linkedgeodata.org/sparql"
+  }, {
+    "@id" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-02-02T125838/lgd-aerodromes-plus-ontology-2012-01-12.nt.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-02-02T125838/lgd-aerodromes-plus-ontology-2012-01-12.nt.bz2",
+    "mediaType" : "application/x-bzip"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

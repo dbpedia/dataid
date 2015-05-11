@@ -1,0 +1,40 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/culds_1/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/culds_1/dataid#dataset" .
+
+<http://data.lib.cam.ac.uk/data/cambridge.mrc.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.lib.cam.ac.uk/data/cambridge.mrc.gz> ;
+        dcat:mediaType    "marc21" .
+
+<http://data.lib.cam.ac.uk/endpoint.php?query=SELECT+*+WHERE+{%0D%0A++GRAPH+%3Chttp%3A%2F%2Fdata.lib.cam.ac.uk%2Fcontext%2Fdataset%2Fcambridge%2Fbib%3E+{+%3Fs+%3Fp+%3Fo+.+}%0D%0A}%0D%0ALIMIT+1000&output=htmltab&jsonp=&key=&show_inline=1>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.lib.cam.ac.uk/endpoint.php?query=SELECT+*+WHERE+{%0D%0A++GRAPH+%3Chttp%3A%2F%2Fdata.lib.cam.ac.uk%2Fcontext%2Fdataset%2Fcambridge%2Fbib%3E+{+%3Fs+%3Fp+%3Fo+.+}%0D%0A}%0D%0ALIMIT+1000&output=htmltab&jsonp=&key=&show_inline=1> ;
+        dcat:mediaType    "SPARQL" .
+
+<http://data.lib.cam.ac.uk/data/cambridge.nt.tgz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.lib.cam.ac.uk/data/cambridge.nt.tgz> ;
+        dcat:mediaType    "rdf/nt" .
+
+<http://dataid.dbpedia.org/lod/culds_1/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Ed Chamberlain" .
+
+<http://dataid.dbpedia.org/lod/culds_1/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "culds_1"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/culds_1/dataid#creator> ;
+        dct:description         "This data marks the first major out put of the COMET project. COMET is a JISC funded collaboration between Cambridge University Library and CARET, University of Cambridge. It is funded under the JISC Infrastructure for Resource Discovery programme.\n\nIt represents work over a 20+ year period which contains a number of changes in practices and cataloguing tools. No attempt has been made to screen for quaility of records other than the Voyager export process.\n\nThis data also includes the 180,000 'Tower Project' records published under the JISC Open Bibliography Project.\n\n"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-pddl> ;
+        dct:title               "Cambridge University Library dataset #1"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dcat:distribution       <http://data.lib.cam.ac.uk/endpoint.php?query=SELECT+*+WHERE+{%0D%0A++GRAPH+%3Chttp%3A%2F%2Fdata.lib.cam.ac.uk%2Fcontext%2Fdataset%2Fcambridge%2Fbib%3E+{+%3Fs+%3Fp+%3Fo+.+}%0D%0A}%0D%0ALIMIT+1000&output=htmltab&jsonp=&key=&show_inline=1> , <http://data.lib.cam.ac.uk/data/cambridge.mrc.gz> , <http://data.lib.cam.ac.uk/data/cambridge.nt.tgz> ;
+        dcat:keyword            "lld" , "library" , "jisc" , "format-rdf" , "format-marc" , "cambridge" , "comet" , "sparql-endpoint" ;
+        dcat:landingPage        <http://datahub.io/dataset/culds_1> .

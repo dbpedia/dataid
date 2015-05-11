@@ -1,0 +1,276 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/taxonconcept/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://lod.taxonconcept.org/ontology/void.rdf">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://lod.taxonconcept.org/ontology/void.rdf"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://lod.taxonconcept.org/rdf/txn_misc.ttl.gz">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://lod.taxonconcept.org/rdf/txn_misc.ttl.gz"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://lod.taxonconcept.org/rdf/txn_ses_000001.ttl">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://lod.taxonconcept.org/rdf/txn_ses_000001.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://eol.taxonconcept.org/data/eol/eol_000001.ttl">
+    <dcat:mediaType>ttl</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://eol.taxonconcept.org/data/eol/eol_000001.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://lod.taxonconcept.org/ontology/txn.owl">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://lod.taxonconcept.org/ontology/txn.owl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://lod.taxonconcept.org/rdf/usda_plants_000001.ttl">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://lod.taxonconcept.org/rdf/usda_plants_000001.ttl"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset">
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://lod.taxonconcept.org/rdf/txn_ocs.ttl.gz">
+        <dcat:mediaType>text/turtle</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://lod.taxonconcept.org/rdf/txn_ocs.ttl.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_eunis">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eunis/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >9489</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_opencyc">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/opencyc/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >26</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:exampleResource rdf:resource="http://lod.taxonconcept.org/ses/tnJr6.rdf"/>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/taxonconcept"/>
+    <void:exampleResource rdf:resource="http://ocs.taxonconcept.org/ocs/f522444a-2dd9-400e-be59-47213ef38cb9.rdf"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ocs.taxonconcept.org/ocs/index.html">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ocs.taxonconcept.org/ocs/index.html"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <void:exampleResource rdf:resource="http://lod.taxonconcept.org/ses/iuCXz.rdf"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_fishes-of-texas">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/fishes-of-texas/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >611</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-txn</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Species are known by many different names. The TaxonConcept Knowledge Base provides informative Linked Open Data URI's for species concepts that improve the quality and stability of links between a species and data about that species. There are currently 108,175 species concepts and a and 1,000 records for species occurrences. There are also a few examples of references, and image galleries. I have added links below for an insect, mammal, bird and tree to serve as examples of the interlinking etc. The occurrence records are interlinked with GeoNames. 
+
+A species can have several different classifications, for instance it's classification in NCBI and DBpedia, are different. To allow multiple classifications, the species model is separate from any specific classification. However many want these two aspects connected together. To make this easy, I have created an additional owl:sameAs RDF dump file which makes the #Taxonomy the same as the #Species. This is particularly useful for browsing SPARQL query results with Microsoft Pivot. In addition, it is also possible to create similar mapping files that can be used to 
+tie the species to alternative classifications.
+
+The data set and related vocabularies have been changed as of June 11, 2013. See the sitemap.xml or void file for the full list of RDF dumps</dct:description>
+    <dcat:keyword>format-time</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_gni">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/gni/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >100000</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-wdrs</dcat:keyword>
+    <dcat:keyword>format-geospecies</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://lod.taxonconcept.org/rdf/txn_distribution.ttl.gz">
+        <dcat:mediaType>text/turtle</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://lod.taxonconcept.org/rdf/txn_distribution.ttl.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/taxonconcept/dataid#creator">
+        <foaf:mbox>mailto:pdevries@wisc.edu</foaf:mbox>
+        <foaf:name>Peter J. DeVries University of Wisconsin-Madison</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:distribution rdf:resource="http://lod.taxonconcept.org/ontology/txn.owl"/>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:distribution rdf:resource="http://eol.taxonconcept.org/data/eol/eol_000001.ttl"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_bbc-wildlife-finder">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bbc-wildlife-finder/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >318</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:distribution rdf:resource="http://lod.taxonconcept.org/rdf/usda_plants_000001.ttl"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >taxonconcept</rdfs:label>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>format-wo</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://lsd.taxonconcept.org/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://lsd.taxonconcept.org/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dcat:keyword>format-umbel</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_geospecies">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geospecies/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17814</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>biodiversity</dcat:keyword>
+    <dcat:keyword>format-owl</dcat:keyword>
+    <dcat:distribution rdf:resource="http://lod.taxonconcept.org/rdf/txn_misc.ttl.gz"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TaxonConcept Knowledge Base</dct:title>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >34394994</void:triples>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dcat:keyword>sparql-endpoint</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://lod.taxonconcept.org/rdf/txn_ses_000002.ttl">
+        <dcat:mediaType>text/turtle</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://lod.taxonconcept.org/rdf/txn_ses_000002.ttl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>format-dbpedia</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://lod.taxonconcept.org/sitemap.xml">
+        <dcat:mediaType>meta/sitemap</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://lod.taxonconcept.org/sitemap.xml"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>void-sparql-endpoint</dcat:keyword>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dcat:distribution rdf:resource="http://lod.taxonconcept.org/rdf/txn_ses_000001.ttl"/>
+    <dcat:keyword>format-cc</dcat:keyword>
+    <void:exampleResource rdf:resource="http://lod.taxonconcept.org/ses/EY8Z6.rdf"/>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/taxonconcept/dataid#contributor">
+        <foaf:mbox>mailto:pdevries@wisc.edu</foaf:mbox>
+        <foaf:name>Peter J. DeVries</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ocs.taxonconcept.org/ocs/f522444a-2dd9-400e-be59-47213ef38cb9.html">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ocs.taxonconcept.org/ocs/f522444a-2dd9-400e-be59-47213ef38cb9.html"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-pddl"/>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >147877</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://eol.taxonconcept.org/dos/771311fa322891f987ed366d8000d42b.ttl">
+        <dcat:mediaType>ttl</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://eol.taxonconcept.org/dos/771311fa322891f987ed366d8000d42b.ttl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_umbel">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/umbel/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >9</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:exampleResource rdf:resource="http://lod.taxonconcept.org/ses/v6n7p.rdf"/>
+    <dcat:keyword>format-geonames</dcat:keyword>
+    <dcat:keyword>lifesciences</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://eol.taxonconcept.org/data/anno/anno_000001.ttl">
+        <dcat:mediaType>ttl</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://eol.taxonconcept.org/data/anno/anno_000001.ttl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>geographic</dcat:keyword>
+    <dcat:keyword>format-dbo</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_eol">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eol/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >108175</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:exampleResource rdf:resource="http://lod.taxonconcept.org/ses/mCcSp.rdf"/>
+    <dcat:distribution rdf:resource="http://lod.taxonconcept.org/ontology/void.rdf"/>
+    <void:uriSpace>http://lod.taxonconcept.org/</void:uriSpace>
+    <dcat:keyword>format-geo</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://lsd.taxonconcept.org/sparql"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.taxonconcept.org/">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.taxonconcept.org/"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://lod.taxonconcept.org/rdf/txn_images.ttl.gz">
+        <dcat:mediaType>text/turtle</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://lod.taxonconcept.org/rdf/txn_images.ttl.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>format-dc</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://lod.taxonconcept.org/ontology/doc/index.html">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://lod.taxonconcept.org/ontology/doc/index.html"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_freebase">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/freebase/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >18743</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-bibo</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_bio2rdf">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bio2rdf/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >43889</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/taxonconcept/dataid#links_uniprot">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/uniprot/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/taxonconcept/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >43919</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+  </dataid:Dataset>
+</rdf:RDF>

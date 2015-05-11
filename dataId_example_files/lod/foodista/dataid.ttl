@@ -1,0 +1,38 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://archive.org/download/kasabi/foodista.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://archive.org/download/kasabi/foodista.gz> ;
+        dcat:mediaType    "gzip::nquads" .
+
+<http://dataid.dbpedia.org/lod/foodista/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:leigh@ldodds.com" ;
+        foaf:name  "Leigh Dodds" .
+
+<http://dataid.dbpedia.org/lod/foodista/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "foodista"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/foodista/dataid#creator> , <http://dataid.dbpedia.org/lod/foodista/dataid#contributor> ;
+        dct:description         "Foodista is a community edited recipe wiki, published under a Creative Common Attribution license. The wiki contains information on foods, tools, techniques, and recipes.\n\nThis dataset was based on a crawl of the Foodista website, extracting the metadata from the service. Since the crawl was completed the Foodista site has significantly changed, so refreshing the data is more difficult. \n\n*Note* this dataset is no longer updated, it was taken off-line during the shutdown of Kasabi. A dump of the dataset has been [uploaded to the Internet Archive](http://archive.org/details/kasabi)"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "Foodista"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:triples            "8129900"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://data.kasabi.com/dataset/foodista" ;
+        dcat:distribution       <http://archive.org/download/kasabi/foodista.gz> ;
+        dcat:keyword            "usergeneratedcontent" , "food" , "format-rdf" ;
+        dcat:landingPage        <http://datahub.io/dataset/foodista> .
+
+<http://dataid.dbpedia.org/lod/foodista/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/foodista/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/foodista/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:leigh@ldodds.com" ;
+        foaf:name  "Leigh Dodds" .

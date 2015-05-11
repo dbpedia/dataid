@@ -1,0 +1,133 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/english-index-of-multiple-deprivation-score-2010/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/english-index-of-multiple-deprivation-score-2010/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/english-index-of-multiple-deprivation-score-2010/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:hello@publishmydata.com",
+    "name" : "PublishMyData"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/english-index-of-multiple-deprivation-score-2010/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:bill@swirrl.com",
+    "name" : "Bill Roberts"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/english-index-of-multiple-deprivation-score-2010/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/english-index-of-multiple-deprivation-score-2010/dataid#contributor", "http://dataid.dbpedia.org/lod/english-index-of-multiple-deprivation-score-2010/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/english-index-of-multiple-deprivation-score-2010/dataid#links_odc-lsoa",
+    "dct:description" : "This dataset contains the main Index of Multiple Deprivation scores for 2010. It was created from data provided by the Department of Communities and Local Government. See <a href=\"http://www.communities.gov.uk/publications/corporate/statistics/indices2010\">here</a> for details.\n\n194892 triples.",
+    "license" : "http://reference.data.gov.uk/id/open-government-licence",
+    "dct:title" : "English Index of Multiple Deprivation Score 2010",
+    "exampleResource" : "http://opendatacommunities.org/doc/IMD/2010/IMD-score/LSOA/E01000001.ttl",
+    "sparqlEndpoint" : "http://opendatacommunities.org/sparql",
+    "triples" : "194892",
+    "uriSpace" : "http://opendatacommunities.org/id/IMD/2010/IMD-score/LSOA/",
+    "rdfs:label" : "english-index-of-multiple-deprivation-score-2010",
+    "distribution" : [ "http://opendatacommunities.org/datasets/imd-score-2010.ttl", "http://opendatacommunities.org/sparql", "http://opendatacommunities.org/def/IMD", "http://opendatacommunities-downloads.s3.amazonaws.com/imd-2010-imd-score.ttl.zip" ],
+    "keyword" : [ "format-sdmxd", "department-of-infrastructure-transport-regional-development-and-local-government", "geographic", "format-rdfs", "housing", "environment", "crime", "provenance-metadata", "deref-vocab", "deprivation", "health", "government", "license-metadata", "format-cube", "format-rdf", "education", "employment", "lod", "no-vocab-mappings", "imd", "linkeddata", "published-by-third-party" ],
+    "landingPage" : "http://datahub.io/dataset/english-index-of-multiple-deprivation-score-2010"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/english-index-of-multiple-deprivation-score-2010/dataid#links_odc-lsoa",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/odc-lsoa",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/english-index-of-multiple-deprivation-score-2010/dataid#dataset",
+    "triples" : "32482"
+  }, {
+    "@id" : "http://opendatacommunities-downloads.s3.amazonaws.com/imd-2010-imd-score.ttl.zip",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://opendatacommunities-downloads.s3.amazonaws.com/imd-2010-imd-score.ttl.zip",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://opendatacommunities.org/datasets/imd-score-2010.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://opendatacommunities.org/datasets/imd-score-2010.ttl",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://opendatacommunities.org/def/IMD",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://opendatacommunities.org/def/IMD",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://opendatacommunities.org/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://opendatacommunities.org/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

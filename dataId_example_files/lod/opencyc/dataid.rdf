@@ -1,0 +1,62 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/opencyc/dataid#dataset">
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >### About
+
+&gt; Now it is even easier to use the rich and diverse collection of real-world concepts in OpenCyc to bring meaning to your semantic web applications! The full OpenCyc content is now available both as downloadable OWL ontologies as well as via semantic web endpoints (i.e., permanent URIs). These URIs return RDF representations of each Cyc concept as well as a human-readable version when accessed via a Web Browser.
+
+Data exposed: OpenCyc Ontology
+Size of dump and data set: ~1.6 million triples, ~150MB uncompressed
+
+### Openness
+
+[License](http://www.opencyc.org/license) states:
+
+&gt; These files contain an OWL representation of information contained in the OpenCyc Knowledge Base. The content of these OWL files are licensed under the Creative Commons Attribution 3.0 license whose text can be found at . The content of these OWL files, including the OpenCyc content they represent, constitutes the "Work" referred to in the Creative Commons license. The terms of this license equally apply to, without limitation, renamings and other logically equivalent reformulations of the content of these OWL files (or portions thereof) in any natural or formal language, as well as to derivations of this content or inclusion of it in other ontologies.</dct:description>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://sw.opencyc.org/downloads/opencyc_owl_downloads/opencyc-latest.owl.gz">
+        <dcat:mediaType>RDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://sw.opencyc.org/downloads/opencyc_owl_downloads/opencyc-latest.owl.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dcat:keyword>ontology</dcat:keyword>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/opencyc"/>
+    <dcat:keyword>lodcloud.nolinks</dcat:keyword>
+    <void:uriSpace>http://sw.opencyc.org/concept/</void:uriSpace>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >opencyc</rdfs:label>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dcat:keyword>linkeddata</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OpenCyc</dct:title>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <void:exampleResource rdf:resource="http://sw.opencyc.org/concept/Mx4rwP1ZTZwpEbGdrcN5Y29ycA"/>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1600000</void:triples>
+    <dcat:keyword>license-nonefordb</dcat:keyword>
+    <dcat:keyword>ckanupload.esw.200910</dcat:keyword>
+    <dcat:keyword>rdf</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/opencyc/dataid#creator">
+        <foaf:name>Cycorp, Inc.</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/opencyc/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/opencyc/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

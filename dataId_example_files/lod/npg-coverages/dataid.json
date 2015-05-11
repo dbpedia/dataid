@@ -1,0 +1,78 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph<http://ns.nature.com/graphs/coverages>{?s?p?o.}}limit25",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph<http://ns.nature.com/graphs/coverages>{?s?p?o.}}limit25",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/npg-coverages/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/npg-coverages/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/npg-coverages/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:developers@nature.com",
+    "name" : "NPG Developers"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/npg-coverages/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:developers@nature.com",
+    "name" : "NPG"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/npg-coverages/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/npg-coverages/dataid#creator", "http://dataid.dbpedia.org/lod/npg-coverages/dataid#contributor" ],
+    "dct:description" : "Graph of npg:Coverage triples. The npg:Coverage objects model product (journal titles, etc) extents. ",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "Nature Publishing Group - Coverages",
+    "rdfs:label" : "npg-coverages",
+    "distribution" : "http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph<http://ns.nature.com/graphs/coverages>{?s?p?o.}}limit25",
+    "keyword" : [ "bibliographic", "publications", "physical sciences", "science", "sciences", "life sciences", "health sciences", "academic", "published-by-producer", "journals" ],
+    "landingPage" : "http://datahub.io/dataset/npg-coverages"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

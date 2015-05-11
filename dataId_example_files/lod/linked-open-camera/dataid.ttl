@@ -1,0 +1,44 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/linked-open-camera/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "linkedopendata.it" .
+
+<http://sparql.linkedopendata.it/loc>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://sparql.linkedopendata.it/loc> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dump.linkedopendata.it/loc>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://dump.linkedopendata.it/loc> ;
+        dcat:mediaType    "RDF" .
+
+<http://void.linkedopendata.it/loc>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://void.linkedopendata.it/loc> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/linked-open-camera/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/linked-open-camera/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/linked-open-camera/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "linked-open-camera"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/linked-open-camera/dataid#creator> ;
+        dct:description         "Contractors and suppliers of the chamber of deputies in italy in 2010.\n\nMore details are available at [http://www.linkedopendata.it/datasets/loc](http://www.linkedopendata.it/datasets/loc)\n\nThe ontology is documented at [http://purl.org/net7/locs/v1](http://purl.org/net7/locs/v1)\n"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by-sa> ;
+        dct:title               "Linked Open Camera (LinkedOpenData.it)"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://data.linkedopendata.it/loc/resource/Previsione2> ;
+        void:sparqlEndpoint     <http://sparql.linkedopendata.it/loc> ;
+        void:triples            "5400"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://purl.org/net7/vocab/locs/v1#" ;
+        dcat:distribution       <http://void.linkedopendata.it/loc> , <http://sparql.linkedopendata.it/loc> , <http://dump.linkedopendata.it/loc> ;
+        dcat:keyword            "format-dbo" , "linkeddata" , "license-metadata" , "format-vcard" , "rdf" , "format-foaf" , "format-gr" , "lodcloud.unconnected" , "published-by-producer" , "provenance-metadata" , "country-italy" , "format-dc" , "linked-open-data" , "government" , "deref-vocab" , "void-sparql-endpoint" , "format-rdf" , "lodcloud.nolinks" , "lod" ;
+        dcat:landingPage        <http://datahub.io/dataset/linked-open-camera> .

@@ -1,0 +1,44 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/medline/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/medline/dataid#dataset" .
+
+<http://purl.org/okfn/medline/records>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/okfn/medline/records> ;
+        dcat:mediaType    "auto" .
+
+<http://dataid.dbpedia.org/lod/medline/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "medline"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/medline/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/medline/dataid#links_doi> ;
+        dct:description         "RDF representation of the Medline catalogue. Information about 19 million articles linked to http://dx.doi.org/ with article identifiers and http://crossref.org/ with journal identifiers."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "medline"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:triples            "1016652223"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:distribution       <http://purl.org/okfn/medline/catalogue> , <http://purl.org/okfn/medline/records> ;
+        dcat:keyword            "format-foaf" , "lod" , "format-dcat" , "format-void" , "format-rdfs" , "format-bibo" , "format-rdf" , "lld" ;
+        dcat:landingPage        <http://datahub.io/dataset/medline> .
+
+<http://purl.org/okfn/medline/catalogue>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/okfn/medline/catalogue> ;
+        dcat:mediaType    "api/dcat" .
+
+<http://dataid.dbpedia.org/lod/medline/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:ww@eris.okfn.org" ;
+        foaf:name  "William Waites" .
+
+<http://dataid.dbpedia.org/lod/medline/dataid#links_doi>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/doi/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/medline/dataid#dataset> ;
+        void:triples         "137232958"^^<http://www.w3.org/2001/XMLSchema#int> .

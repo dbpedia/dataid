@@ -1,0 +1,157 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/freebase/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/freebase/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:simister@google.com",
+    "name" : "Shawn Simister"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/freebase/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:freebase-discuss@freebase.com",
+    "name" : "Google"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/freebase/dataid#contributor", "http://dataid.dbpedia.org/lod/freebase/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/freebase/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/freebase/dataid#links_sec-rdfabout", "http://dataid.dbpedia.org/lod/freebase/dataid#links_nytimes-linked-open-data", "http://dataid.dbpedia.org/lod/freebase/dataid#links_geospecies", "http://dataid.dbpedia.org/lod/freebase/dataid#links_bbc-music" ],
+    "dct:description" : "### Description\n\n\"Freebase is an open database of the world’s information. It is built by the community and for the community—free for anyone to query, contribute to, built applications on top of, or integrate into their websites.\"\n\n### Openness: OPEN\n\n  * License: CC-BY for data.  Variety of open source licenses (or PD) for text blurbs & images.\n  * Access: API + bulk.<http://www.freebase.com/view/allDomains>\n    * bulk: yes. <http://download.freebase.com/>\n    * api: yes. <http://www.freebase.com/view/freebase/api>\n\nTriple count and link statistics provided by Freebase contributor Tom Morris\n\n### RDF data and URIs\n\nFreebase has [an RDF service](http://rdf.freebase.com/) that exposes URIs and generates RDF descriptions for all Freebase topics.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Freebase",
+    "exampleResource" : "http://rdf.freebase.com/ns/en.blade_runner",
+    "triples" : "337203427",
+    "uriSpace" : "http://rdf.freebase.com/",
+    "rdfs:label" : "freebase",
+    "distribution" : [ "http://download.freebase.com/datadumps/latest/freebase-datadump-tsv.tar.bz2", "http://download.freebase.com/datadumps/latest/freebase-datadump-quadruples.tsv.bz2", "http://download.freebase.com/datadumps/latest/freebase-simple-topic-dump.tsv.bz2", "http://freebase.com/api/service/search", "http://download.freebase.com/datadumps/latest/browse/", "http://download.freebase.com/datadumps/" ],
+    "keyword" : [ "format-dcterms", "no-vocab-mappings", "size-large", "access-bulk", "license-metadata", "provenance-metadata", "encylopaedia", "rdf", "access-api", "published-by-producer", "deref-vocab", "lld", "format-rdf", "access-www", "lod", "broken_link", "crossdomain" ],
+    "landingPage" : "http://datahub.io/dataset/freebase"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/freebase/dataid#links_bbc-music",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/bbc-music/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "triples" : "350110"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/freebase/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "triples" : "3348530"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/freebase/dataid#links_geospecies",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geospecies/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "triples" : "100000"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/freebase/dataid#links_nytimes-linked-open-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/nytimes-linked-open-data/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "triples" : "9930"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/freebase/dataid#links_sec-rdfabout",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/sec-rdfabout/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "triples" : "120626"
+  }, {
+    "@id" : "http://download.freebase.com/datadumps/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://download.freebase.com/datadumps/"
+  }, {
+    "@id" : "http://download.freebase.com/datadumps/latest/browse/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://download.freebase.com/datadumps/latest/browse/",
+    "mediaType" : "TSV"
+  }, {
+    "@id" : "http://download.freebase.com/datadumps/latest/freebase-datadump-quadruples.tsv.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://download.freebase.com/datadumps/latest/freebase-datadump-quadruples.tsv.bz2",
+    "mediaType" : "TSV"
+  }, {
+    "@id" : "http://download.freebase.com/datadumps/latest/freebase-datadump-tsv.tar.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://download.freebase.com/datadumps/latest/freebase-datadump-tsv.tar.bz2",
+    "mediaType" : "TSV"
+  }, {
+    "@id" : "http://download.freebase.com/datadumps/latest/freebase-simple-topic-dump.tsv.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://download.freebase.com/datadumps/latest/freebase-simple-topic-dump.tsv.bz2",
+    "mediaType" : "TSV"
+  }, {
+    "@id" : "http://freebase.com/api/service/search",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://freebase.com/api/service/search",
+    "mediaType" : "api/search"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

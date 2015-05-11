@@ -1,0 +1,73 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/olia/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/olia/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/olia/dataid#dataset">
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://purl.org/olia">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://purl.org/olia"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Ontologies of Linguistic Annotations (OLiA) provide an OWL/DL taxonomy of data categories as a reference for linguistic annotation (OLiA Reference Model), plus OWL/DL models for a large number of annotation schemes (OLiA Annotation Models) and their relationship to reference data categories (OLiA Linking Models).
+The OLiA Reference Model itself is linked to community-maintained repositories such as GOLD (http://linguistics-ontology.org/) and ISOcat (http://www.isocat.org)
+
+The OLiA ontologies were originally developed as part of an infrastructure for the sustainable maintenance of linguistic resources (http://www.sfb441.uni-tuebingen.de/c2/index-engl.html), their fields of application include the formalization of annotation schemes, concept-based querying over heterogeneously annotated corpora, and the development of interoperable NLP pipelines.</dct:description>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >olia</rdfs:label>
+    <dcat:keyword>annotation</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="https://sourceforge.net/projects/olia/files/latest/download">
+        <dcat:mediaType>application/x-zip-compressed</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="https://sourceforge.net/projects/olia/files/latest/download"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/olia/dataid#links_gold">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/gold/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/olia/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >264</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/olia/dataid#links_isocat">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/isocat/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/olia/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >361</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://purl.org/olia/olia.owl">
+        <dcat:mediaType>rdf, owl</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://purl.org/olia/olia.owl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/olia/dataid#creator">
+        <foaf:name>Christian Chiarcos</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >43775</void:triples>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ontologies of Linguistic Annotations (OLiA)</dct:title>
+    <dcat:keyword>linguistics</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/olia"/>
+    <dcat:keyword>nlp</dcat:keyword>
+    <dcat:keyword>corpus</dcat:keyword>
+    <void:exampleResource rdf:resource="http://purl.org/olia/penn.owl#JJ"/>
+  </dataid:Dataset>
+</rdf:RDF>

@@ -1,0 +1,36 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/semantic_bible/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/semantic_bible/dataid#dataset" .
+
+<http://www.semanticbible.com/2006/11/NTNames.owl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.semanticbible.com/2006/11/NTNames.owl> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/semantic_bible/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "semantic_bible"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/semantic_bible/dataid#creator> ;
+        dct:description         "Data exposed: (for New Testament Names) is a semantic knowledge base describing each named thing in the New Testament\n\nSize of dump and data set: about 600 names\n\nNTNames base URI <http://semanticbible.org/ns/2006/NTNames#>\nBut not dereferenceable, unless explicit extension added (http://www.semanticbible.com/2006/11/NTNames.owl)\n\n### Openness: NOT OPEN\n\nLinks to cc by-nc-sa in footer."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://creativecommons.org/licenses/by-nc/2.0/> ;
+        dct:title               "Semantic Bible"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:uriSpace           "http://semanticbible.org/ns/2006/NTNames#" ;
+        dcat:distribution       <http://www.semanticbible.org/2006/11/NTNames.owl, http://www.semanticbible.org/2006/11/NTN-individuals.owl> , <http://www.semanticbible.com/2006/11/NTNames.owl> ;
+        dcat:keyword            "no-deref-vocab" , "lod" , "lodcloud.unconnected" , "bible" , "linkeddata" , "format-rdf" , "lodcloud.needsfixing" , "ckanupload.esw.200910" , "lodcloud.nolinks" , "rdf" ;
+        dcat:landingPage        <http://datahub.io/dataset/semantic_bible> .
+
+<http://dataid.dbpedia.org/lod/semantic_bible/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Sean Boisen" .
+
+<http://www.semanticbible.org/2006/11/NTNames.owl, http://www.semanticbible.org/2006/11/NTN-individuals.owl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.semanticbible.org/2006/11/NTNames.owl, http://www.semanticbible.org/2006/11/NTN-individuals.owl> ;
+        dcat:mediaType    "RDF" .

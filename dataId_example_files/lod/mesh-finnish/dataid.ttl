@@ -1,0 +1,25 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/mesh-finnish/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/mesh-finnish/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/mesh-finnish/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Osma Suominen" .
+
+<http://dataid.dbpedia.org/lod/mesh-finnish/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "mesh-finnish"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/mesh-finnish/dataid#creator> ;
+        dct:description         "MeSH is the National Library of Medicine's controlled vocabulary thesaurus. It consists of sets of terms naming descriptors in a hierarchical structure that permits searching at various levels of specificity.\n\nThis package translates the terms into finnish."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "Finnish translation of mesh"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://www.yso.fi/onto/mesh/D004261?rdf=xml> ;
+        dcat:keyword            "lodcloud.nolinks" , "lodcloud.unconnected" , "license-metadata" , "lodcloud.needsinfo" , "lod" , "format-rdf" , "publications" , "health" , "no-proprietary-vocab" , "published-by-third-party" ;
+        dcat:landingPage        <http://datahub.io/dataset/mesh-finnish> .

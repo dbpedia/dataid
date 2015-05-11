@@ -1,0 +1,121 @@
+{
+  "@graph" : [ {
+    "@id" : "http://api.talis.com/stores/whoiswho/services/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://api.talis.com/stores/whoiswho/services/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eu-who-is-who/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Keith Alexander"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#creator",
+    "containsLinks" : "http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#links_eu-institutions",
+    "dct:description" : "Data scraped from [EU Whoiswho](http://europa.eu/whoiswho/public/index.cfm?lang=en), the official directory of the European Union. The dataset contains people, organisations and organisational hierarchy.",
+    "license" : "http://www.opendefinition.org/licenses/odc-pddl",
+    "dct:title" : "EU Who Is Who",
+    "exampleResource" : "http://whoiswho.publicdata.eu/data/institutions/1063.rdf",
+    "sparqlEndpoint" : "http://api.talis.com/stores/whoiswho/services/sparql",
+    "triples" : "198786",
+    "uriSpace" : "http://whoiswho.publicdata.eu/data/",
+    "rdfs:label" : "eu-who-is-who",
+    "distribution" : [ "http://api.talis.com/stores/whoiswho/services/sparql", "http://whoiswho.publicdata.eu/void.ttl", "http://whoiswho.publicdata.eu/dump/whoiswho.nt" ],
+    "keyword" : [ "no-deref-vocab", "government", "no-license-metadata", "lod", "politics", "published-by-third-party", "format-foaf", "eu-institution", "eu", "latc", "format-dct", "provenance-metadata" ],
+    "landingPage" : "http://datahub.io/dataset/eu-who-is-who"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#links_eu-institutions",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/eu-institutions/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#dataset",
+    "triples" : "3260"
+  }, {
+    "@id" : "http://whoiswho.publicdata.eu/dump/whoiswho.nt",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://whoiswho.publicdata.eu/dump/whoiswho.nt",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://whoiswho.publicdata.eu/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://whoiswho.publicdata.eu/void.ttl",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

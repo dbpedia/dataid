@@ -1,0 +1,78 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/vivo-cornell-university/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/vivo-cornell-university/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://vivo.cornell.edu/individual/PamelaGraham/PamelaGraham.rdf">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://vivo.cornell.edu/individual/PamelaGraham/PamelaGraham.rdf"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://vivo.cornell.edu/individual/DonnaStevens/DonnaStevens.rdf">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://vivo.cornell.edu/individual/DonnaStevens/DonnaStevens.rdf"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://vivo.cornell.edu/Cornell-VIVO.n3">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://vivo.cornell.edu/Cornell-VIVO.n3"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://vivoweb.org/ontology/core">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://vivoweb.org/ontology/core"/>
+  </dataid:Distribution>
+  <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/vivo-cornell-university/dataid#links_dbpedia">
+    <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+    <void:subjectsTarget>
+      <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/vivo-cornell-university/dataid#dataset">
+        <dataid:associatedAgent>
+          <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/vivo-cornell-university/dataid#creator">
+            <foaf:name>Cornell University</foaf:name>
+          </dataid:Creator>
+        </dataid:associatedAgent>
+        <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+        <dataid:associatedAgent>
+          <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/vivo-cornell-university/dataid#contributor">
+            <foaf:mbox>mailto:hanjia@indiana.edu</foaf:mbox>
+            <foaf:name>Han Jia</foaf:name>
+          </dataid:Contributor>
+        </dataid:associatedAgent>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >vivo-cornell-university</rdfs:label>
+        <dcat:keyword>format-vitro</dcat:keyword>
+        <dcat:distribution rdf:resource="http://vivo.cornell.edu/Cornell-VIVO.n3"/>
+        <dcat:keyword>social-networks</dcat:keyword>
+        <dcat:keyword>no-license-metadata</dcat:keyword>
+        <dcat:keyword>no-provenance-metadata</dcat:keyword>
+        <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >VIVO Cornell</dct:title>
+        <dcat:keyword>format-rdfs</dcat:keyword>
+        <dcat:keyword>lod</dcat:keyword>
+        <dcat:keyword>published-by-producer</dcat:keyword>
+        <dcat:distribution rdf:resource="http://vivo.cornell.edu/individual/DonnaStevens/DonnaStevens.rdf"/>
+        <void:uriSpace>http://vivo.cornell.edu/</void:uriSpace>
+        <dcat:keyword>vivo</dcat:keyword>
+        <dcat:keyword>publications</dcat:keyword>
+        <dcat:keyword>science</dcat:keyword>
+        <dcat:keyword>format-rdf</dcat:keyword>
+        <dcat:keyword>education</dcat:keyword>
+        <dcat:landingPage rdf:resource="http://datahub.io/dataset/vivo-cornell-university"/>
+        <dataid:containsLinks rdf:resource="http://dataid.dbpedia.org/lod/vivo-cornell-university/dataid#links_dbpedia"/>
+        <dcat:distribution rdf:resource="http://vivoweb.org/ontology/core"/>
+        <dcat:keyword>deref-vocab</dcat:keyword>
+        <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Information about Cornell faculty and staff across all disciplines, departments and colleges. Available as RDF dump and Linked Data. This is a part of package:vivo.</dct:description>
+        <dcat:distribution rdf:resource="http://vivo.cornell.edu/individual/PamelaGraham/PamelaGraham.rdf"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >9796754</void:triples>
+        <dcat:keyword>no-vocab-mappings</dcat:keyword>
+      </dataid:Dataset>
+    </void:subjectsTarget>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >58</void:triples>
+  </dataid:Linkset>
+</rdf:RDF>

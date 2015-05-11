@@ -1,0 +1,68 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/eu-who-is-who/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://whoiswho.publicdata.eu/void.ttl">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://whoiswho.publicdata.eu/void.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://whoiswho.publicdata.eu/dump/whoiswho.nt">
+    <dcat:mediaType>application/x-ntriples</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://whoiswho.publicdata.eu/dump/whoiswho.nt"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://api.talis.com/stores/whoiswho/services/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://api.talis.com/stores/whoiswho/services/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#links_eu-institutions">
+    <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eu-institutions/dataid#dataset"/>
+    <void:subjectsTarget>
+      <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#dataset">
+        <dcat:distribution rdf:resource="http://api.talis.com/stores/whoiswho/services/sparql"/>
+        <dcat:distribution rdf:resource="http://whoiswho.publicdata.eu/void.ttl"/>
+        <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Data scraped from [EU Whoiswho](http://europa.eu/whoiswho/public/index.cfm?lang=en), the official directory of the European Union. The dataset contains people, organisations and organisational hierarchy.</dct:description>
+        <dcat:keyword>no-deref-vocab</dcat:keyword>
+        <dataid:containsLinks rdf:resource="http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#links_eu-institutions"/>
+        <dcat:keyword>government</dcat:keyword>
+        <void:exampleResource rdf:resource="http://whoiswho.publicdata.eu/data/institutions/1063.rdf"/>
+        <dcat:keyword>no-license-metadata</dcat:keyword>
+        <dcat:keyword>lod</dcat:keyword>
+        <dcat:landingPage rdf:resource="http://datahub.io/dataset/eu-who-is-who"/>
+        <dcat:keyword>politics</dcat:keyword>
+        <dcat:keyword>published-by-third-party</dcat:keyword>
+        <dcat:distribution rdf:resource="http://whoiswho.publicdata.eu/dump/whoiswho.nt"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >eu-who-is-who</rdfs:label>
+        <dcat:keyword>format-foaf</dcat:keyword>
+        <dcat:keyword>eu-institution</dcat:keyword>
+        <dcat:keyword>eu</dcat:keyword>
+        <dcat:keyword>latc</dcat:keyword>
+        <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >EU Who Is Who</dct:title>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >198786</void:triples>
+        <dataid:associatedAgent>
+          <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#creator">
+            <foaf:name>Keith Alexander</foaf:name>
+          </dataid:Creator>
+        </dataid:associatedAgent>
+        <dcat:keyword>format-dct</dcat:keyword>
+        <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-pddl"/>
+        <void:uriSpace>http://whoiswho.publicdata.eu/data/</void:uriSpace>
+        <dcat:keyword>provenance-metadata</dcat:keyword>
+        <void:sparqlEndpoint rdf:resource="http://api.talis.com/stores/whoiswho/services/sparql"/>
+      </dataid:Dataset>
+    </void:subjectsTarget>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3260</void:triples>
+  </dataid:Linkset>
+</rdf:RDF>

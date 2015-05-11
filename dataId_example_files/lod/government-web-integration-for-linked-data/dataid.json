@@ -1,0 +1,143 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "GovWild.org"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#links_freebase", "http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#links_nytimes-linked-open-data" ],
+    "dct:description" : "GovWILD integrates Open Government Data about politicians, parties, government agencies, funds, companies, and industrial leaders into a clean and consistent data set. This interlinked data is visualized on a Web interface to be explored by citizens and is available for download and further analysis. It can be used to uncover hidden connections between individuals in government and industry, to aggregate financial data, and to deep-dive into the network of politics and industry.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "GovWILD - Government Web Integration for Linked Data",
+    "exampleResource" : "http://govwild.org/rdf/?uri=http%3A%2F%2Fgovwild.org%2Fid%2Fperson%2FAngela_Merkel_deBundestag_370_P",
+    "sparqlEndpoint" : "http://govwild.org/sparql",
+    "triples" : "42773056",
+    "uriSpace" : "http://govwild.org/id/",
+    "rdfs:label" : "government-web-integration-for-linked-data",
+    "distribution" : [ "http://govwild.hpi-web.de/downloads/govwild-json-2012-01-30.zip", "http://govwild.hpi-web.de/0.6/GWOntology.rdf", "http://govwild.org/rdf/", "http://govwild.hpi-web.de/downloads/govwild-rdf-2012-01-30.zip", "http://govwild.org/sparql" ],
+    "keyword" : [ "gov", "lod", "format-rdfs", "published-by-third-party", "government", "format-rdf", "opendatachallenge", "no-deref-vocab" ],
+    "landingPage" : "http://datahub.io/dataset/government-web-integration-for-linked-data"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#dataset",
+    "triples" : "5845"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#links_freebase",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#dataset",
+    "triples" : "132953"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#links_nytimes-linked-open-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/nytimes-linked-open-data/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/government-web-integration-for-linked-data/dataid#dataset",
+    "triples" : "6702"
+  }, {
+    "@id" : "http://govwild.hpi-web.de/0.6/GWOntology.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://govwild.hpi-web.de/0.6/GWOntology.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://govwild.hpi-web.de/downloads/govwild-json-2012-01-30.zip",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://govwild.hpi-web.de/downloads/govwild-json-2012-01-30.zip",
+    "mediaType" : "JSON"
+  }, {
+    "@id" : "http://govwild.hpi-web.de/downloads/govwild-rdf-2012-01-30.zip",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://govwild.hpi-web.de/downloads/govwild-rdf-2012-01-30.zip",
+    "mediaType" : "text/n3"
+  }, {
+    "@id" : "http://govwild.org/rdf/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://govwild.org/rdf/",
+    "mediaType" : "rdf endpoint"
+  }, {
+    "@id" : "http://govwild.org/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://govwild.org/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

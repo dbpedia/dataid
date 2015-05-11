@@ -1,0 +1,39 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://data.offenerhaushalt.de/bund/bund_2011.json>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.offenerhaushalt.de/bund/bund_2011.json> ;
+        dcat:mediaType    "JSON" .
+
+<http://dataid.dbpedia.org/lod/bund-offener-haushalt/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "bund-offener-haushalt"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/bund-offener-haushalt/dataid#creator> ;
+        dct:description         "Bund Offener Haushalt shows the complex data of the german federal budget. It also gives access to the data in an open and re-usable format. \n\npart of package:offener-haushalt"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "Bund Offener Haushalt"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dcat:distribution       <http://data.offenerhaushalt.de/bund/> , <http://data.offenerhaushalt.de/bund/bund_2011.json> , <http://data.offenerhaushalt.de/bund/bund_2011.csv> ;
+        dcat:keyword            "lod" , "published-by-third-party" , "lodcloud.unconnected" , "no-license-metadata" , "government" , "lodcloud.nolinks" , "german" , "budget" , "no-proprietary-vocab" ;
+        dcat:landingPage        <http://datahub.io/dataset/bund-offener-haushalt> .
+
+<http://dataid.dbpedia.org/lod/bund-offener-haushalt/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/bund-offener-haushalt/dataid#dataset" .
+
+<http://data.offenerhaushalt.de/bund/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.offenerhaushalt.de/bund/> .
+
+<http://dataid.dbpedia.org/lod/bund-offener-haushalt/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Open Knowledge Foundation Deutschland e.V." .
+
+<http://data.offenerhaushalt.de/bund/bund_2011.csv>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.offenerhaushalt.de/bund/bund_2011.csv> ;
+        dcat:mediaType    "CSV" .

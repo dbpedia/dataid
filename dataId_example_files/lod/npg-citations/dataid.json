@@ -1,0 +1,78 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph<http://ns.nature.com/graphs/citations>{?s?p?o.}}limit25",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph<http://ns.nature.com/graphs/citations>{?s?p?o.}}limit25",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/npg-citations/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/npg-citations/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/npg-citations/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:developers@nature.com",
+    "name" : "NPG Developers"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/npg-citations/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:developers@nature.com",
+    "name" : "NPG"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/npg-citations/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/npg-citations/dataid#contributor", "http://dataid.dbpedia.org/lod/npg-citations/dataid#creator" ],
+    "dct:description" : "Graph of npg:Citation triples. The npg:Citation objects model journal article references. ",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "Nature Publishing Group - Citations",
+    "rdfs:label" : "npg-citations",
+    "distribution" : "http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph<http://ns.nature.com/graphs/citations>{?s?p?o.}}limit25",
+    "keyword" : [ "sciences", "health sciences", "life sciences", "format-npg", "format-rdfs", "format-rdf", "science", "published-by-producer", "bibliographic", "format-dcterm", "physical sciences", "publications", "format-prism21", "format-bibo", "academic", "journals" ],
+    "landingPage" : "http://datahub.io/dataset/npg-citations"
+  } ],
+  "@context" : {
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

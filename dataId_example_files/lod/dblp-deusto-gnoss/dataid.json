@@ -1,0 +1,126 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:gnoss@gnoss.com",
+    "name" : "GNOSS Team"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:gnoss@gnoss.com",
+    "name" : "GNOSS Team"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#creator", "http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#links_geonames-semantic-web", "http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#links_freebase" ],
+    "dct:description" : "<p>\n<a href=\"http://researchgroups.gnoss.com/\">DBLP Research Groups (University of Deusto-GNOSS) </a>\nis the platform for creating research communities enriched with scientific contexts from\n<a href=\"http://www.informatik.uni-trier.de/~ley/db/\">DBLP</a>\n. The recommendation contexts of Deusto-GNOSS Research Groups are a part of an index with over two million scientific publications in IT developed by GNOSS in collaboration with the\n<a href=\"http://www.deusto.es/\">University of Deusto</a>\n. You can use the contexts for your community or research group.\n</p>\n<p>\n<a href=\"http://researchgroups.gnoss.com/\">DBLP Research Groups (University of Deusto-GNOSS) </a>\nworks with\n<a href=\"http://gnoss.com/\">GNOSS software (RIAM Intelearning Lab)</a>\n. RIAM is a company that develops semantic technology for the creation of specialized networks and linked markets. GNOSS works within the philosophy of Open Data and proposes a solution so that data can be linked (Linked Data). Data are expressed in OWL-RDF files. We are implementing semantic technology in Education (educational communities and social learning), semantic catalogs for companies, corporate e-commerce portals and platforms to realize the concept of Open Government and Enterprise 2.0 (corporate social networks).\n</p>",
+    "license" : "http://creativecommons.org/licenses/by-nc/2.0/",
+    "dct:title" : "DBLP Research Groups (University of Deusto-GNOSS)",
+    "exampleResource" : [ "http://researchgroups.gnoss.com/comunidad/publicaciones/recurso/A-reasonable-Semantic-Web/5ac2b9d8-534c-4cca-b6e2-a5ff4758fc83?rdf", "http://researchgroups.gnoss.com/comunidad/publicaciones/recurso/Linked-Open-Data-Perspectives-Incorporating-Linke/4995cbcb-0543-40b5-b5af-05e6d04acc09?rdf", "http://researchgroups.gnoss.com/en/community/publicaciones/advanced-search/tag/web?rdf" ],
+    "triples" : "222375855",
+    "uriSpace" : "http://researchgroups.gnoss.com",
+    "rdfs:label" : "dblp-deusto-gnoss",
+    "distribution" : [ "http://researchgroups.gnoss.com/voidDBLPDeustoResearchGroupsGNOSS.n3", "http://gnoss.com/gnoss.owl" ],
+    "keyword" : [ "computer science", "format-wot", "informática", "wrapper", "sioc", "sp", "indice científico", "skos", "usergeneratedcontent", "dblp", "format-rdfg", "schemata", "format-skos", "foaf", "no-proprietary-vocab", "country.es", "deusto", "format-sioc", "published-by-third-party", "socialweb", "spain", "no-vocab-mappings", "language-spa", "provenance-metadata", "format-dcam", "dc", "lod", "format-dc", "license-metadata", "country-spain", "format-foaf" ],
+    "landingPage" : "http://datahub.io/dataset/dblp-deusto-gnoss"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#dataset",
+    "triples" : "72"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#links_freebase",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#dataset",
+    "triples" : "582"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/geonames-semantic-web",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#dataset",
+    "triples" : "72"
+  }, {
+    "@id" : "http://gnoss.com/gnoss.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://gnoss.com/gnoss.owl",
+    "mediaType" : "meta/owl"
+  }, {
+    "@id" : "http://researchgroups.gnoss.com/voidDBLPDeustoResearchGroupsGNOSS.n3",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://researchgroups.gnoss.com/voidDBLPDeustoResearchGroupsGNOSS.n3",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

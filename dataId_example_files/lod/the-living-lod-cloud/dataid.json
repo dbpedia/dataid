@@ -1,0 +1,236 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Timothy Lebo"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#links_twc-logd", "http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#links_dbpedia" ],
+    "dct:description" : "A lodcloud diagram, automatically. Based on quality standards.",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "The Living LOD Cloud",
+    "triples" : "3639",
+    "rdfs:label" : "the-living-lod-cloud",
+    "distribution" : [ "http://www.w3.org/ns/dcat", "http://www.w3.org/2000/10/swap/pim/contact", "http://purl.org/twc/vocab/conversion/", "http://semanticscience.org/resource/", "http://rdfs.org/ns/void", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2004/02/skos/core", "http://purl.org/twc/lodcloud", "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://purl.org/twc/lodcloud/source/tw-rpi-edu/file/cr-full-dump/version/latest/conversion/purl-org-twc-lodcloud.nt.gz", "http://rdfs.org/sioc/ns", "http://www.w3.org/ns/prov", "http://purl.org/vocab/vann/", "https://github.com/timrdf/lodcloud", "http://provenanceweb.org/ns/pml", "http://usefulinc.com/ns/doap", "http://www.w3.org/2002/07/owl", "http://purl.org/dc/terms/", "http://purl.org/net/provenance/ns", "http://purl.org/twc/vocab/datafaqs", "http://inference-web.org/2.0/pml-justification.owl", "http://www.ontologydesignpatterns.org/ont/web/irw.owl", "http://inference-web.org/2.0/pml-provenance.owl", "http://open.vocab.org/terms/", "http://www.w3.org/ns/sparql-service-description", "http://xmlns.com/foaf/0.1/", "http://openprovenance.org/ontology", "http://obofoundry.org/ro/ro.owl" ],
+    "keyword" : [ "format-sio", "format-con", "format-pmlj", "format-vann", "linked data", "format-dcat", "format-datafaqs", "format-prov", "format-dc", "format-opm", "format-owl", "format-pml", "format-irw", "format-oboro", "format-conv", "format-sioc", "format-rdf", "format-pmlp", "format-sd", "format-rdfs", "format-ov", "format-foaf", "format-doap", "format-void", "format-skos" ],
+    "landingPage" : "http://datahub.io/dataset/the-living-lod-cloud"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#dataset",
+    "triples" : "1"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#links_twc-logd",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/twc-logd/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#dataset",
+    "triples" : "2"
+  }, {
+    "@id" : "http://inference-web.org/2.0/pml-justification.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://inference-web.org/2.0/pml-justification.owl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://inference-web.org/2.0/pml-provenance.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://inference-web.org/2.0/pml-provenance.owl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://obofoundry.org/ro/ro.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://obofoundry.org/ro/ro.owl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://open.vocab.org/terms/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://open.vocab.org/terms/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://openprovenance.org/ontology",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://openprovenance.org/ontology",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://provenanceweb.org/ns/pml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://provenanceweb.org/ns/pml",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/dc/terms/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/dc/terms/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/net/provenance/ns",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/net/provenance/ns",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/twc/lodcloud",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/twc/lodcloud",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://purl.org/twc/lodcloud/source/tw-rpi-edu/file/cr-full-dump/version/latest/conversion/purl-org-twc-lodcloud.nt.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/twc/lodcloud/source/tw-rpi-edu/file/cr-full-dump/version/latest/conversion/purl-org-twc-lodcloud.nt.gz",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://purl.org/twc/vocab/conversion/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/twc/vocab/conversion/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/twc/vocab/datafaqs",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/twc/vocab/datafaqs",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/vocab/vann/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/vocab/vann/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://rdfs.org/ns/void",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdfs.org/ns/void",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://rdfs.org/sioc/ns",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdfs.org/sioc/ns",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://semanticscience.org/resource/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://semanticscience.org/resource/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://usefulinc.com/ns/doap",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://usefulinc.com/ns/doap",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.ontologydesignpatterns.org/ont/web/irw.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.ontologydesignpatterns.org/ont/web/irw.owl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/2000/01/rdf-schema",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/2000/10/swap/pim/contact",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/2000/10/swap/pim/contact",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/2002/07/owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/2002/07/owl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/2004/02/skos/core",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/2004/02/skos/core",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/ns/dcat",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/ns/dcat",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/ns/prov",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/ns/prov",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://www.w3.org/ns/sparql-service-description",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/ns/sparql-service-description",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://xmlns.com/foaf/0.1/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://xmlns.com/foaf/0.1/",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "https://github.com/timrdf/lodcloud",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://github.com/timrdf/lodcloud",
+    "mediaType" : "HTML"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

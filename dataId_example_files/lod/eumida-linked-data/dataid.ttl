@@ -1,0 +1,64 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#links_nuts-geovocab>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/nuts-geovocab> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#dataset> ;
+        void:triples         "286"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://api.talis.com/stores/eumida/services/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://api.talis.com/stores/eumida/services/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#links_linked-nuts>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/linked-nuts/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#dataset> ;
+        void:triples         "286"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:ckan@keithalexander.co.uk" ;
+        foaf:name  "Keith Alexander" .
+
+<http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "eumida-linked-data"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#creator> , <http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#links_linked-nuts> , <http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#links_nuts-geovocab> , <http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#links_eurostat-linked-data> ;
+        dct:description         "Data about European Higher Education Institutions, including statistics from 2008 regarding numbers of students, foreign students, PhD students etc. Based on the EUMIDA report."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "EUMIDA as Linked Data"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://eumida.publicdata.eu/data/institution/AT055.rdf> , <http://eumida.publicdata.eu/data/institution/AT055/ISCED6-Students-enrolled.rdf> , <http://eumida.publicdata.eu/data/dataset/doctorates-awarded.rdf> ;
+        void:sparqlEndpoint     <http://api.talis.com/stores/eumida/services/sparql> ;
+        void:triples            "133085"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://eumida.publicdata.eu/data/" ;
+        dcat:distribution       <http://api.talis.com/stores/eumida/services/sparql> , <http://eumida.publicdata.eu/void.ttl> ;
+        dcat:keyword            "format-dcterm" , "eu-institution" , "latc" , "government" , "lod" , "published-by-third-party" , "no-deref-vocab" , "format-ov" ;
+        dcat:landingPage        <http://datahub.io/dataset/eumida-linked-data> .
+
+<http://eumida.publicdata.eu/void.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://eumida.publicdata.eu/void.ttl> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#links_eurostat-linked-data>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/eurostat-linked-data> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#dataset> ;
+        void:triples         "27"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:ckan@keithalexander.co.uk" ;
+        foaf:name  "Keith Alexander" .
+
+<http://dataid.dbpedia.org/lod/eumida-linked-data/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#dataset" .

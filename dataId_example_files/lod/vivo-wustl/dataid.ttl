@@ -1,0 +1,43 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<https://commondatastorage.googleapis.com/ckannet-storage/2012-04-09T135834/ProductionRDF.n3>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://commondatastorage.googleapis.com/ckannet-storage/2012-04-09T135834/ProductionRDF.n3> ;
+        dcat:mediaType    "text/turtle" .
+
+<http://dataid.dbpedia.org/lod/vivo-wustl/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/vivo-wustl/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/vivo-wustl/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:hanjia@indiana.edu" ;
+        foaf:name  "Han Jia" .
+
+<http://dataid.dbpedia.org/lod/vivo-wustl/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "VIVO" .
+
+<http://dataid.dbpedia.org/lod/vivo-wustl/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "vivo-wustl"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/vivo-wustl/dataid#contributor> , <http://dataid.dbpedia.org/lod/vivo-wustl/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/vivo-wustl/dataid#links_dbpedia > ;
+        dct:description         "VIVO is a research-focused discovery tool that enables collaboration among scientists across all disciplines.\n\nBrowse or search information on people, departments, courses, grants, and publications."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "VIVO WUSTL"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:triples            "161000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:distribution       <https://commondatastorage.googleapis.com/ckannet-storage/2012-04-09T135834/ProductionRDF.n3> ;
+        dcat:keyword            "science" , "no-provenance-metadata" , "social-networks" , "deref-vocab" , "lod" , "education" , "publications" , "published-by-producer" , "no-license-metadata" , "format-rdfs" , "format-rdf" , "vivo" , "format-vitro" , "no-vocab-mappings" ;
+        dcat:landingPage        <http://datahub.io/dataset/vivo-wustl> .
+
+<http://dataid.dbpedia.org/lod/vivo-wustl/dataid#links_dbpedia >
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia > ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/vivo-wustl/dataid#dataset> ;
+        void:triples         "58"^^<http://www.w3.org/2001/XMLSchema#int> .

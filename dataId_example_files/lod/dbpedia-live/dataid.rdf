@@ -1,0 +1,79 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/dbpedia-live/dataid#dataset">
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>lodcloud.unconnected</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >DBpedia-Live</dct:title>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dcat:keyword>access-api</dcat:keyword>
+    <dcat:keyword>ckanupload.esw.200910</dcat:keyword>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/dbpedia-live/dataid#creator">
+        <foaf:mbox>mailto:hwilliams@openlinksw.com</foaf:mbox>
+        <foaf:name>OpenLink Software</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dbpedia-live</rdfs:label>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>access-bulk</dcat:keyword>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://wiki.dbpedia.org/Downloads">
+        <dcat:downloadURL rdf:resource="http://wiki.dbpedia.org/Downloads"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/dbpedia-live"/>
+    <void:exampleResource rdf:resource="http://dbpedia.org/resource/The_Lord_of_the_Rings"/>
+    <dcat:keyword>lod</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/dbpedia-live/dataid#contributor">
+        <foaf:mbox>mailto:hwilliams@openlinksw.com</foaf:mbox>
+        <foaf:name>OpenLink Software</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>lodcloud.nolinks</dcat:keyword>
+    <dcat:keyword>access-www</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://live.dbpedia.org/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://live.dbpedia.org/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>wikipedia</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >DBpedia.org is a community effort to extract structured 
+information from Wikipedia and to make this information 
+available on the Web. DBpedia allows you to ask 
+sophisticated queries against Wikipedia and to link other 
+datasets on the Web to Wikipedia data.
+
+The DBpedia knowledge base currently describes more than 3.4 million things, out of which 1.5 million are classified in a consistent Ontology, including 312,000 persons, 413,000 places, 94,000 music albums, 49,000 films, 15,000 video games, 140,000 organizations, 146,000 species and 4,600 diseases. The DBpedia data set features labels and abstracts for these 3.2 million things in up to 92 different languages; 841,000 links to images and 5,081,000 links to external web pages; 9,393,000 external links into other RDF datasets, 565,000 Wikipedia categories, and 75,000 YAGO categories. The DBpedia knowledge base altogether consists of over 1 billion pieces of information (RDF triples) out of which 257 million were extracted from the English edition of Wikipedia and 766 million were extracted from other language editions.
+</dct:description>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://dbpedia.org/fct">
+        <dcat:downloadURL rdf:resource="http://dbpedia.org/fct"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>rdf</dcat:keyword>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <dcat:keyword>search</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://live.dbpedia.org/sparql"/>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/dbpedia-live/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/dbpedia-live/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

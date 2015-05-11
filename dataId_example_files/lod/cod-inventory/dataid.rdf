@@ -1,0 +1,71 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/cod-inventory/dataid#dataset">
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >COD inventory</dct:title>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.crystallography.net/archives/cod-rdf.nt.xz">
+        <dcat:mediaType>application/x-ntriples</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.crystallography.net/archives/cod-rdf.nt.xz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/cod-inventory/dataid#creator">
+        <foaf:mbox>mailto:grazulis@ibt.lt</foaf:mbox>
+        <foaf:name>Saulius Gražulis</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.crystallography.net:2020/">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.crystallography.net:2020/"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/cod-inventory"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.crystallography.net/">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.crystallography.net/"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/cod-inventory/dataid#contributor">
+        <foaf:mbox>mailto:grazulis@ibt.lt</foaf:mbox>
+        <foaf:name>Saulius Gražulis</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.crystallography.net/archives/cod-rdf.xml.xz">
+        <dcat:mediaType>application/x-xz</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.crystallography.net/archives/cod-rdf.xml.xz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cod-inventory</rdfs:label>
+    <dcat:keyword>crystallography</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <dcat:keyword>rdf</dcat:keyword>
+    <dcat:keyword>science</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.crystallography.net:2020/snorql/">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://www.crystallography.net:2020/snorql/"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Lists all data records in the Crystallography Open Database release. Releases are as a rule updated quarterly.</dct:description>
+    <void:sparqlEndpoint rdf:resource="http://www.crystallography.net:2020/snorql/"/>
+    <dcat:keyword>lod2</dcat:keyword>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/cod-inventory/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/cod-inventory/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

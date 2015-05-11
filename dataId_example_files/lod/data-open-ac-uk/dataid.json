@@ -1,0 +1,126 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.open.ac.uk/query",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://data.open.ac.uk/query",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:m.daquin@open.ac.uk",
+    "name" : "Mathieu d'Aquin"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:info@lucero-project.info",
+    "name" : "[LUCERO Team](http://lucero-project.info)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#contributor", "http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#links_data-gov-uk", "http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#links_ordnance-survey-linked-data", "http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#links_geonames-semantic-web" ],
+    "dct:description" : "The result of extracting and interlinking data from various institutional repositories of the [Open University](http://www.open.ac.uk/) and making it available for reuse.\n\n\n#### RDF statistics\n\n1.6 Million triples, updated daily. \n\n#### Links\n\nCourse descriptions link to geonames for availability and price validity. \n\nURI from the Open University linked to the corresponding URI in education.data.gov.uk\n\nBuildings are linked to their postcode in ordnancesurvey.co.uk\n\nSome links to DBPedia, with various levels of validity. \n",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "data.open.ac.uk, Linked Data from the Open University",
+    "exampleResource" : [ "http://data.open.ac.uk/resource/oro/21166", "http://data.open.ac.uk/resource/podcast/218dce44a4ed17b36ada50d18b866b03", "http://data.open.ac.uk/resource/course/m366", "http://data.open.ac.uk/resource/person/c9aa7f2e582d191ed728ad414c5ea711" ],
+    "sparqlEndpoint" : "http://data.open.ac.uk/query",
+    "triples" : "1600000",
+    "uriSpace" : "http://data.open.ac.uk/resource/",
+    "rdfs:label" : "data-open-ac-uk",
+    "distribution" : "http://data.open.ac.uk/query",
+    "keyword" : [ "openuniversity", "lod", "no-proprietary-vocab", "lld", "publications", "format-bibo", "education", "kmiou", "format-rdf", "course", "published-by-producer", "format-skos" ],
+    "landingPage" : "http://datahub.io/dataset/data-open-ac-uk"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#links_data-gov-uk",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/data-gov-uk",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#dataset",
+    "triples" : "14500"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/geonames-semantic-web",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#dataset",
+    "triples" : "170000"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#links_ordnance-survey-linked-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/ordnance-survey-linked-data",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#dataset",
+    "triples" : "218"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

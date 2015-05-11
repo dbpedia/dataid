@@ -1,0 +1,43 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://www.bioontology.org/wiki/index.php/BioPortal_REST_services>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.bioontology.org/wiki/index.php/BioPortal_REST_services> .
+
+<http://dataid.dbpedia.org/lod/bioportal-emap/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "EMAP Administrators" .
+
+<http://dataid.dbpedia.org/lod/bioportal-emap/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/bioportal-emap/dataid#dataset" .
+
+<http://sparql.bioontology.org/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://sparql.bioontology.org/> .
+
+<http://dataid.dbpedia.org/lod/bioportal-emap/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:support@bioontology.org" ;
+        foaf:name  "BioPortal project on behalf of ontology owner." .
+
+<http://dataid.dbpedia.org/lod/bioportal-emap/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "bioportal-emap"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/bioportal-emap/dataid#contributor> , <http://dataid.dbpedia.org/lod/bioportal-emap/dataid#creator> ;
+        dct:description         "A structured controlled vocabulary of stage-specific anatomical structures of the mouse (Mus)."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "Mouse gross anatomy and development"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:triples            "96117"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:distribution       <http://sparql.bioontology.org/> , <http://rest.bioontology.org/bioportal/ontologies/download/45267?apikey=BP_API_KEY> , <http://www.bioontology.org/wiki/index.php/BioPortal_REST_services> ;
+        dcat:keyword            "format-obo" , "format-rdf" , "bioportal" , "lod" , "published-by-third-party" , "biomedicine" , "ontology" ;
+        dcat:landingPage        <http://datahub.io/dataset/bioportal-emap> .
+
+<http://rest.bioontology.org/bioportal/ontologies/download/45267?apikey=BP_API_KEY>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://rest.bioontology.org/bioportal/ontologies/download/45267?apikey=BP_API_KEY> .

@@ -1,0 +1,40 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dewey.info/sparql.php>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://dewey.info/sparql.php> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:panzerm@oclc.org" ;
+        foaf:name  "Michael Panzer" .
+
+<http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:http://www.oclc.org/dewey/" ;
+        foaf:name  "OCLC Online Computer Library Center, Inc." .
+
+<http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "dewey_decimal_classification"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#contributor> , <http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#creator> ;
+        dct:description         "Dewey.info is an experimental space for linked DDC data. The intention of the dewey.info prototype is to be a platform for Dewey data on the Web.\n\nIncluded as linked data are the DDC Summaries (the top three levels of the DDC) of Edition 22 in 11 languages and all assignable numbers of Abridged Edition 14 in three languages. Classification semantics are encoded in RDF using SKOS and other element vocabularies. \n\nEvery class also has an HTML representation (XHTML+RDFa) and several RDF serializations (RDF/XML, Turtle, JSON).\n\nA SPARQL endpoint is available.\n\nThe data is reusable under the Creative Commons BY-NC-ND license.\n"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://creativecommons.org/licenses/by-nc/2.0/> ;
+        dct:title               "Dewey Decimal Classification (DDC)"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://dewey.info/class/641.5/a14/about.ttl> , <http://dewey.info/class/6/2009/03/about.de.html> , <http://dewey.info/class/641/about.rdf> ;
+        void:sparqlEndpoint     <http://dewey.info/sparql.php> ;
+        void:triples            "402288"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://dewey.info/" ;
+        dcat:distribution       <http://dewey.info/sparql.php> ;
+        dcat:keyword            "no-proprietary-vocab" , "format-skos" , "lld" , "published-by-producer" , "lod" , "format-rdf" , "linkeddata" , "publications" , "format-dcterm" , "lodcloud.nolinks" , "license-metadata" , "format-cc" , "classification" , "publication" , "schemata" ;
+        dcat:landingPage        <http://datahub.io/dataset/dewey_decimal_classification> .
+
+<http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#dataset" .

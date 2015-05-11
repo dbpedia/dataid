@@ -1,0 +1,43 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/integrated-human-geography-service-for-lod/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:kwg1234@korea.kr" ;
+        foaf:name  "National Geographic Information Institute(NGII), Korea" .
+
+<http://data.ngii.go.kr/SPARQL/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://data.ngii.go.kr/SPARQL/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/integrated-human-geography-service-for-lod/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:jokm@frotoma.com" ;
+        foaf:name  "FROTOMA Co., LTD." .
+
+<http://data.ngii.go.kr/rdfSiteMap/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.ngii.go.kr/rdfSiteMap/> ;
+        dcat:mediaType    "meta/sitemap" .
+
+<http://dataid.dbpedia.org/lod/integrated-human-geography-service-for-lod/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/integrated-human-geography-service-for-lod/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/integrated-human-geography-service-for-lod/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "integrated-human-geography-service-for-lod"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/integrated-human-geography-service-for-lod/dataid#contributor> , <http://dataid.dbpedia.org/lod/integrated-human-geography-service-for-lod/dataid#creator> ;
+        dct:description         "NGII is an open data service system based on an ontology in which spatial information and human geography information are integrated.\n\nCollecting and analyzing human geography information of the whole Jeju-do about 11 categories (geological features, climate, ecologic environment, hydrologic condition, history and culture, society, tourism and leisure, industry, resource, transportation and telecommunication, and public service) and associating the information to geographic locations,  we has constructed a database and an ontology.  \n\nThe ontology is published in LOD. The data on national geography and human geography information is open to users and outlinked to Dbpedia, Geonames, Openstreetmap (OSM). We established a foundation for the reuse of data and for link and share of information. \n\nThe current NGII covers human geography on Jeju-do only, however, the coverage is going to be extended to include nationwide human geography. Personal users, businesses and institutions can make use of standardized open format information based on semantic web."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "Integrated Human Geography Service for LOD by National Geographic Information Institute, Korea"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://data.ngii.go.kr/id/data/Mountain/00001> , <http://data.ngii.go.kr/rdfSiteMap/ngii_belongToAge.nt> ;
+        void:sparqlEndpoint     <http://data.ngii.go.kr/SPARQL/sparql> ;
+        dcat:distribution       <http://data.ngii.go.kr/rdfSiteMap/> , <http://data.ngii.go.kr/SPARQL/sparql> ;
+        dcat:keyword            "geo" , "lodcloud.unconnected" , "published-by-producer" , "lodcloud.nolinks" , "jeju" , "korea" , "deref-vocab" , "geographic" , "geodata" , "jeju-do" , "lod" , "jeju-island" , "void-sparql-endpoint" ;
+        dcat:landingPage        <http://datahub.io/dataset/integrated-human-geography-service-for-lod> .

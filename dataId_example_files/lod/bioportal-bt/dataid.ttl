@@ -1,0 +1,374 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-ddi>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-ddi> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "18"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-efo>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-efo> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "34"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-odgi>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-odgi> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "14"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Stefan Schulz" .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-csp>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-csp> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "52"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-bdo>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-bdo> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "11"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-cpr>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-cpr> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "19"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://rest.bioontology.org/bioportal/ontologies/download/47288?apikey=BP_API_KEY>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://rest.bioontology.org/bioportal/ontologies/download/47288?apikey=BP_API_KEY> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:support@bioontology.org" ;
+        foaf:name  "BioPortal project on behalf of ontology owner." .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-msh>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-msh> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "53"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-syn>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-syn> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "12"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-nemo_x1>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-nemo_x1> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "17"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-go_x2>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-go_x2> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "11"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-rid>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-rid> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "10"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-idomal>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-idomal> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "20"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-sio>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/bioportal-sio/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "30"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-npo>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-npo> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "19"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-uberon>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-uberon> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "13"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-ep>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-ep> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "11"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-flu>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-flu> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "12"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-lnc>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-lnc> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "48"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-idobru>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-idobru> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "13"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-ogi>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-ogi> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "12"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-go_x1>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-go_x1> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "11"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "bioportal-bt"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#creator> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-tmo> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-sdo> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-opl> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-hpio> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-rid> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-aero> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-npo> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-nif_dysfunction> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-msh> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-nemo_x1> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-go_x1> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-mesh-owl> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-mccl_x1> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-ep> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-tao> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-obi> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-bdo> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-bao> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-acgt> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-sao> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-ogi> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-ero> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-birnlex> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-nif_cell> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-efo> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-vo> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-lnc> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-nif> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-go_x2> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-csp> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-sio> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-ncit> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-biomodels> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-rcd> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-ehda> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-gro_x2> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-cpr> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-ecg> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-ddi> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-uberon> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-chebi> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-galen> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-idobru> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-sopharm> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-natpro> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-oboe-sbc> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-flu> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-odgi> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-snomedct> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-syn> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-idomal> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-gfo-bio> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-bootstrep> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-icnp> , <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-canco> ;
+        dct:description         "A top-domain ontology that provides definitions for the foundational entities of biomedicine as a basic vocabulary to unambiguously describe facts in this domain."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "BioTop"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:triples            "6025"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:distribution       <http://sparql.bioontology.org/> , <http://www.bioontology.org/wiki/index.php/BioPortal_REST_services> , <http://rest.bioontology.org/bioportal/ontologies/download/47288?apikey=BP_API_KEY> ;
+        dcat:keyword            "format-owl" , "biomedicine" , "format-rdf" , "lod" , "published-by-third-party" , "bioportal" , "ontology" ;
+        dcat:landingPage        <http://datahub.io/dataset/bioportal-bt> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-tmo>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-tmo> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "15"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-icnp>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-icnp> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "18"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-ncit>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-ncit> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "113"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://sparql.bioontology.org/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://sparql.bioontology.org/> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-bootstrep>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-bootstrep> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "26"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-gro_x2>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-gro_x2> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "26"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-bao>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-bao> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "12"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-hpio>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-hpio> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "10"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-sdo>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-sdo> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "46"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.bioontology.org/wiki/index.php/BioPortal_REST_services>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.bioontology.org/wiki/index.php/BioPortal_REST_services> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-sopharm>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-sopharm> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "24"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-aero>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/bioportal-aero/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "14"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-obi>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-obi> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "18"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-nif_dysfunction>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-nif_dysfunction> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "21"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-ero>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-ero> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "17"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-biomodels>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-biomodels> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "15"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-nif_cell>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-nif_cell> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "23"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-opl>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-opl> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "12"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-vo>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-vo> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "11"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-birnlex>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-birnlex> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "22"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-acgt>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-acgt> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "18"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-tao>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-tao> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "11"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-ehda>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-ehda> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "30"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-sao>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-sao> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "11"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-ecg>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-ecg> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "11"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-mesh-owl>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-mesh-owl> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "36"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-natpro>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-natpro> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "24"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-canco>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-canco> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "48"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-oboe-sbc>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-oboe-sbc> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "11"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-rcd>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-rcd> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "34"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-gfo-bio>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-gfo-bio> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "19"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-chebi>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-chebi> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "14"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-mccl_x1>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-mccl_x1> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "22"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-snomedct>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-snomedct> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "103"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-nif>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-nif> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "73"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/bioportal-bt/dataid#links_bioportal-galen>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bioportal-galen> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/bioportal-bt/dataid#dataset> ;
+        void:triples         "47"^^<http://www.w3.org/2001/XMLSchema#int> .

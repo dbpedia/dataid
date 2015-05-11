@@ -1,0 +1,62 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/productdb/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/productdb/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://api.talis.com/stores/productdb/services/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://api.talis.com/stores/productdb/services/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/productdb/dataid#dataset">
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/productdb/dataid#contributor">
+        <foaf:mbox>mailto:ian.davis@talis.com</foaf:mbox>
+        <foaf:name>Ian Davis</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >productdb</rdfs:label>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ProductDB is the Linked Data view of ProductWiki a resource for free, unbiased product reports written by a dedicated community. ProductDB extracts structured information from ProductWiki and makes this information freely available on the Web.</dct:description>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/gfdl"/>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/productdb"/>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >575942</void:triples>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:distribution rdf:resource="http://api.talis.com/stores/productdb/services/sparql"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/productdb/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/productdb/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >193</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dcat:keyword>format-gr</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/productdb/dataid#creator">
+        <foaf:name>Talis</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:uriSpace>http://productdb.org/gtin/</void:uriSpace>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ProductDB</dct:title>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://api.talis.com/stores/productdb/services/sparql"/>
+    <void:exampleResource rdf:resource="http://productdb.org/gtin/09780136098676"/>
+  </dataid:Dataset>
+</rdf:RDF>

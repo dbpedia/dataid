@@ -1,0 +1,127 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/knoesis-linked-sensor-data/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/knoesis-linked-sensor-data/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/knoesis-linked-sensor-data/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:pramod@knoesis.org",
+    "name" : "Pramod Ananthram"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/knoesis-linked-sensor-data/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:harshal@knoesis.org",
+    "name" : "Harshal Patni (Kno.e.sis)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/knoesis-linked-sensor-data/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/knoesis-linked-sensor-data/dataid#creator", "http://dataid.dbpedia.org/lod/knoesis-linked-sensor-data/dataid#contributor" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/knoesis-linked-sensor-data/dataid#links_geonames-semantic-web",
+    "dct:description" : "Datasets for sensors and sensor observations, created at Kno.e.sis Center, and converted from weather data at Mesowest. Contains descriptions of 20 thousand weather stations and 160 million observations.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Linked Sensor Data (Kno.e.sis)",
+    "exampleResource" : "http://knoesis.wright.edu/ssw/",
+    "sparqlEndpoint" : "http://sonicbanana.cs.wright.edu:8890/sparql",
+    "triples" : "1730284735",
+    "uriSpace" : "http://knoesis.wright.edu/ssw/",
+    "rdfs:label" : "knoesis-linked-sensor-data",
+    "distribution" : [ "http://sonicbanana.cs.wright.edu/knoesis_linkedsensordata.tar.gz", "http://sonicbanana.cs.wright.edu/knoesis_linkedobservationdata_charley.tar.gz", "http://sonicbanana.cs.wright.edu:8890/sparql" ],
+    "keyword" : [ "linked", "format-xhtml", "geographic", "linked-data", "sensor-web-enablement", "no-vocab-mappings", "deref-vocab", "no-provenance-metadata", "no-license-metadata", "published-by-third-party", "linked-open-data", "semantic-web", "lod" ],
+    "landingPage" : "http://datahub.io/dataset/knoesis-linked-sensor-data"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/knoesis-linked-sensor-data/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/knoesis-linked-sensor-data/dataid#dataset",
+    "triples" : "18000"
+  }, {
+    "@id" : "http://sonicbanana.cs.wright.edu/knoesis_linkedobservationdata_charley.tar.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://sonicbanana.cs.wright.edu/knoesis_linkedobservationdata_charley.tar.gz"
+  }, {
+    "@id" : "http://sonicbanana.cs.wright.edu/knoesis_linkedsensordata.tar.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://sonicbanana.cs.wright.edu/knoesis_linkedsensordata.tar.gz",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://sonicbanana.cs.wright.edu:8890/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://sonicbanana.cs.wright.edu:8890/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,74 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "farmbio-chembl"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-chebi> , <http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-kegg-enzyme> , <http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-pubmed> , <http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-uniprot> ;
+        dct:description         "RDF version of the CC-SA-BY ChEMBL database by the team of John Overington at the EBI, Hinxton/UK (http://www.ebi.ac.uk/chembl/)."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "ChEMBL-RDF (@ Uppsala University)"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://linkedchemistry.info/chembl/activity/a935292> , <http://linkedchemistry.info/chembl/resource/r371> , <http://linkedchemistry.info/chembl/molecule/m100431> , <http://linkedchemistry.info/chembl/target/t158> , <http://data.kasabi.com/dataset/chembl-rdf/molecule/m100431.html> , <http://linkedchemistry.info/chembl/assay/a93337> , <http://linkedchemistry.info/chembl/journal/j2d9cdf677b52f45100278f594cd7198a> ;
+        void:sparqlEndpoint     <http://rdf.farmbio.uu.se/chembl/sparql> ;
+        void:triples            "25111377"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://rdf.farmbio.uu.se/chembl/" ;
+        dcat:distribution       <http://rdf.farmbio.uu.se/chembl/sparql> , <http://semantics.bigcat.unimaas.nl/chembl/v13_5/> , <http://data.kasabi.com/dataset/chembl-rdf> , <http://rest.bioontology.org/bioportal/ontologies/download/45415?apikey=4ea81d74-8960-4525-810b-fa1baab576ff> ;
+        dcat:keyword            "sparql-endpoint" , "no-provenance-metadata" , "no-deref-vocab" , "no-license-metadata" , "lifesciences" , "backlink" , "format-rdf" , "published-by-third-party" , "lod" ;
+        dcat:landingPage        <http://datahub.io/dataset/farmbio-chembl> .
+
+<http://dataid.dbpedia.org/lod/farmbio-chembl/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-pubmed>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bio2rdf-pubmed> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#dataset> ;
+        void:triples         "30039"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-chebi>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bio2rdf-chebi> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#dataset> ;
+        void:triples         "517261"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://data.kasabi.com/dataset/chembl-rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.kasabi.com/dataset/chembl-rdf> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Egon Willighagen" .
+
+<http://rest.bioontology.org/bioportal/ontologies/download/45415?apikey=4ea81d74-8960-4525-810b-fa1baab576ff>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://rest.bioontology.org/bioportal/ontologies/download/45415?apikey=4ea81d74-8960-4525-810b-fa1baab576ff> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://semantics.bigcat.unimaas.nl/chembl/v13_5/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://semantics.bigcat.unimaas.nl/chembl/v13_5/> ;
+        dcat:mediaType    "text/n3" .
+
+<http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-kegg-enzyme>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bio2rdf-kegg-enzyme> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#dataset> ;
+        void:triples         "661"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#links_bio2rdf-uniprot>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/bio2rdf-uniprot> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/farmbio-chembl/dataid#dataset> ;
+        void:triples         "4356"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://rdf.farmbio.uu.se/chembl/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://rdf.farmbio.uu.se/chembl/sparql> ;
+        dcat:mediaType  "api/sparql" .

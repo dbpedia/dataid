@@ -1,0 +1,32 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/isocat/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "S.E. Wright, M. Kemps-Snijders, M.A. Windhouwer" .
+
+<http://dataid.dbpedia.org/lod/isocat/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "isocat"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/isocat/dataid#creator> ;
+        dct:description         "ISO 12620 provides a framework for defining data categories compliant with the ISO/IEC 11179 family of standards. According to this model, each data category is assigned a unique administrative identifier, together with information on the status or decision-making process associated with the data category. In addition, data category specifications in the DCR contain linguistic descriptions, such as data category definitions, statements of associated value domains, and examples. Data category specifications can be associated with a variety of data element names and with language-specific versions of definitions, names, value domains and other attributes.\n\nThe RDF dumps of different profiles are dynamically generated at query time over the https://catalog.clarin.eu/isocat/rest/profile/$x.rdf with $x being the profile number.\n\nTriple counts on May 16, 2014:\n3.rdf 2647\n5.rdf 12358\n6.rdf 4492\n7.rdf 366\n10.rdf 2629\n11.rdf 712\n13.rdf 58\n14.rdf 572\n15.rdf 131\n16.rdf 76\n17.rdf 149\n19.rdf 383\n20.rdf 561\n22.rdf 6"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by-sa> ;
+        dct:title               "ISOcat"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://www.isocat.org/rest/dc/1333.rdf> ;
+        void:triples            "25000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:distribution       <http://www.isocat.org/datcat/DC-1333> ;
+        dcat:keyword            "lod" , "linguistics" , "isocat" , "crossdomain" ;
+        dcat:landingPage        <http://datahub.io/dataset/isocat> .
+
+<http://dataid.dbpedia.org/lod/isocat/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/isocat/dataid#dataset" .
+
+<http://www.isocat.org/datcat/DC-1333>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.isocat.org/datcat/DC-1333> ;
+        dcat:mediaType    "html, rdf, dcif" .

@@ -1,0 +1,143 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/freebase/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/freebase/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://download.freebase.com/datadumps/latest/browse/">
+    <dcat:mediaType>TSV</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://download.freebase.com/datadumps/latest/browse/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://freebase.com/api/service/search">
+    <dcat:mediaType>api/search</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://freebase.com/api/service/search"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/freebase/dataid#dataset">
+    <dcat:keyword>format-dcterms</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/freebase/dataid#contributor">
+        <foaf:mbox>mailto:simister@google.com</foaf:mbox>
+        <foaf:name>Shawn Simister</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/freebase/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/freebase/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3348530</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:exampleResource rdf:resource="http://rdf.freebase.com/ns/en.blade_runner"/>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/freebase"/>
+    <dcat:keyword>size-large</dcat:keyword>
+    <dcat:keyword>access-bulk</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Freebase</dct:title>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://download.freebase.com/datadumps/latest/freebase-datadump-tsv.tar.bz2">
+        <dcat:mediaType>TSV</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://download.freebase.com/datadumps/latest/freebase-datadump-tsv.tar.bz2"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>encylopaedia</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/freebase/dataid#links_sec-rdfabout">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/sec-rdfabout/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/freebase/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >120626</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://download.freebase.com/datadumps/latest/freebase-datadump-quadruples.tsv.bz2">
+        <dcat:mediaType>TSV</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://download.freebase.com/datadumps/latest/freebase-datadump-quadruples.tsv.bz2"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>rdf</dcat:keyword>
+    <dcat:keyword>access-api</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >### Description
+
+"Freebase is an open database of the world’s information. It is built by the community and for the community—free for anyone to query, contribute to, built applications on top of, or integrate into their websites."
+
+### Openness: OPEN
+
+  * License: CC-BY for data.  Variety of open source licenses (or PD) for text blurbs &amp; images.
+  * Access: API + bulk.&lt;http://www.freebase.com/view/allDomains&gt;
+    * bulk: yes. &lt;http://download.freebase.com/&gt;
+    * api: yes. &lt;http://www.freebase.com/view/freebase/api&gt;
+
+Triple count and link statistics provided by Freebase contributor Tom Morris
+
+### RDF data and URIs
+
+Freebase has [an RDF service](http://rdf.freebase.com/) that exposes URIs and generates RDF descriptions for all Freebase topics.</dct:description>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>lld</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://download.freebase.com/datadumps/latest/freebase-simple-topic-dump.tsv.bz2">
+        <dcat:mediaType>TSV</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://download.freebase.com/datadumps/latest/freebase-simple-topic-dump.tsv.bz2"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/freebase/dataid#creator">
+        <foaf:mbox>mailto:freebase-discuss@freebase.com</foaf:mbox>
+        <foaf:name>Google</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>access-www</dcat:keyword>
+    <dcat:distribution rdf:resource="http://freebase.com/api/service/search"/>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>broken_link</dcat:keyword>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >freebase</rdfs:label>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/freebase/dataid#links_nytimes-linked-open-data">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/nytimes-linked-open-data/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/freebase/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >9930</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:uriSpace>http://rdf.freebase.com/</void:uriSpace>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/freebase/dataid#links_geospecies">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geospecies/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/freebase/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >100000</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://download.freebase.com/datadumps/latest/browse/"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/freebase/dataid#links_bbc-music">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bbc-music/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/freebase/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >350110</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://download.freebase.com/datadumps/">
+        <dcat:downloadURL rdf:resource="http://download.freebase.com/datadumps/"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >337203427</void:triples>
+  </dataid:Dataset>
+</rdf:RDF>

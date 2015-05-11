@@ -1,0 +1,151 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:office@semantic-web.at",
+    "name" : "Semantic Web Company"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:cdirschl@wolterskluwer.de",
+    "name" : "Wolters Kluwer Deutschland GmbH"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#creator", "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_eurovoc", "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_zbw.eu/stw", "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_gesis-thesoz" ],
+    "dct:description" : "Labor law thesaurus covers all main areas of labor law, like the roles of employee and employer; legal aspects around labor contracts and dismissal; also co-determination and industrial action. Therefore, this thesaurus is interesting and relevant for all parties, who are dealing with labor law – professionals like specialized lawyers as well as for employees looking for definitions of legal terms. Linking to thematically similar thesauri (Linked Open Data paradigm) has already taken place and is therefore available as well. Thesauri are linked with\n\n*   Standard Thesaurus für Wirtschaft, ZBW (zbw.eu/stw/)\n*   Wikipedia / DBpedia\n*   TheSoz from Leibniz Gesellschaft für Sozialwissenschaften (www.gesis.org)\n*    EuroVoc - Multilingual Thesaurus of the European Union\n",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "German labor law thesaurus",
+    "exampleResource" : "http://vocabulary.wolterskluwer.de/arbeitsrecht/10924.rdf",
+    "sparqlEndpoint" : "http://vocabulary.wolterskluwer.de/PoolParty/sparql/arbeitsrecht",
+    "triples" : "106891",
+    "uriSpace" : "http://vocabulary.wolterskluwer.de/arbeitsrecht",
+    "rdfs:label" : "german-labor-law-thesaurus",
+    "distribution" : [ "http://vocabulary.wolterskluwer.de/arbeitsrecht/export/arbeitsrecht.trig", "http://vocabulary.wolterskluwer.de/PoolParty/sparql/arbeitsrecht", "http://vocabulary.wolterskluwer.de/arbeitsrecht.rdf", "http://vocabulary.wolterskluwer.de/arbeitsrecht/export/arbeitsrecht.rdf" ],
+    "keyword" : [ "provenance-metadata", "lod2", "no-proprietary-vocab", "law", "germany", "lod", "media", "lodcloud", "format-dcterms", "license-metadata", "format-skos", "published-by-producer" ],
+    "landingPage" : "http://datahub.io/dataset/german-labor-law-thesaurus"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#dataset",
+    "triples" : "776"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_eurovoc",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/eurovoc/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#dataset",
+    "triples" : "247"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_gesis-thesoz",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/gesis-thesoz/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#dataset",
+    "triples" : "443"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_zbw.eu/stw",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/zbw.eu/stw/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#dataset",
+    "triples" : "289"
+  }, {
+    "@id" : "http://vocabulary.wolterskluwer.de/PoolParty/sparql/arbeitsrecht",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://vocabulary.wolterskluwer.de/PoolParty/sparql/arbeitsrecht",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://vocabulary.wolterskluwer.de/arbeitsrecht.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://vocabulary.wolterskluwer.de/arbeitsrecht.rdf",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://vocabulary.wolterskluwer.de/arbeitsrecht/export/arbeitsrecht.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://vocabulary.wolterskluwer.de/arbeitsrecht/export/arbeitsrecht.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://vocabulary.wolterskluwer.de/arbeitsrecht/export/arbeitsrecht.trig",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://vocabulary.wolterskluwer.de/arbeitsrecht/export/arbeitsrecht.trig",
+    "mediaType" : "appliation/x-trig"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

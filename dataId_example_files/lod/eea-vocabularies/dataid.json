@@ -1,0 +1,143 @@
+{
+  "@graph" : [ {
+    "@id" : "http://cr.eionet.europa.eu/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://cr.eionet.europa.eu/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:soren.roug@eea.europa.eu",
+    "name" : "Søren Roug"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:soren.roug@eea.europa.eu",
+    "name" : "Søren Roug"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#contributor", "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#links_geonames", "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#links_eea-rod", "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#links_fao-geopolitical-ontology", "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#links_eurostat-rdf" ],
+    "dct:description" : "Superseded by dataset:eionet-rdf\n\nVocabularies used by EEA Linked Data: countries, biogeographical regions, DPSIR codes, languages.\n",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "EEA Vocabularies",
+    "sparqlEndpoint" : "http://cr.eionet.europa.eu/sparql",
+    "rdfs:label" : "eea-vocabularies",
+    "distribution" : [ "http://cr.eionet.europa.eu/sparql", "http://rdfdata.eionet.europa.eu/eea/data_dump.rdf", "http://rdfdata.eionet.europa.eu/eea/countries/AT" ],
+    "keyword" : [ "eu", "countries", "published-by-producer", "lod" ],
+    "landingPage" : "http://datahub.io/dataset/eea-vocabularies"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#dataset",
+    "triples" : "114"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#links_eea-rod",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/eea-rod",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#dataset",
+    "triples" : "54"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#links_eurostat-rdf",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/eurostat-rdf",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#dataset",
+    "triples" : "92"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#links_fao-geopolitical-ontology",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/fao-geopolitical-ontology",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#dataset",
+    "triples" : "50"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#links_geonames",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/geonames",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eea-vocabularies/dataid#dataset",
+    "triples" : "54"
+  }, {
+    "@id" : "http://rdfdata.eionet.europa.eu/eea/countries/AT",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdfdata.eionet.europa.eu/eea/countries/AT"
+  }, {
+    "@id" : "http://rdfdata.eionet.europa.eu/eea/data_dump.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdfdata.eionet.europa.eu/eea/data_dump.rdf",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

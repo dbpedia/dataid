@@ -1,0 +1,155 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/muninn-world-war-i/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/muninn-world-war-i/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/muninn-world-war-i/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:warren@muninn-project.org",
+    "name" : "Rob Warren"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/muninn-world-war-i/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:warren@muninn-project.org",
+    "name" : "Rob Warren"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/muninn-world-war-i/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/muninn-world-war-i/dataid#contributor", "http://dataid.dbpedia.org/lod/muninn-world-war-i/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/muninn-world-war-i/dataid#links_linkedgeodata", "http://dataid.dbpedia.org/lod/muninn-world-war-i/dataid#links_geonames-semantic-web", "http://dataid.dbpedia.org/lod/muninn-world-war-i/dataid#links_dbpedia" ],
+    "dct:description" : "The Muninn Project is a multi-disciplinary, multi-national, academic research project investigating millions of records pertaining to the First World War in archives around the world.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Muninn World War I",
+    "exampleResource" : "http://rdf.muninn-project.org/modern/2011/11/11/Cenotaph/ca12581df8bc9fc3c1535de9daa1814a",
+    "sparqlEndpoint" : "http://rdf.muninn-project.org/sparql",
+    "triples" : "1000000",
+    "uriSpace" : "http://rdf.muninn-project.org/ww1",
+    "rdfs:label" : "muninn-world-war-i",
+    "distribution" : [ "http://rdf.muninn-project.org/sitemap.xml", "http://rdf.muninn-project.org/Muninn.rdf", "http://rdf.muninn-project.org/sparql", "http://rdf.muninn-project.org/Downloads/Muninn-Dump-2013-01-15.nq", "http://rdf.muninn-project.org/Downloads", "http://rdf.muninn-project.org/Downloads/muninn-ontologies-latest.tar.bz2" ],
+    "keyword" : [ "access-www", "crossdomain", "format-rdf", "access-bulk", "deref-vocab", "search", "vocab-mappings", "rdf", "access-api", "published-by-producer", "void-sparql-endpoint", "format-foaf", "license-metadata", "format-rdfs", "format-owl", "lod", "provenance-metadata", "format-skos" ],
+    "landingPage" : "http://datahub.io/dataset/muninn-world-war-i"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/muninn-world-war-i/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/muninn-world-war-i/dataid#dataset",
+    "triples" : "691"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/muninn-world-war-i/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/muninn-world-war-i/dataid#dataset",
+    "triples" : "31968"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/muninn-world-war-i/dataid#links_linkedgeodata",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/linkedgeodata/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/muninn-world-war-i/dataid#dataset",
+    "triples" : "10"
+  }, {
+    "@id" : "http://rdf.muninn-project.org/Downloads",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdf.muninn-project.org/Downloads",
+    "mediaType" : "compressed tarfile containing n-triples"
+  }, {
+    "@id" : "http://rdf.muninn-project.org/Downloads/Muninn-Dump-2013-01-15.nq",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdf.muninn-project.org/Downloads/Muninn-Dump-2013-01-15.nq",
+    "mediaType" : "application/x-nquads"
+  }, {
+    "@id" : "http://rdf.muninn-project.org/Downloads/muninn-ontologies-latest.tar.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdf.muninn-project.org/Downloads/muninn-ontologies-latest.tar.bz2",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://rdf.muninn-project.org/Muninn.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdf.muninn-project.org/Muninn.rdf",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://rdf.muninn-project.org/sitemap.xml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdf.muninn-project.org/sitemap.xml",
+    "mediaType" : "meta/sitemap"
+  }, {
+    "@id" : "http://rdf.muninn-project.org/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://rdf.muninn-project.org/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

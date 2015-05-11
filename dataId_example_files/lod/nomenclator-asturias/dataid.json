@@ -1,0 +1,161 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:josem.alvarez@weso.es",
+    "name" : "Jose María Alvarez Rodríguez"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:josem.alvarez@weso.es",
+    "name" : "Jose María Alvarez Rodríguez at WESO (University of Oviedo)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#contributor", "http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#links_reference-data-gov-uk", "http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#links_sdmx-concept", "http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#links_geolinkeddata", "http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#links_dbpedia" ],
+    "dct:description" : "This dataset created by the SADEI contains information about the populated places of my area, Asturias in the period 2005-2010, including:\n\n-Codes to identify the type of a populated place: CC/PP/EE (C: code of first level division called “Concejo”, P: code of second level division called Parroquia Rural and EE: code of third level division the real place)\n\n-Name in Spanish and Asturian\n\n-Statistics about: altitude, distance, area, men, women and number of apartments (main and not main)\n\nThe dataset has been transformed by WESO Research Group at the University of Oviedo.",
+    "license" : "http://www.opendefinition.org/licenses/odc-odbl",
+    "dct:title" : "Nomenclator Asturias",
+    "exampleResource" : "http://purl.org/weso/nomenclator/asturias/observation/population/m1018",
+    "sparqlEndpoint" : "http://purl.org/weso/sparql",
+    "triples" : "4508050",
+    "uriSpace" : "http://purl.org/weso/nomenclator/",
+    "rdfs:label" : "nomenclator-asturias",
+    "distribution" : [ "http://purl.org/weso/sparql", "http://purl.org/weso/static/nomenclator/datasets/nomenclator-observations.ttl", "http://purl.org/weso/static/nomenclator/datasets/entities-places.ttl", "http://purl.org/weso/nomenclator/", "http://purl.org/weso/static/nomenclator/datasets/nomenclator-onto.ttl", "http://purl.org/weso/nomenclator/ls" ],
+    "keyword" : [ "published-by-third-party", "weso", "format-qb", "format-skos", "format-dcterms", "license-metadata", "government", "provenance-metadata", "format-dc", "oviedo", "format-skosxl", "deref-vocab", "vocab-mappings", "uniovi", "linkedopendata", "linkeddata", "geodata", "lod" ],
+    "landingPage" : "http://datahub.io/dataset/nomenclator-asturias"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#dataset",
+    "triples" : "78859"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#links_geolinkeddata",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geolinkeddata/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#dataset",
+    "triples" : "29"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#links_reference-data-gov-uk",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/reference-data-gov-uk/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#dataset",
+    "triples" : "377582"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#links_sdmx-concept",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/sdmx-concept/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/nomenclator-asturias/dataid#dataset",
+    "triples" : "377582"
+  }, {
+    "@id" : "http://purl.org/weso/nomenclator/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/nomenclator/",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://purl.org/weso/nomenclator/ls",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/nomenclator/ls",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://purl.org/weso/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://purl.org/weso/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://purl.org/weso/static/nomenclator/datasets/entities-places.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/static/nomenclator/datasets/entities-places.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://purl.org/weso/static/nomenclator/datasets/nomenclator-observations.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/static/nomenclator/datasets/nomenclator-observations.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://purl.org/weso/static/nomenclator/datasets/nomenclator-onto.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/static/nomenclator/datasets/nomenclator-onto.ttl",
+    "mediaType" : "meta/rdf-schema"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

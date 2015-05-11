@@ -1,0 +1,69 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/radatana/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "radatana"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/radatana/dataid#creator> , <http://dataid.dbpedia.org/lod/radatana/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/radatana/dataid#links_dnb-gemeinsame-normdatei> , <http://dataid.dbpedia.org/lod/radatana/dataid#links_dbpedia> , <http://dataid.dbpedia.org/lod/radatana/dataid#links_viaf> ;
+        dct:description         "This is an RDF representation of the personal name authorities in the BIBSYS authority file, the dataset was created with funding from the Norwegian Archive, Library and Museum Authority (ABM-utvikling) by BIBSYS and NTNU University Library.\n\nSee also [http://brinxmat.posterous.com/bibsys-personal-name-linked-open-data-publish](http://brinxmat.posterous.com/bibsys-personal-name-linked-open-data-publish)."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-pddl> ;
+        dct:title               "Rådata nå!"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://data.bibsys.no/data/notrbib/authorityentry/x90061718> ;
+        void:sparqlEndpoint     <http://data.bibsys.no/data/query_authority.html> ;
+        void:triples            "9370074"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://data.bibsys.no/data/notrbib/authorityentry/" ;
+        dcat:distribution       <http://www.bibsys.no/linked_data/authority> , <http://def.bibsys.no/xmlns/radatana/1.0#> , <http://data.bibsys.no/data/query_authority.html> ;
+        dcat:keyword            "format-foaf" , "format-rdfs" , "format-dc" , "format-whois" , "format-radatana" , "persons" , "linkeddata" , "no-license-metadata" , "linked-open-data" , "bibliographic" , "deref-vocab" , "format-skos" , "norwegian" , "authorities" , "published-by-producer" , "no-provenance-metadata" , "publications" , "no-vocab-mappings" , "linked-data" , "format-xsd" , "format-owl" , "format-rdf" , "lod" , "lld" ;
+        dcat:landingPage        <http://datahub.io/dataset/radatana> .
+
+<http://dataid.dbpedia.org/lod/radatana/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/radatana/dataid#dataset> ;
+        void:triples         "30346"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/radatana/dataid#links_dnb-gemeinsame-normdatei>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/radatana/dataid#dataset> ;
+        void:triples         "209681"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/radatana/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:support@bibsys.no" ;
+        foaf:name  "BIBSYS" .
+
+<http://dataid.dbpedia.org/lod/radatana/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/radatana/dataid#dataset" .
+
+<http://www.bibsys.no/linked_data/authority>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.bibsys.no/linked_data/authority> ;
+        dcat:mediaType    "application/x-ntriples" .
+
+<http://dataid.dbpedia.org/lod/radatana/dataid#links_viaf>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/viaf/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/radatana/dataid#dataset> ;
+        void:triples         "311154"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://data.bibsys.no/data/query_authority.html>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://data.bibsys.no/data/query_authority.html> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://def.bibsys.no/xmlns/radatana/1.0#>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://def.bibsys.no/xmlns/radatana/1.0#> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://dataid.dbpedia.org/lod/radatana/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:support@bibsys.no" ;
+        foaf:name  "support@bibsys.no" .

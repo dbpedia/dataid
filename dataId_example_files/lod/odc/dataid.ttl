@@ -1,0 +1,30 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/odc/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "opendatacommunities.org" .
+
+<http://dataid.dbpedia.org/lod/odc/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/odc/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/odc/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "odc"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/odc/dataid#creator> ;
+        dct:description         "Open Data Communities offers Linked Data access to the Index of Multiple Deprivation datasets from the Department of Communities and Local Government.\nThis provides a range of useful information covering population, income, education, health, environment and availability of key community facilities for both 2007 and 2010. \n\nEach dataset contains values for a single indicator and a single year, with one value for each of the 32484 LSOAs in England. In addition there are supporting datasets, such as the list of all LSOAs and their locations. Each dataset has a page that explains more about the data it contains and how it's organised. \n\nThe English Indices of Multiple Deprivation (IMD) 2010 were released on March 24th 2011. \n\n### Subpackages:\n\npackage:odc-lsoa\n"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://reference.data.gov.uk/id/open-government-licence> ;
+        dct:title               "Open Data Communities"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dcat:distribution       <http://opendatacommunities.org/datasets> ;
+        dcat:keyword            "government" , "lodcloud.needsinfo" , "published-by-producer" , "lod" , "lodcloud.unconnected" , "lodcloud.nolinks" , "lodcloud.needstriplecount" ;
+        dcat:landingPage        <http://datahub.io/dataset/odc> .
+
+<http://opendatacommunities.org/datasets>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://opendatacommunities.org/datasets> ;
+        dcat:mediaType    "-" .

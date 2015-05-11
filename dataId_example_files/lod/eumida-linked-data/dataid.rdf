@@ -1,0 +1,85 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/eumida-linked-data/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://eumida.publicdata.eu/void.ttl">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://eumida.publicdata.eu/void.ttl"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#dataset">
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/eumida-linked-data"/>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://api.talis.com/stores/eumida/services/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://api.talis.com/stores/eumida/services/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#links_linked-nuts">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/linked-nuts/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >286</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Data about European Higher Education Institutions, including statistics from 2008 regarding numbers of students, foreign students, PhD students etc. Based on the EUMIDA report.</dct:description>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >eumida-linked-data</rdfs:label>
+    <dcat:keyword>format-dcterm</dcat:keyword>
+    <dcat:keyword>eu-institution</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#creator">
+        <foaf:mbox>mailto:ckan@keithalexander.co.uk</foaf:mbox>
+        <foaf:name>Keith Alexander</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:uriSpace>http://eumida.publicdata.eu/data/</void:uriSpace>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <void:exampleResource rdf:resource="http://eumida.publicdata.eu/data/institution/AT055.rdf"/>
+    <dcat:keyword>latc</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#contributor">
+        <foaf:mbox>mailto:ckan@keithalexander.co.uk</foaf:mbox>
+        <foaf:name>Keith Alexander</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#links_nuts-geovocab">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/nuts-geovocab"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >286</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://api.talis.com/stores/eumida/services/sparql"/>
+    <dcat:keyword>government</dcat:keyword>
+    <void:exampleResource rdf:resource="http://eumida.publicdata.eu/data/institution/AT055/ISCED6-Students-enrolled.rdf"/>
+    <dcat:keyword>lod</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >133085</void:triples>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#links_eurostat-linked-data">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/eurostat-linked-data"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eumida-linked-data/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >27</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:exampleResource rdf:resource="http://eumida.publicdata.eu/data/dataset/doctorates-awarded.rdf"/>
+    <dcat:keyword>no-deref-vocab</dcat:keyword>
+    <dcat:distribution rdf:resource="http://eumida.publicdata.eu/void.ttl"/>
+    <dcat:keyword>format-ov</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >EUMIDA as Linked Data</dct:title>
+  </dataid:Dataset>
+</rdf:RDF>

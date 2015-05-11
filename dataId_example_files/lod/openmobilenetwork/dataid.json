@@ -1,0 +1,135 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/openmobilenetwork/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:abdulbaki.m.uzun@tu-berlin.de",
+    "name" : "Abdulbaki Uzun, Service-centric Networking, TU Berlin"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:abdulbaki.m.uzun@tu-berlin.de",
+    "name" : "Abdulbaki Uzun, Service-centric Networking, TU Berlin"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#contributor", "http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#links_linkedgeodata", "http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#links_linkedfood", "http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#links_dbpedia" ],
+    "dct:description" : "The OpenMobileNetwork is a dataset for mobile networks and devices, which is semantically modeled using the Linked Data principles. It provides structured RDF data describing mobile networks, their topology and components (e.g., base stations, mobile devices or WiFi access points). Utilizing this dataset in combination with interlinked information that is present in the LOD Cloud, various applications can be realized that depend on mobile network and positioning data (e.g., Semantic Location-based Services or Power Management in Mobile Networks).",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "OpenMobileNetwork",
+    "exampleResource" : "http://www.openmobilenetwork.org/page/cell2159549_5275_262_1.rdf",
+    "sparqlEndpoint" : "http://sparql.openmobilenetwork.org",
+    "triples" : "13639433",
+    "uriSpace" : "http://www.openmobilenetwork.org/resource/",
+    "rdfs:label" : "openmobilenetwork",
+    "distribution" : [ "http://sparql.openmobilenetwork.org", "http://www.openmobilenetwork.org/resource/void" ],
+    "keyword" : [ "sparql", "no-deref-vocab", "mobile-phone", "format-rdf", "published-by-producer", "lod", "provenance-metadata", "format-owl", "license-metadata", "base-station", "format-geo", "mobile-network", "wireless-network", "geographic", "cell" ],
+    "landingPage" : "http://datahub.io/dataset/openmobilenetwork"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#dataset",
+    "triples" : "137"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#links_linkedfood",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/linkedfood/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#dataset",
+    "triples" : "10120"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#links_linkedgeodata",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/linkedgeodata/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#dataset",
+    "triples" : "1131072"
+  }, {
+    "@id" : "http://sparql.openmobilenetwork.org",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://sparql.openmobilenetwork.org",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://www.openmobilenetwork.org/resource/void",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.openmobilenetwork.org/resource/void",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

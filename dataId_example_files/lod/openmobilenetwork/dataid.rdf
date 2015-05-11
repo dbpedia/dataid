@@ -1,0 +1,90 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/openmobilenetwork/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://www.openmobilenetwork.org/resource/void">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.openmobilenetwork.org/resource/void"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#dataset">
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#links_linkedgeodata">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/linkedgeodata/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1131072</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>sparql</dcat:keyword>
+    <void:exampleResource rdf:resource="http://www.openmobilenetwork.org/page/cell2159549_5275_262_1.rdf"/>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://sparql.openmobilenetwork.org">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://sparql.openmobilenetwork.org"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dcat:keyword>no-deref-vocab</dcat:keyword>
+    <dcat:keyword>mobile-phone</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The OpenMobileNetwork is a dataset for mobile networks and devices, which is semantically modeled using the Linked Data principles. It provides structured RDF data describing mobile networks, their topology and components (e.g., base stations, mobile devices or WiFi access points). Utilizing this dataset in combination with interlinked information that is present in the LOD Cloud, various applications can be realized that depend on mobile network and positioning data (e.g., Semantic Location-based Services or Power Management in Mobile Networks).</dct:description>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >13639433</void:triples>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OpenMobileNetwork</dct:title>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >openmobilenetwork</rdfs:label>
+    <dcat:keyword>format-owl</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#contributor">
+        <foaf:mbox>mailto:abdulbaki.m.uzun@tu-berlin.de</foaf:mbox>
+        <foaf:name>Abdulbaki Uzun, Service-centric Networking, TU Berlin</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/openmobilenetwork"/>
+    <dcat:keyword>base-station</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#creator">
+        <foaf:mbox>mailto:abdulbaki.m.uzun@tu-berlin.de</foaf:mbox>
+        <foaf:name>Abdulbaki Uzun, Service-centric Networking, TU Berlin</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#links_linkedfood">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/linkedfood/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >10120</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://sparql.openmobilenetwork.org"/>
+    <dcat:keyword>format-geo</dcat:keyword>
+    <void:uriSpace>http://www.openmobilenetwork.org/resource/</void:uriSpace>
+    <dcat:distribution rdf:resource="http://www.openmobilenetwork.org/resource/void"/>
+    <dcat:keyword>mobile-network</dcat:keyword>
+    <dcat:keyword>wireless-network</dcat:keyword>
+    <dcat:keyword>geographic</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/openmobilenetwork/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >137</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>cell</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

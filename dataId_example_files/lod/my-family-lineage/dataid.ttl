@@ -1,0 +1,105 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://futurewavehosting.com:3030/my-family-lineage/query>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://futurewavehosting.com:3030/my-family-lineage/query> ;
+        dcat:mediaType    "RDF" .
+
+<http://xmlns.com/foaf/spec/index.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://xmlns.com/foaf/spec/index.rdf> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://dataid.dbpedia.org/lod/my-family-lineage/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/my-family-lineage/dataid#dataset" .
+
+<http://my-family-lineage.com/w/sitemap/sitemap-index-whealton_wiki.xml>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://my-family-lineage.com/w/sitemap/sitemap-index-whealton_wiki.xml> ;
+        dcat:mediaType    "meta/sitemap" .
+
+<http://dataid.dbpedia.org/lod/my-family-lineage/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "my-family-lineage"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/my-family-lineage/dataid#creator> , <http://dataid.dbpedia.org/lod/my-family-lineage/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_dbpedia> , <http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_yago> , <http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_geonames> , <http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_freebase> ;
+        dct:description         "<h2>My Family Lineage</h2>\n<h3>Note: We have added Content Negotiation</h3>\n<p>The addition of content negotiation, allows for serving RDF to clients that request RDF and HTML for clients that request html pages.</p> \n<p><strong>\"My Family Lineage\"</strong> is a Genealogy Application using MediaWiki and the Semantic MediaWiki Bundle.  In addition, we use the Fuseki Triple Store which has a SPARQL query form available at: http://futurewavehosting.com:3030 \nwhere one would use the Control Panel and select the dataset my-family-lineage.  The website is community driven and through the import of GEDCOM files (Genealogical Data Communication) wiki pages are created, an accompanying RDF file is created and the data is added to the triple store. </p><br />\n<p> We use the latest GEDCOM standard version 5.5 which is used by various Genealogy software applications.  </p>\n\n<p>We have a void file available at: http://my-family-lineage.com/void.ttl \nwhich provides information about vocabularies used, licensing, example resources, and link sets.  </p>\n\n<p>We collect information about Places that correspond to events in an individual/person's life or in the life of a family.  It is here that there are the most triples linking to other data sets that are part of the current LOD Cloud.  Nearly 50,000 triples describe Places, of those over 7300 triples are links to external data sets, including dbpedia, geonames, freebase and yago.</p>\n\n<p>We have included a great deal of information from public genealogy (GEDCOM) files including the genealogy of famous people, e.g. royalty, US Presidents, Authors like Stephen King and more. </p>"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-by> ;
+        dct:title               "My Family Lineage"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://my-family-lineage.com/w/images/d/d0/Adams.rdf> ;
+        void:sparqlEndpoint     <http://futurewavehosting.com:3030/my-family-lineage/sparql> ;
+        void:triples            "3000000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://my-family-lineage.com/wiki/" ;
+        dcat:distribution       <http://futurewavehosting.com:3030/my-family-lineage/sparql> , <http://my-family-lineage.com/void.ttl> , <http://my-family-lineage.com/w/images/6/6c/Sangster_family_tree_2012-06-30.rdf> , <http://xmlns.com/foaf/spec/index.rdf> , <http://futurewavehosting.com:3030/my-family-lineage/query> , <http://www.opendatacommons.org/odc-public-domain-dedication-and-licence/> , <http://my-family-lineage.com/w/RDF/classes.rdf> , <http://my-family-lineage.com/w/images/a/af/BruceWhealtonJr.rdf> , <http://my-family-lineage.com/w/sitemap/sitemap-index-whealton_wiki.xml> ;
+        dcat:keyword            "format-rel" , "format-rdfs" , "no-proprietary-vocab" , "no-vocab-mappings" , "published-by-producer" , "format-bio" , "deref-vocab" , "lod" , "format-foaf" , "no-provenance-metadata" , "format-dbpedia-owl" , "family history" , "license-metadata" , "genealogy" , "format-rdf" , "usergeneratedcontent" , "geographic" , "relationships" ;
+        dcat:landingPage        <http://datahub.io/dataset/my-family-lineage> .
+
+<http://dataid.dbpedia.org/lod/my-family-lineage/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:bruce@whealton.info" ;
+        foaf:name  "Bruce Whealton" .
+
+<http://my-family-lineage.com/w/RDF/classes.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://my-family-lineage.com/w/RDF/classes.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/my-family-lineage/dataid#dataset> ;
+        void:triples         "2254"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_geonames>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/geonames/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/my-family-lineage/dataid#dataset> ;
+        void:triples         "377"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/my-family-lineage/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:bruce@whealton.info" ;
+        foaf:name  "Bruce Whealton" .
+
+<http://my-family-lineage.com/void.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://my-family-lineage.com/void.ttl> ;
+        dcat:mediaType    "meta/void" .
+
+<http://my-family-lineage.com/w/images/a/af/BruceWhealtonJr.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://my-family-lineage.com/w/images/a/af/BruceWhealtonJr.rdf> ;
+        dcat:mediaType    "application/rdf xml" .
+
+<http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_yago>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/yago/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/my-family-lineage/dataid#dataset> ;
+        void:triples         "2048"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://my-family-lineage.com/w/images/6/6c/Sangster_family_tree_2012-06-30.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://my-family-lineage.com/w/images/6/6c/Sangster_family_tree_2012-06-30.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_freebase>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/freebase/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/my-family-lineage/dataid#dataset> ;
+        void:triples         "2253"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://futurewavehosting.com:3030/my-family-lineage/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://futurewavehosting.com:3030/my-family-lineage/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://www.opendatacommons.org/odc-public-domain-dedication-and-licence/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.opendatacommons.org/odc-public-domain-dedication-and-licence/> ;
+        dcat:mediaType    "license-metadata" .

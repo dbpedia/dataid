@@ -1,0 +1,61 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/offener-haushalt/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/offener-haushalt/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/offener-haushalt/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Open Knowledge Foundation Deutschland e.V."
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/offener-haushalt/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/offener-haushalt/dataid#creator",
+    "dct:description" : "Offener Haushalt shows the complex data of several german budgets (federal, munich, berlin).\nIt also gives access to the data in an open and re-usable format.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Offener Haushalt",
+    "exampleResource" : "http://bund.offenerhaushalt.de/11#tx=2006:a:projection",
+    "rdfs:label" : "offener-haushalt",
+    "keyword" : [ "germany", "published-by-third-party", "lod", "government", "no-proprietary-vocab", "lodcloud.unconnected", "lodcloud.nolinks", "budget" ],
+    "landingPage" : "http://datahub.io/dataset/offener-haushalt"
+  } ],
+  "@context" : {
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

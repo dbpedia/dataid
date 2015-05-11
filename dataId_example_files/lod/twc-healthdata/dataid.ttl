@@ -1,0 +1,92 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/twc-healthdata/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "James McCusker" .
+
+<http://www.w3.org/ns/prov#>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/ns/prov#> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://healthdata.tw.rpi.edu/void>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://healthdata.tw.rpi.edu/void> ;
+        dcat:mediaType    "meta/void" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://usefulinc.com/ns/doap#>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://usefulinc.com/ns/doap#> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://healthdata.tw.rpi.edu/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://healthdata.tw.rpi.edu/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://www.w3.org/2006/vcard/ns#>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/2006/vcard/ns#> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+rdfs:   a                 dataid:Distribution ;
+        dcat:downloadURL  rdfs: ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://purl.org/vocab/vann/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/vocab/vann/> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://www.w3.org/2000/10/swap/pim/contact#>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/2000/10/swap/pim/contact#> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://www.w3.org/2002/07/owl#>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/2002/07/owl#> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://dataid.dbpedia.org/lod/twc-healthdata/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "twc-healthdata"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/twc-healthdata/dataid#creator> ;
+        dct:description         "Linked Data version of the metadata and data listed at http://hub.healthdata.gov."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "HealthData.gov Platform (HDP) on the Semantic Web"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://purl.org/twc/health/source/hub-healthdata-gov/dataset/hospital-compare/version/2012-Jul-17/provider/010054> ;
+        void:sparqlEndpoint     <http://healthdata.tw.rpi.edu/sparql> ;
+        void:triples            "1934046908"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://purl.org/twc/health/" ;
+        dcat:distribution       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> , <http://purl.org/twc/health/source/hub-healthdata-gov/file/2008-basic-stand-alone-skilled/version/2012-Mar-15/conversion/hub-healthdata-gov-2008-basic-stand-alone-skilled-2012-Mar-15.void.ttl.gz> , <http://www.w3.org/ns/prov#> , foaf: , <http://www.w3.org/2000/10/swap/pim/contact#> , <http://www.w3.org/2002/07/owl#> , <http://usefulinc.com/ns/doap#> , <http://healthdata.tw.rpi.edu/void> , rdfs: , <http://www.w3.org/2006/vcard/ns#> , <http://purl.org/vocab/vann/> , <http://purl.org/linked-data/cube#> , <http://healthdata.tw.rpi.edu/sparql> ;
+        dcat:keyword            "vocab-mappings" , "format-foaf" , "format-doap" , "published-by-third-party" , "format-con" , "lifesciences" , "government" , "format-owl" , "provenance-metadata" , "ecommerce" , "format-vann" , "format-vcard" , "format-prov" , "geographic" , "format-rdf" , "lod" , "no-license-metadata" , "schemata" , "deref-vocab" , "format-qb" , "format-rdfs" ;
+        dcat:landingPage        <http://datahub.io/dataset/twc-healthdata> .
+
+<http://purl.org/linked-data/cube#>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/linked-data/cube#> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://dataid.dbpedia.org/lod/twc-healthdata/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/twc-healthdata/dataid#dataset" .
+
+foaf:   a                 dataid:Distribution ;
+        dcat:downloadURL  foaf: ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://purl.org/twc/health/source/hub-healthdata-gov/file/2008-basic-stand-alone-skilled/version/2012-Mar-15/conversion/hub-healthdata-gov-2008-basic-stand-alone-skilled-2012-Mar-15.void.ttl.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/twc/health/source/hub-healthdata-gov/file/2008-basic-stand-alone-skilled/version/2012-Mar-15/conversion/hub-healthdata-gov-2008-basic-stand-alone-skilled-2012-Mar-15.void.ttl.gz> ;
+        dcat:mediaType    "text/turtle" .

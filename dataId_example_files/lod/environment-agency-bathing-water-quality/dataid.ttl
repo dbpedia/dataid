@@ -1,0 +1,89 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/environment-agency-bathing-water-quality/dataid#links_ordnance-survey-linked-data>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/ordnance-survey-linked-data> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/environment-agency-bathing-water-quality/dataid#dataset> ;
+        void:triples         "1010"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://environment.data.gov.uk/sources/bwq/output/in-season_2011_BWQ_BASELINE.nt.zip>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://environment.data.gov.uk/sources/bwq/output/in-season_2011_BWQ_BASELINE.nt.zip> ;
+        dcat:mediaType    "text/turtle" .
+
+<http://dataid.dbpedia.org/lod/environment-agency-bathing-water-quality/dataid#links_statistics-data-gov-uk>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/statistics-data-gov-uk> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/environment-agency-bathing-water-quality/dataid#dataset> ;
+        void:triples         "505"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://environment.data.gov.uk/doc/bathing-water-quality/in-season/sample.html>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://environment.data.gov.uk/doc/bathing-water-quality/in-season/sample.html> ;
+        dcat:mediaType    "HTML" .
+
+<http://environment.data.gov.uk/sparql/bwq/query>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://environment.data.gov.uk/sparql/bwq/query> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://environment.data.gov.uk/data/bathing-water-quality.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://environment.data.gov.uk/data/bathing-water-quality.rdf> ;
+        dcat:mediaType    "meta/void" .
+
+<http://environment.data.gov.uk/sources/def/bathing-water-quality.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://environment.data.gov.uk/sources/def/bathing-water-quality.ttl> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://environment.data.gov.uk/sources/bwq/output/annual-compliance_2011_BWQ_BASELINE.nt.zip>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://environment.data.gov.uk/sources/bwq/output/annual-compliance_2011_BWQ_BASELINE.nt.zip> ;
+        dcat:mediaType    "text/turtle" .
+
+<http://dataid.dbpedia.org/lod/environment-agency-bathing-water-quality/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:Alex.Coley@environment-agency.gov.uk" ;
+        foaf:name  "Environment Agency" .
+
+<http://dataid.dbpedia.org/lod/environment-agency-bathing-water-quality/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:skw@epimorphics.com" ;
+        foaf:name  "Stuart Williams" .
+
+<http://dataid.dbpedia.org/lod/environment-agency-bathing-water-quality/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/environment-agency-bathing-water-quality/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/environment-agency-bathing-water-quality/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "environment-agency-bathing-water-quality"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/environment-agency-bathing-water-quality/dataid#creator> , <http://dataid.dbpedia.org/lod/environment-agency-bathing-water-quality/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/environment-agency-bathing-water-quality/dataid#links_statistics-data-gov-uk> , <http://dataid.dbpedia.org/lod/environment-agency-bathing-water-quality/dataid#links_ordnance-survey-linked-data> , <http://dataid.dbpedia.org/lod/environment-agency-bathing-water-quality/dataid#links_reference-data-gov-uk> ;
+        dct:description         "Bathing water quality assessment data for England and Wales from the Environment Agency."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://reference.data.gov.uk/id/open-government-licence> ;
+        dct:title               "Environment Agency Bathing Water Quality"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://environment.data.gov.uk/doc/bathing-water-quality/in-season/sample.rdf> , <http://environment.data.gov.uk/doc/bathing-water-quality/in-season/sample.ttl> ;
+        void:sparqlEndpoint     <http://environment.data.gov.uk/sparql/bwq/query> ;
+        void:triples            "8735962"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://environment.data.gov.uk/data/bathing-water-quality/" ;
+        dcat:distribution       <http://environment.data.gov.uk/sparql/bwq/query> , <http://environment.data.gov.uk/doc/bathing-water-quality/in-season/sample.html> , <http://environment.data.gov.uk/sources/bwq/output/in-season_2011_BWQ_BASELINE.nt.zip> , <http://environment.data.gov.uk/sources/def/bathing-water-quality.ttl> , <http://environment.data.gov.uk/data/bathing-water-quality.rdf> , <http://environment.data.gov.uk/sources/def/bathing-water-quality.rdf> , <http://environment.data.gov.uk/sources/bwq/output/annual-compliance_2011_BWQ_BASELINE.nt.zip> ;
+        dcat:keyword            "published-by-producer" , "deref-vocab" , "provenance-metadata" , "license-metadata" , "no-vocab-mappings" , "format-foaf" , "environment" , "format-admingeo" , "lod" , "government" , "format-skos" ;
+        dcat:landingPage        <http://datahub.io/dataset/environment-agency-bathing-water-quality> .
+
+<http://dataid.dbpedia.org/lod/environment-agency-bathing-water-quality/dataid#links_reference-data-gov-uk>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/reference-data-gov-uk> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/environment-agency-bathing-water-quality/dataid#dataset> ;
+        void:triples         "400000"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://environment.data.gov.uk/sources/def/bathing-water-quality.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://environment.data.gov.uk/sources/def/bathing-water-quality.rdf> ;
+        dcat:mediaType    "meta/rdf-schema" .

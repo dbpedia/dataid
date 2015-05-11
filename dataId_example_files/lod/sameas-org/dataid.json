@@ -1,0 +1,78 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/sameas-org/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/sameas-org/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/sameas-org/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:hg@ecs.soton.ac.uk",
+    "name" : "Hugh Glaser"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/sameas-org/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:hg@ecs.soton.ac.uk",
+    "name" : "Hugh Glaser & Ian Millard"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/sameas-org/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/sameas-org/dataid#contributor", "http://dataid.dbpedia.org/lod/sameas-org/dataid#creator" ],
+    "dct:description" : "A simple service that takes a Linked Data URI and gives back other URIs that may be the same Thing.  \nFormat of return can be in rdf+xml, rdf+n3, JSON or plain text.  \nThe data is a filtered version of the equivalence data that has been published on the Web of Data.  ",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "sameAs.org",
+    "rdfs:label" : "sameas-org",
+    "distribution" : "http://sameas.org/dumps.tgz",
+    "keyword" : [ "skos-exactmatc", "owl-sameas", "linking", "linkeddata", "co-reference", "rdf", "linked-open-data", "opendatachallenge", "identity", "lod", "format-rdf", "lodcloud.nolinks", "linked-data", "lodcloud.unconnected" ],
+    "landingPage" : "http://datahub.io/dataset/sameas-org"
+  }, {
+    "@id" : "http://sameas.org/dumps.tgz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://sameas.org/dumps.tgz",
+    "mediaType" : "application/x-ntriples"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

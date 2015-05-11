@@ -1,0 +1,68 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/the-kazan-university-museum-as-linked-open-data-in-the-europeana-data-model/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/the-kazan-university-museum-as-linked-open-data-in-the-europeana-data-model/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/the-kazan-university-museum-as-linked-open-data-in-the-europeana-data-model/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:jr.pathfinder@gmail.com",
+    "name" : "Rustem Takalov"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/the-kazan-university-museum-as-linked-open-data-in-the-europeana-data-model/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:jr.pathfinder@gmail.com",
+    "name" : "Rustem Takalov"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/the-kazan-university-museum-as-linked-open-data-in-the-europeana-data-model/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/the-kazan-university-museum-as-linked-open-data-in-the-europeana-data-model/dataid#creator", "http://dataid.dbpedia.org/lod/the-kazan-university-museum-as-linked-open-data-in-the-europeana-data-model/dataid#contributor" ],
+    "dct:description" : "The Kazan University Museum dataset describes more than 10.000 cultural heritage objects related to the history of Kazan University described by the museum.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "The Kazan University Museum as Linked Open Data in the Europeana Data Model",
+    "exampleResource" : "http://data.cll.niimm.ksu.ru/mhku.rdf",
+    "rdfs:label" : "the-kazan-university-museum-as-linked-open-data-in-the-europeana-data-model",
+    "keyword" : [ "edm", "linked data", "museum", "lod" ],
+    "landingPage" : "http://datahub.io/dataset/the-kazan-university-museum-as-linked-open-data-in-the-europeana-data-model"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

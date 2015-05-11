@@ -1,0 +1,97 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/coins-openuplabs/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/coins-openuplabs/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/coins-openuplabs/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "The Stationery Office Limited"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/coins-openuplabs/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/coins-openuplabs/dataid#creator",
+    "dct:description" : "COINS – the Combined On-line Information System – is used by the Treasury to collect financial data from across the public sector to support fiscal management, the production of Parliamentary Supply Estimates and public expenditure statistics, the preparation of Whole of Government Accounts (WGA) and to meet data requirements of the Office for National Statistics (ONS). Up to nine years of data are actively maintained : five historic (or outturn) years, the current year and up to three future (or plan) years depending on the timing of the latest spending review. COINS is a consolidation system rather than an accounts application, so it does not hold details of individual financial transactions by departments.\n\n\npart of package:openuplabs",
+    "license" : "http://reference.data.gov.uk/id/open-government-licence",
+    "dct:title" : "OpenUpLabs COINS",
+    "exampleResource" : "http://finance.data.gov.uk/def/coins/department-code/des022",
+    "sparqlEndpoint" : "http://gov.tso.co.uk/coins/sparql",
+    "triples" : "5000000",
+    "uriSpace" : "http://finance.data.gov.uk/def/coins/",
+    "rdfs:label" : "coins-openuplabs",
+    "distribution" : [ "http://gov.tso.co.uk/coins/sparql", "http://source.data.gov.uk/finance/coins/2010-06-14/schema" ],
+    "keyword" : [ "lod", "no-deref-vocab", "lodcloud.unconnected", "country.uk", "government", "lodcloud.nolinks", "published-by-third-party" ],
+    "landingPage" : "http://datahub.io/dataset/coins-openuplabs"
+  }, {
+    "@id" : "http://gov.tso.co.uk/coins/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://gov.tso.co.uk/coins/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://source.data.gov.uk/finance/coins/2010-06-14/schema",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://source.data.gov.uk/finance/coins/2010-06-14/schema",
+    "mediaType" : "meta/rdf+schema"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

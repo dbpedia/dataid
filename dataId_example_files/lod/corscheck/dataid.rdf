@@ -1,0 +1,43 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/corscheck/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/corscheck/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/corscheck/dataid#dataset">
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-odbl"/>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://eris.okfn.org/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://eris.okfn.org/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dcat:keyword>access-http</dcat:keyword>
+    <dcat:keyword>format-void</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cross-Origin Resource Sharing (CORS) is a specification that enables a true open access across domain-boundaries. More information about what this means and why it is useful is available at the Enable CORS website.
+
+This dataset is produced by a script which effects an HTTP HEAD request for each sparqlEndpoint and exampleResource in the CKAN RDF Dataset and records the HTTP headers that are returned.</dct:description>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/corscheck"/>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CORS Check - HTTP Header Logs for Linked Open Data</dct:title>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dcat:distribution rdf:resource="http://eris.okfn.org/sparql"/>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>rdf</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/corscheck/dataid#creator">
+        <foaf:name>William Waites</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >corscheck</rdfs:label>
+  </dataid:Dataset>
+</rdf:RDF>

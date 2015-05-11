@@ -1,0 +1,104 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/bio2rdf-interpro/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/bio2rdf-interpro/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bio2rdf-interpro/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:michel.dumontier@gmail.com",
+    "name" : "Michel Dumontier"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bio2rdf-interpro/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:bio2rdf@googlegroups.com",
+    "name" : "Bio2RDF"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bio2rdf-interpro/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/bio2rdf-interpro/dataid#creator", "http://dataid.dbpedia.org/lod/bio2rdf-interpro/dataid#contributor" ],
+    "dct:description" : "InterPro is an integrated database of predictive protein \"signatures\" used for the classification and automatic annotation of proteins and genomes. InterPro classifies sequences at superfamily, family and subfamily levels, predicting the occurrence of functional domains, repeats and important sites.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Bio2RDF::InterPro",
+    "exampleResource" : "http://bio2rdf.org/interpro:IPR013315",
+    "sparqlEndpoint" : "http://interpro.bio2rdf.org/sparql",
+    "uriSpace" : "http://bio2rdf.org/interpro:",
+    "rdfs:label" : "bio2rdf-interpro",
+    "distribution" : [ "http://download.bio2rdf.org/current/interpro/interpro.html", "http://interpro.bio2rdf.org/sparql", "http://download.bio2rdf.org/current/interpro/interpro.nt.gz" ],
+    "keyword" : [ "lifesciences", "format-rdfs", "format-bio2rdf", "bio2rdf", "lod", "format-rdf", "published-by-third-party" ],
+    "landingPage" : "http://datahub.io/dataset/bio2rdf-interpro"
+  }, {
+    "@id" : "http://download.bio2rdf.org/current/interpro/interpro.html",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://download.bio2rdf.org/current/interpro/interpro.html",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://download.bio2rdf.org/current/interpro/interpro.nt.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://download.bio2rdf.org/current/interpro/interpro.nt.gz",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://interpro.bio2rdf.org/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://interpro.bio2rdf.org/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

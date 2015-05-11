@@ -1,0 +1,126 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/polymath-virtual-library/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/polymath-virtual-library/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/polymath-virtual-library/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Xavier Agenjo"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/polymath-virtual-library/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/polymath-virtual-library/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/polymath-virtual-library/dataid#links_viaf", "http://dataid.dbpedia.org/lod/polymath-virtual-library/dataid#links_oclc-fast", "http://dataid.dbpedia.org/lod/polymath-virtual-library/dataid#links_dbpedia" ],
+    "dct:description" : "The Polymath Virtual Library aims to bring together the works of the most important Hispanic polymaths and to establish semantic relationships between them, expressing the different schools of thought, from Seneca to Octavio Paz. The aim is to bring together information, data, digital texts and web resources about Spanish, Hispano-American, Brazilian and Portuguese polymaths from all times. These datasets consists of  polymath authority data (Spanish, Latin American, Brasilian and Portuguese)  expressed in <a href=\"http://pro.europeana.eu/web/guest/edm-documentation\" title=\"Europeana Data Model\">\nEuropeana Data Model</a>. Links to VIAF and DBpedia in progress. ",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "Polymath Virtual Library (Authority data) - Fundación Ignacio Larramendi",
+    "exampleResource" : [ "https://commondatastorage.googleapis.com/ckannet-storage/2012-05-23T161210/Unamuno_Miguel-de.rdf", "https://commondatastorage.googleapis.com/ckannet-storage/2012-05-23T161117/Menendez_Pelayo.rdf", "https://commondatastorage.googleapis.com/ckannet-storage/2012-05-23T161002/Francisco_Sanchez.rdf" ],
+    "rdfs:label" : "polymath-virtual-library",
+    "distribution" : [ "https://commondatastorage.googleapis.com/ckannet-storage/2012-05-23T160728/Poligrafos_portugueses_edm.zip", "https://commondatastorage.googleapis.com/ckannet-storage/2012-05-23T160246/Poligrafos_espanoles_edm.zip", "https://commondatastorage.googleapis.com/ckannet-storage/2012-05-23T160611/Poligrafos_hispanoamericanos_edm.zip", "https://commondatastorage.googleapis.com/ckannet-storage/2012-05-23T160857/Poligrafos_brasilenos_edm.zip" ],
+    "keyword" : [ "europeana data model", "format-edm", "published-by-producer", "bibliographic data", "format-skos", "lld", "lod", "authority", "library", "crossdomain", "no-proprietary-vocab" ],
+    "landingPage" : "http://datahub.io/dataset/polymath-virtual-library"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/polymath-virtual-library/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/polymath-virtual-library/dataid#dataset",
+    "triples" : "57"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/polymath-virtual-library/dataid#links_oclc-fast",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/oclc-fast/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/polymath-virtual-library/dataid#dataset",
+    "triples" : "25"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/polymath-virtual-library/dataid#links_viaf",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/viaf/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/polymath-virtual-library/dataid#dataset",
+    "triples" : "321"
+  }, {
+    "@id" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-05-23T160246/Poligrafos_espanoles_edm.zip",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-05-23T160246/Poligrafos_espanoles_edm.zip",
+    "mediaType" : "application/rdf xml"
+  }, {
+    "@id" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-05-23T160611/Poligrafos_hispanoamericanos_edm.zip",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-05-23T160611/Poligrafos_hispanoamericanos_edm.zip",
+    "mediaType" : "application/rdf xml"
+  }, {
+    "@id" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-05-23T160728/Poligrafos_portugueses_edm.zip",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-05-23T160728/Poligrafos_portugueses_edm.zip",
+    "mediaType" : "application/rdf xml"
+  }, {
+    "@id" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-05-23T160857/Poligrafos_brasilenos_edm.zip",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-05-23T160857/Poligrafos_brasilenos_edm.zip",
+    "mediaType" : "application/rdf xml"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,74 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_freebase>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/freebase/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#dataset> ;
+        void:triples         "3933"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://red.gnoss.com/en/community/buscaempresas/Empresas/tag/s?rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://red.gnoss.com/en/community/buscaempresas/Empresas/tag/s?rdf> ;
+        dcat:mediaType    "meta/owl" .
+
+<http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:gnoss@gnoss.com" ;
+        foaf:name  "GNOSS Team" .
+
+<http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#dataset> ;
+        void:triples         "191"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://gnoss.com/gnoss.owl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://gnoss.com/gnoss.owl> ;
+        dcat:mediaType    "meta/owl" .
+
+<http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_geonames-semantic-web>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/geonames-semantic-web> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#dataset> ;
+        void:triples         "7547"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://red.gnoss.com/voidAEGP.n3>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://red.gnoss.com/voidAEGP.n3> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "aegp-spanish-textile-and-clothing-association"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#contributor> , <http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_freebase> , <http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_dbpedia> , <http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_nytimes-linked-open-data> , <http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_geonames-semantic-web> ;
+        dct:description         "<p>\nSemantic catalog of the <a href=\"http://www.agrupaciontextil.org/\">Spanish Textile and Clothing Association (AEGP) companies</a>. AEGP is a voluntary professional national association that promotes the competitiveness of its companies through the promotion, defense and representation of their professional, economic and work interests. It offers specialized services that enhance their position in the environment. The catalog includes 2,500 textile and clothing companies.\n</p>\n<p>\nAEGP works with <a href=\"http://gnoss.com/\">GNOSS software (RIAM Intelearning Lab)</a>. RIAM is a company that develops semantic technology for the creation of specialized networks and linked markets. The project includes a faceted-based search engine and enriched contexts. Both are developments by GNOSS.\n</p>\n\n<p>\nCatálogo semántico de las empresas de la <a href=\"http://www.agrupaciontextil.org/\">Agrupación Española del Género de Punto (AEGP)</a>. AEGP es una asociación profesional voluntaria de ámbito estatal cuyo objetivo es impulsar la competitividad de las empresas asociadas, a través del fomento, la defensa y la representación de sus intereses laborales, profesionales y económicos y, mediante una oferta de servicios especializados que les permitan mejorar su posición en el entorno. El catálogo recoge 2500 empresas del sector.\n</p>\n<p>\nAEGP trabaja con <a href=\"http://gnoss.com/\">software de GNOSS (RIAM Intelearning Lab)</a>. RIAM es una compañía que desarrolla tecnología semántica para la creación de redes especializadas y mercados enlazados. El proyecto incluye un buscador facetado y contextos enriquecidos.\n</p>"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://creativecommons.org/licenses/by-nc/2.0/> ;
+        dct:title               "AEGP, Spanish Textile and Clothing Association"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://red.gnoss.com/en/community/buscaempresas/resource/GRIMARDI-SL/e652d94e-03cf-4814-9757-ea748b14b503?rdf> , <http://red.gnoss.com/en/community/buscaempresas/resource/TRICONOVA-SL/77117998-7718-40ce-8642-b600330465bd?rdf> ;
+        void:triples            "88645"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://red.gnoss.com/comunidad/buscaempresas" ;
+        dcat:distribution       <http://gnoss.com/gnoss.owl> , <http://red.gnoss.com/en/community/buscaempresas/Empresas/tag/s?rdf> , <http://red.gnoss.com/voidAEGP.n3> ;
+        dcat:keyword            "format-rdfg" , "license-metadata" , "format-wot" , "aegp" , "format-foaf" , "usergeneratedcontent" , "foaf" , "sioc" , "spain" , "no-vocab-mappings" , "country.es" , "wrapper" , "provenance-metadata" , "gnoss" , "published-by-third-party" , "no-proprietary-vocab" , "format-dcam" , "format-dc" , "empresas" , "format-sioc" , "lod" , "schemata" , "dc" , "socialweb" , "sp" , "language-spa" , "corporate excellence" , "country-spain" , "laboratorio de ideas" , "format-skos" , "skos" ;
+        dcat:landingPage        <http://datahub.io/dataset/aegp-spanish-textile-and-clothing-association> .
+
+<http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#links_nytimes-linked-open-data>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/nytimes-linked-open-data> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#dataset> ;
+        void:triples         "223"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/aegp-spanish-textile-and-clothing-association/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:gnoss@gnoss.com" ;
+        foaf:name  "GNOSS Team" .

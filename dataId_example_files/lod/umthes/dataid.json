@@ -1,0 +1,92 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/umthes/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/umthes/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/umthes/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:thomas.bandholtz@innoq.com",
+    "name" : "Thomas Bandholtz "
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/umthes/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:joachim.fock@uba.de",
+    "name" : "Joachim Fock"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/umthes/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/umthes/dataid#contributor", "http://dataid.dbpedia.org/lod/umthes/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/umthes/dataid#links_gemet",
+    "dct:description" : "A German-centric thesaurus about environmental protection, maintained by the Federal Environment Agency, Germany. Includes English translations of most terms.\n\n2011-08-10 Service unreachable ",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "UMTHES",
+    "exampleResource" : "http://data.uba.de/umt/_00100204.ttl",
+    "triples" : "300000",
+    "rdfs:label" : "umthes",
+    "keyword" : [ "thesaurus", "lld", "lodcloud.needsfixing", "no-deref-vocab", "government", "published-by-producer", "access-notavailable", "topic.schemata", "lod", "topic.government", "format-skos", "environment" ],
+    "landingPage" : "http://datahub.io/dataset/umthes"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/umthes/dataid#links_gemet",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/gemet/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/umthes/dataid#dataset",
+    "triples" : "3483"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

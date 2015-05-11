@@ -1,0 +1,124 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/dbnary/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/dbnary/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/dbnary/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Gilles Sérasset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/dbnary/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/dbnary/dataid#creator",
+    "containsLinks" : "http://dataid.dbpedia.org/lod/dbnary/dataid#links_lexinfo",
+    "dct:description" : "Extracts of wiktionary data for several languages, structured as an RDF graph, based mainly on the LEMON model. English, Finnish, French, German, Greek, Italian, Japanese, Portuguese, Russian and Turkish.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "dbnary",
+    "exampleResource" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-16T130120/dictionnaire.ttl",
+    "sparqlEndpoint" : "http://kaiko.getalp.org/sparql",
+    "triples" : "35249544",
+    "rdfs:label" : "dbnary",
+    "distribution" : [ "http://kaiko.getalp.org/about-dbnary/lemon/latest/", "http://kaiko.getalp.org/dbnary/fra/dictionnaire", "http://kaiko.getalp.org/about-dbnary/lemon/", "http://kaiko.getalp.org/sparql" ],
+    "keyword" : [ "english", "french", "lexical-resources", "Linguistic Dataset LOD RDF", "turkish", "wiktionary", "italian", "portuguese", "japanese", "greek", "russian", "german", "finnish", "lod" ],
+    "landingPage" : "http://datahub.io/dataset/dbnary"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/dbnary/dataid#links_lexinfo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/lexinfo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/dbnary/dataid#dataset",
+    "triples" : "1260491"
+  }, {
+    "@id" : "http://kaiko.getalp.org/about-dbnary/lemon/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://kaiko.getalp.org/about-dbnary/lemon/",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://kaiko.getalp.org/about-dbnary/lemon/latest/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://kaiko.getalp.org/about-dbnary/lemon/latest/",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://kaiko.getalp.org/dbnary/fra/dictionnaire",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://kaiko.getalp.org/dbnary/fra/dictionnaire",
+    "mediaType" : "linked data"
+  }, {
+    "@id" : "http://kaiko.getalp.org/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://kaiko.getalp.org/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

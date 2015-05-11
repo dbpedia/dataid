@@ -1,0 +1,55 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/bund-offener-haushalt/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/bund-offener-haushalt/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/bund-offener-haushalt/dataid#dataset">
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bund Offener Haushalt</dct:title>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://data.offenerhaushalt.de/bund/">
+        <dcat:downloadURL rdf:resource="http://data.offenerhaushalt.de/bund/"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://data.offenerhaushalt.de/bund/bund_2011.json">
+        <dcat:mediaType>JSON</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://data.offenerhaushalt.de/bund/bund_2011.json"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>lodcloud.unconnected</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://data.offenerhaushalt.de/bund/bund_2011.csv">
+        <dcat:mediaType>CSV</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://data.offenerhaushalt.de/bund/bund_2011.csv"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/bund-offener-haushalt/dataid#creator">
+        <foaf:name>Open Knowledge Foundation Deutschland e.V.</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/bund-offener-haushalt"/>
+    <dcat:keyword>government</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bund Offener Haushalt shows the complex data of the german federal budget. It also gives access to the data in an open and re-usable format. 
+
+part of package:offener-haushalt</dct:description>
+    <dcat:keyword>lodcloud.nolinks</dcat:keyword>
+    <dcat:keyword>german</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bund-offener-haushalt</rdfs:label>
+    <dcat:keyword>budget</dcat:keyword>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

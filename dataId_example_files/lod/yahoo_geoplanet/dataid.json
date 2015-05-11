@@ -1,0 +1,109 @@
+{
+  "@graph" : [ {
+    "@id" : "http://archive.org/download/kasabi/yahoo-geoplanet.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://archive.org/download/kasabi/yahoo-geoplanet.gz"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:leigh@ldodds.com",
+    "name" : "Leigh Dodds"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#contributor",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#links_ordnance-survey-linked-data", "http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#links_telegraphis" ],
+    "dct:description" : "This is a Linked Data version of the publically available data dumps from the Yahoo! GeoPlanet database. GeoPlanet helps bridge the gap between the real and virtual worlds by providing an open, permanent, and intelligent infrastructure for geo-referencing data on the Internet. By exposing it as Linked Data we enable additional cross-linking between more data sources.\n\n*Note* this RDF version of the dataset is no longer updated, it was taken off-line during the shutdown of Kasabi. A dump of the dataset has been [uploaded to the Internet Archive](http://archive.org/details/kasabi)",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Yahoo Geoplanet RDF",
+    "triples" : "49734022",
+    "uriSpace" : "http://data.kasabi.com/dataset/yahoo-geoplanet",
+    "rdfs:label" : "yahoo_geoplanet",
+    "distribution" : "http://archive.org/download/kasabi/yahoo-geoplanet.gz",
+    "keyword" : [ "geodata", "published-by-third-party", "geographic", "format-rdf" ],
+    "landingPage" : "http://datahub.io/dataset/yahoo_geoplanet"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#dataset",
+    "triples" : "248"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#links_ordnance-survey-linked-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/ordnance-survey-linked-data",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#dataset",
+    "triples" : "9591825"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#links_telegraphis",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/telegraphis",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/yahoo_geoplanet/dataid#dataset",
+    "triples" : "248"
+  } ],
+  "@context" : {
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

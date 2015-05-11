@@ -1,0 +1,79 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/twc-logd/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/twc-logd/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://logd.tw.rpi.edu/twc-logd">
+    <dcat:downloadURL rdf:resource="http://logd.tw.rpi.edu/twc-logd"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://logd.tw.rpi.edu/sparql">
+    <dcat:mediaType>api/query</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://logd.tw.rpi.edu/sparql"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/twc-logd/dataid#dataset">
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/twc-logd/dataid#links_govtrack">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/govtrack/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/twc-logd/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1909</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <void:uriSpace>http://logd.tw.rpi.edu/</void:uriSpace>
+    <dcat:distribution rdf:resource="http://logd.tw.rpi.edu/twc-logd"/>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/twc-logd/dataid#contributor">
+        <foaf:mbox>mailto:difrad@rpi.edu</foaf:mbox>
+        <foaf:name>Dominic DiFranzo</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/twc-logd"/>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/twc-logd/dataid#links_geonames-semantic-web">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/twc-logd/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1839</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>government</dcat:keyword>
+    <dcat:keyword>country-us</dcat:keyword>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TWC: Linking Open Government Data</dct:title>
+    <dcat:distribution rdf:resource="http://logd.tw.rpi.edu/sparql"/>
+    <void:exampleResource rdf:resource="http://logd.tw.rpi.edu/source/dfid-gov-uk/dataset/statistics-on-international-development-2009/version/2009-Nov-10/foreignAid_158_6"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >twc-logd</rdfs:label>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/twc-logd/dataid#creator">
+        <foaf:name>Tetherless World Constellation, Rensselaer Polytechnic Institute</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Tetherless World Constellation (TWC) at Rensselaer Polytechnic Institute (RPI) maintains Linked Open Government Data (LOGD), an RDF version of the datasets published by package:data-gov and other government-related sources.
+
+LOGD replaces the old TWC Data-gov Corpus published in May 2010.</dct:description>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/twc-logd/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/twc-logd/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2039</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>lod</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

@@ -1,0 +1,83 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.sfb673.org/fiesta/fiesta-1.0.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.sfb673.org/fiesta/fiesta-1.0.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/fiesta/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/fiesta/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/fiesta/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:pmenke@TechFak.Uni-Bielefeld.DE",
+    "name" : "Peter Menke"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/fiesta/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:pmenke@TechFak.Uni-Bielefeld.DE",
+    "name" : "Peter Menke"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/fiesta/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/fiesta/dataid#contributor", "http://dataid.dbpedia.org/lod/fiesta/dataid#creator" ],
+    "dct:description" : "FiESTA (short for \"Format for extensive spatiotemporal annotations\") is a generic format for linguistic and behavioral annotations.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "FiESTA",
+    "triples" : "180",
+    "rdfs:label" : "fiesta",
+    "distribution" : "http://data.sfb673.org/fiesta/fiesta-1.0.ttl",
+    "keyword" : [ "format-rdf", "published-by-producer", "topic.schemata", "rdf", "lod", "schemata", "linguistics" ],
+    "landingPage" : "http://datahub.io/dataset/fiesta"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,73 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/oclc-fast/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/oclc-fast/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://experimental.worldcat.org/fast/xsl/FastOpenSearch.xml">
+    <dcat:mediaType>api/opensearch</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://experimental.worldcat.org/fast/xsl/FastOpenSearch.xml"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://fast.oclc.org/fast/void/0.1/">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://fast.oclc.org/fast/void/0.1/"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/oclc-fast/dataid#dataset">
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Faceted Application of Subject Terminology</dct:title>
+    <void:exampleResource rdf:resource="http://id.worldcat.org/fast/1411628"/>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:keyword>format-void</dcat:keyword>
+    <dcat:keyword>authorities</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >oclc-fast</rdfs:label>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >30000000</void:triples>
+    <dcat:distribution rdf:resource="http://fast.oclc.org/fast/void/0.1/"/>
+    <dcat:keyword>publications</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/oclc-fast"/>
+    <dcat:keyword>format-dc</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >FAST (Faceted Application of Subject Terminology) is an enumerative, faceted subject heading schema derived from the Library of Congress Subject Headings (LCSH). Its purpose is to be easier to understand, control, apply, and use than LCSH. Any valid set of LC subject headings can be converted to FAST headings.
+
+FAST contains 1.6M authority records.
+
+The triple count (30M) is a rough estimate based on the number of authority records. The LCSH link count is based on the observation that many but not all of the authority records have LCSH links. The Geonames link count is based on [this account](http://www.oclc.org/nextspace/018/research.htm) that states 100k total geographic entities with 60% matched to Geonames.</dct:description>
+    <dcat:keyword>lodcloud</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <void:uriSpace>http://id.worldcat.org/fast/</void:uriSpace>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/oclc-fast/dataid#creator">
+        <foaf:name>OCLC Research</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/oclc-fast/dataid#links_lcsh">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/lcsh/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/oclc-fast/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1600000</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-by"/>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:distribution rdf:resource="http://experimental.worldcat.org/fast/xsl/FastOpenSearch.xml"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/oclc-fast/dataid#links_geonames">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geonames/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/oclc-fast/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >60000</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+  </dataid:Dataset>
+</rdf:RDF>

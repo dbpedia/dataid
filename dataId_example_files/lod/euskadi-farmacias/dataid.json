@@ -1,0 +1,100 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/euskadi-farmacias/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/euskadi-farmacias/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/euskadi-farmacias/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Departamento de Sanidad y Consumo. Gobierno Vasco."
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/euskadi-farmacias/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/euskadi-farmacias/dataid#creator",
+    "containsLinks" : "http://dataid.dbpedia.org/lod/euskadi-farmacias/dataid#links_geonames-semantic-web",
+    "dct:description" : "Cada ZIP contiene las farmacias de una provincia: Bizkaia, Gipuzkoa y Álava.\n\nFarmacias existentes en Euskadi. Los datos incluyen, entre otros, dirección, datos de contacto, horarios y coordenadas GPS.\n",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Farmacias en Euskadi",
+    "exampleResource" : "http://opendata.euskadi.net/contenidos/ds_localizaciones/farmacias_de_euskadi/farmacia",
+    "triples" : "35",
+    "rdfs:label" : "euskadi-farmacias",
+    "distribution" : "http://opendata.euskadi.net/contenidos/ds_localizaciones/farmacias_de_euskadi/opendata/r01DataSet.rdf",
+    "keyword" : [ "published-by-third-party", "health", "farmacia", "drug", "government", "botica", "lod", "format-cc", "salud", "no-deref-vocab", "medicamentos", "lodcloud.unconnected" ],
+    "landingPage" : "http://datahub.io/dataset/euskadi-farmacias"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/euskadi-farmacias/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/geonames-semantic-web",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/euskadi-farmacias/dataid#dataset",
+    "triples" : "5"
+  }, {
+    "@id" : "http://opendata.euskadi.net/contenidos/ds_localizaciones/farmacias_de_euskadi/opendata/r01DataSet.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://opendata.euskadi.net/contenidos/ds_localizaciones/farmacias_de_euskadi/opendata/r01DataSet.rdf",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

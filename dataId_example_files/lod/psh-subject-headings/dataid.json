@@ -1,0 +1,115 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/psh-subject-headings/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/psh-subject-headings/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/psh-subject-headings/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:eliska.vesela@techlib.cz",
+    "name" : "Eliška Veselá"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/psh-subject-headings/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:jindrich.mynarz@techlib.cz",
+    "name" : "National Technical Library, Czech Republic"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/psh-subject-headings/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/psh-subject-headings/dataid#contributor", "http://dataid.dbpedia.org/lod/psh-subject-headings/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/psh-subject-headings/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/psh-subject-headings/dataid#links_lcsh" ],
+    "dct:description" : "Polythematic Structured Subject Headings System (PSH) is a bilingual (Czech/English) structured subject heading system.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Polythematic Structured Subject Heading System",
+    "exampleResource" : "http://psh.ntkcz.cz/skos/PSH320/",
+    "triples" : "100000",
+    "uriSpace" : "http://psh.ntkcz.cz/",
+    "rdfs:label" : "psh-subject-headings",
+    "distribution" : "http://pshmanager.techlib.cz/static/skos/psh-skos.zip",
+    "keyword" : [ "lld", "format-xhtml", "format-skos", "format-rdf", "no-license-metadata", "publications", "no-vocab-mappings", "published-by-producer", "library", "czech", "no-proprietary-vocab", "no-provenance-metadata", "lod" ],
+    "landingPage" : "http://datahub.io/dataset/psh-subject-headings"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/psh-subject-headings/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/psh-subject-headings/dataid#dataset",
+    "triples" : "3000"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/psh-subject-headings/dataid#links_lcsh",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/lcsh/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/psh-subject-headings/dataid#dataset",
+    "triples" : "3000"
+  }, {
+    "@id" : "http://pshmanager.techlib.cz/static/skos/psh-skos.zip",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://pshmanager.techlib.cz/static/skos/psh-skos.zip",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/ookaboo-rdf-dump/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/ookaboo-rdf-dump/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ookaboo-rdf-dump/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Paul Houle"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ookaboo-rdf-dump/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/ookaboo-rdf-dump/dataid#creator",
+    "dct:description" : "The Ookaboo RDF dump contains metadata for nearly 1,000,000 public domain and Creative Commons images of more than 500,000 precise topics such as places, people and organism classifications linked to DBpedia and Freebase.\n\nExpressed in industry standard RDF, the Ookaboo dump is available with a CC-BY-SA/3.0 license that is friendly for both academic and commercial use. Precision is in excess of 0.98, enabling a new range of applications for image search and classification. See the latest release for downloads and documentation.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "Ookaboo RDF dump",
+    "triples" : "49000000",
+    "rdfs:label" : "ookaboo-rdf-dump",
+    "distribution" : [ "http://rdf.ookaboo.com/data/latest/ookaboo-size-l.nt.gz", "http://rdf.ookaboo.com/data/latest/ookaboo-size-m.nt.gz", "http://rdf.ookaboo.com/data/latest/ookaboo-size-s.nt.gz", "http://rdf.ookaboo.com/data/latest/ookaboo-dbpedia.nt.gz", "http://rdf.ookaboo.com/data/latest/ookaboo-freebase.nt.gz", "http://rdf.ookaboo.com/data/latest/ookaboo-core.nt.gz", "http://rdf.ookaboo.com/data/latest/ookaboo-schema.ttl.gz", "http://rdf.ookaboo.com/data/latest/ookaboo-size-t.nt.gz", "http://rdf.ookaboo.com/data/latest/ookaboo-size-sq.nt.gz", "http://rdf.ookaboo.com/data/latest/ookaboo-topic-labels.nt.gz" ],
+    "keyword" : [ "freebase", "rdf", "multimedia", "dbpedia", "images" ],
+    "landingPage" : "http://datahub.io/dataset/ookaboo-rdf-dump"
+  }, {
+    "@id" : "http://rdf.ookaboo.com/data/latest/ookaboo-core.nt.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdf.ookaboo.com/data/latest/ookaboo-core.nt.gz",
+    "mediaType" : "n-triples"
+  }, {
+    "@id" : "http://rdf.ookaboo.com/data/latest/ookaboo-dbpedia.nt.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdf.ookaboo.com/data/latest/ookaboo-dbpedia.nt.gz",
+    "mediaType" : "n-triples"
+  }, {
+    "@id" : "http://rdf.ookaboo.com/data/latest/ookaboo-freebase.nt.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdf.ookaboo.com/data/latest/ookaboo-freebase.nt.gz",
+    "mediaType" : "n-triples"
+  }, {
+    "@id" : "http://rdf.ookaboo.com/data/latest/ookaboo-schema.ttl.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdf.ookaboo.com/data/latest/ookaboo-schema.ttl.gz",
+    "mediaType" : "turtle"
+  }, {
+    "@id" : "http://rdf.ookaboo.com/data/latest/ookaboo-size-l.nt.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdf.ookaboo.com/data/latest/ookaboo-size-l.nt.gz",
+    "mediaType" : "n-triples"
+  }, {
+    "@id" : "http://rdf.ookaboo.com/data/latest/ookaboo-size-m.nt.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdf.ookaboo.com/data/latest/ookaboo-size-m.nt.gz",
+    "mediaType" : "n-triples"
+  }, {
+    "@id" : "http://rdf.ookaboo.com/data/latest/ookaboo-size-s.nt.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdf.ookaboo.com/data/latest/ookaboo-size-s.nt.gz",
+    "mediaType" : "n-triples"
+  }, {
+    "@id" : "http://rdf.ookaboo.com/data/latest/ookaboo-size-sq.nt.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdf.ookaboo.com/data/latest/ookaboo-size-sq.nt.gz",
+    "mediaType" : "n-triples"
+  }, {
+    "@id" : "http://rdf.ookaboo.com/data/latest/ookaboo-size-t.nt.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdf.ookaboo.com/data/latest/ookaboo-size-t.nt.gz",
+    "mediaType" : "n-triples"
+  }, {
+    "@id" : "http://rdf.ookaboo.com/data/latest/ookaboo-topic-labels.nt.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rdf.ookaboo.com/data/latest/ookaboo-topic-labels.nt.gz",
+    "mediaType" : "n-triples"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "@graph" : [ {
+    "@id" : "http://cms-wg.sti2.org/ns/minimal-service-model/index.rdfxml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://cms-wg.sti2.org/ns/minimal-service-model/index.rdfxml",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/iserve/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/iserve/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/iserve/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:c.pedrinaci@open.ac.uk",
+    "name" : "Carlos Pedrinaci"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/iserve/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:iserve-general@googlegroups.com",
+    "name" : "iServe Team"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/iserve/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/iserve/dataid#contributor", "http://dataid.dbpedia.org/lod/iserve/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/iserve/dataid#links_revyu",
+    "dct:description" : "iServe is the place on the Web where linked data meets services. In a nutshell, iServe is a platform for publishing Semantic Web Services as linked data, no matter their original format.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "iServe: Linked Services Registry",
+    "exampleResource" : "http://iserve.kmi.open.ac.uk/iserve/data/services/00cf65ab-bc93-4cdd-b163-eeaf0148fdbf",
+    "sparqlEndpoint" : "http://iserve.kmi.open.ac.uk/iserve/sparql",
+    "triples" : "31799",
+    "uriSpace" : "http://iserve.kmi.open.ac.uk/iserve/resource/",
+    "rdfs:label" : "iserve",
+    "distribution" : [ "http://iserve.kmi.open.ac.uk/downloads/all.zip", "http://iserve.kmi.open.ac.uk/sitemap.xml", "http://iserve.kmi.open.ac.uk/iserve/sparql", "http://cms-wg.sti2.org/ns/minimal-service-model/index.rdfxml" ],
+    "keyword" : [ "no-vocab-mappings", "void-sparql-endpoint", "no-license-metadata", "format-hrests", "deref-vocab", "format-rdf", "lod", "published-by-producer", "format-wl", "format-msm", "crossdomain", "format-sawsdl", "broken_link", "no-provenance-metadata", "format-http" ],
+    "landingPage" : "http://datahub.io/dataset/iserve"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/iserve/dataid#links_revyu",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/revyu/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/iserve/dataid#dataset",
+    "triples" : "70"
+  }, {
+    "@id" : "http://iserve.kmi.open.ac.uk/downloads/all.zip",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://iserve.kmi.open.ac.uk/downloads/all.zip",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://iserve.kmi.open.ac.uk/iserve/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://iserve.kmi.open.ac.uk/iserve/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://iserve.kmi.open.ac.uk/sitemap.xml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://iserve.kmi.open.ac.uk/sitemap.xml",
+    "mediaType" : "meta/sitemap"
+  } ],
+  "@context" : {
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

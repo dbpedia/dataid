@@ -1,0 +1,144 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/mlsa/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/mlsa/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="https://dl.dropbox.com/u/65483422/mlsa-model-diagram.png">
+    <dcat:mediaType>PNG</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="https://dl.dropbox.com/u/65483422/mlsa-model-diagram.png"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://mlode.nlp2rdf.org/downloads/mlsa.nt.gz">
+    <dcat:mediaType>text/n3</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://mlode.nlp2rdf.org/downloads/mlsa.nt.gz"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/mlsa/dataid#dataset">
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/mlsa/dataid#links_lexvo">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/lexvo/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/mlsa/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2373</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/mlsa/dataid#links_wiktionary-dbpedia-org">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/wiktionary-dbpedia-org/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/mlsa/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1371</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <dcat:keyword>sentiment</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/mlsa/dataid#creator">
+        <foaf:name>  Interest Group on German Sentiment Analysis (IGGSA)</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:distribution rdf:resource="https://dl.dropbox.com/u/65483422/mlsa-model-diagram.png"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/mlsa/dataid#links_wals">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/wals/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/mlsa/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2373</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:exampleResource rdf:resource="http://mlode.nlp2rdf.org/sparql?default-graph-uri=http%3A%2F%2Fmlode.nlp2rdf.org&amp;query=DESCRIBE+%3Chttp%3A%2F%2Fasv.informatik.uni-leipzig.de%2Fmlsa%2Fsentence%2F1%3E&amp;format=text%2Fturtle"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mlsa</rdfs:label>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/mlsa/dataid#links_glottolog-langdoc">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/glottolog-langdoc/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/mlsa/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2373</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://mlode.nlp2rdf.org/downloads/mlsa.nt.gz"/>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >21000</void:triples>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://mlode.nlp2rdf.org/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://mlode.nlp2rdf.org/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sentence-layer annotation represents the most coarse-grained annotation in this
+corpus. We adhere to definitions of objectivity and subjectivity introduced in
+(Wiebe et al., 2005). Additionally, we followed guidelines drawn from (Balahur &amp;
+Steinberger, 2009). Their clarifications proved to be quite effective, raising
+inter-annotator agreement in a sentence-layer polarity annotation task from
+about 50% to &gt;80%. All sentences were annotated in two dimensions.
+
+The first dimension covers the factual nature of the sentence, i.e. whether it
+provides objective information or if it is intended to express an opinion,
+belief or subjective argument. Therefore, it is either objective or subjective.
+The second dimension covers the semantic orientation of the sentence, i.e. its
+polarity. Thus, it is either positive, negative or neutral.
+
+In the second layer, we model the contextually interpreted sentiments on the
+levels of words and NP/PP phrases. That is, the annotation decisions
+are based on the meaning of the words in the context of the sentence.
+
+Word sentiment markers:
+The sentiments on the level of individual words are expressed by
+single character markers added at the end of the words.
+
+A word might be positive (+), negative(-), neutral(empty), a shifter
+(~), an intensifier (^), or a diminisher (%).
+
+If a word ends with a hyphen (e.g., "auf beziehungs-_ bzw.
+partnerschaftliche Probleme-", an underscore is added to the word in
+order to prevent missinterpretations of the hyphen as a negative
+marker.
+
+Currently, only words that are part of an NP/PP are marked with
+sentiment markers. Annotated words are nouns, adjectives, negation
+particles, prepositions, adverbs.
+
+The world level annotation was done by 3 persons individually. The
+individual results were harmonized into a single reference annotation.
+
+
+Phrase level markers:
+
+Each phrase is marked up textually by brackets, e.g. "[auf
+beziehungs-_ bzw. partnerschaftliche Probleme-]". The type of a phrase
+(NP/PP) is not written to the brackets. We follow largely the
+annotation model of TIGER for structuring embedded NPs and PPs.
+
+Currently, the following limitations with regard to TIGER exist: (1)
+Adjectival phrases are not marked up (2) Relative or infinitival
+sentences are not included in NPs/PPs if they appear at the end of a
+phrase or if the are discontiguous. We do not only annotate the
+phrases which immediately contain words that are marked up as polar.
+Any dependent subphrase (NP/PP) is integrated into all its dominating
+NPs/PPs, e.g. "[Die tieferen Ursachen [der Faszination+]]". Dependent
+subphrases without any polar words are also included, however, there
+is no internal bracketing for them, e.g. "[hohe+ Ansprüche an Qualität
+und Lage]"
+
+At the level of phrases, we distinguish the following markers:
+positive (+), negative (-), neutral(0), bipolar (#). The category
+'bipolar' is used mainly for coordinations where negative and positive
+sentiments of something are kept in balance by the writer. This is
+quite common for a lot of binomial constructions as "Krieg und
+Frieden".</dct:description>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/mlsa"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MLSA - A Multi-layered Reference Corpus for German Sentiment Analysis</dct:title>
+    <dcat:distribution rdf:resource="http://mlode.nlp2rdf.org/sparql"/>
+    <dcat:keyword>linguistics</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

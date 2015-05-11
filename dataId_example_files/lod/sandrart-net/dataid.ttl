@@ -1,0 +1,56 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/sandrart-net/dataid#links_viaf>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/viaf/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/sandrart-net/dataid#dataset> ;
+        void:triples         "2880"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/sandrart-net/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/sandrart-net/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/sandrart-net/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Various" .
+
+<http://ta.sandrart.net/data/lod.rdf.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://ta.sandrart.net/data/lod.rdf.gz> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/sandrart-net/dataid#links_dnb-gemeinsame-normdatei>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/sandrart-net/dataid#dataset> ;
+        void:triples         "2970"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/sandrart-net/dataid#links_geonames-semantic-web>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/sandrart-net/dataid#dataset> ;
+        void:triples         "425"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/sandrart-net/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "sandrart-net"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/sandrart-net/dataid#contributor> , <http://dataid.dbpedia.org/lod/sandrart-net/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/sandrart-net/dataid#links_viaf> , <http://dataid.dbpedia.org/lod/sandrart-net/dataid#links_geonames-semantic-web> , <http://dataid.dbpedia.org/lod/sandrart-net/dataid#links_dnb-gemeinsame-normdatei> ;
+        dct:description         "This dataset offers objects (persons, places, works of art, bibliographic items as well as their relations) from an online edition of Joachim von Sandrart’s “Teutsche Academie der Bau-, Bild- und Mahlerey-Künste”, a German three-volume book from the late 17th century.\n\nPlease note: Data is not yet complete."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-odbl> ;
+        dct:title               "sandrart.net"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://ta.sandrart.net/-person-2162> ;
+        void:triples            "140000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:distribution       <http://ta.sandrart.net/data/lod.rdf.gz> ;
+        dcat:keyword            "format-foaf" , "art" , "format-geonames" , "format-ecrm" , "crossdomain" , "format-rdaGr2" , "lod" , "no-proprietary-vocab" , "arts" , "art-history" , "published-by-producer" ;
+        dcat:landingPage        <http://datahub.io/dataset/sandrart-net> .
+
+<http://dataid.dbpedia.org/lod/sandrart-net/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:carsten@bluem.net" ;
+        foaf:name  "Carsten Blüm" .

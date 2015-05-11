@@ -1,0 +1,58 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-drugbank/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/bio2rdf-drugbank/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-drugbank/dataid#dataset">
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The DrugBank database is a bioinformatics and chemoinformatics resource that combines detailed drug (i.e. chemical, pharmacological and pharmaceutical) data with comprehensive drug target (i.e. sequence, structure, and pathway) information.</dct:description>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bio2RDF::Drugbank</dct:title>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://drugbank.bio2rdf.org/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://drugbank.bio2rdf.org/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-drugbank/dataid#contributor">
+        <foaf:mbox>mailto:michel.dumontier@gmail.com</foaf:mbox>
+        <foaf:name>Michel Dumontier</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-drugbank/dataid#creator">
+        <foaf:mbox>mailto:bio2rdf@googlegroups.com</foaf:mbox>
+        <foaf:name>Bio2RDF</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>bio2rdf</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/bio2rdf-drugbank"/>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://download.bio2rdf.org/current/drugbank/drugbank.nt.gz">
+        <dcat:mediaType>application/x-ntriples</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://download.bio2rdf.org/current/drugbank/drugbank.nt.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://download.bio2rdf.org/current/drugbank/drugbank.html">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://download.bio2rdf.org/current/drugbank/drugbank.html"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <void:uriSpace>http://bio2rdf.org/drugbank:</void:uriSpace>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>lifesciences</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bio2rdf-drugbank</rdfs:label>
+    <dcat:distribution rdf:resource="http://drugbank.bio2rdf.org/sparql"/>
+  </dataid:Dataset>
+</rdf:RDF>

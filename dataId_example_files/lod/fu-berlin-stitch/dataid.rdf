@@ -1,0 +1,78 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#dataset">
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/fu-berlin-stitch"/>
+    <void:exampleResource rdf:resource="http://www4.wiwiss.fu-berlin.de/stitch/resource/organisms/Aeropyrum_pernix"/>
+    <dcat:keyword>vocab-mappings</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://www4.wiwiss.fu-berlin.de/stitch/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://www4.wiwiss.fu-berlin.de/stitch/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >55099700</void:triples>
+    <void:uriSpace>http://www4.wiwiss.fu-berlin.de/stitch/resource/</void:uriSpace>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#links_bio2rdf-pubchem">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bio2rdf-pubchem/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >9840</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >123</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >fu-berlin-stitch</rdfs:label>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#contributor">
+        <foaf:mbox>mailto:anja@anjeve.de</foaf:mbox>
+        <foaf:name>Anja Jentzsch</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>lod</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >STITCH: Chemical-Protein Interactions</dct:title>
+    <dcat:keyword>lifesciences</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Linked Data version of STITCH which contains information on chemicals and proteins as well as their interactions and links. The links were derived from experiments, databases and the literature. STITCH contains interactions for over 68,000 chemicals and over 1.5 million proteins in 373 species.</dct:description>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#creator">
+        <foaf:mbox>mailto:anja@anjeve.de</foaf:mbox>
+        <foaf:name>Anja Jentzsch</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:distribution rdf:resource="http://www4.wiwiss.fu-berlin.de/stitch/sparql"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#links_bio2rdf-chebi">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bio2rdf-chebi/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/fu-berlin-stitch/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >6882</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

@@ -1,0 +1,126 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/yago/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/yago/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/yago/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "name" : "YAGO Team"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/yago/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "YAGO Team"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/yago/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/yago/dataid#contributor", "http://dataid.dbpedia.org/lod/yago/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/yago/dataid#links_dbpedia",
+    "dct:description" : "YAGO2s is a huge semantic knowledge base, derived from Wikipedia WordNet and GeoNames. Currently, YAGO2s has knowledge of more than 10 million entities (like persons, organizations, cities, etc.) and contains more than 120 million facts about these entities.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "YAGO",
+    "triples" : "120000000",
+    "uriSpace" : "http://yago-knowledge.org/resource/",
+    "rdfs:label" : "yago",
+    "distribution" : [ "http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yago2s_tsv.7z", "http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoSchema.ttl.7z", "http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoTypes.ttl.7z", "http://www.mpi-inf.mpg.de/yago-naga/yago/downloads.html", "http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoTaxonomy.ttl.7z", "http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yago2s_ttl.7z" ],
+    "keyword" : [ "published-by-producer", "no-license-metadata", "lod", "no-provenance-metadata", "format-rdf", "linkeddata", "no-deref-vocab", "ontology", "crossdomain", "ckanupload.esw.200910" ],
+    "landingPage" : "http://datahub.io/dataset/yago"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/yago/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/yago/dataid#dataset",
+    "triples" : "2625671"
+  }, {
+    "@id" : "http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yago2s_tsv.7z",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yago2s_tsv.7z",
+    "mediaType" : "text/tab-separated-values"
+  }, {
+    "@id" : "http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yago2s_ttl.7z",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yago2s_ttl.7z",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoSchema.ttl.7z",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoSchema.ttl.7z",
+    "mediaType" : "7z:ttl"
+  }, {
+    "@id" : "http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoTaxonomy.ttl.7z",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoTaxonomy.ttl.7z",
+    "mediaType" : "7z:ttl"
+  }, {
+    "@id" : "http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoTypes.ttl.7z",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoTypes.ttl.7z",
+    "mediaType" : "7z:ttl"
+  }, {
+    "@id" : "http://www.mpi-inf.mpg.de/yago-naga/yago/downloads.html",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.mpi-inf.mpg.de/yago-naga/yago/downloads.html",
+    "mediaType" : "HTML"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

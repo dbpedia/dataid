@@ -1,0 +1,44 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/english-indices-of-multiple-deprivation/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:hello@publishmydata.com" ;
+        foaf:name  "PublishMyData" .
+
+<http://dataid.dbpedia.org/lod/english-indices-of-multiple-deprivation/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/english-indices-of-multiple-deprivation/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/english-indices-of-multiple-deprivation/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "english-indices-of-multiple-deprivation"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/english-indices-of-multiple-deprivation/dataid#creator> , <http://dataid.dbpedia.org/lod/english-indices-of-multiple-deprivation/dataid#contributor> ;
+        dct:description         "This package is a collection and common access point to a group of Linked Data datasets representing the English Indices of Multiple Deprivation data.\n\n"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://reference.data.gov.uk/id/open-government-licence> ;
+        dct:title               "English Indices of Multiple Deprivation"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://opendatacommunities.org/resources/data.ordnancesurvey.co.uk/id/postcodeunit/M41HN?format=rdf> ;
+        void:sparqlEndpoint     <http://opendatacommunities.org/sparql> ;
+        void:uriSpace           "http://opendatacommunities.org/resources/" ;
+        dcat:distribution       <http://opendatacommunities.org/sparql> , <http://publishmydata.com/api> ;
+        dcat:keyword            "employment" , "health" , "lodcloud.needstriplecount" , "opendatachallenge" , "lodcloud.needsinfo" , "income" , "housing" , "deprivation" , "lod" , "published-by-third-party" , "government" , "lodcloud.nolinks" , "environment" , "imd" , "linkeddata" , "education" , "crime" , "format-rdf" , "lodcloud.unconnected" , "deref-vocab" ;
+        dcat:landingPage        <http://datahub.io/dataset/english-indices-of-multiple-deprivation> .
+
+<http://dataid.dbpedia.org/lod/english-indices-of-multiple-deprivation/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:bill@swirrl.com" ;
+        foaf:name  "Bill Roberts" .
+
+<http://opendatacommunities.org/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://opendatacommunities.org/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://publishmydata.com/api>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://publishmydata.com/api> ;
+        dcat:mediaType    "HTML" .

@@ -1,0 +1,107 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/southampton-ecs-eprints/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/southampton-ecs-eprints/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/southampton-ecs-eprints/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "ECS /  Southampton University"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/southampton-ecs-eprints/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/southampton-ecs-eprints/dataid#creator",
+    "containsLinks" : "http://dataid.dbpedia.org/lod/southampton-ecs-eprints/dataid#links_ecs",
+    "dct:description" : "This is live data produced by the EPrints server since its upgrade to EPrints v3.2.1 and is distinct from the service provided by RKB Explorer.",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "ECS Southampton EPrints",
+    "exampleResource" : "http://eprints.ecs.soton.ac.uk/id/eprint/22587",
+    "triples" : "1000000",
+    "uriSpace" : "http://eprints.ecs.soton.ac.uk/id/eprint/",
+    "rdfs:label" : "southampton-ecs-eprints",
+    "distribution" : [ "http://eprints.ecs.soton.ac.uk/id/repository", "http://eprints.ecs.soton.ac.uk/id/dump" ],
+    "keyword" : [ "format-skos", "format-event", "published-by-producer", "format-geo", "deref-vocab", "format-dcterm", "southampton", "format-ecs", "provenance-metadata", "eprints", "computer-science", "format-foaf", "lod", "no-vocab-mappings", "format-bibo", "format-void", "format-dc", "format-rdfs", "publications", "format-ep", "lld", "license-metadata", "format-xsd", "format-cc", "format-owl", "format-rdf", "electronics" ],
+    "landingPage" : "http://datahub.io/dataset/southampton-ecs-eprints"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/southampton-ecs-eprints/dataid#links_ecs",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/ecs/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/southampton-ecs-eprints/dataid#dataset",
+    "triples" : "24000"
+  }, {
+    "@id" : "http://eprints.ecs.soton.ac.uk/id/dump",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://eprints.ecs.soton.ac.uk/id/dump",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://eprints.ecs.soton.ac.uk/id/repository",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://eprints.ecs.soton.ac.uk/id/repository",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

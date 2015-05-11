@@ -1,0 +1,138 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:neksanth@hotmail.com",
+    "name" : "Nena Xanthopoulou"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:neksanth@hotmail.com",
+    "name" : "Nena Xanthopoulou"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#contributor", "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#links_dbpedia-el ", "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#links_freebase", "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#links_eurostat-rdf", "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#links_geonames", "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#links_dbpedia" ],
+    "dct:description" : "The Kalikratis municipalities project represents an attempt to retrieve useful information from Hellenic municipalities of Kalikratis program. Kalikratis program, is called the Greek law, which implements the administrative division of Greece into new municipalities. The main goal of this attempt is to gather all the related to these municipalities data to a united space, so as to be used by innovative applications and services. Another goal is to enrich Greek open data.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "Kallikratis municipalities",
+    "exampleResource" : "http://greek-lod.auth.gr/Kalikratis/kalikratis.rdf",
+    "sparqlEndpoint" : "http://greek-lod.math.auth.gr/kalikratis/sparql",
+    "triples" : "31068",
+    "uriSpace" : "http://greek-lod.math.auth.gr/kalikratis/resource/",
+    "rdfs:label" : "kallikratis-municipalities",
+    "distribution" : "http://greek-lod.math.auth.gr/kalikratis/sparql",
+    "keyword" : [ "hellenic", "format-dcterms", "government", "format-geo", "lodcloud", "format-geonames", "lod", "no-proprietary-vocab", "administrative-divisions", "municipalities", "Greece", "format-foaf", "provenance-metadata", "format-skos", "greek", "format-owl", "municipality", "format-rdf", "country-greece", "license-metadata", "published-by-producer" ],
+    "landingPage" : "http://datahub.io/dataset/kallikratis-municipalities"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#dataset",
+    "triples" : "137"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#links_dbpedia-el ",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia-el /dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#dataset",
+    "triples" : "392"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#links_eurostat-rdf",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/eurostat-rdf/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#dataset",
+    "triples" : "67"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#links_freebase",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#dataset",
+    "triples" : "336"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#links_geonames",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/kallikratis-municipalities/dataid#dataset",
+    "triples" : "54"
+  }, {
+    "@id" : "http://greek-lod.math.auth.gr/kalikratis/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://greek-lod.math.auth.gr/kalikratis/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

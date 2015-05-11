@@ -1,0 +1,34 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid#links_openlibrary>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/openlibrary/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid#dataset> ;
+        void:triples         "5675"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Ian Davis" .
+
+<http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "university-plymouth-reading-lists"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid#links_openlibrary> ;
+        dct:description         "Search for lists, modules & courses\n\n  \nBrowse hierarchy | Recent changes"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://creativecommons.org/licenses/by-nc/2.0/> ;
+        dct:title               "University of Plymouth Reading Lists"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://lists.lib.plymouth.ac.uk/lists/marn304> , <http://lists.lib.plymouth.ac.uk/lists/eoe3217> ;
+        void:triples            "441476"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://lists.lib.plymouth.ac.uk/lists/" ;
+        dcat:keyword            "lod" , "format-rdf" , "no-vocab-mappings" , "no-provenance-metadata" , "talis" , "format-sioc" , "higher-education" , "no-proprietary-vocab" , "publications" , "published-by-producer" , "format-dc" , "no-license-metadata" , "education" ;
+        dcat:landingPage        <http://datahub.io/dataset/university-plymouth-reading-lists> .

@@ -1,0 +1,149 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.organic-edunet.eu/page/identifier/1454",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.organic-edunet.eu/page/identifier/1454",
+    "mediaType" : "api/linked-data"
+  }, {
+    "@id" : "http://data.organic-edunet.eu/rdfdump.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.organic-edunet.eu/rdfdump.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://data.organic-edunet.eu/snorql/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.organic-edunet.eu/snorql/"
+  }, {
+    "@id" : "http://data.organic-edunet.eu/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://data.organic-edunet.eu/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://data.organic-edunet.eu/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.organic-edunet.eu/void.ttl",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/organic-edunet/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/organic-edunet/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/organic-edunet/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "name" : "UAH"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/organic-edunet/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "University of Alcala de Henares"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/organic-edunet/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/organic-edunet/dataid#contributor", "http://dataid.dbpedia.org/lod/organic-edunet/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/organic-edunet/dataid#links_dbpedia",
+    "dct:description" : "Organic Edunet Linked Open Data currently contains the metadata of collection of learning objects exposed through the Organic.Edunet portal. These objects come from organizations that have become providers of educational materials on the portal. The topics of the collection include organic agriculture and agroecology.\n",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Organic Edunet Linked Open Data",
+    "exampleResource" : [ "https://ckannet-storage.commondatastorage.googleapis.com/2012-10-27T214250/1454.n3", "https://ckannet-storage.commondatastorage.googleapis.com/2012-10-27T214009/1454.rdf" ],
+    "sparqlEndpoint" : "http://data.organic-edunet.eu/sparql",
+    "triples" : "11091",
+    "uriSpace" : "http://data.organic-edunet.eu/directory/identifier",
+    "rdfs:label" : "organic-edunet",
+    "distribution" : [ "http://data.organic-edunet.eu/page/identifier/1454", "http://data.organic-edunet.eu/sparql", "http://sites.wiwiss.fu-berlin.de/suhl/bizer/d2r-server/config.rdf", "http://data.organic-edunet.eu/snorql/", "http://ltsc.ieee.org/xsd/lomv1.0/common/vocabValues.xsd", "http://lreforschools.eun.org/c/document_library/get_file?p_l_id=10970&folderId=12073&name=DLFE-1.pdf", "http://data.organic-edunet.eu/rdfdump.rdf", "http://data.organic-edunet.eu/void.ttl" ],
+    "keyword" : [ "vocab-mappings", "lifesciences", "format-dcterms", "format-lom", "license-metadata", "format-rdf", "agriculture", "lod", "provenance-metadata", "deref-vocab", "agroecology", "published-by-producer" ],
+    "landingPage" : "http://datahub.io/dataset/organic-edunet"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/organic-edunet/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/organic-edunet/dataid#dataset",
+    "triples" : "11091"
+  }, {
+    "@id" : "http://lreforschools.eun.org/c/document_library/get_file?p_l_id=10970&folderId=12073&name=DLFE-1.pdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lreforschools.eun.org/c/document_library/get_file?p_l_id=10970&folderId=12073&name=DLFE-1.pdf",
+    "mediaType" : "PDF"
+  }, {
+    "@id" : "http://ltsc.ieee.org/xsd/lomv1.0/common/vocabValues.xsd",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ltsc.ieee.org/xsd/lomv1.0/common/vocabValues.xsd",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://sites.wiwiss.fu-berlin.de/suhl/bizer/d2r-server/config.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://sites.wiwiss.fu-berlin.de/suhl/bizer/d2r-server/config.rdf",
+    "mediaType" : "mapping/d2r"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

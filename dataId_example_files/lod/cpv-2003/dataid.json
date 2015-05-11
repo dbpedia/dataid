@@ -1,0 +1,138 @@
+{
+  "@graph" : [ {
+    "@id" : "http://156.35.31.156/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://156.35.31.156/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/cpv-2003/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/cpv-2003/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/cpv-2003/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:josem.alvarez@weso.es",
+    "name" : "Jose María Alvarez Rodríguez"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/cpv-2003/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:josem.alvarez@weso.es",
+    "name" : "Jose María Alvarez Rodríguez at WESO (University of Oviedo)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/cpv-2003/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/cpv-2003/dataid#creator", "http://dataid.dbpedia.org/lod/cpv-2003/dataid#contributor" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/cpv-2003/dataid#links_http://productontology.org",
+    "dct:description" : "The Common Procurement Vocabulary (CPV) establishes a single classification system for public procurement aimed at standardising the references used by contracting authorities and entities to describe the subject of procurement contracts.\n\nThe dataset created is comprised of CPV 2008 and CPV 2003 codes and the mappings between them. \n\nAuthors:\n\nAuthors:\n\nJose María Alvarez Rodríguez & Jose Emilio Labra Gayo \n\nWESO-University of Oviedo",
+    "license" : "http://www.opendefinition.org/licenses/odc-odbl",
+    "dct:title" : "CPV  2003",
+    "exampleResource" : "http://purl.org/weso/pscs/data/cpv/2003/resource/13000000?output=xml",
+    "sparqlEndpoint" : "http://156.35.31.156/sparql",
+    "triples" : "546135",
+    "uriSpace" : "http://purl.org/weso/pscs/cpv/2003/resource",
+    "rdfs:label" : "cpv-2003",
+    "distribution" : [ "http://156.35.31.156/sparql", "http://purl.org/weso/pscs/data/cpv/2003/resource/ds?output=ttl", "http://purl.org/weso/datasets/pscs/cpv/cpv-ontology.ttl", "http://purl.org/weso/datasets/pscs/cpv/2003/cpv-2003.ttl", "http://purl.org/weso/pscs/cpv/2003/resource/ds" ],
+    "keyword" : [ "deref-vocab", "uniovi", "format-dcterms", "format-skosxl", "10ders", "linkeddata", "euroalert", "format-qb", "lod", "university-of-oviedo", "university", "provenance-metadata", "format-skos", "linkedopendata", "format-dc", "e-procurement", "weso", "oviedo", "license-metadata", "published-by-third-party", "public_contracts", "geodata", "government", "procurement", "vocab-mappings" ],
+    "landingPage" : "http://datahub.io/dataset/cpv-2003"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/cpv-2003/dataid#links_http://productontology.org",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/http://productontology.org",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/cpv-2003/dataid#dataset",
+    "triples" : "21761"
+  }, {
+    "@id" : "http://purl.org/weso/datasets/pscs/cpv/2003/cpv-2003.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/datasets/pscs/cpv/2003/cpv-2003.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://purl.org/weso/datasets/pscs/cpv/cpv-ontology.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/datasets/pscs/cpv/cpv-ontology.ttl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/weso/pscs/cpv/2003/resource/ds",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/pscs/cpv/2003/resource/ds",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://purl.org/weso/pscs/data/cpv/2003/resource/ds?output=ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/pscs/data/cpv/2003/resource/ds?output=ttl",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

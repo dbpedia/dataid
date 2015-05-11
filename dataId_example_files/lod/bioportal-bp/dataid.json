@@ -1,0 +1,143 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-bp/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:support@bioontology.org",
+    "name" : "BioPortal project on behalf of ontology owner."
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Dr Emek Demir"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#contributor", "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-sbo", "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-mi", "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-nif", "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-dikb-evidence", "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-ncit", "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-chem2bio2owl", "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-canco" ],
+    "dct:description" : "The BioPAX ontology (www.biopax.org) is a standard language for formally representing biological pathways. BioPAX Level 3 supports the representation of metabolic pathways, signal transduction pathways, protein-protein interaction networks, gene regulatory networks and genetic interactions.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "BioPAX",
+    "triples" : "1230",
+    "rdfs:label" : "bioportal-bp",
+    "distribution" : [ "http://sparql.bioontology.org/", "http://www.bioontology.org/wiki/index.php/BioPortal_REST_services", "http://rest.bioontology.org/bioportal/ontologies/download/44167?apikey=BP_API_KEY" ],
+    "keyword" : [ "format-owl", "published-by-third-party", "format-rdf", "biomedicine", "lod", "bioportal", "ontology" ],
+    "landingPage" : "http://datahub.io/dataset/bioportal-bp"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-canco",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-canco",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#dataset",
+    "triples" : "10"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-chem2bio2owl",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-chem2bio2owl",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#dataset",
+    "triples" : "35"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-dikb-evidence",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-dikb-evidence",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#dataset",
+    "triples" : "29"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-mi",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-mi",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#dataset",
+    "triples" : "11"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-ncit",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-ncit",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#dataset",
+    "triples" : "34"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-nif",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-nif",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#dataset",
+    "triples" : "10"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#links_bioportal-sbo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/bioportal-sbo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/bioportal-bp/dataid#dataset",
+    "triples" : "10"
+  }, {
+    "@id" : "http://rest.bioontology.org/bioportal/ontologies/download/44167?apikey=BP_API_KEY",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://rest.bioontology.org/bioportal/ontologies/download/44167?apikey=BP_API_KEY"
+  }, {
+    "@id" : "http://sparql.bioontology.org/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://sparql.bioontology.org/"
+  }, {
+    "@id" : "http://www.bioontology.org/wiki/index.php/BioPortal_REST_services",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.bioontology.org/wiki/index.php/BioPortal_REST_services"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

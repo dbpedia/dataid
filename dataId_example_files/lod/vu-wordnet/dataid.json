@@ -1,0 +1,136 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/vu-wordnet/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/vu-wordnet/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vu-wordnet/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:Jacco.van.Ossenbruggen@cwi.nl",
+    "name" : "Jacco van Ossenbruggen"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vu-wordnet/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:Jacco.van.Ossenbruggen@cwi.nl",
+    "name" : "Mark van Assem, Antoine Isaac, Jacco van Ossenbruggen"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vu-wordnet/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/vu-wordnet/dataid#creator", "http://dataid.dbpedia.org/lod/vu-wordnet/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/vu-wordnet/dataid#links_lexvo", "http://dataid.dbpedia.org/lod/vu-wordnet/dataid#links_w3c-wordnet", "http://dataid.dbpedia.org/lod/vu-wordnet/dataid#links_cornetto" ],
+    "dct:description" : "RDF conversion of Princeton's package:wordnet, version 3.0. With many links to package:w3c-wordnet, package:lexvo and the Dutch package:cornetto .",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "WordNet 3.0 (VU Amsterdam)",
+    "triples" : "4573749",
+    "uriSpace" : "http://purl.org/vocabularies/princeton/wn30",
+    "rdfs:label" : "vu-wordnet",
+    "distribution" : [ "http://semanticweb.cs.vu.nl/lod/wn30/rdf/void.ttl", "http://eculture.cs.vu.nl/git/public/?p=vocs/wordnet.git;a=tree;f=rdf;hb=HEAD", "http://purl.org/vocabularies/princeton/wn30/synset-chair-noun-1.rdf", "http://purl.org/vocabularies/princeton/wn30/synset-chair-noun-1", "http://semanticweb.cs.vu.nl/europeana/sparql/" ],
+    "keyword" : [ "crossdomain", "wordnet", "no-license-metadata", "format-skos", "no-provenance-metadata", "format-rdfs", "format-rdf", "no-vocab-mappings", "linkeddata", "deref-vocab", "rdf", "vu", "thesaurus", "published-by-third-party", "language", "lod", "format-wn20schema", "linguistics" ],
+    "landingPage" : "http://datahub.io/dataset/vu-wordnet"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vu-wordnet/dataid#links_cornetto",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/cornetto",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/vu-wordnet/dataid#dataset",
+    "triples" : "84473"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vu-wordnet/dataid#links_lexvo",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/lexvo",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/vu-wordnet/dataid#dataset",
+    "triples" : "117659"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vu-wordnet/dataid#links_w3c-wordnet",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/w3c-wordnet",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/vu-wordnet/dataid#dataset",
+    "triples" : "112788"
+  }, {
+    "@id" : "http://eculture.cs.vu.nl/git/public/?p=vocs/wordnet.git;a=tree;f=rdf;hb=HEAD",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://eculture.cs.vu.nl/git/public/?p=vocs/wordnet.git;a=tree;f=rdf;hb=HEAD",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://purl.org/vocabularies/princeton/wn30/synset-chair-noun-1",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/vocabularies/princeton/wn30/synset-chair-noun-1",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://purl.org/vocabularies/princeton/wn30/synset-chair-noun-1.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/vocabularies/princeton/wn30/synset-chair-noun-1.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://semanticweb.cs.vu.nl/europeana/sparql/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://semanticweb.cs.vu.nl/europeana/sparql/",
+    "mediaType" : "XML"
+  }, {
+    "@id" : "http://semanticweb.cs.vu.nl/lod/wn30/rdf/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://semanticweb.cs.vu.nl/lod/wn30/rdf/void.ttl",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,31 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/iso-3166-2-data/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "iso-3166-2-data"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/iso-3166-2-data/dataid#creator> ;
+        dct:description         "### About\n\nLinked ISO 3166-2 Data. ISO-3166-2 gives codes for countries and their principal subdivisions.\n\n### Openness\n\nPublished under CC0. (Where is this specified?)"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "Linked ISO 3166-2 Data"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://ontologi.es/place/AD> ;
+        dcat:distribution       <http://ontologi.es/place/> ;
+        dcat:keyword            "geo" , "places" , "lod" , "geographic" , "a-semantic-network-of-scientists-interests-activities-and-accomplishments" , "lodcloud.unconnected" , "lodcloud.nolinks" , "deref-vocab" , "iso-3166" , "names" , "linked-data" , "codes" , "format-rdf" , "published-by-producer" ;
+        dcat:landingPage        <http://datahub.io/dataset/iso-3166-2-data> .
+
+<http://ontologi.es/place/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://ontologi.es/place/> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/iso-3166-2-data/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "http://tobyinkster.co.uk/#i" .
+
+<http://dataid.dbpedia.org/lod/iso-3166-2-data/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/iso-3166-2-data/dataid#dataset" .

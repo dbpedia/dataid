@@ -1,0 +1,72 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#dataset">
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <void:uriSpace>http://dewey.info/</void:uriSpace>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dcat:keyword>lld</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/dewey_decimal_classification"/>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dewey_decimal_classification</rdfs:label>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >402288</void:triples>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dewey Decimal Classification (DDC)</dct:title>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://dewey.info/sparql.php">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://dewey.info/sparql.php"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#contributor">
+        <foaf:mbox>mailto:panzerm@oclc.org</foaf:mbox>
+        <foaf:name>Michael Panzer</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>linkeddata</dcat:keyword>
+    <void:exampleResource rdf:resource="http://dewey.info/class/641.5/a14/about.ttl"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#creator">
+        <foaf:mbox>mailto:http://www.oclc.org/dewey/</foaf:mbox>
+        <foaf:name>OCLC Online Computer Library Center, Inc.</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:exampleResource rdf:resource="http://dewey.info/class/6/2009/03/about.de.html"/>
+    <dcat:keyword>publications</dcat:keyword>
+    <dcat:keyword>format-dcterm</dcat:keyword>
+    <dcat:keyword>lodcloud.nolinks</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dcat:keyword>format-cc</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://dewey.info/sparql.php"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dewey.info is an experimental space for linked DDC data. The intention of the dewey.info prototype is to be a platform for Dewey data on the Web.
+
+Included as linked data are the DDC Summaries (the top three levels of the DDC) of Edition 22 in 11 languages and all assignable numbers of Abridged Edition 14 in three languages. Classification semantics are encoded in RDF using SKOS and other element vocabularies. 
+
+Every class also has an HTML representation (XHTML+RDFa) and several RDF serializations (RDF/XML, Turtle, JSON).
+
+A SPARQL endpoint is available.
+
+The data is reusable under the Creative Commons BY-NC-ND license.
+</dct:description>
+    <dcat:keyword>classification</dcat:keyword>
+    <dcat:keyword>publication</dcat:keyword>
+    <dcat:keyword>schemata</dcat:keyword>
+    <void:exampleResource rdf:resource="http://dewey.info/class/641/about.rdf"/>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

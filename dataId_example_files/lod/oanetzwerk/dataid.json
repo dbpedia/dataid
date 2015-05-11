@@ -1,0 +1,69 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/oanetzwerk/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/oanetzwerk/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/oanetzwerk/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Julia Iwanowa"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/oanetzwerk/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/oanetzwerk/dataid#creator",
+    "dct:description" : "This is the Linked Open Data Service from the Open Access Network Project. For more details see http://www.dini.de/projekte/oa-netzwerk/  or http://www.dini.de/english/ and the wiki page http://oanetzwerk.wordpress.com/2011/12/05/oan-lod-dienste-teil-1/ . The search engine is on  http://oansuche.open-access.net/",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "OANetzwerk",
+    "rdfs:label" : "oanetzwerk",
+    "distribution" : "http://oanet.cms.hu-berlin.de/d2r-oan/",
+    "keyword" : [ "lld", "metadata", "lod", "repository", "germany", "bibliographic data", "format-rdf", "library" ],
+    "landingPage" : "http://datahub.io/dataset/oanetzwerk"
+  }, {
+    "@id" : "http://oanet.cms.hu-berlin.de/d2r-oan/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://oanet.cms.hu-berlin.de/d2r-oan/"
+  } ],
+  "@context" : {
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

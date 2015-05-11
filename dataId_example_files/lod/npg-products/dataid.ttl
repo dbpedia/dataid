@@ -1,0 +1,36 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/npg-products/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:developers@nature.com" ;
+        foaf:name  "NPG Developers" .
+
+<http://data.nature.com/sparql?query=construct{?s?p?o}where{graph<http://ns.nature.com/graphs/products>{?s?p?o}}limit 25>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.nature.com/sparql?query=construct{?s?p?o}where{graph<http://ns.nature.com/graphs/products>{?s?p?o}}limit 25> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/npg-products/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "npg-products"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/npg-products/dataid#creator> , <http://dataid.dbpedia.org/lod/npg-products/dataid#contributor> ;
+        dct:description         "Graph of npg:Product triples.\nThe npg:Product objects model products (journal titles, etc) from the NPG products ontology."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "Nature Publishing Group - Products"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dcat:distribution       <http://data.nature.com/sparql?query=construct{?s?p?o}where{graph<http://ns.nature.com/graphs/products>{?s?p?o}}limit 25> ;
+        dcat:keyword            "academic" , "health sciences" , "format-rdf" , "journals" , "sciences" , "publications" , "format-dcterm" , "physical sciences" , "bibliographic" , "science" , "format-npg" , "life sciences" , "published-by-producer" ;
+        dcat:landingPage        <http://datahub.io/dataset/npg-products> .
+
+<http://dataid.dbpedia.org/lod/npg-products/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/npg-products/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/npg-products/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:developers@nature.com" ;
+        foaf:name  "NPG" .

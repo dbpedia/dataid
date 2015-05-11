@@ -1,0 +1,78 @@
+{
+  "@graph" : [ {
+    "@id" : "http://biblio.ugent.be/exports/export_big.txt",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://biblio.ugent.be/exports/export_big.txt",
+    "mediaType" : "CSV"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ugent-biblio/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/ugent-biblio/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ugent-biblio/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:Patrick.Hochstenbach@UGent.be",
+    "name" : "Ghent University"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ugent-biblio/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/ugent-biblio/dataid#creator",
+    "dct:description" : "",
+    "license" : "http://www.opendefinition.org/licenses/odc-odbl",
+    "dct:title" : "UGent Biblio",
+    "rdfs:label" : "ugent-biblio",
+    "distribution" : [ "http://biblio.ugent.be/exports/export_big.txt", "https://biblio.ugent.be/site/about.rdf" ],
+    "keyword" : "bibliographic",
+    "landingPage" : "http://datahub.io/dataset/ugent-biblio"
+  }, {
+    "@id" : "https://biblio.ugent.be/site/about.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://biblio.ugent.be/site/about.rdf",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

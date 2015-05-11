@@ -1,0 +1,80 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/eurobarometer-standard/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/eurobarometer-standard/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://api.talis.com/stores/eurobarometer/services/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://api.talis.com/stores/eurobarometer/services/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/eurobarometer-standard/dataid#dataset">
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >eurobarometer-standard</rdfs:label>
+    <dcat:keyword>lodcloud</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1193494</void:triples>
+    <void:sparqlEndpoint rdf:resource="http://api.talis.com/stores/eurobarometer/services/sparql"/>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>surveys</dcat:keyword>
+    <void:exampleResource rdf:resource="http://eurobarometer.publicdata.eu/def/q1a2.rdf"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://eurobarometer.publicdata.eu/void.ttl">
+        <dcat:mediaType>meta/void</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://eurobarometer.publicdata.eu/void.ttl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>opinions</dcat:keyword>
+    <void:uriSpace>http://eurobarometer.publicdata.eu/data/</void:uriSpace>
+    <dcat:distribution rdf:resource="http://api.talis.com/stores/eurobarometer/services/sparql"/>
+    <void:exampleResource rdf:resource="http://eurobarometer.publicdata.eu/data/question/1.rdf"/>
+    <dcat:keyword>format-qb</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/eurobarometer-standard/dataid#creator">
+        <foaf:name>Ian Davis</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/eurobarometer-standard"/>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Standard Eurobarometer</dct:title>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eurobarometer-standard/dataid#links_reference-data-gov-uk">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/reference-data-gov-uk"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eurobarometer-standard/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >50000</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>eu-institution</dcat:keyword>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eurobarometer-standard/dataid#links_eurostat-linked-data">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/eurostat-linked-data"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eurobarometer-standard/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >85510</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>barometer</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>polls</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The standard Eurobarometer was established in 1973. Each survey consists of approximately 1000 face-to-face interviews per country. Reports are published twice yearly. Reproduction is authorized, except for commercial purposes, provided the source is acknowledged. 
+
+This dataset represents the results of these questionnaires as Linked Data using the RDF Datacube Vocabulary. </dct:description>
+    <void:exampleResource rdf:resource="http://eurobarometer.publicdata.eu/data/observation/3/1/2009/11.rdf"/>
+    <dcat:keyword>latc</dcat:keyword>
+    <dcat:keyword>government</dcat:keyword>
+    <dcat:keyword>geographic</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

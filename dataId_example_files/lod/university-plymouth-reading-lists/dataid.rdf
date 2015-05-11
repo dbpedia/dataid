@@ -1,0 +1,56 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid#links_openlibrary">
+    <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/openlibrary/dataid#dataset"/>
+    <void:subjectsTarget>
+      <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid#dataset">
+        <dcat:keyword>lod</dcat:keyword>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >university-plymouth-reading-lists</rdfs:label>
+        <dataid:associatedAgent>
+          <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid#creator">
+            <foaf:name>Ian Davis</foaf:name>
+          </dataid:Creator>
+        </dataid:associatedAgent>
+        <dcat:keyword>format-rdf</dcat:keyword>
+        <dcat:keyword>no-vocab-mappings</dcat:keyword>
+        <void:uriSpace>http://lists.lib.plymouth.ac.uk/lists/</void:uriSpace>
+        <dcat:keyword>no-provenance-metadata</dcat:keyword>
+        <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >University of Plymouth Reading Lists</dct:title>
+        <dcat:landingPage rdf:resource="http://datahub.io/dataset/university-plymouth-reading-lists"/>
+        <void:exampleResource rdf:resource="http://lists.lib.plymouth.ac.uk/lists/marn304"/>
+        <dcat:keyword>talis</dcat:keyword>
+        <dcat:keyword>format-sioc</dcat:keyword>
+        <dcat:keyword>higher-education</dcat:keyword>
+        <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+        <dcat:keyword>publications</dcat:keyword>
+        <dcat:keyword>published-by-producer</dcat:keyword>
+        <dcat:keyword>format-dc</dcat:keyword>
+        <dcat:keyword>no-license-metadata</dcat:keyword>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >441476</void:triples>
+        <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Search for lists, modules &amp; courses
+
+  
+Browse hierarchy | Recent changes</dct:description>
+        <dataid:containsLinks rdf:resource="http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid#links_openlibrary"/>
+        <void:exampleResource rdf:resource="http://lists.lib.plymouth.ac.uk/lists/eoe3217"/>
+        <dcat:keyword>education</dcat:keyword>
+        <dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/"/>
+      </dataid:Dataset>
+    </void:subjectsTarget>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >5675</void:triples>
+  </dataid:Linkset>
+</rdf:RDF>

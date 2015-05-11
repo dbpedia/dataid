@@ -1,0 +1,104 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/bio2rdf-homologene/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/bio2rdf-homologene/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bio2rdf-homologene/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:michel.dumontier@gmail.com",
+    "name" : "Michel Dumontier"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bio2rdf-homologene/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:bio2rdf@googlegroups.com",
+    "name" : "Bio2RDF"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bio2rdf-homologene/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/bio2rdf-homologene/dataid#creator", "http://dataid.dbpedia.org/lod/bio2rdf-homologene/dataid#contributor" ],
+    "dct:description" : "HomoloGene, a tool of the National Center for Biotechnology Information (NCBI), is a system for automated detection of homologs (similarity attributable to descent from a common ancestor) among the annotated genes of several completely sequenced eukaryotic genomes. The HomoloGene processing consists of the protein analysis from the input organisms. Sequences are compared using blastp, then matched up and put into groups, using a taxonomic tree built from sequence similarity, where closer related organisms are matched up first, and then further organisms are added to the tree. \n\nLinks to bio2rdf-gene: 244378\nLinks to bio2rdf-symbol: 244378\n",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "Bio2RDF::HomoloGene",
+    "exampleResource" : "http://bio2rdf.org/homologene:813",
+    "sparqlEndpoint" : "http://homologene.bio2rdf.org/sparql",
+    "uriSpace" : "http://bio2rdf.org/homologene:",
+    "rdfs:label" : "bio2rdf-homologene",
+    "distribution" : [ "http://homologene.bio2rdf.org/sparql", "http://download.bio2rdf.org/current/homologene/homologene.html", "http://download.bio2rdf.org/current/homologene/homologene.nt.gz" ],
+    "keyword" : [ "lifesciences", "format-rdf", "bio2rdf", "format-rdfs", "published-by-third-party", "lod" ],
+    "landingPage" : "http://datahub.io/dataset/bio2rdf-homologene"
+  }, {
+    "@id" : "http://download.bio2rdf.org/current/homologene/homologene.html",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://download.bio2rdf.org/current/homologene/homologene.html",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://download.bio2rdf.org/current/homologene/homologene.nt.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://download.bio2rdf.org/current/homologene/homologene.nt.gz",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://homologene.bio2rdf.org/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://homologene.bio2rdf.org/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

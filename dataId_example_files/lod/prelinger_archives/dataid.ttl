@@ -1,0 +1,38 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/prelinger_archives/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:leigh@ldodds.com" ;
+        foaf:name  "Leigh Dodds" .
+
+<http://archive.org/download/kasabi/prelinger-archives.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://archive.org/download/kasabi/prelinger-archives.gz> ;
+        dcat:mediaType    "gzip::nquads" .
+
+<http://dataid.dbpedia.org/lod/prelinger_archives/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "prelinger_archives"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/prelinger_archives/dataid#contributor> , <http://dataid.dbpedia.org/lod/prelinger_archives/dataid#creator> ;
+        dct:description         "The Prelinger Archives is a collection of films relating to U.S. cultural history, the evolution of the American landscape, everyday life and social history. It was physically located in New York City from 1982-2002 and is now in San Francisco.\n\nThe Archives was founded by Rick Prelinger in 1982 in order to preserve what he calls \"ephemeral\" films: films sponsored by corporations and organizations, educational films, and amateur and home movies. Typically, ephemeral films were produced to fulfill specific purposes at specific times, and many exist today only by chance or accident. About 65% of the Archive's holdings are in the public domain because their copyrights have expired, or because they were U.S. productions that were published without proper copyright notice.\n\nThis dataset consists of metadata about more than 2,000 public domain films that the Prelinger Archives have made available for unrestricted use via the Internet Archive.\n\n*Note* this dataset is no longer updated, it was taken off-line during the shutdown of Kasabi. A dump of the dataset has been [uploaded to the Internet Archive](http://archive.org/details/kasabi)"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-pddl> ;
+        dct:title               "Prelinger Archives"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:triples            "454904"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://data.kasabi.com/dataset/prelinger-archives" ;
+        dcat:distribution       <http://archive.org/download/kasabi/prelinger-archives.gz> ;
+        dcat:keyword            "published-by-third-party" , "format-rdf" , "media" , "format-foaf" , "deref-vocab" , "format-dcmit" , "license-metadata" ;
+        dcat:landingPage        <http://datahub.io/dataset/prelinger_archives> .
+
+<http://dataid.dbpedia.org/lod/prelinger_archives/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/prelinger_archives/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/prelinger_archives/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:leigh" ;
+        foaf:name  "Leigh Dodds" .

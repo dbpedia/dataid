@@ -1,0 +1,134 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=urn:uuid:1D87806F-E88C-0001-AFCC-DC87F6001C3A/pp_project_lithologische_einheiten.rdf&contentType=application/rdf%2Bxml>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=urn:uuid:1D87806F-E88C-0001-AFCC-DC87F6001C3A/pp_project_lithologische_einheiten.rdf&contentType=application/rdf%2Bxml> ;
+        dcat:mediaType    "RDF" .
+
+<http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=d13bb3e7-df48-4cba-bd0c-e63c8943d9e0/pp_project_lithotektonische_einheiten.rdf&contentType=application/rdf%2Bxml>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=d13bb3e7-df48-4cba-bd0c-e63c8943d9e0/pp_project_lithotektonische_einheiten.rdf&contentType=application/rdf%2Bxml> ;
+        dcat:mediaType    "RDF" .
+
+<http://resource.geolba.ac.at/GeologicTimeScale>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://resource.geolba.ac.at/GeologicTimeScale> ;
+        dcat:mediaType    "HTML" .
+
+<http://resource.geolba.ac.at/PoolParty/sparql/GeologicTimeScale>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://resource.geolba.ac.at/PoolParty/sparql/GeologicTimeScale> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#links_opencyc>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/opencyc/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#dataset> ;
+        void:triples         "9"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#dataset> ;
+        void:triples         "100"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#dataset" .
+
+<http://resource.geolba.ac.at/lithology.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://resource.geolba.ac.at/lithology.rdf> ;
+        dcat:mediaType    "meta/void" .
+
+<http://resource.geolba.ac.at/GeologicUnit>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://resource.geolba.ac.at/GeologicUnit> ;
+        dcat:mediaType    "HTML" .
+
+<http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=urn:uuid:1D763DCD-0E5C-0001-FBB1-1D401A50B620/pp_project_geologische_zeitskala.rdf&contentType=application/rdf%2Bxml>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=urn:uuid:1D763DCD-0E5C-0001-FBB1-1D401A50B620/pp_project_geologische_zeitskala.rdf&contentType=application/rdf%2Bxml> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "geological-survey-of-austria-thesaurus"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#creator> , <http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#links_opencyc> , <http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#links_dbpedia> , <http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#links_freebase> ;
+        dct:description         "The Thesaurus of the Geological Survey of Austria is a bilingual (de/en) controlled vocabulary for the semantic harmonisation of geoscientific map-based geodata. Currently there are four thematic subjects available : \n\n* lithology\n* geologic timescale\n* geologic units\n* tectonic units & classification"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by-sa> ;
+        dct:title               "Geological Survey of Austria (GBA) - Thesaurus"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://resource.geolba.ac.at/tectonicunit/115.rdf> , <http://resource.geolba.ac.at/lithology/48.rdf> , <http://resource.geolba.ac.at/GeologicTimeScale/35.rdf> , <http://resource.geolba.ac.at/GeologicUnit/291.rdf> ;
+        void:sparqlEndpoint     <http://resource.geolba.ac.at/PoolParty/sparql/GeologicUnit> , <http://resource.geolba.ac.at/PoolParty/sparql/GeologicTimeScale> , <http://resource.geolba.ac.at/PoolParty/sparql/lithology> , <http://resource.geolba.ac.at/PoolParty/sparql/tectonicunit> ;
+        void:triples            "40912"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://resource.geolba.ac.at/" ;
+        dcat:distribution       <http://resource.geolba.ac.at/GeologicTimeScale> , <http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=urn:uuid:1D87806F-E88C-0001-AFCC-DC87F6001C3A/pp_project_lithologische_einheiten.rdf&contentType=application/rdf%2Bxml> , <http://resource.geolba.ac.at/PoolParty/sparql/GeologicTimeScale> , <http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=urn:uuid:1D763DCD-0E5C-0001-FBB1-1D401A50B620/pp_project_geologische_zeitskala.rdf&contentType=application/rdf%2Bxml> , <http://resource.geolba.ac.at/PoolParty/sparql/GeologicUnit> , <http://resource.geolba.ac.at/lithology.rdf> , <http://resource.geolba.ac.at/PoolParty/sparql/lithology> , <http://resource.geolba.ac.at/GeologicUnit.rdf> , <http://resource.geolba.ac.at/GeologicUnit> , <http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=d7b07bce-7ce4-4bcb-85ae-e0f774e6fb8d/pp_project_geologische_einheiten.rdf&contentType=application/rdf%2Bxml> , <http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=d13bb3e7-df48-4cba-bd0c-e63c8943d9e0/pp_project_lithotektonische_einheiten.rdf&contentType=application/rdf%2Bxml> , <http://resource.geolba.ac.at/lithology> , <http://resource.geolba.ac.at/tectonicunit.rdf> , <http://resource.geolba.ac.at/GeologicTimeScale.rdf> , <http://resource.geolba.ac.at/PoolParty/sparql/tectonicunit> , <http://resource.geolba.ac.at/tectonicunit> ;
+        dcat:keyword            "format-skos" , "geology" , "geographic" , "austria" , "provenance-metadata" , "lod" , "thesaurus" , "geoscience" , "no-proprietary-vocab" , "published-by-producer" , "no-license-metadata" ;
+        dcat:landingPage        <http://datahub.io/dataset/geological-survey-of-austria-thesaurus> .
+
+<http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#links_freebase>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/freebase/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#dataset> ;
+        void:triples         "93"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://resource.geolba.ac.at/PoolParty/sparql/tectonicunit>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://resource.geolba.ac.at/PoolParty/sparql/tectonicunit> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://resource.geolba.ac.at/GeologicUnit.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://resource.geolba.ac.at/GeologicUnit.rdf> ;
+        dcat:mediaType    "meta/void" .
+
+<http://resource.geolba.ac.at/PoolParty/sparql/GeologicUnit>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://resource.geolba.ac.at/PoolParty/sparql/GeologicUnit> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://resource.geolba.ac.at/tectonicunit>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://resource.geolba.ac.at/tectonicunit> ;
+        dcat:mediaType    "HTML" .
+
+<http://resource.geolba.ac.at/PoolParty/sparql/lithology>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://resource.geolba.ac.at/PoolParty/sparql/lithology> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=d7b07bce-7ce4-4bcb-85ae-e0f774e6fb8d/pp_project_geologische_einheiten.rdf&contentType=application/rdf%2Bxml>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=d7b07bce-7ce4-4bcb-85ae-e0f774e6fb8d/pp_project_geologische_einheiten.rdf&contentType=application/rdf%2Bxml> ;
+        dcat:mediaType    "RDF" .
+
+<http://resource.geolba.ac.at/lithology>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://resource.geolba.ac.at/lithology> ;
+        dcat:mediaType    "HTML" .
+
+<http://resource.geolba.ac.at/GeologicTimeScale.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://resource.geolba.ac.at/GeologicTimeScale.rdf> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:thesaurus@geologie.ac.at" ;
+        foaf:name  "Marcus Ebner" .
+
+<http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:thesaurus@geologie.ac.at" ;
+        foaf:name  "Thesaurus Editorial Team" .
+
+<http://resource.geolba.ac.at/tectonicunit.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://resource.geolba.ac.at/tectonicunit.rdf> ;
+        dcat:mediaType    "meta/void" .

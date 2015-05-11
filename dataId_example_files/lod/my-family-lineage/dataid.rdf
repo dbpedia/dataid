@@ -1,0 +1,155 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/my-family-lineage/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/my-family-lineage/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://xmlns.com/foaf/spec/index.rdf">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://xmlns.com/foaf/spec/index.rdf"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/my-family-lineage/dataid#dataset">
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/my-family-lineage/dataid#creator">
+        <foaf:mbox>mailto:bruce@whealton.info</foaf:mbox>
+        <foaf:name>Bruce Whealton</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:uriSpace>http://my-family-lineage.com/wiki/</void:uriSpace>
+    <dcat:keyword>format-rel</dcat:keyword>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/my-family-lineage/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2254</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >my-family-lineage</rdfs:label>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3000000</void:triples>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://futurewavehosting.com:3030/my-family-lineage/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://futurewavehosting.com:3030/my-family-lineage/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-by"/>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/my-family-lineage/dataid#contributor">
+        <foaf:mbox>mailto:bruce@whealton.info</foaf:mbox>
+        <foaf:name>Bruce Whealton</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>format-bio</dcat:keyword>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >My Family Lineage</dct:title>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://my-family-lineage.com/void.ttl">
+        <dcat:mediaType>meta/void</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://my-family-lineage.com/void.ttl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <void:exampleResource rdf:resource="http://my-family-lineage.com/w/images/d/d0/Adams.rdf"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://my-family-lineage.com/w/images/6/6c/Sangster_family_tree_2012-06-30.rdf">
+        <dcat:mediaType>RDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://my-family-lineage.com/w/images/6/6c/Sangster_family_tree_2012-06-30.rdf"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <dcat:keyword>format-dbpedia-owl</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_yago">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/yago/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/my-family-lineage/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2048</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>family history</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dcat:distribution rdf:resource="http://xmlns.com/foaf/spec/index.rdf"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;h2&gt;My Family Lineage&lt;/h2&gt;
+&lt;h3&gt;Note: We have added Content Negotiation&lt;/h3&gt;
+&lt;p&gt;The addition of content negotiation, allows for serving RDF to clients that request RDF and HTML for clients that request html pages.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;"My Family Lineage"&lt;/strong&gt; is a Genealogy Application using MediaWiki and the Semantic MediaWiki Bundle.  In addition, we use the Fuseki Triple Store which has a SPARQL query form available at: http://futurewavehosting.com:3030 
+where one would use the Control Panel and select the dataset my-family-lineage.  The website is community driven and through the import of GEDCOM files (Genealogical Data Communication) wiki pages are created, an accompanying RDF file is created and the data is added to the triple store. &lt;/p&gt;&lt;br /&gt;
+&lt;p&gt; We use the latest GEDCOM standard version 5.5 which is used by various Genealogy software applications.  &lt;/p&gt;
+
+&lt;p&gt;We have a void file available at: http://my-family-lineage.com/void.ttl 
+which provides information about vocabularies used, licensing, example resources, and link sets.  &lt;/p&gt;
+
+&lt;p&gt;We collect information about Places that correspond to events in an individual/person's life or in the life of a family.  It is here that there are the most triples linking to other data sets that are part of the current LOD Cloud.  Nearly 50,000 triples describe Places, of those over 7300 triples are links to external data sets, including dbpedia, geonames, freebase and yago.&lt;/p&gt;
+
+&lt;p&gt;We have included a great deal of information from public genealogy (GEDCOM) files including the genealogy of famous people, e.g. royalty, US Presidents, Authors like Stephen King and more. &lt;/p&gt;</dct:description>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/my-family-lineage"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://futurewavehosting.com:3030/my-family-lineage/query">
+        <dcat:mediaType>RDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://futurewavehosting.com:3030/my-family-lineage/query"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>genealogy</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_geonames">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geonames/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/my-family-lineage/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >377</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:sparqlEndpoint rdf:resource="http://futurewavehosting.com:3030/my-family-lineage/sparql"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.opendatacommons.org/odc-public-domain-dedication-and-licence/">
+        <dcat:mediaType>license-metadata</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.opendatacommons.org/odc-public-domain-dedication-and-licence/"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>usergeneratedcontent</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/my-family-lineage/dataid#links_freebase">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/freebase/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/my-family-lineage/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2253</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://my-family-lineage.com/w/RDF/classes.rdf">
+        <dcat:mediaType>RDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://my-family-lineage.com/w/RDF/classes.rdf"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://my-family-lineage.com/w/images/a/af/BruceWhealtonJr.rdf">
+        <dcat:mediaType>application/rdf xml</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://my-family-lineage.com/w/images/a/af/BruceWhealtonJr.rdf"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://my-family-lineage.com/w/sitemap/sitemap-index-whealton_wiki.xml">
+        <dcat:mediaType>meta/sitemap</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://my-family-lineage.com/w/sitemap/sitemap-index-whealton_wiki.xml"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>geographic</dcat:keyword>
+    <dcat:keyword>relationships</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

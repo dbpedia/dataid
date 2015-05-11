@@ -1,0 +1,90 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://fintrans.publicdata.eu/">
+    <dcat:mediaType>html+rdfa</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://fintrans.publicdata.eu/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://fintrans.publicdata.eu/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://fintrans.publicdata.eu/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://fintrans.publicdata.eu/ec/">
+    <dcat:mediaType>html+rdfa</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://fintrans.publicdata.eu/ec/"/>
+  </dataid:Distribution>
+  <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#links_dbpedia">
+    <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+    <void:subjectsTarget>
+      <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#dataset">
+        <dcat:keyword>date-2007</dcat:keyword>
+        <void:uriSpace>http://fintrans.publicdata.eu/ec/resource/</void:uriSpace>
+        <dataid:associatedAgent>
+          <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#creator">
+            <foaf:mbox>mailto:martin@informatik.uni-leipzig.de</foaf:mbox>
+            <foaf:name>Michael Martin</foaf:name>
+          </dataid:Creator>
+        </dataid:associatedAgent>
+        <dcat:keyword>format-html</dcat:keyword>
+        <dcat:keyword>published-by-third-party</dcat:keyword>
+        <dcat:distribution rdf:resource="http://fintrans.publicdata.eu/sparql"/>
+        <dcat:keyword>procurement</dcat:keyword>
+        <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >EU: fintrans.publicdata.eu</dct:title>
+        <void:sparqlEndpoint rdf:resource="http://fintrans.publicdata.eu/sparql"/>
+        <dcat:keyword>date-2009</dcat:keyword>
+        <dcat:keyword>linked-data</dcat:keyword>
+        <dcat:keyword>deref-vocab</dcat:keyword>
+        <dataid:containsLinks rdf:resource="http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#links_dbpedia"/>
+        <dcat:keyword>financial</dcat:keyword>
+        <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The names of the beneficiaries of ca. €10 billion of grants and other forms of support, awarded (in budgetary terms: 'committed') by the Commission every year, either directly or through 'executive agencies' set up to help it run EU funded programmes. The site also contains certain procurement contracts, excluding for the moment those linked to administrative expenditure of the Commission.
+This information is separate from information on funds managed by EU or non-EU national governments or other parties on the behalf of the Commission.
+The original site of the European Commission shows only lists of awarded amounts and beneficiaries - it does not provide amounts consolidated per country, budget line, etc. .
+The original dataset can be found at EU Commission Financial Transparency System which is also listed at ckan.</dct:description>
+        <dcat:keyword>eu</dcat:keyword>
+        <dcat:keyword>finance</dcat:keyword>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1897840</void:triples>
+        <dcat:keyword>region-eu</dcat:keyword>
+        <dcat:landingPage rdf:resource="http://datahub.io/dataset/beneficiaries-of-the-european-commission"/>
+        <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+        <dcat:keyword>date-2008</dcat:keyword>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >beneficiaries-of-the-european-commission</rdfs:label>
+        <dcat:keyword>transparency</dcat:keyword>
+        <dcat:keyword>system</dcat:keyword>
+        <dataid:associatedAgent>
+          <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/beneficiaries-of-the-european-commission/dataid#contributor">
+            <foaf:mbox>mailto:aksw@informatik.uni-leipzig.de</foaf:mbox>
+            <foaf:name>Agile Knowledge and Semantic Web Research Group (AKSW)</foaf:name>
+          </dataid:Contributor>
+        </dataid:associatedAgent>
+        <dcat:keyword>format-foaf</dcat:keyword>
+        <dcat:distribution rdf:resource="http://fintrans.publicdata.eu/ec/"/>
+        <dcat:keyword>latc</dcat:keyword>
+        <dcat:keyword>ontowiki</dcat:keyword>
+        <dcat:distribution rdf:resource="http://fintrans.publicdata.eu/"/>
+        <dcat:keyword>format-rdf</dcat:keyword>
+        <dcat:keyword>government</dcat:keyword>
+        <dcat:keyword>budget</dcat:keyword>
+        <dcat:keyword>lod</dcat:keyword>
+        <void:exampleResource rdf:resource="http://fintrans.publicdata.eu/ec/resource/su/SCR.706541.1"/>
+        <dcat:keyword>fts</dcat:keyword>
+        <dcat:keyword>european-commission</dcat:keyword>
+        <dcat:keyword>business</dcat:keyword>
+      </dataid:Dataset>
+    </void:subjectsTarget>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >199168</void:triples>
+  </dataid:Linkset>
+</rdf:RDF>

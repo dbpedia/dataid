@@ -1,0 +1,59 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#links_ordnance-survey-linked-data>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/ordnance-survey-linked-data> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#dataset> ;
+        void:triples         "218"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:info@lucero-project.info" ;
+        foaf:name  "[LUCERO Team](http://lucero-project.info)" .
+
+<http://data.open.ac.uk/query>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://data.open.ac.uk/query> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:m.daquin@open.ac.uk" ;
+        foaf:name  "Mathieu d'Aquin" .
+
+<http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#links_geonames-semantic-web>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/geonames-semantic-web> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#dataset> ;
+        void:triples         "170000"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#links_data-gov-uk>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/data-gov-uk> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#dataset> ;
+        void:triples         "14500"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "data-open-ac-uk"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#contributor> , <http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#links_data-gov-uk> , <http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#links_ordnance-survey-linked-data> , <http://dataid.dbpedia.org/lod/data-open-ac-uk/dataid#links_geonames-semantic-web> ;
+        dct:description         "The result of extracting and interlinking data from various institutional repositories of the [Open University](http://www.open.ac.uk/) and making it available for reuse.\n\n\n#### RDF statistics\n\n1.6 Million triples, updated daily. \n\n#### Links\n\nCourse descriptions link to geonames for availability and price validity. \n\nURI from the Open University linked to the corresponding URI in education.data.gov.uk\n\nBuildings are linked to their postcode in ordnancesurvey.co.uk\n\nSome links to DBPedia, with various levels of validity. \n"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "data.open.ac.uk, Linked Data from the Open University"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://data.open.ac.uk/resource/oro/21166> , <http://data.open.ac.uk/resource/podcast/218dce44a4ed17b36ada50d18b866b03> , <http://data.open.ac.uk/resource/course/m366> , <http://data.open.ac.uk/resource/person/c9aa7f2e582d191ed728ad414c5ea711> ;
+        void:sparqlEndpoint     <http://data.open.ac.uk/query> ;
+        void:triples            "1600000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://data.open.ac.uk/resource/" ;
+        dcat:distribution       <http://data.open.ac.uk/query> ;
+        dcat:keyword            "openuniversity" , "lod" , "no-proprietary-vocab" , "lld" , "publications" , "format-bibo" , "education" , "kmiou" , "format-rdf" , "course" , "published-by-producer" , "format-skos" ;
+        dcat:landingPage        <http://datahub.io/dataset/data-open-ac-uk> .

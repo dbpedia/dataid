@@ -1,0 +1,177 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://purl.org/twc/vocab/conversion/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/twc/vocab/conversion/> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Timothy Lebo" .
+
+<http://obofoundry.org/ro/ro.owl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://obofoundry.org/ro/ro.owl> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://usefulinc.com/ns/doap>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://usefulinc.com/ns/doap> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#dataset" .
+
+<http://www.w3.org/ns/dcat>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/ns/dcat> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#dataset> ;
+        void:triples         "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.w3.org/ns/prov>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/ns/prov> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<https://github.com/timrdf/lodcloud>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://github.com/timrdf/lodcloud> ;
+        dcat:mediaType    "HTML" .
+
+<http://inference-web.org/2.0/pml-justification.owl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://inference-web.org/2.0/pml-justification.owl> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://provenanceweb.org/ns/pml>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://provenanceweb.org/ns/pml> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://openprovenance.org/ontology>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://openprovenance.org/ontology> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+dct:    a                 dataid:Distribution ;
+        dcat:downloadURL  dct: ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://www.ontologydesignpatterns.org/ont/web/irw.owl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.ontologydesignpatterns.org/ont/web/irw.owl> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://www.w3.org/2002/07/owl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/2002/07/owl> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://inference-web.org/2.0/pml-provenance.owl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://inference-web.org/2.0/pml-provenance.owl> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://www.w3.org/ns/sparql-service-description>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/ns/sparql-service-description> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#links_twc-logd>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/twc-logd/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#dataset> ;
+        void:triples         "2"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://purl.org/twc/lodcloud>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/twc/lodcloud> ;
+        dcat:mediaType    "HTML" .
+
+<http://open.vocab.org/terms/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://open.vocab.org/terms/> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://purl.org/twc/vocab/datafaqs>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/twc/vocab/datafaqs> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://purl.org/twc/lodcloud/source/tw-rpi-edu/file/cr-full-dump/version/latest/conversion/purl-org-twc-lodcloud.nt.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/twc/lodcloud/source/tw-rpi-edu/file/cr-full-dump/version/latest/conversion/purl-org-twc-lodcloud.nt.gz> ;
+        dcat:mediaType    "application/x-ntriples" .
+
+<http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "the-living-lod-cloud"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#links_twc-logd> , <http://dataid.dbpedia.org/lod/the-living-lod-cloud/dataid#links_dbpedia> ;
+        dct:description         "A lodcloud diagram, automatically. Based on quality standards."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "The Living LOD Cloud"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:triples            "3639"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:distribution       <http://www.w3.org/ns/dcat> , <http://www.w3.org/2000/10/swap/pim/contact> , <http://purl.org/twc/vocab/conversion/> , <http://semanticscience.org/resource/> , <http://rdfs.org/ns/void> , <http://www.w3.org/2000/01/rdf-schema> , <http://www.w3.org/2004/02/skos/core> , <http://purl.org/twc/lodcloud> , <http://www.w3.org/1999/02/22-rdf-syntax-ns> , <http://purl.org/twc/lodcloud/source/tw-rpi-edu/file/cr-full-dump/version/latest/conversion/purl-org-twc-lodcloud.nt.gz> , <http://rdfs.org/sioc/ns> , <http://www.w3.org/ns/prov> , <http://purl.org/vocab/vann/> , <https://github.com/timrdf/lodcloud> , <http://provenanceweb.org/ns/pml> , <http://usefulinc.com/ns/doap> , <http://www.w3.org/2002/07/owl> , dct: , <http://purl.org/net/provenance/ns> , <http://purl.org/twc/vocab/datafaqs> , <http://inference-web.org/2.0/pml-justification.owl> , <http://www.ontologydesignpatterns.org/ont/web/irw.owl> , <http://inference-web.org/2.0/pml-provenance.owl> , <http://open.vocab.org/terms/> , <http://www.w3.org/ns/sparql-service-description> , foaf: , <http://openprovenance.org/ontology> , <http://obofoundry.org/ro/ro.owl> ;
+        dcat:keyword            "format-sio" , "format-con" , "format-pmlj" , "format-vann" , "linked data" , "format-dcat" , "format-datafaqs" , "format-prov" , "format-dc" , "format-opm" , "format-owl" , "format-pml" , "format-irw" , "format-oboro" , "format-conv" , "format-sioc" , "format-rdf" , "format-pmlp" , "format-sd" , "format-rdfs" , "format-ov" , "format-foaf" , "format-doap" , "format-void" , "format-skos" ;
+        dcat:landingPage        <http://datahub.io/dataset/the-living-lod-cloud> .
+
+<http://www.w3.org/2000/01/rdf-schema>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/2000/01/rdf-schema> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://rdfs.org/ns/void>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://rdfs.org/ns/void> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://semanticscience.org/resource/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://semanticscience.org/resource/> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://www.w3.org/2004/02/skos/core>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/2004/02/skos/core> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://purl.org/net/provenance/ns>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/net/provenance/ns> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/1999/02/22-rdf-syntax-ns> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://www.w3.org/2000/10/swap/pim/contact>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.w3.org/2000/10/swap/pim/contact> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+foaf:   a                 dataid:Distribution ;
+        dcat:downloadURL  foaf: ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://rdfs.org/sioc/ns>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://rdfs.org/sioc/ns> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://purl.org/vocab/vann/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/vocab/vann/> ;
+        dcat:mediaType    "meta/rdf-schema" .

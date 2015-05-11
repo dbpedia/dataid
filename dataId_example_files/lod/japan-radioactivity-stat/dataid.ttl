@@ -1,0 +1,43 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://www.kanzaki.com/works/2011/stat/ra-void.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.kanzaki.com/works/2011/stat/ra-void.ttl> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/japan-radioactivity-stat/dataid#links_geonames-semantic-web>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/japan-radioactivity-stat/dataid#dataset> ;
+        void:triples         "36696"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/japan-radioactivity-stat/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "japan-radioactivity-stat"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/japan-radioactivity-stat/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/japan-radioactivity-stat/dataid#links_geonames-semantic-web> ;
+        dct:description         "文部科学省は各都道府県等からの報告に基づき全国の環境放射能水準調査を作成しています。これをatmc.jpがテキスト化したデータの1年分（2011-03-16～2012-03-15）をRDF化したものです。福島県、宮城県の3月分データは欠落があります。\n\nThis is an experimantal RDF data of radioactivity statistics, observed at 47 prefectures hourly, from 2011-03-16 to 2012-03-15. Source data is text data at atmc.jp converted from the daily announcements by the Ministry of Education, which have been compiled based on reports from each prefecture. Some data from Fukushima and Miyagi in March missing"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://creativecommons.org/licenses/by-nc/2.0/> ;
+        dct:title               "National Radioactivity Stat as Linked Data"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:uriSpace           "http://www.kanzaki.com/works/2011/stat/ra/" ;
+        dcat:distribution       <http://www.kanzaki.com/works/2012/pub/radiostat-20110316-20120315.zip> , <http://www.kanzaki.com/works/2011/stat/ra-void.ttl> ;
+        dcat:keyword            "format-rdf" , "format-vcard" , "lod" , "published-by-third-party" , "country-japan" , "format-time" , "radioactivity" , "format-scovo" , "format-rdfs" , "format-geo" , "no-proprietary-vocab" , "geographic" , "format-event" , "statistics" , "government" ;
+        dcat:landingPage        <http://datahub.io/dataset/japan-radioactivity-stat> .
+
+<http://dataid.dbpedia.org/lod/japan-radioactivity-stat/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/japan-radioactivity-stat/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/japan-radioactivity-stat/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "KANZAKI Masahide" .
+
+<http://www.kanzaki.com/works/2012/pub/radiostat-20110316-20120315.zip>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.kanzaki.com/works/2012/pub/radiostat-20110316-20120315.zip> ;
+        dcat:mediaType    "rdf/turtle" .

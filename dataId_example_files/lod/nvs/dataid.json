@@ -1,0 +1,154 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/nvs/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/nvs/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/nvs/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "British Oceanographic Data Centre, Natural Environment Research Council, UK"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/nvs/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/nvs/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/nvs/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/nvs/dataid#links_geonames", "http://dataid.dbpedia.org/lod/nvs/dataid#links_gemet", "http://dataid.dbpedia.org/lod/nvs/dataid#links_eionet-rdf" ],
+    "dct:description" : "The NERC Vocabulary Server provides access to lists of standardised terms that cover a broad spectrum of disciplines of relevance to the oceanographic and wider community.\n\nUsing standardised sets of terms (otherwise known as \"controlled vocabularies\") in metadata and to label data solves the problem of ambiguities associated with data markup and also enables records to be interpreted by computers. This opens up data sets to a whole world of possibilities for computer aided manipulation, distribution and long term reuse.\n\nAll of the vocabularies are fully versioned and a permanent record is kept of all changes made.",
+    "license" : "http://reference.data.gov.uk/id/open-government-licence",
+    "dct:title" : "NERC Vocabulary Server 2.0",
+    "exampleResource" : [ "http://vocab.nerc.ac.uk/collection/P01/current/SPMIMEXX/", "http://vocab.nerc.ac.uk/collection/P08/current/", "http://vocab.nerc.ac.uk/scheme/INSPIRE_THEMES/" ],
+    "sparqlEndpoint" : "http://vocab.nerc.ac.uk/sparql/",
+    "triples" : "1122000",
+    "uriSpace" : "http://vocab.nerc.ac.uk/",
+    "rdfs:label" : "nvs",
+    "distribution" : [ "http://vocab.nerc.ac.uk/sparql/", "http://www.bodc.ac.uk/products/web_services/vocab/", "http://www.bodc.ac.uk/products/web_services/vocab/documents/nvs2.0_documentation.pdf", "http://vocab.nerc.ac.uk/collection/", "http://vocab.nerc.ac.uk/scheme/", "http://vocab.nerc.ac.uk/.well-known/void" ],
+    "keyword" : [ "oceanography", "schemata", "published-by-producer", "ocean", "no-license-metadata", "format-rdfs", "no-proprietary-vocab", "environment", "controlled-vocabulary", "lod", "format-rdf", "format-dc", "vocabulary", "format-owl", "provenance-metadata", "earth-science", "oceans", "format-skos" ],
+    "landingPage" : "http://datahub.io/dataset/nvs"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/nvs/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/nvs/dataid#dataset",
+    "triples" : "470"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/nvs/dataid#links_eionet-rdf",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/eionet-rdf/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/nvs/dataid#dataset",
+    "triples" : "71"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/nvs/dataid#links_gemet",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/gemet/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/nvs/dataid#dataset",
+    "triples" : "36"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/nvs/dataid#links_geonames",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/nvs/dataid#dataset",
+    "triples" : "126"
+  }, {
+    "@id" : "http://vocab.nerc.ac.uk/.well-known/void",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://vocab.nerc.ac.uk/.well-known/void",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://vocab.nerc.ac.uk/collection/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://vocab.nerc.ac.uk/collection/",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://vocab.nerc.ac.uk/scheme/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://vocab.nerc.ac.uk/scheme/",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://vocab.nerc.ac.uk/sparql/",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://vocab.nerc.ac.uk/sparql/",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://www.bodc.ac.uk/products/web_services/vocab/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.bodc.ac.uk/products/web_services/vocab/",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://www.bodc.ac.uk/products/web_services/vocab/documents/nvs2.0_documentation.pdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.bodc.ac.uk/products/web_services/vocab/documents/nvs2.0_documentation.pdf",
+    "mediaType" : "pdf:0_documentation"
+  } ],
+  "@context" : {
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

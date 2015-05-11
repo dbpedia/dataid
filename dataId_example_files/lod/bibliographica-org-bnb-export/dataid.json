@@ -1,0 +1,158 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/bibliographica-org-bnb-export/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/bibliographica-org-bnb-export/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bibliographica-org-bnb-export/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:bosteen@gmail.com",
+    "name" : "Ben O'Steen"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bibliographica-org-bnb-export/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:bosteen@gmail.com",
+    "name" : "Ben O'Steen"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bibliographica-org-bnb-export/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/bibliographica-org-bnb-export/dataid#contributor", "http://dataid.dbpedia.org/lod/bibliographica-org-bnb-export/dataid#creator" ],
+    "dct:description" : "An NQuads representation of the British National Bibliography (BNB) dataset from the British Library. (http://ckan.net/package/jiscopenbib-bl_bnb-1)\n\nMain differences:\n\n- The blank nodes used for the record, people and organisations within the set have been given simple URIs (of the form /entry/BB1000 for a record for example)\n\n- Birth date and Death date for authors have been recorded in the RDF, rather than left as text fields.\n\n- Series has also been given a URI rather than a blank node, so that they can be referenced.\n\n- All 'Entities' (people, organisations) are have RDF information about themselves within their own graph, as this allows for later alterations/corrections/etc.",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "Bibliographica.org BNB export",
+    "rdfs:label" : "bibliographica-org-bnb-export",
+    "distribution" : [ "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc13.xml.nquads.gz", "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc04.xml.nquads.gz", "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc15.xml.nquads.gz", "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc12.xml.nquads.gz", "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc10.xml.nquads.gz", "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc14.xml.nquads.gz", "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc05.xml.nquads.gz", "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc07.xml.nquads.gz", "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc02.xml.nquads.gz", "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc09.xml.nquads.gz", "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc17.xml.nquads.gz", "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc03.xml.nquads.gz", "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc06.xml.nquads.gz", "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc16.xml.nquads.gz", "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc01.xml.nquads.gz", "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc11.xml.nquads.gz", "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc08.xml.nquads.gz" ],
+    "keyword" : [ "format-rdf", "bibliography", "bibliographic" ],
+    "landingPage" : "http://datahub.io/dataset/bibliographica-org-bnb-export"
+  }, {
+    "@id" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc01.xml.nquads.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc01.xml.nquads.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc02.xml.nquads.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc02.xml.nquads.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc03.xml.nquads.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc03.xml.nquads.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc04.xml.nquads.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc04.xml.nquads.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc05.xml.nquads.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc05.xml.nquads.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc06.xml.nquads.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc06.xml.nquads.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc07.xml.nquads.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc07.xml.nquads.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc08.xml.nquads.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc08.xml.nquads.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc09.xml.nquads.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc09.xml.nquads.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc10.xml.nquads.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc10.xml.nquads.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc11.xml.nquads.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc11.xml.nquads.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc12.xml.nquads.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc12.xml.nquads.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc13.xml.nquads.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc13.xml.nquads.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc14.xml.nquads.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc14.xml.nquads.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc15.xml.nquads.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc15.xml.nquads.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc16.xml.nquads.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc16.xml.nquads.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc17.xml.nquads.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ia600608.us.archive.org/35/items/Bibliographica.orgBnbDataset/BNBrdfdc17.xml.nquads.gz",
+    "mediaType" : "gzip::nquads"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

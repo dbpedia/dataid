@@ -1,0 +1,69 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/asit/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/asit/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://www.purl.org/ASIt/RDF/asit-schema.rdf">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.purl.org/ASIt/RDF/asit-schema.rdf"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.purl.org/asit/RDF">
+    <dcat:mediaType>XML</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.purl.org/asit/RDF"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://ims.dei.unipd.it/websites/ASIt/RDF/asit-data.rdf">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://ims.dei.unipd.it/websites/ASIt/RDF/asit-data.rdf"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/asit/dataid#dataset">
+    <dcat:keyword>dialect</dcat:keyword>
+    <dcat:distribution rdf:resource="http://ims.dei.unipd.it/websites/ASIt/RDF/asit-data.rdf"/>
+    <dcat:distribution rdf:resource="http://www.purl.org/asit/RDF"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/asit/dataid#creator">
+        <foaf:name>Gianmaria Silvello</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>Italian</dcat:keyword>
+    <dcat:keyword>questionnaire</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >asit</rdfs:label>
+    <dcat:keyword>linguistics</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/asit/dataid#contributor">
+        <foaf:name>Gianmaria Silvello</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/asit"/>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >420000</void:triples>
+    <dcat:keyword>llod</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Atlante Sintattico d'Italia, Syntactic Atlas of Italy (ASIt) enterprise builds on a long standing tradition of collecting and analysing linguistic corpora, which has originated different efforts and projects over the years. ASIt accounts for minimally different variants within a sample of closely related languages, thus it does not need a thorough part of speech (POS) disambiguation, since the "trivial" identification of basic POS (e.g. Nouns vs Verbs) is not enough to capture cross-linguistic differences between closely related languages. Secondly, the linguistic variants cannot be reduced to lexical distinctions only, i.e. syntactic differences are in general unpredictable on the basis of the properties of single lexical items. A specific tag set designed to capture sentence-level phenomena without taking into consideration POS tags is needed. As a consequence, while other tag sets are designed to carry out a gross linguistic analysis of a vast corpus, the ASIt tag set aims to capture fine-grained grammatical differences by comparing various dialectal translations of the same sentence. Moreover, in order to pin down these subtle asymmetries, the linguistic analysis must be carried out manually.
+
+To explain why the needs for ASIt are so special we have to take into consideration two different aspects: the nature of Italian dialects, and the kind of linguistic theory ASIt aims to interact with. The Italian dialectal area presents a kind of variation that involves parametric choices affecting many general aspects of syntax, morphology, and phonology. The kind of information we want to gather involves not only the presence of a certain element, but also the absence of an element; an element can be omitted only in some constructions and in conjunction with specific characteristics of the language. For this reason, ASIt proposed the creation of a specific set of tags starting from a universal core shared by all languages (on the basis of the work done by DynaSAND), and subsequently developing a language-specific periphery which is compatible with other projects.
+
+Dialectal data stored in the ASIt were gathered during a twenty-year-long survey investigating the distribution of several grammatical phenomena across the dialects of Italy. These data and information were collected by means of questionnaires formed by sets of Italian sentences: dialectal speakers were asked to translate them into their dialects and write their translations in the questionnaire; therefore, each questionnaire is associated with many parallel dialectal translations. At present, there are eight different questionnaires written in Italian and almost 500 questionnaires, corresponding to the eight Italian questionnaires, written in more than 240 different dialects, for a total of more than 54,000 sentences and more than 40,000 tags stored in the data resource managed by the ASIt digital library system.</dct:description>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/asit/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/asit/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >130</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>corpus</dcat:keyword>
+    <dcat:distribution rdf:resource="http://www.purl.org/ASIt/RDF/asit-schema.rdf"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Atlante Sintattico d'Italia (ASIt)</dct:title>
+    <dcat:keyword>syntax</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

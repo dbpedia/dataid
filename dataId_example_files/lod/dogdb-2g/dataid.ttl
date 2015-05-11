@@ -1,0 +1,41 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<https://ckannet-storage.commondatastorage.googleapis.com/2014-04-28T14:27:18.947Z/dogdb-2g-sql.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://ckannet-storage.commondatastorage.googleapis.com/2014-04-28T14:27:18.947Z/dogdb-2g-sql.gz> ;
+        dcat:mediaType    "sql" .
+
+<http://dataid.dbpedia.org/lod/dogdb-2g/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "dogdb-2g"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/dogdb-2g/dataid#contributor> , <http://dataid.dbpedia.org/lod/dogdb-2g/dataid#creator> ;
+        dct:description         "Baseline data for dogdb (data of government database).  The relational data schema is 629 tables linked by foreign key constraints.  The semantic data is 39 million RDF triples."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-odbl> ;
+        dct:title               "dogdb-2G"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dcat:distribution       <https://ckannet-storage.commondatastorage.googleapis.com/2014-04-28T14:27:18.947Z/dogdb-2g-sql.gz> , <https://ckannet-storage.commondatastorage.googleapis.com/2014-04-28T14:18:06.023Z/dogdb-2g-nt.gz> ;
+        dcat:keyword            "format-sql" , "data.gov" , "benchmark" , "format-rdf" ;
+        dcat:landingPage        <http://datahub.io/dataset/dogdb-2g> .
+
+<http://dataid.dbpedia.org/lod/dogdb-2g/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:techentin.robert@mayo.edu" ;
+        foaf:name  "Bob Techentin" .
+
+<http://dataid.dbpedia.org/lod/dogdb-2g/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/dogdb-2g/dataid#dataset" .
+
+<https://ckannet-storage.commondatastorage.googleapis.com/2014-04-28T14:18:06.023Z/dogdb-2g-nt.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://ckannet-storage.commondatastorage.googleapis.com/2014-04-28T14:18:06.023Z/dogdb-2g-nt.gz> ;
+        dcat:mediaType    "n-triples" .
+
+<http://dataid.dbpedia.org/lod/dogdb-2g/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:techentin.robert@mayo.edu" ;
+        foaf:name  "Bob Techentin" .

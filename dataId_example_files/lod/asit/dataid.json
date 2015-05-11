@@ -1,0 +1,109 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/asit/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/asit/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/asit/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "name" : "Gianmaria Silvello"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/asit/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Gianmaria Silvello"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/asit/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/asit/dataid#creator", "http://dataid.dbpedia.org/lod/asit/dataid#contributor" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/asit/dataid#links_dbpedia",
+    "dct:description" : "The Atlante Sintattico d'Italia, Syntactic Atlas of Italy (ASIt) enterprise builds on a long standing tradition of collecting and analysing linguistic corpora, which has originated different efforts and projects over the years. ASIt accounts for minimally different variants within a sample of closely related languages, thus it does not need a thorough part of speech (POS) disambiguation, since the \"trivial\" identification of basic POS (e.g. Nouns vs Verbs) is not enough to capture cross-linguistic differences between closely related languages. Secondly, the linguistic variants cannot be reduced to lexical distinctions only, i.e. syntactic differences are in general unpredictable on the basis of the properties of single lexical items. A specific tag set designed to capture sentence-level phenomena without taking into consideration POS tags is needed. As a consequence, while other tag sets are designed to carry out a gross linguistic analysis of a vast corpus, the ASIt tag set aims to capture fine-grained grammatical differences by comparing various dialectal translations of the same sentence. Moreover, in order to pin down these subtle asymmetries, the linguistic analysis must be carried out manually.\n\nTo explain why the needs for ASIt are so special we have to take into consideration two different aspects: the nature of Italian dialects, and the kind of linguistic theory ASIt aims to interact with. The Italian dialectal area presents a kind of variation that involves parametric choices affecting many general aspects of syntax, morphology, and phonology. The kind of information we want to gather involves not only the presence of a certain element, but also the absence of an element; an element can be omitted only in some constructions and in conjunction with specific characteristics of the language. For this reason, ASIt proposed the creation of a specific set of tags starting from a universal core shared by all languages (on the basis of the work done by DynaSAND), and subsequently developing a language-specific periphery which is compatible with other projects.\n\nDialectal data stored in the ASIt were gathered during a twenty-year-long survey investigating the distribution of several grammatical phenomena across the dialects of Italy. These data and information were collected by means of questionnaires formed by sets of Italian sentences: dialectal speakers were asked to translate them into their dialects and write their translations in the questionnaire; therefore, each questionnaire is associated with many parallel dialectal translations. At present, there are eight different questionnaires written in Italian and almost 500 questionnaires, corresponding to the eight Italian questionnaires, written in more than 240 different dialects, for a total of more than 54,000 sentences and more than 40,000 tags stored in the data resource managed by the ASIt digital library system.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "Atlante Sintattico d'Italia (ASIt)",
+    "triples" : "420000",
+    "rdfs:label" : "asit",
+    "distribution" : [ "http://ims.dei.unipd.it/websites/ASIt/RDF/asit-data.rdf", "http://www.purl.org/asit/RDF", "http://www.purl.org/ASIt/RDF/asit-schema.rdf" ],
+    "keyword" : [ "dialect", "Italian", "questionnaire", "linguistics", "llod", "lod", "corpus", "syntax" ],
+    "landingPage" : "http://datahub.io/dataset/asit"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/asit/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/asit/dataid#dataset",
+    "triples" : "130"
+  }, {
+    "@id" : "http://ims.dei.unipd.it/websites/ASIt/RDF/asit-data.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ims.dei.unipd.it/websites/ASIt/RDF/asit-data.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://www.purl.org/ASIt/RDF/asit-schema.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.purl.org/ASIt/RDF/asit-schema.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://www.purl.org/asit/RDF",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.purl.org/asit/RDF",
+    "mediaType" : "XML"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,61 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://http://www.open-biomed.org.uk/service/flyted/probes>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://http://www.open-biomed.org.uk/service/flyted/probes> ;
+        dcat:mediaType    "api" .
+
+<http://www.open-biomed.org.uk/service/flyted/records/flybase/{fbgn}>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.open-biomed.org.uk/service/flyted/records/flybase/{fbgn}> ;
+        dcat:mediaType    "api" .
+
+<http://dataid.dbpedia.org/lod/flyted/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Jun Zhao" .
+
+<http://www.open-biomed.org.uk/sparql/endpoint/flyted>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://www.open-biomed.org.uk/sparql/endpoint/flyted> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://www.open-biomed.org.uk/service/flyted/records/probe/{probe}>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.open-biomed.org.uk/service/flyted/records/probe/{probe}> ;
+        dcat:mediaType    "api" .
+
+<http://dataid.dbpedia.org/lod/flyted/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/flyted/dataid#dataset" .
+
+<http://www.open-biomed.org.uk/service/flyted/probes/flybase/{fbgn}>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.open-biomed.org.uk/service/flyted/probes/flybase/{fbgn}> ;
+        dcat:mediaType    "api" .
+
+<http://www.open-biomed.org.uk/open-biomed-data/flyted-release-fm3-20110210.tar.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.open-biomed.org.uk/open-biomed-data/flyted-release-fm3-20110210.tar.gz> ;
+        dcat:mediaType    "rdf/turtle" .
+
+<http://dataid.dbpedia.org/lod/flyted/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:name  "Jun Zhao" .
+
+<http://dataid.dbpedia.org/lod/flyted/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "flyted"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/flyted/dataid#creator> , <http://dataid.dbpedia.org/lod/flyted/dataid#contributor> ;
+        dct:description         ""^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "Flyted"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:sparqlEndpoint     <http://www.open-biomed.org.uk/sparql/endpoint/flyted> ;
+        void:triples            "63004"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:distribution       <http://www.open-biomed.org.uk/open-biomed-data/flyted-release-fm3-20110210.tar.gz> , <http://www.open-biomed.org.uk/service/flyted/records/probe/{probe}> , <http://http://www.open-biomed.org.uk/service/flyted/probes> , <http://www.open-biomed.org.uk/service/flyted/records/flybase/{fbgn}> , <http://www.open-biomed.org.uk/sparql/endpoint/flyted> , <http://www.open-biomed.org.uk/service/flyted/probes/flybase/{fbgn}> ;
+        dcat:keyword            "linktoflybase" , "open-biomed" , "linkeddata" , "flyted" ;
+        dcat:landingPage        <http://datahub.io/dataset/flyted> .

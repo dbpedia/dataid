@@ -1,0 +1,36 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/sameas-org/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:hg@ecs.soton.ac.uk" ;
+        foaf:name  "Hugh Glaser & Ian Millard" .
+
+<http://dataid.dbpedia.org/lod/sameas-org/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/sameas-org/dataid#dataset" .
+
+<http://sameas.org/dumps.tgz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://sameas.org/dumps.tgz> ;
+        dcat:mediaType    "application/x-ntriples" .
+
+<http://dataid.dbpedia.org/lod/sameas-org/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "sameas-org"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/sameas-org/dataid#contributor> , <http://dataid.dbpedia.org/lod/sameas-org/dataid#creator> ;
+        dct:description         "A simple service that takes a Linked Data URI and gives back other URIs that may be the same Thing.  \nFormat of return can be in rdf+xml, rdf+n3, JSON or plain text.  \nThe data is a filtered version of the equivalence data that has been published on the Web of Data.  "^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "sameAs.org"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dcat:distribution       <http://sameas.org/dumps.tgz> ;
+        dcat:keyword            "skos-exactmatc" , "owl-sameas" , "linking" , "linkeddata" , "co-reference" , "rdf" , "linked-open-data" , "opendatachallenge" , "identity" , "lod" , "format-rdf" , "lodcloud.nolinks" , "linked-data" , "lodcloud.unconnected" ;
+        dcat:landingPage        <http://datahub.io/dataset/sameas-org> .
+
+<http://dataid.dbpedia.org/lod/sameas-org/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:hg@ecs.soton.ac.uk" ;
+        foaf:name  "Hugh Glaser" .

@@ -1,0 +1,75 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_nytimes-linked-open-data>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/nytimes-linked-open-data> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset> ;
+        void:triples         "912"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset> ;
+        void:triples         "986"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://gnoss.com/gnoss.owl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://gnoss.com/gnoss.owl> ;
+        dcat:mediaType    "meta/owl" .
+
+<http://deusto.gnoss.com/voidDeustoEntrepreneurship.n3>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://deusto.gnoss.com/voidDeustoEntrepreneurship.n3> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_freebase>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/freebase/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset> ;
+        void:triples         "656"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_geonames-semantic-web>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/geonames-semantic-web> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset> ;
+        void:triples         "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_gnoss>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/gnoss> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset> ;
+        void:triples         "13"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "deustoentrepreneurship"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#creator> , <http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_freebase> , <http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_geonames-semantic-web> , <http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_dbpedia> , <http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_nytimes-linked-open-data> , <http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_gnoss> ;
+        dct:description         "<p>\n<a href=\"http://deusto.gnoss.com/comunidad/deustoentrepreneurship\">Deusto Entrepreneurship: sharing business knowledge</a>, promoted by the Deusto Entrepreneurship Center at the University of Deusto, aims to update and connect knowledge of entrepreneurs, researchers and professionals on entrepreneurship and business. \n</p>\n<p>\nDeusto Entrepreneurship works with <a href=\"http://gnoss.com/\">GNOSS software (RIAM Intelearning Lab)</a>. RIAM is a company that develops semantic technology for the creation of specialized networks and linked markets. Deusto Entrepreneurship is a source of information and opinion especially recommended for people who visualize an opportunity and need inspiration, approach and support to launch a business. It offers a selection of 257 resources on entrepreneurship (September 2012).\n</p>"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://creativecommons.org/licenses/by-nc/2.0/> ;
+        dct:title               "Deusto Entrepreneurship: sharing business knowledge"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://deusto.gnoss.com/en/community/deustoentrepreneurship/resource/Manual-basico-para-emprender-SPRI/eb1254c3-04ce-448b-b9f4-3193e757d328?rdf> , <http://deusto.gnoss.com/en/community/deustoentrepreneurship/resource/Entrepreneurship-and-Technology-The-adventure-of-/521bd532-8791-4930-8889-812dfbaff580?rdf> , <http://deusto.gnoss.com/en/community/deustoentrepreneurship/advanced-search/tag/innovation?rdf> ;
+        void:triples            "20873"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://deusto.gnoss.com/en/community/deustoEntrepreneurship" ;
+        dcat:distribution       <http://deusto.gnoss.com/voidDeustoEntrepreneurship.n3> , <http://gnoss.com/gnoss.owl> ;
+        dcat:keyword            "universidad de deusto" , "sharing business knowledge" , "no-proprietary-vocab" , "wrapper" , "business knowledge" , "country.es" , "schemata" , "socialweb" , "business angels" , "format-rdfg" , "language-spa" , "country-spain" , "format-skos" , "emprendimiento" , "lod" , "no-vocab-mappings" , "format-dc" , "business models" , "format-sioc" , "format-foaf" , "provenance-metadata" , "deusto" , "usergeneratedcontent" , "format-wot" , "skos" , "sp" , "dc" , "deusto entrepreneurship" , "license-metadata" , "entrepreneurship" , "format-dcam" , "foaf" , "spain" , "sioc" , "published-by-third-party" ;
+        dcat:landingPage        <http://datahub.io/dataset/deustoentrepreneurship> .
+
+<http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:gnoss@gnoss.com" ;
+        foaf:name  "GNOSS Team" .
+
+<http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:gnoss@gnoss.com" ;
+        foaf:name  "GNOSS Team" .
+
+<http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset" .

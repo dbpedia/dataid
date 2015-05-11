@@ -1,0 +1,107 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/radatana/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/radatana/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://www.bibsys.no/linked_data/authority">
+    <dcat:mediaType>application/x-ntriples</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.bibsys.no/linked_data/authority"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/radatana/dataid#dataset">
+    <dcat:distribution rdf:resource="http://www.bibsys.no/linked_data/authority"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >radatana</rdfs:label>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/radatana/dataid#links_dnb-gemeinsame-normdatei">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/radatana/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >209681</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://def.bibsys.no/xmlns/radatana/1.0#">
+        <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://def.bibsys.no/xmlns/radatana/1.0#"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/radatana"/>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >9370074</void:triples>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://data.bibsys.no/data/query_authority.html">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://data.bibsys.no/data/query_authority.html"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>format-dc</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Rådata nå!</dct:title>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-pddl"/>
+    <dcat:keyword>format-whois</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/radatana/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/radatana/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >30346</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-radatana</dcat:keyword>
+    <void:uriSpace>http://data.bibsys.no/data/notrbib/authorityentry/</void:uriSpace>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/radatana/dataid#creator">
+        <foaf:mbox>mailto:support@bibsys.no</foaf:mbox>
+        <foaf:name>BIBSYS</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>persons</dcat:keyword>
+    <dcat:keyword>linkeddata</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/radatana/dataid#links_viaf">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/viaf/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/radatana/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >311154</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dcat:keyword>linked-open-data</dcat:keyword>
+    <dcat:keyword>bibliographic</dcat:keyword>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dcat:keyword>norwegian</dcat:keyword>
+    <void:exampleResource rdf:resource="http://data.bibsys.no/data/notrbib/authorityentry/x90061718"/>
+    <dcat:keyword>authorities</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This is an RDF representation of the personal name authorities in the BIBSYS authority file, the dataset was created with funding from the Norwegian Archive, Library and Museum Authority (ABM-utvikling) by BIBSYS and NTNU University Library.
+
+See also [http://brinxmat.posterous.com/bibsys-personal-name-linked-open-data-publish](http://brinxmat.posterous.com/bibsys-personal-name-linked-open-data-publish).</dct:description>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <dcat:keyword>publications</dcat:keyword>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dcat:keyword>linked-data</dcat:keyword>
+    <dcat:keyword>format-xsd</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://data.bibsys.no/data/query_authority.html"/>
+    <dcat:keyword>format-owl</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>lld</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/radatana/dataid#contributor">
+        <foaf:mbox>mailto:support@bibsys.no</foaf:mbox>
+        <foaf:name>support@bibsys.no</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+  </dataid:Dataset>
+</rdf:RDF>

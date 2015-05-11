@@ -1,0 +1,123 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/smartlink/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/smartlink/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/smartlink/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:stefan.dietze@gmx.de",
+    "name" : "SmartLink team"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/smartlink/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:stefan.dietze@gmx.de",
+    "name" : "SmartLink team "
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/smartlink/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/smartlink/dataid#creator", "http://dataid.dbpedia.org/lod/smartlink/dataid#contributor" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/smartlink/dataid#links_iserve",
+    "dct:description" : "SmartLink exposes Linked Data about publicly available Web services and Web APIs. In particular, the SmartLink data set extends existing service description schemas with a light-weight schema for non-functional properties. ",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "SmartLink: Linked Services Non-Functional Properties",
+    "exampleResource" : "http://smartlink.open.ac.uk/smartlink/resource/services/3a76bf75-5cfc-411d-940d-bab8a4a407f1#LUPEDIA-Lookup-Service",
+    "sparqlEndpoint" : "http://smartlink.open.ac.uk/smartlink/sparql",
+    "triples" : "2829",
+    "uriSpace" : "http://smartlink.open.ac.uk/smartlink/resource/",
+    "rdfs:label" : "smartlink",
+    "distribution" : [ "http://smartlink.open.ac.uk/smartlink/sparql", "http://purl.org/smartlink/service-nfp" ],
+    "keyword" : [ "format-geo", "format-rdfs", "crossdomain", "lod", "format-sawsdl", "iserve", "format-api", "published-by-producer", "sparql-endpoint", "format-rdf", "format-http", "deref-vocab", "sparql" ],
+    "landingPage" : "http://datahub.io/dataset/smartlink"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/smartlink/dataid#links_iserve",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/iserve/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/smartlink/dataid#dataset",
+    "triples" : "233"
+  }, {
+    "@id" : "http://purl.org/smartlink/service-nfp",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/smartlink/service-nfp",
+    "mediaType" : "XML"
+  }, {
+    "@id" : "http://smartlink.open.ac.uk/smartlink/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://smartlink.open.ac.uk/smartlink/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

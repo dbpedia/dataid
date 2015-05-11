@@ -1,0 +1,52 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/npg-catalogs/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/npg-catalogs/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/npg-catalogs/dataid#dataset">
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph&lt;http://ns.nature.com/graphs/catalogs&gt;{?s?p?o.}}limit25">
+        <dcat:mediaType>RDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph&lt;http://ns.nature.com/graphs/catalogs&gt;{?s?p?o.}}limit25"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>physical sciences</dcat:keyword>
+    <dcat:keyword>health sciences</dcat:keyword>
+    <dcat:keyword>bibliographic</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Graph of npg:Catalog triples. The npg:Catalog objects model descriptor lists. </dct:description>
+    <dcat:keyword>life sciences</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/npg-catalogs/dataid#contributor">
+        <foaf:mbox>mailto:developers@nature.com</foaf:mbox>
+        <foaf:name>NPG Developers</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>format-npg</dcat:keyword>
+    <dcat:keyword>format-dcterm</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Nature Publishing Group - Catalogs</dct:title>
+    <dcat:keyword>sciences</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/npg-catalogs"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/npg-catalogs/dataid#creator">
+        <foaf:mbox>mailto:developers@nature.com</foaf:mbox>
+        <foaf:name>NPG</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>science</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >npg-catalogs</rdfs:label>
+    <dcat:keyword>academic</dcat:keyword>
+    <dcat:keyword>publications</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <dcat:keyword>journals</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

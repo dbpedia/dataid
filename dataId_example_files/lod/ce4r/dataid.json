@@ -1,0 +1,144 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/ce4r/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/ce4r/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ce4r/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:gnoss@gnoss.com",
+    "name" : "GNOSS Team"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ce4r/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:gnoss@gnoss.com",
+    "name" : "GNOSS Team"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ce4r/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/ce4r/dataid#creator", "http://dataid.dbpedia.org/lod/ce4r/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/ce4r/dataid#links_freebase", "http://dataid.dbpedia.org/lod/ce4r/dataid#links_prospect-and-trends-gnoss", "http://dataid.dbpedia.org/lod/ce4r/dataid#links_gnoss", "http://dataid.dbpedia.org/lod/ce4r/dataid#links_nytimes-linked-open-data", "http://dataid.dbpedia.org/lod/ce4r/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/ce4r/dataid#links_geonames-semantic-web" ],
+    "dct:description" : "<p> Knowledge plataform launched by Corporate Excellence – Centre for reputation leadership, a new think tank to professionalize management of intangible assets and contribute to the development of strong brands with good reputation and able to compete in to the global market. In this community, members will be able to access to a lot of contents as article, thesis, insights, cases and so on, related to intangible management. In addition, It is possible to share knowledge and make comments.</p>\n<p>CE4R works with <a href=\"http://gnoss.com/\">GNOSS software (RIAM Intelearning Lab)</a>. RIAM is a company that develops semantic technology for the creation of specialized networks and linked markets. It includes a facet-based search engine and enriched contexts. Both are developments by GNOSS.</p>\n\n<p> Plataforma de conocimiento impulsada por Corporate Excellence – Centre for reputation leadership, un laboratorio de ideas para profesionalizar la gestión de los activos intangibles y para contribuir al desarrollo de marcas con una reputación excelente capaces de competir en los mercados globales. En la comunidad podrás acceder a numerosos contenidos (artículos, casos, noticias, tesis, insights, etc.) en torno a la gestión de intangibles, así como comentarlos y compartirlos.</p>\n<p>CE4R trabaja con <a href=\"http://gnoss.com/\">software de GNOSS (RIAM Intelearning Lab)</a>. RIAM es una compañía que desarrolla tecnología semántica para la creación de redes especializadas y mercados enlazados. El proyecto Incluye un buscador facetado y contextos enriquecidos. Ambos son desarrollos de GNOSS.</p>",
+    "license" : "http://creativecommons.org/licenses/by-nc/2.0/",
+    "dct:title" : "CE4R Knowledge Centre Corporate Excellence – Centre for Reputation Leadership",
+    "exampleResource" : [ "http://corporateexcellence.net/en/community/patronato/advanced-search/tag/stakeholders?rdf", "http://corporateexcellence.net/en/community/patronato/resource/Study-The-Chief-Communications-Officer-Korn-Ferr/b032b83c-93f7-4200-ba8b-2d5be7389247?rdf", "http://corporateexcellence.net/en/community/patronato/resource/Tesis-Creacion-de-una-nueva-metodologia-multistak/46f6bdff-6268-4b82-9ed7-7359c4036285" ],
+    "triples" : "4866",
+    "uriSpace" : "http://corporateexcellence.net/en/community/patronato",
+    "rdfs:label" : "ce4r",
+    "distribution" : [ "http://gnoss.com/gnoss.owl", "http://museos.gnoss.com/voidLaboratorioDeIdeas.n3" ],
+    "keyword" : [ "provenance-metadata", "no-vocab-mappings", "sioc", "métricas", "public affairs", "format-dcam", "intangibles", "centre for reputation leadership", "Brand", "format-rdfg", "skos", "format-foaf", "reputación", "Corporate gobernance", "reputation", "RSC", "marca", "usergeneratedcontent", "country reputation", "socialweb", "communication", "marca país", "reputation economy", "schemata", "country.es", "format-dc", "country-spain", "lod", "foaf", "no-proprietary-vocab", "reputación país", "corporate Excellence", "published-by-third-party", "format-sioc", "ética", "wrapper", "intangible assets", "format-wot", "comunicación", "economía de la reputación", "language-spa", "scr", "laboratorio de ideas", "format-skos", "metrics", "license-metadata", "asuntos públicos", "gobierno corporativo", "corporate excellence", "sp", "spain", "dc" ],
+    "landingPage" : "http://datahub.io/dataset/ce4r"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ce4r/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ce4r/dataid#dataset",
+    "triples" : "181"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ce4r/dataid#links_freebase",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ce4r/dataid#dataset",
+    "triples" : "169"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ce4r/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/geonames-semantic-web",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ce4r/dataid#dataset",
+    "triples" : "1"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ce4r/dataid#links_gnoss",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/gnoss",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ce4r/dataid#dataset",
+    "triples" : "144"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ce4r/dataid#links_nytimes-linked-open-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/nytimes-linked-open-data",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ce4r/dataid#dataset",
+    "triples" : "178"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ce4r/dataid#links_prospect-and-trends-gnoss",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/prospect-and-trends-gnoss",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ce4r/dataid#dataset",
+    "triples" : "128"
+  }, {
+    "@id" : "http://gnoss.com/gnoss.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://gnoss.com/gnoss.owl",
+    "mediaType" : "meta/owl"
+  }, {
+    "@id" : "http://museos.gnoss.com/voidLaboratorioDeIdeas.n3",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://museos.gnoss.com/voidLaboratorioDeIdeas.n3",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

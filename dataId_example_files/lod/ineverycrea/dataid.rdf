@@ -1,0 +1,176 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/ineverycrea/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/ineverycrea/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/ineverycrea/dataid#dataset">
+    <dcat:keyword>format-wot</dcat:keyword>
+    <dcat:keyword>actividades interactivas</dcat:keyword>
+    <dcat:keyword>bachillerato</dcat:keyword>
+    <dcat:keyword>recursos educativos originales</dcat:keyword>
+    <dcat:keyword>wrapper</dcat:keyword>
+    <dcat:keyword>herramientas 2.0</dcat:keyword>
+    <dcat:keyword>educación</dcat:keyword>
+    <dcat:keyword>format-sioc</dcat:keyword>
+    <dcat:keyword>format-rdfg</dcat:keyword>
+    <dcat:keyword>red educativa</dcat:keyword>
+    <dcat:keyword>schemata</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://ineverycrea.net/voidIneveryCREAGNOSS.n3">
+        <dcat:mediaType>meta/void</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://ineverycrea.net/voidIneveryCREAGNOSS.n3"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <void:uriSpace>http://ineverycrea.net/</void:uriSpace>
+    <dcat:keyword>country-spain</dcat:keyword>
+    <dcat:keyword>country.es</dcat:keyword>
+    <dcat:keyword>format-tsioc</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/ineverycrea"/>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dcat:keyword>proyecto colaborativo</dcat:keyword>
+    <dcat:keyword>format-cc</dcat:keyword>
+    <dcat:keyword>spain</dcat:keyword>
+    <dcat:keyword>educación infantil</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>material educativo</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_geonames-semantic-web">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/ineverycrea/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >143</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>unidades didácticas</dcat:keyword>
+    <dcat:keyword>educación 2.0</dcat:keyword>
+    <dcat:keyword>format-dcam</dcat:keyword>
+    <dcat:keyword>pedagogía</dcat:keyword>
+    <void:exampleResource rdf:resource="http://ineverycrea.net/en/community/ineverycrea/advanced-search/tag/TIC?rdf"/>
+    <dcat:keyword>skos</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dcat:keyword>pizarra digital</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ineverycrea</rdfs:label>
+    <dcat:keyword>language-spa</dcat:keyword>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_freebase">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/freebase/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/ineverycrea/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3709</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_gnoss">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/gnoss/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/ineverycrea/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1327</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>usergeneratedcontent</dcat:keyword>
+    <dcat:keyword>educación primaria</dcat:keyword>
+    <dcat:keyword>sioc</dcat:keyword>
+    <dcat:keyword>innovación educativa</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_nytimes-linked-open-data">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/nytimes-linked-open-data/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/ineverycrea/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1115</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://gnoss.com/gnoss.owl">
+        <dcat:mediaType>meta/owl</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://gnoss.com/gnoss.owl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>videos educativos</dcat:keyword>
+    <dcat:keyword>format-dc</dcat:keyword>
+    <dcat:keyword>foaf</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3494839</void:triples>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/ineverycrea/dataid#creator">
+        <foaf:mbox>mailto:gnoss@gnoss.com</foaf:mbox>
+        <foaf:name>GNOSS Team</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/ineverycrea/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1279</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>ESO</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >IneveryCREA, la comunidad de la creatividad educativa</dct:title>
+    <dcat:keyword>creatividad educativa</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:keyword>plataforma educativa</dcat:keyword>
+    <dcat:keyword>dc</dcat:keyword>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_ineverycrea-argentina">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/ineverycrea-argentina/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/ineverycrea/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >12140</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>escuela 2.0</dcat:keyword>
+    <dcat:keyword>socialweb</dcat:keyword>
+    <dcat:keyword>sp</dcat:keyword>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <void:exampleResource rdf:resource="http://ineverycrea.net/comunidad/ineverycrea/recurso/Trabajas-en-tu-aula-con-herramientas-del-entorno-/a56fcf5f-86c9-44fd-8a34-27cfc8936cd8?rdf"/>
+    <dcat:keyword>format-dcterm</dcat:keyword>
+    <dcat:keyword>profesores</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;p&gt;
+&lt;a href="http://ineverycrea.net/"&gt;IneveryCREA (Santillana)&lt;/a&gt; is the community of educational creativity for teachers and education professionals to create, develop and share original educational resources in Spain.
+&lt;/p&gt;
+&lt;p&gt;
+Santillana is the leading textbook and general-interest publishing group in Spain and Latin America, and the most prestigious publisher of literary works in Spanish. With more than 108 million books sold in 2010, the company has been synonymous with quality, innovation and service to teaching staff since its inception in 1960.
+&lt;/p&gt;
+&lt;p&gt;
+IneveryCREA (Santillana) works with &lt;a href="http://gnoss.com/"&gt;GNOSS software (RIAM Intelearning Lab)&lt;/a&gt;. RIAM is a company that develops semantic technology for the creation of specialized networks and linked markets. IneveryCREA offers a selection of 2,554 resources (November 2012). It includes a facet-based search engine and enriched contexts. Both are developments by GNOSS.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href="http://ineverycrea.net/"&gt;IneveryCREA (Santillana)&lt;/a&gt; es la comunidad de la creatividad educativa para profesores y profesionales de la educación que crean, desarrollan y comparten recursos educativos originales.
+&lt;/p&gt;
+&lt;p&gt; Santillana es el grupo editorial líder en texto escolar y ediciones generales en España y América Latina, y la referencia en el campo de la creación literaria en lengua española. Con más de 108 millones de libros vendidos en el año 2010, es sinónimo de calidad, innovación y servicio al profesorado desde su creación en 1960.&lt;/p&gt;
+&lt;p&gt;
+IneveryCREA (Santillana) trabaja con &lt;a href="http://gnoss.com/"&gt;software de GNOSS (RIAM Intelearning Lab)&lt;/a&gt;. RIAM es una compañía que desarrolla tecnología semántica para la creación de redes especializadas y mercados enlazados. IneveryCREA ofrece en este caso una selección de 2.554 recursos (Noviembre 2012). Incluye un buscador facetado y contextos enriquecidos. Ambos son desarrollos de GNOSS.
+&lt;/p&gt;</dct:description>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/ineverycrea/dataid#links_didactalia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/didactalia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/ineverycrea/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >18245</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/"/>
+    <void:exampleResource rdf:resource="http://ineverycrea.net/comunidad/ineverycrea/recurso/Tecnicas-de-desarrollo-de-la-Creatividad-Mapas-Me/4a196d2c-a32a-4cef-9d07-dced34ef05e6?rdf"/>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/ineverycrea/dataid#contributor">
+        <foaf:mbox>mailto:gnoss@gnoss.com</foaf:mbox>
+        <foaf:name>GNOSS Team</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+  </dataid:Dataset>
+</rdf:RDF>

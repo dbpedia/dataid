@@ -1,0 +1,43 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/vivo-scripps-research-institute/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "vivo-scripps-research-institute"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/vivo-scripps-research-institute/dataid#contributor> , <http://dataid.dbpedia.org/lod/vivo-scripps-research-institute/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/vivo-scripps-research-institute/dataid#links_dbpedia > ;
+        dct:description         "VIVO is a research-focused discovery tool that enables collaboration among scientists across all disciplines.\n\nBrowse or search information on people, departments, courses, grants, and publications."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "VIVO Scripps Research Institute"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:triples            "45000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:distribution       <https://commondatastorage.googleapis.com/ckannet-storage/2012-04-02T150245/scripps_export.rdf> ;
+        dcat:keyword            "no-license-metadata" , "no-vocab-mappings" , "no-provenance-metadata" , "format-vitro" , "published-by-producer" , "social-networks" , "education" , "format-rdf" , "lod" , "publications" , "format-rdfs" , "vivo" , "science" , "deref-vocab" ;
+        dcat:landingPage        <http://datahub.io/dataset/vivo-scripps-research-institute> .
+
+<http://dataid.dbpedia.org/lod/vivo-scripps-research-institute/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/vivo-scripps-research-institute/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/vivo-scripps-research-institute/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "VIVO" .
+
+<https://commondatastorage.googleapis.com/ckannet-storage/2012-04-02T150245/scripps_export.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://commondatastorage.googleapis.com/ckannet-storage/2012-04-02T150245/scripps_export.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/vivo-scripps-research-institute/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:hanjia@indiana.edu" ;
+        foaf:name  "Han Jia" .
+
+<http://dataid.dbpedia.org/lod/vivo-scripps-research-institute/dataid#links_dbpedia >
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia > ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/vivo-scripps-research-institute/dataid#dataset> ;
+        void:triples         "58"^^<http://www.w3.org/2001/XMLSchema#int> .

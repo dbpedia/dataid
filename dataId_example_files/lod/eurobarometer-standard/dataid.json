@@ -1,0 +1,122 @@
+{
+  "@graph" : [ {
+    "@id" : "http://api.talis.com/stores/eurobarometer/services/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://api.talis.com/stores/eurobarometer/services/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eurobarometer-standard/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/eurobarometer-standard/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eurobarometer-standard/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Ian Davis"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eurobarometer-standard/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/eurobarometer-standard/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/eurobarometer-standard/dataid#links_reference-data-gov-uk", "http://dataid.dbpedia.org/lod/eurobarometer-standard/dataid#links_eurostat-linked-data" ],
+    "dct:description" : "The standard Eurobarometer was established in 1973. Each survey consists of approximately 1000 face-to-face interviews per country. Reports are published twice yearly. Reproduction is authorized, except for commercial purposes, provided the source is acknowledged. \n\nThis dataset represents the results of these questionnaires as Linked Data using the RDF Datacube Vocabulary. ",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "Standard Eurobarometer",
+    "exampleResource" : [ "http://eurobarometer.publicdata.eu/def/q1a2.rdf", "http://eurobarometer.publicdata.eu/data/question/1.rdf", "http://eurobarometer.publicdata.eu/data/observation/3/1/2009/11.rdf" ],
+    "sparqlEndpoint" : "http://api.talis.com/stores/eurobarometer/services/sparql",
+    "triples" : "1193494",
+    "uriSpace" : "http://eurobarometer.publicdata.eu/data/",
+    "rdfs:label" : "eurobarometer-standard",
+    "distribution" : [ "http://eurobarometer.publicdata.eu/void.ttl", "http://api.talis.com/stores/eurobarometer/services/sparql" ],
+    "keyword" : [ "license-metadata", "lodcloud", "published-by-third-party", "surveys", "opinions", "format-qb", "provenance-metadata", "format-rdfs", "eu-institution", "no-proprietary-vocab", "barometer", "lod", "polls", "latc", "government", "geographic" ],
+    "landingPage" : "http://datahub.io/dataset/eurobarometer-standard"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eurobarometer-standard/dataid#links_eurostat-linked-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/eurostat-linked-data",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eurobarometer-standard/dataid#dataset",
+    "triples" : "85510"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eurobarometer-standard/dataid#links_reference-data-gov-uk",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/reference-data-gov-uk",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eurobarometer-standard/dataid#dataset",
+    "triples" : "50000"
+  }, {
+    "@id" : "http://eurobarometer.publicdata.eu/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://eurobarometer.publicdata.eu/void.ttl",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

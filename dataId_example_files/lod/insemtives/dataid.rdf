@@ -1,0 +1,72 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/insemtives/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/insemtives/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/insemtives/dataid#dataset">
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://services.insemtives.eu/forest/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://services.insemtives.eu/forest/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <void:sparqlEndpoint rdf:resource="http://services.insemtives.eu/forest/sparql"/>
+    <dcat:keyword>incentives</dcat:keyword>
+    <dcat:keyword>tagging</dcat:keyword>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/"/>
+    <dcat:keyword>cloud</dcat:keyword>
+    <dcat:keyword>social</dcat:keyword>
+    <void:uriSpace>http://www.insemtives.eu/lod.php</void:uriSpace>
+    <dcat:keyword>semantics</dcat:keyword>
+    <dcat:keyword>generated</dcat:keyword>
+    <dcat:keyword>access-web</dcat:keyword>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/insemtives/dataid#creator">
+        <foaf:mbox>mailto:stephan.woelger@sti2.at</foaf:mbox>
+        <foaf:name>Stephan Wölger</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>interlinking</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/insemtives"/>
+    <dcat:keyword>lodcloud.nolinks</dcat:keyword>
+    <dcat:keyword>media</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>games</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >From the web page about the INSEMTIVES project:
+
+&gt; INSEMTIVES is about bridging the gap between human and computational intelligence and providing incentives for users to contribute to the massive creation of semantic content.
+
+&gt; INSEMTIVES combines research with development and real-world applications . The foundations are methods and guidelines facilitating semantic content creation in an incentives-driven manner. They underly the INSEMTIVES platform (back-end) and various end-user tools for semantic content creation (front-end).These technology components are used in three case studies targeting the management of enterprise content, the annotation of Web service artifacts, and the management of multimedia in online worlds and games. </dct:description>
+    <dcat:keyword>lod</dcat:keyword>
+    <void:exampleResource rdf:resource="http://services.insemtives.eu/forest/resource?uri=http%3A%2F%2Fdbpedia.org%2Fresource%2FBlackberry%23default%239173&amp;format=rdf"/>
+    <dcat:keyword>seafish</dcat:keyword>
+    <dcat:keyword>semantic</dcat:keyword>
+    <dcat:keyword>lodcloud.unconnected</dcat:keyword>
+    <dcat:keyword>insemtives</dcat:keyword>
+    <dcat:keyword>user</dcat:keyword>
+    <dcat:keyword>service</dcat:keyword>
+    <dcat:keyword>rdf</dcat:keyword>
+    <dcat:keyword>content</dcat:keyword>
+    <dcat:keyword>annotation</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/insemtives/dataid#contributor">
+        <foaf:mbox>mailto:stephan.woelger@sti2.at</foaf:mbox>
+        <foaf:name>Stephan Wölger</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >INSEMTIVES</dct:title>
+    <dcat:keyword>usergeneratedcontent</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >insemtives</rdfs:label>
+  </dataid:Dataset>
+</rdf:RDF>

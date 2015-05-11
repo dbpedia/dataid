@@ -1,0 +1,133 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:josem.alvarez@weso.es",
+    "name" : "Jose María Alvarez Rodríguez"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:josem.alvarez@weso.es",
+    "name" : "Jose María Alvarez Rodríguez at WESO (University of Oviedo)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid#creator", "http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid#contributor" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid#links_http://productontology.org",
+    "dct:description" : "The Combined Nomenclature 2012 is a product scheme classification used to extract statistics.\n\nAuthors:\n\nJose María Alvarez Rodríguez & Jose Emilio Labra Gayo \n\nWESO-University of Oviedo",
+    "license" : "http://www.opendefinition.org/licenses/odc-odbl",
+    "dct:title" : "CN  2012",
+    "exampleResource" : "http://purl.org/weso/pscs/cn/2012/resource/310290000080?output=xml",
+    "sparqlEndpoint" : "http://purl.org/weso/sparql",
+    "triples" : "137484",
+    "uriSpace" : "http://purl.org/weso/pscs/cn/2012/resource",
+    "rdfs:label" : "combined-nomenclature-2012",
+    "distribution" : [ "http://purl.org/weso/datasets/pscs/cn/2012/cn-2012.ttl", "http://purl.org/weso/sparql", "http://purl.org/weso/datasets/pscs/psc-ontology.ttl", "http://purl.org/weso/pscs/cn/2012/resource/ds" ],
+    "keyword" : [ "euroalert", "format-gr", "linkeddata", "lod", "10ders", "university", "provenance-metadata", "pscs", "published-by-third-party", "geodata", "government", "license-metadata", "oviedo", "vocab-mappings", "cn-2012", "procurement", "weso", "format-skosxl", "format-skos", "format-dcterms", "format-dc", "deref-vocab", "e-procurement", "public_contracts", "uniovi", "university-of-oviedo", "linkedopendata" ],
+    "landingPage" : "http://datahub.io/dataset/combined-nomenclature-2012"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid#links_http://productontology.org",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/http://productontology.org",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid#dataset",
+    "triples" : "5110"
+  }, {
+    "@id" : "http://purl.org/weso/datasets/pscs/cn/2012/cn-2012.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/datasets/pscs/cn/2012/cn-2012.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://purl.org/weso/datasets/pscs/psc-ontology.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/datasets/pscs/psc-ontology.ttl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/weso/pscs/cn/2012/resource/ds",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/pscs/cn/2012/resource/ds",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://purl.org/weso/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://purl.org/weso/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

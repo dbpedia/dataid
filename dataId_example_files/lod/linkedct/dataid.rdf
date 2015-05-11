@@ -1,0 +1,124 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/linkedct/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/linkedct/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://data.linkedct.org/">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://data.linkedct.org/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://www.cs.toronto.edu/%7Eoktie/linkedct/linkedct-live-dump-latest.nt.bz2">
+    <dcat:mediaType>application/x-ntriples</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://www.cs.toronto.edu/%7Eoktie/linkedct/linkedct-live-dump-latest.nt.bz2"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://data.linkedct.org/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://data.linkedct.org/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/linkedct/dataid#dataset">
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/linkedct/dataid#links_bio2rdf-pubmed">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/bio2rdf-pubmed/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/linkedct/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >76483</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>health</dcat:keyword>
+    <dcat:keyword>ckanupload.esw.200910</dcat:keyword>
+    <dcat:keyword>linkeddata</dcat:keyword>
+    <dcat:keyword>rdf</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >LinkedCT</dct:title>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/linkedct/dataid#links_fu-berlin-drugbank">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/fu-berlin-drugbank/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/linkedct/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >26047</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:distribution rdf:resource="http://www.cs.toronto.edu/%7Eoktie/linkedct/linkedct-live-dump-latest.nt.bz2"/>
+    <void:exampleResource rdf:resource="http://linkedct.org/resource/condition/chronic-myeloproliferative-disorders/"/>
+    <void:sparqlEndpoint rdf:resource="http://data.linkedct.org/sparql"/>
+    <dcat:keyword>lifesciences</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/linkedct/dataid#links_tcmgenedit_dataset">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/tcmgenedit_dataset/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/linkedct/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >141</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/linkedct/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/linkedct/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >25476</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://data.linkedct.org/"/>
+    <dcat:keyword>format-linkedct</dcat:keyword>
+    <dcat:keyword>size-gb</dcat:keyword>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/"/>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >24653008</void:triples>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/linkedct"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >linkedct</rdfs:label>
+    <void:uriSpace>http://linkedct.org/resource/</void:uriSpace>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/linkedct/dataid#creator">
+        <foaf:mbox>mailto:oktie@cs.toronto.edu</foaf:mbox>
+        <foaf:name>Oktie Hassanzadeh</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/linkedct/dataid#links_fu-berlin-diseasome">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/fu-berlin-diseasome/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/linkedct/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1325</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://data.linkedct.org/sparql"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Data exposed: Linked Clinical Trials
+
+Size of dump and data set: ~25 million triples as of April 2011. 4.8GB NTriples dump
+
+###CC by-nc-sa license
+
+You are free to copy, distribute, transmit, and adapt the work for non-commercial purposes. However, you need to follow the terms and conditions available at http://www.clinicaltrials.gov/ct2/info/terms
+
+According to OKD (http://www.opendefinition.org/okd/) the data is not considered open.</dct:description>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/linkedct/dataid#contributor">
+        <foaf:mbox>mailto:oktie@cs.toronto.edu </foaf:mbox>
+        <foaf:name>Oktie Hassanzadeh</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/linkedct/dataid#links_fu-berlin-dailymed">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/fu-berlin-dailymed/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/linkedct/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >37600</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+  </dataid:Dataset>
+</rdf:RDF>

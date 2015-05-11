@@ -1,0 +1,276 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset">
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-oai">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-oai/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >864</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:uriSpace>http://newcastle.rkbexplorer.com/id/</void:uriSpace>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-resex">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-resex/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-dblp">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-dblp/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2259</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-courseware">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-courseware/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >16</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>publications</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-pisa">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-pisa/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >8</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >87505</void:triples>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-citeseer">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-citeseer/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >796</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://newcastle.rkbexplorer.com/sparql/">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://newcastle.rkbexplorer.com/sparql/"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-rae2001">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-rae2001/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >728</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>format-dc</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-cordis">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-cordis/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >4</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-kisti">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-kisti/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >227</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://newcastle.rkbexplorer.com/models/void.ttl">
+        <dcat:mediaType>meta/void</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://newcastle.rkbexplorer.com/models/void.ttl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-ibm">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-ibm/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >16</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://newcastle.rkbexplorer.com/models/dump.tgz">
+        <dcat:mediaType>RDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://newcastle.rkbexplorer.com/models/dump.tgz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rkb-explorer-newcastle</rdfs:label>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-acm">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-acm/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1453</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-nsf">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-nsf/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >13</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/rkb-explorer-newcastle"/>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-ieee">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-ieee/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >82</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://newcastle.rkbexplorer.com/sparql/"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#creator">
+        <foaf:name>Hugh Glaser</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-irit">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-irit/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >30</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://newcastle.rkbexplorer.com/sitemap.xml">
+        <dcat:mediaType>meta/sitemap</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://newcastle.rkbexplorer.com/sitemap.xml"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-budapest">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-budapest/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >8</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-akt</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-curriculum">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-curriculum/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_southampton-ecs-eprints">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/southampton-ecs-eprints/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >7</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-southampton">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-southampton/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >131</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></dct:description>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-wiki">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-wiki/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >40</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>void-sparql-endpoint</dcat:keyword>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <void:exampleResource rdf:resource="http://newcastle.rkbexplorer.com/id/person-10"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-ulm">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-ulm/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >7</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-eprints">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-eprints/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1142</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-epsrc">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-epsrc/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-roma">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-roma/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-laas">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-laas/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >78</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-dotac">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-dotac/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1421</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >University of Newcastle upon Tyne (RKBExplorer)</dct:title>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-deploy">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-deploy/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >14</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+  </dataid:Dataset>
+</rdf:RDF>

@@ -1,0 +1,36 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/npg-techniques/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:developers@nature.com" ;
+        foaf:name  "NPG" .
+
+<http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph<http://ns.nature.com/graphs/techniques>{?s?p?o.}}limit25>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph<http://ns.nature.com/graphs/techniques>{?s?p?o.}}limit25> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/npg-techniques/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/npg-techniques/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/npg-techniques/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:developers@nature.com" ;
+        foaf:name  "NPG Developers" .
+
+<http://dataid.dbpedia.org/lod/npg-techniques/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "npg-techniques"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/npg-techniques/dataid#contributor> , <http://dataid.dbpedia.org/lod/npg-techniques/dataid#creator> ;
+        dct:description         "Graph of npg:Technique triples.\nThe npg:Technique objects model techniques from the NPG techniques ontology."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "Nature Publishing Group - Techniques"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dcat:distribution       <http://data.nature.com/sparql?query=construct{?s?p?o.}where{graph<http://ns.nature.com/graphs/techniques>{?s?p?o.}}limit25> ;
+        dcat:keyword            "format-dcterm" , "publications" , "format-npg" , "bibliographic" , "life sciences" , "format-rdf" , "science" , "format-skos" , "health sciences" , "sciences" , "physical sciences" , "format-rdfs" , "journals" , "published-by-producer" , "academic" ;
+        dcat:landingPage        <http://datahub.io/dataset/npg-techniques> .

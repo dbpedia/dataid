@@ -1,0 +1,85 @@
+{
+  "@graph" : [ {
+    "@id" : "http://archive.org/download/kasabi/prelinger-archives.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://archive.org/download/kasabi/prelinger-archives.gz",
+    "mediaType" : "gzip::nquads"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/prelinger_archives/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/prelinger_archives/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/prelinger_archives/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:leigh",
+    "name" : "Leigh Dodds"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/prelinger_archives/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:leigh@ldodds.com",
+    "name" : "Leigh Dodds"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/prelinger_archives/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/prelinger_archives/dataid#contributor", "http://dataid.dbpedia.org/lod/prelinger_archives/dataid#creator" ],
+    "dct:description" : "The Prelinger Archives is a collection of films relating to U.S. cultural history, the evolution of the American landscape, everyday life and social history. It was physically located in New York City from 1982-2002 and is now in San Francisco.\n\nThe Archives was founded by Rick Prelinger in 1982 in order to preserve what he calls \"ephemeral\" films: films sponsored by corporations and organizations, educational films, and amateur and home movies. Typically, ephemeral films were produced to fulfill specific purposes at specific times, and many exist today only by chance or accident. About 65% of the Archive's holdings are in the public domain because their copyrights have expired, or because they were U.S. productions that were published without proper copyright notice.\n\nThis dataset consists of metadata about more than 2,000 public domain films that the Prelinger Archives have made available for unrestricted use via the Internet Archive.\n\n*Note* this dataset is no longer updated, it was taken off-line during the shutdown of Kasabi. A dump of the dataset has been [uploaded to the Internet Archive](http://archive.org/details/kasabi)",
+    "license" : "http://www.opendefinition.org/licenses/odc-pddl",
+    "dct:title" : "Prelinger Archives",
+    "triples" : "454904",
+    "uriSpace" : "http://data.kasabi.com/dataset/prelinger-archives",
+    "rdfs:label" : "prelinger_archives",
+    "distribution" : "http://archive.org/download/kasabi/prelinger-archives.gz",
+    "keyword" : [ "published-by-third-party", "format-rdf", "media", "format-foaf", "deref-vocab", "format-dcmit", "license-metadata" ],
+    "landingPage" : "http://datahub.io/dataset/prelinger_archives"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

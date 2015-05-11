@@ -1,0 +1,119 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://researchgroups.gnoss.com/voidDBLPDeustoResearchGroupsGNOSS.n3">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://researchgroups.gnoss.com/voidDBLPDeustoResearchGroupsGNOSS.n3"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#dataset">
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;p&gt;
+&lt;a href="http://researchgroups.gnoss.com/"&gt;DBLP Research Groups (University of Deusto-GNOSS) &lt;/a&gt;
+is the platform for creating research communities enriched with scientific contexts from
+&lt;a href="http://www.informatik.uni-trier.de/~ley/db/"&gt;DBLP&lt;/a&gt;
+. The recommendation contexts of Deusto-GNOSS Research Groups are a part of an index with over two million scientific publications in IT developed by GNOSS in collaboration with the
+&lt;a href="http://www.deusto.es/"&gt;University of Deusto&lt;/a&gt;
+. You can use the contexts for your community or research group.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;a href="http://researchgroups.gnoss.com/"&gt;DBLP Research Groups (University of Deusto-GNOSS) &lt;/a&gt;
+works with
+&lt;a href="http://gnoss.com/"&gt;GNOSS software (RIAM Intelearning Lab)&lt;/a&gt;
+. RIAM is a company that develops semantic technology for the creation of specialized networks and linked markets. GNOSS works within the philosophy of Open Data and proposes a solution so that data can be linked (Linked Data). Data are expressed in OWL-RDF files. We are implementing semantic technology in Education (educational communities and social learning), semantic catalogs for companies, corporate e-commerce portals and platforms to realize the concept of Open Government and Enterprise 2.0 (corporate social networks).
+&lt;/p&gt;</dct:description>
+    <dcat:keyword>computer science</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >72</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/dblp-deusto-gnoss"/>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >222375855</void:triples>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#links_geonames-semantic-web">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/geonames-semantic-web"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >72</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-wot</dcat:keyword>
+    <dcat:keyword>informática</dcat:keyword>
+    <dcat:keyword>wrapper</dcat:keyword>
+    <dcat:keyword>sioc</dcat:keyword>
+    <dcat:keyword>sp</dcat:keyword>
+    <dcat:keyword>indice científico</dcat:keyword>
+    <dcat:distribution rdf:resource="http://researchgroups.gnoss.com/voidDBLPDeustoResearchGroupsGNOSS.n3"/>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/"/>
+    <dcat:keyword>skos</dcat:keyword>
+    <dcat:keyword>usergeneratedcontent</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://gnoss.com/gnoss.owl">
+        <dcat:mediaType>meta/owl</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://gnoss.com/gnoss.owl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#links_freebase">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/freebase/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >582</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>dblp</dcat:keyword>
+    <dcat:keyword>format-rdfg</dcat:keyword>
+    <dcat:keyword>schemata</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#creator">
+        <foaf:mbox>mailto:gnoss@gnoss.com</foaf:mbox>
+        <foaf:name>GNOSS Team</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dblp-deusto-gnoss</rdfs:label>
+    <void:exampleResource rdf:resource="http://researchgroups.gnoss.com/comunidad/publicaciones/recurso/A-reasonable-Semantic-Web/5ac2b9d8-534c-4cca-b6e2-a5ff4758fc83?rdf"/>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dcat:keyword>foaf</dcat:keyword>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dcat:keyword>country.es</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/dblp-deusto-gnoss/dataid#contributor">
+        <foaf:mbox>mailto:gnoss@gnoss.com</foaf:mbox>
+        <foaf:name>GNOSS Team</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>deusto</dcat:keyword>
+    <dcat:keyword>format-sioc</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >DBLP Research Groups (University of Deusto-GNOSS)</dct:title>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>socialweb</dcat:keyword>
+    <dcat:keyword>spain</dcat:keyword>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dcat:keyword>language-spa</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:keyword>format-dcam</dcat:keyword>
+    <dcat:keyword>dc</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>format-dc</dcat:keyword>
+    <void:uriSpace>http://researchgroups.gnoss.com</void:uriSpace>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <void:exampleResource rdf:resource="http://researchgroups.gnoss.com/comunidad/publicaciones/recurso/Linked-Open-Data-Perspectives-Incorporating-Linke/4995cbcb-0543-40b5-b5af-05e6d04acc09?rdf"/>
+    <dcat:keyword>country-spain</dcat:keyword>
+    <void:exampleResource rdf:resource="http://researchgroups.gnoss.com/en/community/publicaciones/advanced-search/tag/web?rdf"/>
+    <dcat:keyword>format-foaf</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

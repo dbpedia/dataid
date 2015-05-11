@@ -1,0 +1,69 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/flybase/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "flybase"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/flybase/dataid#contributor> , <http://dataid.dbpedia.org/lod/flybase/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/flybase/dataid#links_open-biomed-flyted> , <http://dataid.dbpedia.org/lod/flybase/dataid#links_open-biomed-flyatlas> ;
+        dct:description         ""^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "Flybase"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:sparqlEndpoint     <http://www.open-biomed.org.uk/sparql/endpoint/flybase> ;
+        void:triples            "83743853"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:distribution       <http://www.open-biomed.org.uk/service/flybase/features/fbgn/{fbgn}> , <http://www.open-biomed.org.uk/service/flybase/features> , <http://www.open-biomed.org.uk/service/flybase/features/name/{name}> , <http://www.open-biomed.org.uk/open-biomed-data/flybase-dump-core-fb201102.tar.gz> , <http://www.open-biomed.org.uk/sparql/endpoint/flybase> ;
+        dcat:keyword            "flybase" , "open-biomed" , "linkeddata" ;
+        dcat:landingPage        <http://datahub.io/dataset/flybase> .
+
+<http://www.open-biomed.org.uk/service/flybase/features/name/{name}>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.open-biomed.org.uk/service/flybase/features/name/{name}> ;
+        dcat:mediaType    "api" .
+
+<http://dataid.dbpedia.org/lod/flybase/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/flybase/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/flybase/dataid#links_open-biomed-flyatlas>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/open-biomed-flyatlas> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/flybase/dataid#dataset> ;
+        void:triples         "15852"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.open-biomed.org.uk/sparql/endpoint/flybase>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://www.open-biomed.org.uk/sparql/endpoint/flybase> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://www.open-biomed.org.uk/open-biomed-data/flybase-dump-core-fb201102.tar.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.open-biomed.org.uk/open-biomed-data/flybase-dump-core-fb201102.tar.gz> ;
+        dcat:mediaType    "rdf/turtle" .
+
+<http://dataid.dbpedia.org/lod/flybase/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Jun Zhao" .
+
+<http://dataid.dbpedia.org/lod/flybase/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:name  "Jun Zhao" .
+
+<http://dataid.dbpedia.org/lod/flybase/dataid#links_open-biomed-flyted>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/open-biomed-flyted> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/flybase/dataid#dataset> ;
+        void:triples         "2457"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.open-biomed.org.uk/service/flybase/features/fbgn/{fbgn}>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.open-biomed.org.uk/service/flybase/features/fbgn/{fbgn}> ;
+        dcat:mediaType    "api" .
+
+<http://www.open-biomed.org.uk/service/flybase/features>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.open-biomed.org.uk/service/flybase/features> ;
+        dcat:mediaType    "api" .

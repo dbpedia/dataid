@@ -1,0 +1,116 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/olia/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/olia/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/olia/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Christian Chiarcos"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/olia/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/olia/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/olia/dataid#links_gold", "http://dataid.dbpedia.org/lod/olia/dataid#links_isocat" ],
+    "dct:description" : "The Ontologies of Linguistic Annotations (OLiA) provide an OWL/DL taxonomy of data categories as a reference for linguistic annotation (OLiA Reference Model), plus OWL/DL models for a large number of annotation schemes (OLiA Annotation Models) and their relationship to reference data categories (OLiA Linking Models).\nThe OLiA Reference Model itself is linked to community-maintained repositories such as GOLD (http://linguistics-ontology.org/) and ISOcat (http://www.isocat.org)\n\nThe OLiA ontologies were originally developed as part of an infrastructure for the sustainable maintenance of linguistic resources (http://www.sfb441.uni-tuebingen.de/c2/index-engl.html), their fields of application include the formalization of annotation schemes, concept-based querying over heterogeneously annotated corpora, and the development of interoperable NLP pipelines.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Ontologies of Linguistic Annotations (OLiA)",
+    "exampleResource" : "http://purl.org/olia/penn.owl#JJ",
+    "triples" : "43775",
+    "rdfs:label" : "olia",
+    "distribution" : [ "http://purl.org/olia", "https://sourceforge.net/projects/olia/files/latest/download", "http://purl.org/olia/olia.owl" ],
+    "keyword" : [ "annotation", "crossdomain", "lod", "linguistics", "nlp", "corpus" ],
+    "landingPage" : "http://datahub.io/dataset/olia"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/olia/dataid#links_gold",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/gold/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/olia/dataid#dataset",
+    "triples" : "264"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/olia/dataid#links_isocat",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/isocat/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/olia/dataid#dataset",
+    "triples" : "361"
+  }, {
+    "@id" : "http://purl.org/olia",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/olia",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://purl.org/olia/olia.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/olia/olia.owl",
+    "mediaType" : "rdf, owl"
+  }, {
+    "@id" : "https://sourceforge.net/projects/olia/files/latest/download",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://sourceforge.net/projects/olia/files/latest/download",
+    "mediaType" : "application/x-zip-compressed"
+  } ],
+  "@context" : {
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

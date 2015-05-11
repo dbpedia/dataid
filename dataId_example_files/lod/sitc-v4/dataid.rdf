@@ -1,0 +1,102 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/sitc-v4/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/sitc-v4/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://purl.org/weso/datasets/pscs/sitc/v4/sitc-v4.ttl">
+    <dcat:mediaType>text/turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/weso/datasets/pscs/sitc/v4/sitc-v4.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/weso/pscs/sitc/v4/resource/ds">
+    <dcat:mediaType>HTML</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/weso/pscs/sitc/v4/resource/ds"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/weso/datasets/pscs/psc-ontology.ttl">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/weso/datasets/pscs/psc-ontology.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/weso/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://purl.org/weso/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/sitc-v4/dataid#dataset">
+    <dcat:keyword>public_contracts</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://purl.org/weso/sparql"/>
+    <dcat:keyword>oviedo</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/sitc-v4"/>
+    <dcat:keyword>procurement</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/sitc-v4/dataid#contributor">
+        <foaf:mbox>mailto:josem.alvarez@weso.es</foaf:mbox>
+        <foaf:name>Jose María Alvarez Rodríguez</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>vocab-mappings</dcat:keyword>
+    <void:exampleResource rdf:resource="http://purl.org/weso/pscs/data/sitc/v4/resource/01112?output=xml"/>
+    <dcat:distribution rdf:resource="http://purl.org/weso/datasets/pscs/psc-ontology.ttl"/>
+    <dcat:keyword>linkeddata</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:distribution rdf:resource="http://purl.org/weso/sparql"/>
+    <dcat:distribution rdf:resource="http://purl.org/weso/datasets/pscs/sitc/v4/sitc-v4.ttl"/>
+    <dcat:keyword>university-of-oviedo</dcat:keyword>
+    <void:uriSpace>http://purl.org/weso/pscs/sitc/v4/resource</void:uriSpace>
+    <dcat:keyword>format-gr</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dcat:keyword>euroalert</dcat:keyword>
+    <dcat:keyword>linkedopendata</dcat:keyword>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SITC-V4</dct:title>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sitc-v4</rdfs:label>
+    <dcat:keyword>format-dcterms</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>pscs</dcat:keyword>
+    <dcat:keyword>v4</dcat:keyword>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>10ders</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-odbl"/>
+    <dcat:keyword>weso</dcat:keyword>
+    <dcat:keyword>format-dc</dcat:keyword>
+    <dcat:distribution rdf:resource="http://purl.org/weso/pscs/sitc/v4/resource/ds"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Standard International Trade Classification V4 is used by the United Nations to create statistics. 
+
+Authors of the linked data version:
+
+-Jose María Alvarez Rodríguez &amp; Jose Emilio Labra Gayo
+
+WESO-University of Oviedo
+</dct:description>
+    <dcat:keyword>uniovi</dcat:keyword>
+    <dcat:keyword>format-skosxl</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/sitc-v4/dataid#creator">
+        <foaf:mbox>mailto:josem.alvarez@weso.es</foaf:mbox>
+        <foaf:name>Jose María Alvarez Rodríguez at WESO (University of Oviedo)</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/sitc-v4/dataid#links_http://productontology.org">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/http://productontology.org/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/sitc-v4/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >23534</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >70887</void:triples>
+    <dcat:keyword>stic</dcat:keyword>
+    <dcat:keyword>geodata</dcat:keyword>
+    <dcat:keyword>e-procurement</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>government</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

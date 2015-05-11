@@ -1,0 +1,123 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/twc-logd/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/twc-logd/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/twc-logd/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:difrad@rpi.edu",
+    "name" : "Dominic DiFranzo"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/twc-logd/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Tetherless World Constellation, Rensselaer Polytechnic Institute"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/twc-logd/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/twc-logd/dataid#contributor", "http://dataid.dbpedia.org/lod/twc-logd/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/twc-logd/dataid#links_govtrack", "http://dataid.dbpedia.org/lod/twc-logd/dataid#links_geonames-semantic-web", "http://dataid.dbpedia.org/lod/twc-logd/dataid#links_dbpedia" ],
+    "dct:description" : "The Tetherless World Constellation (TWC) at Rensselaer Polytechnic Institute (RPI) maintains Linked Open Government Data (LOGD), an RDF version of the datasets published by package:data-gov and other government-related sources.\n\nLOGD replaces the old TWC Data-gov Corpus published in May 2010.",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "TWC: Linking Open Government Data",
+    "exampleResource" : "http://logd.tw.rpi.edu/source/dfid-gov-uk/dataset/statistics-on-international-development-2009/version/2009-Nov-10/foreignAid_158_6",
+    "uriSpace" : "http://logd.tw.rpi.edu/",
+    "rdfs:label" : "twc-logd",
+    "distribution" : [ "http://logd.tw.rpi.edu/twc-logd", "http://logd.tw.rpi.edu/sparql" ],
+    "keyword" : [ "no-license-metadata", "no-provenance-metadata", "published-by-third-party", "government", "country-us", "no-vocab-mappings", "format-rdf", "deref-vocab", "lod" ],
+    "landingPage" : "http://datahub.io/dataset/twc-logd"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/twc-logd/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/twc-logd/dataid#dataset",
+    "triples" : "2039"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/twc-logd/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/twc-logd/dataid#dataset",
+    "triples" : "1839"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/twc-logd/dataid#links_govtrack",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/govtrack/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/twc-logd/dataid#dataset",
+    "triples" : "1909"
+  }, {
+    "@id" : "http://logd.tw.rpi.edu/sparql",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://logd.tw.rpi.edu/sparql",
+    "mediaType" : "api/query"
+  }, {
+    "@id" : "http://logd.tw.rpi.edu/twc-logd",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://logd.tw.rpi.edu/twc-logd"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

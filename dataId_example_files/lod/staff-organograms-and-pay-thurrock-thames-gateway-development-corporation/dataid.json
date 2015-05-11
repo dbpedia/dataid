@@ -1,0 +1,106 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "name" : "Thurrock Thames Gateway Development Corporation"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Thurrock Thames Gateway Development Corporation"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid#creator", "http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid#contributor" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid#links_uk-organogram",
+    "dct:description" : "A list of most Senior Civil Service posts in the Thurrock Thames Gateway Development Corporation including title, contact details, their line manager, and where disclosed, the name of the officer. Vacant posts are listed as \"Vacant\", and posts where the jobholder is not disclosed are listed as \"N/D\". Note that a number of officers are not listed for security reasons.\n\nAuthorization required:\nhttp://organogram.data.gov.uk/data/thurrocktgdc/2011-03-31/government-staff-and-salary-data---March-2011---ThurrockTGDC#totalPay4\n\n",
+    "license" : "http://reference.data.gov.uk/id/open-government-licence",
+    "dct:title" : "Organogram and staff pay data for Thurrock Thames Gateway Development Corporation",
+    "exampleResource" : "http://organogram.data.gov.uk/data/thurrocktgdc/2011-03-31/government-staff-and-salary-data---March-2011---ThurrockTGDC#totalPay1",
+    "triples" : "310",
+    "uriSpace" : "http://organogram.data.gov.uk/data/thurrocktgdc",
+    "rdfs:label" : "staff-organograms-and-pay-thurrock-thames-gateway-development-corporation",
+    "distribution" : "http://www.thurrocktgdc.org.uk/data/Transparency/government-staff-and-salary-data---March-2011---ThurrockTGDC.xml",
+    "keyword" : [ "eutransparency", "british-civil-service", "senior-civil-service", "format-foaf", "format-owl", "data.gov.uk", "format-sdmxa", "format-organogram", "lodcloud.unconnected", "no-deref-vocab", "format-qb", "format-sdmxc", "thurrock-thames-gateway-development-corporation", "format-org", "format-opmv", "format-dct", "format-rdfs", "civil-service", "format-dgu", "lodcloud.nolinks", "format-copmv", "format-poststatus", "debug-tinylod", "format-payband", "format-grade", "format-time", "government", "format-rdf", "organogram", "lod", "format-skos", "accountability", "transparency", "organograms-and-salaries", "published-by-producer", "format-gov", "format-void" ],
+    "landingPage" : "http://datahub.io/dataset/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid#links_uk-organogram",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/uk-organogram/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/staff-organograms-and-pay-thurrock-thames-gateway-development-corporation/dataid#dataset",
+    "triples" : "45"
+  }, {
+    "@id" : "http://www.thurrocktgdc.org.uk/data/Transparency/government-staff-and-salary-data---March-2011---ThurrockTGDC.xml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.thurrocktgdc.org.uk/data/Transparency/government-staff-and-salary-data---March-2011---ThurrockTGDC.xml",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

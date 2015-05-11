@@ -1,0 +1,97 @@
+{
+  "@graph" : [ {
+    "@id" : "http://asev.l3s.uni-hannover.de:8085/openrdf-sesame/repositories/TERENCE_STORY",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://asev.l3s.uni-hannover.de:8085/openrdf-sesame/repositories/TERENCE_STORY",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/terence-reading-comprehension-dataset/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/terence-reading-comprehension-dataset/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/terence-reading-comprehension-dataset/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:gtran@L3S.de",
+    "name" : "Giang Binh Tran"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/terence-reading-comprehension-dataset/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:alrifai@L3S.de",
+    "name" : "Mohammad Alrifai"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/terence-reading-comprehension-dataset/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/terence-reading-comprehension-dataset/dataid#creator", "http://dataid.dbpedia.org/lod/terence-reading-comprehension-dataset/dataid#contributor" ],
+    "dct:description" : "This dataset was created by the European project TERENCE (http://terenceproject.eu). TERENCE dataset includes a collection of narrative stories especially created for (hearing and hearing-impaired) children in the age of 7 to 11 years, who have poor reading comprehension skills. The stories are associated with some reasoning tasks about the story characters and events in the form of multiple-choice questions.\n\nThe collection of stories and reasoning tasks is used for performing intervention therapy plans in class to assess and stimulate children's abilities to comprehend texts. In particular, the tasks focus on fostering inference-making skills and reasoning about temporal and causal relations between story events.\n\nThe stories are provided in four different levels of complexity. More description about the TERENCE story model can be found here: http://www.terenceproject.eu/c/document_library/get_file?p_l_id=16136&folderId=12950&name=DLFE-1927.pdf.\n\nAll stories and games are provided in two languages: English and Italian.\n\nStory texts were semi-automatically annotated using NLP tools developed in the project for both English and Italian. TERENCE annotation language (http://www.terenceproject.eu/c/document_library/get_file?p_l_id=16136&folderId=12950&name=DLFE-1910.pdf) was built on top of TimeML for annotating characters, story events and temporal/causal relations between those events. The annotations are then used by TERENCE game generation tools to automatically generate reasoning tasks.",
+    "license" : "http://www.opendefinition.org/licenses/odc-by",
+    "dct:title" : "TERENCE Reading Comprehension Dataset",
+    "sparqlEndpoint" : "http://asev.l3s.uni-hannover.de:8085/openrdf-sesame/repositories/TERENCE_STORY",
+    "rdfs:label" : "terence-reading-comprehension-dataset",
+    "distribution" : [ "http://asev.l3s.uni-hannover.de:8085/openrdf-sesame/repositories/TERENCE_STORY", "http://terence.l3s.uni-hannover.de/resource/StoryText/StoryText_EN_1-5-0", "http://terence.l3s.uni-hannover.de/schema" ],
+    "keyword" : [ "NLP", "reading-comprehension", "lod", "format-rdf", "terence", "linkedup", "sparql", "education" ],
+    "landingPage" : "http://datahub.io/dataset/terence-reading-comprehension-dataset"
+  }, {
+    "@id" : "http://terence.l3s.uni-hannover.de/resource/StoryText/StoryText_EN_1-5-0",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://terence.l3s.uni-hannover.de/resource/StoryText/StoryText_EN_1-5-0",
+    "mediaType" : "XML"
+  }, {
+    "@id" : "http://terence.l3s.uni-hannover.de/schema",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://terence.l3s.uni-hannover.de/schema",
+    "mediaType" : "XML"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

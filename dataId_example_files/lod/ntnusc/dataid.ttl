@@ -1,0 +1,64 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/ntnusc/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "ntnusc"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/ntnusc/dataid#contributor> , <http://dataid.dbpedia.org/lod/ntnusc/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/ntnusc/dataid#links_lcsh> , <http://dataid.dbpedia.org/lod/ntnusc/dataid#links_geonames-semantic-web> , <http://dataid.dbpedia.org/lod/ntnusc/dataid#links_radatana> , <http://dataid.dbpedia.org/lod/ntnusc/dataid#links_dewey_decimal_classification> ;
+        dct:description         "The digitized historical manuscripts held in the special collections of the Norwegian university of science and technology (NTNU).\n\nThe data is a catalogue of manuscripts held by NTNU and these are catalogued directly as RDF.\n\nThe data is the usage catalogue for the Gunnerus Library Special Collections, and drives their web presences. The data is under constant development and the dataset is growing, and must be seen as unstable. Links to fulltext will be added as these are digitized\n\n"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-pddl> ;
+        dct:title               "NTNU special collections"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://www.ntnu.no/ub/digital/document/ntnu22> ;
+        void:triples            "3569"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://www.ntnu.no/ub/digital/" ;
+        dcat:distribution       <http://www.ntnu.no/ub/data/ntnusc> ;
+        dcat:keyword            "format-dc" , "publications" , "lld" , "english" , "format-nl" , "published-by-producer" , "format-bibo" , "no-provenance-metadata" , "format-rdf" , "lod" , "linkedopendata" , "no-license-metadata" , "deref-vocab" , "no-vocab-mappings" , "norwegian" , "bibliographic" , "library" ;
+        dcat:landingPage        <http://datahub.io/dataset/ntnusc> .
+
+<http://dataid.dbpedia.org/lod/ntnusc/dataid#links_dewey_decimal_classification>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/ntnusc/dataid#dataset> ;
+        void:triples         "239"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/ntnusc/dataid#links_lcsh>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/lcsh/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/ntnusc/dataid#dataset> ;
+        void:triples         "292"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/ntnusc/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/ntnusc/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/ntnusc/dataid#links_geonames-semantic-web>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/ntnusc/dataid#dataset> ;
+        void:triples         "323"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/ntnusc/dataid#links_radatana>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/radatana/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/ntnusc/dataid#dataset> ;
+        void:triples         "47"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/ntnusc/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:rurik.greenall@ub.ntnu.no" ;
+        foaf:name  "Rurik Greenall" .
+
+<http://www.ntnu.no/ub/data/ntnusc>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.ntnu.no/ub/data/ntnusc> ;
+        dcat:mediaType    "text/turtle" .
+
+<http://dataid.dbpedia.org/lod/ntnusc/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:rurik.greenall@ub.ntnu.no" ;
+        foaf:name  "NTNU University library" .

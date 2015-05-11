@@ -1,0 +1,83 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/bluk-bnb-basic/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/bluk-bnb-basic/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bluk-bnb-basic/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:metadata@bl.uk",
+    "name" : "The British Library Metadata Services"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bluk-bnb-basic/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:metadata@bl.uk",
+    "name" : "The British Library Metadata Services"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bluk-bnb-basic/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/bluk-bnb-basic/dataid#creator", "http://dataid.dbpedia.org/lod/bluk-bnb-basic/dataid#contributor" ],
+    "dct:description" : "British National Bibliography (BNB) published by the British Library as basic (unmodelled) RDF/XML without URIs. The dataset is broader in scope than the BNB - Linked Open Data, i.e. includes books together with serials, forthcoming publications etc.\n\nCurrent release includes descriptions of over 3 million UK publications created over the last 60 years and will be regularly updated.\n",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "British National Bibliography (BNB) - Basic Representation",
+    "rdfs:label" : "bluk-bnb-basic",
+    "distribution" : [ "http://www.bl.uk/bibliographic/download.html#basicbnb", "http://www.bl.uk/bibliographic/pdfs/mappingmarc2basicrdf.pdf" ],
+    "keyword" : [ "bibliography", "format-xml", "no-proprietary-vocab", "british-library", "crossdomain", "library", "publications", "bibliographic data", "published-by-producer", "bibliographic", "format-rdf", "cc0" ],
+    "landingPage" : "http://datahub.io/dataset/bluk-bnb-basic"
+  }, {
+    "@id" : "http://www.bl.uk/bibliographic/download.html#basicbnb",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.bl.uk/bibliographic/download.html#basicbnb",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://www.bl.uk/bibliographic/pdfs/mappingmarc2basicrdf.pdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.bl.uk/bibliographic/pdfs/mappingmarc2basicrdf.pdf",
+    "mediaType" : "PDF"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

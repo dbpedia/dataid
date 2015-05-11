@@ -1,0 +1,123 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/meducator/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/meducator/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/meducator/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:admin@data.linkededucation.org",
+    "name" : "mEducator Linked Educational Resources team"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/meducator/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:admin@data.linkededucation.org",
+    "name" : "mEducator Linked Educational Resources team"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/meducator/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/meducator/dataid#contributor", "http://dataid.dbpedia.org/lod/meducator/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/meducator/dataid#links_dbpedia",
+    "dct:description" : "The \"mEducator - Linked Educational Resources\" exposes linked data about publicly available educational Web resources. A light-weight RDF schema is exploited together with clustering and enrichment techniques to gradually interlink educational resources with entities in established LOD datasets.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "mEducator: Linked Educational Resources",
+    "exampleResource" : "http://purl.org/meducator/resources/25a8c581-66d7-4186-9411-f9f0f783463e",
+    "sparqlEndpoint" : "http://meducator.open.ac.uk/resourcesrestapi/rest/meducator/sparql",
+    "triples" : "30294",
+    "uriSpace" : "http://purl.org/meducator/resources/",
+    "rdfs:label" : "meducator",
+    "distribution" : [ "http://meducator.open.ac.uk/resourcesrestapi/rest/meducator/sparql", "http://purl.org/meducator/ns" ],
+    "keyword" : [ "l3s", "format-rdfs", "e-learning", "education", "sparql-endpoint", "crossdomain", "educational", "kmi", "sparql", "format-rdf", "published-by-producer", "deref-vocab", "format-http", "format-api", "lod" ],
+    "landingPage" : "http://datahub.io/dataset/meducator"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/meducator/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/meducator/dataid#dataset",
+    "triples" : "932"
+  }, {
+    "@id" : "http://meducator.open.ac.uk/resourcesrestapi/rest/meducator/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://meducator.open.ac.uk/resourcesrestapi/rest/meducator/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://purl.org/meducator/ns",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/meducator/ns",
+    "mediaType" : "meta/rdf-schema"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,49 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/lofd/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/lofd/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/lofd/dataid#dataset">
+    <void:uriSpace>http://lofd.tw.rpi.edu/</void:uriSpace>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lofd</rdfs:label>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >27537</void:triples>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/lofd"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/lofd/dataid#creator">
+        <foaf:mbox>mailto:lebot@rpi.edu</foaf:mbox>
+        <foaf:name>Timothy Lebo</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://lofd.tw.rpi.edu/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://lofd.tw.rpi.edu/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dcat:keyword>prizms</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Linked Open Financial Data</dct:description>
+    <dcat:keyword>ecommerce</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lofd</dct:title>
+    <dcat:distribution rdf:resource="http://lofd.tw.rpi.edu/sparql"/>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/lofd/dataid#contributor">
+        <foaf:mbox>mailto:lebot@rpi.edu</foaf:mbox>
+        <foaf:name>Timothy Lebo</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>lod</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

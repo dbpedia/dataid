@@ -1,0 +1,49 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/southampton-ac-uk-apps/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/southampton-ac-uk-apps/dataid#dataset" .
+
+<http://data.southampton.ac.uk/apps.html>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.southampton.ac.uk/apps.html> ;
+        dcat:mediaType    "HTML" .
+
+<http://sparql.data.southampton.ac.uk/>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://sparql.data.southampton.ac.uk/> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://id.southampton.ac.uk/dataset/apps/latest.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://id.southampton.ac.uk/dataset/apps/latest.ttl> ;
+        dcat:mediaType    "text/turtle" .
+
+<http://dataid.dbpedia.org/lod/southampton-ac-uk-apps/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "southampton-ac-uk-apps"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/southampton-ac-uk-apps/dataid#contributor> ;
+        dct:description         "Dataset from University of Southampton Open Data Service. A catalog of known websites, web widgets, phone apps and other tools using our datasets."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://reference.data.gov.uk/id/open-government-licence> ;
+        dct:title               "Apps using our data (University of Southampton)"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://id.southampton.ac.uk/app/soton-map-embed> ;
+        void:sparqlEndpoint     <http://sparql.data.southampton.ac.uk/> ;
+        void:triples            "200"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:distribution       <http://sparql.data.southampton.ac.uk/> , <http://id.southampton.ac.uk/dataset/apps/latest.ttl> , <http://data.southampton.ac.uk/apps.html> , <http://id.southampton.ac.uk/dataset/apps/latest.rdf> ;
+        dcat:keyword            "lodcloud.unconnected" , "lodcloud.nolinks" , "crossdomain" , "published-by-producer" , "no-deref-vocab" , "lod" , "format-rdf" ;
+        dcat:landingPage        <http://datahub.io/dataset/southampton-ac-uk-apps> .
+
+<http://id.southampton.ac.uk/dataset/apps/latest.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://id.southampton.ac.uk/dataset/apps/latest.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/southampton-ac-uk-apps/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:cjg@ecs.soton.ac.uk" ;
+        foaf:name  "Christopher Gutteridge" .

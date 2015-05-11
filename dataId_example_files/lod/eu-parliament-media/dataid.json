@@ -1,0 +1,121 @@
+{
+  "@graph" : [ {
+    "@id" : "http://api.talis.com/stores/eupmedia/services/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://api.talis.com/stores/eupmedia/services/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eu-parliament-media/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/eu-parliament-media/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eu-parliament-media/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Knud Möller"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eu-parliament-media/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/eu-parliament-media/dataid#creator",
+    "containsLinks" : "http://dataid.dbpedia.org/lod/eu-parliament-media/dataid#links_eu-who-is-who",
+    "dct:description" : "This dataset contains information about multi-media content published by the European Parliament at http://audiovisual.europarl.europa.eu/. Media assets of type video, audio and image are contained. All assests are annotated with primary metadata (e.g., length, resolution, size, etc.), as well as topic metadata. Where topics are people, those are represented as complex resources in their own right, with names, roles in organisations, etc. Organisations are located in countries according to the Kasabi country dataset.\n",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "EU Parliament Media Library",
+    "exampleResource" : "http://eupmedia.publicdata.eu/data/video/eu_parliament/9cbc7cbf-4a97-41b9-91a4-14baad45bb94.rdf",
+    "sparqlEndpoint" : "http://api.talis.com/stores/eupmedia/services/sparql",
+    "triples" : "532957",
+    "uriSpace" : "http://eupmedia.publicdata.eu/data/",
+    "rdfs:label" : "eu-parliament-media",
+    "distribution" : [ "http://api.talis.com/stores/eupmedia/services/sparql", "http://eupmedia.publicdata.eu/void.ttl", "http://eupmedia.publicdata.eu/dump/eup_media_assets.ttl" ],
+    "keyword" : [ "published-by-third-party", "government", "no-proprietary-vocab", "format-places", "format-nfo", "format-foaf", "provenance-metadata", "politics", "latc", "lod", "eu-institution", "deref-vocab", "eu", "media", "no-license-metadata", "eu-parliament" ],
+    "landingPage" : "http://datahub.io/dataset/eu-parliament-media"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eu-parliament-media/dataid#links_eu-who-is-who",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eu-parliament-media/dataid#dataset",
+    "triples" : "1000"
+  }, {
+    "@id" : "http://eupmedia.publicdata.eu/dump/eup_media_assets.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://eupmedia.publicdata.eu/dump/eup_media_assets.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://eupmedia.publicdata.eu/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://eupmedia.publicdata.eu/void.ttl",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

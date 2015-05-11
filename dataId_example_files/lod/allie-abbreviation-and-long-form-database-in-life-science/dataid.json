@@ -1,0 +1,133 @@
+{
+  "@graph" : [ {
+    "@id" : "http://allie.dbcls.jp/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://allie.dbcls.jp/void.ttl",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://data.allie.dbcls.jp/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.allie.dbcls.jp/",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://data.allie.dbcls.jp/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://data.allie.dbcls.jp/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:yy AT dbcls.rois.ac.jp",
+    "name" : "Yasunori Yamamoto"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:info AT dbcls.rois.ac.jp",
+    "name" : "Database Center for Life Science"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#contributor", "http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#links_dbpedia",
+    "dct:description" : "A database of abbreviations and long forms utilized in Lifesciences. It provides a solution to the issue that many abbreviations are used in the literature, and polysemous or synonymous abbreviations appear frequently, making it difficult to read and understand scientific papers that are not relevant to the reader's expertise. Allie contains abbreviations and their corresponding long forms extracted from titles and abstracts in the entire MEDLINE®, a database of the U.S. National Library of Medicine. MEDLINE stores over 20 million bibliographic information in life science and is suitable for extracting domain specific abbreviations and their long forms appearing in actual literature. ",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Allie Abbreviation And Long Form Database in Life Science",
+    "exampleResource" : "http://purl.org/allie/id/longform/531855",
+    "sparqlEndpoint" : "http://data.allie.dbcls.jp/sparql",
+    "triples" : "94420988",
+    "uriSpace" : "http://purl.org/allie/",
+    "rdfs:label" : "allie-abbreviation-and-long-form-database-in-life-science",
+    "distribution" : [ "http://data.allie.dbcls.jp/", "http://purl.org/allie/cgi-bin/getfile.cgi?file=allieRDF", "http://allie.dbcls.jp/void.ttl", "http://data.allie.dbcls.jp/sparql" ],
+    "keyword" : [ "provenance-metadata", "no-proprietary-vocab", "format-owl", "lod", "published-by-producer", "biomedical", "license-metadata", "dictionary", "abbreviation", "lifesciences" ],
+    "landingPage" : "http://datahub.io/dataset/allie-abbreviation-and-long-form-database-in-life-science"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/allie-abbreviation-and-long-form-database-in-life-science/dataid#dataset",
+    "triples" : "95280"
+  }, {
+    "@id" : "http://purl.org/allie/cgi-bin/getfile.cgi?file=allieRDF",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/allie/cgi-bin/getfile.cgi?file=allieRDF",
+    "mediaType" : "text/n3"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

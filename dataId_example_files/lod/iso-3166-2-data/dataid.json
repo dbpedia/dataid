@@ -1,0 +1,76 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/iso-3166-2-data/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/iso-3166-2-data/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/iso-3166-2-data/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "http://tobyinkster.co.uk/#i"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/iso-3166-2-data/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/iso-3166-2-data/dataid#creator",
+    "dct:description" : "### About\n\nLinked ISO 3166-2 Data. ISO-3166-2 gives codes for countries and their principal subdivisions.\n\n### Openness\n\nPublished under CC0. (Where is this specified?)",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "Linked ISO 3166-2 Data",
+    "exampleResource" : "http://ontologi.es/place/AD",
+    "rdfs:label" : "iso-3166-2-data",
+    "distribution" : "http://ontologi.es/place/",
+    "keyword" : [ "geo", "places", "lod", "geographic", "a-semantic-network-of-scientists-interests-activities-and-accomplishments", "lodcloud.unconnected", "lodcloud.nolinks", "deref-vocab", "iso-3166", "names", "linked-data", "codes", "format-rdf", "published-by-producer" ],
+    "landingPage" : "http://datahub.io/dataset/iso-3166-2-data"
+  }, {
+    "@id" : "http://ontologi.es/place/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ontologi.es/place/",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,46 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/productdb/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/productdb/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/productdb/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "productdb"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/productdb/dataid#contributor> , <http://dataid.dbpedia.org/lod/productdb/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/productdb/dataid#links_dbpedia> ;
+        dct:description         "ProductDB is the Linked Data view of ProductWiki a resource for free, unbiased product reports written by a dedicated community. ProductDB extracts structured information from ProductWiki and makes this information freely available on the Web."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/gfdl> ;
+        dct:title               "ProductDB"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://productdb.org/gtin/09780136098676> ;
+        void:sparqlEndpoint     <http://api.talis.com/stores/productdb/services/sparql> ;
+        void:triples            "575942"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://productdb.org/gtin/" ;
+        dcat:distribution       <http://api.talis.com/stores/productdb/services/sparql> ;
+        dcat:keyword            "published-by-third-party" , "no-license-metadata" , "no-provenance-metadata" , "format-rdf" , "format-foaf" , "no-vocab-mappings" , "format-gr" , "lod" , "no-proprietary-vocab" , "crossdomain" ;
+        dcat:landingPage        <http://datahub.io/dataset/productdb> .
+
+<http://api.talis.com/stores/productdb/services/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://api.talis.com/stores/productdb/services/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/productdb/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Talis" .
+
+<http://dataid.dbpedia.org/lod/productdb/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:ian.davis@talis.com" ;
+        foaf:name  "Ian Davis" .
+
+<http://dataid.dbpedia.org/lod/productdb/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/productdb/dataid#dataset> ;
+        void:triples         "193"^^<http://www.w3.org/2001/XMLSchema#int> .

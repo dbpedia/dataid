@@ -1,0 +1,177 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/event-media/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/event-media/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/event-media/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:raphael.troncy@eurecom.fr",
+    "name" : "Raphael Troncy"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/event-media/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:raphael.troncy@eurecom.fr",
+    "name" : "Raphael Troncy"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/event-media/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/event-media/dataid#creator", "http://dataid.dbpedia.org/lod/event-media/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/event-media/dataid#links_uberblic", "http://dataid.dbpedia.org/lod/event-media/dataid#links_geonames-semantic-web", "http://dataid.dbpedia.org/lod/event-media/dataid#links_dbtune-musicbrainz", "http://dataid.dbpedia.org/lod/event-media/dataid#links_nytimes-linked-open-data", "http://dataid.dbpedia.org/lod/event-media/dataid#links_flickr-wrappr", "http://dataid.dbpedia.org/lod/event-media/dataid#links_dbpedia" ],
+    "dct:description" : "This dataset is composed of events and media descriptions associated with these events. It is obtained from three large public event directories (last.fm, eventful and upcoming) represented with the LODE ontology and from large media directories (flickr, youtube) represented with the W3C Media Ontology. It is interlinked with the larger Linked Open Data cloud and in particular with DBpedia, Freebase, Geonames. It also contains links to numerous related web pages, including MusicBrainz, Geonames, Last.fm, Eventful, Upcoming and Foursquare.\n\n",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "EventMedia",
+    "exampleResource" : "http://data.linkedevents.org/agent/0a5a771a-5410-4c15-b695-b8059616e52f",
+    "sparqlEndpoint" : "http://eventmedia.eurecom.fr/sparql",
+    "triples" : "36274454",
+    "uriSpace" : "http://data.linkedevents.org/",
+    "rdfs:label" : "event-media",
+    "distribution" : [ "http://eventmedia.eurecom.fr/sparql", "http://www.eurecom.fr/~troncy/ic2011/Events_sameAs.nt", "http://www.eurecom.fr/~troncy/ldtc2010/", "http://www.w3.org/ns/ma-ont#", "http://linkedevents.org/ontology/2010-10-07/rdfxml/", "http://www.eurecom.fr/~troncy/ic2011/Venues_sameAs.nt", "http://www.eurecom.fr/~troncy/ic2011/Artists_sameAs.nt" ],
+    "keyword" : [ "events", "media", "format-ma", "format-rdf", "lod", "deref-vocab", "format-lode", "format-foaf", "format-dc", "provenance-metadata", "usergeneratedcontent", "format-sioc", "published-by-third-party", "vocab-mappings", "no-license-metadata" ],
+    "landingPage" : "http://datahub.io/dataset/event-media"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/event-media/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/event-media/dataid#dataset",
+    "triples" : "15420"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/event-media/dataid#links_dbtune-musicbrainz",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbtune-musicbrainz",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/event-media/dataid#dataset",
+    "triples" : "42889"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/event-media/dataid#links_flickr-wrappr",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/flickr-wrappr",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/event-media/dataid#dataset",
+    "triples" : "14000000"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/event-media/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/geonames-semantic-web",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/event-media/dataid#dataset",
+    "triples" : "955"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/event-media/dataid#links_nytimes-linked-open-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/nytimes-linked-open-data",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/event-media/dataid#dataset",
+    "triples" : "21"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/event-media/dataid#links_uberblic",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/uberblic",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/event-media/dataid#dataset",
+    "triples" : "40498"
+  }, {
+    "@id" : "http://eventmedia.eurecom.fr/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://eventmedia.eurecom.fr/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://linkedevents.org/ontology/2010-10-07/rdfxml/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://linkedevents.org/ontology/2010-10-07/rdfxml/",
+    "mediaType" : "mapping/owl"
+  }, {
+    "@id" : "http://www.eurecom.fr/~troncy/ic2011/Artists_sameAs.nt",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.eurecom.fr/~troncy/ic2011/Artists_sameAs.nt",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://www.eurecom.fr/~troncy/ic2011/Events_sameAs.nt",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.eurecom.fr/~troncy/ic2011/Events_sameAs.nt",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://www.eurecom.fr/~troncy/ic2011/Venues_sameAs.nt",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.eurecom.fr/~troncy/ic2011/Venues_sameAs.nt",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://www.eurecom.fr/~troncy/ldtc2010/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.eurecom.fr/~troncy/ldtc2010/"
+  }, {
+    "@id" : "http://www.w3.org/ns/ma-ont#",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.w3.org/ns/ma-ont#",
+    "mediaType" : "mapping/owl"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

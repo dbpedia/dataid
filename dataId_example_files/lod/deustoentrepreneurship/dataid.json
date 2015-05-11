@@ -1,0 +1,138 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:gnoss@gnoss.com",
+    "name" : "GNOSS Team"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:gnoss@gnoss.com",
+    "name" : "GNOSS Team"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#creator", "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_freebase", "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_geonames-semantic-web", "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_nytimes-linked-open-data", "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_gnoss" ],
+    "dct:description" : "<p>\n<a href=\"http://deusto.gnoss.com/comunidad/deustoentrepreneurship\">Deusto Entrepreneurship: sharing business knowledge</a>, promoted by the Deusto Entrepreneurship Center at the University of Deusto, aims to update and connect knowledge of entrepreneurs, researchers and professionals on entrepreneurship and business. \n</p>\n<p>\nDeusto Entrepreneurship works with <a href=\"http://gnoss.com/\">GNOSS software (RIAM Intelearning Lab)</a>. RIAM is a company that develops semantic technology for the creation of specialized networks and linked markets. Deusto Entrepreneurship is a source of information and opinion especially recommended for people who visualize an opportunity and need inspiration, approach and support to launch a business. It offers a selection of 257 resources on entrepreneurship (September 2012).\n</p>",
+    "license" : "http://creativecommons.org/licenses/by-nc/2.0/",
+    "dct:title" : "Deusto Entrepreneurship: sharing business knowledge",
+    "exampleResource" : [ "http://deusto.gnoss.com/en/community/deustoentrepreneurship/resource/Manual-basico-para-emprender-SPRI/eb1254c3-04ce-448b-b9f4-3193e757d328?rdf", "http://deusto.gnoss.com/en/community/deustoentrepreneurship/resource/Entrepreneurship-and-Technology-The-adventure-of-/521bd532-8791-4930-8889-812dfbaff580?rdf", "http://deusto.gnoss.com/en/community/deustoentrepreneurship/advanced-search/tag/innovation?rdf" ],
+    "triples" : "20873",
+    "uriSpace" : "http://deusto.gnoss.com/en/community/deustoEntrepreneurship",
+    "rdfs:label" : "deustoentrepreneurship",
+    "distribution" : [ "http://deusto.gnoss.com/voidDeustoEntrepreneurship.n3", "http://gnoss.com/gnoss.owl" ],
+    "keyword" : [ "universidad de deusto", "sharing business knowledge", "no-proprietary-vocab", "wrapper", "business knowledge", "country.es", "schemata", "socialweb", "business angels", "format-rdfg", "language-spa", "country-spain", "format-skos", "emprendimiento", "lod", "no-vocab-mappings", "format-dc", "business models", "format-sioc", "format-foaf", "provenance-metadata", "deusto", "usergeneratedcontent", "format-wot", "skos", "sp", "dc", "deusto entrepreneurship", "license-metadata", "entrepreneurship", "format-dcam", "foaf", "spain", "sioc", "published-by-third-party" ],
+    "landingPage" : "http://datahub.io/dataset/deustoentrepreneurship"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset",
+    "triples" : "986"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_freebase",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset",
+    "triples" : "656"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/geonames-semantic-web",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset",
+    "triples" : "1"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_gnoss",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/gnoss",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset",
+    "triples" : "13"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#links_nytimes-linked-open-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/nytimes-linked-open-data",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/deustoentrepreneurship/dataid#dataset",
+    "triples" : "912"
+  }, {
+    "@id" : "http://deusto.gnoss.com/voidDeustoEntrepreneurship.n3",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://deusto.gnoss.com/voidDeustoEntrepreneurship.n3",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://gnoss.com/gnoss.owl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://gnoss.com/gnoss.owl",
+    "mediaType" : "meta/owl"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,76 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/eutc-productions/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/eutc-productions/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://api.talis.com/stores/eutc-productions/services/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://api.talis.com/stores/eutc-productions/services/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/eutc-productions/dataid#dataset">
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>theatre</dcat:keyword>
+    <dcat:distribution rdf:resource="http://api.talis.com/stores/eutc-productions/services/sparql"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A dataset of productions put on by the Edinburgh University Theatre Company past and present, including linked cast &amp; crew lists.</dct:description>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <void:uriSpace>http://www.bedlamtheatre.co.uk/</void:uriSpace>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Edinburgh University Theatre Company Productions</dct:title>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/eutc-productions/dataid#creator">
+        <foaf:mbox>mailto:ckan@lukeblaney.co.uk</foaf:mbox>
+        <foaf:name>Luke Blaney</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:exampleResource rdf:resource="http://www.bedlamtheatre.co.uk/people/79"/>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-pddl"/>
+    <void:sparqlEndpoint rdf:resource="http://api.talis.com/stores/eutc-productions/services/sparql"/>
+    <dcat:keyword>media</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/eutc-productions"/>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/eutc-productions/dataid#contributor">
+        <foaf:mbox>mailto:it@bedlamtheatre.co.uk</foaf:mbox>
+        <foaf:name>Ben Hussey</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eutc-productions/dataid#links_bbc-programmes">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/bbc-programmes"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eutc-productions/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >55</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >31223</void:triples>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://purl.org/theatre">
+        <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://purl.org/theatre"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eutc-productions/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eutc-productions/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >166</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >eutc-productions</rdfs:label>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

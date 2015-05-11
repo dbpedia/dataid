@@ -1,0 +1,62 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:josem.alvarez@weso.es" ;
+        foaf:name  "Jose María Alvarez Rodríguez at WESO (University of Oviedo)" .
+
+<http://purl.org/weso/datasets/pscs/cn/2012/cn-2012.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/weso/datasets/pscs/cn/2012/cn-2012.ttl> ;
+        dcat:mediaType    "text/turtle" .
+
+<http://purl.org/weso/pscs/cn/2012/resource/ds>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/weso/pscs/cn/2012/resource/ds> ;
+        dcat:mediaType    "HTML" .
+
+<http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid#links_http://productontology.org>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/http://productontology.org> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid#dataset> ;
+        void:triples         "5110"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "combined-nomenclature-2012"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid#creator> , <http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid#links_http://productontology.org> ;
+        dct:description         "The Combined Nomenclature 2012 is a product scheme classification used to extract statistics.\n\nAuthors:\n\nJose María Alvarez Rodríguez & Jose Emilio Labra Gayo \n\nWESO-University of Oviedo"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-odbl> ;
+        dct:title               "CN  2012"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://purl.org/weso/pscs/cn/2012/resource/310290000080?output=xml> ;
+        void:sparqlEndpoint     <http://purl.org/weso/sparql> ;
+        void:triples            "137484"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://purl.org/weso/pscs/cn/2012/resource" ;
+        dcat:distribution       <http://purl.org/weso/datasets/pscs/cn/2012/cn-2012.ttl> , <http://purl.org/weso/sparql> , <http://purl.org/weso/datasets/pscs/psc-ontology.ttl> , <http://purl.org/weso/pscs/cn/2012/resource/ds> ;
+        dcat:keyword            "euroalert" , "format-gr" , "linkeddata" , "lod" , "10ders" , "university" , "provenance-metadata" , "pscs" , "published-by-third-party" , "geodata" , "government" , "license-metadata" , "oviedo" , "vocab-mappings" , "cn-2012" , "procurement" , "weso" , "format-skosxl" , "format-skos" , "format-dcterms" , "format-dc" , "deref-vocab" , "e-procurement" , "public_contracts" , "uniovi" , "university-of-oviedo" , "linkedopendata" ;
+        dcat:landingPage        <http://datahub.io/dataset/combined-nomenclature-2012> .
+
+<http://purl.org/weso/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://purl.org/weso/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid#dataset" .
+
+<http://purl.org/weso/datasets/pscs/psc-ontology.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://purl.org/weso/datasets/pscs/psc-ontology.ttl> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://dataid.dbpedia.org/lod/combined-nomenclature-2012/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:josem.alvarez@weso.es" ;
+        foaf:name  "Jose María Alvarez Rodríguez" .

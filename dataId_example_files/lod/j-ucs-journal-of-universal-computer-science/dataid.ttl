@@ -1,0 +1,34 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://jucs.org:8181/d2rq/snorql/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://jucs.org:8181/d2rq/snorql/> ;
+        dcat:mediaType    "rdf+xml" .
+
+<http://dataid.dbpedia.org/lod/j-ucs-journal-of-universal-computer-science/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/j-ucs-journal-of-universal-computer-science/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/j-ucs-journal-of-universal-computer-science/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:name  "Journal of Universal Computer Science(J.UCS)" .
+
+<http://dataid.dbpedia.org/lod/j-ucs-journal-of-universal-computer-science/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Journal of Universal Computer Science(J.UCS)" .
+
+<http://dataid.dbpedia.org/lod/j-ucs-journal-of-universal-computer-science/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "j-ucs-journal-of-universal-computer-science"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/j-ucs-journal-of-universal-computer-science/dataid#contributor> , <http://dataid.dbpedia.org/lod/j-ucs-journal-of-universal-computer-science/dataid#creator> ;
+        dct:description         "D2R Server publishing the Journal of Universal Computer Science(J.UCS) Bibliography Database, hosted at J.UCS Server.\nThis data sets has external links with Linked Data resources (DBLP - D2R sever at FU Berlin, DBLP D2R server at L3S,  DBPedia, CAF-SIAL) and conventional Web (CiteULike, Facteted DBLP and JUCS) resources.\n\nFor example:\nhttp://jucs.org:8181/d2rq/page/Papers/1117\n\n"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/gfdl> ;
+        dct:title               "J.UCS Journal of Universal Computer Science"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dcat:distribution       <http://jucs.org:8181/d2rq/snorql/> ;
+        dcat:keyword            "publications" , "lodcloud.candidate" , "lod" ;
+        dcat:landingPage        <http://datahub.io/dataset/j-ucs-journal-of-universal-computer-science> .

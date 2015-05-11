@@ -1,0 +1,78 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/european-election-results/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/european-election-results/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://elections.publicdata.eu/void.ttl">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://elections.publicdata.eu/void.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://api.talis.com/stores/elections/services/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://api.talis.com/stores/elections/services/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/european-election-results/dataid#dataset">
+    <void:uriSpace>http://elections.publicdata.eu/data/</void:uriSpace>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <dcat:keyword>government</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >EU Election Results from 2009.</dct:description>
+    <void:exampleResource rdf:resource="http://elections.publicdata.eu/data/2009/national_parties/observation/7"/>
+    <void:exampleResource rdf:resource="http://elections.publicdata.eu/data/country/nl"/>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/european-election-results"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >european-election-results</rdfs:label>
+    <dcat:keyword>european parliament</dcat:keyword>
+    <dcat:keyword>europe</dcat:keyword>
+    <dcat:distribution rdf:resource="http://elections.publicdata.eu/void.ttl"/>
+    <void:sparqlEndpoint rdf:resource="http://api.talis.com/stores/elections/services/sparql"/>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/european-election-results/dataid#contributor">
+        <foaf:mbox>mailto:tim.hodson@kasabi.com</foaf:mbox>
+        <foaf:name>Tim Hodson</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>eu-institution</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/european-election-results/dataid#links_eurostat-linked-data">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/eurostat-linked-data"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/european-election-results/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >27</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:distribution rdf:resource="http://api.talis.com/stores/elections/services/sparql"/>
+    <dcat:keyword>lodcloud</dcat:keyword>
+    <dcat:keyword>format-qb</dcat:keyword>
+    <dcat:keyword>eu</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3165</void:triples>
+    <void:exampleResource rdf:resource="http://elections.publicdata.eu/data/political_group/efd"/>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dcat:keyword>linkeddata</dcat:keyword>
+    <dcat:keyword>latc</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dcat:keyword>geographic</dcat:keyword>
+    <dcat:keyword>rdf</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/european-election-results/dataid#creator">
+        <foaf:mbox>mailto:tim.hodson@kasabi.com</foaf:mbox>
+        <foaf:name>Tim Hodson</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >European Election Results</dct:title>
+  </dataid:Dataset>
+</rdf:RDF>

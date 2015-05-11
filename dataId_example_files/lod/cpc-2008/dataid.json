@@ -1,0 +1,133 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/cpc-2008/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/cpc-2008/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/cpc-2008/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:josem.alvarez@weso.es",
+    "name" : "Jose María Alvarez Rodríguez"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/cpc-2008/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:josem.alvarez@weso.es",
+    "name" : "Jose María Alvarez Rodríguez at WESO (University of Oviedo)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/cpc-2008/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/cpc-2008/dataid#contributor", "http://dataid.dbpedia.org/lod/cpc-2008/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/cpc-2008/dataid#links_http://productontology.org",
+    "dct:description" : "The Central Product Classification (CPC)  is a product scheme classification used to extract statistics. It was a previous attempt to CPV.\n\nAuthors of the linked data version:\n\n-Jose María Alvarez Rodríguez & Jose Emilio Labra Gayo\n\nWESO-University of Oviedo",
+    "license" : "http://www.opendefinition.org/licenses/odc-odbl",
+    "dct:title" : "CPC 2008",
+    "exampleResource" : "http://purl.org/weso/pscs/data/cpc/2008/resource/01111?output=xml",
+    "sparqlEndpoint" : "http://purl.org/weso/sparql",
+    "triples" : "100819",
+    "uriSpace" : "http://purl.org/weso/pscs/cpa/2008/resource",
+    "rdfs:label" : "cpc-2008",
+    "distribution" : [ "http://purl.org/weso/datasets/pscs/cpc/2008/cpc-2008.ttl", "http://purl.org/weso/pscs/cpc/2008/resource/ds", "http://purl.org/weso/datasets/pscs/psc-ontology.ttl", "http://purl.org/weso/sparql" ],
+    "keyword" : [ "uniovi", "license-metadata", "cpc", "linkedopendata", "format-skos", "euroalert", "linkeddata", "government", "vocab-mappings", "university-of-oviedo", "pscs", "procurement", "weso", "public_contracts", "format-skosxl", "10ders", "geodata", "provenance-metadata", "format-dc", "deref-vocab", "lod", "format-dcterms", "oviedo", "e-procurement", "format-gr", "published-by-third-party", "cpc-2008" ],
+    "landingPage" : "http://datahub.io/dataset/cpc-2008"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/cpc-2008/dataid#links_http://productontology.org",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/http://productontology.org",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/cpc-2008/dataid#dataset",
+    "triples" : "26144"
+  }, {
+    "@id" : "http://purl.org/weso/datasets/pscs/cpc/2008/cpc-2008.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/datasets/pscs/cpc/2008/cpc-2008.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://purl.org/weso/datasets/pscs/psc-ontology.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/datasets/pscs/psc-ontology.ttl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/weso/pscs/cpc/2008/resource/ds",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/pscs/cpc/2008/resource/ds",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://purl.org/weso/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://purl.org/weso/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

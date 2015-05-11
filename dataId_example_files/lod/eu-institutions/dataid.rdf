@@ -1,0 +1,80 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/eu-institutions/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/eu-institutions/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://institutions.publicdata.eu/">
+    <dcat:mediaType>rdfa</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://institutions.publicdata.eu/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://institutions.publicdata.eu/.well-known/void">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://institutions.publicdata.eu/.well-known/void"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://institutions.publicdata.eu/all.ttl">
+    <dcat:mediaType>turtle</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://institutions.publicdata.eu/all.ttl"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/eu-institutions/dataid#dataset">
+    <dcat:keyword>government</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/eu-institutions/dataid#contributor">
+        <foaf:mbox>mailto:anja@anjeve.de </foaf:mbox>
+        <foaf:name> Anja Jentzsch</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:distribution rdf:resource="http://institutions.publicdata.eu/"/>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/eu-institutions"/>
+    <dcat:distribution rdf:resource="http://institutions.publicdata.eu/all.ttl"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eu-institutions/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eu-institutions/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >154</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This site defines Linked Data compatible URIs for major institutions and bodies of the European Union that can be used as identifiers in EU-related datasets. 
+
+http://institutions.publicdata.eu/
+
+</dct:description>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/eu-institutions/dataid#links_eu-agencies-bodies">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/eu-agencies-bodies"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/eu-institutions/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >38</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >643</void:triples>
+    <void:uriSpace>http://institutions.publicdata.eu/#</void:uriSpace>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>eu-institution</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Institutions and Bodies of the European Union</dct:title>
+    <dcat:keyword>lod</dcat:keyword>
+    <void:exampleResource rdf:resource="http://institutions.publicdata.eu/#ec"/>
+    <dcat:distribution rdf:resource="http://institutions.publicdata.eu/.well-known/void"/>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-pddl"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/eu-institutions/dataid#creator">
+        <foaf:mbox>mailto:michael.hausenblas@deri.org</foaf:mbox>
+        <foaf:name>Michael Hausenblas</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >eu-institutions</rdfs:label>
+    <dcat:keyword>license-metadata</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

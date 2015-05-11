@@ -1,0 +1,55 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/legislation-openuplabs/dataid#dataset">
+    <void:exampleResource rdf:resource="http://legislation.data.gov.uk/uksi/2011/1540/made/data.rdf"/>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>lodcloud.nolinks</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The data includes details of items of legislation, their versions and related documents. The legislation data is bibliographic, and the linked data representation makes use of bibliographic concepts defined in Functional Requirements for Bibliographic Records (FRBR). This gives a clear vocabulary which distinguishes the abstract notion of a particular piece of legislation from its expression in words and its manifestation as a document. The Metalex vocabulary includes similar concepts to those in FRBR, and the legislation linked data uses both together.
+
+part of package:openuplabs</dct:description>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://gov.tso.co.uk/legislation/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://gov.tso.co.uk/legislation/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>government</dcat:keyword>
+    <dcat:keyword>lodcloud.needsinfo</dcat:keyword>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/legislation-openuplabs"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://gov.tso.co.uk/legislation/void">
+        <dcat:mediaType>meta/void</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://gov.tso.co.uk/legislation/void"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://gov.tso.co.uk/legislation/sparql"/>
+    <dct:license rdf:resource="http://reference.data.gov.uk/id/open-government-licence"/>
+    <dcat:keyword>lodcloud.unconnected</dcat:keyword>
+    <dcat:keyword>lodcloud.needstriplecount</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OpenUpLabs Legislation</dct:title>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/legislation-openuplabs/dataid#creator">
+        <foaf:name>The Stationery Office Limited</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >legislation-openuplabs</rdfs:label>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/legislation-openuplabs/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/legislation-openuplabs/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

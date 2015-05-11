@@ -1,0 +1,68 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/agris/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/agris/dataid#dataset> ;
+        void:triples         "3000000"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/agris/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:fabrizio.celli@fao.org" ;
+        foaf:name  "FAO-OEKC" .
+
+<http://dataid.dbpedia.org/lod/agris/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "agris"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/agris/dataid#creator> , <http://dataid.dbpedia.org/lod/agris/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/agris/dataid#links_fao-geopolitical-ontology> , <http://dataid.dbpedia.org/lod/agris/dataid#links_agrovoc-skos> , <http://dataid.dbpedia.org/lod/agris/dataid#links_dbpedia> ;
+        dct:description         "AGRIS is one of the most important world-wide information systems in the area of the agricultural sciences. AGRIS is an initiative that was set up by FAO of the United Nations in 1974 to make information on agriculture research globally available. The historical overall objective of AGRIS is to improve access and exchange of information serving “the information needs of developed and developing countries on a partnership basis”."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://creativecommons.org/licenses/by-nc/2.0/> ;
+        dct:title               "AGRIS"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://agris.fao.org/aos/records/data/JP2010001379?output=xml> ;
+        void:sparqlEndpoint     <http://202.45.142.113:10035/repositories/agris> ;
+        void:triples            "112500000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:distribution       <http://agris.fao.org/void.ttl> , <http://202.45.142.113:10035/repositories/agris> , <ftp://ext-ftp.fao.org/GI/Reserved/Agris/LOD/RDF_Output.tar.gz> ;
+        dcat:keyword            "forestry" , "publications" , "published-by-third-party" , "hunger" , "deref-vocab" , "agriculture" , "fisheries" , "lod" ;
+        dcat:landingPage        <http://datahub.io/dataset/agris> .
+
+<ftp://ext-ftp.fao.org/GI/Reserved/Agris/LOD/RDF_Output.tar.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <ftp://ext-ftp.fao.org/GI/Reserved/Agris/LOD/RDF_Output.tar.gz> ;
+        dcat:mediaType    "application/x-tgz" .
+
+<http://dataid.dbpedia.org/lod/agris/dataid#links_fao-geopolitical-ontology>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/fao-geopolitical-ontology> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/agris/dataid#dataset> ;
+        void:triples         "500000"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://202.45.142.113:10035/repositories/agris>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://202.45.142.113:10035/repositories/agris> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://agris.fao.org/void.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://agris.fao.org/void.ttl> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/agris/dataid#links_agrovoc-skos>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/agrovoc-skos> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/agris/dataid#dataset> ;
+        void:triples         "10000000"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/agris/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:agris@fao.org" ;
+        foaf:name  "FAO OEKC" .
+
+<http://dataid.dbpedia.org/lod/agris/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/agris/dataid#dataset" .

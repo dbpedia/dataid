@@ -1,0 +1,90 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/sweto-dblp/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/sweto-dblp/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/sweto-dblp/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:bam75@yahoo.com",
+    "name" : "Boanerges Aleman-Meza"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/sweto-dblp/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:bam75@yahoo.com",
+    "name" : "Boanerges Aleman-Meza"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/sweto-dblp/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/sweto-dblp/dataid#creator", "http://dataid.dbpedia.org/lod/sweto-dblp/dataid#contributor" ],
+    "dct:description" : "Data exposed: ontology focused on bibliography data of publications from DBLP with additions that include affiliations, universities, and publishers\n\nSize of dump and data set: 11M triples (1.1GB)\n\n\nNo dereferenceable URIs found.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "SwetoDblp",
+    "triples" : "11000000",
+    "uriSpace" : "http://lsdis.cs.uga.edu/projects/semdis/opus#",
+    "rdfs:label" : "sweto-dblp",
+    "distribution" : [ "http://knoesis.wright.edu/resources/library-resources/ontologies/swetodblp/april2008/swetodblp_april_2008.rdf.gz", "http://knoesis.wright.edu/resources/library-resources/ontologies/swetodblp/august2007/opus_august2007.rdf" ],
+    "keyword" : [ "lodcloud.unconnected", "linkeddata", "ontology", "format-rdf", "format-foaf", "format-dc", "size-large", "lod", "bibliographic", "rdf", "lodcloud.nolinks", "library", "lodcloud.needsfixing", "ckanupload.esw.200910" ],
+    "landingPage" : "http://datahub.io/dataset/sweto-dblp"
+  }, {
+    "@id" : "http://knoesis.wright.edu/resources/library-resources/ontologies/swetodblp/april2008/swetodblp_april_2008.rdf.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://knoesis.wright.edu/resources/library-resources/ontologies/swetodblp/april2008/swetodblp_april_2008.rdf.gz",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://knoesis.wright.edu/resources/library-resources/ontologies/swetodblp/august2007/opus_august2007.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://knoesis.wright.edu/resources/library-resources/ontologies/swetodblp/august2007/opus_august2007.rdf",
+    "mediaType" : "meta/rdf-schema"
+  } ],
+  "@context" : {
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

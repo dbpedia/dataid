@@ -1,0 +1,94 @@
+{
+  "@graph" : [ {
+    "@id" : "ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/rdf/pathways.rdf.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/rdf/pathways.rdf.gz",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://beta.sparql.uniprot.org/",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://beta.sparql.uniprot.org/",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/uniprot-unipathway/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/uniprot-unipathway/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/uniprot-unipathway/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:help@uniprot.org",
+    "name" : "UniProt consortium"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/uniprot-unipathway/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:help@uniprot.org",
+    "name" : "UniPathway"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/uniprot-unipathway/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/uniprot-unipathway/dataid#contributor", "http://dataid.dbpedia.org/lod/uniprot-unipathway/dataid#creator" ],
+    "dct:description" : "",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "UniProt UniPathway",
+    "sparqlEndpoint" : "http://beta.sparql.uniprot.org/",
+    "uriSpace" : "http://purl.uniprot..org/pathways/",
+    "rdfs:label" : "uniprot-unipathway",
+    "distribution" : [ "http://beta.sparql.uniprot.org/", "ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/rdf/pathways.rdf.gz" ],
+    "keyword" : [ "lod", "no-license-metadata", "lifesciences", "lodcloud.nolinks", "format-rdf", "no-provenance-metadata", "no-proprietary-vocab", "no-vocab-mappings", "uniprot" ],
+    "landingPage" : "http://datahub.io/dataset/uniprot-unipathway"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

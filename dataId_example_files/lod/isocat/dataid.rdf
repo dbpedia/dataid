@@ -1,0 +1,58 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/isocat/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/isocat/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/isocat/dataid#dataset">
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >25000</void:triples>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>linguistics</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ISO 12620 provides a framework for defining data categories compliant with the ISO/IEC 11179 family of standards. According to this model, each data category is assigned a unique administrative identifier, together with information on the status or decision-making process associated with the data category. In addition, data category specifications in the DCR contain linguistic descriptions, such as data category definitions, statements of associated value domains, and examples. Data category specifications can be associated with a variety of data element names and with language-specific versions of definitions, names, value domains and other attributes.
+
+The RDF dumps of different profiles are dynamically generated at query time over the https://catalog.clarin.eu/isocat/rest/profile/$x.rdf with $x being the profile number.
+
+Triple counts on May 16, 2014:
+3.rdf 2647
+5.rdf 12358
+6.rdf 4492
+7.rdf 366
+10.rdf 2629
+11.rdf 712
+13.rdf 58
+14.rdf 572
+15.rdf 131
+16.rdf 76
+17.rdf 149
+19.rdf 383
+20.rdf 561
+22.rdf 6</dct:description>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <dcat:keyword>isocat</dcat:keyword>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ISOcat</dct:title>
+    <void:exampleResource rdf:resource="http://www.isocat.org/rest/dc/1333.rdf"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/isocat/dataid#creator">
+        <foaf:name>S.E. Wright, M. Kemps-Snijders, M.A. Windhouwer</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >isocat</rdfs:label>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/isocat"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.isocat.org/datcat/DC-1333">
+        <dcat:mediaType>html, rdf, dcif</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.isocat.org/datcat/DC-1333"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+  </dataid:Dataset>
+</rdf:RDF>

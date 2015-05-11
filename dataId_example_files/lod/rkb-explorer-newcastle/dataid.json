@@ -1,0 +1,276 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Hugh Glaser"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-oai", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-resex", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-dblp", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-courseware", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-pisa", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-citeseer", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-rae2001", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-cordis", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-kisti", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-ibm", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-acm", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-nsf", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-ieee", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-irit", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-budapest", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-curriculum", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_southampton-ecs-eprints", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-southampton", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-wiki", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-ulm", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-eprints", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-epsrc", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-roma", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-laas", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-dotac", "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-deploy" ],
+    "dct:description" : "",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "University of Newcastle upon Tyne (RKBExplorer)",
+    "exampleResource" : "http://newcastle.rkbexplorer.com/id/person-10",
+    "sparqlEndpoint" : "http://newcastle.rkbexplorer.com/sparql/",
+    "triples" : "87505",
+    "uriSpace" : "http://newcastle.rkbexplorer.com/id/",
+    "rdfs:label" : "rkb-explorer-newcastle",
+    "distribution" : [ "http://newcastle.rkbexplorer.com/models/void.ttl", "http://newcastle.rkbexplorer.com/models/dump.tgz", "http://newcastle.rkbexplorer.com/sparql/", "http://newcastle.rkbexplorer.com/sitemap.xml" ],
+    "keyword" : [ "publications", "provenance-metadata", "format-rdf", "format-dc", "format-akt", "void-sparql-endpoint", "no-license-metadata", "published-by-third-party", "deref-vocab", "no-vocab-mappings", "lod" ],
+    "landingPage" : "http://datahub.io/dataset/rkb-explorer-newcastle"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-acm",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-acm/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "1453"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-budapest",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-budapest/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "8"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-citeseer",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-citeseer/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "796"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-cordis",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-cordis/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "4"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-courseware",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-courseware/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "16"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-curriculum",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-curriculum/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "2"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-dblp",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-dblp/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "2259"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-deploy",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-deploy/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "14"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-dotac",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-dotac/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "1421"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-eprints",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-eprints/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "1142"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-epsrc",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-epsrc/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "1"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-ibm",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-ibm/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "16"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-ieee",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-ieee/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "82"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-irit",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-irit/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "30"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-kisti",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-kisti/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "227"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-laas",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-laas/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "78"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-nsf",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-nsf/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "13"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-oai",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-oai/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "864"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-pisa",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-pisa/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "8"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-rae2001",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-rae2001/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "728"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-resex",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-resex/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "3"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-roma",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-roma/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "2"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-southampton",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-southampton/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "131"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-ulm",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-ulm/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "7"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_rkb-explorer-wiki",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-wiki/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "40"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#links_southampton-ecs-eprints",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/southampton-ecs-eprints/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/rkb-explorer-newcastle/dataid#dataset",
+    "triples" : "7"
+  }, {
+    "@id" : "http://newcastle.rkbexplorer.com/models/dump.tgz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://newcastle.rkbexplorer.com/models/dump.tgz",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://newcastle.rkbexplorer.com/models/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://newcastle.rkbexplorer.com/models/void.ttl",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://newcastle.rkbexplorer.com/sitemap.xml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://newcastle.rkbexplorer.com/sitemap.xml",
+    "mediaType" : "meta/sitemap"
+  }, {
+    "@id" : "http://newcastle.rkbexplorer.com/sparql/",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://newcastle.rkbexplorer.com/sparql/",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

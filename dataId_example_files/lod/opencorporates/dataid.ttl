@@ -1,0 +1,45 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://opencorporates.com/companies/gb/03977902.json>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://opencorporates.com/companies/gb/03977902.json> ;
+        dcat:mediaType    "JSON" .
+
+<http://dataid.dbpedia.org/lod/opencorporates/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "OpenCorporates (Chris Taggart)" .
+
+<http://dataid.dbpedia.org/lod/opencorporates/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/opencorporates/dataid#dataset> ;
+        void:triples         "500"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/opencorporates/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/opencorporates/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/opencorporates/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "opencorporates"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/opencorporates/dataid#creator> , <http://dataid.dbpedia.org/lod/opencorporates/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/opencorporates/dataid#links_dbpedia> ;
+        dct:description         "Open Database of corporate entities. As of 2011-04-09 has information on 7,841,828 companies from around the world. Jurisdictions covered include:\n\n * 41,292 Bermuda\n * 3,886,733 United Kingdom\n * 96,104 Gibraltar\n * 105,640 Isle of Man\n * 77,693 Iceland\n * 60,827 Jersey\n * 92,795 Luxembourg\n * 2,188,873 Netherlands\n * 97,653 Alaska (US) \n * 197,798 District of Columbia (US)\n * 996,420 Michigan (US)\n\nThere is good API access but currently but no bulk availablitity.\n\n### License\n\nSee <http://opencorporates.com/info/licence>. However, should note that most data in OpenCorporates is scraped from elsewhere so this license only covers the 'IP' that OpenCorporates has obtained as a result of their efforts (and license of original databases, e.g. Companies House in the UK, is unclear)."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-odbl> ;
+        dct:title               "OpenCorporates - The Open Database Of The Corporate World"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://opencorporates.com/companies/us_ak/124437.rdf> ;
+        void:triples            "750000000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://opencorporates.com/companies" ;
+        dcat:distribution       <http://opencorporates.com/companies/gb/03977902.json> ;
+        dcat:keyword            "government" , "opendatachallenge" , "format-dcterm" , "scraped" , "lod" , "no-deref-vocab" , "format-foaf" , "ecommerce" , "format-rdf" , "corporations" , "size.xlarge" , "published-by-third-party" , "format-rov" , "database" , "access-nobulk" , "format-dctypes" ;
+        dcat:landingPage        <http://datahub.io/dataset/opencorporates> .
+
+<http://dataid.dbpedia.org/lod/opencorporates/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:info@opencorporates.com" ;
+        foaf:name  "Chris Taggart" .

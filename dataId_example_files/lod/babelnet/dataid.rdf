@@ -1,0 +1,102 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/babelnet/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/babelnet/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://babelnet.org">
+    <dcat:mediaType>HTML</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://babelnet.org"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/babelnet/dataid#dataset">
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >BabelNet</dct:title>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://babelnet.org/data/babelnet-2.0-lemon-IRIs.tar.xz">
+        <dcat:mediaType>RDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://babelnet.org/data/babelnet-2.0-lemon-IRIs.tar.xz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>access-web</dcat:keyword>
+    <dcat:distribution rdf:resource="http://babelnet.org"/>
+    <void:uriSpace>http://babelnet.org/2.0/</void:uriSpace>
+    <dcat:keyword>lemon</dcat:keyword>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by-nc/2.0/"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://babelnet.org/data/babelnet-2.0-lemon-URIs.tar.xz">
+        <dcat:mediaType>RDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://babelnet.org/data/babelnet-2.0-lemon-URIs.tar.xz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>ldl-2014</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >babelnet</rdfs:label>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/babelnet/dataid#creator">
+        <foaf:name>Roberto Navigli</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>lexical-resources</dcat:keyword>
+    <dcat:keyword>llod</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/babelnet/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/dbpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/babelnet/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >19210914</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >BabelNet is both a multilingual encyclopedic dictionary, with lexicographic and encyclopedic coverage of terms, and an ontology which connects concepts and named entities in a very large network of semantic relations, made up of 9,348,287 millions of nodes, called Babel synsets. Each Babel synset represents a given meaning and contains all the synonyms which in different languages express that meaning. The BabelNet resource is made available under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported license. The different resources from which BabelNet originates are made available under different licenses, as follows: WordNet: http://wordnet.princeton.edu/wordnet/license/, Wikipedia: Creative Commons Attribution-ShareAlike 3.0 Unported license, OmegaWiki: Creative Commons Attribution 2.5 Generic license or higher, and Open Multilingual WordNet: different licenses according to the language, as indicated at http://casta-net.jp/~kuribayashi/multi/. When applicable, specific license rights are specified through the property dcterms:license. Please make sure of using data in compliance with their respective licenses.</dct:description>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://babelnet.org/2.0/">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://babelnet.org/2.0/"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1138337378</void:triples>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://babelnet.org:8084/sparql/">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://babelnet.org:8084/sparql/"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/babelnet/dataid#links_lemon-wordnet">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/lemon-wordnet"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/babelnet/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >117657</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:sparqlEndpoint rdf:resource="http://babelnet.org:8084/sparql/"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/babelnet/dataid#links_lemonUby">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/lemonUby"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/babelnet/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >15140</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>linquistics</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/babelnet/dataid#links_wikipedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/wikipedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/babelnet/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >81305156</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>lexico</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/babelnet"/>
+    <dcat:keyword>void-sparql-endpoint</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

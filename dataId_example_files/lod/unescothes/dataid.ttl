@@ -1,0 +1,72 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://skos.um.es/unescothes/unescothes.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://skos.um.es/unescothes/unescothes.ttl> ;
+        dcat:mediaType    "rdf/turtle" .
+
+<http://dataid.dbpedia.org/lod/unescothes/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/unescothes/dataid#dataset" .
+
+<http://skos.um.es/sparql/>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://skos.um.es/sparql/> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/unescothes/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:pastor@um.es" ;
+        foaf:name  "Juan-Antonio Pastor-Sánchez" .
+
+<http://skos.um.es/unescothes/C01194/html>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://skos.um.es/unescothes/C01194/html> ;
+        dcat:mediaType    "HTML" .
+
+<http://skos.um.es/unescothes/void.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://skos.um.es/unescothes/void.ttl> ;
+        dcat:mediaType    "rdf/turtle" .
+
+<http://skos.um.es/unescothes/unescothes.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://skos.um.es/unescothes/unescothes.rdf> ;
+        dcat:mediaType    "XML" .
+
+<http://dataid.dbpedia.org/lod/unescothes/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "unescothes"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/unescothes/dataid#contributor> , <http://dataid.dbpedia.org/lod/unescothes/dataid#creator> ;
+        dct:description         "The UNESCO Thesaurus is a controlled and structured list of terms used in subject analysis and retrieval of documents and publications in the fields of education, culture, natural sciences, social and human sciences, communication and information. The Thesaurus is structured into seven major subject fields, or domains, broken down into microthesauri which allow you to gain a quick overview of the subject matter."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://creativecommons.org/licenses/by-nc/2.0/> ;
+        dct:title               "UNESCO Thesaurus"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://skos.um.es/unescothes/C01194/turtle> , <http://skos.um.es/unescothes/C01194/rdfxml> , <http://skos.um.es/unescothes/C01194/n3> ;
+        void:sparqlEndpoint     <http://skos.um.es/sparql/> ;
+        dcat:distribution       <http://skos.um.es/unescothes/C01194/html> , <http://skos.um.es/sparql/> , <http://skos.um.es/unescothes> , <http://skos.um.es/unescothes/C01194/jsonld> , <http://skos.um.es/unescothes/unescothes.rdf> , <http://skos.um.es/unescothes/C01194/json> , <http://skos.um.es/unescothes/unescothes.ttl> , <http://skos.um.es/unescothes/void.ttl> ;
+        dcat:keyword            "void" , "UNESCO" , "thesaurus" , "format-skos" , "json" , "skos" , "turtle" , "classification" , "rdf" , "lld" ;
+        dcat:landingPage        <http://datahub.io/dataset/unescothes> .
+
+<http://skos.um.es/unescothes/C01194/json>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://skos.um.es/unescothes/C01194/json> ;
+        dcat:mediaType    "JSON" .
+
+<http://skos.um.es/unescothes>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://skos.um.es/unescothes> ;
+        dcat:mediaType    "HTML" .
+
+<http://dataid.dbpedia.org/lod/unescothes/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:pastor@um.es" ;
+        foaf:name  "Juan-Antonio Pastor-Sánchez" .
+
+<http://skos.um.es/unescothes/C01194/jsonld>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://skos.um.es/unescothes/C01194/jsonld> .

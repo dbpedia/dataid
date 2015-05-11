@@ -1,0 +1,43 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-inoh/dataid#dataset">
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-inoh/dataid#contributor">
+        <foaf:name>François Belleau</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>published by third party.</dcat:keyword>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://inoh.bio2rdf.org/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://inoh.bio2rdf.org/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/bio2rdf-inoh"/>
+    <dcat:distribution rdf:resource="http://inoh.bio2rdf.org/sparql"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bio2rdf-inoh</rdfs:label>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bio2RDF::INOH</dct:title>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-inoh/dataid#creator">
+        <foaf:name>Bio2RDF</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    > Is a pathway database of model organisms including human, mouse, rat and others. In INOH, the term pathway refers to higher order functional knowledge such as relationships among multiple bio-molecules that constitute signal transduction pathways or biological events in general. As most part of this knowledge resides in scientific articles, the database focuses on curating and encoding textual knowledge into a machine-processable form.</dct:description>
+    <void:uriSpace>inoh </void:uriSpace>
+    <dcat:keyword>lod</dcat:keyword>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/bio2rdf-inoh/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/bio2rdf-inoh/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

@@ -1,0 +1,82 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/museums-in-italy/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/museums-in-italy/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://sparql.linkedopendata.it/musei">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://sparql.linkedopendata.it/musei"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/museums-in-italy/dataid#dataset">
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>linked-open-data</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <dcat:keyword>format-vcard</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/museums-in-italy/dataid#creator">
+        <foaf:name>linkedopendata.it</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>linkeddata</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >49897</void:triples>
+    <dcat:keyword>lod</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/museums-in-italy/dataid#links_geonames-semantic-web">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/museums-in-italy/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1570</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://void.linkedopendata.it/musei">
+        <dcat:mediaType>meta/void</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://void.linkedopendata.it/musei"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >List of geo-referenced italian museums. Places are linked to Geonames. Museum categories are linked to dbpedia.
+More info at [http://www.linkedopendata.it/datasets/musei](http://www.linkedopendata.it/datasets/musei)</dct:description>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >museums-in-italy</rdfs:label>
+    <dcat:keyword>country-italy</dcat:keyword>
+    <dcat:keyword>void-sparql-endpoint</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dcat:keyword>museum</dcat:keyword>
+    <void:exampleResource rdf:resource="http://data.linkedopendata.it/musei/resource/Musei_Vaticani_Collezione_d%27arte_religiosa_Moderna-Roma"/>
+    <void:sparqlEndpoint rdf:resource="http://sparql.linkedopendata.it/musei"/>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://dump.linkedopendata.it/musei">
+        <dcat:mediaType>rdf+xml</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://dump.linkedopendata.it/musei"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution rdf:resource="http://sparql.linkedopendata.it/musei"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Italian Museums</dct:title>
+    <dcat:keyword>media</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/museums-in-italy"/>
+    <void:uriSpace>http://data.linkedopendata.it/data/musei/resource/</void:uriSpace>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/museums-in-italy/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/museums-in-italy/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2894</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>rdf</dcat:keyword>
+    <dcat:keyword>crossdomain</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

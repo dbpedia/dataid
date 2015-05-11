@@ -1,0 +1,85 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/jiscopenbib-bl_bnb-1/dataid#dataset">
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/jiscopenbib-bl_bnb-1/dataid#creator">
+        <foaf:name>British Library</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>format-xml</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.bl.uk/bibliographic/pdfs/british_library_data_model_v1-00.pdf">
+        <dcat:mediaType>PDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.bl.uk/bibliographic/pdfs/british_library_data_model_v1-00.pdf"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>lod</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >18376419</void:triples>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>bibliographic</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://openbiblio.commondatastorage.googleapis.com/BL-BNB-dataset.zip">
+        <dcat:mediaType>RDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://openbiblio.commondatastorage.googleapis.com/BL-BNB-dataset.zip"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/jiscopenbib-bl_bnb-1"/>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/jiscopenbib-bl_bnb-1/dataid#contributor">
+        <foaf:mbox>mailto:mark.macgillivray@okfn.org</foaf:mbox>
+        <foaf:name>Mark MacGillivray</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dcat:keyword>format-xhtml</dcat:keyword>
+    <void:exampleResource rdf:resource="http://bnb.data.bl.uk/id/agent/%C3%89ditionsdeLaMartini%C3%A8re"/>
+    <dcat:keyword>meta.duplicate</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >JISC Open Bibliography British National Bibliography dataset</dct:title>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://bnb.data.bl.uk/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://bnb.data.bl.uk/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dcat:keyword>library</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >British Library British National Bibliography package, with records of all new books published in the UK since 1950.
+
+Use of Data: This data is being made available under a Creative Commons CC0 1.0 Universal Public Domain Dedication licence. This means that the British Library Board makes no copyright, related or neighbouring rights claims to the data and does not apply any restrictions on subsequent use and reuse of the data. The British Library accepts no liability for damages from any use of the supplied data. For more detail please see the terms of the licence.
+
+Support: The British Library is committed to providing high quality services and accurate data. If you have any queries or identify any problems with the data please contact metadata@bl.uk.
+
+Share knowledge: We are also very interested to hear the ways in which you have used this data so we can understand more fully the benefits of sharing it and improve our services. Please contact metadata@bl.uk if you wish to share your experiences with us and those that are using this service.
+
+Give Credit Where Credit is Due: The British Library has a responsibility to maintain its bibliographic data on the nation’s behalf. Please credit all use of this data to the British Library and link back to www.bl.uk/bibliographic/datafree.html in order that this information can be shared and developed with today’s Internet users as well as future generations.
+
+Duplicate of package:bluk-bnb</dct:description>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.bl.uk/bibliographic/datafree.html">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.bl.uk/bibliographic/datafree.html"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <void:uriSpace>http://bnb.bibliographica.org/</void:uriSpace>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <dcat:distribution rdf:resource="http://bnb.data.bl.uk/sparql"/>
+    <dcat:keyword>bibliography</dcat:keyword>
+    <dcat:keyword>cc0</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jiscopenbib-bl_bnb-1</rdfs:label>
+    <dcat:keyword>publications</dcat:keyword>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/jiscopenbib-bl_bnb-1/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/jiscopenbib-bl_bnb-1/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

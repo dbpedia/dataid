@@ -1,0 +1,95 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/gutenberg/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/gutenberg/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/gutenberg/dataid#dataset">
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/gutenberg/dataid#contributor">
+        <foaf:mbox>mailto:http://www.gutenberg.org/wiki/Gutenberg:Contact_Information</foaf:mbox>
+        <foaf:name>Project Gutenberg</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Overview: 
+
+Project Gutenberg is the first and largest single collection of free electronic books, or eBooks.
+
+Statistics: 
+Over 100,000 titles, some duplication, of course.
+
+License:
+Majority of works in public domain. Works posted with permission from copyright holders are licensed under the Project Gutenberg license.
+
+Formats:
+Most Project Gutenberg eBooks are available in plain text,
+just so they can be used with nearly any hardware/software,
+and many are also available in a variety of other formats.
+
+Over 30,000 eBooks in over 50 languages at gutenberg.org
+
+Over 75,000 eBooks in over 100 languages at gutenberg.cc
+
+
+This is my first attempt to rewrite this little blurb,
+so I will keep it brief for now to see what happens.
+
+
+Michael S. Hart
+Founder
+Project Gutenberg,
+Inventor of eBooks
+http://www.gutenberg.org/wiki/Michael_S._Hart</dct:description>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.gutenberg.org/wiki/Gutenberg:Information_About_Robot_Access_to_our_Pages#Getting_All_EBook_Files">
+        <dcat:downloadURL rdf:resource="http://www.gutenberg.org/wiki/Gutenberg:Information_About_Robot_Access_to_our_Pages#Getting_All_EBook_Files"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>access-http</dcat:keyword>
+    <dcat:keyword>access-ftp</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>format-pgterms</dcat:keyword>
+    <dcat:keyword>access-rsync</dcat:keyword>
+    <dcat:keyword>book</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.gutenberg.cc">
+        <dcat:downloadURL rdf:resource="http://www.gutenberg.cc"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>bibliographic</dcat:keyword>
+    <dcat:keyword>ebook</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Project Gutenberg</dct:title>
+    <void:exampleResource rdf:resource="http://www.gutenberg.org/ebooks/12345.rdf"/>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dcat:keyword>format-dcterm</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/gutenberg/dataid#creator">
+        <foaf:mbox>mailto:http://www.gutenberg.org/wiki/Gutenberg:Contact_Information</foaf:mbox>
+        <foaf:name>Project Gutenberg</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:uriSpace>http://www.gutenberg.org/</void:uriSpace>
+    <dcat:keyword>format-dcmit</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://www.gutenberg.org/feeds/catalog.rdf.bz2">
+        <dcat:mediaType>bz2</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://www.gutenberg.org/feeds/catalog.rdf.bz2"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>access-bulk</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >5450115</void:triples>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gutenberg</rdfs:label>
+    <dcat:keyword>format-dcam</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/gutenberg"/>
+  </dataid:Dataset>
+</rdf:RDF>

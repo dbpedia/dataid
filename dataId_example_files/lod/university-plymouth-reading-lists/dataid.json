@@ -1,0 +1,87 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Ian Davis"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid#creator",
+    "containsLinks" : "http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid#links_openlibrary",
+    "dct:description" : "Search for lists, modules & courses\n\n  \nBrowse hierarchy | Recent changes",
+    "license" : "http://creativecommons.org/licenses/by-nc/2.0/",
+    "dct:title" : "University of Plymouth Reading Lists",
+    "exampleResource" : [ "http://lists.lib.plymouth.ac.uk/lists/marn304", "http://lists.lib.plymouth.ac.uk/lists/eoe3217" ],
+    "triples" : "441476",
+    "uriSpace" : "http://lists.lib.plymouth.ac.uk/lists/",
+    "rdfs:label" : "university-plymouth-reading-lists",
+    "keyword" : [ "lod", "format-rdf", "no-vocab-mappings", "no-provenance-metadata", "talis", "format-sioc", "higher-education", "no-proprietary-vocab", "publications", "published-by-producer", "format-dc", "no-license-metadata", "education" ],
+    "landingPage" : "http://datahub.io/dataset/university-plymouth-reading-lists"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid#links_openlibrary",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/openlibrary/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/university-plymouth-reading-lists/dataid#dataset",
+    "triples" : "5675"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

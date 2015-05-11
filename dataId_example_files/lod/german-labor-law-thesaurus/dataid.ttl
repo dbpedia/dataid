@@ -1,0 +1,80 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://vocabulary.wolterskluwer.de/arbeitsrecht.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://vocabulary.wolterskluwer.de/arbeitsrecht.rdf> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:office@semantic-web.at" ;
+        foaf:name  "Semantic Web Company" .
+
+<http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "german-labor-law-thesaurus"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#creator> , <http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_eurovoc> , <http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_dbpedia> , <http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_zbw.eu/stw> , <http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_gesis-thesoz> ;
+        dct:description         "Labor law thesaurus covers all main areas of labor law, like the roles of employee and employer; legal aspects around labor contracts and dismissal; also co-determination and industrial action. Therefore, this thesaurus is interesting and relevant for all parties, who are dealing with labor law – professionals like specialized lawyers as well as for employees looking for definitions of legal terms. Linking to thematically similar thesauri (Linked Open Data paradigm) has already taken place and is therefore available as well. Thesauri are linked with\n\n*   Standard Thesaurus für Wirtschaft, ZBW (zbw.eu/stw/)\n*   Wikipedia / DBpedia\n*   TheSoz from Leibniz Gesellschaft für Sozialwissenschaften (www.gesis.org)\n*    EuroVoc - Multilingual Thesaurus of the European Union\n"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "German labor law thesaurus"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://vocabulary.wolterskluwer.de/arbeitsrecht/10924.rdf> ;
+        void:sparqlEndpoint     <http://vocabulary.wolterskluwer.de/PoolParty/sparql/arbeitsrecht> ;
+        void:triples            "106891"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://vocabulary.wolterskluwer.de/arbeitsrecht" ;
+        dcat:distribution       <http://vocabulary.wolterskluwer.de/arbeitsrecht/export/arbeitsrecht.trig> , <http://vocabulary.wolterskluwer.de/PoolParty/sparql/arbeitsrecht> , <http://vocabulary.wolterskluwer.de/arbeitsrecht.rdf> , <http://vocabulary.wolterskluwer.de/arbeitsrecht/export/arbeitsrecht.rdf> ;
+        dcat:keyword            "provenance-metadata" , "lod2" , "no-proprietary-vocab" , "law" , "germany" , "lod" , "media" , "lodcloud" , "format-dcterms" , "license-metadata" , "format-skos" , "published-by-producer" ;
+        dcat:landingPage        <http://datahub.io/dataset/german-labor-law-thesaurus> .
+
+<http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_eurovoc>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/eurovoc/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#dataset> ;
+        void:triples         "247"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://vocabulary.wolterskluwer.de/arbeitsrecht/export/arbeitsrecht.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://vocabulary.wolterskluwer.de/arbeitsrecht/export/arbeitsrecht.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_gesis-thesoz>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/gesis-thesoz/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#dataset> ;
+        void:triples         "443"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#dataset> ;
+        void:triples         "776"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:cdirschl@wolterskluwer.de" ;
+        foaf:name  "Wolters Kluwer Deutschland GmbH" .
+
+<http://vocabulary.wolterskluwer.de/arbeitsrecht/export/arbeitsrecht.trig>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://vocabulary.wolterskluwer.de/arbeitsrecht/export/arbeitsrecht.trig> ;
+        dcat:mediaType    "appliation/x-trig" .
+
+<http://vocabulary.wolterskluwer.de/PoolParty/sparql/arbeitsrecht>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://vocabulary.wolterskluwer.de/PoolParty/sparql/arbeitsrecht> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#links_zbw.eu/stw>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/zbw.eu/stw/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/german-labor-law-thesaurus/dataid#dataset> ;
+        void:triples         "289"^^<http://www.w3.org/2001/XMLSchema#int> .

@@ -1,0 +1,135 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/istat-immigration/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/istat-immigration/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/istat-immigration/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "name" : "Linkedopendata.it"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/istat-immigration/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Linkedopendata.it"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/istat-immigration/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/istat-immigration/dataid#contributor", "http://dataid.dbpedia.org/lod/istat-immigration/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/istat-immigration/dataid#links_reference-data-gov-uk", "http://dataid.dbpedia.org/lod/istat-immigration/dataid#links_geonames-semantic-web", "http://dataid.dbpedia.org/lod/istat-immigration/dataid#links_dbpedia" ],
+    "dct:description" : "Statistical data about immigration in Italy and related topics.\nOriginal data comes from the National Statistical Institute of Italy (ISTAT, dati.istat.it) and has been put in RDF Data Cube format by Linked Open Data Italia association.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "ISTAT Immigration (LinkedOpenData.it)",
+    "exampleResource" : "http://data.linkedopendata.it/istat/resource/Obs-DCIS_MATRIMONISTR-2586",
+    "sparqlEndpoint" : "http://sparql.linkedopendata.it/istat",
+    "triples" : "3024396",
+    "rdfs:label" : "istat-immigration",
+    "distribution" : [ "http://dump.linkedopendata.it/istat/immigrazione", "http://sparql.linkedopendata.it/istat", "http://void.linkedopendata.it/istat" ],
+    "keyword" : [ "linked-data", "published-by-third-party", "country-italy", "format-org", "lod", "data-cube", "immigration", "istat", "format-sdmx", "format-qb", "void-sparql-endpoint", "format-foaf", "linkedopendata.it", "deref-vocab", "provenance-metadata", "government", "statistics", "italy", "format-rdf", "license-metadata", "format-skos" ],
+    "landingPage" : "http://datahub.io/dataset/istat-immigration"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/istat-immigration/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/istat-immigration/dataid#dataset",
+    "triples" : "319"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/istat-immigration/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/istat-immigration/dataid#dataset",
+    "triples" : "190"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/istat-immigration/dataid#links_reference-data-gov-uk",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/reference-data-gov-uk/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/istat-immigration/dataid#dataset",
+    "triples" : "11"
+  }, {
+    "@id" : "http://dump.linkedopendata.it/istat/immigrazione",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://dump.linkedopendata.it/istat/immigrazione",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://sparql.linkedopendata.it/istat",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://sparql.linkedopendata.it/istat",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://void.linkedopendata.it/istat",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://void.linkedopendata.it/istat",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

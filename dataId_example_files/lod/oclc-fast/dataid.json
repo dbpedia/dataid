@@ -1,0 +1,113 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/oclc-fast/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/oclc-fast/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/oclc-fast/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "OCLC Research"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/oclc-fast/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/oclc-fast/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/oclc-fast/dataid#links_lcsh", "http://dataid.dbpedia.org/lod/oclc-fast/dataid#links_geonames" ],
+    "dct:description" : "FAST (Faceted Application of Subject Terminology) is an enumerative, faceted subject heading schema derived from the Library of Congress Subject Headings (LCSH). Its purpose is to be easier to understand, control, apply, and use than LCSH. Any valid set of LC subject headings can be converted to FAST headings.\n\nFAST contains 1.6M authority records.\n\nThe triple count (30M) is a rough estimate based on the number of authority records. The LCSH link count is based on the observation that many but not all of the authority records have LCSH links. The Geonames link count is based on [this account](http://www.oclc.org/nextspace/018/research.htm) that states 100k total geographic entities with 60% matched to Geonames.",
+    "license" : "http://www.opendefinition.org/licenses/odc-by",
+    "dct:title" : "Faceted Application of Subject Terminology",
+    "exampleResource" : "http://id.worldcat.org/fast/1411628",
+    "triples" : "30000000",
+    "uriSpace" : "http://id.worldcat.org/fast/",
+    "rdfs:label" : "oclc-fast",
+    "distribution" : [ "http://fast.oclc.org/fast/void/0.1/", "http://experimental.worldcat.org/fast/xsl/FastOpenSearch.xml" ],
+    "keyword" : [ "provenance-metadata", "format-void", "authorities", "publications", "format-dc", "license-metadata", "lodcloud", "lod", "format-skos", "published-by-producer", "no-proprietary-vocab", "format-foaf" ],
+    "landingPage" : "http://datahub.io/dataset/oclc-fast"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/oclc-fast/dataid#links_geonames",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/oclc-fast/dataid#dataset",
+    "triples" : "60000"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/oclc-fast/dataid#links_lcsh",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/lcsh/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/oclc-fast/dataid#dataset",
+    "triples" : "1600000"
+  }, {
+    "@id" : "http://experimental.worldcat.org/fast/xsl/FastOpenSearch.xml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://experimental.worldcat.org/fast/xsl/FastOpenSearch.xml",
+    "mediaType" : "api/opensearch"
+  }, {
+    "@id" : "http://fast.oclc.org/fast/void/0.1/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://fast.oclc.org/fast/void/0.1/",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

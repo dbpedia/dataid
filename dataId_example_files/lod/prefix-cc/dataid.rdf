@@ -1,0 +1,70 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/prefix-cc/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/prefix-cc/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/prefix-cc/dataid#dataset">
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://prefix.cc/popular/all.file.vann">
+        <dcat:mediaType>RDF</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://prefix.cc/popular/all.file.vann"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>prefix</dcat:keyword>
+    <dcat:keyword>namespace</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A community-curated collection of namespace prefix mappings for use in RDF applications.
+
+Features a lookup API and bulk download.</dct:description>
+    <void:uriSpace>http://prefix.cc/</void:uriSpace>
+    <dcat:keyword>usergeneratedcontent</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://prefix.cc/about/api">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://prefix.cc/about/api"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >prefix.cc</dct:title>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/prefix-cc"/>
+    <void:exampleResource rdf:resource="http://prefix.cc/foaf.file.vann"/>
+    <dcat:keyword>format-owl</dcat:keyword>
+    <dcat:keyword>no-proprietary-vocab</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://prefix.cc/popular/all.file.csv">
+        <dcat:mediaType>CSV</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://prefix.cc/popular/all.file.csv"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >8000</void:triples>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <dcat:keyword>rdf</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <dcat:keyword>format-vann</dcat:keyword>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/prefix-cc/dataid#creator">
+        <foaf:name>Richard Cyganiak</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >prefix-cc</rdfs:label>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://prefix.cc/popular/all.file.json">
+        <dcat:mediaType>JSON</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://prefix.cc/popular/all.file.json"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+  </dataid:Dataset>
+</rdf:RDF>

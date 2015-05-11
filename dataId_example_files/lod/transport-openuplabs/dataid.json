@@ -1,0 +1,81 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/transport-openuplabs/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/transport-openuplabs/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/transport-openuplabs/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "The Stationery Office Limited"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/transport-openuplabs/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/transport-openuplabs/dataid#creator",
+    "dct:description" : "The Transport dataset is based on NapTan and traffic flow data. These datasets are compiled by the Department for Transport.\n\nDetails on Transport data can be found at http://www.dft.gov.uk\n\nThe data was sourced from http://upload.data.gov.uk/data/transport ",
+    "license" : "http://reference.data.gov.uk/id/open-government-licence",
+    "dct:title" : "OpenUpLabs Transport",
+    "exampleResource" : "http://transport.data.gov.uk/doc/stop-point/490011810W.rdf",
+    "sparqlEndpoint" : "http://gov.tso.co.uk/transport/sparql",
+    "rdfs:label" : "transport-openuplabs",
+    "distribution" : "http://gov.tso.co.uk/transport/sparql",
+    "keyword" : [ "lodcloud.unconnected", "format-geo", "format-foaf", "format-rdf", "format-rdfs", "lodcloud.nolinks", "government", "format-skos", "lodcloud.needsinfo", "lodcloud.needstriplecount", "published-by-third-party", "lod", "transportation", "deref-vocab" ],
+    "landingPage" : "http://datahub.io/dataset/transport-openuplabs"
+  }, {
+    "@id" : "http://gov.tso.co.uk/transport/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://gov.tso.co.uk/transport/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

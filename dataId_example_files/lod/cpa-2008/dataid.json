@@ -1,0 +1,133 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/cpa-2008/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/cpa-2008/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/cpa-2008/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:josem.alvarez@weso.es",
+    "name" : "Jose María Alvarez Rodríguez"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/cpa-2008/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:josem.alvarez@weso.es",
+    "name" : "Jose María Alvarez Rodríguez at WESO (University of Oviedo)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/cpa-2008/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/cpa-2008/dataid#creator", "http://dataid.dbpedia.org/lod/cpa-2008/dataid#contributor" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/cpa-2008/dataid#links_http://productontology.org",
+    "dct:description" : "The Statistical classification of products by activity (CPA)  is a product scheme classification used to extract statistics. It was a previous attempt to CPV.\n\nAuthors:\n\n-Jose María Alvarez Rodríguez & Jose Emilio Labra Gayo\n\nWESO-University of Oviedo",
+    "license" : "http://www.opendefinition.org/licenses/odc-odbl",
+    "dct:title" : "CPA 2008",
+    "exampleResource" : "http://purl.org/weso/pscs/data/cpa/2008/resource/011111?output=xml",
+    "sparqlEndpoint" : "http://purl.org/weso/sparql",
+    "triples" : "92749",
+    "uriSpace" : "http://purl.org/weso/pscs/cpa/2008/resource",
+    "rdfs:label" : "cpa-2008",
+    "distribution" : [ "http://purl.org/weso/datasets/pscs/cpa/2008/cpa-2008.ttl", "http://purl.org/weso/datasets/pscs/psc-ontology.ttl", "http://purl.org/weso/pscs/cpa/2008/resource/ds", "http://purl.org/weso/sparql" ],
+    "keyword" : [ "format-dc", "format-skosxl", "provenance-metadata", "geodata", "format-gr", "vocab-mappings", "cpa-2008", "deref-vocab", "cpa", "linkeddata", "university-of-oviedo", "uniovi", "format-skos", "oviedo", "10ders", "pscs", "linkedopendata", "license-metadata", "government", "public_contracts", "euroalert", "published-by-third-party", "format-dcterms", "weso", "lod", "procurement", "e-procurement" ],
+    "landingPage" : "http://datahub.io/dataset/cpa-2008"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/cpa-2008/dataid#links_http://productontology.org",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/http://productontology.org",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/cpa-2008/dataid#dataset",
+    "triples" : "27812"
+  }, {
+    "@id" : "http://purl.org/weso/datasets/pscs/cpa/2008/cpa-2008.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/datasets/pscs/cpa/2008/cpa-2008.ttl",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://purl.org/weso/datasets/pscs/psc-ontology.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/datasets/pscs/psc-ontology.ttl",
+    "mediaType" : "meta/rdf-schema"
+  }, {
+    "@id" : "http://purl.org/weso/pscs/cpa/2008/resource/ds",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://purl.org/weso/pscs/cpa/2008/resource/ds",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://purl.org/weso/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://purl.org/weso/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

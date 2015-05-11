@@ -1,0 +1,86 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/odc-imd-environment-score/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/odc-imd-environment-score/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/odc-imd-environment-score/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "http://reference.data.gov.uk/id/department/dclg"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/odc-imd-environment-score/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/odc-imd-environment-score/dataid#creator",
+    "dct:description" : "This dataset contains the scores for the Living Environment Deprivation Domain of the Index of Multiple Deprivation, 2010. This indicator measures the quality of individuals’ immediate surroundings both within and outside the home. A high number indicates a high level of deprivation. \n\n\nExample:\nhttp://opendatacommunities.org/id/IMD/2010/IMD-environment-score/LSOA/E01000001\n\nDownload:\nhttp://opendatacommunities-downloads.s3.amazonaws.com/imd-2010-environment-score.ttl.zip",
+    "license" : "http://reference.data.gov.uk/id/open-government-licence",
+    "dct:title" : "Index of Multiple Deprivation, Living Environment Deprivation Domain, Scores 2010",
+    "exampleResource" : "http://opendatacommunities.org/id/IMD/2010/IMD-environment-score/LSOA/E01000001",
+    "triples" : "194892",
+    "rdfs:label" : "odc-imd-environment-score",
+    "distribution" : [ "http://opendatacommunities-downloads.s3.amazonaws.com/imd-2010-environment-score.ttl.zip", "http://opendatacommunities.org/datasets/imd-environment-score-2010.ttl" ],
+    "keyword" : [ "lod", "deref-vocab", "lodcloud.nolinks", "lodcloud.unconnected", "government", "published-by-third-party" ],
+    "landingPage" : "http://datahub.io/dataset/odc-imd-environment-score"
+  }, {
+    "@id" : "http://opendatacommunities-downloads.s3.amazonaws.com/imd-2010-environment-score.ttl.zip",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://opendatacommunities-downloads.s3.amazonaws.com/imd-2010-environment-score.ttl.zip",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://opendatacommunities.org/datasets/imd-environment-score-2010.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://opendatacommunities.org/datasets/imd-environment-score-2010.ttl",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

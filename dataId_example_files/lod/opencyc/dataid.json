@@ -1,0 +1,83 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/opencyc/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/opencyc/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/opencyc/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Cycorp, Inc."
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/opencyc/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/opencyc/dataid#creator",
+    "dct:description" : "### About\n\n> Now it is even easier to use the rich and diverse collection of real-world concepts in OpenCyc to bring meaning to your semantic web applications! The full OpenCyc content is now available both as downloadable OWL ontologies as well as via semantic web endpoints (i.e., permanent URIs). These URIs return RDF representations of each Cyc concept as well as a human-readable version when accessed via a Web Browser.\n\nData exposed: OpenCyc Ontology\nSize of dump and data set: ~1.6 million triples, ~150MB uncompressed\n\n### Openness\n\n[License](http://www.opencyc.org/license) states:\n\n> These files contain an OWL representation of information contained in the OpenCyc Knowledge Base. The content of these OWL files are licensed under the Creative Commons Attribution 3.0 license whose text can be found at . The content of these OWL files, including the OpenCyc content they represent, constitutes the \"Work\" referred to in the Creative Commons license. The terms of this license equally apply to, without limitation, renamings and other logically equivalent reformulations of the content of these OWL files (or portions thereof) in any natural or formal language, as well as to derivations of this content or inclusion of it in other ontologies.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "OpenCyc",
+    "exampleResource" : "http://sw.opencyc.org/concept/Mx4rwP1ZTZwpEbGdrcN5Y29ycA",
+    "triples" : "1600000",
+    "uriSpace" : "http://sw.opencyc.org/concept/",
+    "rdfs:label" : "opencyc",
+    "distribution" : "http://sw.opencyc.org/downloads/opencyc_owl_downloads/opencyc-latest.owl.gz",
+    "keyword" : [ "published-by-producer", "ontology", "no-license-metadata", "format-rdf", "lodcloud.nolinks", "no-vocab-mappings", "linkeddata", "no-provenance-metadata", "lod", "deref-vocab", "crossdomain", "license-nonefordb", "ckanupload.esw.200910", "rdf" ],
+    "landingPage" : "http://datahub.io/dataset/opencyc"
+  }, {
+    "@id" : "http://sw.opencyc.org/downloads/opencyc_owl_downloads/opencyc-latest.owl.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://sw.opencyc.org/downloads/opencyc_owl_downloads/opencyc-latest.owl.gz",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

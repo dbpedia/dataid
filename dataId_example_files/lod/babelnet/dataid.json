@@ -1,0 +1,144 @@
+{
+  "@graph" : [ {
+    "@id" : "http://babelnet.org",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://babelnet.org",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://babelnet.org/2.0/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://babelnet.org/2.0/",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://babelnet.org/data/babelnet-2.0-lemon-IRIs.tar.xz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://babelnet.org/data/babelnet-2.0-lemon-IRIs.tar.xz",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://babelnet.org/data/babelnet-2.0-lemon-URIs.tar.xz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://babelnet.org/data/babelnet-2.0-lemon-URIs.tar.xz",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://babelnet.org:8084/sparql/",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://babelnet.org:8084/sparql/",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/babelnet/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/babelnet/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/babelnet/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Roberto Navigli"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/babelnet/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/babelnet/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/babelnet/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/babelnet/dataid#links_lemon-wordnet", "http://dataid.dbpedia.org/lod/babelnet/dataid#links_lemonUby", "http://dataid.dbpedia.org/lod/babelnet/dataid#links_wikipedia" ],
+    "dct:description" : "BabelNet is both a multilingual encyclopedic dictionary, with lexicographic and encyclopedic coverage of terms, and an ontology which connects concepts and named entities in a very large network of semantic relations, made up of 9,348,287 millions of nodes, called Babel synsets. Each Babel synset represents a given meaning and contains all the synonyms which in different languages express that meaning. The BabelNet resource is made available under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported license. The different resources from which BabelNet originates are made available under different licenses, as follows: WordNet: http://wordnet.princeton.edu/wordnet/license/, Wikipedia: Creative Commons Attribution-ShareAlike 3.0 Unported license, OmegaWiki: Creative Commons Attribution 2.5 Generic license or higher, and Open Multilingual WordNet: different licenses according to the language, as indicated at http://casta-net.jp/~kuribayashi/multi/. When applicable, specific license rights are specified through the property dcterms:license. Please make sure of using data in compliance with their respective licenses.",
+    "license" : "http://creativecommons.org/licenses/by-nc/2.0/",
+    "dct:title" : "BabelNet",
+    "sparqlEndpoint" : "http://babelnet.org:8084/sparql/",
+    "triples" : "1138337378",
+    "uriSpace" : "http://babelnet.org/2.0/",
+    "rdfs:label" : "babelnet",
+    "distribution" : [ "http://babelnet.org/data/babelnet-2.0-lemon-IRIs.tar.xz", "http://babelnet.org", "http://babelnet.org/data/babelnet-2.0-lemon-URIs.tar.xz", "http://babelnet.org/2.0/", "http://babelnet.org:8084/sparql/" ],
+    "keyword" : [ "access-web", "lemon", "ldl-2014", "format-rdf", "lexical-resources", "llod", "linquistics", "lexico", "void-sparql-endpoint" ],
+    "landingPage" : "http://datahub.io/dataset/babelnet"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/babelnet/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/babelnet/dataid#dataset",
+    "triples" : "19210914"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/babelnet/dataid#links_lemon-wordnet",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/lemon-wordnet",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/babelnet/dataid#dataset",
+    "triples" : "117657"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/babelnet/dataid#links_lemonUby",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/lemonUby",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/babelnet/dataid#dataset",
+    "triples" : "15140"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/babelnet/dataid#links_wikipedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/wikipedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/babelnet/dataid#dataset",
+    "triples" : "81305156"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/2001-spanish-census-to-rdf/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/2001-spanish-census-to-rdf/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/2001-spanish-census-to-rdf/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:migumar2@infor.uva.es",
+    "name" : "Miguel A. Martínez-Prieto"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/2001-spanish-census-to-rdf/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:jfergar@infor.uva.es",
+    "name" : "Javier D. Fernández"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/2001-spanish-census-to-rdf/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/2001-spanish-census-to-rdf/dataid#creator", "http://dataid.dbpedia.org/lod/2001-spanish-census-to-rdf/dataid#contributor" ],
+    "dct:description" : "This site offers information of the conversion process of a 5% sampling of the 2001 Spanish census from a plain useless format to RDF, a semantic representation supported by different products, services and protocols.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "2001 Spanish Census to RDF",
+    "rdfs:label" : "2001-spanish-census-to-rdf",
+    "distribution" : [ "http://gutenberg.dcs.fi.uva.es/~bhscmcyt/census/sparql_en.php", "http://gutenberg.dcs.fi.uva.es/~bhscmcyt/census/censoRDFGEO1M.n3.gz" ],
+    "keyword" : [ "linked-open-data", "sparql-endpoint", "census", "rdf" ],
+    "landingPage" : "http://datahub.io/dataset/2001-spanish-census-to-rdf"
+  }, {
+    "@id" : "http://gutenberg.dcs.fi.uva.es/~bhscmcyt/census/censoRDFGEO1M.n3.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://gutenberg.dcs.fi.uva.es/~bhscmcyt/census/censoRDFGEO1M.n3.gz",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://gutenberg.dcs.fi.uva.es/~bhscmcyt/census/sparql_en.php",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://gutenberg.dcs.fi.uva.es/~bhscmcyt/census/sparql_en.php",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.offenerhaushalt.de/bund/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.offenerhaushalt.de/bund/"
+  }, {
+    "@id" : "http://data.offenerhaushalt.de/bund/bund_2011.csv",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.offenerhaushalt.de/bund/bund_2011.csv",
+    "mediaType" : "CSV"
+  }, {
+    "@id" : "http://data.offenerhaushalt.de/bund/bund_2011.json",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.offenerhaushalt.de/bund/bund_2011.json",
+    "mediaType" : "JSON"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bund-offener-haushalt/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/bund-offener-haushalt/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bund-offener-haushalt/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Open Knowledge Foundation Deutschland e.V."
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bund-offener-haushalt/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/bund-offener-haushalt/dataid#creator",
+    "dct:description" : "Bund Offener Haushalt shows the complex data of the german federal budget. It also gives access to the data in an open and re-usable format. \n\npart of package:offener-haushalt",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Bund Offener Haushalt",
+    "rdfs:label" : "bund-offener-haushalt",
+    "distribution" : [ "http://data.offenerhaushalt.de/bund/", "http://data.offenerhaushalt.de/bund/bund_2011.json", "http://data.offenerhaushalt.de/bund/bund_2011.csv" ],
+    "keyword" : [ "lod", "published-by-third-party", "lodcloud.unconnected", "no-license-metadata", "government", "lodcloud.nolinks", "german", "budget", "no-proprietary-vocab" ],
+    "landingPage" : "http://datahub.io/dataset/bund-offener-haushalt"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

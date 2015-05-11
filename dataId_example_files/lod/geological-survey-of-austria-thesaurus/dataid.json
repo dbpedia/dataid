@@ -1,0 +1,205 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:thesaurus@geologie.ac.at",
+    "name" : "Marcus Ebner"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:thesaurus@geologie.ac.at",
+    "name" : "Thesaurus Editorial Team"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#creator", "http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#links_opencyc", "http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#links_freebase" ],
+    "dct:description" : "The Thesaurus of the Geological Survey of Austria is a bilingual (de/en) controlled vocabulary for the semantic harmonisation of geoscientific map-based geodata. Currently there are four thematic subjects available : \n\n* lithology\n* geologic timescale\n* geologic units\n* tectonic units & classification",
+    "license" : "http://www.opendefinition.org/licenses/cc-by-sa",
+    "dct:title" : "Geological Survey of Austria (GBA) - Thesaurus",
+    "exampleResource" : [ "http://resource.geolba.ac.at/tectonicunit/115.rdf", "http://resource.geolba.ac.at/lithology/48.rdf", "http://resource.geolba.ac.at/GeologicTimeScale/35.rdf", "http://resource.geolba.ac.at/GeologicUnit/291.rdf" ],
+    "sparqlEndpoint" : [ "http://resource.geolba.ac.at/PoolParty/sparql/GeologicUnit", "http://resource.geolba.ac.at/PoolParty/sparql/GeologicTimeScale", "http://resource.geolba.ac.at/PoolParty/sparql/lithology", "http://resource.geolba.ac.at/PoolParty/sparql/tectonicunit" ],
+    "triples" : "40912",
+    "uriSpace" : "http://resource.geolba.ac.at/",
+    "rdfs:label" : "geological-survey-of-austria-thesaurus",
+    "distribution" : [ "http://resource.geolba.ac.at/GeologicTimeScale", "http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=urn:uuid:1D87806F-E88C-0001-AFCC-DC87F6001C3A/pp_project_lithologische_einheiten.rdf&contentType=application/rdf%2Bxml", "http://resource.geolba.ac.at/PoolParty/sparql/GeologicTimeScale", "http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=urn:uuid:1D763DCD-0E5C-0001-FBB1-1D401A50B620/pp_project_geologische_zeitskala.rdf&contentType=application/rdf%2Bxml", "http://resource.geolba.ac.at/PoolParty/sparql/GeologicUnit", "http://resource.geolba.ac.at/lithology.rdf", "http://resource.geolba.ac.at/PoolParty/sparql/lithology", "http://resource.geolba.ac.at/GeologicUnit.rdf", "http://resource.geolba.ac.at/GeologicUnit", "http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=d7b07bce-7ce4-4bcb-85ae-e0f774e6fb8d/pp_project_geologische_einheiten.rdf&contentType=application/rdf%2Bxml", "http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=d13bb3e7-df48-4cba-bd0c-e63c8943d9e0/pp_project_lithotektonische_einheiten.rdf&contentType=application/rdf%2Bxml", "http://resource.geolba.ac.at/lithology", "http://resource.geolba.ac.at/tectonicunit.rdf", "http://resource.geolba.ac.at/GeologicTimeScale.rdf", "http://resource.geolba.ac.at/PoolParty/sparql/tectonicunit", "http://resource.geolba.ac.at/tectonicunit" ],
+    "keyword" : [ "format-skos", "geology", "geographic", "austria", "provenance-metadata", "lod", "thesaurus", "geoscience", "no-proprietary-vocab", "published-by-producer", "no-license-metadata" ],
+    "landingPage" : "http://datahub.io/dataset/geological-survey-of-austria-thesaurus"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#dataset",
+    "triples" : "100"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#links_freebase",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#dataset",
+    "triples" : "93"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#links_opencyc",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/opencyc/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/geological-survey-of-austria-thesaurus/dataid#dataset",
+    "triples" : "9"
+  }, {
+    "@id" : "http://resource.geolba.ac.at/GeologicTimeScale",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://resource.geolba.ac.at/GeologicTimeScale",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://resource.geolba.ac.at/GeologicTimeScale.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://resource.geolba.ac.at/GeologicTimeScale.rdf",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://resource.geolba.ac.at/GeologicUnit",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://resource.geolba.ac.at/GeologicUnit",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://resource.geolba.ac.at/GeologicUnit.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://resource.geolba.ac.at/GeologicUnit.rdf",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=d13bb3e7-df48-4cba-bd0c-e63c8943d9e0/pp_project_lithotektonische_einheiten.rdf&contentType=application/rdf%2Bxml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=d13bb3e7-df48-4cba-bd0c-e63c8943d9e0/pp_project_lithotektonische_einheiten.rdf&contentType=application/rdf%2Bxml",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=d7b07bce-7ce4-4bcb-85ae-e0f774e6fb8d/pp_project_geologische_einheiten.rdf&contentType=application/rdf%2Bxml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=d7b07bce-7ce4-4bcb-85ae-e0f774e6fb8d/pp_project_geologische_einheiten.rdf&contentType=application/rdf%2Bxml",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=urn:uuid:1D763DCD-0E5C-0001-FBB1-1D401A50B620/pp_project_geologische_zeitskala.rdf&contentType=application/rdf%2Bxml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=urn:uuid:1D763DCD-0E5C-0001-FBB1-1D401A50B620/pp_project_geologische_zeitskala.rdf&contentType=application/rdf%2Bxml",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=urn:uuid:1D87806F-E88C-0001-AFCC-DC87F6001C3A/pp_project_lithologische_einheiten.rdf&contentType=application/rdf%2Bxml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://resource.geolba.ac.at/PoolParty/OpenConfigPathResourceProvider/backuproot?fileName=urn:uuid:1D87806F-E88C-0001-AFCC-DC87F6001C3A/pp_project_lithologische_einheiten.rdf&contentType=application/rdf%2Bxml",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://resource.geolba.ac.at/PoolParty/sparql/GeologicTimeScale",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://resource.geolba.ac.at/PoolParty/sparql/GeologicTimeScale",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://resource.geolba.ac.at/PoolParty/sparql/GeologicUnit",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://resource.geolba.ac.at/PoolParty/sparql/GeologicUnit",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://resource.geolba.ac.at/PoolParty/sparql/lithology",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://resource.geolba.ac.at/PoolParty/sparql/lithology",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://resource.geolba.ac.at/PoolParty/sparql/tectonicunit",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://resource.geolba.ac.at/PoolParty/sparql/tectonicunit",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://resource.geolba.ac.at/lithology",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://resource.geolba.ac.at/lithology",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://resource.geolba.ac.at/lithology.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://resource.geolba.ac.at/lithology.rdf",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://resource.geolba.ac.at/tectonicunit",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://resource.geolba.ac.at/tectonicunit",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://resource.geolba.ac.at/tectonicunit.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://resource.geolba.ac.at/tectonicunit.rdf",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

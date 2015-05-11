@@ -1,0 +1,83 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/dogdb-2g/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/dogdb-2g/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/dogdb-2g/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:techentin.robert@mayo.edu",
+    "name" : "Bob Techentin"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/dogdb-2g/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:techentin.robert@mayo.edu",
+    "name" : "Bob Techentin"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/dogdb-2g/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/dogdb-2g/dataid#contributor", "http://dataid.dbpedia.org/lod/dogdb-2g/dataid#creator" ],
+    "dct:description" : "Baseline data for dogdb (data of government database).  The relational data schema is 629 tables linked by foreign key constraints.  The semantic data is 39 million RDF triples.",
+    "license" : "http://www.opendefinition.org/licenses/odc-odbl",
+    "dct:title" : "dogdb-2G",
+    "rdfs:label" : "dogdb-2g",
+    "distribution" : [ "https://ckannet-storage.commondatastorage.googleapis.com/2014-04-28T14:27:18.947Z/dogdb-2g-sql.gz", "https://ckannet-storage.commondatastorage.googleapis.com/2014-04-28T14:18:06.023Z/dogdb-2g-nt.gz" ],
+    "keyword" : [ "format-sql", "data.gov", "benchmark", "format-rdf" ],
+    "landingPage" : "http://datahub.io/dataset/dogdb-2g"
+  }, {
+    "@id" : "https://ckannet-storage.commondatastorage.googleapis.com/2014-04-28T14:18:06.023Z/dogdb-2g-nt.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://ckannet-storage.commondatastorage.googleapis.com/2014-04-28T14:18:06.023Z/dogdb-2g-nt.gz",
+    "mediaType" : "n-triples"
+  }, {
+    "@id" : "https://ckannet-storage.commondatastorage.googleapis.com/2014-04-28T14:27:18.947Z/dogdb-2g-sql.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://ckannet-storage.commondatastorage.googleapis.com/2014-04-28T14:27:18.947Z/dogdb-2g-sql.gz",
+    "mediaType" : "sql"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

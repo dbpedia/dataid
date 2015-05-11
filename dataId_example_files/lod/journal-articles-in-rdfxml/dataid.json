@@ -1,0 +1,78 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/journal-articles-in-rdfxml/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/journal-articles-in-rdfxml/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/journal-articles-in-rdfxml/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:metadata@bl.uk",
+    "name" : "The British Library Metadata Services"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/journal-articles-in-rdfxml/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:metadata@bl.uk",
+    "name" : "The British Library Metadata Services"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/journal-articles-in-rdfxml/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/journal-articles-in-rdfxml/dataid#creator", "http://dataid.dbpedia.org/lod/journal-articles-in-rdfxml/dataid#contributor" ],
+    "dct:description" : "Journal article subsets made available by the British Library published as basic (unmodelled) RDFXML without URIs. Subsets can be made available in a wide range of subject areas.",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "Journal Articles in RDFXML",
+    "rdfs:label" : "journal-articles-in-rdfxml",
+    "distribution" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-03-08T135949/BL_Palaeontology_Articles.zip",
+    "keyword" : [ "publications", "bibliographic data", "bibliography", "format-rdf", "library", "published-by-producer", "british-library", "bibliographic", "cc0", "format-xml" ],
+    "landingPage" : "http://datahub.io/dataset/journal-articles-in-rdfxml"
+  }, {
+    "@id" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-03-08T135949/BL_Palaeontology_Articles.zip",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-03-08T135949/BL_Palaeontology_Articles.zip",
+    "mediaType" : "application/x-zip-compressed"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

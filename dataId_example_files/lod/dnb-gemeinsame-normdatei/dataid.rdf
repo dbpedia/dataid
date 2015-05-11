@@ -1,0 +1,113 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://datendienst.dnb.de/cgi-bin/mabit.pl?cmd=fetch&amp;userID=opendata&amp;pass=opendata&amp;mabheft=GND.rdf.gz">
+    <dcat:mediaType>XML</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://datendienst.dnb.de/cgi-bin/mabit.pl?cmd=fetch&amp;userID=opendata&amp;pass=opendata&amp;mabheft=GND.rdf.gz"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#dataset">
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#links_DBpedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/DBpedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#dataset"/>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <dcat:keyword>concepts</dcat:keyword>
+    <dcat:keyword>corporations</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#links_Wikipedia">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/Wikipedia"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#dataset"/>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:keyword>no-provenance-metadata</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#contributor">
+        <foaf:name>Deutsche Nationalbibliothek</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#links_geonames">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/geonames"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#dataset"/>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:exampleResource rdf:resource="http://d-nb.info/gnd/118514768/about"/>
+    <dcat:keyword>authorities</dcat:keyword>
+    <dcat:keyword>persons</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >GND stands for "Gemeinsame Normdatei" (Integrated Authority File) and offers a broad range of elements to describe authorities. The GND originates from the German library community and aims to solve the name ambiguity problem in the library world. Corresponding data is usually expressed in a customized MARC 21 Authority Format (GND MARC Format) which is quite domain specific and is not used beyond the library and publisher world. The GND ontology tries to bridge this gap by providing a format specification for the usage in the semantic web.
+
+The need for name disambiguity and entries having an authoritative character is an issue that concerns a lot more communities than the library world. In a growing information society the unique identification and linking of persons, places and other authorities becomes more and more important. The GND Ontology aims to transfer the made experience from libraries to the web community by providing a vocabulary for the description of differentiated and undifferentiated persons, conferences or events, corporate bodies, places or geographic names, subject headings, and works.
+
+To ensure compatibility aspects the GND ontology aligns a number of already established vocabularies like the FOAF vocabulary.
+
+The GND is a young specification that probably will underlie certain smaller changes. However, the currently defined classes and properties have a status of stability. But we also expect the introduction of additional elements caused by newly upcoming requirements within the community. From January 2014 on, the Linked Data Service of the German National Library (DNB) will issue scheduled releases and will be integrated in the export releases of the other formats. Changes to the conversion and to the data modelling will be made in January, May and September. Changes will be notified in advance via the Linked Data Service mailing list (http://lists.dnb.de/mailman/listinfo/lds) and the Integrated
+Authority File GND Ontology mailing list (http://lists.dnb.de/mailman/listinfo/gnd-ontology). Please subscribe if you are interested in receiving information about future developments in DNB Linked Data Services.
+In a schedule corresponding to the export releases, updated dumps of the authority and bibliographic data in RDF/XML and Turtle will be available for download in February, June and October.
+
+The authors welcome comments on this document, preferably via the public GND ontology list; publicarchives are available. 
+
+The Integrated Authority File
+
+The "Gemeinsame Normdatei" (GND, Integrated Authority File) brings together the content of the former Corporate Body Authority File GKD (Gemeinsame Körperschaftsdatei), the Name Authority File PND (Personennamendatei), the Subject Headings Authority File SWD (Schlagwortnormdatei) and the Uniform Title File of the Deutsches Musikarchiv EST file (Einheitssachtitel-Datei ) to form an integrated authority file.
+
+The target has therefore been reached of setting up an authority file which covers all types of entities and which serves as a common, authoritative reference system for libraries' bibliographic data and for the cataloging data of other authority file users such as archives, museums, projects, scientific and cultural institutions. All library networks in the German-speaking countries and the German Union Catalogue of Serials (ZDB) are involved in the GND project alongside the German National Library.
+
+The GND should consign to the past problems arising from different formats, parallel storage of data records and different rules for descriptive and subject cataloging.
+
+The objective of the GND is to form a modern, web-compatible authority file which is capable of networking the wide range of resources and information held by libraries and other cultural institutions in the German-speaking countries and making these accessible to users. To approach a web-compatible authority file we also provide the GND as linked data. Therefore we developed an independent GND specific vocabulary (GND Ontology) that almost completely covers the offered GND concepts provided in MARC 21. </dct:description>
+    <void:exampleResource rdf:resource="http://d-nb.info/gnd/10140798-1/about"/>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#creator">
+        <foaf:name>Deutsche Nationalbibliothek and German Library Networks</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/dnb-gemeinsame-normdatei"/>
+    <dcat:keyword>rdf</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#links_viaf">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/viaf/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#dataset"/>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:uriSpace>http://d-nb.info/gnd/</void:uriSpace>
+    <dcat:keyword>no-deref-vocab</dcat:keyword>
+    <dcat:keyword>no-vocab-mappings</dcat:keyword>
+    <dcat:keyword>lld</dcat:keyword>
+    <dcat:keyword>buildings</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#links_stw">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/stw"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#dataset"/>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:exampleResource rdf:resource="http://d-nb.info/gnd/4190055-8/about"/>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dnb-gemeinsame-normdatei</rdfs:label>
+    <dcat:keyword>places</dcat:keyword>
+    <dcat:keyword>germany</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dcat:distribution rdf:resource="http://datendienst.dnb.de/cgi-bin/mabit.pl?cmd=fetch&amp;userID=opendata&amp;pass=opendata&amp;mabheft=GND.rdf.gz"/>
+    <void:exampleResource rdf:resource="http://d-nb.info/gnd/11850553X/about"/>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>bibliographic</dcat:keyword>
+    <dcat:keyword>no-license-metadata</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gemeinsame Normdatei (GND)</dct:title>
+  </dataid:Dataset>
+</rdf:RDF>

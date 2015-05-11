@@ -1,0 +1,54 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/jiscopenbib-bl_bnb-1/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "jiscopenbib-bl_bnb-1"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/jiscopenbib-bl_bnb-1/dataid#creator> , <http://dataid.dbpedia.org/lod/jiscopenbib-bl_bnb-1/dataid#contributor> ;
+        dct:description         "British Library British National Bibliography package, with records of all new books published in the UK since 1950.\n\nUse of Data: This data is being made available under a Creative Commons CC0 1.0 Universal Public Domain Dedication licence. This means that the British Library Board makes no copyright, related or neighbouring rights claims to the data and does not apply any restrictions on subsequent use and reuse of the data. The British Library accepts no liability for damages from any use of the supplied data. For more detail please see the terms of the licence.\n\nSupport: The British Library is committed to providing high quality services and accurate data. If you have any queries or identify any problems with the data please contact metadata@bl.uk.\n\nShare knowledge: We are also very interested to hear the ways in which you have used this data so we can understand more fully the benefits of sharing it and improve our services. Please contact metadata@bl.uk if you wish to share your experiences with us and those that are using this service.\n\nGive Credit Where Credit is Due: The British Library has a responsibility to maintain its bibliographic data on the nation’s behalf. Please credit all use of this data to the British Library and link back to www.bl.uk/bibliographic/datafree.html in order that this information can be shared and developed with today’s Internet users as well as future generations.\n\nDuplicate of package:bluk-bnb"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "JISC Open Bibliography British National Bibliography dataset"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://bnb.data.bl.uk/id/agent/%C3%89ditionsdeLaMartini%C3%A8re> ;
+        void:sparqlEndpoint     <http://bnb.data.bl.uk/sparql> ;
+        void:triples            "18376419"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://bnb.bibliographica.org/" ;
+        dcat:distribution       <http://www.bl.uk/bibliographic/pdfs/british_library_data_model_v1-00.pdf> , <http://openbiblio.commondatastorage.googleapis.com/BL-BNB-dataset.zip> , <http://www.bl.uk/bibliographic/datafree.html> , <http://bnb.data.bl.uk/sparql> ;
+        dcat:keyword            "format-xml" , "lod" , "format-rdf" , "bibliographic" , "published-by-producer" , "no-proprietary-vocab" , "format-xhtml" , "meta.duplicate" , "library" , "bibliography" , "cc0" , "publications" ;
+        dcat:landingPage        <http://datahub.io/dataset/jiscopenbib-bl_bnb-1> .
+
+<http://openbiblio.commondatastorage.googleapis.com/BL-BNB-dataset.zip>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://openbiblio.commondatastorage.googleapis.com/BL-BNB-dataset.zip> ;
+        dcat:mediaType    "RDF" .
+
+<http://www.bl.uk/bibliographic/datafree.html>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.bl.uk/bibliographic/datafree.html> ;
+        dcat:mediaType    "HTML" .
+
+<http://dataid.dbpedia.org/lod/jiscopenbib-bl_bnb-1/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:mark.macgillivray@okfn.org" ;
+        foaf:name  "Mark MacGillivray" .
+
+<http://dataid.dbpedia.org/lod/jiscopenbib-bl_bnb-1/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "British Library" .
+
+<http://bnb.data.bl.uk/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://bnb.data.bl.uk/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://www.bl.uk/bibliographic/pdfs/british_library_data_model_v1-00.pdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.bl.uk/bibliographic/pdfs/british_library_data_model_v1-00.pdf> ;
+        dcat:mediaType    "PDF" .
+
+<http://dataid.dbpedia.org/lod/jiscopenbib-bl_bnb-1/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/jiscopenbib-bl_bnb-1/dataid#dataset" .

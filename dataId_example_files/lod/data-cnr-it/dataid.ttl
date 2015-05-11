@@ -1,0 +1,56 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://data.cnr.it/dataset/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.cnr.it/dataset/> ;
+        dcat:mediaType    "meta/void" .
+
+<http://data.cnr.it/dump/data-cnr-it-2011-08-29-00.tar.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.cnr.it/dump/data-cnr-it-2011-08-29-00.tar.gz> ;
+        dcat:mediaType    "text/turtle" .
+
+<http://data.cnr.it/sparql-proxy/>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://data.cnr.it/sparql-proxy/> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/data-cnr-it/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "data-cnr-it"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/data-cnr-it/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/data-cnr-it/dataid#links_dbpedia> ;
+        dct:description         "data.cnr.it is an initiative of the Italian National Research Council aimed to provide public access to the information of the CNR organization.\n\nKeywords are: transparency, interoperability, open data.\n\nThe technologies of the data.cnr.it are based on RDF and follows the paradygm of the Linked Data initiative.\n\n\nDocumentation of the ontology is in OWL-Doc format\n\nThe CNR ontology can be queried through the SPARQL Endpoint by selecting http://data.cnr.it/ as graph."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://creativecommons.org/licenses/by-nc/2.0/> ;
+        dct:title               "Open Data from the Italian National Research Council"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://www.cnr.it/ontology/cnr/individuo/CNR> , <http://www.cnr.it/ontology/cnr/individuo/unitaDiPersonaleInterno/MATRICOLA11472> , <http://www.cnr.it/ontology/cnr/individuo/istituto/CDS078> ;
+        void:sparqlEndpoint     <http://data.cnr.it/sparql-proxy/> ;
+        void:triples            "2762278"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://www.cnr.it/ontology/cnr/individuo/" ;
+        dcat:distribution       <http://data.cnr.it/sparql-proxy/> , <http://www.cnr.it/ontology/cnr/> , <http://data.cnr.it/dump/data-cnr-it-2011-08-29-00.tar.gz> , <http://data.cnr.it/dataset/> ;
+        dcat:keyword            "government" , "published-by-producer" , "no-deref-vocab" , "lod" , "format-owl" , "format-skos" , "void-sparql-endpoint" ;
+        dcat:landingPage        <http://datahub.io/dataset/data-cnr-it> .
+
+<http://dataid.dbpedia.org/lod/data-cnr-it/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/data-cnr-it/dataid#dataset" .
+
+<http://www.cnr.it/ontology/cnr/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.cnr.it/ontology/cnr/> ;
+        dcat:mediaType    "meta/rdf-schema" .
+
+<http://dataid.dbpedia.org/lod/data-cnr-it/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Consiglio Nazionale delle Ricerche (CNR)" .
+
+<http://dataid.dbpedia.org/lod/data-cnr-it/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/data-cnr-it/dataid#dataset> ;
+        void:triples         "34706"^^<http://www.w3.org/2001/XMLSchema#int> .

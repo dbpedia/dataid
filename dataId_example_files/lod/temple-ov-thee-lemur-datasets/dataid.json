@@ -1,0 +1,163 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.totl.net/4inarow/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.totl.net/4inarow/",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://data.totl.net/cancer_causes.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.totl.net/cancer_causes.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://data.totl.net/chess/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.totl.net/chess/",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://data.totl.net/element/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.totl.net/element/",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://data.totl.net/he/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.totl.net/he/",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://data.totl.net/kabbalah/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.totl.net/kabbalah/",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://data.totl.net/planet/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.totl.net/planet/",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://data.totl.net/playingcards/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.totl.net/playingcards/",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://data.totl.net/tarot-rwcs/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.totl.net/tarot-rwcs/",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://data.totl.net/tarot/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.totl.net/tarot/",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://data.totl.net/tictactoe/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.totl.net/tictactoe/",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://data.totl.net/zodiac/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.totl.net/zodiac/",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Christopher Gutteridge"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#links_semantictweet" ],
+    "dct:description" : "This resource provides 3 groups of RDF datasets. 1. Esoteric subjects such as tarot and alchemy. These all interlink and the Horoscope, Tarot, Planets and Elements sets link into DBPedia resources for Starsigns, Metals, Tarot Suits, Planets, Gems, and the Narnia novels(!)\n\n2. Descriptions of Game States such as tic-tac-toe and chess. Do not attmpt to spider these as they are effectively infinite.\n\n3. Deliberately perverse datasets including Daily Mail cancer. Where possible, the causes and preventions of cancer are linked to their DBPedia indentifiers. Other perverse datasets are considered 'toys' and not linked here. They are listed on the homepage.",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "Temple ov thee Lemur",
+    "exampleResource" : "http://data.totl.net/playingcards/deck",
+    "triples" : "10000",
+    "uriSpace" : "http://data.totl.net/",
+    "rdfs:label" : "temple-ov-thee-lemur-datasets",
+    "distribution" : [ "http://data.totl.net/kabbalah/", "http://data.totl.net/tarot/", "http://data.totl.net/tictactoe/", "http://data.totl.net/planet/", "http://data.totl.net/4inarow/", "http://data.totl.net/chess/", "http://data.totl.net/playingcards/", "http://data.totl.net/tarot-rwcs/", "http://data.totl.net/he/", "http://data.totl.net/element/", "http://data.totl.net/cancer_causes.rdf", "http://data.totl.net/zodiac/" ],
+    "keyword" : [ "chess", "no-provenance-metadata", "published-by-producer", "no-vocab-mappings", "lod", "crossdomain", "format-dc", "format-owl", "perverse", "humour", "tarot", "no-license-metadata", "format-rdf", "deref-vocab", "games", "format-foaf", "occult" ],
+    "landingPage" : "http://datahub.io/dataset/temple-ov-thee-lemur-datasets"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#dataset",
+    "triples" : "500"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#links_semantictweet",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/semantictweet/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/temple-ov-thee-lemur-datasets/dataid#dataset",
+    "triples" : "1"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

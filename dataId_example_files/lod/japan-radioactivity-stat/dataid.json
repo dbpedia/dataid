@@ -1,0 +1,101 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/japan-radioactivity-stat/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/japan-radioactivity-stat/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/japan-radioactivity-stat/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "KANZAKI Masahide"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/japan-radioactivity-stat/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/japan-radioactivity-stat/dataid#creator",
+    "containsLinks" : "http://dataid.dbpedia.org/lod/japan-radioactivity-stat/dataid#links_geonames-semantic-web",
+    "dct:description" : "文部科学省は各都道府県等からの報告に基づき全国の環境放射能水準調査を作成しています。これをatmc.jpがテキスト化したデータの1年分（2011-03-16～2012-03-15）をRDF化したものです。福島県、宮城県の3月分データは欠落があります。\n\nThis is an experimantal RDF data of radioactivity statistics, observed at 47 prefectures hourly, from 2011-03-16 to 2012-03-15. Source data is text data at atmc.jp converted from the daily announcements by the Ministry of Education, which have been compiled based on reports from each prefecture. Some data from Fukushima and Miyagi in March missing",
+    "license" : "http://creativecommons.org/licenses/by-nc/2.0/",
+    "dct:title" : "National Radioactivity Stat as Linked Data",
+    "uriSpace" : "http://www.kanzaki.com/works/2011/stat/ra/",
+    "rdfs:label" : "japan-radioactivity-stat",
+    "distribution" : [ "http://www.kanzaki.com/works/2012/pub/radiostat-20110316-20120315.zip", "http://www.kanzaki.com/works/2011/stat/ra-void.ttl" ],
+    "keyword" : [ "format-rdf", "format-vcard", "lod", "published-by-third-party", "country-japan", "format-time", "radioactivity", "format-scovo", "format-rdfs", "format-geo", "no-proprietary-vocab", "geographic", "format-event", "statistics", "government" ],
+    "landingPage" : "http://datahub.io/dataset/japan-radioactivity-stat"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/japan-radioactivity-stat/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/japan-radioactivity-stat/dataid#dataset",
+    "triples" : "36696"
+  }, {
+    "@id" : "http://www.kanzaki.com/works/2011/stat/ra-void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.kanzaki.com/works/2011/stat/ra-void.ttl",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://www.kanzaki.com/works/2012/pub/radiostat-20110316-20120315.zip",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.kanzaki.com/works/2012/pub/radiostat-20110316-20120315.zip",
+    "mediaType" : "rdf/turtle"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

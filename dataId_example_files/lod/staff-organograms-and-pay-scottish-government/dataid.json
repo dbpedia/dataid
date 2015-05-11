@@ -1,0 +1,78 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/staff-organograms-and-pay-scottish-government/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/staff-organograms-and-pay-scottish-government/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/staff-organograms-and-pay-scottish-government/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Scottish Government"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/staff-organograms-and-pay-scottish-government/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/staff-organograms-and-pay-scottish-government/dataid#creator",
+    "dct:description" : "A list of most Senior Civil Service posts in the Scottish Government including title, contact details, their line manager, and where disclosed, the name of the officer. Vacant posts are listed as \"Vacant\", and posts where the jobholder is not disclosed are listed as \"N/D\". Note that a number of officers are not listed for security reasons. This data has been updated with a snapshot of the organisation on 31/03/2011. The senior staff data is now presented in one CSV file. Positions that have been removed in between the exercises in October 2010 and spring 2011 are listed as \"Eliminated\".",
+    "license" : "http://reference.data.gov.uk/id/open-government-licence",
+    "dct:title" : "Organogram and staff pay data for The Scottish Government",
+    "exampleResource" : "http://organogram.data.gov.uk/data/scotland/2011-03-31/March-2011-Organogram#person37",
+    "uriSpace" : "http://organogram.data.gov.uk/data/scotland/",
+    "rdfs:label" : "staff-organograms-and-pay-scottish-government",
+    "distribution" : "http://www.scotland.gov.uk/Resource/Doc/930/0118325.txt",
+    "keyword" : [ "format-opmv", "format-sdmxa", "published-by-producer", "format-payband", "format-gov", "format-qb", "format-void", "format-foaf", "format-dct", "format-xsd", "lodcloud.needsfixing", "format-org", "no-deref-vocab", "format-organogram", "government", "format-skos", "format-vcard", "lodcloud.nolinks", "format-poststatus", "lodcloud.unconnected", "format-copmv", "format-grade", "format-rdfs", "format-sdmxc", "format-dgu", "data.gov.uk", "lod", "format-rdf", "format-owl", "format-time" ],
+    "landingPage" : "http://datahub.io/dataset/staff-organograms-and-pay-scottish-government"
+  }, {
+    "@id" : "http://www.scotland.gov.uk/Resource/Doc/930/0118325.txt",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.scotland.gov.uk/Resource/Doc/930/0118325.txt",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

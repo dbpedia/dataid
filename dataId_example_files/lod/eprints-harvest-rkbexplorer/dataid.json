@@ -1,0 +1,224 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:hg@ecs.soton.ac.uk",
+    "name" : "Hugh Glaser"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:hg@ecs.soton.ac.uk",
+    "name" : "Hugh Glaser"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#contributor", "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-jisc", "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-eprints", "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-citeseer", "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_ordnance-survey-linked-data", "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_semanticweb-org", "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-kisti", "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-dblp", "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-southampton", "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-dotac", "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-oai", "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-biolit", "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_l3s-dblp", "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-acm", "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-rae2001", "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_ southampton-ecs-eprints" ],
+    "dct:description" : "The data here comes from harvesting ePrints Open Archives, as listed at [http://roar.eprints.org](http://roar.eprints.org).\n\nThere is a [list of the 190 repositories](http://foreign.rkbexplorer.com/models/sites.html) we have managed to harvest.\n\nWe can't provide a typical URI to resolve, as none of the URIs are ours. You can use this URI to do a SPARQL query: http://researchrepository.napier.ac.uk/id/eprint/1615",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "ePrints Harvest (RKBExplorer)",
+    "sparqlEndpoint" : "http://foreign.rkbexplorer.com/sparql/",
+    "rdfs:label" : "eprints-harvest-rkbexplorer",
+    "distribution" : [ "http://foreign.rkbexplorer.com/browse/?type=resource&forceLocal=true&uri=http%3A%2F%2Fresearchrepository.napier.ac.uk%2Fid%2Feprint%2F1615", "http://foreign.rkbexplorer.com/sparql/", "http://foreign.rkbexplorer.com/sitemap.xml", "http://foreign.rkbexplorer.com/crs/", "http://foreign.rkbexplorer.com/models/void.ttl", "http://foreign.rkbexplorer.com/" ],
+    "keyword" : [ "lod", "format-rdf", "sparql", "format-dc", "sparql-endpoint", "bibliographic data" ],
+    "landingPage" : "http://datahub.io/dataset/eprints-harvest-rkbexplorer"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_ southampton-ecs-eprints",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/ southampton-ecs-eprints",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset",
+    "triples" : "49979"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset",
+    "triples" : "337"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_l3s-dblp",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/l3s-dblp",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset",
+    "triples" : "15"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_ordnance-survey-linked-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/ordnance-survey-linked-data",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset",
+    "triples" : "155"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-acm",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/rkb-explorer-acm",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset",
+    "triples" : "490"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-biolit",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/rkb-explorer-biolit",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset",
+    "triples" : "100"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-citeseer",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/rkb-explorer-citeseer",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset",
+    "triples" : "115"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-dblp",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/rkb-explorer-dblp",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset",
+    "triples" : "1275"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-dotac",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/rkb-explorer-dotac",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset",
+    "triples" : "100"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-eprints",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/rkb-explorer-eprints",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset",
+    "triples" : "48944"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-jisc",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/rkb-explorer-jisc",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset",
+    "triples" : "19"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-kisti",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/rkb-explorer-kisti",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset",
+    "triples" : "52"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-oai",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/rkb-explorer-oai",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset",
+    "triples" : "567620"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-rae2001",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/rkb-explorer-rae2001",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset",
+    "triples" : "75"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_rkb-explorer-southampton",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/rkb-explorer-southampton",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset",
+    "triples" : "25584"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#links_semanticweb-org",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/semanticweb-org",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eprints-harvest-rkbexplorer/dataid#dataset",
+    "triples" : "2291"
+  }, {
+    "@id" : "http://foreign.rkbexplorer.com/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://foreign.rkbexplorer.com/",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://foreign.rkbexplorer.com/browse/?type=resource&forceLocal=true&uri=http%3A%2F%2Fresearchrepository.napier.ac.uk%2Fid%2Feprint%2F1615",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://foreign.rkbexplorer.com/browse/?type=resource&forceLocal=true&uri=http%3A%2F%2Fresearchrepository.napier.ac.uk%2Fid%2Feprint%2F1615",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://foreign.rkbexplorer.com/crs/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://foreign.rkbexplorer.com/crs/",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://foreign.rkbexplorer.com/models/void.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://foreign.rkbexplorer.com/models/void.ttl",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://foreign.rkbexplorer.com/sitemap.xml",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://foreign.rkbexplorer.com/sitemap.xml"
+  }, {
+    "@id" : "http://foreign.rkbexplorer.com/sparql/",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://foreign.rkbexplorer.com/sparql/",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

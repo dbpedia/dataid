@@ -1,0 +1,118 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/sandrart-net/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/sandrart-net/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/sandrart-net/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:carsten@bluem.net",
+    "name" : "Carsten Blüm"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/sandrart-net/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Various"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/sandrart-net/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/sandrart-net/dataid#contributor", "http://dataid.dbpedia.org/lod/sandrart-net/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/sandrart-net/dataid#links_viaf", "http://dataid.dbpedia.org/lod/sandrart-net/dataid#links_geonames-semantic-web", "http://dataid.dbpedia.org/lod/sandrart-net/dataid#links_dnb-gemeinsame-normdatei" ],
+    "dct:description" : "This dataset offers objects (persons, places, works of art, bibliographic items as well as their relations) from an online edition of Joachim von Sandrart’s “Teutsche Academie der Bau-, Bild- und Mahlerey-Künste”, a German three-volume book from the late 17th century.\n\nPlease note: Data is not yet complete.",
+    "license" : "http://www.opendefinition.org/licenses/odc-odbl",
+    "dct:title" : "sandrart.net",
+    "exampleResource" : "http://ta.sandrart.net/-person-2162",
+    "triples" : "140000",
+    "rdfs:label" : "sandrart-net",
+    "distribution" : "http://ta.sandrart.net/data/lod.rdf.gz",
+    "keyword" : [ "format-foaf", "art", "format-geonames", "format-ecrm", "crossdomain", "format-rdaGr2", "lod", "no-proprietary-vocab", "arts", "art-history", "published-by-producer" ],
+    "landingPage" : "http://datahub.io/dataset/sandrart-net"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/sandrart-net/dataid#links_dnb-gemeinsame-normdatei",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/sandrart-net/dataid#dataset",
+    "triples" : "2970"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/sandrart-net/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/sandrart-net/dataid#dataset",
+    "triples" : "425"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/sandrart-net/dataid#links_viaf",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/viaf/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/sandrart-net/dataid#dataset",
+    "triples" : "2880"
+  }, {
+    "@id" : "http://ta.sandrart.net/data/lod.rdf.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://ta.sandrart.net/data/lod.rdf.gz",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

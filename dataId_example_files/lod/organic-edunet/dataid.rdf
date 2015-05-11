@@ -1,0 +1,99 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/organic-edunet/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/organic-edunet/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://data.organic-edunet.eu/rdfdump.rdf">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://data.organic-edunet.eu/rdfdump.rdf"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://lreforschools.eun.org/c/document_library/get_file?p_l_id=10970&amp;folderId=12073&amp;name=DLFE-1.pdf">
+    <dcat:mediaType>PDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://lreforschools.eun.org/c/document_library/get_file?p_l_id=10970&amp;folderId=12073&amp;name=DLFE-1.pdf"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://sites.wiwiss.fu-berlin.de/suhl/bizer/d2r-server/config.rdf">
+    <dcat:mediaType>mapping/d2r</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://sites.wiwiss.fu-berlin.de/suhl/bizer/d2r-server/config.rdf"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://data.organic-edunet.eu/void.ttl">
+    <dcat:mediaType>meta/void</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://data.organic-edunet.eu/void.ttl"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://data.organic-edunet.eu/page/identifier/1454">
+    <dcat:mediaType>api/linked-data</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://data.organic-edunet.eu/page/identifier/1454"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://data.organic-edunet.eu/snorql/">
+    <dcat:downloadURL rdf:resource="http://data.organic-edunet.eu/snorql/"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://data.organic-edunet.eu/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://data.organic-edunet.eu/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://ltsc.ieee.org/xsd/lomv1.0/common/vocabValues.xsd">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://ltsc.ieee.org/xsd/lomv1.0/common/vocabValues.xsd"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/organic-edunet/dataid#dataset">
+    <dcat:distribution rdf:resource="http://data.organic-edunet.eu/page/identifier/1454"/>
+    <dcat:keyword>vocab-mappings</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/organic-edunet/dataid#contributor">
+        <foaf:name>UAH</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>lifesciences</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/organic-edunet"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/organic-edunet/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/organic-edunet/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >11091</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:distribution rdf:resource="http://data.organic-edunet.eu/sparql"/>
+    <dcat:keyword>format-dcterms</dcat:keyword>
+    <void:sparqlEndpoint rdf:resource="http://data.organic-edunet.eu/sparql"/>
+    <dcat:keyword>format-lom</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >organic-edunet</rdfs:label>
+    <dcat:distribution rdf:resource="http://sites.wiwiss.fu-berlin.de/suhl/bizer/d2r-server/config.rdf"/>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>agriculture</dcat:keyword>
+    <dcat:distribution rdf:resource="http://data.organic-edunet.eu/snorql/"/>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >11091</void:triples>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Organic Edunet Linked Open Data</dct:title>
+    <dcat:distribution rdf:resource="http://ltsc.ieee.org/xsd/lomv1.0/common/vocabValues.xsd"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Organic Edunet Linked Open Data currently contains the metadata of collection of learning objects exposed through the Organic.Edunet portal. These objects come from organizations that have become providers of educational materials on the portal. The topics of the collection include organic agriculture and agroecology.
+</dct:description>
+    <void:exampleResource rdf:resource="https://ckannet-storage.commondatastorage.googleapis.com/2012-10-27T214250/1454.n3"/>
+    <void:exampleResource rdf:resource="https://ckannet-storage.commondatastorage.googleapis.com/2012-10-27T214009/1454.rdf"/>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>provenance-metadata</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:distribution rdf:resource="http://lreforschools.eun.org/c/document_library/get_file?p_l_id=10970&amp;folderId=12073&amp;name=DLFE-1.pdf"/>
+    <dcat:distribution rdf:resource="http://data.organic-edunet.eu/rdfdump.rdf"/>
+    <void:uriSpace>http://data.organic-edunet.eu/directory/identifier</void:uriSpace>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/organic-edunet/dataid#creator">
+        <foaf:name>University of Alcala de Henares</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>agroecology</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dcat:distribution rdf:resource="http://data.organic-edunet.eu/void.ttl"/>
+  </dataid:Dataset>
+</rdf:RDF>

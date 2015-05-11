@@ -1,0 +1,127 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/ntnusc/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/ntnusc/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ntnusc/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:rurik.greenall@ub.ntnu.no",
+    "name" : "Rurik Greenall"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ntnusc/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:rurik.greenall@ub.ntnu.no",
+    "name" : "NTNU University library"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ntnusc/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/ntnusc/dataid#contributor", "http://dataid.dbpedia.org/lod/ntnusc/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/ntnusc/dataid#links_lcsh", "http://dataid.dbpedia.org/lod/ntnusc/dataid#links_geonames-semantic-web", "http://dataid.dbpedia.org/lod/ntnusc/dataid#links_radatana", "http://dataid.dbpedia.org/lod/ntnusc/dataid#links_dewey_decimal_classification" ],
+    "dct:description" : "The digitized historical manuscripts held in the special collections of the Norwegian university of science and technology (NTNU).\n\nThe data is a catalogue of manuscripts held by NTNU and these are catalogued directly as RDF.\n\nThe data is the usage catalogue for the Gunnerus Library Special Collections, and drives their web presences. The data is under constant development and the dataset is growing, and must be seen as unstable. Links to fulltext will be added as these are digitized\n\n",
+    "license" : "http://www.opendefinition.org/licenses/odc-pddl",
+    "dct:title" : "NTNU special collections",
+    "exampleResource" : "http://www.ntnu.no/ub/digital/document/ntnu22",
+    "triples" : "3569",
+    "uriSpace" : "http://www.ntnu.no/ub/digital/",
+    "rdfs:label" : "ntnusc",
+    "distribution" : "http://www.ntnu.no/ub/data/ntnusc",
+    "keyword" : [ "format-dc", "publications", "lld", "english", "format-nl", "published-by-producer", "format-bibo", "no-provenance-metadata", "format-rdf", "lod", "linkedopendata", "no-license-metadata", "deref-vocab", "no-vocab-mappings", "norwegian", "bibliographic", "library" ],
+    "landingPage" : "http://datahub.io/dataset/ntnusc"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ntnusc/dataid#links_dewey_decimal_classification",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ntnusc/dataid#dataset",
+    "triples" : "239"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ntnusc/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ntnusc/dataid#dataset",
+    "triples" : "323"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ntnusc/dataid#links_lcsh",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/lcsh/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ntnusc/dataid#dataset",
+    "triples" : "292"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ntnusc/dataid#links_radatana",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/radatana/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ntnusc/dataid#dataset",
+    "triples" : "47"
+  }, {
+    "@id" : "http://www.ntnu.no/ub/data/ntnusc",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.ntnu.no/ub/data/ntnusc",
+    "mediaType" : "text/turtle"
+  } ],
+  "@context" : {
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

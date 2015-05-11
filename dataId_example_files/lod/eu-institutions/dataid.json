@@ -1,0 +1,125 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/eu-institutions/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/eu-institutions/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eu-institutions/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:anja@anjeve.de ",
+    "name" : " Anja Jentzsch"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eu-institutions/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:michael.hausenblas@deri.org",
+    "name" : "Michael Hausenblas"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eu-institutions/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/eu-institutions/dataid#contributor", "http://dataid.dbpedia.org/lod/eu-institutions/dataid#creator" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/eu-institutions/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/eu-institutions/dataid#links_eu-agencies-bodies" ],
+    "dct:description" : "This site defines Linked Data compatible URIs for major institutions and bodies of the European Union that can be used as identifiers in EU-related datasets. \n\nhttp://institutions.publicdata.eu/\n\n",
+    "license" : "http://www.opendefinition.org/licenses/odc-pddl",
+    "dct:title" : "Institutions and Bodies of the European Union",
+    "exampleResource" : "http://institutions.publicdata.eu/#ec",
+    "triples" : "643",
+    "uriSpace" : "http://institutions.publicdata.eu/#",
+    "rdfs:label" : "eu-institutions",
+    "distribution" : [ "http://institutions.publicdata.eu/", "http://institutions.publicdata.eu/all.ttl", "http://institutions.publicdata.eu/.well-known/void" ],
+    "keyword" : [ "government", "published-by-third-party", "deref-vocab", "eu-institution", "provenance-metadata", "lod", "license-metadata" ],
+    "landingPage" : "http://datahub.io/dataset/eu-institutions"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eu-institutions/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eu-institutions/dataid#dataset",
+    "triples" : "154"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/eu-institutions/dataid#links_eu-agencies-bodies",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/eu-agencies-bodies",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/eu-institutions/dataid#dataset",
+    "triples" : "38"
+  }, {
+    "@id" : "http://institutions.publicdata.eu/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://institutions.publicdata.eu/",
+    "mediaType" : "rdfa"
+  }, {
+    "@id" : "http://institutions.publicdata.eu/.well-known/void",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://institutions.publicdata.eu/.well-known/void",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://institutions.publicdata.eu/all.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://institutions.publicdata.eu/all.ttl",
+    "mediaType" : "turtle"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

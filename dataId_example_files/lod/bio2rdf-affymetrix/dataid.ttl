@@ -1,0 +1,60 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/bio2rdf-affymetrix/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "bio2rdf-affymetrix"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/bio2rdf-affymetrix/dataid#contributor> , <http://dataid.dbpedia.org/lod/bio2rdf-affymetrix/dataid#creator> ;
+        dct:description         "This dataset contains the probesets and microarrays offered by Affymetrix."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "Bio2RDF::Affymetrix"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://bio2rdf.org/affymetrix:AF306400.1_x_at> ;
+        void:sparqlEndpoint     <http://affymetrix.bio2rdf.org/sparql> ;
+        void:triples            "44469611"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://bio2rdf.org/affymetrix:" ;
+        dcat:distribution       <http://affymetrix.bio2rdf.org/sparql> , <http://download.bio2rdf.org/current/affymetrix/affymetrix.html> , <http://download.bio2rdf.org/current/affymetrix/> , <https://raw.github.com/bio2rdf/bio2rdf-mapping/master/2/affymetrix/bio2rdf_affymetrix_sio_mapping.owl> , <http://download.bio2rdf.org/current/affymetrix/bio2rdf-affymetrix-statistics.nt.gz> ;
+        dcat:keyword            "vocab-mappings" , "lod" , "license-metadata" , "format-bio2rdf" , "published-by-third-party" , "deref-vocab" , "format-rdf" , "bio2rdf" , "lifesciences" , "format-rdfs" , "format-dc" , "provenance-metadata" ;
+        dcat:landingPage        <http://datahub.io/dataset/bio2rdf-affymetrix> .
+
+<http://dataid.dbpedia.org/lod/bio2rdf-affymetrix/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/bio2rdf-affymetrix/dataid#dataset" .
+
+<http://download.bio2rdf.org/current/affymetrix/bio2rdf-affymetrix-statistics.nt.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://download.bio2rdf.org/current/affymetrix/bio2rdf-affymetrix-statistics.nt.gz> ;
+        dcat:mediaType    "meta/void" .
+
+<https://raw.github.com/bio2rdf/bio2rdf-mapping/master/2/affymetrix/bio2rdf_affymetrix_sio_mapping.owl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://raw.github.com/bio2rdf/bio2rdf-mapping/master/2/affymetrix/bio2rdf_affymetrix_sio_mapping.owl> ;
+        dcat:mediaType    "mapping/owl" .
+
+<http://affymetrix.bio2rdf.org/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://affymetrix.bio2rdf.org/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/bio2rdf-affymetrix/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:bio2rdf@googlegroups.com" ;
+        foaf:name  "Bio2RDF" .
+
+<http://dataid.dbpedia.org/lod/bio2rdf-affymetrix/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:michel.dumontier@gmail.com" ;
+        foaf:name  "Michel Dumontier" .
+
+<http://download.bio2rdf.org/current/affymetrix/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://download.bio2rdf.org/current/affymetrix/> ;
+        dcat:mediaType    "application/x-ntriples" .
+
+<http://download.bio2rdf.org/current/affymetrix/affymetrix.html>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://download.bio2rdf.org/current/affymetrix/affymetrix.html> ;
+        dcat:mediaType    "HTML" .

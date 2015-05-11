@@ -1,0 +1,47 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/europeana-sparql/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/europeana-sparql/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/europeana-sparql/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:boyan.simeonov@ontotext.com" ;
+        foaf:name  "Boyan Simeonov" .
+
+<http://dataid.dbpedia.org/lod/europeana-sparql/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "europeana-sparql"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/europeana-sparql/dataid#creator> , <http://dataid.dbpedia.org/lod/europeana-sparql/dataid#contributor> ;
+        dct:description         "Europeana EDM data loaded to OWLIM, with SPARQL and visualization. \nContinuing development as part of @eCreativeEU"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "Europeana SPARQL"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://europeana.ontotext.com/download/n3?uri=http://data.europeana.eu/item/01004/E17BBC456775874D778D9540864548CF298254C4&format=n3&inference=all> ;
+        void:sparqlEndpoint     <http://europeana.ontotext.com/sparql> ;
+        dcat:distribution       <http://europeana.ontotext.com/sparql> , <http://europeana.ontotext.com/europeana/tab?uri=http%3A%2F%2Fdata.europeana.eu%2Fitem%2F01004%2FE17BBC456775874D778D9540864548CF298254C4&role=CHO> , <http://europeana.ontotext.com/europeana/tab?uri=http%3A%2F%2Fdata.europeana.eu%2Fitem%2F01004%2FE17BBC456775874D778D9540864548CF298254C4&role=Graph&inference=all> ;
+        dcat:keyword            "edm" , "format-edm" , "sparql" , "europeana" , "sparql-endpoint" , "europeana data model" ;
+        dcat:landingPage        <http://datahub.io/dataset/europeana-sparql> .
+
+<http://europeana.ontotext.com/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://europeana.ontotext.com/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://europeana.ontotext.com/europeana/tab?uri=http%3A%2F%2Fdata.europeana.eu%2Fitem%2F01004%2FE17BBC456775874D778D9540864548CF298254C4&role=CHO>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://europeana.ontotext.com/europeana/tab?uri=http%3A%2F%2Fdata.europeana.eu%2Fitem%2F01004%2FE17BBC456775874D778D9540864548CF298254C4&role=CHO> ;
+        dcat:mediaType    "HTML" .
+
+<http://europeana.ontotext.com/europeana/tab?uri=http%3A%2F%2Fdata.europeana.eu%2Fitem%2F01004%2FE17BBC456775874D778D9540864548CF298254C4&role=Graph&inference=all>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://europeana.ontotext.com/europeana/tab?uri=http%3A%2F%2Fdata.europeana.eu%2Fitem%2F01004%2FE17BBC456775874D778D9540864548CF298254C4&role=Graph&inference=all> ;
+        dcat:mediaType    "HTML" .
+
+<http://dataid.dbpedia.org/lod/europeana-sparql/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Ontotext" .

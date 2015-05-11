@@ -1,0 +1,83 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.nature.com/query",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://data.nature.com/query",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/npg/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/npg/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/npg/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:developers@nature.com",
+    "name" : "NPG Developers"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/npg/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:developers@nature.com",
+    "name" : "NPG"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/npg/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/npg/dataid#creator", "http://dataid.dbpedia.org/lod/npg/dataid#contributor" ],
+    "dct:description" : "Bibliographic data from around 900,000 articles published by Nature Publishing Group (NPG) from 1845 through to the present day. Additionally the datasets include NPG products and subjects ontologies. Datasets include:\n\n* [npg:Article](npg-articles)\n* [npg:Catalog](npg-catalogs)\n* [npg:Citation](npg-citations)\n* [npg:Contributor](npg-contributors)\n* [npg:Coverage](npg-coverages)\n* [npg:DataCitation](npg-data-citations)\n* [npg:Graph](npg-graphs)\n* [npg:Product](npg-products)\n* [npg:Publication](npg-publications)\n* [npg:Subject](npg-subjects)\n* [npg:Technique](npg-techniques)\n* [npg:Term](npg-terms)\n\nClass and property URIs in the [npg:](http://ns.nature.com/terms/) namespace are not dereferenceable.\n",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "Nature Publishing Group - ALL",
+    "sparqlEndpoint" : "http://data.nature.com/query",
+    "rdfs:label" : "npg",
+    "distribution" : "http://data.nature.com/query",
+    "keyword" : [ "life sciences", "format-prism", "lodcloud.candidate", "publications", "no-deref-vocab", "science", "published-by-producer", "bibliographic", "lodcloud", "nature", "sciences", "journals", "sparql", "physical sciences", "format-dc", "format-foaf", "health sciences", "format-void", "format-npg", "lod", "academic", "format-bibo" ],
+    "landingPage" : "http://datahub.io/dataset/npg"
+  } ],
+  "@context" : {
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

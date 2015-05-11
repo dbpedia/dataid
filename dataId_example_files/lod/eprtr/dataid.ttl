@@ -1,0 +1,140 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/eprtr/dataid#links_eurostat-linked-data>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/eurostat-linked-data> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprtr/dataid#dataset> ;
+        void:triples         "2833"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://prtr.ec.europa.eu/rdf/FacilityReport.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://prtr.ec.europa.eu/rdf/FacilityReport.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://prtr.ec.europa.eu/rdf/PollutantReleaseMethodUsed.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://prtr.ec.europa.eu/rdf/PollutantReleaseMethodUsed.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/eprtr/dataid#links_eea-rod>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/eea-rod> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprtr/dataid#dataset> ;
+        void:triples         "66"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://prtr.ec.europa.eu/rdf/FacilityID_Changes.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://prtr.ec.europa.eu/rdf/FacilityID_Changes.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://prtr.ec.europa.eu/rdf/lookuptables.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://prtr.ec.europa.eu/rdf/lookuptables.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://prtr.ec.europa.eu/rdf/PollutantTransferMethodUsed.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://prtr.ec.europa.eu/rdf/PollutantTransferMethodUsed.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://prtr.ec.europa.eu/rdf/Facility.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://prtr.ec.europa.eu/rdf/Facility.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://prtr.ec.europa.eu/rdf/PollutantTransfer.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://prtr.ec.europa.eu/rdf/PollutantTransfer.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/eprtr/dataid#links_eionet-rdf>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/eionet-rdf> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprtr/dataid#dataset> ;
+        void:triples         "3222"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/eprtr/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/eprtr/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/eprtr/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "eprtr"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/eprtr/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/eprtr/dataid#links_eionet-rdf> , <http://dataid.dbpedia.org/lod/eprtr/dataid#links_dbpedia> , <http://dataid.dbpedia.org/lod/eprtr/dataid#links_eea-rod> , <http://dataid.dbpedia.org/lod/eprtr/dataid#links_eurostat-linked-data> , <http://dataid.dbpedia.org/lod/eprtr/dataid#links_telegraphis> ;
+        dct:description         "The European Pollutant Release and Transfer Register (E-PRTR) is a Europe-wide register that provides easily accessible key environmental data from industrial facilities in European Union Member States and in Iceland, Liechtenstein, Norway, Serbia and Switzerland."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-by> ;
+        dct:title               "European Pollutant Release and Transfer Register (E-PRTR)"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://prtr.ec.europa.eu/rdf/facility/11338> ;
+        void:sparqlEndpoint     <http://cr.eionet.europa.eu/sparql> ;
+        void:triples            "14500000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://prtr.ec.europa.eu/rdf/" ;
+        dcat:distribution       <http://prtr.ec.europa.eu/rdf/ExternalLinks.rdf> , <http://prtr.ec.europa.eu/rdf/void.rdf> , <http://prtr.ec.europa.eu/rdf/Facility.rdf> , <http://prtr.ec.europa.eu/rdf/PollutantRelease.rdf> , <http://prtr.ec.europa.eu/rdf/FacilityReport.rdf> , <http://prtr.ec.europa.eu/rdf/CompetentAuthority.rdf> , <http://prtr.ec.europa.eu/rdf/FacilityID_Changes.rdf> , <http://prtr.ec.europa.eu/rdf/PollutantTransfer.rdf> , <http://cr.eionet.europa.eu/sparql> , <http://prtr.ec.europa.eu/rdf/Activity.rdf> , <http://prtr.ec.europa.eu/rdf/PollutantTransferMethodUsed.rdf> , <http://prtr.ec.europa.eu/rdf/UploadedReports.rdf> , <http://prtr.ec.europa.eu/rdf/lookuptables.rdf> , <http://prtr.ec.europa.eu/rdf/WasteTransferMethodUsed.rdf> , <http://prtr.ec.europa.eu/rdf/WasteTransfer.rdf> , <http://prtr.ec.europa.eu/rdf/PollutantReleaseMethodUsed.rdf> ;
+        dcat:keyword            "published-by-producer" , "format-rdf" , "pollution" , "environment" , "waste" ;
+        dcat:landingPage        <http://datahub.io/dataset/eprtr> .
+
+<http://prtr.ec.europa.eu/rdf/WasteTransferMethodUsed.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://prtr.ec.europa.eu/rdf/WasteTransferMethodUsed.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://prtr.ec.europa.eu/rdf/PollutantRelease.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://prtr.ec.europa.eu/rdf/PollutantRelease.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://prtr.ec.europa.eu/rdf/UploadedReports.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://prtr.ec.europa.eu/rdf/UploadedReports.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://prtr.ec.europa.eu/rdf/void.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://prtr.ec.europa.eu/rdf/void.rdf> ;
+        dcat:mediaType    "meta/void" .
+
+<http://prtr.ec.europa.eu/rdf/WasteTransfer.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://prtr.ec.europa.eu/rdf/WasteTransfer.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/eprtr/dataid#links_telegraphis>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/telegraphis> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprtr/dataid#dataset> ;
+        void:triples         "69"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/eprtr/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://datahub.io/dataset/dbpedia> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eprtr/dataid#dataset> ;
+        void:triples         "317"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://prtr.ec.europa.eu/rdf/CompetentAuthority.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://prtr.ec.europa.eu/rdf/CompetentAuthority.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://cr.eionet.europa.eu/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://cr.eionet.europa.eu/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://prtr.ec.europa.eu/rdf/ExternalLinks.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://prtr.ec.europa.eu/rdf/ExternalLinks.rdf> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/eprtr/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Søren Roug" .
+
+<http://prtr.ec.europa.eu/rdf/Activity.rdf>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://prtr.ec.europa.eu/rdf/Activity.rdf> ;
+        dcat:mediaType    "RDF" .

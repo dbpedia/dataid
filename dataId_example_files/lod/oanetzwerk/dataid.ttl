@@ -1,0 +1,29 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/oanetzwerk/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "oanetzwerk"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/oanetzwerk/dataid#creator> ;
+        dct:description         "This is the Linked Open Data Service from the Open Access Network Project. For more details see http://www.dini.de/projekte/oa-netzwerk/  or http://www.dini.de/english/ and the wiki page http://oanetzwerk.wordpress.com/2011/12/05/oan-lod-dienste-teil-1/ . The search engine is on  http://oansuche.open-access.net/"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "OANetzwerk"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dcat:distribution       <http://oanet.cms.hu-berlin.de/d2r-oan/> ;
+        dcat:keyword            "lld" , "metadata" , "lod" , "repository" , "germany" , "bibliographic data" , "format-rdf" , "library" ;
+        dcat:landingPage        <http://datahub.io/dataset/oanetzwerk> .
+
+<http://dataid.dbpedia.org/lod/oanetzwerk/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/oanetzwerk/dataid#dataset" .
+
+<http://oanet.cms.hu-berlin.de/d2r-oan/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://oanet.cms.hu-berlin.de/d2r-oan/> .
+
+<http://dataid.dbpedia.org/lod/oanetzwerk/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Julia Iwanowa" .

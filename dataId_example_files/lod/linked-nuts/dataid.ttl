@@ -1,0 +1,46 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/linked-nuts/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:gc3@ecs.soton.ac.uk" ;
+        foaf:name  "Gianluca Correndo" .
+
+<http://dataid.dbpedia.org/lod/linked-nuts/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "linked-nuts"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/linked-nuts/dataid#creator> , <http://dataid.dbpedia.org/lod/linked-nuts/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/linked-nuts/dataid#links_statistics-data-gov-uk> , <http://dataid.dbpedia.org/lod/linked-nuts/dataid#links_freebase> ;
+        dct:description         "The present data set contains all the versions of the NUTS statistical regions in linked data format. For the UK the NUTS3 level is further aligned to the local administrative units (or LAU) geography provided by http://statistics.data.gov.uk. \n\nThe NUTS regions are described along with their temporal validity. Changes in the coding reflect both the changes in the composition of the European Union and the internal reorganization of some areas. Such changes have been extracted by the Eurostat site and represented in linked data format.\n\nThe regions belonging to the current version of NUTS has additional links to the shape files (geoJson and KML format) describing their phisical extent.\n\nThe number of links to statistics.data.gov.uk is estimated by assuming 200 NUTS codes in the UK with 50 spacerel:contains links each.\n\nThe number of triples is estimated as 15 triples for each of the 2000 NUTS codes, plus an extra 10,000 for the spacerel:contains triples in the UK."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-by> ;
+        dct:title               "Linked NUTS"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://nuts.psi.enakting.org/def/NUTSRegion> , <http://nuts.psi.enakting.org/id/UK/rdf> , <http://nuts.psi.enakting.org/id/UK/ttl> ;
+        void:triples            "40000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://nuts.psi.enakting.org/id/" ;
+        dcat:keyword            "published-by-third-party" , "government" , "format-rdf" , "lod" , "lodcloud.unconnected" , "geography" , "opendatachallenge" , "lodcloud.nolinks" , "eurostat" , "nuts" , "deref-vocab" ;
+        dcat:landingPage        <http://datahub.io/dataset/linked-nuts> .
+
+<http://dataid.dbpedia.org/lod/linked-nuts/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/linked-nuts/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/linked-nuts/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:gc3@ecs.soton.ac.uk" ;
+        foaf:name  "Gianluca Correndo" .
+
+<http://dataid.dbpedia.org/lod/linked-nuts/dataid#links_statistics-data-gov-uk>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/statistics-data-gov-uk/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/linked-nuts/dataid#dataset> ;
+        void:triples         "10000"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/linked-nuts/dataid#links_freebase>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/freebase/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/linked-nuts/dataid#dataset> ;
+        void:triples         "1106"^^<http://www.w3.org/2001/XMLSchema#int> .

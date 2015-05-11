@@ -1,0 +1,101 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo-weill-cornell-medical-college/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/vivo-weill-cornell-medical-college/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo-weill-cornell-medical-college/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:hanjia@indiana.edu",
+    "name" : "Han Jia"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo-weill-cornell-medical-college/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "VIVO"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo-weill-cornell-medical-college/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/vivo-weill-cornell-medical-college/dataid#contributor", "http://dataid.dbpedia.org/lod/vivo-weill-cornell-medical-college/dataid#creator" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/vivo-weill-cornell-medical-college/dataid#links_dbpedia ",
+    "dct:description" : "VIVO is a research-focused discovery tool that enables collaboration among scientists across all disciplines. VIVO contains information about researchers associated with the Clinical and Translational Science Center.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "VIVO Weill Cornell Medical College",
+    "triples" : "193000",
+    "rdfs:label" : "vivo-weill-cornell-medical-college",
+    "distribution" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-04-02T142918/weill-rdf-dump.rdf",
+    "keyword" : [ "format-rdfs", "publications", "social-networks", "format-vitro", "lod", "format-rdf", "published-by-producer", "science", "no-vocab-mappings", "deref-vocab", "no-license-metadata", "no-provenance-metadata", "education", "vivo" ],
+    "landingPage" : "http://datahub.io/dataset/vivo-weill-cornell-medical-college"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/vivo-weill-cornell-medical-college/dataid#links_dbpedia ",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia ",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/vivo-weill-cornell-medical-college/dataid#dataset",
+    "triples" : "58"
+  }, {
+    "@id" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-04-02T142918/weill-rdf-dump.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://commondatastorage.googleapis.com/ckannet-storage/2012-04-02T142918/weill-rdf-dump.rdf",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

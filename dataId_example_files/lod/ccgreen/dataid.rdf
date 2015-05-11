@@ -1,0 +1,53 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/ccgreen/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/ccgreen/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/ccgreen/dataid#dataset">
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CC GREEN is a service provided by the ZB MED, the German National Library of Medicine. Health. Nutrition. Environment. Agriculture. CC GREEN includes metadata of about 200 scientific journals on applied life sciences. Journal selection is based on form- (analysable table of contents, German or English language) and content-related criteria (scientificity, core area journals). Among the selected journals, special reference is given to more then 50 journals, which are published either in Germany or in the German language, as well as to international journals, which are not indexed in other online databases such as AGRICOLA and AGRIS. 
+    
+Journal contents are scanned and analysed in CC GREEN in order to display information on each article separately. The bibliographic data of the single articles are accessible through a link to the scanned table of contents of the corresponding journal issue. 
+    
+Period: January 2011 to date </dct:description>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://lobid.org/download/dumps/ccgreen/ccgreen20110721Grund.TIT_example.txt">
+        <dcat:mediaType>sisis export format</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://lobid.org/download/dumps/ccgreen/ccgreen20110721Grund.TIT_example.txt"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Current Contents Nutrition. Environment. Agriculture.</dct:title>
+    <dcat:keyword>bibliography</dcat:keyword>
+    <dcat:keyword>life-science</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/ccgreen"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ccgreen</rdfs:label>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://lobid.org/download/dumps/ccgreen/ccgreen20110721Grund.TIT.tar">
+        <dcat:downloadURL rdf:resource="http://lobid.org/download/dumps/ccgreen/ccgreen20110721Grund.TIT.tar"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://dienste.zbmed.de/ccmed/">
+        <dcat:mediaType>sisis export format</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://dienste.zbmed.de/ccmed/"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/ccgreen/dataid#creator">
+        <foaf:name>Kendra Hinnenthal</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>bibliographic</dcat:keyword>
+    <dcat:keyword>article-data</dcat:keyword>
+    <dcat:keyword>lifesciences</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

@@ -1,0 +1,47 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/oxpoints/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/oxpoints/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/oxpoints/dataid#dataset">
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OxPoints (University of Oxford)</dct:title>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="https://data.ox.ac.uk/sparql/">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="https://data.ox.ac.uk/sparql/"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dcat:keyword>oxford</dcat:keyword>
+    <dcat:distribution rdf:resource="https://data.ox.ac.uk/sparql/"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/oxpoints/dataid#creator">
+        <foaf:mbox>mailto:oxpoints@oucs.ox.ac.uk</foaf:mbox>
+        <foaf:name>IT Services, University of Oxford</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>lod</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OxPoints is the University's geospatial, temporal and organisational RDF store.
+OxPoints aims to contain information about most political and built entities within the University, including college, department, building and rooms.</dct:description>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/oxpoints/dataid#contributor">
+        <foaf:mbox>mailto:oxpoints@oucs.ox.ac.uk</foaf:mbox>
+        <foaf:name>IT Services, University of Oxford</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <dcat:keyword>university</dcat:keyword>
+    <void:uriSpace>http://oxpoints.oucs.ox.ac.uk/id/</void:uriSpace>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >oxpoints</rdfs:label>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/oxpoints"/>
+  </dataid:Dataset>
+</rdf:RDF>

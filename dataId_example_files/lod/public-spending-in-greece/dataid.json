@@ -1,0 +1,180 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:m.meimaris@gmail.com",
+    "name" : "Marios Meimaris"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:m.meimaris@gmail.com",
+    "name" : "Marios Meimaris"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#creator", "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#links_weso", "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#links_geonames", "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#links_dbpedia-el" ],
+    "dct:description" : "The “publingspending” initiative is a free, open, neutral and objective web application. It aims to provide efficient visualizations along with research data of the Hellenic public expenditure.",
+    "license" : "http://www.opendefinition.org/licenses/odc-odbl",
+    "dct:title" : "Public Spending in Greece",
+    "sparqlEndpoint" : "http://publicspending.medialab.ntua.gr/sparql",
+    "uriSpace" : "http://publicspending.medialab.ntua.gr/resource/",
+    "rdfs:label" : "public-spending-in-greece",
+    "distribution" : [ "https://ckannet-storage.commondatastorage.googleapis.com/2012-11-12T112247/dump2010valid.csv", "http://publicspending.medialab.ntua.gr/sparql", "https://ckannet-storage.commondatastorage.googleapis.com/2012-11-12T115323/dump2010.rdf", "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T131017/2012-q4.rdf", "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T151730/2012-q3.rdf", "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T165441/2012-q1.rdf", "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T104845/2011-q3.rdf", "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T154723/2012-q2.rdf", "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T105843/2011-q1.rdf", "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T105525/2011-q2.rdf", "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T104422/2011-q4.rdf" ],
+    "keyword" : [ "Greece", "public spending", "spending", "linked-open-data", "linkedopendata" ],
+    "landingPage" : "http://datahub.io/dataset/public-spending-in-greece"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#dataset",
+    "triples" : "402"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#links_dbpedia-el",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia-el/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#dataset",
+    "triples" : "402"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#links_geonames",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#dataset",
+    "triples" : "402"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#links_weso",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/weso/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/public-spending-in-greece/dataid#dataset",
+    "triples" : "9454"
+  }, {
+    "@id" : "http://publicspending.medialab.ntua.gr/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://publicspending.medialab.ntua.gr/sparql",
+    "mediaType" : "api/sparql"
+  }, {
+    "@id" : "https://ckannet-storage.commondatastorage.googleapis.com/2012-11-12T112247/dump2010valid.csv",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://ckannet-storage.commondatastorage.googleapis.com/2012-11-12T112247/dump2010valid.csv",
+    "mediaType" : "CSV"
+  }, {
+    "@id" : "https://ckannet-storage.commondatastorage.googleapis.com/2012-11-12T115323/dump2010.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://ckannet-storage.commondatastorage.googleapis.com/2012-11-12T115323/dump2010.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T131017/2012-q4.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T131017/2012-q4.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T151730/2012-q3.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T151730/2012-q3.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T154723/2012-q2.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T154723/2012-q2.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T165441/2012-q1.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-30T165441/2012-q1.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T104422/2011-q4.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T104422/2011-q4.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T104845/2011-q3.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T104845/2011-q3.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T105525/2011-q2.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T105525/2011-q2.rdf",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T105843/2011-q1.rdf",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "https://ckannet-storage.commondatastorage.googleapis.com/2013-01-31T105843/2011-q1.rdf",
+    "mediaType" : "RDF"
+  } ],
+  "@context" : {
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

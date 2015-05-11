@@ -1,0 +1,35 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/linkedgeodata-aerodromes/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/linkedgeodata-aerodromes/dataid#dataset" .
+
+<http://live.linkedgeodata.org/sparql>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://live.linkedgeodata.org/sparql> .
+
+<https://commondatastorage.googleapis.com/ckannet-storage/2012-02-02T125838/lgd-aerodromes-plus-ontology-2012-01-12.nt.bz2>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <https://commondatastorage.googleapis.com/ckannet-storage/2012-02-02T125838/lgd-aerodromes-plus-ontology-2012-01-12.nt.bz2> ;
+        dcat:mediaType    "application/x-bzip" .
+
+<http://dataid.dbpedia.org/lod/linkedgeodata-aerodromes/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:cstadler@informatik.uni-leipzig.de" ;
+        foaf:name  "Claus Stadler" .
+
+<http://dataid.dbpedia.org/lod/linkedgeodata-aerodromes/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "linkedgeodata-aerodromes"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/linkedgeodata-aerodromes/dataid#contributor> ;
+        dct:description         "An excerpt of the LinkenGeoData-Live dataset containing Aerodromes and Airports as of 2012-01-12."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by-sa> ;
+        dct:title               "LinkedGeoData: Aerodromes"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dcat:distribution       <http://live.linkedgeodata.org/sparql> , <https://commondatastorage.googleapis.com/ckannet-storage/2012-02-02T125838/lgd-aerodromes-plus-ontology-2012-01-12.nt.bz2> ;
+        dcat:keyword            "published-by-third-party" , "no-provenance-metadata" , "no-license-metadata" , "format-geo" , "geographic" , "lod" , "deref-vocab" , "sparql" , "no-vocab-mappings" , "format-rdf" ;
+        dcat:landingPage        <http://datahub.io/dataset/linkedgeodata-aerodromes> .

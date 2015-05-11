@@ -1,0 +1,48 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/licensedb/dataid#dataset">
+    <dcat:keyword>rdf</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="https://licensedb.org/id/">
+        <dcat:mediaType>HTML</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="https://licensedb.org/id/"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >licensedb</rdfs:label>
+    <dcat:keyword>license</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The License Database</dct:title>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/licensedb"/>
+    <dcat:keyword>format-json</dcat:keyword>
+    <dcat:keyword>license-metadata</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/licensedb/dataid#contributor">
+        <foaf:mbox>mailto:kuno@frob.nl</foaf:mbox>
+        <foaf:name>Kuno Woudt</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>license-metadata linked-data</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="https://licensedb.org/dl/license-database.tar.gz">
+        <dcat:mediaType>json-ld</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="https://licensedb.org/dl/license-database.tar.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    > Welcome to the License Database project (aka LicenseDB). Our goal is to build a structured database of all copyright (and related rights) licenses used in the free software / open source / free culture communities.
+
+Various tools can benefit from a full set of machine-readable licenses, including tools which we haven't thought of yet. Feel free to contact us if you have ideas to make this project useful for a particular use-case. </dct:description>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/licensedb/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/licensedb/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

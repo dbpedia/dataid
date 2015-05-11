@@ -1,0 +1,102 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/gemeenschappelijke-thesaurus-audiovisuele-archieven/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/gemeenschappelijke-thesaurus-audiovisuele-archieven/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/gemeenschappelijke-thesaurus-audiovisuele-archieven/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Johan Oomen"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/gemeenschappelijke-thesaurus-audiovisuele-archieven/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/gemeenschappelijke-thesaurus-audiovisuele-archieven/dataid#creator",
+    "containsLinks" : "http://dataid.dbpedia.org/lod/gemeenschappelijke-thesaurus-audiovisuele-archieven/dataid#links_dbpedia",
+    "dct:description" : "The Netherlands Institute for Sound and Vision\n<http://portal.beeldengeluid.nl/> is the Dutch archive for public broadcast television. They employ the GTAA, which is a Dutch acronym for Common Thesaurus [for] Audiovisual Archives, to index and disclose their\naudiovisaul documents.\n\nThe GTAA closely follows the ISO-2788 standard for\nthesaurus structures. The thesaurus consists of several facets for describing TV programs: subjects; people mentioned; named entities (Corporation names, music bands etc); locations; genres; makers and presentators.\n\nThe GTAA contains approximately 160.000 terms: ~3800 Subjects, ~97.000 Persons, ~27.000 Names, ~14.000 Locations, 113 Genres and ~18.000 Makers, and is continually updated as new concepts emerge on TV.\n",
+    "license" : "http://www.opendefinition.org/licenses/odc-odbl",
+    "dct:title" : "Gemeenschappelijke Thesaurus Audiovisuele Archieven – Common Thesaurus Audiovisual Archives",
+    "exampleResource" : [ "http://data.beeldengeluid.nl/gtaa/173390", "http://data.beeldengeluid.nl/gtaa/GTAA" ],
+    "triples" : "992797",
+    "uriSpace" : "http://data.beeldengeluid.nl/gtaa/",
+    "rdfs:label" : "gemeenschappelijke-thesaurus-audiovisuele-archieven",
+    "distribution" : "http://semanticweb.cs.vu.nl/lod/beeldengeluid/GTAA-25aug2010.ttl.gz",
+    "keyword" : [ "format-rdf", "gtaa", "digital-humanities", "no-provenance-metadata", "schemata", "no-license-metadata", "no-vocab-mappings", "published-by-producer", "lod", "thesaurus", "media", "format-skos", "deref-vocab" ],
+    "landingPage" : "http://datahub.io/dataset/gemeenschappelijke-thesaurus-audiovisuele-archieven"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/gemeenschappelijke-thesaurus-audiovisuele-archieven/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/gemeenschappelijke-thesaurus-audiovisuele-archieven/dataid#dataset",
+    "triples" : "25844"
+  }, {
+    "@id" : "http://semanticweb.cs.vu.nl/lod/beeldengeluid/GTAA-25aug2010.ttl.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://semanticweb.cs.vu.nl/lod/beeldengeluid/GTAA-25aug2010.ttl.gz",
+    "mediaType" : "GZ"
+  } ],
+  "@context" : {
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

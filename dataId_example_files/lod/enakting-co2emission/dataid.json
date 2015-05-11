@@ -1,0 +1,109 @@
+{
+  "@graph" : [ {
+    "@id" : "http://co2emission.psi.enakting.org/id/void",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://co2emission.psi.enakting.org/id/void",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-co2emission/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/enakting-co2emission/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-co2emission/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:t.omitola@ecs.soton.ac.uk",
+    "name" : "Tope Omitola"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-co2emission/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:t.omitola@ecs.soton.ac.uk",
+    "name" : "Tope Omitola"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-co2emission/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/enakting-co2emission/dataid#creator", "http://dataid.dbpedia.org/lod/enakting-co2emission/dataid#contributor" ],
+    "containsLinks" : "http://dataid.dbpedia.org/lod/enakting-co2emission/dataid#links_ordnance-survey-linked-data",
+    "dct:description" : "UK CO2 Emission data extracted from the spreadsheet 'Local and Regional CO2 Emissions Estimates for 2005-2007', produced by the UK's Department of Energy and Climate Change.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "EnAKTing CO2 Emission Dataset",
+    "exampleResource" : "http://co2emission.psi.enakting.org/def/NUTS4Area",
+    "triples" : "2316868",
+    "uriSpace" : "http://co2emission.psi.enakting.org/id/",
+    "rdfs:label" : "enakting-co2emission",
+    "distribution" : "http://co2emission.psi.enakting.org/id/void",
+    "keyword" : [ "published-by-third-party", "government", "format-xhtml", "lod", "deref-vocab", "format-rdf", "statistics" ],
+    "landingPage" : "http://datahub.io/dataset/enakting-co2emission"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-co2emission/dataid#links_ordnance-survey-linked-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/ordnance-survey-linked-data",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/enakting-co2emission/dataid#dataset",
+    "triples" : "377"
+  } ],
+  "@context" : {
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

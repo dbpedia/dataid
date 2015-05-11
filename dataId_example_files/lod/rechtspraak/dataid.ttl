@@ -1,0 +1,58 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/rechtspraak/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:hoekstra@few.vu.nl" ;
+        foaf:name  "Rinke Hoekstra" .
+
+<http://www.best-project.nl/rechtspraak.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://www.best-project.nl/rechtspraak.ttl> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/rechtspraak/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "rechtspraak"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/rechtspraak/dataid#contributor> , <http://dataid.dbpedia.org/lod/rechtspraak/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/rechtspraak/dataid#links_geonames-semantic-web> , <http://dataid.dbpedia.org/lod/rechtspraak/dataid#links_dbpedia> ;
+        dct:description         "RDF version of the official case law dataset of the Netherlands Council of the Judiciary (at [http://www.rechtspraak.nl](http://www.rechtspraak.nl)). It contains approximately 145k descriptions of court proceedings, linked to DBPedia and Geonames (places mentioned in cases). It contains all Dutch courts and their locations.\n\nURIs are dereferenceable.\n\nExample: [http://linkeddata.few.vu.nl/rechtspraak/uitspraak/BM4461](http://linkeddata.few.vu.nl/rechtspraak/uitspraak/BM4461)\n\nThis dataset was developed within the BEST project at the VU University Amsterdam."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "Rechtspraak.nl"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://linkeddata.few.vu.nl/rechtspraak/uitspraak/BM4461> ;
+        void:sparqlEndpoint     <http://eculture2.cs.vu.nl:5020/sparql/> ;
+        void:triples            "1931860"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://linkeddata.few.vu.nl/rechtspraak/" ;
+        dcat:distribution       <http://www.best-project.nl/rechtspraak.ttl> , <http://eculture2.cs.vu.nl:5020/sparql/> ;
+        dcat:keyword            "no-license-metadata" , "lod" , "format-rdf" , "format-geo" , "government" , "no-vocab-mappings" , "published-by-third-party" , "format-geonames" , "format-metalex" , "broken_link" , "law" , "format-dbpedia" , "vu" , "deref-vocab" , "case-law" , "format-owl" , "void-sparql-endpoint" , "provenance-metadata" , "format-dbo" ;
+        dcat:landingPage        <http://datahub.io/dataset/rechtspraak> .
+
+<http://eculture2.cs.vu.nl:5020/sparql/>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://eculture2.cs.vu.nl:5020/sparql/> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/rechtspraak/dataid#links_geonames-semantic-web>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/rechtspraak/dataid#dataset> ;
+        void:triples         "220058"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/rechtspraak/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:hoekstra@few.vu.nl" ;
+        foaf:name  "Rinke Hoekstra" .
+
+<http://dataid.dbpedia.org/lod/rechtspraak/dataid#links_dbpedia>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/rechtspraak/dataid#dataset> ;
+        void:triples         "575"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dataid.dbpedia.org/lod/rechtspraak/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/rechtspraak/dataid#dataset" .

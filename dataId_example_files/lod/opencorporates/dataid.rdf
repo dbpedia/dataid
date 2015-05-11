@@ -1,0 +1,84 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/opencorporates/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/opencorporates/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://opencorporates.com/companies/gb/03977902.json">
+    <dcat:mediaType>JSON</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://opencorporates.com/companies/gb/03977902.json"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/opencorporates/dataid#dataset">
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/opencorporates/dataid#creator">
+        <foaf:name>OpenCorporates (Chris Taggart)</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>government</dcat:keyword>
+    <dcat:keyword>opendatachallenge</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >opencorporates</rdfs:label>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/odc-odbl"/>
+    <dcat:keyword>format-dcterm</dcat:keyword>
+    <dcat:keyword>scraped</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>no-deref-vocab</dcat:keyword>
+    <dcat:keyword>format-foaf</dcat:keyword>
+    <dcat:keyword>ecommerce</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>corporations</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/opencorporates"/>
+    <dcat:keyword>size.xlarge</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/opencorporates/dataid#contributor">
+        <foaf:mbox>mailto:info@opencorporates.com</foaf:mbox>
+        <foaf:name>Chris Taggart</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <void:uriSpace>http://opencorporates.com/companies</void:uriSpace>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>format-rov</dcat:keyword>
+    <dcat:keyword>database</dcat:keyword>
+    <dcat:keyword>access-nobulk</dcat:keyword>
+    <dcat:keyword>format-dctypes</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OpenCorporates - The Open Database Of The Corporate World</dct:title>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Open Database of corporate entities. As of 2011-04-09 has information on 7,841,828 companies from around the world. Jurisdictions covered include:
+
+ * 41,292 Bermuda
+ * 3,886,733 United Kingdom
+ * 96,104 Gibraltar
+ * 105,640 Isle of Man
+ * 77,693 Iceland
+ * 60,827 Jersey
+ * 92,795 Luxembourg
+ * 2,188,873 Netherlands
+ * 97,653 Alaska (US) 
+ * 197,798 District of Columbia (US)
+ * 996,420 Michigan (US)
+
+There is good API access but currently but no bulk availablitity.
+
+### License
+
+See &lt;http://opencorporates.com/info/licence&gt;. However, should note that most data in OpenCorporates is scraped from elsewhere so this license only covers the 'IP' that OpenCorporates has obtained as a result of their efforts (and license of original databases, e.g. Companies House in the UK, is unclear).</dct:description>
+    <dcat:distribution rdf:resource="http://opencorporates.com/companies/gb/03977902.json"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/opencorporates/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/opencorporates/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >500</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >750000000</void:triples>
+    <void:exampleResource rdf:resource="http://opencorporates.com/companies/us_ak/124437.rdf"/>
+  </dataid:Dataset>
+</rdf:RDF>

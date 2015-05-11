@@ -1,0 +1,58 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/euskadi-farmacias/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/euskadi-farmacias/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://opendata.euskadi.net/contenidos/ds_localizaciones/farmacias_de_euskadi/opendata/r01DataSet.rdf">
+    <dcat:mediaType>RDF</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://opendata.euskadi.net/contenidos/ds_localizaciones/farmacias_de_euskadi/opendata/r01DataSet.rdf"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/euskadi-farmacias/dataid#dataset">
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+    <dcat:keyword>health</dcat:keyword>
+    <dcat:keyword>farmacia</dcat:keyword>
+    <dcat:keyword>drug</dcat:keyword>
+    <void:exampleResource rdf:resource="http://opendata.euskadi.net/contenidos/ds_localizaciones/farmacias_de_euskadi/farmacia"/>
+    <dcat:keyword>government</dcat:keyword>
+    <dcat:keyword>botica</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>format-cc</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/euskadi-farmacias/dataid#creator">
+        <foaf:name>Departamento de Sanidad y Consumo. Gobierno Vasco.</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>salud</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/euskadi-farmacias"/>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >35</void:triples>
+    <dcat:keyword>no-deref-vocab</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Farmacias en Euskadi</dct:title>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/euskadi-farmacias/dataid#links_geonames-semantic-web">
+        <void:objectsTarget rdf:resource="http://datahub.io/dataset/geonames-semantic-web"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/euskadi-farmacias/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >5</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cada ZIP contiene las farmacias de una provincia: Bizkaia, Gipuzkoa y Álava.
+
+Farmacias existentes en Euskadi. Los datos incluyen, entre otros, dirección, datos de contacto, horarios y coordenadas GPS.
+</dct:description>
+    <dcat:keyword>medicamentos</dcat:keyword>
+    <dcat:keyword>lodcloud.unconnected</dcat:keyword>
+    <dcat:distribution rdf:resource="http://opendata.euskadi.net/contenidos/ds_localizaciones/farmacias_de_euskadi/opendata/r01DataSet.rdf"/>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >euskadi-farmacias</rdfs:label>
+  </dataid:Dataset>
+</rdf:RDF>

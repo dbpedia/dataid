@@ -1,0 +1,114 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/flyted/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/flyted/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/flyted/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "name" : "Jun Zhao"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/flyted/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Jun Zhao"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/flyted/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/flyted/dataid#creator", "http://dataid.dbpedia.org/lod/flyted/dataid#contributor" ],
+    "dct:description" : "",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Flyted",
+    "sparqlEndpoint" : "http://www.open-biomed.org.uk/sparql/endpoint/flyted",
+    "triples" : "63004",
+    "rdfs:label" : "flyted",
+    "distribution" : [ "http://www.open-biomed.org.uk/open-biomed-data/flyted-release-fm3-20110210.tar.gz", "http://www.open-biomed.org.uk/service/flyted/records/probe/{probe}", "http://http://www.open-biomed.org.uk/service/flyted/probes", "http://www.open-biomed.org.uk/service/flyted/records/flybase/{fbgn}", "http://www.open-biomed.org.uk/sparql/endpoint/flyted", "http://www.open-biomed.org.uk/service/flyted/probes/flybase/{fbgn}" ],
+    "keyword" : [ "linktoflybase", "open-biomed", "linkeddata", "flyted" ],
+    "landingPage" : "http://datahub.io/dataset/flyted"
+  }, {
+    "@id" : "http://http://www.open-biomed.org.uk/service/flyted/probes",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://http://www.open-biomed.org.uk/service/flyted/probes",
+    "mediaType" : "api"
+  }, {
+    "@id" : "http://www.open-biomed.org.uk/open-biomed-data/flyted-release-fm3-20110210.tar.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.open-biomed.org.uk/open-biomed-data/flyted-release-fm3-20110210.tar.gz",
+    "mediaType" : "rdf/turtle"
+  }, {
+    "@id" : "http://www.open-biomed.org.uk/service/flyted/probes/flybase/{fbgn}",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.open-biomed.org.uk/service/flyted/probes/flybase/{fbgn}",
+    "mediaType" : "api"
+  }, {
+    "@id" : "http://www.open-biomed.org.uk/service/flyted/records/flybase/{fbgn}",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.open-biomed.org.uk/service/flyted/records/flybase/{fbgn}",
+    "mediaType" : "api"
+  }, {
+    "@id" : "http://www.open-biomed.org.uk/service/flyted/records/probe/{probe}",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.open-biomed.org.uk/service/flyted/records/probe/{probe}",
+    "mediaType" : "api"
+  }, {
+    "@id" : "http://www.open-biomed.org.uk/sparql/endpoint/flyted",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://www.open-biomed.org.uk/sparql/endpoint/flyted",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

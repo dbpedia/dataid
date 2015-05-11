@@ -1,0 +1,55 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/odc-imd-environment-score/dataid#dataset">
+    <dcat:keyword>lod</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/odc-imd-environment-score/dataid#creator">
+        <foaf:name>http://reference.data.gov.uk/id/department/dclg</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dct:license rdf:resource="http://reference.data.gov.uk/id/open-government-licence"/>
+    <void:exampleResource rdf:resource="http://opendatacommunities.org/id/IMD/2010/IMD-environment-score/LSOA/E01000001"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >odc-imd-environment-score</rdfs:label>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >194892</void:triples>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://opendatacommunities-downloads.s3.amazonaws.com/imd-2010-environment-score.ttl.zip">
+        <dcat:mediaType>text/turtle</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://opendatacommunities-downloads.s3.amazonaws.com/imd-2010-environment-score.ttl.zip"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Index of Multiple Deprivation, Living Environment Deprivation Domain, Scores 2010</dct:title>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/odc-imd-environment-score"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://opendatacommunities.org/datasets/imd-environment-score-2010.ttl">
+        <dcat:mediaType>meta/void</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://opendatacommunities.org/datasets/imd-environment-score-2010.ttl"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>lodcloud.nolinks</dcat:keyword>
+    <dcat:keyword>lodcloud.unconnected</dcat:keyword>
+    <dcat:keyword>government</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This dataset contains the scores for the Living Environment Deprivation Domain of the Index of Multiple Deprivation, 2010. This indicator measures the quality of individuals’ immediate surroundings both within and outside the home. A high number indicates a high level of deprivation. 
+
+
+Example:
+http://opendatacommunities.org/id/IMD/2010/IMD-environment-score/LSOA/E01000001
+
+Download:
+http://opendatacommunities-downloads.s3.amazonaws.com/imd-2010-environment-score.ttl.zip</dct:description>
+    <dcat:keyword>published-by-third-party</dcat:keyword>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/odc-imd-environment-score/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/odc-imd-environment-score/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

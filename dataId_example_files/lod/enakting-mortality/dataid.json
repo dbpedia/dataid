@@ -1,0 +1,133 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-mortality/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:t.omitola@ecs.soton.ac.uk",
+    "name" : "Tope Omitola"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:t.omitola@ecs.soton.ac.uk",
+    "name" : "Tope Omitola"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#creator", "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_rkbexplorer", "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_ordnance-survey-linked-data", "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_data.openpsi.org", "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_data.gov.uk" ],
+    "dct:description" : "UK's Mortality data per region for the year 2008/09, delivered by the UK Home Office.\n\nProvenance of this dataset:\nhttp://www.statistics.gov.uk/downloads/theme_population/Table_3_Deaths_Area_Local_Authority.xls",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "EnAKTing Mortality Dataset",
+    "exampleResource" : "http://mortality.psi.enakting.org/id/Scarborough",
+    "triples" : "12933",
+    "uriSpace" : "http://mortality.psi.enakting.org/id/",
+    "rdfs:label" : "enakting-mortality",
+    "distribution" : "http://mortality.psi.enakting.org/id/void",
+    "keyword" : [ "published-by-third-party", "government", "format-xhtml", "format-rdf", "lod", "no-proprietary-vocab" ],
+    "landingPage" : "http://datahub.io/dataset/enakting-mortality"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_data.gov.uk",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/data.gov.uk",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#dataset",
+    "triples" : "42"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_data.openpsi.org",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/data.openpsi.org",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#dataset",
+    "triples" : "2"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/dbpedia",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#dataset",
+    "triples" : "5"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_ordnance-survey-linked-data",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/ordnance-survey-linked-data",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#dataset",
+    "triples" : "399"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#links_rkbexplorer",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://datahub.io/dataset/rkbexplorer",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/enakting-mortality/dataid#dataset",
+    "triples" : "28"
+  }, {
+    "@id" : "http://mortality.psi.enakting.org/id/void",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://mortality.psi.enakting.org/id/void",
+    "mediaType" : "meta/void"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

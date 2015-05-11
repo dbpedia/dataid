@@ -1,0 +1,59 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/umthes/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/umthes/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/umthes/dataid#dataset">
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >UMTHES</dct:title>
+    <dcat:keyword>thesaurus</dcat:keyword>
+    <dcat:keyword>lld</dcat:keyword>
+    <dcat:keyword>lodcloud.needsfixing</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/umthes/dataid#contributor">
+        <foaf:mbox>mailto:thomas.bandholtz@innoq.com</foaf:mbox>
+        <foaf:name>Thomas Bandholtz </foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:keyword>no-deref-vocab</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >300000</void:triples>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A German-centric thesaurus about environmental protection, maintained by the Federal Environment Agency, Germany. Includes English translations of most terms.
+
+2011-08-10 Service unreachable </dct:description>
+    <void:exampleResource rdf:resource="http://data.uba.de/umt/_00100204.ttl"/>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/umthes/dataid#creator">
+        <foaf:mbox>mailto:joachim.fock@uba.de</foaf:mbox>
+        <foaf:name>Joachim Fock</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/umthes"/>
+    <dcat:keyword>government</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dcat:keyword>access-notavailable</dcat:keyword>
+    <dcat:keyword>topic.schemata</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+    <dcat:keyword>topic.government</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/umthes/dataid#links_gemet">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/gemet/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/umthes/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3483</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >umthes</rdfs:label>
+    <dcat:keyword>format-skos</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by"/>
+    <dcat:keyword>environment</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

@@ -1,0 +1,83 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.lib.sussex.ac.uk/files/massobservation/rdf/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://data.lib.sussex.ac.uk/files/massobservation/rdf/",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/massobservationarchivecatalogue/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/massobservationarchivecatalogue/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/massobservationarchivecatalogue/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:c.j.keene@sussex.ac.uk",
+    "name" : "Chris Keene"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/massobservationarchivecatalogue/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:K.L.Watson@sussex.ac.uk",
+    "name" : "Karen Watson"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/massobservationarchivecatalogue/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/massobservationarchivecatalogue/dataid#creator", "http://dataid.dbpedia.org/lod/massobservationarchivecatalogue/dataid#contributor" ],
+    "dct:description" : "The data is the catalogue records of the Mass Observation Archive, a Designated collection. The Mass Observation Archive is a written record of everyday life in Britain 1937-55. It's a unique insight in to life during the Second World War. \n\nhttp://data.lib.sussex.ac.uk/data/mass-observation/\n\nhttp://www.massobs.org.uk/a_brief_history.htm\n\nThe conversion to Linked Data was carried out as part of the JISC funded SALDA project by the University of Sussex Library with key support from Eduserv.",
+    "license" : "http://www.opendefinition.org/licenses/odc-pddl",
+    "dct:title" : "Mass Observation Archive catalogue",
+    "triples" : "428035",
+    "rdfs:label" : "massobservationarchivecatalogue",
+    "distribution" : "http://data.lib.sussex.ac.uk/files/massobservation/rdf/",
+    "keyword" : [ "crossdomain", "jisc", "published-by-producer", "deref-vocab", "war", "history", "lodcloud.unconnected", "lodcloud.nolinks", "archives", "format-xhtml", "lod" ],
+    "landingPage" : "http://datahub.io/dataset/massobservationarchivecatalogue"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

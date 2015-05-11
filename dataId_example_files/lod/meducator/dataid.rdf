@@ -1,0 +1,73 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/meducator/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/meducator/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="http://meducator.open.ac.uk/resourcesrestapi/rest/meducator/sparql">
+    <dcat:mediaType>api/sparql</dcat:mediaType>
+    <dcat:accessURL rdf:resource="http://meducator.open.ac.uk/resourcesrestapi/rest/meducator/sparql"/>
+    <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+  </dataid:Distribution>
+  <dataid:Distribution rdf:about="http://purl.org/meducator/ns">
+    <dcat:mediaType>meta/rdf-schema</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="http://purl.org/meducator/ns"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/meducator/dataid#dataset">
+    <dcat:distribution rdf:resource="http://meducator.open.ac.uk/resourcesrestapi/rest/meducator/sparql"/>
+    <void:exampleResource rdf:resource="http://purl.org/meducator/resources/25a8c581-66d7-4186-9411-f9f0f783463e"/>
+    <dcat:keyword>l3s</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/meducator"/>
+    <void:uriSpace>http://purl.org/meducator/resources/</void:uriSpace>
+    <dcat:keyword>format-rdfs</dcat:keyword>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The "mEducator - Linked Educational Resources" exposes linked data about publicly available educational Web resources. A light-weight RDF schema is exploited together with clustering and enrichment techniques to gradually interlink educational resources with entities in established LOD datasets.</dct:description>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/meducator/dataid#contributor">
+        <foaf:mbox>mailto:admin@data.linkededucation.org</foaf:mbox>
+        <foaf:name>mEducator Linked Educational Resources team</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/meducator/dataid#links_dbpedia">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/meducator/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >932</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <void:sparqlEndpoint rdf:resource="http://meducator.open.ac.uk/resourcesrestapi/rest/meducator/sparql"/>
+    <dcat:keyword>e-learning</dcat:keyword>
+    <dcat:keyword>education</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/meducator/dataid#creator">
+        <foaf:mbox>mailto:admin@data.linkededucation.org</foaf:mbox>
+        <foaf:name>mEducator Linked Educational Resources team</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>sparql-endpoint</dcat:keyword>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >30294</void:triples>
+    <dcat:distribution rdf:resource="http://purl.org/meducator/ns"/>
+    <dcat:keyword>educational</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mEducator: Linked Educational Resources</dct:title>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >meducator</rdfs:label>
+    <dcat:keyword>kmi</dcat:keyword>
+    <dcat:keyword>sparql</dcat:keyword>
+    <dcat:keyword>format-rdf</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dcat:keyword>deref-vocab</dcat:keyword>
+    <dcat:keyword>format-http</dcat:keyword>
+    <dcat:keyword>format-api</dcat:keyword>
+    <dcat:keyword>lod</dcat:keyword>
+  </dataid:Dataset>
+</rdf:RDF>

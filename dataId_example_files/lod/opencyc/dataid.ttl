@@ -1,0 +1,33 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://sw.opencyc.org/downloads/opencyc_owl_downloads/opencyc-latest.owl.gz>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://sw.opencyc.org/downloads/opencyc_owl_downloads/opencyc-latest.owl.gz> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/opencyc/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/opencyc/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/opencyc/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Cycorp, Inc." .
+
+<http://dataid.dbpedia.org/lod/opencyc/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "opencyc"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/opencyc/dataid#creator> ;
+        dct:description         "### About\n\n> Now it is even easier to use the rich and diverse collection of real-world concepts in OpenCyc to bring meaning to your semantic web applications! The full OpenCyc content is now available both as downloadable OWL ontologies as well as via semantic web endpoints (i.e., permanent URIs). These URIs return RDF representations of each Cyc concept as well as a human-readable version when accessed via a Web Browser.\n\nData exposed: OpenCyc Ontology\nSize of dump and data set: ~1.6 million triples, ~150MB uncompressed\n\n### Openness\n\n[License](http://www.opencyc.org/license) states:\n\n> These files contain an OWL representation of information contained in the OpenCyc Knowledge Base. The content of these OWL files are licensed under the Creative Commons Attribution 3.0 license whose text can be found at . The content of these OWL files, including the OpenCyc content they represent, constitutes the \"Work\" referred to in the Creative Commons license. The terms of this license equally apply to, without limitation, renamings and other logically equivalent reformulations of the content of these OWL files (or portions thereof) in any natural or formal language, as well as to derivations of this content or inclusion of it in other ontologies."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by> ;
+        dct:title               "OpenCyc"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://sw.opencyc.org/concept/Mx4rwP1ZTZwpEbGdrcN5Y29ycA> ;
+        void:triples            "1600000"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://sw.opencyc.org/concept/" ;
+        dcat:distribution       <http://sw.opencyc.org/downloads/opencyc_owl_downloads/opencyc-latest.owl.gz> ;
+        dcat:keyword            "published-by-producer" , "ontology" , "no-license-metadata" , "format-rdf" , "lodcloud.nolinks" , "no-vocab-mappings" , "linkeddata" , "no-provenance-metadata" , "lod" , "deref-vocab" , "crossdomain" , "license-nonefordb" , "ckanupload.esw.200910" , "rdf" ;
+        dcat:landingPage        <http://datahub.io/dataset/opencyc> .

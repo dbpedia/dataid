@@ -1,0 +1,54 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/grrp/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/grrp/dataid#dataset" .
+
+<http://void.linkedopendata.it/grrp>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://void.linkedopendata.it/grrp> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/grrp/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:name  "Linkedopendata.it" .
+
+<http://dataid.dbpedia.org/lod/grrp/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "grrp"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/grrp/dataid#creator> , <http://dataid.dbpedia.org/lod/grrp/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/grrp/dataid#links_geonames-semantic-web> ;
+        dct:description         "List of accommodations in Piedmont, Italy. The dataset uses GoodRelations and vcard and includes addresses, contact information (where available) and geo-reference. Note: geo-reference is provided in a best effort way, might contain errors."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-by-sa> ;
+        dct:title               "Accommodations in Piedmont (LinkedOpenData.it)"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://data.linkedopendata.it/grrp/resource/AFFITTACAMERE_ARCOBALENO_2> ;
+        void:sparqlEndpoint     <http://sparql.linkedopendata.it/grrp> ;
+        void:triples            "153935"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:distribution       <http://void.linkedopendata.it/grrp> , <http://sparql.linkedopendata.it/grrp> , <http://dump.linkedopendata.it/grrp> ;
+        dcat:keyword            "geographic" , "provenance-metadata" , "goodrelations" , "piemonte" , "format-gr" , "published-by-third-party" , "format-rdf" , "void-sparql-endpoint" , "accommodation" , "lod" , "format-vcard" , "linkeddata" , "license-metadata" , "country-italy" , "hotel" , "piedmont" , "deref-vocab" ;
+        dcat:landingPage        <http://datahub.io/dataset/grrp> .
+
+<http://dataid.dbpedia.org/lod/grrp/dataid#links_geonames-semantic-web>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/grrp/dataid#dataset> ;
+        void:triples         "934"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://dump.linkedopendata.it/grrp>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://dump.linkedopendata.it/grrp> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/grrp/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Linkedopendata.it" .
+
+<http://sparql.linkedopendata.it/grrp>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://sparql.linkedopendata.it/grrp> ;
+        dcat:mediaType  "api/sparql" .

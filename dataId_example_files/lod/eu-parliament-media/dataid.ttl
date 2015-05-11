@@ -1,0 +1,51 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/eu-parliament-media/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Knud Möller" .
+
+<http://eupmedia.publicdata.eu/void.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://eupmedia.publicdata.eu/void.ttl> ;
+        dcat:mediaType    "meta/void" .
+
+<http://dataid.dbpedia.org/lod/eu-parliament-media/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/eu-parliament-media/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/eu-parliament-media/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "eu-parliament-media"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/eu-parliament-media/dataid#creator> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/eu-parliament-media/dataid#links_eu-who-is-who> ;
+        dct:description         "This dataset contains information about multi-media content published by the European Parliament at http://audiovisual.europarl.europa.eu/. Media assets of type video, audio and image are contained. All assests are annotated with primary metadata (e.g., length, resolution, size, etc.), as well as topic metadata. Where topics are people, those are represented as complex resources in their own right, with names, roles in organisations, etc. Organisations are located in countries according to the Kasabi country dataset.\n"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "EU Parliament Media Library"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://eupmedia.publicdata.eu/data/video/eu_parliament/9cbc7cbf-4a97-41b9-91a4-14baad45bb94.rdf> ;
+        void:sparqlEndpoint     <http://api.talis.com/stores/eupmedia/services/sparql> ;
+        void:triples            "532957"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://eupmedia.publicdata.eu/data/" ;
+        dcat:distribution       <http://api.talis.com/stores/eupmedia/services/sparql> , <http://eupmedia.publicdata.eu/void.ttl> , <http://eupmedia.publicdata.eu/dump/eup_media_assets.ttl> ;
+        dcat:keyword            "published-by-third-party" , "government" , "no-proprietary-vocab" , "format-places" , "format-nfo" , "format-foaf" , "provenance-metadata" , "politics" , "latc" , "lod" , "eu-institution" , "deref-vocab" , "eu" , "media" , "no-license-metadata" , "eu-parliament" ;
+        dcat:landingPage        <http://datahub.io/dataset/eu-parliament-media> .
+
+<http://eupmedia.publicdata.eu/dump/eup_media_assets.ttl>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://eupmedia.publicdata.eu/dump/eup_media_assets.ttl> ;
+        dcat:mediaType    "text/turtle" .
+
+<http://api.talis.com/stores/eupmedia/services/sparql>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://api.talis.com/stores/eupmedia/services/sparql> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/eu-parliament-media/dataid#links_eu-who-is-who>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/eu-who-is-who/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/eu-parliament-media/dataid#dataset> ;
+        void:triples         "1000"^^<http://www.w3.org/2001/XMLSchema#int> .

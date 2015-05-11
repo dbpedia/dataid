@@ -1,0 +1,37 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://data.lib.sussex.ac.uk/files/massobservation/rdf/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://data.lib.sussex.ac.uk/files/massobservation/rdf/> ;
+        dcat:mediaType    "RDF" .
+
+<http://dataid.dbpedia.org/lod/massobservationarchivecatalogue/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:mbox  "mailto:c.j.keene@sussex.ac.uk" ;
+        foaf:name  "Chris Keene" .
+
+<http://dataid.dbpedia.org/lod/massobservationarchivecatalogue/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/massobservationarchivecatalogue/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/massobservationarchivecatalogue/dataid#creator>
+        a          dataid:Creator ;
+        foaf:mbox  "mailto:K.L.Watson@sussex.ac.uk" ;
+        foaf:name  "Karen Watson" .
+
+<http://dataid.dbpedia.org/lod/massobservationarchivecatalogue/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "massobservationarchivecatalogue"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/massobservationarchivecatalogue/dataid#creator> , <http://dataid.dbpedia.org/lod/massobservationarchivecatalogue/dataid#contributor> ;
+        dct:description         "The data is the catalogue records of the Mass Observation Archive, a Designated collection. The Mass Observation Archive is a written record of everyday life in Britain 1937-55. It's a unique insight in to life during the Second World War. \n\nhttp://data.lib.sussex.ac.uk/data/mass-observation/\n\nhttp://www.massobs.org.uk/a_brief_history.htm\n\nThe conversion to Linked Data was carried out as part of the JISC funded SALDA project by the University of Sussex Library with key support from Eduserv."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/odc-pddl> ;
+        dct:title               "Mass Observation Archive catalogue"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:triples            "428035"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        dcat:distribution       <http://data.lib.sussex.ac.uk/files/massobservation/rdf/> ;
+        dcat:keyword            "crossdomain" , "jisc" , "published-by-producer" , "deref-vocab" , "war" , "history" , "lodcloud.unconnected" , "lodcloud.nolinks" , "archives" , "format-xhtml" , "lod" ;
+        dcat:landingPage        <http://datahub.io/dataset/massobservationarchivecatalogue> .

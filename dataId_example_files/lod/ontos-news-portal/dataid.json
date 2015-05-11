@@ -1,0 +1,114 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/ontos-news-portal/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Ontos AG (Christian Ehrlich)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : "http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#creator",
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#links_geonames-semantic-web", "http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#links_freebase" ],
+    "dct:description" : "The Ontos News Portal extracts facts (objects as e. g. persons or organizations as well as relations between them, e. g. a person is working for an organization or living at a location). The facts are merged together and build a huge information-network including references to the respective articles. The portal can manually be searched at news.ontos.com. For all objects, Ontos provides dereferencable GUIDs. The interface at www.ontosearch.com allows to easily generate RDF/XML or HTML information. ",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Ontos News Portal",
+    "triples" : "2677965",
+    "uriSpace" : "http://www.ontosearch.com/2008/01/identification#",
+    "rdfs:label" : "ontos-news-portal",
+    "distribution" : [ "http://www.ontosearch.com/api/ent-rdf?id=EID-3b6e3fb1eb4bef8e669277e73d2e7d56", "http://www.ontosearch.com/dumps/dump.ttl.zip" ],
+    "keyword" : [ "semantic-web", "published-by-producer", "rdf", "format-foaf", "lod", "no-deref-vocab", "media", "format-dcterm", "format-rdf", "linguistics", "nlp", "news" ],
+    "landingPage" : "http://datahub.io/dataset/ontos-news-portal"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#dataset",
+    "triples" : "6935"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#links_freebase",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/freebase/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#dataset",
+    "triples" : "30025"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#links_geonames-semantic-web",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/geonames-semantic-web/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/ontos-news-portal/dataid#dataset",
+    "triples" : "90"
+  }, {
+    "@id" : "http://www.ontosearch.com/api/ent-rdf?id=EID-3b6e3fb1eb4bef8e669277e73d2e7d56",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.ontosearch.com/api/ent-rdf?id=EID-3b6e3fb1eb4bef8e669277e73d2e7d56",
+    "mediaType" : "RDF"
+  }, {
+    "@id" : "http://www.ontosearch.com/dumps/dump.ttl.zip",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.ontosearch.com/dumps/dump.ttl.zip",
+    "mediaType" : "text/turtle"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

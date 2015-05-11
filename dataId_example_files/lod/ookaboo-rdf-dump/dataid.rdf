@@ -1,0 +1,96 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/ookaboo-rdf-dump/dataid#dataset">
+    <dcat:keyword>freebase</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://rdf.ookaboo.com/data/latest/ookaboo-size-l.nt.gz">
+        <dcat:mediaType>n-triples</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://rdf.ookaboo.com/data/latest/ookaboo-size-l.nt.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>rdf</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/ookaboo-rdf-dump"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The Ookaboo RDF dump contains metadata for nearly 1,000,000 public domain and Creative Commons images of more than 500,000 precise topics such as places, people and organism classifications linked to DBpedia and Freebase.
+
+Expressed in industry standard RDF, the Ookaboo dump is available with a CC-BY-SA/3.0 license that is friendly for both academic and commercial use. Precision is in excess of 0.98, enabling a new range of applications for image search and classification. See the latest release for downloads and documentation.</dct:description>
+    <dcat:keyword>multimedia</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ookaboo RDF dump</dct:title>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://rdf.ookaboo.com/data/latest/ookaboo-size-m.nt.gz">
+        <dcat:mediaType>n-triples</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://rdf.ookaboo.com/data/latest/ookaboo-size-m.nt.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>dbpedia</dcat:keyword>
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://rdf.ookaboo.com/data/latest/ookaboo-size-s.nt.gz">
+        <dcat:mediaType>n-triples</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://rdf.ookaboo.com/data/latest/ookaboo-size-s.nt.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ookaboo-rdf-dump</rdfs:label>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://rdf.ookaboo.com/data/latest/ookaboo-dbpedia.nt.gz">
+        <dcat:mediaType>n-triples</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://rdf.ookaboo.com/data/latest/ookaboo-dbpedia.nt.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/ookaboo-rdf-dump/dataid#creator">
+        <foaf:name>Paul Houle</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >49000000</void:triples>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://rdf.ookaboo.com/data/latest/ookaboo-freebase.nt.gz">
+        <dcat:mediaType>n-triples</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://rdf.ookaboo.com/data/latest/ookaboo-freebase.nt.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://rdf.ookaboo.com/data/latest/ookaboo-core.nt.gz">
+        <dcat:mediaType>n-triples</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://rdf.ookaboo.com/data/latest/ookaboo-core.nt.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://rdf.ookaboo.com/data/latest/ookaboo-schema.ttl.gz">
+        <dcat:mediaType>turtle</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://rdf.ookaboo.com/data/latest/ookaboo-schema.ttl.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>images</dcat:keyword>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://rdf.ookaboo.com/data/latest/ookaboo-size-t.nt.gz">
+        <dcat:mediaType>n-triples</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://rdf.ookaboo.com/data/latest/ookaboo-size-t.nt.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://rdf.ookaboo.com/data/latest/ookaboo-size-sq.nt.gz">
+        <dcat:mediaType>n-triples</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://rdf.ookaboo.com/data/latest/ookaboo-size-sq.nt.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://rdf.ookaboo.com/data/latest/ookaboo-topic-labels.nt.gz">
+        <dcat:mediaType>n-triples</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://rdf.ookaboo.com/data/latest/ookaboo-topic-labels.nt.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+  </dataid:Dataset>
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/ookaboo-rdf-dump/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/ookaboo-rdf-dump/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+</rdf:RDF>

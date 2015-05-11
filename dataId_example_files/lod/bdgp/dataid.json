@@ -1,0 +1,104 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/bdgp/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/bdgp/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bdgp/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "name" : "Jun Zhao"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bdgp/dataid#creator",
+    "@type" : "dataid:Creator",
+    "name" : "Jun Zhao"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bdgp/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/bdgp/dataid#contributor", "http://dataid.dbpedia.org/lod/bdgp/dataid#creator" ],
+    "dct:description" : "",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Bdgp",
+    "sparqlEndpoint" : "http://www.open-biomed.org.uk/sparql/endpoint/bdgp_20081030",
+    "triples" : "1080060",
+    "rdfs:label" : "bdgp",
+    "distribution" : [ "http://www.open-biomed.org.uk/service/bdgp/images/gene/{gene}", "http://www.open-biomed.org.uk/sparql/endpoint/bdgp_20081030", "http://www.open-biomed.org.uk/open-biomed-data/bdgp-images-all-20110211.tar.gz", "http://www.open-biomed.org.uk/service/bdgp/geneproducts" ],
+    "keyword" : [ "open-biomed", "bdgp", "linkeddata" ],
+    "landingPage" : "http://datahub.io/dataset/bdgp"
+  }, {
+    "@id" : "http://www.open-biomed.org.uk/open-biomed-data/bdgp-images-all-20110211.tar.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.open-biomed.org.uk/open-biomed-data/bdgp-images-all-20110211.tar.gz",
+    "mediaType" : "rdf/turtle"
+  }, {
+    "@id" : "http://www.open-biomed.org.uk/service/bdgp/geneproducts",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.open-biomed.org.uk/service/bdgp/geneproducts",
+    "mediaType" : "api"
+  }, {
+    "@id" : "http://www.open-biomed.org.uk/service/bdgp/images/gene/{gene}",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://www.open-biomed.org.uk/service/bdgp/images/gene/{gene}",
+    "mediaType" : "api"
+  }, {
+    "@id" : "http://www.open-biomed.org.uk/sparql/endpoint/bdgp_20081030",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://www.open-biomed.org.uk/sparql/endpoint/bdgp_20081030",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

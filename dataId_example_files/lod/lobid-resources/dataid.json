@@ -1,0 +1,204 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:semweb@hbz-nrw.de",
+    "name" : "North Rhine-Westphalian Library Service Center (hbz)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:semweb@hbz-nrw.de",
+    "name" : "North Rhine-Westphalian Library Service Center (hbz)"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/lobid-resources/dataid#creator", "http://dataid.dbpedia.org/lod/lobid-resources/dataid#contributor" ],
+    "containsLinks" : [ "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_lobid-organisations", "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_zdb", "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_gutenberg", "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_dnb-gemeinsame-normdatei", "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_dbpedia", "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_oclc", "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_dbpedia-de", "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_iso-639-2", "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_deutsche-nationalbibliografie-dnb", "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_dewey_decimal_classification", "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_open-library", "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_b3kat" ],
+    "dct:description" : "lobid-resources is a service which offers access to metadata in RDF about bibliographic resources (books, articles, pdfs etc.) with more than 15.5 million frbr:manifestations with more than 32 million frbr:items.\nWe also provide a raw data dump at http://thedatahub.org/dataset/hbz_unioncatalog .\n\nLinks to other datasets are provided in separate files, see below.\n\nYou can find additional information about this data [here](https://wiki1.hbz-nrw.de/display/SEM/2010/08/31/Linked-Open-hbz-Data).\n",
+    "license" : "http://www.opendefinition.org/licenses/cc-zero",
+    "dct:title" : "lobid-Bibliographic Resources",
+    "exampleResource" : "http://lobid.org/resource/HT002948556",
+    "sparqlEndpoint" : "http://lobid.org/sparql/",
+    "triples" : "667675574",
+    "uriSpace" : "http://lobid.org/resource/",
+    "rdfs:label" : "lobid-resources",
+    "distribution" : [ "http://lobid.org/download/dumps/DE-605/enrich/", "http://lobid.org/dataset/resource/about.ttl", "http://lobid.org/sparql/", "http://lobid.org/download/dumps/DE-605/updates/lod/", "http://lobid.org/download/dumps/DE-605/hbzlod.nt.tar.bz2" ],
+    "keyword" : [ "library", "no-proprietary-vocab", "bibliographic", "license-metadata", "published-by-producer", "format-bibo", "format-foaf", "lod", "format-skos-state", "format-frbr", "format-owl", "provenance-metadata", "void-sparql-endpoint", "no-vocab-mappings", "germany", "publications", "lld", "format-geo", "format-dc" ],
+    "landingPage" : "http://datahub.io/dataset/lobid-resources"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_b3kat",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/b3kat/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset",
+    "triples" : "71550"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_dbpedia",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset",
+    "triples" : "5794"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_dbpedia-de",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dbpedia-de/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset",
+    "triples" : "6179"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_deutsche-nationalbibliografie-dnb",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/deutsche-nationalbibliografie-dnb/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset",
+    "triples" : "267769"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_dewey_decimal_classification",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dewey_decimal_classification/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset",
+    "triples" : "198906"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_dnb-gemeinsame-normdatei",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/dnb-gemeinsame-normdatei/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset",
+    "triples" : "22711732"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_gutenberg",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/gutenberg/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset",
+    "triples" : "5467"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_iso-639-2",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/iso-639-2/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset",
+    "triples" : "8060339"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_lobid-organisations",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/lobid-organisations/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset",
+    "triples" : "32286583"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_oclc",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/oclc/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset",
+    "triples" : "426404"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_open-library",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/open-library/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset",
+    "triples" : "1258070"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#links_zdb",
+    "@type" : "dataid:Linkset",
+    "objectsTarget" : "http://dataid.dbpedia.org/lod/zdb/dataid#dataset",
+    "subjectsTarget" : "http://dataid.dbpedia.org/lod/lobid-resources/dataid#dataset",
+    "triples" : "702886"
+  }, {
+    "@id" : "http://lobid.org/dataset/resource/about.ttl",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lobid.org/dataset/resource/about.ttl",
+    "mediaType" : "meta/void"
+  }, {
+    "@id" : "http://lobid.org/download/dumps/DE-605/enrich/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lobid.org/download/dumps/DE-605/enrich/",
+    "mediaType" : "text/turtle"
+  }, {
+    "@id" : "http://lobid.org/download/dumps/DE-605/hbzlod.nt.tar.bz2",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lobid.org/download/dumps/DE-605/hbzlod.nt.tar.bz2",
+    "mediaType" : "text/ntriples"
+  }, {
+    "@id" : "http://lobid.org/download/dumps/DE-605/updates/lod/",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://lobid.org/download/dumps/DE-605/updates/lod/",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://lobid.org/sparql/",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://lobid.org/sparql/",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "objectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#objectsTarget",
+      "@type" : "@id"
+    },
+    "subjectsTarget" : {
+      "@id" : "http://rdfs.org/ns/void#subjectsTarget",
+      "@type" : "@id"
+    },
+    "triples" : {
+      "@id" : "http://rdfs.org/ns/void#triples",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#containsLinks",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

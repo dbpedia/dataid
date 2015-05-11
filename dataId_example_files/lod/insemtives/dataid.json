@@ -1,0 +1,90 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/insemtives/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/insemtives/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/insemtives/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:stephan.woelger@sti2.at",
+    "name" : "Stephan Wölger"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/insemtives/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:stephan.woelger@sti2.at",
+    "name" : "Stephan Wölger"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/insemtives/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/insemtives/dataid#creator", "http://dataid.dbpedia.org/lod/insemtives/dataid#contributor" ],
+    "dct:description" : "From the web page about the INSEMTIVES project:\n\n> INSEMTIVES is about bridging the gap between human and computational intelligence and providing incentives for users to contribute to the massive creation of semantic content.\n\n> INSEMTIVES combines research with development and real-world applications . The foundations are methods and guidelines facilitating semantic content creation in an incentives-driven manner. They underly the INSEMTIVES platform (back-end) and various end-user tools for semantic content creation (front-end).These technology components are used in three case studies targeting the management of enterprise content, the annotation of Web service artifacts, and the management of multimedia in online worlds and games. ",
+    "license" : "http://creativecommons.org/licenses/by-nc/2.0/",
+    "dct:title" : "INSEMTIVES",
+    "exampleResource" : "http://services.insemtives.eu/forest/resource?uri=http%3A%2F%2Fdbpedia.org%2Fresource%2FBlackberry%23default%239173&format=rdf",
+    "sparqlEndpoint" : "http://services.insemtives.eu/forest/sparql",
+    "uriSpace" : "http://www.insemtives.eu/lod.php",
+    "rdfs:label" : "insemtives",
+    "distribution" : "http://services.insemtives.eu/forest/sparql",
+    "keyword" : [ "incentives", "tagging", "cloud", "social", "semantics", "generated", "access-web", "no-proprietary-vocab", "interlinking", "lodcloud.nolinks", "media", "published-by-third-party", "games", "lod", "seafish", "semantic", "lodcloud.unconnected", "insemtives", "user", "service", "rdf", "content", "annotation", "usergeneratedcontent" ],
+    "landingPage" : "http://datahub.io/dataset/insemtives"
+  }, {
+    "@id" : "http://services.insemtives.eu/forest/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://services.insemtives.eu/forest/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exampleResource" : {
+      "@id" : "http://rdfs.org/ns/void#exampleResource",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

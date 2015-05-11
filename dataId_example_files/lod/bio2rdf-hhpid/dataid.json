@@ -1,0 +1,99 @@
+{
+  "@graph" : [ {
+    "@id" : "http://dataid.dbpedia.org/lod/bio2rdf-hhpid/dataid",
+    "@type" : "void:DatasetDescription",
+    "topic" : "http://dataid.dbpedia.org/lod/bio2rdf-hhpid/dataid#dataset"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bio2rdf-hhpid/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "mbox" : "mailto:michel.dumontier@gmail.com",
+    "name" : "Michel Dumontier"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bio2rdf-hhpid/dataid#creator",
+    "@type" : "dataid:Creator",
+    "mbox" : "mailto:bio2rdf@googlegroups.com",
+    "name" : "Bio2RDF"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/bio2rdf-hhpid/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "associatedAgent" : [ "http://dataid.dbpedia.org/lod/bio2rdf-hhpid/dataid#creator", "http://dataid.dbpedia.org/lod/bio2rdf-hhpid/dataid#contributor" ],
+    "dct:description" : "A database of HIV-1 human protein interactions that was created to catalog all interactions between HIV-1 and human proteins published in the peer-reviewed literature. The database serves the scientific community exploring the discovery of novel HIV vaccine candidates and therapeutic targets.",
+    "license" : "http://www.opendefinition.org/licenses/cc-by",
+    "dct:title" : "Bio2RDF::HHPID",
+    "sparqlEndpoint" : "http://hhpid.bio2rdf.org/sparql",
+    "uriSpace" : "http://bio2rdf.org/hhpid",
+    "rdfs:label" : "bio2rdf-hhpid",
+    "distribution" : [ "http://download.bio2rdf.org/current/hhpid/hhpid.html", "http://hhpid.bio2rdf.org/sparql", "http://download.bio2rdf.org/current/hhpid/hhpid.nt.gz" ],
+    "keyword" : [ "rdf", "bio2rdf", "published by third party.", "lod", "semanticweb" ],
+    "landingPage" : "http://datahub.io/dataset/bio2rdf-hhpid"
+  }, {
+    "@id" : "http://download.bio2rdf.org/current/hhpid/hhpid.html",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://download.bio2rdf.org/current/hhpid/hhpid.html",
+    "mediaType" : "HTML"
+  }, {
+    "@id" : "http://download.bio2rdf.org/current/hhpid/hhpid.nt.gz",
+    "@type" : "dataid:Distribution",
+    "downloadURL" : "http://download.bio2rdf.org/current/hhpid/hhpid.nt.gz",
+    "mediaType" : "application/x-ntriples"
+  }, {
+    "@id" : "http://hhpid.bio2rdf.org/sparql",
+    "@type" : [ "dataid:Distribution", "dataid:SparqlEndpoint" ],
+    "accessURL" : "http://hhpid.bio2rdf.org/sparql",
+    "mediaType" : "api/sparql"
+  } ],
+  "@context" : {
+    "mediaType" : "http://www.w3.org/ns/dcat#mediaType",
+    "downloadURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#downloadURL",
+      "@type" : "@id"
+    },
+    "topic" : "http://xmlns.com/foaf/0.1/topic",
+    "accessURL" : {
+      "@id" : "http://www.w3.org/ns/dcat#accessURL",
+      "@type" : "@id"
+    },
+    "mbox" : "http://xmlns.com/foaf/0.1/mbox",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "landingPage" : {
+      "@id" : "http://www.w3.org/ns/dcat#landingPage",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/ns/core#associatedAgent",
+      "@type" : "@id"
+    },
+    "distribution" : {
+      "@id" : "http://www.w3.org/ns/dcat#distribution",
+      "@type" : "@id"
+    },
+    "keyword" : "http://www.w3.org/ns/dcat#keyword",
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "sparqlEndpoint" : {
+      "@id" : "http://rdfs.org/ns/void#sparqlEndpoint",
+      "@type" : "@id"
+    },
+    "uriSpace" : "http://rdfs.org/ns/void#uriSpace",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dct" : "http://purl.org/dc/terms/",
+    "void" : "http://rdfs.org/ns/void#",
+    "dataid" : "http://dataid.dbpedia.org/ns/core#"
+  }
+}

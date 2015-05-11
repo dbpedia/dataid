@@ -1,0 +1,49 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/rkb-explorer-crime/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Ian Millard" .
+
+<http://crime.rkbexplorer.com/sparql/>
+        a               dataid:Distribution , dataid:SparqlEndpoint ;
+        dcat:accessURL  <http://crime.rkbexplorer.com/sparql/> ;
+        dcat:mediaType  "api/sparql" .
+
+<http://dataid.dbpedia.org/lod/rkb-explorer-crime/dataid#links_ordnance-survey-linked-data>
+        a                    dataid:Linkset ;
+        void:objectsTarget   <http://dataid.dbpedia.org/lod/ordnance-survey-linked-data/dataid#dataset> ;
+        void:subjectsTarget  <http://dataid.dbpedia.org/lod/rkb-explorer-crime/dataid#dataset> ;
+        void:triples         "684394"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://crime.rkbexplorer.com/models/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://crime.rkbexplorer.com/models/> .
+
+<http://dataid.dbpedia.org/lod/rkb-explorer-crime/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/rkb-explorer-crime/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/rkb-explorer-crime/dataid#contributor>
+        a          dataid:Contributor ;
+        foaf:name  "EnAKTing Project" .
+
+<http://dataid.dbpedia.org/lod/rkb-explorer-crime/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "rkb-explorer-crime"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/rkb-explorer-crime/dataid#creator> , <http://dataid.dbpedia.org/lod/rkb-explorer-crime/dataid#contributor> ;
+        dataid:containsLinks    <http://dataid.dbpedia.org/lod/rkb-explorer-crime/dataid#links_ordnance-survey-linked-data> ;
+        dct:description         "The data presented here is a linked data representation of the street-level crime reports first released for England and Wales in 2011.\n\nInitial data exports cover December 2010, with monthly updates added when available, usually released one to two months in arrears.\n\nEntries exist for each individual crime report. These have been enriched by linking to the nearest postcode for the position at which the crime was reported, which hooks you into the Ordnance Survey administrative geography dataset.\n\nIn addition, aggregate statistics have been computed for each crime type at Ward, County and European Region level. These include not only cumulative values for these regions, appropriately identified in the OS dataset, but also include densities by area and population. These statistics are extensively used in the See UK application."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://reference.data.gov.uk/id/open-government-licence> ;
+        dct:title               "Street level crime reports for England and Wales"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        void:exampleResource    <http://crime.rkbexplorer.com/id/2010-12-7000000000017583-all-crime> , <http://crime.rkbexplorer.com/id/2010-12/hampshire-constabulary/9999> ;
+        void:sparqlEndpoint     <http://crime.rkbexplorer.com/sparql/> ;
+        void:triples            "7780271"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        void:uriSpace           "http://crime.rkbexplorer.com/id/" ;
+        dcat:distribution       <http://crime.rkbexplorer.com/models/> , <http://crime.rkbexplorer.com/sparql/> ;
+        dcat:keyword            "crime-statistics" , "linkeddata" , "wards" , "aggregates" , "government" , "crime" , "opendatachallenge" , "published-by-third-party" , "lod" , "geographic" , "counties" , "rdf" , "linked-open-data" , "deref-vocab" ;
+        dcat:landingPage        <http://datahub.io/dataset/rkb-explorer-crime> .

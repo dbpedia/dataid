@@ -1,0 +1,94 @@
+<rdf:RDF
+    xmlns:dataid="http://dataid.dbpedia.org/ns/core#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <void:DatasetDescription rdf:about="http://dataid.dbpedia.org/lod/ids/dataid">
+    <foaf:topic>http://dataid.dbpedia.org/lod/ids/dataid#dataset</foaf:topic>
+  </void:DatasetDescription>
+  <dataid:Distribution rdf:about="https://dl.dropbox.com/u/65483422/ids-model-diagram.png">
+    <dcat:mediaType>PNG</dcat:mediaType>
+    <dcat:downloadURL rdf:resource="https://dl.dropbox.com/u/65483422/ids-model-diagram.png"/>
+  </dataid:Distribution>
+  <dataid:Dataset rdf:about="http://dataid.dbpedia.org/lod/ids/dataid#dataset">
+    <dct:license rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
+    <void:sparqlEndpoint>
+      <dataid:Distribution rdf:about="http://mlode.nlp2rdf.org/sparql">
+        <dcat:mediaType>api/sparql</dcat:mediaType>
+        <dcat:accessURL rdf:resource="http://mlode.nlp2rdf.org/sparql"/>
+        <rdf:type rdf:resource="http://dataid.dbpedia.org/ns/core#SparqlEndpoint"/>
+      </dataid:Distribution>
+    </void:sparqlEndpoint>
+    <dcat:keyword>LOD</dcat:keyword>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Intercontinental Dictionary Series</dct:title>
+    <dataid:associatedAgent>
+      <dataid:Contributor rdf:about="http://dataid.dbpedia.org/lod/ids/dataid#contributor">
+        <foaf:mbox>mailto:bibiko@eva.mpg.de</foaf:mbox>
+        <foaf:name>Hans-Jörg Bibiko</foaf:name>
+      </dataid:Contributor>
+    </dataid:associatedAgent>
+    <dcat:distribution>
+      <dataid:Distribution rdf:about="http://mlode.nlp2rdf.org/datasets/ids.nt.gz">
+        <dcat:mediaType>text/n3</dcat:mediaType>
+        <dcat:downloadURL rdf:resource="http://mlode.nlp2rdf.org/datasets/ids.nt.gz"/>
+      </dataid:Distribution>
+    </dcat:distribution>
+    <dcat:keyword>linguistics</dcat:keyword>
+    <dataid:associatedAgent>
+      <dataid:Creator rdf:about="http://dataid.dbpedia.org/lod/ids/dataid#creator">
+        <foaf:name>Bernard Comrie</foaf:name>
+      </dataid:Creator>
+    </dataid:associatedAgent>
+    <dcat:keyword>typology</dcat:keyword>
+    <dcat:keyword>published-by-producer</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/ids/dataid#links_wiktionary-dbpedia-org">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/wiktionary-dbpedia-org/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/ids/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1832</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ids</rdfs:label>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1200 words in 200 languages</dct:description>
+    <dcat:distribution rdf:resource="https://dl.dropbox.com/u/65483422/ids-model-diagram.png"/>
+    <dcat:keyword>linguistic</dcat:keyword>
+    <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2000000</void:triples>
+    <dcat:distribution rdf:resource="http://mlode.nlp2rdf.org/sparql"/>
+    <void:exampleResource rdf:resource="http://mlode.nlp2rdf.org/resource/data/ids/entry/e110-c17?output=ttl"/>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/ids/dataid#links_wals">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/wals/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/ids/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >216</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>lod</dcat:keyword>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/ids/dataid#links_lexvo">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/lexvo/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/ids/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >217</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dataid:containsLinks>
+      <dataid:Linkset rdf:about="http://dataid.dbpedia.org/lod/ids/dataid#links_glottolog-langdoc">
+        <void:objectsTarget rdf:resource="http://dataid.dbpedia.org/lod/glottolog-langdoc/dataid#dataset"/>
+        <void:subjectsTarget rdf:resource="http://dataid.dbpedia.org/lod/ids/dataid#dataset"/>
+        <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >216</void:triples>
+      </dataid:Linkset>
+    </dataid:containsLinks>
+    <dcat:keyword>crossdomain</dcat:keyword>
+    <dcat:landingPage rdf:resource="http://datahub.io/dataset/ids"/>
+  </dataid:Dataset>
+</rdf:RDF>

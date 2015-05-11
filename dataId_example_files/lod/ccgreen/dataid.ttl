@@ -1,0 +1,39 @@
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+
+<http://dataid.dbpedia.org/lod/ccgreen/dataid>
+        a           void:DatasetDescription ;
+        foaf:topic  "http://dataid.dbpedia.org/lod/ccgreen/dataid#dataset" .
+
+<http://dataid.dbpedia.org/lod/ccgreen/dataid#creator>
+        a          dataid:Creator ;
+        foaf:name  "Kendra Hinnenthal" .
+
+<http://lobid.org/download/dumps/ccgreen/ccgreen20110721Grund.TIT_example.txt>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://lobid.org/download/dumps/ccgreen/ccgreen20110721Grund.TIT_example.txt> ;
+        dcat:mediaType    "sisis export format" .
+
+<http://dataid.dbpedia.org/lod/ccgreen/dataid#dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "ccgreen"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dataid:associatedAgent  <http://dataid.dbpedia.org/lod/ccgreen/dataid#creator> ;
+        dct:description         "CC GREEN is a service provided by the ZB MED, the German National Library of Medicine. Health. Nutrition. Environment. Agriculture. CC GREEN includes metadata of about 200 scientific journals on applied life sciences. Journal selection is based on form- (analysable table of contents, German or English language) and content-related criteria (scientificity, core area journals). Among the selected journals, special reference is given to more then 50 journals, which are published either in Germany or in the German language, as well as to international journals, which are not indexed in other online databases such as AGRICOLA and AGRIS. \n    \nJournal contents are scanned and analysed in CC GREEN in order to display information on each article separately. The bibliographic data of the single articles are accessible through a link to the scanned table of contents of the corresponding journal issue. \n    \nPeriod: January 2011 to date "^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dct:license             <http://www.opendefinition.org/licenses/cc-zero> ;
+        dct:title               "Current Contents Nutrition. Environment. Agriculture."^^<http://www.w3.org/2001/XMLSchema#string> ;
+        dcat:distribution       <http://lobid.org/download/dumps/ccgreen/ccgreen20110721Grund.TIT_example.txt> , <http://lobid.org/download/dumps/ccgreen/ccgreen20110721Grund.TIT.tar> , <http://dienste.zbmed.de/ccmed/> ;
+        dcat:keyword            "bibliography" , "life-science" , "bibliographic" , "article-data" , "lifesciences" ;
+        dcat:landingPage        <http://datahub.io/dataset/ccgreen> .
+
+<http://dienste.zbmed.de/ccmed/>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://dienste.zbmed.de/ccmed/> ;
+        dcat:mediaType    "sisis export format" .
+
+<http://lobid.org/download/dumps/ccgreen/ccgreen20110721Grund.TIT.tar>
+        a                 dataid:Distribution ;
+        dcat:downloadURL  <http://lobid.org/download/dumps/ccgreen/ccgreen20110721Grund.TIT.tar> .
