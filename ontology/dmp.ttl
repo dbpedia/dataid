@@ -11,13 +11,14 @@
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix dmp: <http://dataid.dbpedia.org/ns/dmp#> .
 @base <http://dataid.dbpedia.org/ns/dmp#> .
 
 <http://dataid.dbpedia.org/ns/dmp#> rdf:type owl:Ontology ;
                                      
                      rdfs:label "EU H2020 Data management plan properties"@en ;
                      rdfs:comment "This is a collection of properties needed to create data management plans for datasets. Find an example dataid implementing these properties here: https://github.com/dbpedia/dataid/blob/master/dmp/dataid.ttl"@en ;
-                     owl:imports <http://dataid.dbpedia.org/ns/core#>
+                     owl:imports <http://dataid.dbpedia.org/ns/core#>.
 
 
 #################################################################
@@ -108,7 +109,8 @@ dmp:archiveLink rdf:type owl:ObjectProperty ;
 
 dataid:Dataset rdf:type owl:Class ;
               rdfs:label "Dataset"@en ;
-              rdfs:subClassOf [ rdf:type owl:Restriction ;
+              rdfs:subClassOf 
+              				[ rdf:type owl:Restriction ;
                                 owl:onProperty dmp:usefulness ;
                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onDataRange xsd:string 

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_datahubdataidmappingservice" default="compile.module.datahubdataidmappingservice">
+  <dirname property="module.datahubdataidmappingservice.basedir" file="${ant.file.module_datahubdataidmappingservice}"/>
+  
+  <property name="module.jdk.home.datahubdataidmappingservice" value="${jdk.home.1.7}"/>
+  <property name="module.jdk.bin.datahubdataidmappingservice" value="${jdk.bin.1.7}"/>
+  <property name="module.jdk.classpath.datahubdataidmappingservice" value="jdk.classpath.1.7"/>
+  
+  <property name="compiler.args.datahubdataidmappingservice" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
+  
+  <property name="datahubdataidmappingservice.output.dir" value="${module.datahubdataidmappingservice.basedir}/target/classes"/>
+  <property name="datahubdataidmappingservice.testoutput.dir" value="${module.datahubdataidmappingservice.basedir}/target/test-classes"/>
+  
+  <path id="datahubdataidmappingservice.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="datahubdataidmappingservice.module.production.classpath">
+    <path refid="${module.jdk.classpath.datahubdataidmappingservice}"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-grizzly2:1.8.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.gmbal:gmbal-api-only:3.0.0-b023.classpath"/>
+    <path refid="library.maven:_org.glassfish.external:management-api:3.0.0-b012.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-server:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-rcm:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-servlet:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:tests:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish:javax.servlet:3.1.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-server:1.8.classpath"/>
+    <path refid="library.maven:_asm:asm:3.1.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-core:1.8.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-multipart-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxrs:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:jaxrs-api:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:1.0.1.final.classpath"/>
+    <path refid="library.maven:_javax.activation:activation:1.1.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.1.classpath"/>
+    <path refid="library.maven:_net.jcip:jcip-annotations:1.0.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-client:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxb-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-impl:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-core:2.2.7.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jaxb-api:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.istack:istack-commons-runtime:2.16.classpath"/>
+    <path refid="library.maven:_com.sun.xml.fastinfoset:fastinfoset:1.2.12.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jsr173_api:1.0.classpath"/>
+    <path refid="library.maven:_javax.mail:mail:1.5.0-b01.classpath"/>
+    <path refid="library.maven:_org.apache.james:apache-mime4j:0.6.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_com.github.jsonld-java:jsonld-java:0.5.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.3.0.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.7.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient-cache:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.2.4.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+  </path>
+  
+  <path id="datahubdataidmappingservice.runtime.production.module.classpath">
+    <pathelement location="${datahubdataidmappingservice.output.dir}"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-grizzly2:1.8.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.gmbal:gmbal-api-only:3.0.0-b023.classpath"/>
+    <path refid="library.maven:_org.glassfish.external:management-api:3.0.0-b012.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-server:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-rcm:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-servlet:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:tests:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish:javax.servlet:3.1.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-server:1.8.classpath"/>
+    <path refid="library.maven:_asm:asm:3.1.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-core:1.8.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-multipart-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxrs:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:jaxrs-api:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:1.0.1.final.classpath"/>
+    <path refid="library.maven:_javax.activation:activation:1.1.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.1.classpath"/>
+    <path refid="library.maven:_net.jcip:jcip-annotations:1.0.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-client:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxb-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-impl:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-core:2.2.7.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jaxb-api:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.istack:istack-commons-runtime:2.16.classpath"/>
+    <path refid="library.maven:_com.sun.xml.fastinfoset:fastinfoset:1.2.12.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jsr173_api:1.0.classpath"/>
+    <path refid="library.maven:_javax.mail:mail:1.5.0-b01.classpath"/>
+    <path refid="library.maven:_org.apache.james:apache-mime4j:0.6.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_com.github.jsonld-java:jsonld-java:0.5.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.3.0.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.7.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient-cache:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.2.4.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.7.classpath"/>
+  </path>
+  
+  <path id="datahubdataidmappingservice.module.classpath">
+    <path refid="${module.jdk.classpath.datahubdataidmappingservice}"/>
+    <pathelement location="${datahubdataidmappingservice.output.dir}"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-grizzly2:1.8.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.gmbal:gmbal-api-only:3.0.0-b023.classpath"/>
+    <path refid="library.maven:_org.glassfish.external:management-api:3.0.0-b012.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-server:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-rcm:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-servlet:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:tests:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish:javax.servlet:3.1.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-server:1.8.classpath"/>
+    <path refid="library.maven:_asm:asm:3.1.classpath"/>
+    <path refid="library.maven:_junit:junit:4.8.2.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-client:1.8.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-core:1.8.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-multipart-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxrs:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:jaxrs-api:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:1.0.1.final.classpath"/>
+    <path refid="library.maven:_javax.activation:activation:1.1.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.1.classpath"/>
+    <path refid="library.maven:_net.jcip:jcip-annotations:1.0.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-client:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxb-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-impl:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-core:2.2.7.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jaxb-api:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.istack:istack-commons-runtime:2.16.classpath"/>
+    <path refid="library.maven:_com.sun.xml.fastinfoset:fastinfoset:1.2.12.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jsr173_api:1.0.classpath"/>
+    <path refid="library.maven:_javax.mail:mail:1.5.0-b01.classpath"/>
+    <path refid="library.maven:_org.apache.james:apache-mime4j:0.6.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_com.github.jsonld-java:jsonld-java:0.5.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.3.0.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.7.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient-cache:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.2.4.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.7.classpath"/>
+  </path>
+  
+  <path id="datahubdataidmappingservice.runtime.module.classpath">
+    <pathelement location="${datahubdataidmappingservice.testoutput.dir}"/>
+    <pathelement location="${datahubdataidmappingservice.output.dir}"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-grizzly2:1.8.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.gmbal:gmbal-api-only:3.0.0-b023.classpath"/>
+    <path refid="library.maven:_org.glassfish.external:management-api:3.0.0-b012.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-server:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-rcm:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-servlet:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:tests:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish:javax.servlet:3.1.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-server:1.8.classpath"/>
+    <path refid="library.maven:_asm:asm:3.1.classpath"/>
+    <path refid="library.maven:_junit:junit:4.8.2.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-client:1.8.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-core:1.8.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-multipart-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxrs:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:jaxrs-api:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:1.0.1.final.classpath"/>
+    <path refid="library.maven:_javax.activation:activation:1.1.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.1.classpath"/>
+    <path refid="library.maven:_net.jcip:jcip-annotations:1.0.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-client:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxb-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-impl:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-core:2.2.7.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jaxb-api:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.istack:istack-commons-runtime:2.16.classpath"/>
+    <path refid="library.maven:_com.sun.xml.fastinfoset:fastinfoset:1.2.12.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jsr173_api:1.0.classpath"/>
+    <path refid="library.maven:_javax.mail:mail:1.5.0-b01.classpath"/>
+    <path refid="library.maven:_org.apache.james:apache-mime4j:0.6.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_com.github.jsonld-java:jsonld-java:0.5.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.3.0.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.7.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient-cache:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.2.4.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.7.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.datahubdataidmappingservice">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.datahubdataidmappingservice">
+    <patternset refid="excluded.from.module.datahubdataidmappingservice"/>
+  </patternset>
+  
+  
+  <target name="compile.module.datahubdataidmappingservice" depends="compile.module.datahubdataidmappingservice.production,compile.module.datahubdataidmappingservice.tests" description="Compile module DatahubDataidMappingService"/>
+  
+  <target name="compile.module.datahubdataidmappingservice.production" depends="register.custom.compilers" description="Compile module DatahubDataidMappingService; production classes"/>
+  
+  <target name="compile.module.datahubdataidmappingservice.tests" depends="register.custom.compilers,compile.module.datahubdataidmappingservice.production" description="compile module DatahubDataidMappingService; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.datahubdataidmappingservice" description="cleanup module">
+    <delete dir="${datahubdataidmappingservice.output.dir}"/>
+    <delete dir="${datahubdataidmappingservice.testoutput.dir}"/>
+  </target>
+</project>

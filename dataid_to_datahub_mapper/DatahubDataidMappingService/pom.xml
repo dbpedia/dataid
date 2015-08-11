@@ -10,6 +10,8 @@
         <module>DatahubDataIdPropertyMapper</module>
         <module>DatahubRestClient</module>
         <module>DataHubMappingServer</module>
+        <module>OntologyObjectMapping</module>
+        <module>VirtuosoConnector</module>
     </modules>
     <dependencies>
          <dependency>
@@ -75,8 +77,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <inherited>true</inherited>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -91,7 +93,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>aksw.dataid.datahub.mappingservice.Main</mainClass>
+                    <mainClass>org.aksw.dataid.datahub.mappingservice.Main</mainClass>
                 </configuration>
             </plugin>
         </plugins>

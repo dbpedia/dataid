@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="datahubdataidmappingservice" default="all">
+  
+  
+  <property file="datahubdataidmappingservice.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/.pyc/**"/>
+    <exclude name="**/.pyo/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/*.lib/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/.bundle/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.ear"/>
+    <include name="*.apk"/>
+    <include name="*.zip"/>
+    <include name="*.swc"/>
+    <include name="*.ane"/>
+    <include name="*.egg"/>
+    <include name="*.jar"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.7" value="${jdk.home.1.7}/bin"/>
+  <path id="jdk.classpath.1.7">
+    <fileset dir="${jdk.home.1.7}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfr.jar"/>
+      <include name="jre/lib/jfxrt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+      <include name="jre/lib/ext/access-bridge-64.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/jaccess.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunmscapi.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.7}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.7}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.7"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.maven:_asm:asm:3.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/asm/asm/3.1/asm-3.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_ch.qos.cal10n:cal10n-api:0.7.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/ch/qos/cal10n/cal10n-api/0.7.2/cal10n-api-0.7.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.3.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/fasterxml/jackson/core/jackson-annotations/2.3.0/jackson-annotations-2.3.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.5.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/fasterxml/jackson/core/jackson-annotations/2.5.0/jackson-annotations-2.5.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.fasterxml.jackson.core:jackson-core:2.3.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/fasterxml/jackson/core/jackson-core/2.3.3/jackson-core-2.3.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.fasterxml.jackson.core:jackson-core:2.5.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/fasterxml/jackson/core/jackson-core/2.5.0/jackson-core-2.5.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.3.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/fasterxml/jackson/core/jackson-databind/2.3.3/jackson-databind-2.3.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.5.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/fasterxml/jackson/core/jackson-databind/2.5.0/jackson-databind-2.5.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.github.jsonld-java:jsonld-java:0.5.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/github/jsonld-java/jsonld-java/0.5.1/jsonld-java-0.5.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.google.code.gson:gson:2.2.4.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.google.guava:guava:17.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/google/guava/guava/17.0/guava-17.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.h2database:h2:1.3.158.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/h2database/h2/1.3.158/h2-1.3.158.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.sun.istack:istack-commons-runtime:2.16.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/sun/istack/istack-commons-runtime/2.16/istack-commons-runtime-2.16.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.sun.jersey:jersey-client:1.8.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/sun/jersey/jersey-client/1.8/jersey-client-1.8.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.sun.jersey:jersey-core:1.8.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/sun/jersey/jersey-core/1.8/jersey-core-1.8.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.sun.jersey:jersey-grizzly2:1.8.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/sun/jersey/jersey-grizzly2/1.8/jersey-grizzly2-1.8.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.sun.jersey:jersey-server:1.8.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/sun/jersey/jersey-server/1.8/jersey-server-1.8.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.sun.xml.bind:jaxb-core:2.2.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/sun/xml/bind/jaxb-core/2.2.7/jaxb-core-2.2.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.sun.xml.bind:jaxb-impl:2.2.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/sun/xml/bind/jaxb-impl/2.2.7/jaxb-impl-2.2.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.sun.xml.fastinfoset:fastinfoset:1.2.12.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/sun/xml/fastinfoset/FastInfoset/1.2.12/FastInfoset-1.2.12.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.thoughtworks.xstream:xstream:1.3.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/thoughtworks/xstream/xstream/1.3.1/xstream-1.3.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-beanutils:commons-beanutils:1.7.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-cli:commons-cli:1.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-cli/commons-cli/1.2/commons-cli-1.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-codec:commons-codec:1.6.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-codec/commons-codec/1.6/commons-codec-1.6.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-collections:commons-collections:2.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-collections/commons-collections/2.1/commons-collections-2.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-digester:commons-digester:1.6.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-digester/commons-digester/1.6/commons-digester-1.6.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-io:commons-io:2.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-io/commons-io/2.1/commons-io-2.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-io:commons-io:2.4.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-io/commons-io/2.4/commons-io-2.4.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-logging:commons-logging:1.1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-validator:commons-validator:1.3.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-validator/commons-validator/1.3.1/commons-validator-1.3.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_javax.activation:activation:1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/activation/activation/1.1/activation-1.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_javax.mail:mail:1.5.0-b01.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/mail/mail/1.5.0-b01/mail-1.5.0-b01.jar"/>
+  </path>
+  
+  <path id="library.maven:_javax.servlet:javax.servlet-api:3.1.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_javax.xml.bind:jaxb-api:2.2.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/xml/bind/jaxb-api/2.2.7/jaxb-api-2.2.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_javax.xml.bind:jsr173_api:1.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/xml/bind/jsr173_api/1.0/jsr173_api-1.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_junit:junit:4.8.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/junit/junit/4.8.2/junit-4.8.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_log4j:log4j:1.2.14.classpath">
+    <pathelement location="${path.variable.maven_repository}/log4j/log4j/1.2.14/log4j-1.2.14.jar"/>
+  </path>
+  
+  <path id="library.maven:_log4j:log4j:1.2.17.classpath">
+    <pathelement location="${path.variable.maven_repository}/log4j/log4j/1.2.17/log4j-1.2.17.jar"/>
+  </path>
+  
+  <path id="library.maven:_net.jcip:jcip-annotations:1.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_net.sourceforge.collections:collections-generic:4.01.classpath">
+    <pathelement location="${path.variable.maven_repository}/net/sourceforge/collections/collections-generic/4.01/collections-generic-4.01.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.aksw.commons:collections:0.5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/aksw/commons/collections/0.5/collections-0.5.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.aksw.commons:util:0.5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/aksw/commons/util/0.5/util-0.5.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.aksw.jena-sparql-api:jena-sparql-api-cache-h2:2.11.2-56.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/aksw/jena-sparql-api/jena-sparql-api-cache-h2/2.11.2-56/jena-sparql-api-cache-h2-2.11.2-56.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.aksw.jena-sparql-api:jena-sparql-api-core:2.11.2-56.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/aksw/jena-sparql-api/jena-sparql-api-core/2.11.2-56/jena-sparql-api-core-2.11.2-56.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.aksw.jena-sparql-api:jena-sparql-api-resources:2.11.2-56.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/aksw/jena-sparql-api/jena-sparql-api-resources/2.11.2-56/jena-sparql-api-resources-2.11.2-56.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.aksw.jena-sparql-api:jena-sparql-api-utils:2.11.2-56.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/aksw/jena-sparql-api/jena-sparql-api-utils/2.11.2-56/jena-sparql-api-utils-2.11.2-56.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.aksw.rdfunit:rdfunit-core:0.7.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/aksw/rdfunit/rdfunit-core/0.7.1/rdfunit-core-0.7.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.aksw.rdfunit:rdfunit-resources:0.7.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/aksw/rdfunit/rdfunit-resources/0.7.1/rdfunit-resources-0.7.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.aksw.rdfunit:rdfunit-validate:0.7.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/aksw/rdfunit/rdfunit-validate/0.7.1/rdfunit-validate-0.7.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.commons:commons-collections4:4.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/commons/commons-collections4/4.0/commons-collections4-4.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.commons:commons-compress:1.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/commons/commons-compress/1.2/commons-compress-1.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.commons:commons-csv:1.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/commons/commons-csv/1.0/commons-csv-1.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.commons:commons-lang3:3.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.httpcomponents:httpclient-cache:4.2.5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/httpcomponents/httpclient-cache/4.2.5/httpclient-cache-4.2.5.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.httpcomponents:httpclient:4.2.5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/httpcomponents/httpclient/4.2.5/httpclient-4.2.5.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.httpcomponents:httpcore:4.2.4.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/httpcomponents/httpcore/4.2.4/httpcore-4.2.4.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.james:apache-mime4j:0.6.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/james/apache-mime4j/0.6/apache-mime4j-0.6.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.jena:jena-arq:2.11.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/jena/jena-arq/2.11.2/jena-arq-2.11.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.jena:jena-arq:2.12.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/jena/jena-arq/2.12.1/jena-arq-2.12.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.jena:jena-core:2.11.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/jena/jena-core/2.11.2/jena-core-2.11.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.jena:jena-core:2.12.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/jena/jena-core/2.12.1/jena-core-2.12.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.jena:jena-iri:1.0.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/jena/jena-iri/1.0.1/jena-iri-1.0.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.jena:jena-iri:1.1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/jena/jena-iri/1.1.1/jena-iri-1.1.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.jena:jena-sdb:1.4.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/jena/jena-sdb/1.4.1/jena-sdb-1.4.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.jena:jena-tdb:1.1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/jena/jena-tdb/1.1.1/jena-tdb-1.1.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.thrift:libthrift:0.9.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/thrift/libthrift/0.9.1/libthrift-0.9.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.external:management-api:3.0.0-b012.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/external/management-api/3.0.0-b012/management-api-3.0.0-b012.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.gmbal:gmbal-api-only:3.0.0-b023.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/gmbal/gmbal-api-only/3.0.0-b023/gmbal-api-only-3.0.0-b023.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.grizzly:grizzly-framework:2.1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/grizzly/grizzly-framework/2.1.1/grizzly-framework-2.1.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.grizzly:grizzly-framework:tests:2.1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/grizzly/grizzly-framework/2.1.1/grizzly-framework-2.1.1-tests.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.grizzly:grizzly-http-server:2.1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/grizzly/grizzly-http-server/2.1.1/grizzly-http-server-2.1.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.grizzly:grizzly-http-servlet:2.1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/grizzly/grizzly-http-servlet/2.1.1/grizzly-http-servlet-2.1.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.grizzly:grizzly-http:2.1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/grizzly/grizzly-http/2.1.1/grizzly-http-2.1.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.grizzly:grizzly-rcm:2.1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/grizzly/grizzly-rcm/2.1.1/grizzly-rcm-2.1.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish:javax.servlet:3.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/javax.servlet/3.1/javax.servlet-3.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.jboss.resteasy:jaxrs-api:3.0.8.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jboss/resteasy/jaxrs-api/3.0.8.Final/jaxrs-api-3.0.8.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.jboss.resteasy:resteasy-client:3.0.8.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jboss/resteasy/resteasy-client/3.0.8.Final/resteasy-client-3.0.8.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.jboss.resteasy:resteasy-jaxb-provider:3.0.8.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jboss/resteasy/resteasy-jaxb-provider/3.0.8.Final/resteasy-jaxb-provider-3.0.8.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.jboss.resteasy:resteasy-jaxrs:3.0.8.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jboss/resteasy/resteasy-jaxrs/3.0.8.Final/resteasy-jaxrs-3.0.8.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.jboss.resteasy:resteasy-multipart-provider:3.0.8.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jboss/resteasy/resteasy-multipart-provider/3.0.8.Final/resteasy-multipart-provider-3.0.8.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:1.0.1.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jboss/spec/javax/annotation/jboss-annotations-api_1.1_spec/1.0.1.Final/jboss-annotations-api_1.1_spec-1.0.1.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.openrdf.sesame:sesame-model:2.8.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/openrdf/sesame/sesame-model/2.8.0/sesame-model-2.8.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.openrdf.sesame:sesame-rio-api:2.8.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/openrdf/sesame/sesame-rio-api/2.8.0/sesame-rio-api-2.8.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.openrdf.sesame:sesame-rio-datatypes:2.8.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/openrdf/sesame/sesame-rio-datatypes/2.8.0/sesame-rio-datatypes-2.8.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.openrdf.sesame:sesame-rio-languages:2.8.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/openrdf/sesame/sesame-rio-languages/2.8.0/sesame-rio-languages-2.8.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.openrdf.sesame:sesame-rio-rdfxml:2.8.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/openrdf/sesame/sesame-rio-rdfxml/2.8.0/sesame-rio-rdfxml-2.8.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.openrdf.sesame:sesame-rio-turtle:2.8.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/openrdf/sesame/sesame-rio-turtle/2.8.0/sesame-rio-turtle-2.8.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.openrdf.sesame:sesame-util:2.8.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/openrdf/sesame/sesame-util/2.8.0/sesame-util-2.8.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.slf4j:jcl-over-slf4j:1.7.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/slf4j/jcl-over-slf4j/1.7.7/jcl-over-slf4j-1.7.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.slf4j:slf4j-api:1.7.6.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/slf4j/slf4j-api/1.7.6/slf4j-api-1.7.6.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.slf4j:slf4j-api:1.7.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.slf4j:slf4j-ext:1.6.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/slf4j/slf4j-ext/1.6.0/slf4j-ext-1.6.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.slf4j:slf4j-log4j12:1.7.6.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/slf4j/slf4j-log4j12/1.7.6/slf4j-log4j12-1.7.6.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.slf4j:slf4j-log4j12:1.7.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/slf4j/slf4j-log4j12/1.7.7/slf4j-log4j12-1.7.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_tr.com.srdc:virt-jena2:2.6.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/tr/com/srdc/virt-jena2/2.6.2/virt-jena2-2.6.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_tr.com.srdc:virtjdbc4:2.6.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/tr/com/srdc/virtjdbc4/2.6.2/virtjdbc4-2.6.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_xerces:xercesimpl:2.11.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_xml-apis:xml-apis:1.4.01.classpath">
+    <pathelement location="${path.variable.maven_repository}/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar"/>
+  </path>
+  
+  <path id="library.maven:_xpp3:xpp3_min:1.1.4c.classpath">
+    <pathelement location="${path.variable.maven_repository}/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.jar"/>
+  </path>
+  
+  <path id="library.org.openrdf:openrdf-rio-api:2.0.1.classpath">
+    <pathelement location="${basedir}/lib/openrdf-rio-api-2.0.1.jar"/>
+  </path>
+  
+  
+  <!-- Global Libraries -->
+  
+  
+  <!-- Application Server Libraries -->
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm-all.jar"/>
+    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  <import file="${basedir}/module_datahubdataidmappingservice.xml"/>
+  
+  <import file="${basedir}/DatahubRestClient/module_datahubrestclient.xml"/>
+  
+  <import file="${basedir}/DatahubDataIdPropertyMapper/module_datahubdataidpropertymapper.xml"/>
+  
+  <import file="${basedir}/VirtuosoConnector/module_virtuosoconnector.xml"/>
+  
+  <import file="${basedir}/DataHubMappingServer/module_datahubmappingserver.xml"/>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.datahubdataidmappingservice, clean.module.datahubrestclient, clean.module.datahubdataidpropertymapper, clean.module.virtuosoconnector, clean.module.datahubmappingserver" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.datahubdataidmappingservice, compile.module.datahubrestclient, compile.module.datahubdataidpropertymapper, compile.module.virtuosoconnector, compile.module.datahubmappingserver" description="build all modules"/>
+  
+  <target name="all" depends="build.modules" description="build all"/>
+</project>

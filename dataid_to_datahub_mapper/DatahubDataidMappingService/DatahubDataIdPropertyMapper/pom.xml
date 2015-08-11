@@ -11,6 +11,19 @@
     </parent>
     <artifactId>DatahubDataIdPropertyMapper</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <!-- Project Settings -->
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <java.version>1.7</java.version>
+        <java.version.javadoc>http://java.sun.com/javase/7/docs/api/</java.version.javadoc>
+        <file.encoding>UTF-8</file.encoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <rdfunit-version>0.7.1</rdfunit-version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.github.jsonld-java</groupId>
@@ -23,9 +36,34 @@
             <version> 1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
+            <groupId>dataidToDatahubRestService</groupId>
+            <artifactId>OntologyObjectMapping</artifactId>
+            <version> 1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>commons-cli</groupId>
             <artifactId>commons-cli</artifactId>
             <version>1.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.aksw.rdfunit</groupId>
+            <artifactId>rdfunit-validate</artifactId>
+            <version>${rdfunit-version}</version>
+        </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>maven.aksw.internal</id>
+            <name>University Leipzig, AKSW Maven2 Repository</name>
+            <url>http://maven.aksw.org/archiva/repository/internal</url>
+        </repository>
+
+        <repository>
+            <id>maven.aksw.snapshots</id>
+            <name>University Leipzig, AKSW Maven2 Repository</name>
+            <url>http://maven.aksw.org/archiva/repository/snapshots</url>
+        </repository>
+
+    </repositories>
 </project>

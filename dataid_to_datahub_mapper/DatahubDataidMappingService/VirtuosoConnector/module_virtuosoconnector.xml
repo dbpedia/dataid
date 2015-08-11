@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_virtuosoconnector" default="compile.module.virtuosoconnector">
+  <dirname property="module.virtuosoconnector.basedir" file="${ant.file.module_virtuosoconnector}"/>
+  
+  <property name="module.jdk.home.virtuosoconnector" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.virtuosoconnector" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.virtuosoconnector" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.virtuosoconnector" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
+  
+  <property name="virtuosoconnector.output.dir" value="${module.virtuosoconnector.basedir}/target/classes"/>
+  <property name="virtuosoconnector.testoutput.dir" value="${module.virtuosoconnector.basedir}/target/test-classes"/>
+  
+  <path id="virtuosoconnector.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="virtuosoconnector.module.production.classpath">
+    <path refid="${module.jdk.classpath.virtuosoconnector}"/>
+    <path refid="library.maven:_tr.com.srdc:virt-jena2:2.6.2.classpath"/>
+    <path refid="library.maven:_tr.com.srdc:virtjdbc4:2.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.jena:jena-tdb:1.1.1.classpath"/>
+    <path refid="library.maven:_org.apache.jena:jena-arq:2.12.1.classpath"/>
+    <path refid="library.maven:_org.apache.thrift:libthrift:0.9.1.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-lang3:3.1.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-csv:1.0.classpath"/>
+    <path refid="library.maven:_org.apache.jena:jena-core:2.12.1.classpath"/>
+    <path refid="library.maven:_org.apache.jena:jena-iri:1.1.1.classpath"/>
+    <path refid="library.maven:_xerces:xercesimpl:2.11.0.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.4.01.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.6.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-log4j12:1.7.6.classpath"/>
+    <path refid="library.maven:_log4j:log4j:1.2.17.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-grizzly2:1.8.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.gmbal:gmbal-api-only:3.0.0-b023.classpath"/>
+    <path refid="library.maven:_org.glassfish.external:management-api:3.0.0-b012.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-server:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-rcm:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-servlet:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:tests:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish:javax.servlet:3.1.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-server:1.8.classpath"/>
+    <path refid="library.maven:_asm:asm:3.1.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-core:1.8.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-multipart-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxrs:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:jaxrs-api:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:1.0.1.final.classpath"/>
+    <path refid="library.maven:_javax.activation:activation:1.1.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.1.classpath"/>
+    <path refid="library.maven:_net.jcip:jcip-annotations:1.0.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-client:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxb-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-impl:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-core:2.2.7.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jaxb-api:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.istack:istack-commons-runtime:2.16.classpath"/>
+    <path refid="library.maven:_com.sun.xml.fastinfoset:fastinfoset:1.2.12.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jsr173_api:1.0.classpath"/>
+    <path refid="library.maven:_javax.mail:mail:1.5.0-b01.classpath"/>
+    <path refid="library.maven:_org.apache.james:apache-mime4j:0.6.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_com.github.jsonld-java:jsonld-java:0.5.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.3.0.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient-cache:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.2.4.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.7.classpath"/>
+    <pathelement location="${datahubrestclient.output.dir}"/>
+  </path>
+  
+  <path id="virtuosoconnector.runtime.production.module.classpath">
+    <pathelement location="${virtuosoconnector.output.dir}"/>
+    <path refid="library.maven:_tr.com.srdc:virt-jena2:2.6.2.classpath"/>
+    <path refid="library.maven:_tr.com.srdc:virtjdbc4:2.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.jena:jena-tdb:1.1.1.classpath"/>
+    <path refid="library.maven:_org.apache.jena:jena-arq:2.12.1.classpath"/>
+    <path refid="library.maven:_org.apache.thrift:libthrift:0.9.1.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-lang3:3.1.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-csv:1.0.classpath"/>
+    <path refid="library.maven:_org.apache.jena:jena-core:2.12.1.classpath"/>
+    <path refid="library.maven:_org.apache.jena:jena-iri:1.1.1.classpath"/>
+    <path refid="library.maven:_xerces:xercesimpl:2.11.0.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.4.01.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.6.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-log4j12:1.7.6.classpath"/>
+    <path refid="library.maven:_log4j:log4j:1.2.17.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-grizzly2:1.8.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.gmbal:gmbal-api-only:3.0.0-b023.classpath"/>
+    <path refid="library.maven:_org.glassfish.external:management-api:3.0.0-b012.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-server:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-rcm:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-servlet:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:tests:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish:javax.servlet:3.1.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-server:1.8.classpath"/>
+    <path refid="library.maven:_asm:asm:3.1.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-core:1.8.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-multipart-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxrs:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:jaxrs-api:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:1.0.1.final.classpath"/>
+    <path refid="library.maven:_javax.activation:activation:1.1.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.1.classpath"/>
+    <path refid="library.maven:_net.jcip:jcip-annotations:1.0.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-client:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxb-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-impl:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-core:2.2.7.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jaxb-api:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.istack:istack-commons-runtime:2.16.classpath"/>
+    <path refid="library.maven:_com.sun.xml.fastinfoset:fastinfoset:1.2.12.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jsr173_api:1.0.classpath"/>
+    <path refid="library.maven:_javax.mail:mail:1.5.0-b01.classpath"/>
+    <path refid="library.maven:_org.apache.james:apache-mime4j:0.6.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_com.github.jsonld-java:jsonld-java:0.5.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.3.0.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient-cache:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.2.4.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.7.classpath"/>
+    <path refid="datahubrestclient.runtime.production.module.classpath"/>
+  </path>
+  
+  <path id="virtuosoconnector.module.classpath">
+    <path refid="${module.jdk.classpath.virtuosoconnector}"/>
+    <pathelement location="${virtuosoconnector.output.dir}"/>
+    <path refid="library.maven:_tr.com.srdc:virt-jena2:2.6.2.classpath"/>
+    <path refid="library.maven:_tr.com.srdc:virtjdbc4:2.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.jena:jena-tdb:1.1.1.classpath"/>
+    <path refid="library.maven:_org.apache.jena:jena-arq:2.12.1.classpath"/>
+    <path refid="library.maven:_org.apache.thrift:libthrift:0.9.1.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-lang3:3.1.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-csv:1.0.classpath"/>
+    <path refid="library.maven:_org.apache.jena:jena-core:2.12.1.classpath"/>
+    <path refid="library.maven:_org.apache.jena:jena-iri:1.1.1.classpath"/>
+    <path refid="library.maven:_xerces:xercesimpl:2.11.0.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.4.01.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.6.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-log4j12:1.7.6.classpath"/>
+    <path refid="library.maven:_log4j:log4j:1.2.17.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-grizzly2:1.8.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.gmbal:gmbal-api-only:3.0.0-b023.classpath"/>
+    <path refid="library.maven:_org.glassfish.external:management-api:3.0.0-b012.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-server:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-rcm:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-servlet:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:tests:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish:javax.servlet:3.1.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-server:1.8.classpath"/>
+    <path refid="library.maven:_asm:asm:3.1.classpath"/>
+    <path refid="library.maven:_junit:junit:4.8.2.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-client:1.8.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-core:1.8.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-multipart-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxrs:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:jaxrs-api:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:1.0.1.final.classpath"/>
+    <path refid="library.maven:_javax.activation:activation:1.1.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.1.classpath"/>
+    <path refid="library.maven:_net.jcip:jcip-annotations:1.0.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-client:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxb-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-impl:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-core:2.2.7.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jaxb-api:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.istack:istack-commons-runtime:2.16.classpath"/>
+    <path refid="library.maven:_com.sun.xml.fastinfoset:fastinfoset:1.2.12.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jsr173_api:1.0.classpath"/>
+    <path refid="library.maven:_javax.mail:mail:1.5.0-b01.classpath"/>
+    <path refid="library.maven:_org.apache.james:apache-mime4j:0.6.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_com.github.jsonld-java:jsonld-java:0.5.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.3.0.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient-cache:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.2.4.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.7.classpath"/>
+    <pathelement location="${datahubrestclient.testoutput.dir}"/>
+    <pathelement location="${datahubrestclient.output.dir}"/>
+  </path>
+  
+  <path id="virtuosoconnector.runtime.module.classpath">
+    <pathelement location="${virtuosoconnector.testoutput.dir}"/>
+    <pathelement location="${virtuosoconnector.output.dir}"/>
+    <path refid="library.maven:_tr.com.srdc:virt-jena2:2.6.2.classpath"/>
+    <path refid="library.maven:_tr.com.srdc:virtjdbc4:2.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.jena:jena-tdb:1.1.1.classpath"/>
+    <path refid="library.maven:_org.apache.jena:jena-arq:2.12.1.classpath"/>
+    <path refid="library.maven:_org.apache.thrift:libthrift:0.9.1.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-lang3:3.1.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-csv:1.0.classpath"/>
+    <path refid="library.maven:_org.apache.jena:jena-core:2.12.1.classpath"/>
+    <path refid="library.maven:_org.apache.jena:jena-iri:1.1.1.classpath"/>
+    <path refid="library.maven:_xerces:xercesimpl:2.11.0.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.4.01.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.6.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-log4j12:1.7.6.classpath"/>
+    <path refid="library.maven:_log4j:log4j:1.2.17.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-grizzly2:1.8.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.gmbal:gmbal-api-only:3.0.0-b023.classpath"/>
+    <path refid="library.maven:_org.glassfish.external:management-api:3.0.0-b012.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-server:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-rcm:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-servlet:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:tests:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish:javax.servlet:3.1.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-server:1.8.classpath"/>
+    <path refid="library.maven:_asm:asm:3.1.classpath"/>
+    <path refid="library.maven:_junit:junit:4.8.2.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-client:1.8.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-core:1.8.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-multipart-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxrs:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:jaxrs-api:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:1.0.1.final.classpath"/>
+    <path refid="library.maven:_javax.activation:activation:1.1.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.1.classpath"/>
+    <path refid="library.maven:_net.jcip:jcip-annotations:1.0.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-client:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxb-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-impl:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-core:2.2.7.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jaxb-api:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.istack:istack-commons-runtime:2.16.classpath"/>
+    <path refid="library.maven:_com.sun.xml.fastinfoset:fastinfoset:1.2.12.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jsr173_api:1.0.classpath"/>
+    <path refid="library.maven:_javax.mail:mail:1.5.0-b01.classpath"/>
+    <path refid="library.maven:_org.apache.james:apache-mime4j:0.6.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_com.github.jsonld-java:jsonld-java:0.5.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.3.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.3.0.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient-cache:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.2.4.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.7.classpath"/>
+    <path refid="datahubrestclient.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.virtuosoconnector">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.virtuosoconnector">
+    <patternset refid="excluded.from.module.virtuosoconnector"/>
+  </patternset>
+  
+  <path id="virtuosoconnector.module.sourcepath">
+    <dirset dir="${module.virtuosoconnector.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  <path id="virtuosoconnector.module.test.sourcepath">
+    <dirset dir="${module.virtuosoconnector.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.virtuosoconnector" depends="compile.module.virtuosoconnector.production,compile.module.virtuosoconnector.tests" description="Compile module VirtuosoConnector"/>
+  
+  <target name="compile.module.virtuosoconnector.production" depends="register.custom.compilers,compile.module.datahubrestclient" description="Compile module VirtuosoConnector; production classes">
+    <mkdir dir="${virtuosoconnector.output.dir}"/>
+    <javac2 destdir="${virtuosoconnector.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.virtuosoconnector}/javac">
+      <compilerarg line="${compiler.args.virtuosoconnector}"/>
+      <bootclasspath refid="virtuosoconnector.module.bootclasspath"/>
+      <classpath refid="virtuosoconnector.module.production.classpath"/>
+      <src refid="virtuosoconnector.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.virtuosoconnector"/>
+    </javac2>
+    
+    <copy todir="${virtuosoconnector.output.dir}">
+      <fileset dir="${module.virtuosoconnector.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.virtuosoconnector.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.virtuosoconnector.tests" depends="register.custom.compilers,compile.module.virtuosoconnector.production" description="compile module VirtuosoConnector; test classes" unless="skip.tests">
+    <mkdir dir="${virtuosoconnector.testoutput.dir}"/>
+    <javac2 destdir="${virtuosoconnector.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.virtuosoconnector}/javac">
+      <compilerarg line="${compiler.args.virtuosoconnector}"/>
+      <bootclasspath refid="virtuosoconnector.module.bootclasspath"/>
+      <classpath refid="virtuosoconnector.module.classpath"/>
+      <src refid="virtuosoconnector.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.virtuosoconnector"/>
+    </javac2>
+    
+    <copy todir="${virtuosoconnector.testoutput.dir}">
+      <fileset dir="${module.virtuosoconnector.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.virtuosoconnector" description="cleanup module">
+    <delete dir="${virtuosoconnector.output.dir}"/>
+    <delete dir="${virtuosoconnector.testoutput.dir}"/>
+  </target>
+</project>

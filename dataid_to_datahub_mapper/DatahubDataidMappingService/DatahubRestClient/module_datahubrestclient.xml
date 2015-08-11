@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_datahubrestclient" default="compile.module.datahubrestclient">
+  <dirname property="module.datahubrestclient.basedir" file="${ant.file.module_datahubrestclient}"/>
+  
+  <property name="module.jdk.home.datahubrestclient" value="${jdk.home.1.7}"/>
+  <property name="module.jdk.bin.datahubrestclient" value="${jdk.bin.1.7}"/>
+  <property name="module.jdk.classpath.datahubrestclient" value="jdk.classpath.1.7"/>
+  
+  <property name="compiler.args.datahubrestclient" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
+  
+  <property name="datahubrestclient.output.dir" value="${module.datahubrestclient.basedir}/target/classes"/>
+  <property name="datahubrestclient.testoutput.dir" value="${module.datahubrestclient.basedir}/target/test-classes"/>
+  
+  <path id="datahubrestclient.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="datahubrestclient.module.production.classpath">
+    <path refid="${module.jdk.classpath.datahubrestclient}"/>
+    <path refid="library.org.openrdf:openrdf-rio-api:2.0.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.5.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.5.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.5.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-rio-rdfxml:2.8.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-model:2.8.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-rio-api:2.8.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-util:2.8.0.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.4.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-rio-turtle:2.8.0.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-grizzly2:1.8.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.gmbal:gmbal-api-only:3.0.0-b023.classpath"/>
+    <path refid="library.maven:_org.glassfish.external:management-api:3.0.0-b012.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-server:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-rcm:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-servlet:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:tests:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish:javax.servlet:3.1.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-server:1.8.classpath"/>
+    <path refid="library.maven:_asm:asm:3.1.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-core:1.8.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-multipart-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxrs:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:jaxrs-api:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:1.0.1.final.classpath"/>
+    <path refid="library.maven:_javax.activation:activation:1.1.classpath"/>
+    <path refid="library.maven:_net.jcip:jcip-annotations:1.0.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-client:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxb-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-impl:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-core:2.2.7.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jaxb-api:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.istack:istack-commons-runtime:2.16.classpath"/>
+    <path refid="library.maven:_com.sun.xml.fastinfoset:fastinfoset:1.2.12.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jsr173_api:1.0.classpath"/>
+    <path refid="library.maven:_javax.mail:mail:1.5.0-b01.classpath"/>
+    <path refid="library.maven:_org.apache.james:apache-mime4j:0.6.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_com.github.jsonld-java:jsonld-java:0.5.1.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.7.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient-cache:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.2.4.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+  </path>
+  
+  <path id="datahubrestclient.runtime.production.module.classpath">
+    <pathelement location="${datahubrestclient.output.dir}"/>
+    <path refid="library.org.openrdf:openrdf-rio-api:2.0.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.5.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.5.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.5.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-rio-rdfxml:2.8.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-model:2.8.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-rio-api:2.8.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-rio-datatypes:2.8.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-rio-languages:2.8.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-util:2.8.0.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.4.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-rio-turtle:2.8.0.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-grizzly2:1.8.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.gmbal:gmbal-api-only:3.0.0-b023.classpath"/>
+    <path refid="library.maven:_org.glassfish.external:management-api:3.0.0-b012.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-server:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-rcm:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-servlet:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:tests:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish:javax.servlet:3.1.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-server:1.8.classpath"/>
+    <path refid="library.maven:_asm:asm:3.1.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-core:1.8.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-multipart-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxrs:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:jaxrs-api:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:1.0.1.final.classpath"/>
+    <path refid="library.maven:_javax.activation:activation:1.1.classpath"/>
+    <path refid="library.maven:_net.jcip:jcip-annotations:1.0.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-client:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxb-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-impl:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-core:2.2.7.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jaxb-api:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.istack:istack-commons-runtime:2.16.classpath"/>
+    <path refid="library.maven:_com.sun.xml.fastinfoset:fastinfoset:1.2.12.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jsr173_api:1.0.classpath"/>
+    <path refid="library.maven:_javax.mail:mail:1.5.0-b01.classpath"/>
+    <path refid="library.maven:_org.apache.james:apache-mime4j:0.6.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_com.github.jsonld-java:jsonld-java:0.5.1.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.7.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient-cache:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.2.4.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.7.classpath"/>
+  </path>
+  
+  <path id="datahubrestclient.module.classpath">
+    <path refid="${module.jdk.classpath.datahubrestclient}"/>
+    <pathelement location="${datahubrestclient.output.dir}"/>
+    <path refid="library.org.openrdf:openrdf-rio-api:2.0.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.5.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.5.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.5.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-rio-rdfxml:2.8.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-model:2.8.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-rio-api:2.8.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-rio-datatypes:2.8.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-rio-languages:2.8.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-util:2.8.0.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.4.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-rio-turtle:2.8.0.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-grizzly2:1.8.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.gmbal:gmbal-api-only:3.0.0-b023.classpath"/>
+    <path refid="library.maven:_org.glassfish.external:management-api:3.0.0-b012.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-server:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-rcm:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-servlet:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:tests:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish:javax.servlet:3.1.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-server:1.8.classpath"/>
+    <path refid="library.maven:_asm:asm:3.1.classpath"/>
+    <path refid="library.maven:_junit:junit:4.8.2.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-client:1.8.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-core:1.8.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-multipart-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxrs:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:jaxrs-api:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:1.0.1.final.classpath"/>
+    <path refid="library.maven:_javax.activation:activation:1.1.classpath"/>
+    <path refid="library.maven:_net.jcip:jcip-annotations:1.0.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-client:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxb-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-impl:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-core:2.2.7.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jaxb-api:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.istack:istack-commons-runtime:2.16.classpath"/>
+    <path refid="library.maven:_com.sun.xml.fastinfoset:fastinfoset:1.2.12.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jsr173_api:1.0.classpath"/>
+    <path refid="library.maven:_javax.mail:mail:1.5.0-b01.classpath"/>
+    <path refid="library.maven:_org.apache.james:apache-mime4j:0.6.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_com.github.jsonld-java:jsonld-java:0.5.1.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.7.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient-cache:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.2.4.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.7.classpath"/>
+  </path>
+  
+  <path id="datahubrestclient.runtime.module.classpath">
+    <pathelement location="${datahubrestclient.testoutput.dir}"/>
+    <pathelement location="${datahubrestclient.output.dir}"/>
+    <path refid="library.org.openrdf:openrdf-rio-api:2.0.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.5.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.5.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.5.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-rio-rdfxml:2.8.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-model:2.8.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-rio-api:2.8.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-rio-datatypes:2.8.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-rio-languages:2.8.0.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-util:2.8.0.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.4.classpath"/>
+    <path refid="library.maven:_org.openrdf.sesame:sesame-rio-turtle:2.8.0.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-grizzly2:1.8.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.gmbal:gmbal-api-only:3.0.0-b023.classpath"/>
+    <path refid="library.maven:_org.glassfish.external:management-api:3.0.0-b012.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-server:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-rcm:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-servlet:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:tests:2.1.1.classpath"/>
+    <path refid="library.maven:_org.glassfish:javax.servlet:3.1.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-server:1.8.classpath"/>
+    <path refid="library.maven:_asm:asm:3.1.classpath"/>
+    <path refid="library.maven:_junit:junit:4.8.2.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-client:1.8.classpath"/>
+    <path refid="library.maven:_com.sun.jersey:jersey-core:1.8.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-multipart-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxrs:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:jaxrs-api:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:1.0.1.final.classpath"/>
+    <path refid="library.maven:_javax.activation:activation:1.1.classpath"/>
+    <path refid="library.maven:_net.jcip:jcip-annotations:1.0.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-client:3.0.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.resteasy:resteasy-jaxb-provider:3.0.8.final.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-impl:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.xml.bind:jaxb-core:2.2.7.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jaxb-api:2.2.7.classpath"/>
+    <path refid="library.maven:_com.sun.istack:istack-commons-runtime:2.16.classpath"/>
+    <path refid="library.maven:_com.sun.xml.fastinfoset:fastinfoset:1.2.12.classpath"/>
+    <path refid="library.maven:_javax.xml.bind:jsr173_api:1.0.classpath"/>
+    <path refid="library.maven:_javax.mail:mail:1.5.0-b01.classpath"/>
+    <path refid="library.maven:_org.apache.james:apache-mime4j:0.6.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.maven:_com.github.jsonld-java:jsonld-java:0.5.1.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.7.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient-cache:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.2.5.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.2.4.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.7.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.datahubrestclient">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.datahubrestclient">
+    <patternset refid="excluded.from.module.datahubrestclient"/>
+  </patternset>
+  
+  <path id="datahubrestclient.module.sourcepath">
+    <dirset dir="${module.datahubrestclient.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  <path id="datahubrestclient.module.test.sourcepath">
+    <dirset dir="${module.datahubrestclient.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.datahubrestclient" depends="compile.module.datahubrestclient.production,compile.module.datahubrestclient.tests" description="Compile module DatahubRestClient"/>
+  
+  <target name="compile.module.datahubrestclient.production" depends="register.custom.compilers" description="Compile module DatahubRestClient; production classes">
+    <mkdir dir="${datahubrestclient.output.dir}"/>
+    <javac2 destdir="${datahubrestclient.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.datahubrestclient}/javac">
+      <compilerarg line="${compiler.args.datahubrestclient}"/>
+      <bootclasspath refid="datahubrestclient.module.bootclasspath"/>
+      <classpath refid="datahubrestclient.module.production.classpath"/>
+      <src refid="datahubrestclient.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.datahubrestclient"/>
+    </javac2>
+    
+    <copy todir="${datahubrestclient.output.dir}">
+      <fileset dir="${module.datahubrestclient.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.datahubrestclient.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.datahubrestclient.tests" depends="register.custom.compilers,compile.module.datahubrestclient.production" description="compile module DatahubRestClient; test classes" unless="skip.tests">
+    <mkdir dir="${datahubrestclient.testoutput.dir}"/>
+    <javac2 destdir="${datahubrestclient.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.datahubrestclient}/javac">
+      <compilerarg line="${compiler.args.datahubrestclient}"/>
+      <bootclasspath refid="datahubrestclient.module.bootclasspath"/>
+      <classpath refid="datahubrestclient.module.classpath"/>
+      <src refid="datahubrestclient.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.datahubrestclient"/>
+    </javac2>
+    
+    <copy todir="${datahubrestclient.testoutput.dir}">
+      <fileset dir="${module.datahubrestclient.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.datahubrestclient" description="cleanup module">
+    <delete dir="${datahubrestclient.output.dir}"/>
+    <delete dir="${datahubrestclient.testoutput.dir}"/>
+  </target>
+</project>
