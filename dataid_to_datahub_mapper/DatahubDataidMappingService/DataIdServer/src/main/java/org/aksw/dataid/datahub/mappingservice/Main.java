@@ -2,8 +2,10 @@
 package org.aksw.dataid.datahub.mappingservice;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.sun.jersey.api.container.grizzly2.GrizzlyWebContainerFactory;
-import org.aksw.dataid.datahub.jsonutils.StaticJsonHelper;
+import com.sun.jersey.api.container.grizzly2.GrizzlyServerFactory;
+import com.sun.jersey.api.core.PackagesResourceConfig;
+import com.sun.jersey.api.core.ResourceConfig;
+import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.restclient.CkanRestClient;
 import org.aksw.dataid.virtuoso.VirtuosoDataIdGraph;
 import org.glassfish.grizzly.http.server.HttpServer;
@@ -20,16 +22,13 @@ import java.util.Map;
 public class Main {
 	private static String mainPath;
 	private static String mainConfigPath;
-	private static String mappingConfigPath;
-    private static String ontologyPath;
-    private static JsonNode mainConfigFile;
     private static VirtuosoDataIdGraph graph;
 
     public static CkanRestClient CreateCkanRestClient(String apiKey) {
-		String dataHubUrl = mainConfigFile.get("datahubActionUri").asText();
-		int timeout = Integer.parseInt(mainConfigFile.get("ckanTimeOut").asText());
+		String dataHubUrl = DataIdConfig.get("datahubActionUri");
+		int timeout = Integer.parseInt(DataIdConfig.get("ckanTimeOut"));
 		Map<String, String> actions = new HashMap<String, String>();
-		Iterator<Map.Entry<String, JsonNode>> i = mainConfigFile.get("ckanActionMap").fields();
+		Iterator<Map.Entry<String, JsonNode>> i = DataIdConfig.getActionMap();
 		for(Map.Entry<String, JsonNode> key; i.hasNext();)
 		{
 			key = i.next();
@@ -59,43 +58,25 @@ public class Main {
     public static final URI BASE_URI = getBaseURI();
     
     protected static HttpServer startServer() throws IOException {
-        final Map<String, String> initParams = new HashMap<String, String>();
+        final Map<String, Object> initParams = new HashMap<String, Object>();
 
         initParams.put("com.sun.jersey.config.property.packages", Main.class.getPackage().getName());
-
+        ResourceConfig rc = new PackagesResourceConfig(Main.class.getPackage().getName());
         System.out.println("Starting grizzly2...");
-        return GrizzlyWebContainerFactory.create(BASE_URI, initParams);
+        return GrizzlyServerFactory.createHttpServer(BASE_URI, rc);
     }
     
     public static void main(String[] args) throws IOException, SQLException {
         mainPath = Main.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-        mainPath = mainPath.substring(1, mainPath.indexOf("target")) + "webcontent";
-        mainConfigPath = mainPath + "/MainConfig.json";
-        ontologyPath = mainPath + "/ontology.ttl";
-		mainConfigFile = StaticJsonHelper.getJsonContent(mainConfigPath);
-		String zw = mainConfigFile.get("mappingConfigPath").asText();
-		mappingConfigPath = zw.startsWith("/") ? (mainPath + zw) : (mainPath + "/" + zw);
-        String virtuosoHost = mainConfigFile.get("virtuosoHost").toString().replace("\"", "");
-        Integer virtuosoPort = Integer.parseInt(mainConfigFile.get("virtuosoPort").toString());
-        String virtuosoUser = mainConfigFile.get("virtuosoUser").toString().replace("\"", "");
-        String virtuosoPass = mainConfigFile.get("virtuosoPass").toString().replace("\"", "");
-        graph = new VirtuosoDataIdGraph(virtuosoHost, virtuosoPort, virtuosoUser, virtuosoPass);
+        mainPath = mainPath.substring(1, mainPath.indexOf("DatahubDataidMappingService") + 27) + "/DataIdServer/webcontent";
+        DataIdConfig.initDataIdConfig(mainPath);
+        graph = new VirtuosoDataIdGraph(DataIdConfig.getVirtuosoHost(), DataIdConfig.getVirtuosoPort(), DataIdConfig.getVirtuosoUser(), DataIdConfig.getVirtuosoPassword());
         HttpServer httpServer = startServer();
         System.out.println(String.format("Jersey app started with WADL available at "
                         + "%sapplication.wadl\nHit enter to stop it...",
                 BASE_URI));
         System.in.read();
         httpServer.stop();
-    }
-
-	public static String getMappingConfigPath() {
-		return mappingConfigPath;
-	}
-
-    public static JsonNode getMainConfigFile() { return mainConfigFile; }
-
-    public static String getOntologyPath() {
-        return ontologyPath;
     }
 
     public static VirtuosoDataIdGraph getGraph() {

@@ -4,15 +4,19 @@ import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.jsonobjects.DatahubError;
 import org.aksw.dataid.datahub.jsonobjects.Dataset;
-import org.aksw.dataid.datahub.jsonutils.StaticJsonHelper;
 import org.aksw.dataid.datahub.propertymapping.*;
 import org.aksw.dataid.datahub.restclient.CkanRestClient;
+import org.aksw.dataid.jsonutils.StaticJsonHelper;
 import org.apache.commons.cli.*;
 import org.apache.http.client.HttpResponseException;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -21,10 +25,6 @@ import java.util.Map.Entry;
 
 public class DataIdToDataHub {
 
-	private static String mainPath;
-	private static String mainConfigPath;
-    private static String ontologyPath;
-	private static JsonNode mainConfigFile;
 	private static String sourceUrl = null;
 	private static PropertyMapper mapper;
 	private static CkanRestClient client;
@@ -32,19 +32,12 @@ public class DataIdToDataHub {
 
 	public static void main(String[] args) 
 	{
-        mainPath = DataIdToDataHub.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-        mainPath = mainPath.substring(1, mainPath.indexOf("target")) + "webcontent";
-        mainConfigPath = mainPath + "/MainConfig.json";
-        ontologyPath = mainPath + "/ontology.ttl";
-		mainConfigFile = StaticJsonHelper.getJsonContent(mainConfigPath);
-		String zw = mainConfigFile.get("mappingConfigPath").asText();
-		String mappingPath = zw.startsWith("\\") ? (mainPath + zw) : zw;
 		CommandLine cli = getCli(args);
 		String dataIdContent = getDataIdContent(cli);
 		List<Dataset> sets = null;
 		DataIdProcesser processor;
 		try {
-			processor = new DataIdProcesser(mappingPath, ontologyPath);
+			processor = new DataIdProcesser(DataIdConfig.getMappingConfigPath(), DataIdConfig.getOntologyPath());
 			sets = processor.parseToDataHubDataset(dataIdContent);
 		} catch (DataHubMappingException e) {
 			e.printStackTrace();
@@ -83,11 +76,11 @@ public class DataIdToDataHub {
 	}
 
 	private static CkanRestClient createCkanRestClient() {
-		String dataHubUrl = mainConfigFile.get("datahubActionUri").asText();
-		String apiKey = mainConfigFile.get("datahubApiKey").asText();
-		int timeout = Integer.parseInt(mainConfigFile.get("ckanTimeOut").asText());
+		String dataHubUrl = DataIdConfig.get("datahubActionUri");
+        String apiKey = DataIdConfig.get("datahubApiKey");
+        int timeout = Integer.parseInt(DataIdConfig.get("ckanTimeOut"));
 		Map<String, String> actions = new HashMap<String, String>();
-		Iterator<Entry<String, JsonNode>> i = mainConfigFile.get("ckanActionMap").fields();
+		Iterator<Entry<String, JsonNode>> i = DataIdConfig.getActionMap();
 		for(Entry<String, JsonNode> key; i.hasNext();)
 		{
 			key = i.next();
@@ -103,13 +96,19 @@ public class DataIdToDataHub {
 		String content = null;
 	    if(cli.getOptionValue("file") != null)
 	    {
-	    	sourceUrl = cli.getOptionValue("file");
-	    	return StaticHelper.readFile(sourceUrl);
-	    }
+            try {
+                sourceUrl = cli.getOptionValue("file");
+                InputStream inputStream = new FileInputStream(sourceUrl);
+                return StaticJsonHelper.GetStringFromInputStream(inputStream);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
 	    else
 	    {
 		    sourceUrl = cli.getOptionValue("url");
-		    return StaticHelper.readUrl(sourceUrl);
+		    return StaticJsonHelper.readUrl(sourceUrl);
 	    }
 	}
 

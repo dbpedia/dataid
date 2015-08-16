@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="module_datahubdataidmappingservice" default="compile.module.datahubdataidmappingservice">
+<project agentName="module_datahubdataidmappingservice" default="compile.module.datahubdataidmappingservice">
   <dirname property="module.datahubdataidmappingservice.basedir" file="${ant.file.module_datahubdataidmappingservice}"/>
   
-  <property name="module.jdk.home.datahubdataidmappingservice" value="${jdk.home.1.7}"/>
-  <property name="module.jdk.bin.datahubdataidmappingservice" value="${jdk.bin.1.7}"/>
-  <property name="module.jdk.classpath.datahubdataidmappingservice" value="jdk.classpath.1.7"/>
+  <property agentName="module.jdk.home.datahubdataidmappingservice" value="${jdk.home.1.7}"/>
+  <property agentName="module.jdk.bin.datahubdataidmappingservice" value="${jdk.bin.1.7}"/>
+  <property agentName="module.jdk.classpath.datahubdataidmappingservice" value="jdk.classpath.1.7"/>
   
-  <property name="compiler.args.datahubdataidmappingservice" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
+  <property agentName="compiler.args.datahubdataidmappingservice" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
   
-  <property name="datahubdataidmappingservice.output.dir" value="${module.datahubdataidmappingservice.basedir}/target/classes"/>
-  <property name="datahubdataidmappingservice.testoutput.dir" value="${module.datahubdataidmappingservice.basedir}/target/test-classes"/>
+  <property agentName="datahubdataidmappingservice.output.dir" value="${module.datahubdataidmappingservice.basedir}/target/classes"/>
+  <property agentName="datahubdataidmappingservice.testoutput.dir" value="${module.datahubdataidmappingservice.basedir}/target/test-classes"/>
   
   <path id="datahubdataidmappingservice.module.bootclasspath">
     <!-- Paths to be included in compilation bootclasspath -->
@@ -210,13 +210,13 @@
   </patternset>
   
   
-  <target name="compile.module.datahubdataidmappingservice" depends="compile.module.datahubdataidmappingservice.production,compile.module.datahubdataidmappingservice.tests" description="Compile module DatahubDataidMappingService"/>
+  <target agentName="compile.module.datahubdataidmappingservice" depends="compile.module.datahubdataidmappingservice.production,compile.module.datahubdataidmappingservice.tests" description="Compile module DatahubDataidMappingService"/>
   
-  <target name="compile.module.datahubdataidmappingservice.production" depends="register.custom.compilers" description="Compile module DatahubDataidMappingService; production classes"/>
+  <target agentName="compile.module.datahubdataidmappingservice.production" depends="register.custom.compilers" description="Compile module DatahubDataidMappingService; production classes"/>
   
-  <target name="compile.module.datahubdataidmappingservice.tests" depends="register.custom.compilers,compile.module.datahubdataidmappingservice.production" description="compile module DatahubDataidMappingService; test classes" unless="skip.tests"/>
+  <target agentName="compile.module.datahubdataidmappingservice.tests" depends="register.custom.compilers,compile.module.datahubdataidmappingservice.production" description="compile module DatahubDataidMappingService; test classes" unless="skip.tests"/>
   
-  <target name="clean.module.datahubdataidmappingservice" description="cleanup module">
+  <target agentName="clean.module.datahubdataidmappingservice" description="cleanup module">
     <delete dir="${datahubdataidmappingservice.output.dir}"/>
     <delete dir="${datahubdataidmappingservice.testoutput.dir}"/>
   </target>

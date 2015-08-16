@@ -1,5 +1,6 @@
 package org.aksw.dataid.ontology;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.aksw.dataid.wrapper.InternalLieteralImpl;
 import org.aksw.dataid.wrapper.OntoPropery;
 import org.openrdf.model.URI;
@@ -11,15 +12,16 @@ import java.util.List;
 /**
  * Created by Chile on 3/10/2015.
  */
+@JsonPropertyOrder({ "title", "identifier", "label", "comment", "description", "issued", "modified", "accessUrl", "downloadUrl" })
 public class Distribution extends DataIdPart
 {
     @OntoPropery(property = "http://purl.org/dc/terms/title", minCard = 1, maxCard = 1)
     private InternalLieteralImpl title;
     @OntoPropery(property = "http://purl.org/dc/terms/description", maxCard = 1, recommended = true)
     private InternalLieteralImpl description;
-    @OntoPropery(property = "http://purl.org/dc/terms/modified", maxCard = 1, recommended = true)
+    @OntoPropery(property = "http://purl.org/dc/terms/modified", maxCard = 1, recommended = true, derivable = true)
     private InternalLieteralImpl modified;
-    @OntoPropery(property = "http://purl.org/dc/terms/issued", maxCard = 1, recommended = true)
+    @OntoPropery(property = "http://purl.org/dc/terms/issued", maxCard = 1, recommended = true, derivable = true)
     private InternalLieteralImpl issued;
     @OntoPropery(property = "http://www.w3.org/ns/dcat#accessURL", maxCard = 1, recommended = true)
     private URI accessUrl;

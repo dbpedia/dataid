@@ -1,14 +1,16 @@
 package org.aksw.dataid.datahub.mappingservice;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.jsonldjava.core.*;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.sun.javaws.exceptions.InvalidArgumentException;
+import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.jsonobjects.DatahubError;
 import org.aksw.dataid.datahub.jsonobjects.Dataset;
 import org.aksw.dataid.datahub.jsonobjects.ValidCkanResponse;
-import org.aksw.dataid.datahub.jsonutils.StaticJsonHelper;
+import org.aksw.dataid.jsonutils.StaticJsonHelper;
 import org.aksw.dataid.datahub.propertymapping.DataHubMappingException;
 import org.aksw.dataid.datahub.propertymapping.DataIdInputException;
 import org.aksw.dataid.datahub.propertymapping.DataIdProcesser;
@@ -36,7 +38,7 @@ public class DataIdPublisher
 
     public DataIdPublisher() throws SQLException, DataHubMappingException {
         graph = Main.getGraph();
-        proc = new DataIdProcesser(Main.getMappingConfigPath(), Main.getOntologyPath());
+        proc = new DataIdProcesser(DataIdConfig.getMappingConfigPath(), DataIdConfig.getOntologyPath());
         ModelWrapper.setRdfContext(proc.getMappingConfig().getRdfContext());
     }
 
@@ -86,7 +88,7 @@ public class DataIdPublisher
             String f = this.getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
             f = f.substring(1, f.indexOf("target")) + "webcontent/MappingsPage.html";
             String content = new String(Files.readAllBytes(Paths.get(f)));
-            content = content.replace("$content", StaticJsonHelper.getPrettyContent(StaticJsonHelper.getJsonContent(Main.getMappingConfigPath())));
+            content = content.replace("$content", StaticJsonHelper.getPrettyContent(StaticJsonHelper.getJsonContent(DataIdConfig.getMappingConfigPath())));
 			return content;
 		} catch (IOException e) {
             return addHtmlBody(produceHttpResponse(e));
@@ -95,12 +97,10 @@ public class DataIdPublisher
 
     @POST
     @Path("/validateid")
-    public String validateDataId(
-            @QueryParam(value = "SerializationFormat") final String format,
-             final String dataId)
+    public String validateDataId(final String dataId)
     {
         try {
-            Model m = proc.validateDataId(dataId, format);
+            Model m = proc.validateDataId(dataId);
             return produceHttpResponse("DataId validated");
         } catch (DataIdInputException e) {
             return produceHttpResponse(e);
@@ -116,13 +116,13 @@ public class DataIdPublisher
     {
         if(!StaticJsonHelper.isJsonLdValid(content))
             return addHtmlBody("no valid JsonLd!");
-        String admins = Main.getMainConfigFile().get("adminName").toString().replace("\"", "");
-        String pass = Main.getMainConfigFile().get("password").toString().replace("\"", "");
+        String admins = DataIdConfig.get("adminName");
+        String pass = DataIdConfig.get("password");
         if(!admins.equals(username) || !pass.equals(password))
             return addHtmlBody("Username or password not recognized!");
 
         try {
-            StaticJsonHelper.writeJsonContent(Main.getMappingConfigPath(), content);
+            StaticJsonHelper.writeJsonContent(DataIdConfig.getMappingConfigPath(), content);
         } catch (IOException e) {
             return addHtmlBody(produceHttpResponse(e));
         }
@@ -155,8 +155,12 @@ public class DataIdPublisher
         try {
             ModelWrapper.loadModel(proc.getMappingConfig().getRdfContext(), dataid);
             ObjectMapper mapper = new ObjectMapper();
+            mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
             List<DataId> ids = ModelWrapper.getAllDataIds();
-            return mapper.writeValueAsString(ids.get(0));
+            if(ids.size() > 0)
+                return mapper.writeValueAsString(ids.get(0));
+            else
+                return addHtmlBody(produceHttpResponse("no datasets found"));
         } catch (RDFParseException e) {
             return addHtmlBody(produceHttpResponse(e));
         } catch (RDFHandlerException e) {
@@ -210,7 +214,7 @@ public class DataIdPublisher
 
 	@POST
 	@Path("/publishtodatahub")
-	private String PublishToDatahub(
+	public String PublishToDatahub(
 			@QueryParam(value = "organization") final String organization,
 			@QueryParam(value = "apikey") final String apiKey,
             @QueryParam(value = "datasetid") final String datasetId,

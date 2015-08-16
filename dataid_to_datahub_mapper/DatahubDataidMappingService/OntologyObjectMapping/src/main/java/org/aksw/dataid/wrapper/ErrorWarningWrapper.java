@@ -7,8 +7,8 @@ import java.util.List;
  * Created by Chile on 4/6/2015.
  */
 public class ErrorWarningWrapper {
-    private List<ErrorWarning> errors = new ArrayList<ErrorWarning>();
-    private List<ErrorWarning> warnings = new ArrayList<ErrorWarning>();
+    private List<ErrorWarning> errors;
+    private List<ErrorWarning> warnings;
 
     public List<ErrorWarning> getErrors() {
         return errors;
@@ -28,6 +28,8 @@ public class ErrorWarningWrapper {
 
     public void addError(String dataIdPart, String property, String msg)
     {
+        if(this.errors == null)
+            this.errors = new ArrayList<ErrorWarning>();
         ErrorWarning e = new ErrorWarning();
         e.setErrorType(ErrorWarning.DataIdErrorType.Error);
         e.setOnProperty(property);
@@ -38,6 +40,8 @@ public class ErrorWarningWrapper {
 
     public void addWarning(String dataIdPart, String property, String msg)
     {
+        if(this.warnings == null)
+            this.warnings = new ArrayList<ErrorWarning>();
         ErrorWarning e = new ErrorWarning();
         e.setErrorType(ErrorWarning.DataIdErrorType.Warning);
         e.setOnProperty(property);

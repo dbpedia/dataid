@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="module_datahubmappingserver" default="compile.module.datahubmappingserver">
+<project agentName="module_datahubmappingserver" default="compile.module.datahubmappingserver">
   <dirname property="module.datahubmappingserver.basedir" file="${ant.file.module_datahubmappingserver}"/>
   
-  <property name="module.jdk.home.datahubmappingserver" value="${jdk.home.1.7}"/>
-  <property name="module.jdk.bin.datahubmappingserver" value="${jdk.bin.1.7}"/>
-  <property name="module.jdk.classpath.datahubmappingserver" value="jdk.classpath.1.7"/>
+  <property agentName="module.jdk.home.datahubmappingserver" value="${jdk.home.1.7}"/>
+  <property agentName="module.jdk.bin.datahubmappingserver" value="${jdk.bin.1.7}"/>
+  <property agentName="module.jdk.classpath.datahubmappingserver" value="jdk.classpath.1.7"/>
   
-  <property name="compiler.args.datahubmappingserver" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
+  <property agentName="compiler.args.datahubmappingserver" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
   
-  <property name="datahubmappingserver.output.dir" value="DataIdServer/target/classes"/>
-  <property name="datahubmappingserver.testoutput.dir" value="DataIdServer/target/test-classes"/>
+  <property agentName="datahubmappingserver.output.dir" value="DataIdServer/target/classes"/>
+  <property agentName="datahubmappingserver.testoutput.dir" value="DataIdServer/target/test-classes"/>
   
   <path id="datahubmappingserver.module.bootclasspath">
     <!-- Paths to be included in compilation bootclasspath -->
@@ -385,20 +385,20 @@
   
   <path id="datahubmappingserver.module.sourcepath">
     <dirset dir="DataIdServer">
-      <include name="src/main/java"/>
+      <include agentName="src/main/java"/>
     </dirset>
   </path>
   
   <path id="datahubmappingserver.module.test.sourcepath">
     <dirset dir="DataIdServer">
-      <include name="src/test/java"/>
+      <include agentName="src/test/java"/>
     </dirset>
   </path>
   
   
-  <target name="compile.module.datahubmappingserver" depends="compile.module.datahubmappingserver.production,compile.module.datahubmappingserver.tests" description="Compile module DataHubMappingServer"/>
+  <target agentName="compile.module.datahubmappingserver" depends="compile.module.datahubmappingserver.production,compile.module.datahubmappingserver.tests" description="Compile module DataHubMappingServer"/>
   
-  <target name="compile.module.datahubmappingserver.production" depends="register.custom.compilers,compile.module.datahubrestclient,compile.module.datahubdataidpropertymapper,compile.module.virtuosoconnector" description="Compile module DataHubMappingServer; production classes">
+  <target agentName="compile.module.datahubmappingserver.production" depends="register.custom.compilers,compile.module.datahubrestclient,compile.module.datahubdataidpropertymapper,compile.module.virtuosoconnector" description="Compile module DataHubMappingServer; production classes">
     <mkdir dir="${datahubmappingserver.output.dir}"/>
     <javac2 destdir="${datahubmappingserver.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.datahubmappingserver}/javac">
       <compilerarg line="${compiler.args.datahubmappingserver}"/>
@@ -416,7 +416,7 @@
     </copy>
   </target>
   
-  <target name="compile.module.datahubmappingserver.tests" depends="register.custom.compilers,compile.module.datahubmappingserver.production" description="compile module DataHubMappingServer; test classes" unless="skip.tests">
+  <target agentName="compile.module.datahubmappingserver.tests" depends="register.custom.compilers,compile.module.datahubmappingserver.production" description="compile module DataHubMappingServer; test classes" unless="skip.tests">
     <mkdir dir="${datahubmappingserver.testoutput.dir}"/>
     <javac2 destdir="${datahubmappingserver.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.datahubmappingserver}/javac">
       <compilerarg line="${compiler.args.datahubmappingserver}"/>
@@ -434,7 +434,7 @@
     </copy>
   </target>
   
-  <target name="clean.module.datahubmappingserver" description="cleanup module">
+  <target agentName="clean.module.datahubmappingserver" description="cleanup module">
     <delete dir="${datahubmappingserver.output.dir}"/>
     <delete dir="${datahubmappingserver.testoutput.dir}"/>
   </target>

@@ -1,5 +1,6 @@
 package org.aksw.dataid.ontology;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.aksw.dataid.wrapper.InternalLieteralImpl;
 import org.aksw.dataid.wrapper.OntoPropery;
 import org.openrdf.model.URI;
@@ -8,6 +9,7 @@ import org.openrdf.model.impl.URIImpl;
 /**
  * Created by Chile on 3/9/2015.
  */
+@JsonPropertyOrder({ "identifier", "label", "comment", "issued", "modified", "subjectTarget", "objectTarget" })
 public class LinkSet extends DataIdPart{
 
     @OntoPropery(property = "http://rdfs.org/ns/void#linkPredicate", maxCard = 1)

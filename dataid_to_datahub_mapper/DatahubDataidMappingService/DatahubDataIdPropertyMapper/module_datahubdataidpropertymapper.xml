@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="module_datahubdataidpropertymapper" default="compile.module.datahubdataidpropertymapper">
+<project agentName="module_datahubdataidpropertymapper" default="compile.module.datahubdataidpropertymapper">
   <dirname property="module.datahubdataidpropertymapper.basedir" file="${ant.file.module_datahubdataidpropertymapper}"/>
   
-  <property name="module.jdk.home.datahubdataidpropertymapper" value="${jdk.home.1.7}"/>
-  <property name="module.jdk.bin.datahubdataidpropertymapper" value="${jdk.bin.1.7}"/>
-  <property name="module.jdk.classpath.datahubdataidpropertymapper" value="jdk.classpath.1.7"/>
+  <property agentName="module.jdk.home.datahubdataidpropertymapper" value="${jdk.home.1.7}"/>
+  <property agentName="module.jdk.bin.datahubdataidpropertymapper" value="${jdk.bin.1.7}"/>
+  <property agentName="module.jdk.classpath.datahubdataidpropertymapper" value="jdk.classpath.1.7"/>
   
-  <property name="compiler.args.datahubdataidpropertymapper" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
+  <property agentName="compiler.args.datahubdataidpropertymapper" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
   
-  <property name="datahubdataidpropertymapper.output.dir" value="${module.datahubdataidpropertymapper.basedir}/target/classes"/>
-  <property name="datahubdataidpropertymapper.testoutput.dir" value="${module.datahubdataidpropertymapper.basedir}/target/test-classes"/>
+  <property agentName="datahubdataidpropertymapper.output.dir" value="${module.datahubdataidpropertymapper.basedir}/target/classes"/>
+  <property agentName="datahubdataidpropertymapper.testoutput.dir" value="${module.datahubdataidpropertymapper.basedir}/target/test-classes"/>
   
   <path id="datahubdataidpropertymapper.module.bootclasspath">
     <!-- Paths to be included in compilation bootclasspath -->
@@ -375,21 +375,21 @@
   
   <path id="datahubdataidpropertymapper.module.sourcepath">
     <dirset dir="${module.datahubdataidpropertymapper.basedir}">
-      <include name="src/main/java"/>
-      <include name="src/main/resources"/>
+      <include agentName="src/main/java"/>
+      <include agentName="src/main/resources"/>
     </dirset>
   </path>
   
   <path id="datahubdataidpropertymapper.module.test.sourcepath">
     <dirset dir="${module.datahubdataidpropertymapper.basedir}">
-      <include name="src/test/java"/>
+      <include agentName="src/test/java"/>
     </dirset>
   </path>
   
   
-  <target name="compile.module.datahubdataidpropertymapper" depends="compile.module.datahubdataidpropertymapper.production,compile.module.datahubdataidpropertymapper.tests" description="Compile module DatahubDataIdPropertyMapper"/>
+  <target agentName="compile.module.datahubdataidpropertymapper" depends="compile.module.datahubdataidpropertymapper.production,compile.module.datahubdataidpropertymapper.tests" description="Compile module DatahubDataIdPropertyMapper"/>
   
-  <target name="compile.module.datahubdataidpropertymapper.production" depends="register.custom.compilers,compile.module.datahubrestclient" description="Compile module DatahubDataIdPropertyMapper; production classes">
+  <target agentName="compile.module.datahubdataidpropertymapper.production" depends="register.custom.compilers,compile.module.datahubrestclient" description="Compile module DatahubDataIdPropertyMapper; production classes">
     <mkdir dir="${datahubdataidpropertymapper.output.dir}"/>
     <javac2 destdir="${datahubdataidpropertymapper.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.datahubdataidpropertymapper}/javac">
       <compilerarg line="${compiler.args.datahubdataidpropertymapper}"/>
@@ -411,7 +411,7 @@
     </copy>
   </target>
   
-  <target name="compile.module.datahubdataidpropertymapper.tests" depends="register.custom.compilers,compile.module.datahubdataidpropertymapper.production" description="compile module DatahubDataIdPropertyMapper; test classes" unless="skip.tests">
+  <target agentName="compile.module.datahubdataidpropertymapper.tests" depends="register.custom.compilers,compile.module.datahubdataidpropertymapper.production" description="compile module DatahubDataIdPropertyMapper; test classes" unless="skip.tests">
     <mkdir dir="${datahubdataidpropertymapper.testoutput.dir}"/>
     <javac2 destdir="${datahubdataidpropertymapper.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.datahubdataidpropertymapper}/javac">
       <compilerarg line="${compiler.args.datahubdataidpropertymapper}"/>
@@ -429,7 +429,7 @@
     </copy>
   </target>
   
-  <target name="clean.module.datahubdataidpropertymapper" description="cleanup module">
+  <target agentName="clean.module.datahubdataidpropertymapper" description="cleanup module">
     <delete dir="${datahubdataidpropertymapper.output.dir}"/>
     <delete dir="${datahubdataidpropertymapper.testoutput.dir}"/>
   </target>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="module_datahubrestclient" default="compile.module.datahubrestclient">
+<project agentName="module_datahubrestclient" default="compile.module.datahubrestclient">
   <dirname property="module.datahubrestclient.basedir" file="${ant.file.module_datahubrestclient}"/>
   
-  <property name="module.jdk.home.datahubrestclient" value="${jdk.home.1.7}"/>
-  <property name="module.jdk.bin.datahubrestclient" value="${jdk.bin.1.7}"/>
-  <property name="module.jdk.classpath.datahubrestclient" value="jdk.classpath.1.7"/>
+  <property agentName="module.jdk.home.datahubrestclient" value="${jdk.home.1.7}"/>
+  <property agentName="module.jdk.bin.datahubrestclient" value="${jdk.bin.1.7}"/>
+  <property agentName="module.jdk.classpath.datahubrestclient" value="jdk.classpath.1.7"/>
   
-  <property name="compiler.args.datahubrestclient" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
+  <property agentName="compiler.args.datahubrestclient" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
   
-  <property name="datahubrestclient.output.dir" value="${module.datahubrestclient.basedir}/target/classes"/>
-  <property name="datahubrestclient.testoutput.dir" value="${module.datahubrestclient.basedir}/target/test-classes"/>
+  <property agentName="datahubrestclient.output.dir" value="${module.datahubrestclient.basedir}/target/classes"/>
+  <property agentName="datahubrestclient.testoutput.dir" value="${module.datahubrestclient.basedir}/target/test-classes"/>
   
   <path id="datahubrestclient.module.bootclasspath">
     <!-- Paths to be included in compilation bootclasspath -->
@@ -241,21 +241,21 @@
   
   <path id="datahubrestclient.module.sourcepath">
     <dirset dir="${module.datahubrestclient.basedir}">
-      <include name="src/main/java"/>
-      <include name="src/main/resources"/>
+      <include agentName="src/main/java"/>
+      <include agentName="src/main/resources"/>
     </dirset>
   </path>
   
   <path id="datahubrestclient.module.test.sourcepath">
     <dirset dir="${module.datahubrestclient.basedir}">
-      <include name="src/test/java"/>
+      <include agentName="src/test/java"/>
     </dirset>
   </path>
   
   
-  <target name="compile.module.datahubrestclient" depends="compile.module.datahubrestclient.production,compile.module.datahubrestclient.tests" description="Compile module DatahubRestClient"/>
+  <target agentName="compile.module.datahubrestclient" depends="compile.module.datahubrestclient.production,compile.module.datahubrestclient.tests" description="Compile module DatahubRestClient"/>
   
-  <target name="compile.module.datahubrestclient.production" depends="register.custom.compilers" description="Compile module DatahubRestClient; production classes">
+  <target agentName="compile.module.datahubrestclient.production" depends="register.custom.compilers" description="Compile module DatahubRestClient; production classes">
     <mkdir dir="${datahubrestclient.output.dir}"/>
     <javac2 destdir="${datahubrestclient.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.datahubrestclient}/javac">
       <compilerarg line="${compiler.args.datahubrestclient}"/>
@@ -277,7 +277,7 @@
     </copy>
   </target>
   
-  <target name="compile.module.datahubrestclient.tests" depends="register.custom.compilers,compile.module.datahubrestclient.production" description="compile module DatahubRestClient; test classes" unless="skip.tests">
+  <target agentName="compile.module.datahubrestclient.tests" depends="register.custom.compilers,compile.module.datahubrestclient.production" description="compile module DatahubRestClient; test classes" unless="skip.tests">
     <mkdir dir="${datahubrestclient.testoutput.dir}"/>
     <javac2 destdir="${datahubrestclient.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.datahubrestclient}/javac">
       <compilerarg line="${compiler.args.datahubrestclient}"/>
@@ -295,7 +295,7 @@
     </copy>
   </target>
   
-  <target name="clean.module.datahubrestclient" description="cleanup module">
+  <target agentName="clean.module.datahubrestclient" description="cleanup module">
     <delete dir="${datahubrestclient.output.dir}"/>
     <delete dir="${datahubrestclient.testoutput.dir}"/>
   </target>

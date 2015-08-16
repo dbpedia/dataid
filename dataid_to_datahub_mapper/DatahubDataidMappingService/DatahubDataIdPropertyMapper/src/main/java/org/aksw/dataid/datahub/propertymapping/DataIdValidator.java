@@ -5,11 +5,16 @@ import org.aksw.rdfunit.RDFUnitConfiguration;
 import org.aksw.rdfunit.enums.TestCaseExecutionType;
 import org.aksw.rdfunit.exceptions.TestCaseExecutionException;
 import org.aksw.rdfunit.exceptions.UndefinedSerializationException;
-import org.aksw.rdfunit.sources.Source;
+import org.aksw.rdfunit.sources.TestSource;
 import org.aksw.rdfunit.tests.TestSuite;
 import org.aksw.rdfunit.validate.ParameterException;
 import org.aksw.rdfunit.validate.wrappers.RDFUnitStaticWrapper;
+import org.aksw.rdfunit.validate.ws.RDFUnitWebService;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.Arrays;
 
 /**
@@ -19,37 +24,50 @@ import java.util.Arrays;
  */
 public class DataIdValidator {
 
-    public DataIdValidator(final String ontologyUri)
-    {
-        RDFUnitStaticWrapper.initWrapper(ontologyUri);
+
+    public DataIdValidator(String ontologyUri, String dlUrl) {
+        RDFUnitStaticWrapper.initWrapper(ontologyUri, dlUrl);
     }
 
-    protected RDFUnitConfiguration getConfiguration(String datasetname, String type) throws ParameterException {
+    protected RDFUnitConfiguration getConfiguration(String type, String source, String inputFormat, String outputFormat, TestCaseExecutionType testCaseType) throws ParameterException {
 
+/*        String type = httpServletRequest.getParameter("t");
         if (type == null || !(type.equals("text") || type.equals("uri"))) {
             throw new ParameterException("'t' must be one of text or uri");
         }
 
-        if (datasetname == null || datasetname.isEmpty()){
+        String source = httpServletRequest.getParameter("s");
+        if (source == null || source.isEmpty()){
             throw new ParameterException("'s' must be defined and not empty");
         }
 
+
+
+        String inputFormat = "";
+        if (isText) {
+            inputFormat = httpServletRequest.getParameter("i");
+            if (inputFormat == null || inputFormat.isEmpty()) {
+                throw new ParameterException("'i' must be defined when -t = 'text'");
+            }
+        }
+
+        String outputFormat = httpServletRequest.getParameter("o");
+        if (outputFormat == null || outputFormat.isEmpty()){
+            outputFormat = "html";
+        }*/
+
         boolean isText = type.equals("text");
 
-        String datasetName = datasetname;
+        String datasetName = source;
         if (isText) {
             datasetName = "custom-text";
         }
-
-        String inputFormat = "turtle";
-
-        String outputFormat = "turtle";
 
         RDFUnitConfiguration configuration = new RDFUnitConfiguration(datasetName, "../data/");
 
         if (isText) {
             try {
-                configuration.setCustomTextSource(datasetname, inputFormat);
+                configuration.setCustomTextSource(source, inputFormat);
             } catch (UndefinedSerializationException e) {
                 throw new ParameterException(inputFormat, e);
             }
@@ -63,7 +81,7 @@ public class DataIdValidator {
         }
 
         try {
-            configuration.setTestCaseExecutionType( TestCaseExecutionType.aggregatedTestCaseResult);
+            configuration.setTestCaseExecutionType(testCaseType);
         } catch (Exception e) {
             configuration.setTestCaseExecutionType( TestCaseExecutionType.aggregatedTestCaseResult);
         }
@@ -73,17 +91,27 @@ public class DataIdValidator {
         }
 
         // test input if it reads data
-        //configuration.getTestSource().getExecutionFactory();
+        configuration.getTestSource().getExecutionFactory();
 
         return configuration;
     }
 
-    protected TestSuite getTestSuite(final RDFUnitConfiguration configuration, final Source dataset) {
+    protected TestSuite getTestSuite(final RDFUnitConfiguration configuration, final TestSource testSource) {
         return RDFUnitStaticWrapper.getTestSuite();
     }
 
-    protected Model validate(final RDFUnitConfiguration configuration, final Source dataset, final TestSuite testSuite) throws TestCaseExecutionException {
-        return RDFUnitStaticWrapper.validate(configuration.getTestCaseExecutionType(), dataset, testSuite);
+    protected Model validate(final RDFUnitConfiguration configuration, final TestSource testSource, final TestSuite testSuite) throws TestCaseExecutionException {
+        return RDFUnitStaticWrapper.validate(configuration.getTestCaseExecutionType(), testSource, testSuite);
+    }
+
+    protected void printHelpMessage(HttpServletResponse httpServletResponse) throws IOException {
+        String helpMessage =
+                "\n -t\ttype: One of 'text|uri'" +
+                        "\n -s\tsource: Depending on -t it can be either a uri or text" +
+                        "\n -i\tInput format (in case of text type):'turtle|ntriples|rdfxml" + //|JSON-LD|RDF/JSON|TriG|NQuads'" +
+                        "\n -o\tOutput format:'html(default)|turtle|jsonld|rdfjson|ntriples|rdfxml|rdfxml-abbrev" + //JSON-LD|RDF/JSON|TriG|NQuads'"
+                        "";
+
     }
 }
 

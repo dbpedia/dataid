@@ -1,4 +1,5 @@
 {
+    "dataIdUri":"http://dataid.dbpedia.org/ns/core#",
 	"datahubActionUri": "http://datahub.io/api/3/action/",
 	"mappingConfigPath": "MappingConfig.json",
 	"ckanTimeOut": 10000,
@@ -6,8 +7,8 @@
     "password":"goodStuff",
     "virtuosoHost" : "vmdbpedia.informatik.uni-leipzig.de",
     "virtuosoPort" : 1111,
-    "virtuosoUser" : "dba",
-    "virtuosoPass" : "Swarte12",
+    "virtuosoUser" : "dataid",
+    "virtuosoPass" : "akswska",
 	"ckanActionMap":{
 		"GetDataset": "package_show",
 		"CreateDataset": "package_create",

@@ -6,24 +6,24 @@ import com.github.jsonldjava.core.JsonLdOptions;
 import com.github.jsonldjava.core.JsonLdProcessor;
 import com.github.jsonldjava.utils.JsonUtils;
 import com.hp.hpl.jena.rdf.model.Model;
+import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.jsonobjects.Dataset;
-import org.aksw.dataid.datahub.jsonutils.RdfXmlParser;
-import org.aksw.dataid.datahub.jsonutils.StaticJsonHelper;
-import org.aksw.dataid.datahub.jsonutils.TtlParser;
 import org.aksw.dataid.datahub.mappingobjects.DataId;
 import org.aksw.dataid.datahub.mappingobjects.DataidInput;
 import org.aksw.dataid.datahub.mappingobjects.MappingConfig;
+import org.aksw.dataid.jsonutils.RdfXmlParser;
+import org.aksw.dataid.jsonutils.StaticJsonHelper;
+import org.aksw.dataid.jsonutils.TtlParser;
 import org.aksw.rdfunit.RDFUnitConfiguration;
+import org.aksw.rdfunit.enums.TestCaseExecutionType;
 import org.aksw.rdfunit.exceptions.TestCaseExecutionException;
 import org.aksw.rdfunit.io.format.SerialiazationFormatFactory;
 import org.aksw.rdfunit.io.format.SerializationFormat;
-import org.aksw.rdfunit.sources.Source;
+import org.aksw.rdfunit.sources.TestSource;
 import org.aksw.rdfunit.validate.ParameterException;
 
 import java.io.IOException;
 import java.util.*;
-
-import static org.aksw.rdfunit.sources.SourceFactory.createSchemaSourceFromText;
 
 public class DataIdProcesser 
 {
@@ -32,12 +32,12 @@ public class DataIdProcesser
     private DataIdValidator validator;
 	
 	public DataIdProcesser(String mappingConfigPath, String ontologyPath) throws DataHubMappingException {
-        mappingConfig = StaticHelper.castJsonToObject(StaticJsonHelper.getJsonContent(mappingConfigPath).toString(), MappingConfig.class, "@graph");
-        mappingConfig.setRdfContext(StaticHelper.castJsonToObject(StaticJsonHelper.getJsonContent(mappingConfigPath).toString(), new HashMap<String, String>().getClass(), "@context"));
+        mappingConfig = StaticJsonHelper.castJsonToObject(StaticJsonHelper.getJsonContent(mappingConfigPath).toString(), MappingConfig.class, "@graph");
+        mappingConfig.setRdfContext(StaticJsonHelper.castJsonToObject(StaticJsonHelper.getJsonContent(mappingConfigPath).toString(), new HashMap<String, String>().getClass(), "@context"));
         if(mappingConfig == null)
             throw new DataHubMappingException("the mapping-config file could not be found");
         mapper = new PropertyMapper(StaticJsonHelper.getJsonContent(mappingConfigPath));
-        validator = new DataIdValidator(ontologyPath);
+        validator = new DataIdValidator(DataIdConfig.getDataIdUri(), null);
 
         JsonLdProcessor.removeRDFParser("text/turtle");
         JsonLdProcessor.registerRDFParser("text/turtle", new TtlParser());
@@ -135,13 +135,13 @@ public class DataIdProcesser
         return buildDataId(JsonLdProcessor.compact(result, this.mappingConfig.getRdfContext(), opt));
     }
 
-    public Model validateDataId(final String sourceId, final String format) throws DataIdInputException {
-        //TODO: learn about RDFunit ^^
+    public Model validateDataId(final String sourceId) throws DataIdInputException {
+        DataidInput inputFormat = getInputType(sourceId);
         try {
             SerializationFormat sf = null;
             for(SerializationFormat f : SerialiazationFormatFactory.getAllFormats())
             {
-                if(f.getName().equals(format.toUpperCase()) || f.getHeaderType().equals(format) || f.getExtension().equals(format))
+                if(f.getName().equals(inputFormat.name().toUpperCase()))
                 {
                     sf = f;
                     break;
@@ -150,9 +150,11 @@ public class DataIdProcesser
             if(sf == null)
                 throw new DataIdInputException("unknown serialization format");
 
-            RDFUnitConfiguration config = validator.getConfiguration("http://dataid.com/ttt", "uri");
-            Source source = createSchemaSourceFromText("http://dataid.dbpedia.org/ns/core#", sourceId, sf.getName());
-            return validator.validate(config, source, validator.getTestSuite(null, null));
+            //TODO RDFUnit
+            RDFUnitConfiguration config = validator.getConfiguration("text", sourceId, sf.getName(),sf.getName(), TestCaseExecutionType.statusTestCaseResult);
+            TestSource source = config.getTestSource();
+            return validator.validate(config, source, validator.getTestSuite(config, source));
+
         } catch (ParameterException e) {
             throw new DataIdInputException(e);
         } catch (TestCaseExecutionException e) {
@@ -163,7 +165,7 @@ public class DataIdProcesser
 	private DataidInput getInputType(String testString)
 	{
 		String test = testString.trim();
-		if(!test.contains("http://dataid.dbpedia.org/ns/core#"))  //!not!
+		if(!test.contains(DataIdConfig.getDataIdUri()))  //!not!
 			return DataidInput.NoDataId;
 		else if(StaticJsonHelper.isJsonLdValid(test))
 			return DataidInput.JsonLd;
@@ -171,7 +173,7 @@ public class DataIdProcesser
 			return DataidInput.Turtle;
 		else if(StaticJsonHelper.isNquadValid(test))
 			return DataidInput.Nquads;
-        else if(test.replace(" ", "").contains("rdf:resource=\"http://dataid.dbpedia.org/ns/core#Dataset\""))
+        else if(test.replace(" ", "").contains("rdf:resource=\"" + DataIdConfig.getDataIdUri() + "\""))
             return DataidInput.RdfXml;
 		return DataidInput.NoDataId;
 	}

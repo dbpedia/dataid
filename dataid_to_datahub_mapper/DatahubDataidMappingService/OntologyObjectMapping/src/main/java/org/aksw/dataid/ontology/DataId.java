@@ -1,5 +1,6 @@
 package org.aksw.dataid.ontology;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.aksw.dataid.wrapper.ErrorWarningWrapper;
 import org.aksw.dataid.wrapper.InternalLieteralImpl;
 import org.aksw.dataid.wrapper.OntoPropery;
@@ -9,6 +10,7 @@ import java.util.List;
 /**
  * Created by Chile on 3/10/2015.
  */
+@JsonPropertyOrder({ "identifier", "label", "comment", "issued", "modified", "associatedAgent" })
 public class DataId extends DataIdPart{
 
     private static InternalLieteralImpl preamble;
@@ -19,7 +21,7 @@ public class DataId extends DataIdPart{
     private InternalLieteralImpl modified;
     @OntoPropery(property = "http://purl.org/dc/terms/issued", maxCard = 1, recommended = true)
     private InternalLieteralImpl issued;
-    @OntoPropery(property = "http://www.w3.org/ns/dcat#associatedAgent", minCard = 1, maxCard = 1)
+    @OntoPropery(property = "http://dataid.dbpedia.org/ns/core#associatedAgent", minCard = 1, maxCard = 1)
     private Agent associatedAgent;
 
     public List<DataIdDataset> getTopic() {

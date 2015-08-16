@@ -18,7 +18,7 @@ public class InternalLieteralImpl {
 
     private static final Map<URI, Class<?>> xsdTypeMap = new HashMap<URI, Class<?>>();
 
-    private Map<String, String> langMap = new HashMap<String, String>();
+    private Map<String, String> valueMap = new HashMap<String, String>();
     private URI datatype;
 
     public InternalLieteralImpl(){
@@ -30,7 +30,7 @@ public class InternalLieteralImpl {
     public InternalLieteralImpl(Map<String, String> langMap)
     {
         this();
-        this.setLangMap(langMap);
+        this.setValueMap(langMap);
     }
 
     public InternalLieteralImpl(Literal lit)
@@ -38,9 +38,9 @@ public class InternalLieteralImpl {
         this();
         this.datatype = lit.getDatatype();
         if(lit.getLanguage() != null)
-            langMap.put(lit.getLanguage(), lit.getLabel());
+            valueMap.put(lit.getLanguage(), lit.getLabel());
         else
-            langMap.put("default", lit.getLabel());
+            valueMap.put("default", lit.getLabel());
     }
 
     @JsonIgnore
@@ -51,9 +51,9 @@ public class InternalLieteralImpl {
 
     @JsonIgnore
     public String getLabel(String lang) {
-        if(langMap.size() > 0)
+        if(valueMap.size() > 0)
         {
-            String en = langMap.get(lang);
+            String en = valueMap.get(lang);
             if(en != null)
                 return en;
         }
@@ -63,7 +63,7 @@ public class InternalLieteralImpl {
     @JsonIgnore
     public void setLabel(String label) {
 
-        this.langMap.put("default", label);
+        this.valueMap.put("default", label);
     }
 
     public String getDatatype() {
@@ -79,22 +79,22 @@ public class InternalLieteralImpl {
         this.datatype = new URIImpl(datatype);
     }
 
-    public Map<String, String> getLangMap() {
-        return langMap;
+    public Map<String, String> getValueMap() {
+        return valueMap;
     }
 
-    public void setLangMap(Map<String, String> map)
+    public void setValueMap(Map<String, String> map)
     {
-        this.langMap = map;
+        this.valueMap = map;
     }
 
 
     public void addTranslation(String lab, String language)
     {
         if(language == null)
-            this.langMap.put("default", lab);
+            this.valueMap.put("default", lab);
         else
-            this.langMap.put(language, lab);
+            this.valueMap.put(language, lab);
     }
 
     public List<Literal> allValues()
@@ -103,7 +103,7 @@ public class InternalLieteralImpl {
         if(!isString())
             vals.add(toDataLiteral());
         else
-            for(String lang : getLangMap().keySet())
+            for(String lang : getValueMap().keySet())
                 vals.add(toStringLiteral(lang));
         return vals;
     }
@@ -122,8 +122,8 @@ public class InternalLieteralImpl {
 
     public Literal toStringLiteral(String lang)
     {
-        if(langMap.get(lang) != null)
-            return new org.openrdf.model.impl.LiteralImpl(langMap.get(lang), lang);
+        if(valueMap.get(lang) != null)
+            return new org.openrdf.model.impl.LiteralImpl(valueMap.get(lang), lang);
         else
             return new org.openrdf.model.impl.LiteralImpl(this.getLabel(), ModelWrapper.xsdString);
     }

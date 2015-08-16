@@ -37,6 +37,11 @@
         </dependency>
         <dependency>
             <groupId>dataidToDatahubRestService</groupId>
+            <artifactId>DataIdCommons</artifactId>
+            <version> 1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>dataidToDatahubRestService</groupId>
             <artifactId>OntologyObjectMapping</artifactId>
             <version> 1.0-SNAPSHOT</version>
         </dependency>
@@ -46,9 +51,46 @@
             <version>1.2</version>
         </dependency>
         <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>jena-core</artifactId>
+            <version>2.12.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aksw.jena-sparql-api</groupId>
+            <artifactId>jena-sparql-api-core</artifactId>
+            <version>2.12.1-8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aksw.jena-sparql-api</groupId>
+            <artifactId>jena-sparql-api-server</artifactId>
+            <version>2.12.1-8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aksw.rdfunit</groupId>
+            <artifactId>rdfunit-core</artifactId>
+            <version>0.7.6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>org.aksw.rdfunit</groupId>
             <artifactId>rdfunit-validate</artifactId>
-            <version>${rdfunit-version}</version>
+            <version>0.7.6-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
@@ -64,6 +106,5 @@
             <name>University Leipzig, AKSW Maven2 Repository</name>
             <url>http://maven.aksw.org/archiva/repository/snapshots</url>
         </repository>
-
     </repositories>
 </project>

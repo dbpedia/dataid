@@ -1,6 +1,5 @@
 package org.aksw.dataid.datahub.mappingobjects;
 
-import org.aksw.dataid.datahub.jsonutils.DataIdBody;
 import org.aksw.dataid.wrapper.RdfContext;
 
 import java.util.LinkedHashMap;

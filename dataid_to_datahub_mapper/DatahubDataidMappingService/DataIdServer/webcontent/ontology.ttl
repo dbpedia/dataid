@@ -10,8 +10,7 @@
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix dmp: <http://dataid.dbpedia.org/ns/dmp#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> . 
 
 <http://dataid.dbpedia.org/ns/core#>
     a owl:Ontology ;
@@ -153,11 +152,17 @@ dataid:Dataset
         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onDataRange xsd:integer ;
         owl:onProperty void:documents
-    ], [
-        a owl:Restriction ;
-        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onClass dataid:Distribution ;
-        owl:onProperty dcat:distribution
+    ], [ rdf:type owl:Class ;
+		owl:unionOf ( [ rdf:type owl:Restriction ;
+			owl:onProperty void:subset ;
+		 	owl:onClass dataid:Dataset ;
+		 	owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+		]
+     	[ rdf:type owl:Restriction ;
+         	owl:onProperty dcat:distribution ;
+         	owl:onClass dataid:Distribution ;
+         	owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+       	] )
     ], [
         a owl:Restriction ;
         owl:onClass rdf:Resource ;
@@ -196,52 +201,7 @@ dataid:Dataset
         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onDataRange xsd:integer ;
         owl:onProperty void:distinctSubjects
-    ],
-       [ rdf:type owl:Restriction ;
-         owl:onProperty dmp:usefulness ;
-         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-         owl:onDataRange xsd:string
-       ] ,
-       [ rdf:type owl:Restriction ;
-         owl:onProperty dmp:similarData ;
-         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-         owl:onDataRange xsd:string
-       ] ,
-       [ rdf:type owl:Restriction ;
-         owl:onProperty dmp:reuseAndIntegration ;
-         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-         owl:onDataRange xsd:string
-       ] ,
-       [ rdf:type owl:Restriction ;
-         owl:onProperty dmp:additionalSoftware ;
-         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-         owl:onDataRange xsd:string
-       ] ,
-       [ rdf:type owl:Restriction ;
-         owl:onProperty dmp:growth ;
-         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-         owl:onDataRange xsd:string
-       ] ,
-       [ rdf:type owl:Restriction ;
-         owl:onProperty dmp:preservation ;
-         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-         owl:onDataRange xsd:string
-       ] ,
-       [ rdf:type owl:Restriction ;
-         owl:onProperty dmp:openness ;
-         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-         owl:onDataRange xsd:string
-       ] ,
-       [ rdf:type owl:Restriction ;
-         owl:onProperty dmp:repositoryUrl ;
-         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-         owl:onDataRange xsd:string
-       ] ,
-       [ rdf:type owl:Restriction ;
-         owl:onProperty dmp:rarchiveLink ;
-         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-         owl:onDataRange xsd:string
-       ] .
+    ] .
 
 
 
@@ -607,6 +567,12 @@ dcat:mediaType
     rdfs:domain dataid:Distribution ;
     rdfs:range xsd:string .
 
+foaf:topic
+	a owl:DatatypeProperty ;
+    rdfs:comment "Links a DatasetDescription to one or more datasets. Links what the DataID is about."@en ;
+    rdfs:domain void:DatasetDescription ;
+    rdfs:range dataid:Dataset .
+
 odrl:Policy
     a owl:Class .
 
@@ -640,7 +606,8 @@ sd:defaultDataset
 
 void:DatasetDescription
 	a owl:Class ;
-	rdfs:label "A description of one or more datasets. The DataID itself."@en ;
+    rdfs:label "A description of one or more datasets. The DataID itself."@en ;
+	dct:description "A description of one or more datasets. The DataID itself."@en ;
 	rdfs:comment """DataID is a way of describing Linked-Open-Data (LOD) datasets including content, authors, licenses and provenance via RDF files.
 Making your data accessible to others is the basic idea of LOD and is your contribution to a universal data give and take.
 To create DataIDs alongside datasets is the best way of announcing a new dataset and its updates to a global community by placing 
@@ -669,85 +636,3 @@ To learn more including how to draft an new DataID, please visit http://dataid.d
         owl:onProperty dataid:associatedAgent ;
         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
     ] .
-
-
-##########################################################################################################
-
-## DMP
-
-##########################################################################################################
-
-
-###  http://dataid.dbpedia.org/ns/dmp#usefulness
-
-dmp:usefulness rdf:type owl:DatatypeProperty ;
-               rdfs:label "usefulness"@en ;
-               rdfs:comment "Description of to whom the data could be useful, and whether it underpins a scientific publication."@en ;
-               rdfs:domain dataid:Dataset ;
-    		   rdfs:range xsd:string .
-
-###  http://dataid.dbpedia.org/ns/dmp#similarData
-
-dmp:similarData rdf:type owl:DatatypeProperty ;
-               rdfs:label "similar data"@en ;
-               rdfs:comment "Information on the existence (or not) of similar data."@en ;
-               rdfs:domain dataid:Dataset ;
-    		   rdfs:range xsd:string .
-
-###  http://dataid.dbpedia.org/ns/dmp#reuseAndIntegration
-
-dmp:reuseAndIntegration rdf:type owl:DatatypeProperty ;
-               rdfs:label "reuse and integration"@en ;
-               rdfs:comment "Information on the possibilities for integration and reuse of the dataset."@en ;
-               rdfs:domain dataid:Dataset ;
-    		   rdfs:range xsd:string .
-
-###  http://dataid.dbpedia.org/ns/dmp#additionalSoftware
-
-dmp:additionalSoftware rdf:type owl:DatatypeProperty ;
-               rdfs:label "additional software"@en ;
-               rdfs:comment "Information on additional software needed for use, re-use and integration."@en ;
-               rdfs:domain dataid:Dataset ;
-    		   rdfs:range xsd:string .
-
-###  http://dataid.dbpedia.org/ns/dmp#growth
-
-dmp:growth rdf:type owl:DatatypeProperty ;
-               rdfs:label "growth"@en ;
-               rdfs:comment "Indication of what the datas approximated end volume is."@en ;
-               rdfs:domain dataid:Dataset ;
-    		   rdfs:range xsd:string .
-
-###  http://dataid.dbpedia.org/ns/dmp#preservation
-
-dmp:preservation rdf:type owl:DatatypeProperty ;
-               rdfs:label "preservation"@en ;
-               rdfs:comment "Indication of how long the data should be preserved what the associated costs are and how these are planned to be covered."@en ;
-               rdfs:domain dataid:Dataset ;
-    		   rdfs:range xsd:string .
-
-###  http://dataid.dbpedia.org/ns/dmp#openness
-
-dmp:openness rdf:type owl:DatatypeProperty ;
-               rdfs:label "openness"@en ;
-               rdfs:comment "Description of how data will be shared, including access procedures, embargo periods (if any), outlines of technical mechanisms for dissemination and definition of whether access will be widely open or restricted to specific groups. In case the dataset cannot be shared, the reasons for this should be mentioned (e.g. ethical, rules of personal data, intellectual property, commercial, privacy-related, security-related)."@en ;
-               rdfs:domain dataid:Dataset ;
-    		   rdfs:range xsd:string .
-
-###  http://dataid.dbpedia.org/ns/dmp#repositoryUrl
-
-dmp:repositoryUrl rdf:type owl:ObjectProperty ;
-               rdfs:label "repository URL"@en ;
-               rdfs:comment "Identification of the repository where data will be stored, if already existing and identified, indicating in particular the type of repository (institutional, standard repository for the discipline, etc.)."@en ;
-               rdfs:domain dataid:Dataset ;
-    		   rdfs:range rdf:Resource .
-
-###  http://dataid.dbpedia.org/ns/dmp#archiveLink
-
-dmp:archiveLink rdf:type owl:ObjectProperty ;
-               rdfs:label "archive link"@en ;
-               rdfs:comment "Link to an archive preserving current data."@en ;
-               rdfs:domain dataid:Dataset ;
-    		   rdfs:range rdf:Resource .
-
-

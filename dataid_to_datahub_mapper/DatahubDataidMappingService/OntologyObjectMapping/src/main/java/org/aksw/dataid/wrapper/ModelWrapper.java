@@ -27,9 +27,10 @@ public class ModelWrapper {
     public static final URI a = new URIImpl("http://www.w3.org/1999/02/22-rdf-syntax-ns#type");
     public static final URI xsdString = new URIImpl("http://www.w3.org/2001/XMLSchema#string");
     public static final URI rdfsString = new URIImpl("http://www.w3.org/1999/02/22-rdf-syntax-ns#langString");
-    public static final String dataIdStump = "http://schema.dbpedia.org/dataid#";
+    public static final String dataIdStump = "http://dataid.dbpedia.org/ns/core#";
     public static final String xmlStump = "http://www.w3.org/2001/XMLSchema#";
     public static final String voidStump = "http://rdfs.org/ns/void#";
+    public static final String foafStump = "http://xmlns.com/foaf/0.1/";
     public static final String purlStump = "http://purl.org/dc/terms/";
     public static final String dcatStump = "http://www.w3.org/ns/dcat#";
 
@@ -43,10 +44,16 @@ public class ModelWrapper {
     public static final String dcatDistributionUri = dcatStump + "Distribution";
     public static final String DataIdUri = voidStump + "DatasetDescription";
     public static final String AgentdUri = dataIdStump + "Agent";
+    public static final String PublisherUri = dataIdStump + "Publisher";
+    public static final String MaintainerUri = dataIdStump + "Maintainer";
+    public static final String CreatorUri = dataIdStump + "Creator";
+    public static final String ContactUri = dataIdStump + "Contact";
+    public static final String ContributorUri = dataIdStump + "Contributor";
 
     private static Map<Resource, DataIdPart> objectMap;
     private static RdfContext rdfContext;
     private static Model model;
+    private static OntoPropery.OntologyUsage usage;
 
     public static ModelWrapper getInstance() throws Exception {
         if(objectMap == null)
@@ -111,9 +118,13 @@ public class ModelWrapper {
     }
 
     public static void loadModel(RdfContext context, String ttl) throws RDFParseException, RDFHandlerException {
+        loadModel(context, ttl, OntoPropery.OntologyUsage.DataIdCore);
+    }
+        public static void loadModel(RdfContext context, String ttl, OntoPropery.OntologyUsage u) throws RDFParseException, RDFHandlerException {
         rdfContext = context;
         model = parseModel(ttl);
-        objectMap= new HashMap<Resource, DataIdPart>();
+        usage = u;
+        objectMap = new HashMap<Resource, DataIdPart>();
 
         for(Statement st: model.filter(null, ModelWrapper.a, GetDataIdUri(DataIdUri)))
         {
@@ -122,7 +133,9 @@ public class ModelWrapper {
             try {
                 p = getDataIdPart(dataIdUri);
                 objectMap.put(dataIdUri, p);
+                //p.resolveAllParentReferences();
             } catch (InvalidAttributesException e) {
+                e.printStackTrace();
             }
             //String[] zw = p.errorsAndWarnings();
         }
@@ -163,7 +176,7 @@ public class ModelWrapper {
         parser.setRDFHandler(handler);
         parser.setPreserveBNodeIDs(true);
         try {
-            parser.parse(sr, "http://dbpedia.org/dataid#");
+            parser.parse(sr, "http://dataid.dbpedia.org/ns/core#");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -196,6 +209,11 @@ public class ModelWrapper {
     public static DataIdPart getDataIdPart(Resource uri) throws InvalidAttributesException {
         DataIdPart part = objectMap.get(uri);
         Model partModel = model.filter(uri, null, null);
+
+        Model subsetParent = model.filter(null, new URIImpl(voidStump + "subset"), uri);
+        Model dataidParent = model.filter(null, new URIImpl(foafStump + "topic"), uri);
+        Model distributionParent = model.filter(null, new URIImpl(dcatStump + "distribution"), uri);
+
         if(part == null)
         {
             try{
@@ -204,22 +222,48 @@ public class ModelWrapper {
                     throw new InvalidAttributesException("could not find valid type for " + uri);
                 switch(type) {
                     case LinksetUri:
-                        part = parseDataIdPart(partModel, LinkSet.class);
+                        part = new LinkSet();
+                        part = parseDataIdPart(partModel, part);
                         break;
                     case DatasetUri:
-                        part = parseDataIdPart(partModel, DataIdDataset.class);
+                        part = new DataIdDataset();
+                        if(subsetParent.size() > 0)
+                            part.setParent(subsetParent.subjectURI());
+                        else if(dataidParent.size() > 0)
+                            part.setParent(dataidParent.subjectURI());
+                        part = parseDataIdPart(partModel, part);
                         break;
-                    case DistributionUri:
-                        part = parseDataIdPart(partModel, Distribution.class);
+                    case DistributionUri:  //TODO ???
+                        part = new Distribution();
+                        part = parseDataIdPart(partModel, part);
                         break;
                     case dcatDistributionUri:
-                        part = parseDataIdPart(partModel, Distribution.class);
+                        part = new Distribution();
+                        if(distributionParent.size() > 0)
+                            part.setParent(distributionParent.subjectURI());
+                        part = parseDataIdPart(partModel, part);
                         break;
                     case DataIdUri:
-                        part = parseDataIdPart(partModel, DataId.class);
+                        part = new DataId();
+                        part = parseDataIdPart(partModel, part);
                         break;
+                    case PublisherUri:
+                    case MaintainerUri:
+                    case CreatorUri:
+                    case ContactUri:
+                    case ContributorUri:
                     case AgentdUri:
-                        part = parseDataIdPart(partModel, Agent.class);
+                        part = new Agent();
+                        switch(type)
+                        {
+                            case PublisherUri: ((Agent) part).setAgentRole("Publisher"); break;
+                            case MaintainerUri: ((Agent) part).setAgentRole("Maintainer"); break;
+                            case CreatorUri: ((Agent) part).setAgentRole("Creator"); break;
+                            case ContactUri: ((Agent) part).setAgentRole("Contact"); break;
+                            case ContributorUri: ((Agent) part).setAgentRole("Contributor"); break;
+                            case AgentdUri: ((Agent) part).setAgentRole("Agent"); break;
+                        }
+                        part = parseDataIdPart(partModel, part);
                         break;
                 }
             } catch (IllegalAccessException e) {
@@ -234,10 +278,9 @@ public class ModelWrapper {
         return part;
     }
 
-    public static <T extends DataIdPart> DataIdPart parseDataIdPart(Model model, Class<T> type) throws IllegalAccessException, InstantiationException {
+    public static <T extends DataIdPart> DataIdPart parseDataIdPart(Model model, T inst) throws IllegalAccessException, InstantiationException, InvalidAttributesException {
 
-        T inst = type.newInstance();
-        inst.setUriId(model.iterator().next().getSubject());
+        inst.setIdentifier(model.iterator().next().getSubject().stringValue());
 
         Map<OntoPropery, Field> annos = inst.annotations();
 
@@ -247,33 +290,44 @@ public class ModelWrapper {
             {
                 if(ModelWrapper.CompareToUri(st.getPredicate(), ModelWrapper.GetDataIdUri(anno.property())))
                 {
-                    try{
-                        Field field = annos.get(anno);
-                        field.setAccessible(true);
-                        Object val = InsertProperty(inst, st.getObject(), field);
-                        field.set(inst, val);
-
-                    } catch (Exception e) {
-                        inst.getErrorswarnings().addError(st.getSubject().stringValue(), st.getPredicate().toString(), e.getMessage());
-                    }
+                    Object val = InsertProperty(inst, st.getObject(), anno);
+                    Field field = annos.get(anno);
+                    field.setAccessible(true);
+                    field.set(inst, val);
                     break;
                 }
             }
         }
-        inst.checkInstanceAgainstOntology();
+
+        for(OntoPropery anno : annos.keySet())
+        {
+            if(anno.derivable() && inst.getParent() != null) {
+                Object val = annos.get(anno).get(inst);
+                if(val == null || (List.class.isAssignableFrom(val.getClass())
+                        && (((List<?>)val).size() == 0 || ((List<?>)val).get(0) == null)))
+                    inst.getUnresolvedValues().add(new LazyParentReference(inst.getParent(), anno, inst));
+            }
+        }
+        inst.checkInstanceAgainstOntology(usage);
         return inst;
     }
 
-    private static Object InsertProperty(DataIdPart inst, Value object, Field field) throws IllegalAccessException, InvalidAttributesException {
+    public static OntoPropery.OntologyUsage getUsage() {
+        return usage;
+    }
 
+    static Object InsertProperty(DataIdPart inst, Value object, OntoPropery anno) throws IllegalAccessException, InvalidAttributesException {
+        Object retVal = null;
+        Field field = inst.annotations().get(anno);
+        field.setAccessible(true);
         if(DataIdPart.class.isAssignableFrom(field.getType())) {
             if (BNode.class.isAssignableFrom(object.getClass()))
-                return field.getType().cast(getDataIdPart((BNode)object));
+                retVal = field.getType().cast(getDataIdPart((BNode)object));
             else
-                return field.getType().cast(getDataIdPart(new URIImpl(object.stringValue())));
+                retVal = field.getType().cast(getDataIdPart(new URIImpl(object.stringValue())));
         }
         else if(URI.class.isAssignableFrom(field.getType()))
-            return field.getType().cast(new URIImpl(object.stringValue()));
+            retVal = field.getType().cast(new URIImpl(object.stringValue()));
         else if(List.class.isAssignableFrom(field.getType()))
         {
             ParameterizedType stringListType = (ParameterizedType) field.getGenericType();
@@ -286,16 +340,18 @@ public class ModelWrapper {
                 list = (List<Object>) field.get(inst);
             if(DataIdPart.class.isAssignableFrom(genericListClass))
             {
-                if (BNode.class.isAssignableFrom(object.getClass()))
-                    list.add(getDataIdPart((BNode)object));
-                else
+                if (BNode.class.isAssignableFrom(object.getClass())) {
+                    list.add(getDataIdPart((BNode) object));
+                }
+                else {
                     list.add(getDataIdPart(new URIImpl(object.stringValue())));
+                }
             }
             else if(URI.class.isAssignableFrom(genericListClass))
                 list.add(new URIImpl(object.stringValue()));
             else //Literal
                 list.add(new InternalLieteralImpl((Literal)object));
-            return list;
+            retVal = list;
         }
         else //Literal!
         {
@@ -303,10 +359,11 @@ public class ModelWrapper {
             if(lit != null && lit.isString())
             {
                 lit.addTranslation(((Literal) object).getLabel(), ((Literal) object).getLanguage());
-                return lit;
+                retVal = lit;
             }
-            return new InternalLieteralImpl((Literal) object);
+            retVal = new InternalLieteralImpl((Literal) object);
         }
+        return retVal;
     }
 
     public static class ModelRdfHandler implements RDFHandler

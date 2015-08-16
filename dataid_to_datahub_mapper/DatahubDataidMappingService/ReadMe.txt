@@ -10,7 +10,7 @@ GitHub: <insert>
 #############################
 
 The two main functions to use are CreateDataset and/or UpdateDataset.
-UpdataDataset is only to be called after creating a Dataset with the same name beforehand.
+UpdataDataset is only to be called after creating a Dataset with the same agentName beforehand.
 
 To call either of those functions with a dataId use a HTTP-POST with the following settings:
 
@@ -20,7 +20,7 @@ a) Both functions require the same parameters:
 				It can be found at your personal page on Datahub (left-bottom corner).
 2. organization: To publish or change datasets a registered user has also be part of an organization listed on Datahub.io.
 				(in our case this would be 'aksw')
-3. datasetname:	The (internal) name of the dataset to be created or updated. (the unique string used to identify a dataset 
+3. datasetname:	The (internal) agentName of the dataset to be created or updated. (the unique string used to identify a dataset
 				in a DataHub-URL)
 4. isprivate:	If 'true', his optional parameter sets the dataset as private. (Use this to play around, debug or keep your data secret :)
 
@@ -43,7 +43,7 @@ a) MainConfig.json
 This file provides basic informations needed to interact with the CKAN-REST-Service of DataHub.io.
 
 1. datahubActionUri : If not altered by DataHub.io, this should be: "http://datahub.io/api/3/action/".
-2. mappingConfigPath: The relative path or url to find the MappingConfig.json, needed to translate DataIds to DataHub datasets.
+2. mappingConfigPath: The relative path or agentUrl to find the MappingConfig.json, needed to translate DataIds to DataHub datasets.
 3. ckanTimeOut      : The timeout in ms when communication with the CKAN-REST-Service of DataHub.io.
 4. adminName        : Used as username to provide authority when editing the MappingConfig.json via the http server.
 5. password         : The password for editing the MappingConfig.json.
@@ -53,7 +53,7 @@ This file provides basic informations needed to interact with the CKAN-REST-Serv
 b) MappingConfig.json
 
 Provides all informations needed to map a DataId to a DataHub dataset. (see 3.)	
-The MappingConfig.json file is a JsonLD <insert url> document to provide context information similar to turtle syntax.
+The MappingConfig.json file is a JsonLD <insert agentUrl> document to provide context information similar to turtle syntax.
 Under the address http://<host>:<port>/dataid/datahubpublisher/getmappings this file can be edited with the additional
 entry of username and password defined in the MainConfig.json
 
@@ -80,7 +80,7 @@ These properties are common to every dataset and are displayed in a fixed positi
 
 Mapping example:
 
-	 "notes": {												-> the property-name is also the name used in the DataHub-Ckan-Api and has to be unique
+	 "notes": {												-> the property-agentName is also the agentName used in the DataHub-Ckan-Api and has to be unique
 	   "dataIdRef": "dc:description",						-> referenced property of DataId (may consist of multiple entries divided by a comma)
 																(depending on the object to be mapped (dataset or resource as subjects) , 
 																this has to be a direct predicate pointing to an object of the type @type!)

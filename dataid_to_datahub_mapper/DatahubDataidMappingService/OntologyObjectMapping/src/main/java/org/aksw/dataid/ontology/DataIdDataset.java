@@ -1,10 +1,13 @@
 package org.aksw.dataid.ontology;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.aksw.dataid.wrapper.InternalLieteralImpl;
+import org.aksw.dataid.wrapper.ModelWrapper;
 import org.aksw.dataid.wrapper.OntoPropery;
 import org.openrdf.model.URI;
 import org.openrdf.model.impl.URIImpl;
 
+import javax.naming.directory.InvalidAttributesException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -12,29 +15,28 @@ import java.util.List;
 /**
  * Created by Chile on 3/10/2015.
  */
+@JsonPropertyOrder({ "title", "identifier", "label", "comment", "description", "issued", "modified", "language", "keywords" })
 public class DataIdDataset extends DataIdPart {
 
     @OntoPropery(property = "http://purl.org/dc/terms/title", maxCard = 1, minCard = 1)
     private InternalLieteralImpl title;
     @OntoPropery(property = "http://purl.org/dc/terms/description", maxCard = 1, recommended = true)
     private InternalLieteralImpl description;
-    @OntoPropery(property = "http://purl.org/dc/terms/modified", maxCard = 1, recommended = true)
+    @OntoPropery(property = "http://purl.org/dc/terms/modified", maxCard = 1, recommended = true, derivable = true)
     private InternalLieteralImpl modified;
-    @OntoPropery(property = "http://purl.org/dc/terms/issued", maxCard = 1, recommended = true)
+    @OntoPropery(property = "http://purl.org/dc/terms/issued", maxCard = 1, recommended = true, derivable = true)
     private InternalLieteralImpl issued;
-    @OntoPropery(property = "http://purl.org/dc/terms/language", maxCard = 1, recommended = true)
+    @OntoPropery(property = "http://purl.org/dc/terms/language", maxCard = 1, recommended = true, derivable = true)
     private InternalLieteralImpl language;
     @OntoPropery(property = "http://purl.org/dc/terms/accrualPeriodicity", maxCard = 1)
     private URI accrualPeriodicity;
-    @OntoPropery(property = "http://purl.org/dc/terms/identifier", maxCard = 1, minCard = 1)
-    private InternalLieteralImpl identifier;
     @OntoPropery(property = "http://www.w3.org/ns/dcat#theme", recommended = true)
     private List<URI> themes;
     @OntoPropery(property = "http://www.w3.org/ns/dcat#keyword", minCard = 1)
     private List<InternalLieteralImpl> keywords;
-    @OntoPropery(property = "http://www.w3.org/ns/dcat#associatedAgent", minCard = 1)
+    @OntoPropery(property = "http://dataid.dbpedia.org/ns/core#associatedAgent", minCard = 1, derivable = true)
     private List<Agent> associatedAgent;
-    @OntoPropery(property = "http://www.w3.org/ns/dcat#distribution", minCard = 1)
+    @OntoPropery(property = "http://dataid.dbpedia.org/ns/core#distribution", minCard = 1, alternative = "http://rdfs.org/ns/void#subset")
     private List<Distribution> distributions;
     @OntoPropery(property = "http://www.w3.org/ns/dcat#landingPage", minCard = 1)
     private List<URI> landingPage;
@@ -58,7 +60,7 @@ public class DataIdDataset extends DataIdPart {
     private Distribution rootResource;
     @OntoPropery(property = "http://dataid.dbpedia.org/ns/core#containsLinks", recommended = true)
     private List<LinkSet> linksets;
-    @OntoPropery(property = "http://dataid.dbpedia.org/ns/core#latestVersion", maxCard = 1)
+    @OntoPropery(property = "http://dataid.dbpedia.org/ns/core#latestVersion", maxCard = 1, recommended = true)
     private DataIdDataset latestVersion;
     @OntoPropery(property = "http://dataid.dbpedia.org/ns/core#nextVersion", maxCard = 1)
     private DataIdDataset nextVersion;
@@ -72,26 +74,6 @@ public class DataIdDataset extends DataIdPart {
     private InternalLieteralImpl licanseName;
     @OntoPropery(property = "http://purl.org/dc/terms/rights", maxCard = 1)
     private InternalLieteralImpl rights;
-
-    //DMP additions
-    @OntoPropery(property = "http://dataid.dbpedia.org/ns/core#usefulness", maxCard = 1, minCard = 1, ontoUsage = OntoPropery.OntologyUsage.DataIdDmp)
-    private InternalLieteralImpl usefulness;
-    @OntoPropery(property = "http://dataid.dbpedia.org/ns/core#similarData", maxCard = 1, minCard = 1, ontoUsage = OntoPropery.OntologyUsage.DataIdDmp)
-    private InternalLieteralImpl similarData;
-    @OntoPropery(property = "http://dataid.dbpedia.org/ns/core#reuseAndIntegration", maxCard = 1, minCard = 1, ontoUsage = OntoPropery.OntologyUsage.DataIdDmp)
-    private InternalLieteralImpl reuseAndIntegration;
-    @OntoPropery(property = "http://dataid.dbpedia.org/ns/core#additionalSoftware", maxCard = 1, minCard = 1, ontoUsage = OntoPropery.OntologyUsage.DataIdDmp)
-    private InternalLieteralImpl additionalSoftware;
-    @OntoPropery(property = "http://dataid.dbpedia.org/ns/core#growth", maxCard = 1, minCard = 1, ontoUsage = OntoPropery.OntologyUsage.DataIdDmp)
-    private InternalLieteralImpl growth;
-    @OntoPropery(property = "http://dataid.dbpedia.org/ns/core#preservation", maxCard = 1, minCard = 1, ontoUsage = OntoPropery.OntologyUsage.DataIdDmp)
-    private InternalLieteralImpl preservation;
-    @OntoPropery(property = "http://dataid.dbpedia.org/ns/core#openness", maxCard = 1, minCard = 1, ontoUsage = OntoPropery.OntologyUsage.DataIdDmp)
-    private InternalLieteralImpl openness;
-    @OntoPropery(property = "http://dataid.dbpedia.org/ns/core#repositoryUrl", maxCard = 1, minCard = 1, ontoUsage = OntoPropery.OntologyUsage.DataIdDmp)
-    private URI repositoryUrl;
-    @OntoPropery(property = "http://dataid.dbpedia.org/ns/core#archiveLink", maxCard = 1, minCard = 1, ontoUsage = OntoPropery.OntologyUsage.DataIdDmp)
-    private URI archiveLink;
 
     public InternalLieteralImpl getTitle() {
         return title;
@@ -139,14 +121,6 @@ public class DataIdDataset extends DataIdPart {
 
     public void setAccrualPeriodicity(String accrualPeriodicity) {
         this.accrualPeriodicity = new URIImpl(accrualPeriodicity);
-    }
-
-    public InternalLieteralImpl getIdentifier() {
-        return identifier;
-    }
-
-    public void setIdentifier(InternalLieteralImpl identifier) {
-        this.identifier = identifier;
     }
 
     public List<String> getThemes() {
@@ -345,77 +319,5 @@ public class DataIdDataset extends DataIdPart {
 
     public void setRights(InternalLieteralImpl rights) {
         this.rights = rights;
-    }
-
-    public InternalLieteralImpl getUsefulness() {
-        return usefulness;
-    }
-
-    public void setUsefulness(InternalLieteralImpl usefulness) {
-        this.usefulness = usefulness;
-    }
-
-    public InternalLieteralImpl getSimilarData() {
-        return similarData;
-    }
-
-    public void setSimilarData(InternalLieteralImpl similarData) {
-        this.similarData = similarData;
-    }
-
-    public InternalLieteralImpl getReuseAndIntegration() {
-        return reuseAndIntegration;
-    }
-
-    public void setReuseAndIntegration(InternalLieteralImpl reuseAndIntegration) {
-        this.reuseAndIntegration = reuseAndIntegration;
-    }
-
-    public InternalLieteralImpl getAdditionalSoftware() {
-        return additionalSoftware;
-    }
-
-    public void setAdditionalSoftware(InternalLieteralImpl additionalSoftware) {
-        this.additionalSoftware = additionalSoftware;
-    }
-
-    public InternalLieteralImpl getGrowth() {
-        return growth;
-    }
-
-    public void setGrowth(InternalLieteralImpl growth) {
-        this.growth = growth;
-    }
-
-    public InternalLieteralImpl getPreservation() {
-        return preservation;
-    }
-
-    public void setPreservation(InternalLieteralImpl preservation) {
-        this.preservation = preservation;
-    }
-
-    public InternalLieteralImpl getOpenness() {
-        return openness;
-    }
-
-    public void setOpenness(InternalLieteralImpl openness) {
-        this.openness = openness;
-    }
-
-    public String getRepositoryUrl() {
-        return repositoryUrl != null ? repositoryUrl.stringValue() : null;
-    }
-
-    public void setRepositoryUrl(String repositoryUrl) {
-        this.repositoryUrl = new URIImpl(repositoryUrl);
-    }
-
-    public String getArchiveLink() {
-        return archiveLink != null ? archiveLink.stringValue() : null;
-    }
-
-    public void setArchiveLink(String archiveLink) {
-        this.archiveLink = new URIImpl(archiveLink);
     }
 }
