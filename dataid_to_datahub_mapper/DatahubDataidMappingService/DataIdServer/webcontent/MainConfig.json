@@ -1,5 +1,6 @@
 {
     "dataIdUri":"http://dataid.dbpedia.org/ns/core#",
+    "dataIdUrl":"http://localhost:9997/static/ontology.ttl",
 	"datahubActionUri": "http://datahub.io/api/3/action/",
 	"mappingConfigPath": "MappingConfig.json",
 	"ckanTimeOut": 10000,

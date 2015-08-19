@@ -81,17 +81,6 @@
             <artifactId>jena-sparql-api-server</artifactId>
             <version>2.12.1-8</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.aksw.rdfunit</groupId>
-            <artifactId>rdfunit-core</artifactId>
-            <version>0.7.6-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.aksw.rdfunit</groupId>
-            <artifactId>rdfunit-validate</artifactId>
-            <version>0.7.6-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 
     <repositories>

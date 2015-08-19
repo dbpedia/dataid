@@ -1,7 +1,7 @@
-package org.aksw.dataid.datahub.mappingobjects;
+package org.aksw.dataid.config;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.aksw.dataid.wrapper.RdfContext;
+import org.aksw.dataid.config.RdfContext;
 
 import java.util.Date;
 import java.util.Map;
@@ -35,6 +35,8 @@ public class MappingConfig
 	public void setAuthor(String author) {
 		this.author = author;
 	}
+
+    protected MappingConfig(){}
 	
 	public DataIdProperty GetPropertyByDataId(String dictionary, String dataDataIdProperty)
 	{
@@ -70,7 +72,8 @@ public class MappingConfig
 	public RdfContext getRdfContext() {
 		return context;
 	}
-	public void setRdfContext(Map<String, String> rdfContext) {
-		this.context = new RdfContext(rdfContext);
+
+	public void setRdfContext(RdfContext rdfContext) {
+		this.context = rdfContext;
 	}
 }

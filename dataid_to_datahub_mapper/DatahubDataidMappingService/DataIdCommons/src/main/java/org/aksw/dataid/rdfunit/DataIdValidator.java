@@ -1,4 +1,7 @@
-package org.aksw.dataid.datahub.propertymapping;
+package org.aksw.dataid.rdfunit;
+
+import java.io.IOException;
+import java.util.Arrays;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import org.aksw.rdfunit.RDFUnitConfiguration;
@@ -9,13 +12,7 @@ import org.aksw.rdfunit.sources.TestSource;
 import org.aksw.rdfunit.tests.TestSuite;
 import org.aksw.rdfunit.validate.ParameterException;
 import org.aksw.rdfunit.validate.wrappers.RDFUnitStaticWrapper;
-import org.aksw.rdfunit.validate.ws.RDFUnitWebService;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.Arrays;
 
 /**
  * User: Dimitris Kontokostas
@@ -29,32 +26,7 @@ public class DataIdValidator {
         RDFUnitStaticWrapper.initWrapper(ontologyUri, dlUrl);
     }
 
-    protected RDFUnitConfiguration getConfiguration(String type, String source, String inputFormat, String outputFormat, TestCaseExecutionType testCaseType) throws ParameterException {
-
-/*        String type = httpServletRequest.getParameter("t");
-        if (type == null || !(type.equals("text") || type.equals("uri"))) {
-            throw new ParameterException("'t' must be one of text or uri");
-        }
-
-        String source = httpServletRequest.getParameter("s");
-        if (source == null || source.isEmpty()){
-            throw new ParameterException("'s' must be defined and not empty");
-        }
-
-
-
-        String inputFormat = "";
-        if (isText) {
-            inputFormat = httpServletRequest.getParameter("i");
-            if (inputFormat == null || inputFormat.isEmpty()) {
-                throw new ParameterException("'i' must be defined when -t = 'text'");
-            }
-        }
-
-        String outputFormat = httpServletRequest.getParameter("o");
-        if (outputFormat == null || outputFormat.isEmpty()){
-            outputFormat = "html";
-        }*/
+    public RDFUnitConfiguration getConfiguration(String type, String source, String inputFormat, String outputFormat, TestCaseExecutionType testCaseType) throws ParameterException {
 
         boolean isText = type.equals("text");
 
@@ -92,15 +64,15 @@ public class DataIdValidator {
 
         // test input if it reads data
         configuration.getTestSource().getExecutionFactory();
-
+        getTestSuite(null, null);
         return configuration;
     }
 
-    protected TestSuite getTestSuite(final RDFUnitConfiguration configuration, final TestSource testSource) {
+    public TestSuite getTestSuite(final RDFUnitConfiguration configuration, final TestSource testSource) {
         return RDFUnitStaticWrapper.getTestSuite();
     }
 
-    protected Model validate(final RDFUnitConfiguration configuration, final TestSource testSource, final TestSuite testSuite) throws TestCaseExecutionException {
+    public Model validate(final RDFUnitConfiguration configuration, final TestSource testSource, final TestSuite testSuite) throws TestCaseExecutionException {
         return RDFUnitStaticWrapper.validate(configuration.getTestCaseExecutionType(), testSource, testSuite);
     }
 

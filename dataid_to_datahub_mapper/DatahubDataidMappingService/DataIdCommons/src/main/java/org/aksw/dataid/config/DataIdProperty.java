@@ -1,4 +1,4 @@
-package org.aksw.dataid.datahub.mappingobjects;
+package org.aksw.dataid.config;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

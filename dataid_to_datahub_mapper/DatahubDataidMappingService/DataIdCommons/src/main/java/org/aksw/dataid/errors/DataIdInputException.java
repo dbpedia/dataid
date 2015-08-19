@@ -1,4 +1,4 @@
-package org.aksw.dataid.datahub.propertymapping;
+package org.aksw.dataid.errors;
 
 
 public class DataIdInputException extends Exception

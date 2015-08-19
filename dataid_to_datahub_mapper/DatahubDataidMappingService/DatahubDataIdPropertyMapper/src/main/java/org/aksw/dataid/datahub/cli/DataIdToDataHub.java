@@ -9,6 +9,8 @@ import org.aksw.dataid.datahub.jsonobjects.DatahubError;
 import org.aksw.dataid.datahub.jsonobjects.Dataset;
 import org.aksw.dataid.datahub.propertymapping.*;
 import org.aksw.dataid.datahub.restclient.CkanRestClient;
+import org.aksw.dataid.errors.DataHubMappingException;
+import org.aksw.dataid.errors.DataIdInputException;
 import org.aksw.dataid.jsonutils.StaticJsonHelper;
 import org.apache.commons.cli.*;
 import org.apache.http.client.HttpResponseException;
@@ -37,7 +39,7 @@ public class DataIdToDataHub {
 		List<Dataset> sets = null;
 		DataIdProcesser processor;
 		try {
-			processor = new DataIdProcesser(DataIdConfig.getMappingConfigPath(), DataIdConfig.getOntologyPath());
+			processor = new DataIdProcesser(DataIdConfig.getMappingConfigPath());
 			sets = processor.parseToDataHubDataset(dataIdContent);
 		} catch (DataHubMappingException e) {
 			e.printStackTrace();

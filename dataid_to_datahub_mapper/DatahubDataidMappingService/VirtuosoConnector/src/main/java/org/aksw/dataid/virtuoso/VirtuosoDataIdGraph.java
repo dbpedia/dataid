@@ -5,11 +5,12 @@ import com.hp.hpl.jena.datatypes.RDFDatatype;
 import com.hp.hpl.jena.datatypes.TypeMapper;
 import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.aksw.dataid.config.DataIdConfig;
-import org.aksw.dataid.ontology.DataId;
+import org.aksw.dataid.errors.DataIdInputException;
+import org.aksw.dataid.ontology.IdPart;
+import org.aksw.dataid.statics.StaticContent;
 import org.aksw.dataid.wrapper.InternalLieteralImpl;
-import org.aksw.dataid.wrapper.RdfContext;
-import org.aksw.dataid.ontology.LinkSet;
-import org.aksw.dataid.wrapper.ModelWrapper;
+import org.aksw.dataid.config.RdfContext;
+import org.aksw.dataid.wrapper.Statics;
 import org.openrdf.model.Model;
 import org.openrdf.model.URI;
 import org.openrdf.model.ValueFactory;
@@ -51,7 +52,7 @@ public class VirtuosoDataIdGraph {
         conn = dSource.getConnection();
         conn.setAutoCommit(true);
         conn.setHoldability(ResultSet.CLOSE_CURSORS_AT_COMMIT); //for faster execution
-        DataId.setPreamble(this.getDataIdPreamble());
+        //DataId.setPreamble(this.getDataIdPreamble());
         typeMapper.registerDatatype(typeResource);
         typeMapper.registerDatatype(typeBlank);
     }
@@ -60,7 +61,7 @@ public class VirtuosoDataIdGraph {
         try (Statement stmt = conn.createStatement()) {
             ResultSet set = stmt.executeQuery(
                     "SPARQL \n" +
-                            "PREFIX dataid: " + DataIdConfig.getDataIdUri() + "\n" +
+                            "PREFIX dataid: <" + DataIdConfig.getDataIdUri() + ">\n" +
                             "SELECT ?prevV \n" +
                             "FROM <http://dataid/store>\n" +
                             "{ <" + thisVers.stringValue() + "> a dataid:Dataste;\n" +
@@ -94,7 +95,7 @@ public class VirtuosoDataIdGraph {
 
     private void deletePreviousId(final String dataiduri) throws SQLException {
         String sparql = "SPARQL \n" +
-                "PREFIX dataid: " + DataIdConfig.getDataIdUri() + "\n" +
+                "PREFIX dataid: <" + DataIdConfig.getDataIdUri() + ">\n" +
                 "WITH <http://dataid/store>\n" +
                 "DELETE {?s ?p ?o}\n" +
                 "WHERE {{SELECT ?s ?p ?o (?s as ?desc)\n" +
@@ -131,7 +132,7 @@ public class VirtuosoDataIdGraph {
             try (Statement stmt = conn.createStatement()) {
                 ResultSet set = stmt.executeQuery(
                     "SPARQL \n" +
-                        "PREFIX dataid: " + DataIdConfig.getDataIdUri() + "\n" +
+                        "PREFIX dataid: <" + DataIdConfig.getDataIdUri() + ">\n" +
                         "SELECT str(?dataiduri) str(?prevV) \n" +
                         "FROM <http://dataid/store>\n" +
                         "{\n" +
@@ -156,7 +157,7 @@ public class VirtuosoDataIdGraph {
         Map<String, String> preambles = new HashMap<String, String>();
         try (Statement stmt = conn.createStatement()) {
             ResultSet set = stmt.executeQuery("SPARQL " +
-                "PREFIX dataid: " + DataIdConfig.getDataIdUri() + "\n" +
+                "PREFIX dataid: <" + DataIdConfig.getDataIdUri() + ">\n" +
                     "SELECT (lang(?prea) as ?lang) (str(?prea) as ?preamble) \n" +
                     "FROM <http://dataid/store>\n" +
                     "{?x dataid:preamble ?prea.}");
@@ -174,10 +175,10 @@ public class VirtuosoDataIdGraph {
         throw new Exception("DataId does not (yet) exist!");
     }
 
-    public String getDataIdFile(final String dataiduri, final RdfContext context) throws SQLException, RDFHandlerException {
+    public String getDataIdFile(final String dataiduri, final RdfContext context) throws SQLException, RDFHandlerException, DataIdInputException {
         //create and execute query
         String sparql = "SPARQL \n" +
-                "PREFIX dataid: " + DataIdConfig.getDataIdUri() + "\n" +
+                "PREFIX dataid: <" + DataIdConfig.getDataIdUri() + ">\n" +
                 "SELECT ?s ?p ?t ?o \n" +
                 "FROM <http://dataid/store>\n" +
                 "{{SELECT ?s ?p ?o (?s as ?desc)\n" +
@@ -197,8 +198,8 @@ public class VirtuosoDataIdGraph {
                 "FILTER(?desc = <" + dataiduri + ">)}";
 
         StringBuilder sb = new StringBuilder();
-        Model model = ModelWrapper.createDefaultModel();
 
+        Model model = Statics.createDefaultModel(StaticContent.getRdfContext());
         try(Statement stmt = conn.createStatement()) {
             ResultSet set = stmt.executeQuery(sparql);
 
@@ -236,23 +237,18 @@ public class VirtuosoDataIdGraph {
                 model.add(new StatementImpl(subject, vFactory.createURI(set.getString(2)), object));
             }
         }
-        return ModelWrapper.writeTurtle(model);
+        return Statics.writeTurtle(model);
     }
 
-    public boolean enterLinkSet(LinkSet links) throws SQLException, RDFHandlerException {
+    public boolean enterLinkSet(IdPart part) throws SQLException, RDFHandlerException, DataIdInputException {
         try (Statement stmt = conn.createStatement()) {
-            String inserTtlp = "TTLP('" + links.toTurtle(ModelWrapper.getUsage()) + "','', 'http://dataid/store', 17)";
-            if(stmt.execute(inserTtlp))
-                return true;
+            //TODO!!!
+            if(part.getPartType() == IdPart.DataIdParts.Linkset) {
+                String inserTtlp = "TTLP('" + part.toTurtle() + "','', 'http://dataid/store', 17)";
+                if (stmt.execute(inserTtlp))
+                    return true;
+            }
         }
         return false;
     }
-
-//    public void setModelFactory(RdfContext contxt, String model) {
-//        try {
-//            ModelWrapper.loadModel(contxt, model);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
 }

@@ -55,6 +55,11 @@ public class DataIdConfig {
         return get("dataIdUri");
     }
 
+    public static String getDataIdUrl()
+    {
+        return get("dataIdUrl");
+    }
+
     public static String get(String key)
     {
         return mainConfigFile.get(key).asText().replace("\"", "");

@@ -8,7 +8,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.jsonldjava.core.JsonLdError;
 import com.github.jsonldjava.impl.NQuadRDFParser;
 import com.github.jsonldjava.utils.JsonUtils;
+import org.aksw.dataid.config.DataIdConfig;
+import org.aksw.dataid.errors.DataIdInputException;
+import org.aksw.rdfunit.io.format.SerialiazationFormatFactory;
+import org.aksw.rdfunit.io.format.SerializationFormat;
+import org.openrdf.rio.RDFParser;
+import org.openrdf.rio.jsonld.JSONLDParser;
+import org.openrdf.rio.nquads.NQuadsParser;
+import org.openrdf.rio.rdfxml.RDFXMLParser;
 import org.openrdf.rio.turtle.TurtleParser;
+import org.semarglproject.rdf.NTriplesParser;
 
 import java.io.*;
 import java.lang.reflect.Field;
@@ -247,6 +256,32 @@ public class StaticJsonHelper
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        return null;
+    }
+
+    public static SerializationFormat getSerialization(String input) throws DataIdInputException {
+        input = input.trim();
+        if(StaticJsonHelper.isJsonLdValid(input))
+            return SerialiazationFormatFactory.createJsonLD();
+        else if(StaticJsonHelper.isTurtleValid(input))
+            return SerialiazationFormatFactory.createTurtle();
+        else if(StaticJsonHelper.isNquadValid(input))
+            return SerialiazationFormatFactory.createNQuads();
+        else if(input.replace(" ", "").contains("rdf:resource=\"" + DataIdConfig.getDataIdUri() + "\""))
+            return SerialiazationFormatFactory.createRDFXMLOut();
+        return new SerializationFormat("NONE", null, null, null);
+    }
+
+    public static RDFParser getRdfParser(String input) throws DataIdInputException {
+        SerializationFormat sf = getSerialization(input);
+        if(sf.getName() == "TURTLE")
+            return new TurtleParser();
+        else if(sf.getName() == "N-QUADS")
+            return new NQuadsParser();
+        else if(sf.getName() == "JSON-LD")
+            return new JSONLDParser();
+        else if(sf.getName() == "RDF/XML")
+            return new RDFXMLParser();
         return null;
     }
 }

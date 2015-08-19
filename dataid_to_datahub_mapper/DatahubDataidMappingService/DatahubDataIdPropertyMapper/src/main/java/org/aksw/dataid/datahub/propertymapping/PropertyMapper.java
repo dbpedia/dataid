@@ -7,10 +7,12 @@ import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.jsonobjects.*;
 import org.aksw.dataid.datahub.mappingobjects.DataId;
 import org.aksw.dataid.datahub.mappingobjects.DataIdBody;
-import org.aksw.dataid.datahub.mappingobjects.DataIdProperty;
-import org.aksw.dataid.datahub.mappingobjects.MappingConfig;
-import org.aksw.dataid.jsonutils.StaticJsonHelper;
-import org.aksw.dataid.wrapper.RdfContext;
+import org.aksw.dataid.config.DataIdProperty;
+import org.aksw.dataid.config.MappingConfig;
+import org.aksw.dataid.errors.DataHubMappingException;
+import org.aksw.dataid.config.RdfContext;
+import org.aksw.dataid.errors.DataIdInputException;
+import org.aksw.dataid.statics.StaticContent;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -33,8 +35,7 @@ public class PropertyMapper
     public PropertyMapper(JsonNode mappingContent) {
     	if(mappingContent != null)
     	{
-    		mappingConfig = StaticJsonHelper.castJsonToObject(mappingContent.toString(), MappingConfig.class, "@graph");
-    		mappingConfig.setRdfContext(StaticJsonHelper.castJsonToObject(mappingContent.toString(), contextSynchronization.getClass(), "@context"));
+            mappingConfig = StaticContent.getMappings();
     		this.dataIdPrefix = mappingConfig.getRdfContext().getPrefix(DataIdConfig.getDataIdUri());
     		
     		for(Map<String,DataIdProperty> dictionary : mappingConfig.getDataHubMapping().values())

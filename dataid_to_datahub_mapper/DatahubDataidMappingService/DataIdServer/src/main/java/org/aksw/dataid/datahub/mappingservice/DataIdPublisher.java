@@ -1,28 +1,23 @@
 package org.aksw.dataid.datahub.mappingservice;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.jsonldjava.core.*;
-import com.hp.hpl.jena.rdf.model.Model;
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.jsonobjects.DatahubError;
 import org.aksw.dataid.datahub.jsonobjects.Dataset;
 import org.aksw.dataid.datahub.jsonobjects.ValidCkanResponse;
+import org.aksw.dataid.datahub.mappingobjects.DataId;
+import org.aksw.dataid.errors.DataIdInputException;
 import org.aksw.dataid.jsonutils.StaticJsonHelper;
-import org.aksw.dataid.datahub.propertymapping.DataHubMappingException;
-import org.aksw.dataid.datahub.propertymapping.DataIdInputException;
+import org.aksw.dataid.errors.DataHubMappingException;
 import org.aksw.dataid.datahub.propertymapping.DataIdProcesser;
 import org.aksw.dataid.datahub.restclient.CkanRestClient;
-import org.aksw.dataid.ontology.DataId;
-import org.aksw.dataid.ontology.LinkSet;
+import org.aksw.dataid.ontology.IdPart;
+import org.aksw.dataid.statics.StaticContent;
 import org.aksw.dataid.virtuoso.VirtuosoDataIdGraph;
-import org.aksw.dataid.wrapper.ModelWrapper;
 import org.openrdf.rio.RDFHandlerException;
-import org.openrdf.rio.RDFParseException;
 
-import javax.naming.directory.InvalidAttributesException;
 import javax.ws.rs.*;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -38,8 +33,7 @@ public class DataIdPublisher
 
     public DataIdPublisher() throws SQLException, DataHubMappingException {
         graph = Main.getGraph();
-        proc = new DataIdProcesser(DataIdConfig.getMappingConfigPath(), DataIdConfig.getOntologyPath());
-        ModelWrapper.setRdfContext(proc.getMappingConfig().getRdfContext());
+        proc = new DataIdProcesser(DataIdConfig.getMappingConfigPath());
     }
 
     @GET
@@ -66,14 +60,10 @@ public class DataIdPublisher
     @Consumes("text/plain")
         public Dataset getStoredDataset(@QueryParam(value = "title") final String title) throws DatahubError, RDFHandlerException {
         try {
-            String id =  graph.getDataIdFile(title, proc.getMappingConfig().getRdfContext());
+            String id =  graph.getDataIdFile(title, proc.getMappings().getRdfContext());
             Dataset set = proc.parseToDataHubDataset(id).get(0);
             return set;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (DataHubMappingException e) {
-            e.printStackTrace();
-        } catch (DataIdInputException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
@@ -85,9 +75,8 @@ public class DataIdPublisher
     public String getMappings()
     {
 		try {
-            String f = this.getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
-            f = f.substring(1, f.indexOf("target")) + "webcontent/MappingsPage.html";
-            String content = new String(Files.readAllBytes(Paths.get(f)));
+            String path = StaticFunctions.getBasePath() + "webcontent/MappingsPage.html";
+            String content = new String(Files.readAllBytes(Paths.get(path)));
             content = content.replace("$content", StaticJsonHelper.getPrettyContent(StaticJsonHelper.getJsonContent(DataIdConfig.getMappingConfigPath())));
 			return content;
 		} catch (IOException e) {
@@ -95,14 +84,31 @@ public class DataIdPublisher
 		}
     }
 
-    @POST
-    @Path("/validateid")
-    public String validateDataId(final String dataId)
+    @GET
+    @Path("/dataidvalidator")
+    @Produces("text/html")
+    public String validator()
     {
         try {
-            Model m = proc.validateDataId(dataId);
-            return produceHttpResponse("DataId validated");
-        } catch (DataIdInputException e) {
+            String path = StaticFunctions.getBasePath() + "webcontent/DataIdResultPage.html";
+            String content = new String(Files.readAllBytes(Paths.get(path)));
+            return content;
+        } catch (IOException e) {
+            return addHtmlBody(produceHttpResponse(e));
+        }
+    }
+
+    @POST
+    @Path("/validateid")
+    public String validateDataId(final String ttl)
+    {
+        try {
+            IdPart dataid = new IdPart(ttl);
+            dataid.validate();
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+            return  mapper.writeValueAsString(dataid.getErrorswarnings());
+        } catch (Exception e) {
             return produceHttpResponse(e);
         }
     }
@@ -130,19 +136,24 @@ public class DataIdPublisher
     }
 
     @POST
+    @Path("/prettyprintid")
+    public String prettyPrintId(final String ttl) {
+        try {
+            IdPart dataid = new IdPart(ttl);
+            return dataid.toTurtle();
+        } catch (Exception e) {
+            return produceHttpResponse(e);
+        }
+    }
+
+    @POST
     @Path("/publishlinkset")
     public String PublishLinkSet(final String linkSet) {
         try {
-            ModelWrapper.loadModel(proc.getMappingConfig().getRdfContext(), linkSet);
-            LinkSet links = (LinkSet) ModelWrapper.getDataIdPart(ModelWrapper.getModel().subjectURI());
-            graph.enterLinkSet(links);
-        } catch (SQLException e) {
-            return addHtmlBody(produceHttpResponse(e));
-        } catch (RDFHandlerException e) {
-            return addHtmlBody(produceHttpResponse(e));
-        } catch (RDFParseException e) {
-             return addHtmlBody(produceHttpResponse(e));
-        } catch (InvalidAttributesException e) {
+            //TODO mayba add linkset uri?
+            IdPart dataid = new IdPart(linkSet);
+            graph.enterLinkSet(dataid);
+        } catch (Exception e) {
             return addHtmlBody(produceHttpResponse(e));
         }
         return addHtmlBody(produceHttpResponse("linkset published"));
@@ -151,38 +162,32 @@ public class DataIdPublisher
     @POST
     @Path("/dataidtojson")
     @Produces("application/json")
-    public String DataIdToJson(final String dataid) {
+    public String DataIdToJson(final String ttl) {
         try {
-            ModelWrapper.loadModel(proc.getMappingConfig().getRdfContext(), dataid);
+            IdPart dataid = new IdPart(ttl);
             ObjectMapper mapper = new ObjectMapper();
             mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-            List<DataId> ids = ModelWrapper.getAllDataIds();
-            if(ids.size() > 0)
-                return mapper.writeValueAsString(ids.get(0));
+            if(dataid.getPartType() == IdPart.DataIdParts.DataId)
+                return mapper.writeValueAsString(dataid);
             else
-                return addHtmlBody(produceHttpResponse("no datasets found"));
-        } catch (RDFParseException e) {
-            return addHtmlBody(produceHttpResponse(e));
-        } catch (RDFHandlerException e) {
-            return addHtmlBody(produceHttpResponse(e));
-        } catch (JsonProcessingException e) {
+                return addHtmlBody(produceHttpResponse("no dataid found"));
+        } catch (Exception e) {
             return addHtmlBody(produceHttpResponse(e));
         }
     }
 
     @POST
     @Path("/publishdataid")
-    public String PublishDataId(final String dataid){
+    public String PublishDataId(final String ttl){
         StringBuilder response = new StringBuilder();
         try {
-            ModelWrapper.loadModel(proc.getMappingConfig().getRdfContext(), dataid);
-            List<Dataset> sets = proc.parseToDataHubDataset(dataid);
+            List<Dataset> sets = proc.parseToDataHubDataset(ttl);
 
             JsonLdOptions opt = new JsonLdOptions();
             opt.setBase("http://someuri.org");
             opt.setUseNativeTypes(true);
             opt.setCompactArrays(true);
-            opt.setExpandContext(proc.getMappingConfig().getRdfContext().getMap());
+            opt.setExpandContext(proc.getMappings().getRdfContext().getMap());
 
             for(Dataset set : sets)
             {
@@ -191,21 +196,11 @@ public class DataIdPublisher
                     String innerId = RDFDatasetUtils.toNQuads(rdfd);
                     graph.enterDataId(innerId, set.getDataIdUri(), set.getVersion());
                     response.append(produceHttpResponse("Dataset " + set.getDataIdUri() + " was published correctly"));
-                } catch (SQLException e) {
+                } catch (Exception e) {
                     response.append(produceHttpResponse("Dataset " + set.getDataIdUri() + " encountered an error: " + e.getMessage()));
-                } catch (InvalidArgumentException e) {
-                    response.append(produceHttpResponse("Dataset " + set.getDataIdUri() + " encountered an error: " + e.getMessage()));
-                } catch (JsonLdError jsonLdError) {
-                    response.append(produceHttpResponse("Dataset " + set.getDataIdUri() + " encountered an error: " + jsonLdError.getMessage()));
                 }
             }
-        } catch (DataIdInputException e) {
-            addHtmlBody(produceHttpResponse(e));
-        } catch (DataHubMappingException e) {
-            addHtmlBody(produceHttpResponse(e));
-        } catch (RDFHandlerException e) {
-            addHtmlBody(produceHttpResponse(e));
-        } catch (RDFParseException e) {
+        } catch (Exception e) {
             addHtmlBody(produceHttpResponse(e));
         }
 
@@ -244,11 +239,9 @@ public class DataIdPublisher
                     return addHtmlBody(produceHttpResponse((DatahubError) ckanRes));
             }
             return addHtmlBody(produceHttpResponse(sets));
-		} catch (DatahubError e) {
+		} catch (Exception e) {
             return addHtmlBody(produceHttpResponse(e));
-        } catch (Exception e) {
-			return addHtmlBody(produceHttpResponse(e));
-		}
+        }
     }
 
 	private String checkParameters(final String organization, final String apiKey, final String dataid, final String datahubId)

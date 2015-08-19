@@ -57,10 +57,14 @@ dataid:Creator
     rdfs:label "Creator"@en ;
     rdfs:subClassOf dataid:Agent .
 
+dataid:Set a owl:Class;
+    rdfs:label "Set"@en ;
+    rdfs:comment "A abstract set representing all dataid sets (LinkSet, Dataset)."@en.
+
 dataid:Dataset
     a owl:Class ;
     rdfs:label "Dataset"@en ;
-    rdfs:subClassOf void:Dataset, dcat:Dataset, prov:Entity, 
+    rdfs:subClassOf void:Dataset, dcat:Dataset, prov:Entity, dataid:Set,
     [
     	#recommanded
         a owl:Restriction ;
@@ -287,7 +291,7 @@ dataid:LatestLinksetVersion
 dataid:Linkset
     a owl:Class ;
     rdfs:label "Linkset"@en ;
-    rdfs:subClassOf void:Linkset, [
+    rdfs:subClassOf void:Linkset, dataid:Set, [
         a owl:Restriction ;
         owl:onClass void:Dataset ;
         owl:onProperty void:objectsTarget ;

@@ -9,6 +9,7 @@ import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.restclient.CkanRestClient;
 import org.aksw.dataid.virtuoso.VirtuosoDataIdGraph;
 import org.glassfish.grizzly.http.server.HttpServer;
+import org.glassfish.grizzly.http.server.StaticHttpHandler;
 
 import javax.ws.rs.core.UriBuilder;
 import java.io.IOException;
@@ -72,6 +73,8 @@ public class Main {
         DataIdConfig.initDataIdConfig(mainPath);
         graph = new VirtuosoDataIdGraph(DataIdConfig.getVirtuosoHost(), DataIdConfig.getVirtuosoPort(), DataIdConfig.getVirtuosoUser(), DataIdConfig.getVirtuosoPassword());
         HttpServer httpServer = startServer();
+        StaticHttpHandler statichandler = new StaticHttpHandler("C:\\Users\\Chile\\workspace\\DatahubDataidMappingService\\DataIdServer\\webcontent");
+        httpServer.getServerConfiguration().addHttpHandler(statichandler, "/static");
         System.out.println(String.format("Jersey app started with WADL available at "
                         + "%sapplication.wadl\nHit enter to stop it...",
                 BASE_URI));

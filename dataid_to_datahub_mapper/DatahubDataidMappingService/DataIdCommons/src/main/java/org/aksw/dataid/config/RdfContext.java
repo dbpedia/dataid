@@ -1,4 +1,4 @@
-package org.aksw.dataid.wrapper;
+package org.aksw.dataid.config;
 
 import java.util.HashMap;
 import java.util.Iterator;

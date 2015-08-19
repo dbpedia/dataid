@@ -69,7 +69,7 @@ public class InternalLieteralImpl {
     public String getDatatype() {
 
         if(this.isString())
-            return ModelWrapper.xsdString.stringValue();
+            return Statics.xsdString.stringValue();
         else
             return datatype.stringValue();
     }
@@ -113,11 +113,11 @@ public class InternalLieteralImpl {
         if(datatype != null)
             return new org.openrdf.model.impl.LiteralImpl(this.getLabel(), datatype);
         else
-            return new org.openrdf.model.impl.LiteralImpl(this.getLabel(), ModelWrapper.xsdString);
+            return new org.openrdf.model.impl.LiteralImpl(this.getLabel(), Statics.xsdString);
     }
 
     public Literal toStringLiteral() {
-        return new org.openrdf.model.impl.LiteralImpl(this.getLabel(), ModelWrapper.xsdString);
+        return new org.openrdf.model.impl.LiteralImpl(this.getLabel(), Statics.xsdString);
     }
 
     public Literal toStringLiteral(String lang)
@@ -125,13 +125,13 @@ public class InternalLieteralImpl {
         if(valueMap.get(lang) != null)
             return new org.openrdf.model.impl.LiteralImpl(valueMap.get(lang), lang);
         else
-            return new org.openrdf.model.impl.LiteralImpl(this.getLabel(), ModelWrapper.xsdString);
+            return new org.openrdf.model.impl.LiteralImpl(this.getLabel(), Statics.xsdString);
     }
 
     @JsonIgnore
     public boolean isString()
     {
-        if(datatype == null || datatype.equals(ModelWrapper.xsdString) || datatype.equals(ModelWrapper.rdfsString))
+        if(datatype == null || datatype.equals(Statics.xsdString) || datatype.equals(Statics.rdfsString))
             return true;
         else
             return false;
@@ -147,7 +147,7 @@ public class InternalLieteralImpl {
 
             try {
                 if (type == Date.class)
-                    return (T) ModelWrapper.ParseDate(this.getLabel());
+                    return (T) Statics.ParseDate(this.getLabel());
                 else
                     return (T) type.getConstructor(String.class).newInstance(this.getLabel());
             } catch (InstantiationException e) {

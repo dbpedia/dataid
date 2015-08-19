@@ -90,6 +90,15 @@
     <orderEntry type="library" name="Maven: org.eclipse.jetty.orbit:org.eclipse.jdt.core:3.7.1" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-ext:1.7.10" level="project" />
     <orderEntry type="library" name="Maven: ch.qos.cal10n:cal10n-api:0.8.1" level="project" />
+    <orderEntry type="module" module-name="VirtuosoConnector" />
+    <orderEntry type="library" name="Maven: tr.com.srdc:virt-jena2:2.6.2" level="project" />
+    <orderEntry type="library" name="Maven: tr.com.srdc:virtjdbc4:2.6.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.jena:jena-tdb:1.1.1" level="project" />
+    <orderEntry type="module" module-name="OntologyObjectMapping" />
+    <orderEntry type="module" module-name="DataIdCommons" />
+    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-nquads:2.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-ntriples:2.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-jsonld:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.aksw.rdfunit:rdfunit-core:0.7.6-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.aksw.rdfunit:rdfunit-resources:0.7.6-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.aksw.jena-sparql-api:jena-sparql-api-cache-h2:2.12.1-8" level="project" />
@@ -105,12 +114,6 @@
     <orderEntry type="library" name="Maven: org.apache.commons:commons-collections4:4.0" level="project" />
     <orderEntry type="library" name="Maven: org.aksw.rdfunit:rdfunit-validate:0.7.6-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
-    <orderEntry type="module" module-name="VirtuosoConnector" />
-    <orderEntry type="library" name="Maven: tr.com.srdc:virt-jena2:2.6.2" level="project" />
-    <orderEntry type="library" name="Maven: tr.com.srdc:virtjdbc4:2.6.2" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.jena:jena-tdb:1.1.1" level="project" />
-    <orderEntry type="module" module-name="OntologyObjectMapping" />
-    <orderEntry type="module" module-name="DataIdCommons" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-model:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-api:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-languages:2.8.0" level="project" />

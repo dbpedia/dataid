@@ -9,15 +9,18 @@ import com.hp.hpl.jena.rdf.model.Model;
 import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.jsonobjects.Dataset;
 import org.aksw.dataid.datahub.mappingobjects.DataId;
-import org.aksw.dataid.datahub.mappingobjects.DataidInput;
-import org.aksw.dataid.datahub.mappingobjects.MappingConfig;
+import org.aksw.dataid.config.MappingConfig;
+import org.aksw.dataid.errors.DataHubMappingException;
+import org.aksw.dataid.errors.DataIdInputException;
 import org.aksw.dataid.jsonutils.RdfXmlParser;
 import org.aksw.dataid.jsonutils.StaticJsonHelper;
 import org.aksw.dataid.jsonutils.TtlParser;
+import org.aksw.dataid.rdfunit.DataIdValidator;
+import org.aksw.dataid.rdfunit.JenaModelEvaluator;
+import org.aksw.dataid.statics.StaticContent;
 import org.aksw.rdfunit.RDFUnitConfiguration;
 import org.aksw.rdfunit.enums.TestCaseExecutionType;
 import org.aksw.rdfunit.exceptions.TestCaseExecutionException;
-import org.aksw.rdfunit.io.format.SerialiazationFormatFactory;
 import org.aksw.rdfunit.io.format.SerializationFormat;
 import org.aksw.rdfunit.sources.TestSource;
 import org.aksw.rdfunit.validate.ParameterException;
@@ -27,17 +30,17 @@ import java.util.*;
 
 public class DataIdProcesser 
 {
-    private MappingConfig mappingConfig;
+    private MappingConfig mappings;
 	private PropertyMapper mapper;
     private DataIdValidator validator;
 	
-	public DataIdProcesser(String mappingConfigPath, String ontologyPath) throws DataHubMappingException {
-        mappingConfig = StaticJsonHelper.castJsonToObject(StaticJsonHelper.getJsonContent(mappingConfigPath).toString(), MappingConfig.class, "@graph");
-        mappingConfig.setRdfContext(StaticJsonHelper.castJsonToObject(StaticJsonHelper.getJsonContent(mappingConfigPath).toString(), new HashMap<String, String>().getClass(), "@context"));
-        if(mappingConfig == null)
+	public DataIdProcesser(String mappingConfigPath) throws DataHubMappingException {
+        StaticContent.setRdfContext(mappingConfigPath);
+        mappings = StaticContent.setMappings(mappingConfigPath);
+        if(mappings == null)
             throw new DataHubMappingException("the mapping-config file could not be found");
         mapper = new PropertyMapper(StaticJsonHelper.getJsonContent(mappingConfigPath));
-        validator = new DataIdValidator(DataIdConfig.getDataIdUri(), null);
+        validator = new DataIdValidator(DataIdConfig.getDataIdUrl(), null);  //DataIdConfig.getDataIdUri(), null);
 
         JsonLdProcessor.removeRDFParser("text/turtle");
         JsonLdProcessor.registerRDFParser("text/turtle", new TtlParser());
@@ -46,17 +49,17 @@ public class DataIdProcesser
 
     public List<Dataset> parseToDataHubDataset(String sourceId) throws DataHubMappingException, DataIdInputException {
         List<Dataset> sets = new ArrayList<Dataset>();
-        DataidInput inputType = getInputType(sourceId);
-        if(inputType == DataidInput.NoDataId)
+        SerializationFormat sf = StaticJsonHelper.getSerialization(sourceId);
+        if(sf.getName() == "NONE")
             throw new DataIdInputException("The provided input is not of the following formats: turtle, n-quads, RdfXml or json-ld");
         try {
-            if(inputType == DataidInput.Turtle)
+            if(sf.getName() == "TURTLE")
                 sets = mapper.DataidToDatasets(parseDataIdFromTurtle(sourceId));
-            else if(inputType == DataidInput.Nquads)
+            else if(sf.getName() == "N-QUADS")
                 sets = mapper.DataidToDatasets(parseDataIdFromNquads(sourceId));
-            else if(inputType == DataidInput.JsonLd)
+            else if(sf.getName() == "JSON-LD")
                 sets = mapper.DataidToDatasets(parseDataIdFromJson(sourceId));
-            else if(inputType == DataidInput.RdfXml)
+            else if(sf.getName() == "RDF/XML")
                 sets = mapper.DataidToDatasets(parseDataIdFromRdfXml(sourceId));
         } catch (DataHubMappingException e) {
             throw new DataHubMappingException( "An Exception while mapping properties ocurred: " + e.getMessage() );
@@ -74,13 +77,13 @@ public class DataIdProcesser
 	{
 		Object result =null;
 		result = JsonLdProcessor.fromRDF(sourceId, opt);
-		result = JsonLdProcessor.compact(result, mappingConfig.getRdfContext().getMap(), opt);
+		result = JsonLdProcessor.compact(result, mappings.getRdfContext().getMap(), opt);
 		return buildDataId(result);
 	}
 
 	private DataId buildDataId(Object result) {
 		DataId id = new DataId();
-		id.setRdfContext(this.mappingConfig.getRdfContext());
+		id.setRdfContext(this.mappings.getRdfContext());
         id.setDataIdBody((List<LinkedHashMap<String, Object>>) ((Map<String, Object>) result).get("@graph"));
 		return id;
 	}
@@ -132,53 +135,26 @@ public class DataIdProcesser
         opt.setCompactArrays(true);
         Object result =null;
         result = JsonUtils.fromString(sourceId);
-        return buildDataId(JsonLdProcessor.compact(result, this.mappingConfig.getRdfContext(), opt));
+        return buildDataId(JsonLdProcessor.compact(result, this.mappings.getRdfContext(), opt));
     }
 
-    public Model validateDataId(final String sourceId) throws DataIdInputException {
-        DataidInput inputFormat = getInputType(sourceId);
-        try {
-            SerializationFormat sf = null;
-            for(SerializationFormat f : SerialiazationFormatFactory.getAllFormats())
-            {
-                if(f.getName().equals(inputFormat.name().toUpperCase()))
-                {
-                    sf = f;
-                    break;
-                }
-            }
-            if(sf == null)
-                throw new DataIdInputException("unknown serialization format");
-
-            //TODO RDFUnit
-            RDFUnitConfiguration config = validator.getConfiguration("text", sourceId, sf.getName(),sf.getName(), TestCaseExecutionType.statusTestCaseResult);
-            TestSource source = config.getTestSource();
-            return validator.validate(config, source, validator.getTestSuite(config, source));
-
-        } catch (ParameterException e) {
-            throw new DataIdInputException(e);
-        } catch (TestCaseExecutionException e) {
-            throw new DataIdInputException(e);
-        }
-    }
-	
-	private DataidInput getInputType(String testString)
-	{
-		String test = testString.trim();
-		if(!test.contains(DataIdConfig.getDataIdUri()))  //!not!
-			return DataidInput.NoDataId;
-		else if(StaticJsonHelper.isJsonLdValid(test))
-			return DataidInput.JsonLd;
-		else if(StaticJsonHelper.isTurtleValid(test))
-			return DataidInput.Turtle;
-		else if(StaticJsonHelper.isNquadValid(test))
-			return DataidInput.Nquads;
+/*    private DataidInput getInputType(String testString)
+    {
+        String test = testString.trim();
+        if(!test.contains(DataIdConfig.getDataIdUri()))  //!not!
+            return DataidInput.NoDataId;
+        else if(StaticJsonHelper.isJsonLdValid(test))
+            return DataidInput.JsonLd;
+        else if(StaticJsonHelper.isTurtleValid(test))
+            return DataidInput.Turtle;
+        else if(StaticJsonHelper.isNquadValid(test))
+            return DataidInput.Nquads;
         else if(test.replace(" ", "").contains("rdf:resource=\"" + DataIdConfig.getDataIdUri() + "\""))
             return DataidInput.RdfXml;
-		return DataidInput.NoDataId;
-	}
+        return DataidInput.NoDataId;
+    }*/
 
-    public MappingConfig getMappingConfig() {
-        return mappingConfig;
+    public MappingConfig getMappings() {
+        return mappings;
     }
 }

@@ -8,18 +8,18 @@
     </style>
     <script>
         function setMappings() {
-            var agentUrl = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '')+'/dataid/datahubpublisher/setmappings?username='
+            var agentUrl = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '')+'/dataid/publisher/setmappings?username='
                 + document.getElementById('username').value + '&password=' + document.getElementById('password').value;
             var method = "POST";
             var postData = document.getElementById('jsonld').value;
             var async = true;
             var request = new XMLHttpRequest();
-            request.onload = function () {
+            request.onload = function() {
                 alert(request.responseText);
             }
             request.open(method, agentUrl, async);
 
-            request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            request.setRequestHeader("Content-Type", "application/json");
             request.send(postData);
         }
     </script>
