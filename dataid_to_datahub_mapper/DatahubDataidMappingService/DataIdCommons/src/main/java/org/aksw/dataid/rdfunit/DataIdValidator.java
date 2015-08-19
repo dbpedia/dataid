@@ -8,6 +8,9 @@ import org.aksw.rdfunit.RDFUnitConfiguration;
 import org.aksw.rdfunit.enums.TestCaseExecutionType;
 import org.aksw.rdfunit.exceptions.TestCaseExecutionException;
 import org.aksw.rdfunit.exceptions.UndefinedSerializationException;
+import org.aksw.rdfunit.io.reader.RDFModelReader;
+import org.aksw.rdfunit.io.reader.RDFReaderFactory;
+import org.aksw.rdfunit.sources.SchemaSource;
 import org.aksw.rdfunit.sources.TestSource;
 import org.aksw.rdfunit.tests.TestSuite;
 import org.aksw.rdfunit.validate.ParameterException;
@@ -21,9 +24,14 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class DataIdValidator {
 
+    private final SchemaSource ontologySource;
 
-    public DataIdValidator(String ontologyUri, String dlUrl) {
+    public DataIdValidator(String ontologyUri, String dlUrl) throws Exception{
         RDFUnitStaticWrapper.initWrapper(ontologyUri, dlUrl);
+
+        String dataIDns = "http://dataid.dbpedia.org/ns/core#";
+        org.aksw.rdfunit.io.reader.RDFReader ontologyReader = new RDFModelReader(RDFReaderFactory.createDereferenceReader(dataIDns).read());
+        ontologySource = new SchemaSource("dataid", dataIDns, ontologyReader);
     }
 
     public RDFUnitConfiguration getConfiguration(String type, String source, String inputFormat, String outputFormat, TestCaseExecutionType testCaseType) throws ParameterException {
@@ -36,6 +44,7 @@ public class DataIdValidator {
         }
 
         RDFUnitConfiguration configuration = new RDFUnitConfiguration(datasetName, "../data/");
+        configuration.setSchemata(Arrays.asList(ontologySource));
 
         if (isText) {
             try {
