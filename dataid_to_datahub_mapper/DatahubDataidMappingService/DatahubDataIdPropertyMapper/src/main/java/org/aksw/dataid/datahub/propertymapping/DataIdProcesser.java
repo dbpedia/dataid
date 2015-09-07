@@ -5,8 +5,6 @@ import com.github.jsonldjava.core.JsonLdError;
 import com.github.jsonldjava.core.JsonLdOptions;
 import com.github.jsonldjava.core.JsonLdProcessor;
 import com.github.jsonldjava.utils.JsonUtils;
-import com.hp.hpl.jena.rdf.model.Model;
-import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.jsonobjects.Dataset;
 import org.aksw.dataid.datahub.mappingobjects.DataId;
 import org.aksw.dataid.config.MappingConfig;
@@ -16,14 +14,8 @@ import org.aksw.dataid.jsonutils.RdfXmlParser;
 import org.aksw.dataid.jsonutils.StaticJsonHelper;
 import org.aksw.dataid.jsonutils.TtlParser;
 import org.aksw.dataid.rdfunit.DataIdValidator;
-import org.aksw.dataid.rdfunit.JenaModelEvaluator;
 import org.aksw.dataid.statics.StaticContent;
-import org.aksw.rdfunit.RDFUnitConfiguration;
-import org.aksw.rdfunit.enums.TestCaseExecutionType;
-import org.aksw.rdfunit.exceptions.TestCaseExecutionException;
 import org.aksw.rdfunit.io.format.SerializationFormat;
-import org.aksw.rdfunit.sources.TestSource;
-import org.aksw.rdfunit.validate.ParameterException;
 
 import java.io.IOException;
 import java.util.*;
@@ -40,7 +32,6 @@ public class DataIdProcesser
         if(mappings == null)
             throw new DataHubMappingException("the mapping-config file could not be found");
         mapper = new PropertyMapper(StaticJsonHelper.getJsonContent(mappingConfigPath));
-        validator = new DataIdValidator(DataIdConfig.getDataIdUrl(), null);  //DataIdConfig.getDataIdUri(), null);
 
         JsonLdProcessor.removeRDFParser("text/turtle");
         JsonLdProcessor.registerRDFParser("text/turtle", new TtlParser());

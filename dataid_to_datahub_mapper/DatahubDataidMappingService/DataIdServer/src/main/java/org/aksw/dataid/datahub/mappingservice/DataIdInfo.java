@@ -20,7 +20,7 @@ public class DataIdInfo
     @Produces("application/javascript")
     public String getAce() {
         try {
-            String path = StaticFunctions.getBasePath() + "webcontent/ace.js";
+            String path = Main.getMainPath() + "/ace.js";
             return new String(Files.readAllBytes(Paths.get(path)));
         } catch (IOException e) {
             e.printStackTrace();

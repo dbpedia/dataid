@@ -18,7 +18,7 @@ public class StaticContent {
     }
 
     public static RdfContext setRdfContext(String mappingConfigPath) {
-        StaticContent.rdfContext = new RdfContext(StaticJsonHelper.castJsonToObject(StaticJsonHelper.getJsonContent(mappingConfigPath).toString(), new HashMap<String, String>().getClass(), "@context"));
+        StaticContent.rdfContext = new RdfContext(StaticJsonHelper.castJsonToObject(StaticJsonHelper.getJsonContent(mappingConfigPath), new HashMap<String, String>().getClass(), "@context"));
         return rdfContext;
     }
 

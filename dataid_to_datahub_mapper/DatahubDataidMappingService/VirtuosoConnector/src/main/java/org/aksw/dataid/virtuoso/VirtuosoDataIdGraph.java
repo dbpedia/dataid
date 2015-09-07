@@ -3,7 +3,6 @@ package org.aksw.dataid.virtuoso;
 import com.hp.hpl.jena.datatypes.BaseDatatype;
 import com.hp.hpl.jena.datatypes.RDFDatatype;
 import com.hp.hpl.jena.datatypes.TypeMapper;
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.errors.DataIdInputException;
 import org.aksw.dataid.ontology.IdPart;
@@ -42,6 +41,8 @@ public class VirtuosoDataIdGraph {
     private TypeMapper typeMapper = TypeMapper.getInstance();
     //TreeMap<DataId, NextKnownVersion>
     private TreeMap<URI, URI> knownDataIds = new TreeMap<URI, URI>();
+    
+    private String dataIdUri = DataIdConfig.getOntologies().get("dataid").getKey();
 
     public VirtuosoDataIdGraph(final String host, final int port, final String username, final String password) throws SQLException {
 
@@ -61,7 +62,7 @@ public class VirtuosoDataIdGraph {
         try (Statement stmt = conn.createStatement()) {
             ResultSet set = stmt.executeQuery(
                     "SPARQL \n" +
-                            "PREFIX dataid: <" + DataIdConfig.getDataIdUri() + ">\n" +
+                            "PREFIX dataid: <" + dataIdUri + ">\n" +
                             "SELECT ?prevV \n" +
                             "FROM <http://dataid/store>\n" +
                             "{ <" + thisVers.stringValue() + "> a dataid:Dataste;\n" +
@@ -76,26 +77,27 @@ public class VirtuosoDataIdGraph {
         }
     }
 
-    public void enterDataId(final String dataID, final String dataiduri, final String prevId) throws SQLException, InvalidArgumentException {
-        if(dataiduri == null)
-            throw new InvalidArgumentException(new String[]{"please provide a dataiduri"});
+    public void enterDataId(final String dataID, final String dataIdUri, final String prevId) throws Exception {
+        //TODO find fitting exception
+        if(dataIdUri == null)
+            throw new Exception("please provide a dataIdUri");
         if(dataID == null)
-            throw new InvalidArgumentException(new String[]{"please provide a DataId"});
-        if(dataIdExits(dataiduri)) {
-            if (isHigherVersion(knownDataIds.get(new URIImpl(dataiduri.toLowerCase().trim())), new URIImpl(prevId.toLowerCase().trim()))) {
-                deletePreviousId(dataiduri);
-                enterId(dataID, dataiduri, prevId);
+            throw new Exception("please provide a DataId");
+        if(dataIdExits(dataIdUri)) {
+            if (isHigherVersion(knownDataIds.get(new URIImpl(dataIdUri.toLowerCase().trim())), new URIImpl(prevId.toLowerCase().trim()))) {
+                deletePreviousId(dataIdUri);
+                enterId(dataID, dataIdUri, prevId);
             }
             else
-                throw new InvalidArgumentException(new String[]{"a DataId with this uri does exist with a higher or equal version number"});
+                throw new Exception("a DataId with this uri does exist with a higher or equal version number");
         }
         else
-            enterId(dataID, dataiduri, prevId);
+            enterId(dataID, dataIdUri, prevId);
     }
 
-    private void deletePreviousId(final String dataiduri) throws SQLException {
+    private void deletePreviousId(final String dataIdUri) throws SQLException {
         String sparql = "SPARQL \n" +
-                "PREFIX dataid: <" + DataIdConfig.getDataIdUri() + ">\n" +
+                "PREFIX dataid: <" + dataIdUri + ">\n" +
                 "WITH <http://dataid/store>\n" +
                 "DELETE {?s ?p ?o}\n" +
                 "WHERE {{SELECT ?s ?p ?o (?s as ?desc)\n" +
@@ -110,33 +112,33 @@ public class VirtuosoDataIdGraph {
                 "?desc foaf:primaryTopic ?set.\n" +
                 "?set (! dataid:pp)* ?s.\n" +
                 "?s ?p ?o.}}\n" +
-                "FILTER(?desc = <" + dataiduri + ">)}";
+                "FILTER(?desc = <" + dataIdUri + ">)}";
 
         try (Statement stmt = conn.createStatement()) {
             stmt.execute(sparql);
         }
     }
 
-    private void enterId(final String dataID, final String dataiduri, final String prevVersion) throws SQLException {
+    private void enterId(final String dataID, final String dataIdUri, final String prevVersion) throws SQLException {
         try (Statement stmt = conn.createStatement()) {
             String inserTtlp = "TTLP('" + dataID + "','', 'http://dataid/store', 17)";
             if(stmt.execute(inserTtlp))
-                knownDataIds.put(new URIImpl(dataiduri.trim().toLowerCase()), new URIImpl(prevVersion.toLowerCase().trim()));
+                knownDataIds.put(new URIImpl(dataIdUri.trim().toLowerCase()), new URIImpl(prevVersion.toLowerCase().trim()));
         }
     }
 
-    public boolean dataIdExits(final String dataiduri) throws SQLException {
+    public boolean dataIdExits(final String dataIdUri) throws SQLException {
         if(knownDataIds == null)
         {
             knownDataIds = new TreeMap<URI, URI>();
             try (Statement stmt = conn.createStatement()) {
                 ResultSet set = stmt.executeQuery(
                     "SPARQL \n" +
-                        "PREFIX dataid: <" + DataIdConfig.getDataIdUri() + ">\n" +
-                        "SELECT str(?dataiduri) str(?prevV) \n" +
+                        "PREFIX dataid: <" + dataIdUri + ">\n" +
+                        "SELECT str(?dataIdUri) str(?prevV) \n" +
                         "FROM <http://dataid/store>\n" +
                         "{\n" +
-                        "?dataiduri a void:DatasetDescription.\n" +
+                        "?dataIdUri a void:DatasetDescription.\n" +
                         "OPTIONAL\n" +
                         "{?set dataid:priviousVersion ?prevV.\n" +
                         "}}"
@@ -147,7 +149,7 @@ public class VirtuosoDataIdGraph {
                 }
             }
         }
-        if(knownDataIds.keySet().contains(dataiduri.toLowerCase().trim()))
+        if(knownDataIds.keySet().contains(dataIdUri.toLowerCase().trim()))
             return true;
         else
             return false;
@@ -157,7 +159,7 @@ public class VirtuosoDataIdGraph {
         Map<String, String> preambles = new HashMap<String, String>();
         try (Statement stmt = conn.createStatement()) {
             ResultSet set = stmt.executeQuery("SPARQL " +
-                "PREFIX dataid: <" + DataIdConfig.getDataIdUri() + ">\n" +
+                "PREFIX dataid: <" + dataIdUri + ">\n" +
                     "SELECT (lang(?prea) as ?lang) (str(?prea) as ?preamble) \n" +
                     "FROM <http://dataid/store>\n" +
                     "{?x dataid:preamble ?prea.}");
@@ -169,16 +171,16 @@ public class VirtuosoDataIdGraph {
         return new InternalLieteralImpl(preambles);
     }
 
-    public URI getVersion(final String dataiduri) throws Exception {
-        if(dataIdExits(dataiduri))
-            return knownDataIds.get(new URIImpl(dataiduri.toLowerCase().trim()));
+    public URI getVersion(final String dataIdUri) throws Exception {
+        if(dataIdExits(dataIdUri))
+            return knownDataIds.get(new URIImpl(dataIdUri.toLowerCase().trim()));
         throw new Exception("DataId does not (yet) exist!");
     }
 
-    public String getDataIdFile(final String dataiduri, final RdfContext context) throws SQLException, RDFHandlerException, DataIdInputException {
+    public String getDataIdFile(final String dataIdUri, final RdfContext context) throws SQLException, RDFHandlerException, DataIdInputException {
         //create and execute query
         String sparql = "SPARQL \n" +
-                "PREFIX dataid: <" + DataIdConfig.getDataIdUri() + ">\n" +
+                "PREFIX dataid: <" + dataIdUri + ">\n" +
                 "SELECT ?s ?p ?t ?o \n" +
                 "FROM <http://dataid/store>\n" +
                 "{{SELECT ?s ?p ?o (?s as ?desc)\n" +
@@ -195,7 +197,7 @@ public class VirtuosoDataIdGraph {
                 "?s ?p ?o.}}\n" +
                 "BIND( if ( COALESCE(datatype(?o), \"kk\") != \"kk\",\n" +
                 "             datatype(?o), if(ISURI(?o), <http://www.w3.org/1999/02/22-rdf-syntax-ns#Resource>, <http://www.w3.org/1999/02/22-rdf-syntax-ns#Blank>)) as ?t)\n" +
-                "FILTER(?desc = <" + dataiduri + ">)}";
+                "FILTER(?desc = <" + dataIdUri + ">)}";
 
         StringBuilder sb = new StringBuilder();
 

@@ -1,6 +1,6 @@
 {
-    "dataIdUri":"http://dataid.dbpedia.org/ns/core#",
-    "dataIdUrl":"http://localhost:9997/static/ontology.ttl",
+    "ipaddress":"localhost",
+    "port":9997,
 	"datahubActionUri": "http://datahub.io/api/3/action/",
 	"mappingConfigPath": "MappingConfig.json",
 	"ckanTimeOut": 10000,
@@ -18,5 +18,13 @@
         "UpdateDatasetRelationship": "package_create",
         "CreateDatasetRelationship": "package_relationship_create",
         "GetOrganizationId": "organization_show"
-	}
+	},
+    "ontologyMap":{
+      "dataid": {"uri":"http://dataid.dbpedia.org/ns/core#", "dlUrl":"http://localhost:9997/static/ontology.ttl"},
+      "void": {"uri":"http://rdfs.org/ns/void#", "dlUrl":"http://localhost:9997/static/void.rdf"}
+    },
+  "exceptionMap":{
+    "http://rdfunit.aksw.org/data/generators#OWLQCARDEX": ["http://rdfs.org/ns/void#objectsTarget"],
+    "http://rdfunit.aksw.org/data/generators#OWLQCARDEX-MIN":["http://www.w3.org/ns/dcat#landingPage"]
+  }
 }

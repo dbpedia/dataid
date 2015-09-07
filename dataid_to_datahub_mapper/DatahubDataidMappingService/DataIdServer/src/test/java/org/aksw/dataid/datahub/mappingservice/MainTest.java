@@ -23,11 +23,11 @@ public class MainTest extends TestCase {
         super.setUp();
         
         //start the Grizzly2 web container 
-        httpServer = Main.startServer();
-
+        httpServer = Main.configureServer("C:\\Users\\Chile\\workspace\\DatahubDataidMappingService\\DataIdServer\\webcontent");
+        httpServer.start();
         // create the client
         Client c = Client.create();
-        r = c.resource(Main.BASE_URI);
+        r = c.resource(Main.Base_Uri);
     }
 
     @Override

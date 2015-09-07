@@ -10,13 +10,15 @@ import org.aksw.dataid.statics.StaticContent;
 import org.aksw.dataid.wrapper.Statics;
 import org.aksw.rdfunit.RDFUnitConfiguration;
 import org.aksw.rdfunit.enums.TestCaseExecutionType;
-import org.aksw.rdfunit.exceptions.TestCaseExecutionException;
 import org.aksw.rdfunit.io.format.SerializationFormat;
+import org.aksw.rdfunit.io.reader.RDFReaderException;
+import org.aksw.rdfunit.io.writer.RDFStreamWriter;
 import org.aksw.rdfunit.sources.TestSource;
-import org.aksw.rdfunit.validate.ParameterException;
 import org.openrdf.model.*;
+import org.openrdf.model.impl.URIImpl;
 import org.openrdf.rio.RDFHandlerException;
 
+import java.io.ByteArrayOutputStream;
 import java.util.*;
 
 /**
@@ -41,19 +43,21 @@ public class IdPart
     }
 
     private static Map<Resource, IdPart> DataIdPartCache = new HashMap<Resource, IdPart>();
-    private static DataIdValidator validator = new DataIdValidator(DataIdConfig.getDataIdUrl(), null);
+    private static DataIdValidator validator;
 
     private ErrorWarningWrapper errorswarnings = new ErrorWarningWrapper();
     private Model graph;
     private Resource id;
     private Set<URI> types;
     private DataIdParts partType;
+    private String jsonLdErrorReport;
 
-    public IdPart(Model m)
-    {
+    public IdPart(Model m) throws DataIdInputException {
         loadModel(m);
-        this.id = getRoot();
+        //TODO multiple DataIds???
+        this.id = getRoots().iterator().next();
         setTypes();
+        init();
     }
 
     public IdPart(Model m, Resource id)
@@ -61,18 +65,20 @@ public class IdPart
         loadModel(m);
         this.id = id;
         setTypes();
+        init();
     }
 
     public IdPart(String s) throws DataIdInputException {
         loadModel(s);
-        this.id = getRoot();
+        this.id = getRoots().iterator().next();
         setTypes();
+        init();
     }
-
     public IdPart(String s, Resource id) throws DataIdInputException {
         loadModel(s);
         this.id = id;
         setTypes();
+        init();
     }
 
     private void setTypes() {
@@ -84,18 +90,20 @@ public class IdPart
         partType = Statics.getDataIdPartType(getTypes());
     }
 
-    //TODO all defined subjects minus subjects which are referenced as object -> get first???
-    private Resource getRoot()
+    private static void init()
     {
-        Set<Resource> subjects = graph.filter(null, Statics.a, null).subjects();
-        Set<Resource> res = new HashSet<>();
-        res.addAll(subjects);
-        for(Resource r : subjects)
-        {
-            if(graph.filter(null, null, r).size() > 0)
-                res.remove(r);
+        try {
+            validator = new DataIdValidator(DataIdConfig.getOntologies(), DataIdConfig.getExceptions());
+        } catch (RDFReaderException e) {
+            e.printStackTrace();
         }
-        return res.iterator().next();
+    }
+
+    private Set<Resource> getRoots() throws DataIdInputException {
+        Set<Resource> subjects = graph.filter(null, Statics.a, new URIImpl("http://rdfs.org/ns/void#DatasetDescription")).subjects();
+        if(subjects.size() == 0)
+            throw new DataIdInputException("no root element (void:DatasetDescription) was found");
+        return subjects;
     }
 
     private void loadModel(Model m)
@@ -177,19 +185,18 @@ public class IdPart
             SerializationFormat sf = StaticJsonHelper.getSerialization(ttl);
             RDFUnitConfiguration config = validator.getConfiguration("text", ttl, sf.getName(), sf.getName(), TestCaseExecutionType.extendedTestCaseResult);
             TestSource source = config.getTestSource();
-            com.hp.hpl.jena.rdf.model.Model m = validator.validate(config, source, validator.getTestSuite(config, source));
+            com.hp.hpl.jena.rdf.model.Model m = validator.validate(config, source, validator.getTestSuite());
             ErrorWarningWrapper ew = new JenaModelEvaluator(m).getErrorWarnings();
             this.errorswarnings.addAll(ew.getErrors());
             this.errorswarnings.addAll(ew.getWarnings());
+            final ByteArrayOutputStream os = new ByteArrayOutputStream();
+            new RDFStreamWriter(os, "JSON-LD").write(m);
+            this.jsonLdErrorReport = os.toString("UTF8");
             if(ew.getErrors().size() == 0)
                 return true;
             else
                 return false;
-        } catch (ParameterException e) {
-            throw new DataIdInputException(e);
-        } catch (TestCaseExecutionException e) {
-            throw new DataIdInputException(e);
-        } catch (RDFHandlerException e) {
+        } catch (Exception e) {
             throw new DataIdInputException(e);
         }
     }
@@ -208,6 +215,12 @@ public class IdPart
 
     public DataIdParts getPartType() {
         return partType;
+    }
+
+    public String getJsonLdErrorReport() throws DataIdInputException {
+        if(jsonLdErrorReport ==  null)
+            validate();
+        return jsonLdErrorReport;
     }
 
     public boolean isOfType(String type)

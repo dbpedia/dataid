@@ -47,6 +47,7 @@
     <orderEntry type="library" name="Maven: org.apache.commons:commons-collections4:4.0" level="project" />
     <orderEntry type="library" name="Maven: org.aksw.rdfunit:rdfunit-validate:0.7.6-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.jena:jena-tdb:1.1.1" level="project" />
     <orderEntry type="module" module-name="OntologyObjectMapping" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-model:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-api:2.8.0" level="project" />

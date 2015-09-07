@@ -12,12 +12,15 @@ import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.errors.DataIdInputException;
 import org.aksw.rdfunit.io.format.SerialiazationFormatFactory;
 import org.aksw.rdfunit.io.format.SerializationFormat;
+import org.openrdf.rio.RDFFormat;
+import org.openrdf.rio.RDFHandlerException;
+import org.openrdf.rio.RDFParseException;
 import org.openrdf.rio.RDFParser;
 import org.openrdf.rio.jsonld.JSONLDParser;
 import org.openrdf.rio.nquads.NQuadsParser;
 import org.openrdf.rio.rdfxml.RDFXMLParser;
 import org.openrdf.rio.turtle.TurtleParser;
-import org.semarglproject.rdf.NTriplesParser;
+import com.fasterxml.jackson.core.type.TypeReference;
 
 import java.io.*;
 import java.lang.reflect.Field;
@@ -55,44 +58,23 @@ public class StaticJsonHelper
 		return sb.toString();
 	}
 	
-	public static boolean isJsonLdValid(String content)
-	{
-        try {
-            JsonUtils.fromString(content);
-        } catch (IOException e) {
-            return false;
-        }
+	public static boolean isJsonLdValid(String content) throws RDFParseException, IOException, RDFHandlerException {
+            new JSONLDParser().parse(new StringReader(content), "");
         return true;
 	}
 
-    public static boolean isTurtleValid(String content)
-    {
-        try {
-            new TurtleParser().parse(new StringReader(content), "http://someuri.org");
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
+    public static boolean isTurtleValid(String content) throws RDFParseException, IOException, RDFHandlerException {
+        new TurtleParser().parse(new StringReader(content), "http://someuri.org");
         return true;
     }
 
-    public static boolean isNquadValid(String content)
-    {
-        try {
-            new NQuadRDFParser().parse(content);
-        } catch (JsonLdError jsonLdError) {
-            return false;
-        }
+    public static boolean isNquadValid(String content) throws RDFParseException, IOException, RDFHandlerException {
+        new NQuadsParser().parse(new StringReader(content), "");
         return true;
     }
 
-    public static boolean isRdfXmlValid(String content)
-    {
-        try {
-            new NQuadRDFParser().parse(content);
-        } catch (JsonLdError jsonLdError) {
-            return false;
-        }
+    public static boolean isRdfXmlValid(String content) throws RDFParseException, IOException, RDFHandlerException {
+            new RDFXMLParser().parse(new StringReader(content), "");
         return true;
     }
 
@@ -102,8 +84,14 @@ public class StaticJsonHelper
 			mainFileManager.LoadJsonFile(path);
 		} catch (FileNotFoundException e) {
 			System.err.println("File '" + path + "' could not be found. Try editing the MainConfig.json file.");
-		}
-		return mainFileManager.getFileContent();
+		} catch (RDFHandlerException e) {
+            e.printStackTrace();
+        } catch (RDFParseException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return mainFileManager.getFileContent();
 	}
 
     public static String getPrettyContent(String path)
@@ -121,7 +109,7 @@ public class StaticJsonHelper
         return null;
     }
 	
-	public static void writeJsonContent(String path, String content) throws IOException {
+	public static void writeJsonContent(String path, String content) throws IOException, RDFParseException, RDFHandlerException {
 		JsonFileManager mainFileManager = new JsonFileManager();
 		mainFileManager.LoadJsonFile(path);
 		mainFileManager.SaveToJsonFile(path, StaticJsonHelper.getPrettyContent(StaticJsonHelper.convertStringToJsonNode(content)));
@@ -233,15 +221,40 @@ public class StaticJsonHelper
 
     public static <T> T castJsonToObject(String jsonString, Class<T> clas)
     {
-        return castJsonToObject(jsonString, clas, "");
+        return castJsonToObject(jsonString, clas, null);
+    }
+    public static <T> T castJsonToObject(JsonNode node, TypeReference<T> clas)
+    {
+        JavaType mapping = mapper.getTypeFactory().constructType(clas);
+        return castJsonToObject(node, mapping, null);
     }
     public static <T> T castJsonToObject(String json, Class<T> clas, String subNode)
     {
+        JsonNode node = null;
         try {
-            JsonNode node = mapper.readValue(json, JsonNode.class);
-            JavaType mapping = mapper.getTypeFactory().constructType(clas);
-            JsonNode graph = node.get(subNode);
-            T config = mapper.readValue(graph.toString(), mapping);
+            node = mapper.readValue(json, JsonNode.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return castJsonToObject(node, clas, subNode);
+    }
+    public static <T> T castJsonToObject(JsonNode node, TypeReference<T> clas, String subNode)
+    {
+        JavaType mapping = mapper.getTypeFactory().constructType(clas);
+        return castJsonToObject(node, mapping, subNode);
+    }
+
+    public static <T> T castJsonToObject(JsonNode node, Class<T> clas, String subNode)
+    {
+        JavaType mapping = mapper.getTypeFactory().constructType(clas);
+        return castJsonToObject(node, mapping, subNode);
+    }
+    public static <T> T castJsonToObject(JsonNode node, JavaType clas, String subNode)
+    {
+        try {
+            if(subNode != null)
+                node = node.get(subNode);
+            T config = mapper.readValue(node.traverse(), clas);
             return config;
         } catch (JsonParseException e) {
             // TODO Auto-generated catch block
@@ -261,27 +274,31 @@ public class StaticJsonHelper
 
     public static SerializationFormat getSerialization(String input) throws DataIdInputException {
         input = input.trim();
-        if(StaticJsonHelper.isJsonLdValid(input))
-            return SerialiazationFormatFactory.createJsonLD();
-        else if(StaticJsonHelper.isTurtleValid(input))
-            return SerialiazationFormatFactory.createTurtle();
-        else if(StaticJsonHelper.isNquadValid(input))
-            return SerialiazationFormatFactory.createNQuads();
-        else if(input.replace(" ", "").contains("rdf:resource=\"" + DataIdConfig.getDataIdUri() + "\""))
-            return SerialiazationFormatFactory.createRDFXMLOut();
-        return new SerializationFormat("NONE", null, null, null);
-    }
-
-    public static RDFParser getRdfParser(String input) throws DataIdInputException {
-        SerializationFormat sf = getSerialization(input);
-        if(sf.getName() == "TURTLE")
-            return new TurtleParser();
-        else if(sf.getName() == "N-QUADS")
-            return new NQuadsParser();
-        else if(sf.getName() == "JSON-LD")
-            return new JSONLDParser();
-        else if(sf.getName() == "RDF/XML")
-            return new RDFXMLParser();
-        return null;
+        StringBuilder errorBuilder = new StringBuilder();
+        try {
+            if(StaticJsonHelper.isJsonLdValid(input))
+                return SerialiazationFormatFactory.createJsonLD();
+        } catch (Exception e) {
+            errorBuilder.append("JSONLD: " + e.getMessage() + "\n");
+        }
+        try {
+            if(StaticJsonHelper.isTurtleValid(input))
+                return SerialiazationFormatFactory.createTurtle();
+        } catch (Exception e) {
+            errorBuilder.append("TURTLE: " + e.getMessage() + "\n");
+        }
+        try {
+            if(StaticJsonHelper.isNquadValid(input))
+                return SerialiazationFormatFactory.createNQuads();
+        } catch (Exception e) {
+            errorBuilder.append("NQUADS: " + e.getMessage() + "\n");
+        }
+        try {
+            if(StaticJsonHelper.isRdfXmlValid(input))
+                return SerialiazationFormatFactory.createRDFXMLOut();
+        } catch (Exception e) {
+            errorBuilder.append("RDFXML: " + e.getMessage() + "\n");
+        }
+        throw new DataIdInputException("Serialization format could not be determined. Please check the following parser errors:\n" + errorBuilder.toString());
     }
 }

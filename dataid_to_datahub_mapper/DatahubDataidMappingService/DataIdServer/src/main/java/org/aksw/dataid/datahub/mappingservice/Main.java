@@ -6,6 +6,7 @@ import com.sun.jersey.api.container.grizzly2.GrizzlyServerFactory;
 import com.sun.jersey.api.core.PackagesResourceConfig;
 import com.sun.jersey.api.core.ResourceConfig;
 import org.aksw.dataid.config.DataIdConfig;
+import org.aksw.dataid.datahub.mappingprovider.DataIdInputExceptionProvider;
 import org.aksw.dataid.datahub.restclient.CkanRestClient;
 import org.aksw.dataid.virtuoso.VirtuosoDataIdGraph;
 import org.glassfish.grizzly.http.server.HttpServer;
@@ -22,8 +23,8 @@ import java.util.Map;
 
 public class Main {
 	private static String mainPath;
-	private static String mainConfigPath;
     private static VirtuosoDataIdGraph graph;
+    private static HttpServer httpServer;
 
     public static CkanRestClient CreateCkanRestClient(String apiKey) {
 		String dataHubUrl = DataIdConfig.get("datahubActionUri");
@@ -52,37 +53,37 @@ public class Main {
         return defaultPort;
     }
 
-    private static URI getBaseURI() {
-        return UriBuilder.fromUri("http://localhost/").port(getPort(9997)).build();
-    }
-
-    public static final URI BASE_URI = getBaseURI();
+    public static URI Base_Uri;
     
-    protected static HttpServer startServer() throws IOException {
-        final Map<String, Object> initParams = new HashMap<String, Object>();
-
-        initParams.put("com.sun.jersey.config.property.packages", Main.class.getPackage().getName());
-        ResourceConfig rc = new PackagesResourceConfig(Main.class.getPackage().getName());
+    protected static HttpServer configureServer(String mPath) throws IOException , SQLException{
+        mainPath = mPath;
+        DataIdConfig.initDataIdConfig(mainPath);
+        graph = new VirtuosoDataIdGraph(DataIdConfig.getVirtuosoHost(), DataIdConfig.getVirtuosoPort(), DataIdConfig.getVirtuosoUser(), DataIdConfig.getVirtuosoPassword());
+        ResourceConfig rc = new PackagesResourceConfig(Main.class.getPackage().getName(), DataIdInputExceptionProvider.class.getPackage().getName());
+        Base_Uri = UriBuilder.fromUri("http://" + DataIdConfig.get("ipaddress") + "/").port(Integer.parseInt(DataIdConfig.get("port").toString())).build();
         System.out.println("Starting grizzly2...");
-        return GrizzlyServerFactory.createHttpServer(BASE_URI, rc);
+        httpServer = GrizzlyServerFactory.createHttpServer(Base_Uri, rc);
+        StaticHttpHandler statichandler = new StaticHttpHandler(mainPath);
+        httpServer.getServerConfiguration().addHttpHandler(statichandler, "/static");
+
+        return httpServer;
     }
     
     public static void main(String[] args) throws IOException, SQLException {
-        mainPath = Main.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-        mainPath = mainPath.substring(1, mainPath.indexOf("DatahubDataidMappingService") + 27) + "/DataIdServer/webcontent";
-        DataIdConfig.initDataIdConfig(mainPath);
-        graph = new VirtuosoDataIdGraph(DataIdConfig.getVirtuosoHost(), DataIdConfig.getVirtuosoPort(), DataIdConfig.getVirtuosoUser(), DataIdConfig.getVirtuosoPassword());
-        HttpServer httpServer = startServer();
-        StaticHttpHandler statichandler = new StaticHttpHandler("C:\\Users\\Chile\\workspace\\DatahubDataidMappingService\\DataIdServer\\webcontent");
-        httpServer.getServerConfiguration().addHttpHandler(statichandler, "/static");
-        System.out.println(String.format("Jersey app started with WADL available at "
-                        + "%sapplication.wadl\nHit enter to stop it...",
-                BASE_URI));
+        assert args.length == 1;
+
+        configureServer(args[0]);
+        httpServer.start();
+        System.out.println(String.format("Jersey app started with WADL available at %sapplication.wadl\nHit enter to stop it...", Base_Uri));
         System.in.read();
         httpServer.stop();
     }
 
     public static VirtuosoDataIdGraph getGraph() {
         return graph;
+    }
+
+    public static String getMainPath() {
+        return mainPath;
     }
 }

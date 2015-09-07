@@ -1,6 +1,8 @@
 package org.aksw.dataid.jsonutils;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import org.openrdf.rio.RDFHandlerException;
+import org.openrdf.rio.RDFParseException;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -28,7 +30,7 @@ public class JsonFileManager {
 		return fileContent;
 	}
 	
-    public void SaveToJsonFile(String filePath, String content) throws IOException {
+    public void SaveToJsonFile(String filePath, String content) throws IOException, RDFParseException, RDFHandlerException {
     	if(StaticJsonHelper.isJsonLdValid(content))
     	{
 			FileOutputStream fop = null;
@@ -58,12 +60,10 @@ public class JsonFileManager {
     	}
     }
     
-    public JsonNode LoadJsonFile(String filePath) throws FileNotFoundException
-    {
+    public JsonNode LoadJsonFile(String filePath) throws IOException, RDFParseException, RDFHandlerException {
     	return LoadJsonFile(filePath, false);
     }
-    public JsonNode LoadJsonFile(String filePath, boolean classpath) throws FileNotFoundException
-    {
+    public JsonNode LoadJsonFile(String filePath, boolean classpath) throws IOException, RDFParseException, RDFHandlerException {
     	Path path = Paths.get(filePath);
     	if(classpath)
     	{

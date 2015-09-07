@@ -5,12 +5,11 @@ import org.aksw.dataid.config.RdfContext;
 import org.aksw.dataid.errors.DataIdInputException;
 import org.aksw.dataid.jsonutils.StaticJsonHelper;
 import org.aksw.dataid.ontology.IdPart;
+import org.aksw.dataid.statics.StaticFunctions;
 import org.openrdf.model.*;
 import org.openrdf.model.impl.TreeModel;
 import org.openrdf.model.impl.URIImpl;
-import org.openrdf.rio.RDFHandlerException;
-import org.openrdf.rio.RDFParseException;
-import org.openrdf.rio.RDFParser;
+import org.openrdf.rio.*;
 import org.openrdf.rio.helpers.BasicWriterSettings;
 import org.openrdf.rio.turtle.TurtleWriter;
 
@@ -121,21 +120,13 @@ public class Statics {
     }
 
     public static Model parseModel(String ttl) throws DataIdInputException {
-        ModelRdfHandler handler = new ModelRdfHandler();
+
         StringReader sr = new StringReader(ttl);
-        RDFParser parser = StaticJsonHelper.getRdfParser(ttl);
-        parser.setRDFHandler(handler);
-        parser.setPreserveBNodeIDs(true);
         try {
-            parser.parse(sr, DataIdConfig.getDataIdUri());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (RDFHandlerException e) {
-            e.printStackTrace();
-        } catch (RDFParseException e) {
-            e.printStackTrace();
+            return Rio.parse(sr, "", StaticFunctions.getRDFFormat(ttl));
+        } catch (IOException | RDFParseException e) {
+            throw new DataIdInputException(e);
         }
-        return handler.getModel();
     }
 
     public static String writeTurtle(Model m) throws RDFHandlerException {

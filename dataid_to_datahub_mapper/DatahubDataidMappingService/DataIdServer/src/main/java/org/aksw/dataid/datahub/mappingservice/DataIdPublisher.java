@@ -1,8 +1,15 @@
 package org.aksw.dataid.datahub.mappingservice;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.BaseJsonNode;
+import com.fasterxml.jackson.databind.node.JsonNodeFactory;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.github.jsonldjava.core.*;
+import com.sun.jersey.core.spi.factory.ResponseImpl;
 import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.jsonobjects.DatahubError;
 import org.aksw.dataid.datahub.jsonobjects.Dataset;
@@ -16,9 +23,13 @@ import org.aksw.dataid.datahub.restclient.CkanRestClient;
 import org.aksw.dataid.ontology.IdPart;
 import org.aksw.dataid.statics.StaticContent;
 import org.aksw.dataid.virtuoso.VirtuosoDataIdGraph;
+import org.apache.jena.atlas.json.JSON;
+import org.eclipse.jdt.internal.compiler.ast.Javadoc;
 import org.openrdf.rio.RDFHandlerException;
+import org.openrdf.rio.RDFParseException;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -36,6 +47,14 @@ public class DataIdPublisher
         proc = new DataIdProcesser(DataIdConfig.getMappingConfigPath());
     }
 
+    /**
+     *
+     * @param id
+     * @param apiKey
+     * @return
+     * @throws IOException
+     * @throws DatahubError
+     */
     @GET
     @Path("/getdataset")
     @Produces("text/plain")
@@ -75,7 +94,7 @@ public class DataIdPublisher
     public String getMappings()
     {
 		try {
-            String path = StaticFunctions.getBasePath() + "webcontent/MappingsPage.html";
+            String path = Main.getMainPath() + "/MappingsPage.html";
             String content = new String(Files.readAllBytes(Paths.get(path)));
             content = content.replace("$content", StaticJsonHelper.getPrettyContent(StaticJsonHelper.getJsonContent(DataIdConfig.getMappingConfigPath())));
 			return content;
@@ -90,8 +109,24 @@ public class DataIdPublisher
     public String validator()
     {
         try {
-            String path = StaticFunctions.getBasePath() + "webcontent/DataIdResultPage.html";
+            String path = Main.getMainPath() + "/DataIdResultPage.html";
             String content = new String(Files.readAllBytes(Paths.get(path)));
+            return content;
+        } catch (IOException e) {
+            return addHtmlBody(produceHttpResponse(e));
+        }
+    }
+
+
+    @POST
+    @Path("/validationresulttable")
+    @Produces("text/html")
+    public String validationresulttable(@QueryParam(value = "url") final String url, String result ) throws IOException {
+        if(result == null)
+            result = new String(Files.readAllBytes(Paths.get(url)));
+        try {
+            String path = Main.getMainPath() + "/ValidationResultTable.html";
+            String content = new String(Files.readAllBytes(Paths.get(path))).replace("$result", result);
             return content;
         } catch (IOException e) {
             return addHtmlBody(produceHttpResponse(e));
@@ -100,14 +135,34 @@ public class DataIdPublisher
 
     @POST
     @Path("/validateid")
-    public String validateDataId(final String ttl)
+    public String validateDataId(final String ttl) throws DataIdInputException, JsonProcessingException {
+            IdPart dataid = new IdPart(ttl);
+            dataid.validate();
+
+        //reduce special errors (resources which dont need to be declared)
+/*        JsonNode jn = StaticJsonHelper.convertStringToJsonNode(dataid.getJsonLdErrorReport());
+        ArrayNode graph = JsonNodeFactory.instance.arrayNode();
+        for(JsonNode node : jn.get("@graph"))
+        {
+            if(node.get("message") !=  null && !(node.get("message").asText().contains("QualifiedCardinality of http://www.w3.org/ns/dcat#landingPage lower than 1")  //not!
+                    || node.get("message").asText().contains("qualifiedCardinality of http://rdfs.org/ns/void#objectsTarget different from 1")))
+            graph.add(node);
+        }
+        ObjectNode result = JsonNodeFactory.instance.objectNode();
+        result.put("@context", jn.get("@context"));
+        result.put("@graph", graph);
+
+        return  StaticJsonHelper.getPrettyContent(result);*/
+        return dataid.getJsonLdErrorReport();
+    }
+
+    @POST
+    @Path("/isIdValid")
+    public String isIdValid(final String ttl)
     {
         try {
             IdPart dataid = new IdPart(ttl);
-            dataid.validate();
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-            return  mapper.writeValueAsString(dataid.getErrorswarnings());
+            return new Boolean(dataid.validate()).toString();
         } catch (Exception e) {
             return produceHttpResponse(e);
         }
@@ -118,8 +173,7 @@ public class DataIdPublisher
     public String SetMappings(
             @QueryParam(value = "username") final String username,
             @QueryParam(value = "password") final String password,
-            final String content)
-    {
+            final String content) throws RDFParseException, IOException, RDFHandlerException {
         if(!StaticJsonHelper.isJsonLdValid(content))
             return addHtmlBody("no valid JsonLd!");
         String admins = DataIdConfig.get("adminName");
@@ -142,7 +196,7 @@ public class DataIdPublisher
             IdPart dataid = new IdPart(ttl);
             return dataid.toTurtle();
         } catch (Exception e) {
-            return produceHttpResponse(e);
+            return ttl;
         }
     }
 
