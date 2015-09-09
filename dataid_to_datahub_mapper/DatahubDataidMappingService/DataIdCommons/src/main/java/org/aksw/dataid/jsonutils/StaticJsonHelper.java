@@ -289,7 +289,7 @@ public class StaticJsonHelper
         }
         try {
             if(StaticJsonHelper.isNquadValid(input))
-                return SerialiazationFormatFactory.createNQuads();
+                return SerialiazationFormatFactory.createNQads();
         } catch (Exception e) {
             errorBuilder.append("NQUADS: " + e.getMessage() + "\n");
         }

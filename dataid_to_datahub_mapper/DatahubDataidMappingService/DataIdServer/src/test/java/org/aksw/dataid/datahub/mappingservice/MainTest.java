@@ -23,7 +23,7 @@ public class MainTest extends TestCase {
         super.setUp();
         
         //start the Grizzly2 web container 
-        httpServer = Main.configureServer("C:\\Users\\Chile\\workspace\\DatahubDataidMappingService\\DataIdServer\\webcontent");
+        httpServer = Main.configureServer();
         httpServer.start();
         // create the client
         Client c = Client.create();

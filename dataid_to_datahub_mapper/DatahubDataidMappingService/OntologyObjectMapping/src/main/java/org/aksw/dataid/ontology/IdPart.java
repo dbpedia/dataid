@@ -7,7 +7,7 @@ import org.aksw.dataid.jsonutils.StaticJsonHelper;
 import org.aksw.dataid.rdfunit.DataIdValidator;
 import org.aksw.dataid.rdfunit.JenaModelEvaluator;
 import org.aksw.dataid.statics.StaticContent;
-import org.aksw.dataid.wrapper.Statics;
+import org.aksw.dataid.statics.StaticFunctions;
 import org.aksw.rdfunit.RDFUnitConfiguration;
 import org.aksw.rdfunit.enums.TestCaseExecutionType;
 import org.aksw.rdfunit.io.format.SerializationFormat;
@@ -16,6 +16,7 @@ import org.aksw.rdfunit.io.writer.RDFStreamWriter;
 import org.aksw.rdfunit.sources.TestSource;
 import org.openrdf.model.*;
 import org.openrdf.model.impl.URIImpl;
+import org.openrdf.rio.RDFFormat;
 import org.openrdf.rio.RDFHandlerException;
 
 import java.io.ByteArrayOutputStream;
@@ -83,11 +84,11 @@ public class IdPart
 
     private void setTypes() {
         types = new HashSet<>();
-        for (Value o : graph.filter(this.id, Statics.a, null).objects())
+        for (Value o : graph.filter(this.id, StaticContent.a, null).objects())
             if (o.getClass().isAssignableFrom(URI.class))
                 types.add((URI) o);
 
-        partType = Statics.getDataIdPartType(getTypes());
+        partType = getDataIdPartType(getTypes());
     }
 
     private static void init()
@@ -100,7 +101,7 @@ public class IdPart
     }
 
     private Set<Resource> getRoots() throws DataIdInputException {
-        Set<Resource> subjects = graph.filter(null, Statics.a, new URIImpl("http://rdfs.org/ns/void#DatasetDescription")).subjects();
+        Set<Resource> subjects = graph.filter(null, StaticContent.a, new URIImpl("http://rdfs.org/ns/void#DatasetDescription")).subjects();
         if(subjects.size() == 0)
             throw new DataIdInputException("no root element (void:DatasetDescription) was found");
         return subjects;
@@ -112,7 +113,7 @@ public class IdPart
     }
 
     private void loadModel(String ttl) throws DataIdInputException {
-        this.graph = Statics.parseModel(ttl);
+        this.graph = StaticFunctions.parseModel(ttl);
     }
 
     public Set<Resource> getChildren()
@@ -155,7 +156,7 @@ public class IdPart
 
     private Model getSubModel(Resource root)
     {
-        Model m = Statics.createDefaultModel(StaticContent.getRdfContext());
+        Model m = StaticFunctions.createDefaultModel(StaticContent.getRdfContext());
         Model r = graph.filter(root, null, null);
         Set<Value> objects = r.objects();
         Set<Value> done = new HashSet<>();
@@ -175,7 +176,7 @@ public class IdPart
     }
 
     public String toTurtle() throws RDFHandlerException, DataIdInputException {
-        return Statics.writeTurtle(graph);
+        return StaticFunctions.writeSerialization(graph, RDFFormat.TURTLE);
     }
 
     public boolean validate() throws DataIdInputException {
@@ -231,5 +232,53 @@ public class IdPart
                 return true;
         }
         return false;
+    }
+
+
+
+    public static IdPart.DataIdParts getDataIdPartType(Set<URI> types)
+    {
+        IdPart.DataIdParts partType = null;
+        for(URI uri : types)
+            if(uri.stringValue().toLowerCase().contains(StaticContent.dataIdStump) || uri.stringValue().toLowerCase().contains(StaticContent.DataIdUri))
+                switch(uri.stringValue().toLowerCase().trim()){
+                    case StaticContent.LinksetUri:
+                        partType = IdPart.DataIdParts.Linkset;
+                        break;
+                    case StaticContent.DatasetUri:
+                        partType = IdPart.DataIdParts.Dataset;
+                        break;
+                    case StaticContent.DistributionUri:
+                        partType = IdPart.DataIdParts.Distribution;
+                        break;
+//                    case StaticContent.dcatDistributionUri:
+//                        partType = IdPart.DataIdParts.Distribution;
+//                        break;
+                    case StaticContent.DataIdUri:
+                        partType = IdPart.DataIdParts.DataId;
+                        break;
+                    case StaticContent.PublisherUri:
+                        partType = IdPart.DataIdParts.Publisher;
+                        break;
+                    case StaticContent.MaintainerUri:
+                        partType = IdPart.DataIdParts.Maintainer;
+                        break;
+                    case StaticContent.CreatorUri:
+                        partType = IdPart.DataIdParts.Creator;
+                        break;
+                    case StaticContent.ContactUri:
+                        partType = IdPart.DataIdParts.Contact;
+                        break;
+                    case StaticContent.ContributorUri:
+                        partType = IdPart.DataIdParts.Contributor;
+                        break;
+                    case StaticContent.AgentdUri:
+                        partType = IdPart.DataIdParts.Agent;
+                        break;
+                    default:
+                        partType = IdPart.DataIdParts.Entity;
+                        //TODO Entity, Activity!
+                }
+        return partType;
     }
 }

@@ -32,11 +32,11 @@
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-nquads:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-ntriples:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-jsonld:2.8.0" level="project" />
-    <orderEntry type="library" name="Maven: org.aksw.rdfunit:rdfunit-core:0.7.6-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.aksw.rdfunit:rdfunit-resources:0.7.6-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.aksw.jena-sparql-api:jena-sparql-api-cache-h2:2.12.1-8" level="project" />
-    <orderEntry type="library" name="Maven: com.h2database:h2:1.4.186" level="project" />
-    <orderEntry type="library" name="Maven: org.aksw.jena-sparql-api:jena-sparql-api-resources:2.12.1-8" level="project" />
+    <orderEntry type="library" name="Maven: org.aksw.rdfunit:rdfunit-core:0.7.19-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.aksw.rdfunit:rdfunit-resources:0.7.19-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.aksw.jena-sparql-api:jena-sparql-api-cache-h2:2.13.0-4" level="project" />
+    <orderEntry type="library" name="Maven: com.h2database:h2:1.4.187" level="project" />
+    <orderEntry type="library" name="Maven: org.aksw.jena-sparql-api:jena-sparql-api-resources:2.13.0-4" level="project" />
     <orderEntry type="library" name="Maven: org.semarglproject:semargl-jena:0.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.semarglproject:semargl-core:0.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.semarglproject:semargl-rdfa:0.6.1" level="project" />
@@ -45,7 +45,7 @@
     <orderEntry type="library" name="Maven: xalan:xalan:2.7.1" level="project" />
     <orderEntry type="library" name="Maven: xalan:serializer:2.7.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-collections4:4.0" level="project" />
-    <orderEntry type="library" name="Maven: org.aksw.rdfunit:rdfunit-validate:0.7.6-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.aksw.rdfunit:rdfunit-validate:0.7.19-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.jena:jena-tdb:1.1.1" level="project" />
     <orderEntry type="module" module-name="OntologyObjectMapping" />

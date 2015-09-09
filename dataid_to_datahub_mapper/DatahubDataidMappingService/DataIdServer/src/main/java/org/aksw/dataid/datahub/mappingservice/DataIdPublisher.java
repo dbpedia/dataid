@@ -94,7 +94,7 @@ public class DataIdPublisher
     public String getMappings()
     {
 		try {
-            String path = Main.getMainPath() + "/MappingsPage.html";
+            String path = Main.getMainPath() + "/html/MappingsPage.html";
             String content = new String(Files.readAllBytes(Paths.get(path)));
             content = content.replace("$content", StaticJsonHelper.getPrettyContent(StaticJsonHelper.getJsonContent(DataIdConfig.getMappingConfigPath())));
 			return content;
@@ -109,7 +109,7 @@ public class DataIdPublisher
     public String validator()
     {
         try {
-            String path = Main.getMainPath() + "/DataIdResultPage.html";
+            String path = Main.getMainPath() + "/html/DataIdResultPage.html";
             String content = new String(Files.readAllBytes(Paths.get(path)));
             return content;
         } catch (IOException e) {
@@ -125,7 +125,7 @@ public class DataIdPublisher
         if(result == null)
             result = new String(Files.readAllBytes(Paths.get(url)));
         try {
-            String path = Main.getMainPath() + "/ValidationResultTable.html";
+            String path = Main.getMainPath() + "/html/ValidationResultTable.html";
             String content = new String(Files.readAllBytes(Paths.get(path))).replace("$result", result);
             return content;
         } catch (IOException e) {
@@ -138,21 +138,6 @@ public class DataIdPublisher
     public String validateDataId(final String ttl) throws DataIdInputException, JsonProcessingException {
             IdPart dataid = new IdPart(ttl);
             dataid.validate();
-
-        //reduce special errors (resources which dont need to be declared)
-/*        JsonNode jn = StaticJsonHelper.convertStringToJsonNode(dataid.getJsonLdErrorReport());
-        ArrayNode graph = JsonNodeFactory.instance.arrayNode();
-        for(JsonNode node : jn.get("@graph"))
-        {
-            if(node.get("message") !=  null && !(node.get("message").asText().contains("QualifiedCardinality of http://www.w3.org/ns/dcat#landingPage lower than 1")  //not!
-                    || node.get("message").asText().contains("qualifiedCardinality of http://rdfs.org/ns/void#objectsTarget different from 1")))
-            graph.add(node);
-        }
-        ObjectNode result = JsonNodeFactory.instance.objectNode();
-        result.put("@context", jn.get("@context"));
-        result.put("@graph", graph);
-
-        return  StaticJsonHelper.getPrettyContent(result);*/
         return dataid.getJsonLdErrorReport();
     }
 

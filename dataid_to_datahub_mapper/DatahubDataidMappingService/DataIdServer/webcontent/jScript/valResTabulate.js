@@ -20,7 +20,9 @@ function validate() {
             }
             var peopleTable = tabulate(["level","resource", "message"], result);
 
-            resultTitle("Validation result: number of tests: " + result["@graph"][0]["testsRun"] + ", number of errors: " + counts["rlog:ERROR"] + ", number of warnings: " + counts["rlog:WARN"]);
+            resultTitle("Validation result: number of tests: " + result["@graph"][0]["testsRun"] + ", number of errors: " +
+                counts["rlog:ERROR"] != null ? counts["rlog:ERROR"] : 0 + ", number of warnings: " +
+                counts["rlog:WARN"] != null ? counts["rlog:WARN"] : 0);
             // uppercase the column headers
             peopleTable.selectAll("thead th")
                 .text(function (column) {
@@ -32,7 +34,7 @@ function validate() {
             peopleTable.selectAll("tbody td")
                 .text(function (td) {
                     if(td.column == "level")
-                        return td.value.replace('rlog:', '');
+                        return td.value.replace('rlog:', '').replace('WARN', 'WARNING');
                     else
                         return td.value;
                 });

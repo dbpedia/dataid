@@ -36,12 +36,12 @@
         <dependency>
             <groupId>org.aksw.rdfunit</groupId>
             <artifactId>rdfunit-core</artifactId>
-            <version>0.7.6-SNAPSHOT</version>
+            <version>0.7.19-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.aksw.rdfunit</groupId>
             <artifactId>rdfunit-validate</artifactId>
-            <version>0.7.6-SNAPSHOT</version>
+            <version>0.7.19-SNAPSHOT</version>
         </dependency>
 
         <dependency>

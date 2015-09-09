@@ -7,14 +7,15 @@ import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.errors.DataIdInputException;
 import org.aksw.dataid.ontology.IdPart;
 import org.aksw.dataid.statics.StaticContent;
+import org.aksw.dataid.statics.StaticFunctions;
 import org.aksw.dataid.wrapper.InternalLieteralImpl;
 import org.aksw.dataid.config.RdfContext;
-import org.aksw.dataid.wrapper.Statics;
 import org.openrdf.model.Model;
 import org.openrdf.model.URI;
 import org.openrdf.model.ValueFactory;
 import org.openrdf.model.impl.StatementImpl;
 import org.openrdf.model.impl.URIImpl;
+import org.openrdf.rio.RDFFormat;
 import org.openrdf.rio.RDFHandlerException;
 import virtuoso.jdbc4.VirtuosoDataSource;
 
@@ -201,7 +202,7 @@ public class VirtuosoDataIdGraph {
 
         StringBuilder sb = new StringBuilder();
 
-        Model model = Statics.createDefaultModel(StaticContent.getRdfContext());
+        Model model = StaticFunctions.createDefaultModel(StaticContent.getRdfContext());
         try(Statement stmt = conn.createStatement()) {
             ResultSet set = stmt.executeQuery(sparql);
 
@@ -239,7 +240,7 @@ public class VirtuosoDataIdGraph {
                 model.add(new StatementImpl(subject, vFactory.createURI(set.getString(2)), object));
             }
         }
-        return Statics.writeTurtle(model);
+        return StaticFunctions.writeSerialization(model, RDFFormat.TURTLE);
     }
 
     public boolean enterLinkSet(IdPart part) throws SQLException, RDFHandlerException, DataIdInputException {

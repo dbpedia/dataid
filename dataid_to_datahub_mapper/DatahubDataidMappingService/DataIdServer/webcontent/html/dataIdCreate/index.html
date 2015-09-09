@@ -1,0 +1,48 @@
+<link rel="import" href="header.html">
+
+<div class="container">
+    <div>
+        <link rel="import" href="ng_scripts.html">
+        <div class="form-group">
+            <div class="row">
+                <br>
+                <div class="col-lg-12">
+                    <h2 class="page-header">Dataset: {{ds.title}}</h2>
+                </div>
+                <span  style="color: red;">*</span> Required Field
+                <br>
+                <br>
+                <div class="col-md-5">
+                    <link rel="import" href="version.html">
+
+                    <link rel="import" href="general_information.html">
+                    <link rel="import" href="description_rights.html">
+
+                </div>
+                <div class="col-md-5">
+                    <link rel="import" href="contact.html">
+                    <link rel="import" href="prov.html">
+                </div>
+                <div class="col-md-10">
+                    <link rel="import" href="distributions.html">
+                    <link rel="import" href="linkset.html">
+                </div>
+
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+    <div id="rdfOutput" style="display: none">
+        <a class="label label-success ng-binding"  href="" ng-click="downloadInnerHtml()">Download DataID file</a>
+        <pre id="rdf" style="margin: 0.5em; padding:0.5em; background-color:#eee; border:dashed 1px grey;">
+{{rdf}}
+        </pre>
+    </div>
+    <div id="rdfOutputValidator">
+        <div id="rdfOutputValidatorHTML">
+
+
+        </div>
+    </div>
+    <link rel="import" href="footer.html">

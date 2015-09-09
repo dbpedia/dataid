@@ -1,6 +1,8 @@
 package org.aksw.dataid.wrapper;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.aksw.dataid.statics.StaticContent;
+import org.aksw.dataid.statics.StaticFunctions;
 import org.openrdf.model.Literal;
 import org.openrdf.model.URI;
 import org.openrdf.model.impl.URIImpl;
@@ -69,7 +71,7 @@ public class InternalLieteralImpl {
     public String getDatatype() {
 
         if(this.isString())
-            return Statics.xsdString.stringValue();
+            return StaticContent.xsdString.stringValue();
         else
             return datatype.stringValue();
     }
@@ -113,11 +115,11 @@ public class InternalLieteralImpl {
         if(datatype != null)
             return new org.openrdf.model.impl.LiteralImpl(this.getLabel(), datatype);
         else
-            return new org.openrdf.model.impl.LiteralImpl(this.getLabel(), Statics.xsdString);
+            return new org.openrdf.model.impl.LiteralImpl(this.getLabel(), StaticContent.xsdString);
     }
 
     public Literal toStringLiteral() {
-        return new org.openrdf.model.impl.LiteralImpl(this.getLabel(), Statics.xsdString);
+        return new org.openrdf.model.impl.LiteralImpl(this.getLabel(), StaticContent.xsdString);
     }
 
     public Literal toStringLiteral(String lang)
@@ -125,13 +127,13 @@ public class InternalLieteralImpl {
         if(valueMap.get(lang) != null)
             return new org.openrdf.model.impl.LiteralImpl(valueMap.get(lang), lang);
         else
-            return new org.openrdf.model.impl.LiteralImpl(this.getLabel(), Statics.xsdString);
+            return new org.openrdf.model.impl.LiteralImpl(this.getLabel(), StaticContent.xsdString);
     }
 
     @JsonIgnore
     public boolean isString()
     {
-        if(datatype == null || datatype.equals(Statics.xsdString) || datatype.equals(Statics.rdfsString))
+        if(datatype == null || datatype.equals(StaticContent.xsdString) || datatype.equals(StaticContent.rdfsString))
             return true;
         else
             return false;
@@ -147,7 +149,7 @@ public class InternalLieteralImpl {
 
             try {
                 if (type == Date.class)
-                    return (T) Statics.ParseDate(this.getLabel());
+                    return (T) StaticFunctions.ParseDate(this.getLabel());
                 else
                     return (T) type.getConstructor(String.class).newInstance(this.getLabel());
             } catch (InstantiationException e) {

@@ -129,7 +129,7 @@ dataid:Dataset
     ], [
         a owl:Restriction ;
         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onClass odrl:Policy ;
+        owl:onClass dct:LicenseDocument ;
         owl:onProperty dct:license
     ], [
         a owl:Restriction ;
@@ -165,7 +165,7 @@ dataid:Dataset
        	] )
     ], [
         a owl:Restriction ;
-        owl:onClass rdf:Resource ;
+        owl:onClass rdfs:Resource ;
         owl:onProperty dcat:landingPage ;
         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
     ], [
@@ -209,12 +209,24 @@ dataid:Distribution
     a owl:Class ;
     rdfs:comment "A way to access a dataset, like a dump file, an endpoint, an API etc."@en ;
     rdfs:label "Distribution"@en ;
-    rdfs:subClassOf dcat:Distribution, [
-        a owl:Restriction ;
-        owl:onClass rdfs:Resource ;
-        owl:onProperty dcat:downloadURL ;
-        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
-    ], [
+    owl:equivalentClass [
+        a owl:Class;
+        owl:disjointUnionOf
+         ([
+            a owl:Restriction ;
+            owl:onClass rdfs:Resource ;
+            owl:onProperty dcat:accessURL ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+          ]
+        [
+            a owl:Restriction ;
+            owl:onClass rdfs:Resource ;
+            owl:onProperty dcat:downloadURL ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+        ])
+    ];
+    rdfs:subClassOf dcat:Distribution, prov:Entity,
+     [
         a owl:Restriction ;
         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onDataRange [
@@ -276,6 +288,17 @@ dataid:Distribution
         owl:onProperty dct:modified
     ] .
 
+dataid:SparqlEndpoint
+    a owl:Class;
+    rdfs:comment "A specific distribution, which is accessible via an access url and can be queried with the SPARQL language."@en ;
+    rdfs:label "Sparql Endpoint"@en ;
+    rdfs:subClassOf dataid:Distribution, sd:Service, [
+         a owl:Restriction ;
+         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+         owl:onClass rdfs:Resource ;
+         owl:onProperty dcat:accessURL
+     ].
+
 dataid:LatestLinksetVersion
     a owl:ObjectProperty ;
     rdfs:comment "Latest version of a linkset"@en ;
@@ -287,7 +310,7 @@ dataid:LatestLinksetVersion
 dataid:Linkset
     a owl:Class ;
     rdfs:label "Linkset"@en ;
-    rdfs:subClassOf void:Linkset, [
+    rdfs:subClassOf void:Linkset, prov:Entity, [
         a owl:Restriction ;
         owl:onClass void:Dataset ;
         owl:onProperty void:objectsTarget ;
@@ -459,151 +482,6 @@ dataid:previousVersion
     rdfs:label "previous version"@en ;
     rdfs:range dataid:Dataset .
 
-dct:Frequency
-    a owl:Class .
-
-dct:accrualPeriodicity
-    a owl:ObjectProperty ;
-    rdfs:comment "Timespan between releases; maintenance intervals. States when this dataset will be updated or otherwise changed"@en ;
-    rdfs:domain dct:Frequency ;
-    rdfs:label "accrual periodicity"@en ;
-    rdfs:range dataid:Dataset .
-
-dct:description
-    a owl:DatatypeProperty ;
-    rdfs:comment "A textual description of the dataset, describing its content and structure. Try to be verbose, to provide a useful documentation here."@en ;
-    rdfs:range xsd:string .
-
-dct:format
-    a owl:DatatypeProperty ;
-    rdfs:comment "The format of a distribution or file. In compressed files the inner format: A zipped ntriples file example.nt.zip has dct:format ntriples"@en ;
-    rdfs:domain dataid:Distribution ;
-    rdfs:range xsd:string .
-
-dct:issued
-    a owl:DatatypeProperty ;
-    rdfs:comment "Date of first release of the dataset"@en ;
-    rdfs:range xsd:date .
-
-dct:language
-    a owl:DatatypeProperty ;
-    rdfs:comment "The language of the dataset. Strings with language names are ok, but language codes or links to lexvo.org or glottolog.org are preferred."@en ;
-    rdfs:domain dataid:Dataset .
-
-dct:license
-    a owl:ObjectProperty ;
-    rdfs:comment "License description of the dataset in form of odrl:Policies. Find a odrl repository containing descriptions of the most important licenses here: http://purl.org/NET/rdflicense/"@en ;
-    rdfs:label "license"@en ;
-    rdfs:range odrl:Policy .
-
-dct:modified
-    a owl:DatatypeProperty ;
-    rdfs:comment "Date of last modification of the dataset"@en ;
-	rdfs:comment "Strongly recommended!"@en;
-    rdfs:range xsd:date .
-
-dct:rights
-    a owl:DatatypeProperty ;
-    rdfs:comment "Rights description of a dataset, specifying licensing further or adding information, such as citations"@en ;
-    rdfs:domain dataid:Dataset ;
-    rdfs:range xsd:string .
-
-dct:title
-    a owl:DatatypeProperty ;
-    rdfs:comment "Title of the dataset, containing long or full name. Ex: 'The DBpedia 2014 English Dataset'"@en ;
-    rdfs:label "title"@en ;
-    rdfs:range xsd:string .
-
-void:rootResource
-    a owl:ObjectProperty ;
-    rdfs:domain dataid:Dataset .
-
-void:sparqlEndpoint
-    a owl:ObjectProperty ;
-    rdfs:domain dataid:Dataset ;
-    rdfs:label "SPARQL endpoint"@en ;
-    rdfs:range dataid:Distribution .
-
-void:subset
-    a owl:ObjectProperty ;
-    rdfs:comment "A dataset contained in the parent dataset"@en ;
-    rdfs:domain dataid:Dataset ;
-    rdfs:label "Subset of the dataset"@en ;
-    rdfs:range dataid:Dataset .
-
-void:triples
-    a owl:DatatypeProperty ;
-    rdfs:comment "Triplecount of the dataset. We recommend measuring with rapper -g -o ntriples | sort -u | wc -l"@en ;
-    rdfs:domain dataid:Dataset ;
-    rdfs:range xsd:int .
-
-rdf:Resource
-    a owl:Class .
-
-rdfs:label
-    a owl:DatatypeProperty ;
-    rdfs:comment "Short name of the dataset. Ex: 'dbpedia_en_2014'"@en ;
-    rdfs:range xsd:string .
-
-xsd:date
-    a rdfs:Datatype .
-
-dcat:keyword
-    a owl:DatatypeProperty ;
-    rdfs:comment "A topical keyword indicating the domain or core properties of the dataset"@en ;
-    rdfs:domain dataid:Dataset ;
-    rdfs:label "keyword"@en ;
-    rdfs:range xsd:string .
-
-dcat:landingPage
-    a owl:DatatypeProperty ;
-    rdfs:comment "General website of the dataset."@en ;
-    rdfs:domain dataid:Dataset ;
-    rdfs:range rdf:Resource .
-
-dcat:mediaType
-    a owl:DatatypeProperty ;
-    rdfs:comment "The media type or mime type of a distribution or file. In compressed files the outer format: A zipped ntriples file example.nt.zip has dcat:mediaType application/zip"@en ;
-    rdfs:domain dataid:Distribution ;
-    rdfs:range xsd:string .
-
-foaf:topic
-	a owl:DatatypeProperty ;
-    rdfs:comment "Links a DatasetDescription to one or more datasets. Links what the DataID is about."@en ;
-    rdfs:domain void:DatasetDescription ;
-    rdfs:range dataid:Dataset .
-
-odrl:Policy
-    a owl:Class .
-
-prov:used
-    a owl:ObjectProperty ;
-    rdfs:comment "Entity used by the Activity to generate the dataset"@en ;
-    rdfs:domain prov:Activity ;
-    rdfs:label "was generated by"@en ;
-    rdfs:range prov:Entity .
-
-prov:wasDerivedFrom
-    a owl:ObjectProperty ;
-    rdfs:comment "Entity the dataset was derived from"@en ;
-    rdfs:domain dataid:Dataset ;
-    rdfs:label "was derived from"@en ;
-    rdfs:range prov:Entity .
-
-prov:wasGeneratedBy
-    a owl:ObjectProperty ;
-    rdfs:comment "Activity used to generate the dataset"@en ;
-    rdfs:domain dataid:Dataset ;
-    rdfs:label "was generated by"@en ;
-    rdfs:range prov:Activity .
-
-sd:defaultDataset
-    a owl:ObjectProperty ;
-    rdfs:comment "Default dataset this distribution delivers"@en ;
-    rdfs:domain dataid:Distribution ;
-    rdfs:label "default dataset"@en ;
-    rdfs:range dataid:Dataset .
-
 void:DatasetDescription
 	a owl:Class ;
     rdfs:label "A description of one or more datasets. The DataID itself."@en ;
@@ -637,3 +515,4 @@ To learn more including how to draft an new DataID, please visit http://dataid.d
         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
     ] .
 
+<http://www.opendefinition.org/licenses/cc-by> a dct:LicenseDocument.
