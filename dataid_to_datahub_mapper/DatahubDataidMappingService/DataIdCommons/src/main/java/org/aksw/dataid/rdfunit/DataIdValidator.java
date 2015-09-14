@@ -3,6 +3,7 @@ package org.aksw.dataid.rdfunit;
 import java.util.*;
 
 import com.hp.hpl.jena.rdf.model.Model;
+import org.aksw.jena_sparql_api.model.QueryExecutionFactoryModel;
 import org.aksw.rdfunit.RDFUnitConfiguration;
 import org.aksw.rdfunit.elements.implementations.PatternBasedTestCaseImpl;
 import org.aksw.rdfunit.elements.interfaces.TestCase;
@@ -12,7 +13,9 @@ import org.aksw.rdfunit.exceptions.UndefinedSerializationException;
 import org.aksw.rdfunit.io.reader.RDFReaderException;
 import org.aksw.rdfunit.sources.SchemaSource;
 import org.aksw.rdfunit.sources.TestSource;
+import org.aksw.rdfunit.statistics.DatasetStatistics;
 import org.aksw.rdfunit.tests.TestSuite;
+import org.aksw.rdfunit.tests.results.DatasetOverviewResults;
 import org.aksw.rdfunit.validate.ParameterException;
 import org.aksw.rdfunit.validate.wrappers.RDFUnitStaticValidator;
 import org.aksw.rdfunit.validate.wrappers.RDFUnitTestSuiteGenerator;
@@ -106,7 +109,10 @@ public class DataIdValidator {
     }
 
     public Model validate(final RDFUnitConfiguration configuration, final TestSource testSource, final TestSuite testSuite) throws TestCaseExecutionException {
-        return RDFUnitStaticValidator.validate(configuration.getTestCaseExecutionType(), testSource, testSuite);
+        DatasetOverviewResults overviewResults = new DatasetOverviewResults();
+        Model model = RDFUnitStaticValidator.validate(configuration.getTestCaseExecutionType(), testSource, testSuite, overviewResults);
+        System.out.println(overviewResults.toString());
+        return model;
     }
 }
 
