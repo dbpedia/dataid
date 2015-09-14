@@ -31,8 +31,8 @@ local.properties
 #################
 ## IntelliJ
 #################
-.idea
-.iml
+*.idea
+*.iml
 .settings
 target/
 lib/
