@@ -299,7 +299,7 @@ dataid:SparqlEndpoint
          owl:onProperty dcat:accessURL
      ].
 
-dataid:LatestLinksetVersion
+dataid:latestLinksetVersion
     a owl:ObjectProperty ;
     rdfs:comment "Latest version of a linkset"@en ;
     rdfs:domain dataid:Linkset ;

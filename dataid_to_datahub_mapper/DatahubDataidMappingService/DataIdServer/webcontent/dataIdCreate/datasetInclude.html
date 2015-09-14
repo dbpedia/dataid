@@ -1,0 +1,133 @@
+        <div style="" class="row">
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div ng-init="clicked='on'"></div>
+            <div class="panel-heading">
+                <h1 class="panel-title">Basics</h1>
+            </div>
+            <div class="panel-body hover-link" >
+                <label style="margin-top: 10px" for="dTitle">Title</label> <span ng-show="dataset['dc:title']['@required']" style="color: red">*</span>
+                <a class="desc2" target="_blank" href='http://purl.org/dc/terms/title'> dc:title </a>
+                <br>
+                <input ng-required="dataset['dc:title']['@required']" style="width: 100%;" class="input" size="57" type="text" id="dTitle" ng-model="dataset['dc:title']['@value']"> <br>
+
+                <label for="dDescription">Description</label> <span ng-show="dataset['dc:description']['@required']" style="color: red">*</span>
+                <a class="desc2" target="_blank" href='http://purl.org/dc/terms/description'> dc:description </a>
+                <br>
+                <textarea ng-required="dataset['dc:description']['@required']" style="width: 100%;" class="input" rows="3" id="dDescription" ng-model="dataset['dc:description']['@value'][selectedLanguage]"></textarea> <br>
+
+                <label for="rdfsLabel">Label</label> <span ng-show="dataset['rdfs:label']['@required']" style="color: red">*</span>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='"http://www.w3.org/2000/01/rdf-schema#label'> rdfs:label </a>
+                <br>
+                <input ng-required="dataset['rdfs:label']['@required']" style="width: 100%;" class="input" type="text" id="rdfsLabel" ng-model="dataset['rdfs:label']['@value'][selectedLanguage]"> <br>
+
+                <label for="keywords">Keywords (English)</label> <span ng-show="dataset['dcat:keyword']['@required']" style="color: red">*</span>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/vocab-dcat/keywords'> dcat:keyword </a>
+                <br>
+                <input  ng-required="dataset['dcat:keyword']['@required']" style="width: 100%;" class="input"  type="text" id="keywords" ng-model="dataset['dcat:keyword']" ng-list="/,|\./">
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div ng-init="clicked='on'"></div>
+            <div class="panel-heading" >
+                <h1 class="panel-title">License</h1>
+            </div>
+            <div class="panel-body hover-link">
+
+                <label for="license">License</label> <span ng-show="dataset['dc:license']['@required']" style="color: red">*</span>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='http://purl.org/dc/terms/license'> dc:license </a>
+                <br>
+                <!--TODO ng-model="dataset['dataid:licenseName']['@value']"-->
+                <select ng-required="dataset['dc:license']['@required']" style="width: 100%;" id="agent" name="licenseelect" ng-model="dataset['dc:license']['@id']" ng-options="license.val as license.name for license in licenses"></select>
+                <br>
+                <br>
+
+                <label for="dcrights">Rights Statement</label> <span ng-show="dataset['dc:rights']['@required']" style="color: red">*</span>
+                <a class="desc2" target="_blank" href='http://purl.org/dc/terms/rights'> dc:rights </a>
+                <br>
+                <textarea ng-required="dataset['dc:rights']['@required']" style="width: 100%;" class="input" rows="3" id="dcrights" ng-model="dataset['dc:rights']['@value'][selectedLanguage]"></textarea> <br>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div ng-init="clicked='on'"></div>
+            <div class="panel-heading" >
+                <h1 class="panel-title">Contact</h1>
+            </div>
+            <div class="panel-body hover-link" >
+
+                <label for="landingPage">Landing Page</label> <span ng-show="dataset['dcat:landingPage']['@required']" style="color: red">*</span>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/vocab-dcat/media_type'> dcat:landingPage </a>
+                <br>
+                <input url ng-required="dataset['dcat:landingPage']['@required']"  style="width: 100%;" class="input" type="text" id="landingPage" ng-model="dataset['dcat:landingPage']['@id']">
+                <br>
+                <br>
+
+                <label for="agent">Associated Agents</label> <span ng-show="dataset['dataid:associatedAgent']['@required']" style="color: red">*</span>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='http://dataid.dbpedia.org/ns/core#associatedAgent'> dataid:associatedAgent </a>
+                <br>
+                <div>
+                    <button class="btn btn-primary" style="float: right; height: 69px" ng-click="openAgent()" >add</button>
+                    <div style="overflow: hidden; padding-right: .5em;">
+                        <select ng-required="dataset['dataid:associatedAgent']['@required']" style="width: 100%;" id="license" name="agentSelect" ng-model="dataset['dataid:associatedAgent']" ng-options="agent['@id'] as agent['dataid:agentName']['@value'] for agent in agents" multiple></select>
+                    </div>​
+                </div>
+
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div ng-init="clicked='on'"></div>
+            <div class="panel-heading">
+                <h1 class="panel-title">Distributions</h1>
+            </div>
+            <div class="panel-body hover-link" >
+
+                <label for="ditr">Distributions & Endpoints</label> <span ng-show="dataset['dcat:distribution']['@required']" style="color: red">*</span>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/vocab-dcat/distribution'> dcat:distribution </a>
+                <br>
+
+                <div>
+                    <button class="btn btn-primary" style="float: right; height: 69px" ng-click="openDistr(dataset)" >add</button>
+                    <div style="overflow: hidden; padding-right: .5em;">
+                        <select ng-required="dataset['dcat:distribution']['@required']" style="width:100%" id="ditr" name="distSelect" ng-model="dataset['dcat:distribution']" ng-options="distr['@id'] as distr['dc:title']['@value'] for distr in distributions" multiple></select>
+                    </div>​
+                </div>
+
+                <label for="rootR">Root Resource</label> <span ng-show="dataset['void:rootResource']['@required']" style="color: red">*</span>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/void/rootResource'> void:rootResource </a>
+                <br>
+                <select ng-required="dataset['void:rootResource']['@required']"  style="width: 100%;" id="rootR" name="licenseelect" ng-model="dataset['void:rootResource']['@id']" ng-options="distr for distr in dataset['dcat:distribution']"></select>
+            </div>
+        </div>
+        <div ng-show="checked">
+            <div class="panel panel-primary">
+                <div class="panel-heading" >
+                    <h1 class="panel-title">Statistics</h1>
+                </div>
+                <div class="panel-body hover-link">
+                    <label for="dTriples">Triples</label> <span ng-show="dataset['void:triples']['@required']" style="color: red">*</span>
+                    <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/void/triples'> void:triples </a>
+                    <br>
+                    <input ng-required="dataset['void:triples']['@required']" style="width: 100%;" class="input" type="text" id="dTriples" name="dTriples" ng-model="dataset['void:triples']['@value']"> <br>
+                    <br>
+
+                    <label for="entries">Number of Entries</label> <span ng-show="dataset['void:entities']['@required']" style="color: red">*</span>
+                    <a style="float: right; margin-right: 0px; width: 100%;" target="_blank" href='"http://www.w3.org/TR/void/entities'> void:entities </a>
+                    <br>
+                    <input ng-required="dataset['void:entities']['@required']" class="input" type="text" id="entries" ng-model="dataset['void:entities']['@value']"> <br>
+
+                    <label for="classes">Number of Classes</label> <span ng-show="dataset['void:classes']['@required']" style="color: red">*</span>
+                    <a style="float: right; margin-right: 0px; width: 100%;" target="_blank" href='"http://www.w3.org/TR/void/classes'> void:classes </a>
+                    <br>
+                    <input ng-required="dataset['void:classes']['@required']" class="input" type="text" id="classes" ng-model="dataset['void:classes']['@value']"> <br>
+
+                    <label for="distinctObjects">Number of distinct Objects</label> <span ng-show="dataset['void:distinctObjects']['@required']" style="color: red">*</span>
+                    <a style="float: right; margin-right: 0px; width: 100%;" target="_blank" href='"http://www.w3.org/TR/void/distinctObjects'> void:distinctObjects </a>
+                    <br>
+                    <input ng-required="dataset['void:distinctObjects']['@required']" class="input" type="text" id="distinctObjects" ng-model="dataset['void:distinctObjects']['@value']"> <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

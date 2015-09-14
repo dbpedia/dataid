@@ -1,0 +1,12 @@
+<div>
+    <a class="label label-xlg label-warning" href="" >{{role}}</a>
+    <div class="pull-right" ng-mouseover="activatePopover()">
+        <div class="popr label label-xlg label-info" data-id="addAgentMenu">Menu</div>
+        <div class="popr-box" data-box-id="addAgentMenu">
+            <a class="popr-item" name="{{dataSet['@id']}}" href="#" onclick="var scope = angular.element(event.target).scope(); scope.openNewAgent();">add agent</a>
+        </div>
+    </div>
+</div>
+<ul>
+    <li ng-repeat="dataSet in graph | filter:agentFilter" ng-if="dataSet['dataid:agentRole']['@value'] == role" ng-include="'inner_agent_tree_renderer.html'"></li>
+</ul>

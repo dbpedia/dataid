@@ -1,6 +1,6 @@
 {
     "ipaddress":"localhost",
-    "port":9997,
+    "port":9995,
 	"datahubActionUri": "http://datahub.io/api/3/action/",
 	"mappingConfigPath": "MappingConfig.json",
 	"ckanTimeOut": 10000,
@@ -20,8 +20,8 @@
         "GetOrganizationId": "organization_show"
 	},
     "ontologyMap":{
-      "dataid": {"uri":"http://dataid.dbpedia.org/ns/core#", "dlUrl":"http://localhost:9997/static/ontology.ttl"},
-      "void": {"uri":"http://rdfs.org/ns/void#", "dlUrl":"http://localhost:9997/static/void.rdf"}
+      "dataid": {"uri":"http://dataid.dbpedia.org/ns/core#", "dlUrl":"http://localhost:9995/static/ontology.ttl"},
+      "void": {"uri":"http://rdfs.org/ns/void#", "dlUrl":"http://localhost:9995/static/void.rdf"}
     },
   "exceptionMap":{
     "http://rdfunit.aksw.org/data/generators#OWLQCARDEX": ["http://rdfs.org/ns/void#objectsTarget"],

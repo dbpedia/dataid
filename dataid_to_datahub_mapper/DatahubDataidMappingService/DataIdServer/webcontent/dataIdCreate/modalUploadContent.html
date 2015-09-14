@@ -1,0 +1,37 @@
+<form name="formUpload" >
+    <div class="modal-header">
+        <h3 class="modal-title">Load a DataID</h3>
+    </div>
+    <div class="modal-body">
+        <div class="panel panel-primary">
+            <div ng-init="clicked='on'"></div>
+            <div class="panel-heading">
+                <h1 class="panel-title">4 Options:</h1>
+            </div>
+            <div class="panel-body hover-link" >
+                <label style="margin-top: 10px" for="uriInput">1. DataID URI (we will load the last known version) - not working yet</label>
+                <br/> <!--TODO!-->
+                <input style="width: 100%;" class="input" type="url" id="uriInput" ng-model="filepath" ng-model-options="{ updateOn: 'blur' }" ng-change="httpGet(filepath, dataidtext)" />
+                <br/>
+
+                <label for="urlInput">2. Download URL (we will download the DataID)</label>
+                <br/>
+                <input style="width: 100%;" class="input" type="url" id="urlInput" ng-model="filepath" ng-model-options="{ updateOn: 'blur' }" ng-change="httpGet(filepath, dataidtext)" />
+                <br/>
+
+                <label class="" for="fileInput">3. File (choose a DataID file to upload) - not working yet</label>
+                <br/>
+                <input style="width: 100%;" class="input" type="file" id="fileInput" ng-model="filepath" ng-model-options="{ updateOn: 'blur' }" onchange="httpRequest($('input[type=file]').val(), angular.element(this).scope().dataidtext)"  />
+                <br/>
+
+                <label for="textInput">4. or insert the DataID here</label>
+                <br>
+                <textarea style="width: 100%;" class="input" rows="10" id="textInput" ng-required="true" ng-model="$parent.dataidtext"></textarea> <br>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

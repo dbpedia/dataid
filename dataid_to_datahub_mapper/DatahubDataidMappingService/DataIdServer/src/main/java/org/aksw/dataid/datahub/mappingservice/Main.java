@@ -6,6 +6,7 @@ import com.sun.jersey.api.container.grizzly2.GrizzlyServerFactory;
 import com.sun.jersey.api.core.PackagesResourceConfig;
 import com.sun.jersey.api.core.ResourceConfig;
 import org.aksw.dataid.config.DataIdConfig;
+import org.aksw.dataid.datahub.mappingprovider.CorsSupportProvider;
 import org.aksw.dataid.datahub.mappingprovider.DataIdInputExceptionProvider;
 import org.aksw.dataid.datahub.restclient.CkanRestClient;
 import org.aksw.dataid.virtuoso.VirtuosoDataIdGraph;
@@ -60,6 +61,7 @@ public class Main {
         DataIdConfig.initDataIdConfig(mainPath);
         graph = new VirtuosoDataIdGraph(DataIdConfig.getVirtuosoHost(), DataIdConfig.getVirtuosoPort(), DataIdConfig.getVirtuosoUser(), DataIdConfig.getVirtuosoPassword());
         ResourceConfig rc = new PackagesResourceConfig(Main.class.getPackage().getName(), DataIdInputExceptionProvider.class.getPackage().getName());
+        rc.getContainerResponseFilters().add(new CorsSupportProvider());
         Base_Uri = UriBuilder.fromUri("http://" + DataIdConfig.get("ipaddress") + "/").port(Integer.parseInt(DataIdConfig.get("port").toString())).build();
         System.out.println("Starting grizzly2...");
         httpServer = GrizzlyServerFactory.createHttpServer(Base_Uri, rc);

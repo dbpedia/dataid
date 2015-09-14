@@ -1,0 +1,22 @@
+<form name="formSend" novalidate>
+    <div class="modal-header">
+        <h3 class="modal-title">Upload to Datahub</h3>
+    </div>
+    <div class="modal-body">
+
+        <label for="key">API key</label> <br>
+        <input class="input" type="text" id="key" ng-model="dataHubObj.key"> <br>
+        <label for="org">Organization</label><br>
+        <input class="input" type="text"  name="org" ng-model="dataHubObj.org"> <br>
+        <label for="login">Login Name</label><br>
+        <input class="input" rows="4" name="login" ng-model="dataHubObj.login"> <br>
+        <label for="url">URL</label><br>
+        <input url class="input" type="text" id="url" name="url" ng-model="dataHubObj.url"> <br>
+        <span ng-show="formDist.url.$error.url">{{messages.notValidURI}} <br></span>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

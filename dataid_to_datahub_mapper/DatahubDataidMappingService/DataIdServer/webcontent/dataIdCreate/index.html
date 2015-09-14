@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html ng-app="dataIdGen">
+<head>
+    <script src="js/angular.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/angular-sanitize.js"></script>
+    <script src="js/jquery-2.1.0.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="js/restangular.js"></script>
+    <script src="js/angular-jsonld.js"></script>
+    <script src="js/dataIdSets.js"></script>
+    <script src="js/dataIdAngular.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="js/jquery-ui.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/popr.css">
+    <script src="js/popr.js"></script>
+    <script src="js/angular-multiselect.js"></script>
+    <style>
+
+        .desc2{
+            float: right;
+            margin-right: 2px;
+        }
+        .input{
+            margin-bottom: 5px;
+            width: 98%
+        }
+        .input-modal-md{
+            margin-bottom: 5px;
+            width: 100%
+        }
+        .input-small2{
+            margin-bottom: 5px;
+            width: 90%
+        }
+
+        #page-wrapper {
+            position: inherit;
+            margin: 0 0 0 280px;
+            padding: 0 30px;
+            min-height: 1300px;
+            border-left: 1px solid #e7e7e7;
+        }
+
+        .navbar-fixed-bottom{
+            /*position: inherit !important;*/
+            /*margin: 0 0 0 0px !important;*/
+            padding: 0 0px !important;
+            border-left: 1px solid #e7e7e7 !important;
+
+        }
+        .navbar-static-side {
+            z-index: 1;
+            position: absolute;
+            width: 400px;
+            height: 2350px;
+        }
+        .URIerror{
+            color: red;
+        }
+        .popover{
+            max-width: 340px;
+        }
+        .help-button {
+            display: inline-block;
+            height: 22px;
+            width: 22px;
+            line-height: 22px;
+            text-align: center;
+            padding: 0;
+            background-color: #65bcda;
+            color: #FFF;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: default;
+            margin-left: 4px;
+            border-radius: 100%;
+            border-color: #FFF;
+            border: 2px solid #FFF;
+            -webkit-box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.2);
+        }
+        .ui-dialog { z-index: 10800 !important ;
+        }
+        .navbar-fixed-top{
+            height: 40px !important ;
+            min-height:  40px !important ;
+        }
+        .nav.navbar-nav{
+            height: 35px !important ;
+            min-height:  10px !important ;
+        }
+        ul {/* Remove margin for all <ul>s (and padding, because different browsers have different default styles) */
+            margin-left: 3px;
+            padding-left: 0;
+        }
+
+        ul ul {/* Add a margin for any <ul> inside another <ul> */
+            margin-left: 13px;
+        }
+        li { list-style: none; }
+
+        .accordion-toggle{
+            color: #777 !important;
+            font-size: 13px !important;
+            margin-top: 12px !important;
+        }
+        .panel .panel-default .ng-isolate-scope{
+            max-height: 200px !important;
+        }
+        #list{
+            max-height: 360px !important;
+            overflow:auto !important;
+        }
+        .navbar-fixed-bottom{
+            width: 400px;
+        }
+
+    </style>
+
+    <meta charset="UTF-8">
+    <title>DataID Generator</title>
+    <script async>
+        function handleLoad(id, insert) {
+            var templates  = document.getElementById(id).import;
+            var template = templates.getElementById('template');
+            var clone = document.importNode(template.content, true);
+            var child = document.getElementById(insert);
+            var parent = child.parentNode;
+            parent.insertBefore(clone, child);
+            parent.removeChild(child);
+        }
+        function handleError(e) {
+            console.log('Error loading import: ' + e.target.href);
+        }
+    </script>
+</head>
+
+<body ng-controller="genController">
+<form name="form">
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top pull-right" role="navigation" style="margin-bottom: 0">
+            <ul class="nav nav-pills pull-right">
+                <li class="active"><a href="#" ng-click="currentTab='home'">DataID Home</a></li>
+                <li class="active"><a href="#" ng-click="currentTab='creator'">DataID Editor</a></li>
+                <li class="active"><a href="#" ng-click="currentTab='search'">DataID Lookup</a></li>
+            </ul>
+            <div class="navbar-default navbar-static-side" ng-show="currentTab == 'creator'">
+                <button style="width: 100%; margin: 1px; font-size: 14px; height: 39px;" class="btn btn-sm btn-primary" ng-click="openUpload()" >Open an existing DataID</button>
+                <accordion close-others="oneAtATime">
+                    <accordion-group heading="List of datasets" is-open="true" >
+                        <div id="datasetList">
+                            <span>Dataset Title</span>
+                            <span class="pull-right">Options</span>
+                            <ul>
+                                <li ng-repeat="dataSet in graph | filter:dataidFilter" ng-include="'tree_item_renderer.html'"></li>
+                            </ul>
+                        </div>
+                    </accordion-group>
+                    <accordion-group heading="List of available Agents" is-open="true" >
+                        <div id="agentList">
+                            <span>Agents:</span>
+                            <span class="pull-right">Options</span>
+                            <ul>
+                                <li ng-repeat="role in agentRoles" ng-include="'agent_tree_renderer.html'"></li>
+                            </ul>
+                        </div>
+                    </accordion-group>
+                </accordion>
+            </div>
+        </nav>
+        <nav class=" navbar-fixed-bottom" role="navigation" ng-mouseover="activatePopover()" ng-show="currentTab == 'creator'">
+            <div>
+                <div>
+                    <div style="height: 45px">
+                        <div ng-show="progressBarWidth > 0">
+                            <span style="">Loading...</span>
+                            <div class="progress progress-mini">
+                                <!--<div class="progress-bar progress-danger" style="width: 75%;"></div>-->
+                                <div class="progress-bar progress-danger" style="height: 10px; width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--<a class="btn btn-sm btn-primary" href="" ng-click="addExample()">Add Example Dataset</a>-->
+                    <div>
+                        Legend: <br>
+                        <div class="pull-left">
+                            <a class="btn btn-sm btn-success" > </a> DataID (void:DatasetDescription)<br>
+                            <a class="btn btn-sm btn-info" > </a> dataid:Dataset <br>
+                            <a class="btn btn-sm label-default" > </a> dataid:Distribution <br>
+                            <a class="btn btn-sm btn-primary" > </a> dataid:Agent <br>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div style="padding-top: 80px !important;">
+                        <button style="width: 100%; margin: 1px; font-size: 14px; height: 39px;" class="btn btn-sm btn-primary" ng-click="putOut(dataid)" >Validate & Publish DataID</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!--home page -->
+        <div id="home-wrapper" ng-show="currentTab == 'home'" >
+            <div class="container">
+                Homepage
+            </div>
+        </div>
+        <!--creator page -->
+        <div id="page-wrapper" ng-show="currentTab == 'creator'" style="float: left; margin-left: 400px;">
+
+            <br/>
+            <div class="container">
+                <div>
+                    <div class="form-group">
+                        <div class="row">
+                            <br>
+                            <div class="col-lg-10">
+                                <div class="page-header" >
+                                    <span><h2 >Create a new DataID: {{root['dc:title']['@value']}}</h2></span>
+                                    <span><div style="float: right; height: 69px" class="pull-right">
+                                        <span>select languge of literals:</span>
+                                        <select id="langSelect" name="langSelect" ng-model="selectedLanguage" ng-options="lang.code as lang.lang for lang in languages"></select>
+                                        <br>
+                                    </div></span>
+                                </div>
+
+                            </div>
+                            <br>
+                            <div style="padding-top: 100px" class="col-md-5">
+                                <div ng-include="'general_information.html'"></div>
+                            </div>
+
+                            <div style="padding-top: 100px" class="col-md-5">
+                                <div ng-include="'agentInclude.html'"></div>
+                            </div>
+                            <div class="col-md-10">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="rdfOutput" style="display: none">
+                    <a class="label label-success ng-binding"  href="" ng-click="downloadInnerHtml()">Download DataID file</a>
+                        <pre id="rdf" style="margin: 0.5em; padding:0.5em; background-color:#eee; border:dashed 1px grey;">
+                            {{rdf}}
+                        </pre>
+                </div>
+                <div id="rdfOutputValidator">
+                    <div id="rdfOutputValidatorHTML">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--search page -->
+        <div id="search-wrapper" ng-show="currentTab == 'search'" style="float: left; margin-left: 400px;">
+            <div class="container">
+                Homepage
+            </div>
+        </div>
+    </div>
+
+</form>
+</body>
+
+</html>
+

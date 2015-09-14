@@ -1,0 +1,35 @@
+
+<div ng-init="clicked='on'"></div>
+<div class="panel panel-primary">
+    <div class="panel-heading hover-link" ng-click="clickTest()">
+        <h1 class="panel-title">General Information</h1>
+    </div>
+    <div class="panel-body" ng-show="clicked=='on'">
+        <div>
+            <label>Dataset/Subset URI <span style="color: red">*</span></label>
+            <br>  
+            <input ng-required="true" placeholder="e.g. http://dbpedia.org/mydataset/dataid.ttl" class="input" type="url" ng-model="root['@id']">
+            <br/> 
+            <span class="label label-danger" ng-show="form.dataset.$error.url">{{messages.notValidURI}} <br></span>
+
+            <label>Title <span style="color: red">*</span></label>
+            <a class="desc2" target="_blank" href='http://purl.org/dc/terms/title'> dc:title </a>
+            <br>                
+            <input ng-required="root['dc:title']['@required']" placeholder="e.g. DBpedia" type="text" class="dataset input" ng-model="root['dc:title']['@value']">
+            <br/>
+
+            <label for="dDescription">Description</label> <span style="color: red">*</span>
+            <a class="desc2" target="_blank" href='http://purl.org/dc/terms/description'> dc:description </a>
+            <br>
+            <textarea ng-required="root['dc:description']['@required']" class="input" rows="4" id="dDescription" ng-model="root['dc:description']['@value'][selectedLanguage]"></textarea> <br>
+<!--
+            <label>Ontology Location<span style="color: red">*</span> </label>
+            <a class="desc2" target="_blank" href='http://dataid.dbpedia.org/ns/core#'> dataid:ontologyLocation </a>
+            <br>
+            <input required url name="ontologyLocation" class="input" type="text" ng-model="ds.ontologyLocation">
+            <br/>
+            <span ng-show="form.ontologyLocation.$error.url">{{messages.notValidURI}} <br></span>
+            <br/>-->
+        </div>
+    </div>
+</div>

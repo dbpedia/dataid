@@ -1,0 +1,37 @@
+<form name="formLinkset" novalidate>
+    <div class="modal-header">
+        <h3 class="modal-title">New WasGeneratedBy Contact Information</h3>
+        <div style="padding: 10px 5px;">
+    <span> 
+    Here you can create new WasGeneratedBy contact information. 
+    </span>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-10">
+
+                <input type="radio" ng-model="wasGeneratedByAgent.prop" value="dct:creator"> dct:creator
+                <input style="margin-left: 20px" type="radio" ng-model="wasGeneratedByAgent.prop" value="dct:contributor"> dct:contributor
+                <input style="margin-left: 20px" type="radio" ng-model="wasGeneratedByAgent.prop" value="prov:wasAssociatedWith"> prov:wasAssociatedWith <br/>
+
+                <label style="margin-top: 10px">Label <span style="color: red">*</span> </label>
+                <a style="margin-top: 10px" class="desc2" target="_blank" href='http://www.w3.org/TR/rdf-schema/#ch_label'> rdfs:label </a>
+                <br/>
+                <input  class="input"  placeholder="Contact Point Label" ng-model="wasGeneratedByAgent.label"> <br/>
+                <label>Name <span style="color: red">*</span> </label>
+                <a class="desc2" target="_blank" href='http://xmlns.com/foaf/spec/#term_name'> foaf:name </a>
+                <br/>
+                <input  class="input"  placeholder="Contact Point Name"  ng-model="wasGeneratedByAgent.name"> <br/>
+                <label>Mailbox <span style="color: red">*</span> </label>
+                <a class="desc2" target="_blank" href='http://xmlns.com/foaf/spec/#term_mbox'> foaf:mbox </a>
+                <br/>
+                <input class="input" placeholder="Contact Point Mailbox" ng-model="wasGeneratedByAgent.mbox"> <br/>
+                <br/>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+</form>
