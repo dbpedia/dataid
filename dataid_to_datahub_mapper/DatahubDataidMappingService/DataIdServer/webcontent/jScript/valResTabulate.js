@@ -69,8 +69,11 @@ function resultTitle(title)
 
 function prettify()
 {
+    var select = document.getElementById('serialSelect');
+    var format = select.options[select.selectedIndex].value;
     delay(function(){
-        var agentUrl = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '')+'/dataid/publisher/prettyprintid';
+        var agentUrl = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '')+
+            '/dataid/publisher/prettyprintid' + (format != null ? ('?format=' + encodeURI(format)) : '');
         var method = "POST";
         var postData = document.getElementById('dataid').value;
         sendRequest(agentUrl, method, postData, false, function () {
@@ -97,6 +100,7 @@ function sendRequest(url, method, data, async, onLoad, onError)
     request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     request.send(data);
 }
+
 function tabulate(columns, inp) {
     var table = d3.select("#canvas")
             .append("table")

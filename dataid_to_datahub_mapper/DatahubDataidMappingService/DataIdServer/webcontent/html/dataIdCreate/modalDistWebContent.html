@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <h3 class="modal-title">Add Distributions from Apache's Web List</h3>
+    <div style="padding: 10px 5px;">
+    <span> 
+    If your dataset has a list of distributions like <a target="_blank" href="/parser/ex">this example</a>, answer some questions and the generator will create a distribution list for you. Please, make sure that your files are not located in subfolders, otherwise, the parser will ignore them.
+    </span>
+    </div>
+</div>
+<div class="modal-body">
+    <label>What is the address that the distributions are located?</label><br>
+    <input  class="input" rows="4" ng-model="address2"> <br>
+
+    <label>What is the media type format of the files? (e.g. text/plain)</label><br>
+    <input  class="input" rows="4" ng-model="mediaType"> <br>
+
+    <label>Enter here the description for distributions:</label><br>
+    <input  class="input" rows="4" ng-model="description"> <br>
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok(address2,mediaType,description)">Parse!</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

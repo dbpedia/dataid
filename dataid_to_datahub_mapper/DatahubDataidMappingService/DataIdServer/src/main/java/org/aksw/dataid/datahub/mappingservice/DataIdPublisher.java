@@ -2,34 +2,25 @@ package org.aksw.dataid.datahub.mappingservice;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.fasterxml.jackson.databind.node.BaseJsonNode;
-import com.fasterxml.jackson.databind.node.JsonNodeFactory;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.github.jsonldjava.core.*;
-import com.sun.jersey.core.spi.factory.ResponseImpl;
 import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.jsonobjects.DatahubError;
 import org.aksw.dataid.datahub.jsonobjects.Dataset;
 import org.aksw.dataid.datahub.jsonobjects.ValidCkanResponse;
-import org.aksw.dataid.datahub.mappingobjects.DataId;
 import org.aksw.dataid.errors.DataIdInputException;
 import org.aksw.dataid.jsonutils.StaticJsonHelper;
 import org.aksw.dataid.errors.DataHubMappingException;
 import org.aksw.dataid.datahub.propertymapping.DataIdProcesser;
 import org.aksw.dataid.datahub.restclient.CkanRestClient;
 import org.aksw.dataid.ontology.IdPart;
-import org.aksw.dataid.statics.StaticContent;
+import org.aksw.dataid.statics.StaticFunctions;
 import org.aksw.dataid.virtuoso.VirtuosoDataIdGraph;
-import org.apache.jena.atlas.json.JSON;
-import org.eclipse.jdt.internal.compiler.ast.Javadoc;
+import org.openrdf.rio.RDFFormat;
 import org.openrdf.rio.RDFHandlerException;
 import org.openrdf.rio.RDFParseException;
 
 import javax.ws.rs.*;
-import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -117,6 +108,19 @@ public class DataIdPublisher
         }
     }
 
+    @GET
+    @Path("/dataidcreator")
+    @Produces("text/html")
+    public String creator()
+    {
+        try {
+            String path = Main.getMainPath() + "/html/dataIdCreate/index.html";
+            String content = new String(Files.readAllBytes(Paths.get(path)));
+            return content;
+        } catch (IOException e) {
+            return addHtmlBody(produceHttpResponse(e));
+        }
+    }
 
     @POST
     @Path("/validationresulttable")
@@ -176,10 +180,18 @@ public class DataIdPublisher
 
     @POST
     @Path("/prettyprintid")
-    public String prettyPrintId(final String ttl) {
+    public String prettyPrintId(@QueryParam(value = "format") final String format, final String ttl) {
         try {
             IdPart dataid = new IdPart(ttl);
-            return dataid.toTurtle();
+            RDFFormat f = null;
+            if(format != null)
+                for(Object fo : RDFFormat.values().toArray())
+                    if(((RDFFormat)fo).getName().equalsIgnoreCase(format))
+                        f = (RDFFormat)fo;
+            if(format == null)
+                f = StaticFunctions.getRDFFormat(ttl);
+            String ret = dataid.toSerialization(f);
+            return ret;
         } catch (Exception e) {
             return ttl;
         }

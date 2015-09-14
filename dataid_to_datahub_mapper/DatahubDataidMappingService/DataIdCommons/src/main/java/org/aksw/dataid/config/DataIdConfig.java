@@ -26,6 +26,7 @@ public class DataIdConfig {
         System.out.println(mainConfigPath);
         InputStream inputStream = new FileInputStream(mainConfigPath);
         String content = StaticJsonHelper.GetStringFromInputStream(inputStream);
+        mainConfigFile = StaticJsonHelper.convertStringToJsonNode(content);
         mainConfigFile = StaticJsonHelper.convertStringToJsonNode(replacePlaceholder(content));
     }
 
@@ -91,7 +92,10 @@ public class DataIdConfig {
         Matcher matcher = java.util.regex.Pattern.compile("\\{\\$[^\\}]+\\}").matcher(input);
         while(matcher.find())
         {
-            input =  input.replace(matcher.group(), "");
+            String match = matcher.group();
+            String replacement = match.replace("{", "").replace("}", "").replace("$", "");
+            replacement = mainConfigFile.get(replacement).asText();
+            input =  input.replace(match, replacement);
         }
         return input;
     }

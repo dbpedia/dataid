@@ -8,6 +8,7 @@ import org.aksw.dataid.rdfunit.DataIdValidator;
 import org.aksw.dataid.rdfunit.JenaModelEvaluator;
 import org.aksw.dataid.statics.StaticContent;
 import org.aksw.dataid.statics.StaticFunctions;
+import org.aksw.jena_sparql_api.model.QueryExecutionFactoryModel;
 import org.aksw.rdfunit.RDFUnitConfiguration;
 import org.aksw.rdfunit.enums.TestCaseExecutionType;
 import org.aksw.rdfunit.io.format.SerializationFormat;
@@ -175,17 +176,18 @@ public class IdPart
         return m;
     }
 
-    public String toTurtle() throws RDFHandlerException, DataIdInputException {
-        return StaticFunctions.writeSerialization(graph, RDFFormat.TURTLE);
+    public String toSerialization(RDFFormat format) throws RDFHandlerException, DataIdInputException {
+        return StaticFunctions.writeSerialization(graph, format);
     }
 
     public boolean validate() throws DataIdInputException {
 
         try{
-            String ttl = this.toTurtle();
+            String ttl = this.toSerialization(RDFFormat.TURTLE);
             SerializationFormat sf = StaticJsonHelper.getSerialization(ttl);
             RDFUnitConfiguration config = validator.getConfiguration("text", ttl, sf.getName(), sf.getName(), TestCaseExecutionType.extendedTestCaseResult);
             TestSource source = config.getTestSource();
+            System.out.println("query size: " + ((QueryExecutionFactoryModel) source.getExecutionFactory()).getModel().size());
             com.hp.hpl.jena.rdf.model.Model m = validator.validate(config, source, validator.getTestSuite());
             ErrorWarningWrapper ew = new JenaModelEvaluator(m).getErrorWarnings();
             this.errorswarnings.addAll(ew.getErrors());

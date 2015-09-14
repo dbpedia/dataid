@@ -1,0 +1,33 @@
+<div ng-if="isOfTypeS(dataSet, 'dataid:Dataset')">
+    <a class="label label-xlg label-info" href ng-click="changeSubset(dataSet)">{{dataSet['dc:title']['@value']}}</a>
+    <div class="pull-right" ng-mouseover="activatePopover()"  >
+        <div class="popr label label-xlg label-info" data-id="datasetMenu{{$index}}">Menu</div>
+        <div class="popr-box" data-box-id="datasetMenu{{$index}}">
+            <a href="#" name="{{dataSet['@id']}}" onclick="var scope = angular.element(event.target).scope(); scope.openNewDist(scope.getObjFromId(getId(this)));"><div class="popr-item" >add distribution</div></a>
+            <a href="#" name="{{dataSet['@id']}}" onclick="var scope = angular.element(event.target).scope(); scope.openNewDataset(scope.getObjFromId(getId(this)));"><div class="popr-item" >add subset</div></a>
+            <a href="#" name="{{dataSet['@id']}}" onclick="var scope = angular.element(event.target).scope(); if(confirm('Are you sure to delete this dataset?')) scope.delDataset2(scope.getObjFromId(getId(this)));"  ><div class="popr-item" >delete</div></a>
+        </div>
+    </div>
+</div>
+<div ng-if="isOfTypeS(dataSet, 'void:DatasetDescription')">
+    <a class="label label-xlg label-success" href="" ng-click="changeSubset(dataSet)">{{dataSet['dc:title']['@value']}}</a>
+    <div class="pull-right" ng-mouseover="activatePopover()">
+        <div class="popr label label-xlg label-info" data-id="descrMenu">Menu</div>
+        <div class="popr-box" data-box-id="descrMenu">
+            <a class="popr-item" name="{{dataSet['@id']}}" href="#" onclick="var scope = angular.element(event.target).scope(); scope.openNewDataset(scope.getObjFromId(getId(this)));">add dataset</a>
+        </div>
+    </div>
+</div>
+<div ng-if="isOfTypeS(dataSet, 'dataid:Distribution')">
+    <a class="label label-xlg label-default" href="" ng-click="changeSubset(dataSet)">{{dataSet['dc:title']['@value']}}</a>
+    <div class="pull-right" ng-mouseover="activatePopover()">
+        <div class="popr label label-xlg label-info" data-id="distrMenu">Menu</div>
+        <div class="popr-box" data-box-id="distrMenu">
+            <a class="popr-item" name="{{dataSet['@id']}}" href="#" onclick="var scope = angular.element(event.target).scope(); scope.delDataset2(scope.getObjFromId(getId(this)));">delete</a>
+        </div>
+    </div>
+</div>
+<div ng-init="parent=dataSet"></div>
+<ul>
+    <li ng-repeat="dataSet in graph" ng-if="checkParent(dataSet, parent)" ng-include="'tree_item_renderer.html'"></li>
+</ul>

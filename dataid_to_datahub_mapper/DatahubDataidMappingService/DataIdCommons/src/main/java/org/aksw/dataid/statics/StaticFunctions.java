@@ -8,7 +8,9 @@ import org.openrdf.model.impl.TreeModel;
 import org.openrdf.model.impl.URIImpl;
 import org.openrdf.rio.*;
 import org.openrdf.rio.helpers.BasicWriterSettings;
-import org.openrdf.rio.turtle.TurtleWriter;
+import org.openrdf.rio.helpers.JSONLDMode;
+import org.openrdf.rio.helpers.JSONLDSettings;
+import org.openrdf.rio.jsonld.JSONLDWriter;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -17,6 +19,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Chile on 9/7/2015.
@@ -104,6 +107,8 @@ public class StaticFunctions {
             StringWriter sw = new StringWriter();
             WriterConfig conf = new WriterConfig();
             conf.set(BasicWriterSettings.PRETTY_PRINT, true);
+            if(serialization == RDFFormat.JSONLD)
+                conf.set(JSONLDSettings.JSONLD_MODE, JSONLDMode.COMPACT);
             Rio.write(m, sw, serialization, conf);
             sw.close();
             return sw.toString();

@@ -1,0 +1,24 @@
+<form name="formDataset" >
+    <div ng-init="checked='false'"></div>
+    <div class="modal-header">
+        <h3 class="modal-title">New Dataset</h3>
+
+        <div style="padding: 10px 5px;">
+            <span>
+            {{dataset['@id']}}
+            </span>
+            <div class="pull-right">
+                <span>select languge of literals:</span>
+                <select id="langSelect" name="langSelect" ng-model="selectedLanguage" ng-options="lang.code as lang.lang for lang in languages"></select>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div style=" padding-bottom: 0;" class="modal-body">
+        <div ng-include="'datasetInclude.html'"></div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="formDataset.$valid && ok()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

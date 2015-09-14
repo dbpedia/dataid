@@ -11,6 +11,7 @@ import org.aksw.dataid.datahub.mappingprovider.DataIdInputExceptionProvider;
 import org.aksw.dataid.datahub.restclient.CkanRestClient;
 import org.aksw.dataid.virtuoso.VirtuosoDataIdGraph;
 import org.glassfish.grizzly.http.server.HttpServer;
+import org.glassfish.grizzly.http.server.NetworkListener;
 import org.glassfish.grizzly.http.server.StaticHttpHandler;
 
 import javax.ws.rs.core.UriBuilder;

@@ -1,6 +1,5 @@
 package org.aksw.dataid.statics;
 
-import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.config.MappingConfig;
 import org.aksw.dataid.config.RdfContext;
 import org.aksw.dataid.jsonutils.StaticJsonHelper;

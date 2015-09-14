@@ -1,0 +1,116 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div ng-init="clicked='on'"></div>
+            <div class="panel-heading">
+                <h1 class="panel-title">Basics</h1>
+            </div>
+            <div class="panel-body hover-link" >
+                <label>Property type: </label>  <span ng-show="true" style="color: red">*</span><br/>
+                <input id="typeRadioDist" name="typeRadio" type="radio" onClick="document.getElementById('typeRadioSparql').checked = false; " ng-model="checked" ng-model="distribution['@type'][0]" value="dataid:Distribution" checked="checked"> Distribution
+                <input id="typeRadioSparql" name="typeRadio" type="radio" onClick="document.getElementById('typeRadioDist').checked = false;" ng-model="checked" ng-model="distribution['@type'][0]" value="dataid:SparqlEndpoint" > SparqlEndpoint
+                <br/>
+                <div ng-init="checked='dataid:Distribution'"></div>
+
+                <label style="margin-top: 10px" for="dTitle">Title</label>  <span ng-show="distribution['dc:title']['@required']" style="color: red">*</span>
+                <a style="margin-top: 10px"  class="desc2" target="_blank" href='http://purl.org/dc/terms/title'> dc:title </a>
+                <br>
+                <input class="input" size="57" type="text" id="dTitle" ng-required="distribution['dc:title']['@required']" ng-model="distribution['dc:title']['@value']"> <br>
+
+                <label for="dDescription">Description</label>  <span ng-show="distribution['dc:description']['@required']" style="color: red">*</span>
+                <a class="desc2" target="_blank" href='http://purl.org/dc/terms/description'> dc:description </a>
+                <br>
+                <textarea class="input" rows="4" id="dDescription" ng-required="distribution['dc:description']['@required']" ng-model="distribution['dc:description']['@value'][selectedLanguage]"></textarea> <br>
+
+                <label for="rdfsLabel">Label</label> <span ng-show="distribution['rdfs:label']['@required']" style="color: red">*</span>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='"http://www.w3.org/2000/01/rdf-schema#label'> rdfs:label </a>
+                <br>
+                <input class="input" type="text" id="rdfsLabel" ng-required="distribution['rdfs:label']['@required']" ng-model="distribution['rdfs:label']['@value'][selectedLanguage]"> <br>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div ng-init="clicked='on'"></div>
+            <div class="panel-heading">
+                <h1 class="panel-title">Access & Contact</h1>
+            </div>
+            <div class="panel-body hover-link" >
+            <div ng-show="checked == 'dataid:Distribution'">
+                <label for="downloadURL">Download URL</label> <span ng-show="distribution['dcat:downloadURL']['@required']" style="color: red">*</span>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/vocab-dcat/#downloadURL'> dcat:downloadURL </a>
+                <br>
+                <input type="url" class="input" id="downloadURL" name="downloadURL" ng-required="distribution['dcat:downloadURL']['@required'] && checked == 'dataid:Distribution'" ng-model="distribution['dcat:downloadURL']['@id']"> <br>
+            </div>
+                <div ng-show="checked == 'dataid:SparqlEndpoint'">
+                    <label for="dAccessURL">Access URL</label> <span ng-show="distribution['dcat:accessURL']['@required']" style="color: red">*</span>
+                    <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/vocab-dcat/#accessURL'> dcat:accessURL </a>
+                    <br>
+                    <input type="url" class="input" id="dAccessURL" name="dAccessURL" ng-required="distribution['dcat:accessURL']['@required'] && checked == 'dataid:SparqlEndpoint'" ng-model="distribution['dcat:accessURL']['@id']"> <br>
+                </div>
+
+                <label for="agent">Associated Agents</label> <span ng-show="distribution['dataid:associatedAgent']['@required']" style="color: red">*</span>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='http://dataid.dbpedia.org/ns/core#associatedAgent'> dataid:associatedAgent </a>
+                <br>
+                <button class="btn btn-primary" style="float: right; height: 69px" ng-click="openAgent()" >add</button>
+                <div style="overflow: hidden; padding-right: .5em;">
+                    <select style="width: 100%;" id="agent" name="singleSelect" ng-required="distribution['dataid:associatedAgent']['@required']" ng-model="distribution['dataid:associatedAgent']" multiple>
+                        <option ng-repeat="agent in agents" value="{{agent['@id']}}">{{agent['dataid:agentName']['@value']}}  is a {{agent['dataid:agentRole']['@value']}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div ng-init="clicked='on'"></div>
+            <div class="panel-heading">
+                <h1 class="panel-title">Data Information</h1>
+            </div>
+            <div class="panel-body hover-link" >
+                <label for="mediaType">Media Type</label> <span ng-show="distribution['dcat:mediaType']['@required']" style="color: red">*</span>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/vocab-dcat/media_type'> dcat:mediaType </a>
+                <br>
+                <input class="input" type="text" id="mediaType" ng-required="distribution['dcat:mediaType']['@required']" ng-model="distribution['dcat:mediaType']['@value']"> <br>
+
+                <label for="dcFormat">Format</label> <span ng-show="distribution['dc:format']['@required']" style="color: red">*</span>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='http://purl.org/dc/terms/format'> dc:format </a>
+                <br>
+                <input  class="input"  type="text" id="dcFormat" ng-required="distribution['dc:format']['@required']" ng-model="distribution['dc:format']['@value']"> <br>
+
+                <label for="dataidgraphName">Graph Name</label> <span ng-show="distribution['dataid:graphName']['@required']" style="color: red">*</span>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='http://dataid.dbpedia.org/ns/core#graphName'> dataid:graphName </a>
+                <br>
+                <input  class="input"  type="text" id="dataidgraphName" ng-required="distribution['dataid:graphName']['@required']" ng-model="distribution['dataid:graphName']['@value']"> <br>
+            </div>
+        </div>
+
+
+        <div ng-show="checked">
+            <div class="panel panel-primary">
+                <div ng-init="clicked='on'"></div>
+                <div class="panel-heading">
+                    <h1 class="panel-title">Statistics</h1>
+                </div>
+                <div class="panel-body hover-link" >
+                    <label for="dTriples">Triples</label> <span ng-show="distribution['void:triples']['@required']" style="color: red">*</span>
+                    <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/void/triples'> void:triples </a>
+                    <br>
+                    <input class="input" type="text" id="dTriples" name="dTriples" ng-required="distribution['void:triples']['@required']" ng-model="distribution['void:triples']['@value']"> <br>
+                    <label for="byteSize">Byte Size</label> <span ng-show="distribution['dcat:byteSize']['@required']" style="color: red">*</span>
+                    <a style="float: right; margin-right: 0px;" target="_blank" href='"http://www.w3.org/TR/vocab-dcat/byteSize'> rdfs:label </a>
+                    <br>
+                    <input class="input" type="text" id="byteSize" ng-required="distribution['dcat:byteSize']['@required']" ng-model="distribution['dcat:byteSize']['@value']"> <br>
+
+                    <label for="dataidmd5Hash">md5 Hash</label> <span ng-show="distribution['dataid:md5Hash']['@required']" style="color: red">*</span>
+                    <a style="float: right; margin-right: 0px;" target="_blank" href='"http://dataid.dbpedia.org/ns/core#md5Hash'> dataid:md5Hash </a>
+                    <br>
+                    <input class="input" type="text" id="dataidmd5Hash" ng-required="distribution['dataid:md5Hash']['@required']" ng-model="distribution['dataid:md5Hash']['@value']"> <br>
+
+                    <label for="dataidchecksum">Checksum</label> <span ng-show="distribution['dataid:checksum']['@required']" style="color: red">*</span>
+                    <a style="float: right; margin-right: 0px;" target="_blank" href='"http://dataid.dbpedia.org/ns/core#checksum'> dataid:checksum </a>
+                    <br>
+                    <input class="input" type="text" id="dataidchecksum" ng-required="distribution['dataid:checksum']['@required']" ng-model="distribution['dataid:checksum']['@value']"> <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

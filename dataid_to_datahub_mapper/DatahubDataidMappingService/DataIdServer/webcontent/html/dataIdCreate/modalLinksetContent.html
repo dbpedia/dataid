@@ -1,0 +1,51 @@
+<form name="formLinkset" novalidate>
+    <div class="modal-header">
+        <h3 class="modal-title">New Linkset</h3>
+        <div style="padding: 10px 5px;">
+    <span> 
+    Here you can create a new linkset. 
+    </span>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-10">
+                <label>Property type: <span style="color: red">*</span> </label><br>
+                <input type="radio" ng-model="linkset.prop" value="void:subset"> void:subset
+                <input style="margin-left: 20px" type="radio" ng-model="linkset.prop" value="dataid:containsLink"> dataid:containsLink <br/>
+
+                <label style="margin-top: 10px" for="linksetIssued">Issued</label>
+                <a style="margin-top: 10px; float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/vocab-dcat/#Property:catalog_release_date'> dct:issued </a>
+                <br>
+                <input class="input" type="text" id="linksetIssued" ng-model="linkset.issued"> <br>
+
+                <label for="linksetModified">Modified</label>
+                <a style="float: right; margin-right: 0px;" target="_blank" href=' http://www.w3.org/TR/vocab-dcat/#Property:catalog_update_date'> dct:modified </a>
+                <br>
+                <input class="input" type="text" id="linksetModified" ng-model="linkset.modified"> <br>
+
+                <label for="linksetExampleResource">Example Resource</label>
+                <a class="desc2" target="_blank" href='http://www.w3.org/TR/void/#example-resource'> void:exampleResource </a>
+                <br>
+                <input url class="input" type="text" id="linksetExampleResource" name="linksetExampleResource" ng-model="linkset.exampleResource"> <br>
+                <span ng-show="formLinkset.linksetExampleResource.$error.url">{{messages.notValidURI}} <br></span>
+
+                <label for="linksetLinkPredicate">Link Predicate</label>
+                <a class="desc2" target="_blank" href='http://vocab.deri.ie/void#linkPredicate'> void:linkPredicate </a>
+                <br>
+                <input class="input" type="text" id="linksetLinkPredicate" ng-model="linkset.linkPredicate"> <br>
+
+                <label for="linksetTriples">Triples</label>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/void/'> void:triples </a>
+                <br>
+                <input class="input" type="text" id="linksetTriples" ng-model="linkset.triples"> <br>
+                <label for="linksetTarget">Target</label><a class="desc2" target="_blank" href='http://vocab.deri.ie/void#target'> void:target </a>
+                <br>
+                <input class="input" type="text" id="linksetTarget" ng-model="linkset.target"> <br>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+</form>

@@ -1,0 +1,24 @@
+<form name="formDist" >
+    <div class="modal-header">
+        <h3 class="modal-title">New Distribution</h3>
+
+        <div style="padding: 10px 5px;">
+            <span>
+            Create distribution: {{distribution['@id']}}
+            </span>
+            <div class="pull-right">
+                <span>select languge of literals:</span>
+                <select id="langSelect" name="langSelect" ng-model="selectedLanguage" ng-options="lang.code as lang.lang for lang in languages"></select>
+                <br>
+                <input id="showOptional" type="checkbox" ng-model="checked" > show optional properties <br>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div ng-include="'distributionInclude.html'"></div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="formDist.$valid && ok()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

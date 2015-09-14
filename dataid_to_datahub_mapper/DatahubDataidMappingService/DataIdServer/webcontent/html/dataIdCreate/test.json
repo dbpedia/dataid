@@ -1,0 +1,247 @@
+{
+  "@graph" : [ {
+    "@id" : "http://core-project.kmi.open.ac.uk/data-description",
+    "@type" : "dataid:Distribution",
+    "dc:description" : {
+      "@language" : "en",
+      "@value" : "a wonderful description i am not going to write..."
+    },
+    "dc:issued" : {
+      "@type" : "xsd:date",
+      "@value" : "2010-08-16"
+    },
+    "dc:modified" : {
+      "@type" : "xsd:date",
+      "@value" : "2013-02-16"
+    },
+    "rdfs:label" : {
+      "@language" : "en",
+      "@value" : "some label here"
+    },
+    "dcat:downloadURL" : {
+      "@id" : "http://core-project.kmi.open.ac.uk/data-description"
+    },
+    "dcat:mediaType" : {
+      "@id" : "dataid:mediaTypePng"
+    }
+  }, {
+    "@id" : "http://core-project.kmi.open.ac.uk/files/core-voiD.n3",
+    "@type" : "dataid:Distribution",
+    "dc:description" : {
+      "@language" : "en",
+      "@value" : "a wonderful description i am not going to write..."
+    },
+    "dc:issued" : {
+      "@type" : "xsd:date",
+      "@value" : "2010-08-16"
+    },
+    "dc:modified" : {
+      "@type" : "xsd:date",
+      "@value" : "2013-02-16"
+    },
+    "rdfs:label" : {
+      "@language" : "en",
+      "@value" : "some label here"
+    },
+    "dcat:downloadURL" : {
+      "@id" : "http://core-project.kmi.open.ac.uk/files/core-voiD.n3"
+    },
+    "dcat:mediaType" : "ffdss"
+  }, {
+    "@id" : "http://core-project.kmi.open.ac.uk/files/download_20120123.rdf",
+    "@type" : "dataid:Distribution",
+    "dc:description" : {
+      "@language" : "en",
+      "@value" : "a wonderful description i am not going to write..."
+    },
+    "dc:issued" : {
+      "@type" : "xsd:date",
+      "@value" : "2010-08-16"
+    },
+    "dc:modified" : {
+      "@type" : "xsd:date",
+      "@value" : "2013-02-16"
+    },
+    "rdfs:label" : {
+      "@language" : "en",
+      "@value" : "some label here"
+    },
+    "dcat:downloadURL" : {
+      "@id" : "http://core-project.kmi.open.ac.uk/files/download_20120123.rdf"
+    },
+    "dcat:mediaType" : {
+      "@id" : "dataid:mediaTypeRdf"
+    }
+  }, {
+    "@id" : "http://core.kmi.open.ac.uk/squery",
+    "@type" : "dataid:SparqlEndpoint",
+    "dc:description" : {
+      "@language" : "en",
+      "@value" : "a wonderful description i am not going to write..."
+    },
+    "dc:issued" : {
+      "@type" : "xsd:date",
+      "@value" : "2010-08-16"
+    },
+    "dc:modified" : {
+      "@type" : "xsd:date",
+      "@value" : "2013-02-16"
+    },
+    "rdfs:label" : {
+      "@language" : "en",
+      "@value" : "some label here"
+    },
+    "dcat:accessURL" : {
+      "@id" : "http://core.kmi.open.ac.uk/squery"
+    },
+    "dcat:mediaType" : {
+      "@id" : "dataid:mediaTypeSparqlApi"
+    }
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/core/dataid",
+    "@type" : "void:DatasetDescription",
+    "dataid:associatedAgent" : {
+      "@id" : "http://dataid.dbpedia.org/lod/core/dataid#creator"
+    },
+    "foaf:topic" : {
+      "@id" : "http://dataid.dbpedia.org/lod/core/dataid#dataset"
+    }
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/core/dataid#contributor",
+    "@type" : "dataid:Contributor",
+    "foaf:mbox" : "mailto:p.knoth@open.ac.uk",
+    "foaf:name" : "Petr Knoth"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/core/dataid#creator",
+    "@type" : "dataid:Creator",
+    "foaf:mbox" : "mailto:p.knoth@open.ac.uk",
+    "foaf:name" : "Petr Knoth"
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/core/dataid#dataset",
+    "@type" : "dataid:Dataset",
+    "dataid:associatedAgent" : [ {
+      "@id" : "http://dataid.dbpedia.org/lod/core/dataid#contributor"
+    }, {
+      "@id" : "http://dataid.dbpedia.org/lod/core/dataid#creator"
+    } ],
+    "dataid:containsLinks" : {
+      "@id" : "http://dataid.dbpedia.org/lod/core/dataid#links_rkb-explorer-oai"
+    },
+    "dataid:licenseName" : "cc-by",
+    "dataid:previousVersion" : {
+      "@id" : "http://dataid.dbpedia.org/lod/core/dataid#dataset_prev"
+    },
+    "dc:description" : [ {
+      "@language" : "en",
+      "@value" : "a wonderful description i am not going to write..."
+    }, "The CORE dataset contains information about similarities between scientific papers stored across Open Access repositories. The similarities are calculated using Natural Language Processing techniques based on the full-text.  The similarities are provided only for research articles with an accessible and machine readable full-text. More information about the data structure can be found at:http://core-project-local.kmi.open.ac.uk/data-description.\n\n#### RDF Statistics\n\nAt the moment we expose more than 92 million RDF triples describing similarities calculated on a set of more than 400k full-text articles harvested from over 230 Open Access repositories.\n\n#### Links\n\nThe data about the similarities are represented using the  MuSIM ontology (http://kakapo.dcs.qmul.ac.uk/ontology/musim/0.2/musim.html) BIBO ontologies (http://bibliontology.com/) with links to the OAI (RKBExplorer) repository available in the Linked Data cloud. " ],
+    "dc:issued" : {
+      "@type" : "xsd:date",
+      "@value" : "2010-08-16"
+    },
+    "dc:language" : "en",
+    "dc:license" : {
+      "@id" : "http://www.opendefinition.org/licenses/cc-by"
+    },
+    "dc:modified" : {
+      "@type" : "xsd:date",
+      "@value" : "2013-02-16"
+    },
+    "dc:title" : "CORE - Semantic Similarity of Open Access publications",
+    "void:exampleResource" : [ {
+      "@id" : "http://core-project.kmi.open.ac.uk/files/example-link.rdf"
+    }, {
+      "@id" : "http://core-project.kmi.open.ac.uk/files/test.rdf"
+    } ],
+    "void:rootResource" : {
+      "@id" : "http://core-project.kmi.open.ac.uk/data-description"
+    },
+    "void:sparqlEndpoint" : {
+      "@id" : "http://core.kmi.open.ac.uk/squery"
+    },
+    "void:triples" : {
+      "@type" : "xsd:integer",
+      "@value" : "101526714"
+    },
+    "void:uriSpace" : "http://core.kmi.open.ac.uk/data/",
+    "rdfs:label" : [ {
+      "@language" : "en",
+      "@value" : "some label here"
+    }, "core" ],
+    "dcat:distribution" : [ {
+      "@id" : "http://core-project.kmi.open.ac.uk/data-description"
+    }, {
+      "@id" : "http://core-project.kmi.open.ac.uk/files/core-voiD.n3"
+    }, {
+      "@id" : "http://core-project.kmi.open.ac.uk/files/download_20120123.rdf"
+    }, {
+      "@id" : "http://core.kmi.open.ac.uk/squery"
+    } ],
+    "dcat:keyword" : [ "bibliographic", "format-rdfs", "license-metadata", "lod", "no-proprietary-vocab", "no-provenance-metadata", "oai", "openuniversity", "publications", "published-by-producer", "similarity" ],
+    "dcat:landingPage" : {
+      "@id" : "http://datahub.io/dataset/core"
+    }
+  }, {
+    "@id" : "http://dataid.dbpedia.org/lod/core/dataid#links_rkb-explorer-oai",
+    "@type" : "dataid:Linkset",
+    "dc:description" : {
+      "@language" : "en",
+      "@value" : "a wonderful description i am not going to write..."
+    },
+    "dc:issued" : {
+      "@type" : "xsd:date",
+      "@value" : "2014-08-16"
+    },
+    "dc:modified" : {
+      "@type" : "xsd:date",
+      "@value" : "2015-08-16"
+    },
+    "void:objectsTarget" : {
+      "@id" : "http://datahub.io/dataset/rkb-explorer-oai"
+    },
+    "void:subjectsTarget" : {
+      "@id" : "http://dataid.dbpedia.org/lod/core/dataid#dataset"
+    },
+    "void:triples" : {
+      "@type" : "xsd:integer",
+      "@value" : "200000"
+    },
+    "rdfs:label" : {
+      "@language" : "en",
+      "@value" : "some label here"
+    }
+  }, {
+    "@id" : "dataid:mediaTypePng",
+    "@type" : "dc",
+    "rdf:value" : "value",
+    "rdfs:label" : "PNG"
+  }, {
+    "@id" : "dataid:mediaTypeRdf",
+    "@type" : "dc",
+    "rdf:value" : "rdf",
+    "rdfs:label" : "Rdf"
+  }, {
+    "@id" : "dataid:mediaTypeSparqlApi",
+    "@type" : "dc",
+    "rdf:value" : "api",
+    "rdfs:label" : "Sparql"
+  }, {
+    "@id" : "dataid:mediaTypeVoid",
+    "@type" : "dc",
+    "rdf:value" : "value",
+    "rdfs:label" : "void"
+  } ],
+  "@context" : {
+    "dataid" : "http://dataid.dbpedia.org/ns/core#",
+    "dc" : "http://purl.org/dc/terms/",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "prov" : "http://www.w3.org/ns/prov#",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "sd" : "http://www.w3.org/ns/sparql-service-description#",
+    "void" : "http://rdfs.org/ns/void#",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#"
+  }
+}

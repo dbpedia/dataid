@@ -1,0 +1,22 @@
+<div class="panel panel-primary">
+    <div class="panel-heading foaf-link">
+        <h1 class="panel-title">{{agentBoxTitle}}</h1>
+    </div>
+    <div class="panel-body">
+            <table>
+                <tr>
+                    <th>Level</th>
+                    <th>Resource</th>
+                    <th>Message</th>
+                    <th>Test Case</th>
+                </tr>
+                <tr ng-repeat="x in validationResult['@graph']">
+                    <td>{{ x.level }}</td>
+                    <td>{{ x.resource }}</td>
+                    <td>{{ x.message }}</td>
+                    <td>{{ x.testCase }}</td>
+                </tr>
+            </table>
+
+    </div>
+</div>

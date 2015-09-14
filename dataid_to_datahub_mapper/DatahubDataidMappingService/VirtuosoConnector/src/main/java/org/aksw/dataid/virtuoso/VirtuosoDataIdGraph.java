@@ -247,7 +247,7 @@ public class VirtuosoDataIdGraph {
         try (Statement stmt = conn.createStatement()) {
             //TODO!!!
             if(part.getPartType() == IdPart.DataIdParts.Linkset) {
-                String inserTtlp = "TTLP('" + part.toTurtle() + "','', 'http://dataid/store', 17)";
+                String inserTtlp = "TTLP('" + part.toSerialization(RDFFormat.TURTLE) + "','', 'http://dataid/store', 17)";
                 if (stmt.execute(inserTtlp))
                     return true;
             }

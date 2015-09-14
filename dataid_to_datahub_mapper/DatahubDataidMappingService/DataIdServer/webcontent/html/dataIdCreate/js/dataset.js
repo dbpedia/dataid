@@ -1,9 +1,8 @@
-var dataIdGen = angular.module('dataIdGen', ['ui.bootstrap', 'ngSanitize']);
+var dataIdGen = angular.module('dataIdGen', ['angularJsonld', 'ui.bootstrap', 'ngSanitize']);
 
 function genController($scope, $modal, $http) {
     dt = new Date();
     dt = (dt.getMonth() + 1) + '-' + dt.getDate() + '-' + dt.getFullYear();
-
 
     $scope.messages = new Object();
     $scope.messages.notValidURI = "Not a valid URI!";
@@ -18,39 +17,38 @@ function genController($scope, $modal, $http) {
         {name: 'Creative Commons Public Domain Dedication', val: 'http://purl.oclc.org/NET/rdflicense/cc-zero'},
         {name: 'Open Data Commons Attribution License', val: 'http://purl.oclc.org/NET/rdflicense/odc-by'},
         {name: 'Open Data Commons Public Domain Dedication and License', val: 'http://purl.oclc.org/NET/rdflicense/odc-pddl'},
-        {name: 'GNU General Public License', val: 'http://purl.oclc.org/NET/rdflicense/gpl-3.0'},
-    ],
-            emptyDataSet = {
-                parentDataset: [],
-                datasetURI: '',
-                type: 'main',
-                main: true,
-                title: 'New subset',
-                label: '',
-                description: '',
-                keyword: '',
-                issued: dt,
-                rights: '',
-                rootResource: '',
-                exampleResource: '',
-                language: '',
-                licenseName: '',
-                landingPage: '',
-                ontologyLocation: '',
-                versionInfo: '',
-                distribution: [],
-                linkset: [],
-                agent: [],
-                datasets: [],
-                wasDerivedFromTitle: '',
-                wasDerivedFromAgent: [],
-                wasDerivedFromResource: '',
-                wasGeneratedByTitle: '',
-                wasGeneratedByAgent: [],
-                wasGeneratedByResource: '',
-                license: [],
-            }
-
+        {name: 'GNU General Public License', val: 'http://purl.oclc.org/NET/rdflicense/gpl-3.0'}
+    ]
+    emptyDataSet = {
+        parentDataset: [],
+        datasetURI: '',
+        type: 'main',
+        main: true,
+        title: 'New subset',
+        label: '',
+        description: '',
+        keyword: '',
+        issued: dt,
+        rights: '',
+        rootResource: '',
+        exampleResource: '',
+        language: '',
+        licenseName: '',
+        landingPage: '',
+        ontologyLocation: '',
+        versionInfo: '',
+        distribution: [],
+        linkset: [],
+        agent: [],
+        datasets: [],
+        wasDerivedFromTitle: '',
+        wasDerivedFromAgent: [],
+        wasDerivedFromResource: '',
+        wasGeneratedByTitle: '',
+        wasGeneratedByAgent: [],
+        wasGeneratedByResource: '',
+        license: []
+    }
 
     $scope.object = new Object();
     $scope.object.dataSets = [];
@@ -214,13 +212,13 @@ function genController($scope, $modal, $http) {
                             data: $.param(send),
                             headers: {'Content-Type': 'application/x-www-form-urlencoded'}  // set the headers so angular passing info as form data (not request payload)
                         })
-                                .success(function(data) {
-                                    $scope.progressBarWidth = 0;
-                                    var bodyhtml = data.split('<body>').pop().split('</body>')[0];
-                                    $("#rdfOutputValidatorHTML").html(bodyhtml);
-                                    $("#rdfOutputValidator").dialog({maxHeight: 550, width: 900, title: "DataID Validator"});
+                            .success(function(data) {
+                                $scope.progressBarWidth = 0;
+                                var bodyhtml = data.split('<body>').pop().split('</body>')[0];
+                                $("#rdfOutputValidatorHTML").html(bodyhtml);
+                                $("#rdfOutputValidator").dialog({maxHeight: 550, width: 900, title: "DataID Validator"});
 
-                                });
+                            });
                     }
 
 

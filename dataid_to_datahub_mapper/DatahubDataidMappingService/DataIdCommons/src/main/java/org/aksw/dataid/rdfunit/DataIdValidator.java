@@ -48,8 +48,8 @@ public class DataIdValidator {
         }
 
         RDFUnitConfiguration configuration = new RDFUnitConfiguration(datasetName, "../data/");
-        configuration.setTestCacheEnabled(false);
-        configuration.setSchemata(ontologySource);
+        //configuration.setTestCacheEnabled(false);
+        //configuration.setSchemata(ontologySource);
 
         if (isText) {
             try {
