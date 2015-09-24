@@ -94,7 +94,8 @@ public class IdPart
     private void init() throws DataIdInputException {
         try {
             if(validator == null)
-                validator = new DataIdValidator(DataIdConfig.getOntologies(), DataIdConfig.getExceptions());
+                validator = new DataIdValidator(DataIdConfig.getInstance().getOntologies(),
+                								DataIdConfig.getInstance().getExceptions());
         } catch (RDFReaderException e) {
             e.printStackTrace();
         }

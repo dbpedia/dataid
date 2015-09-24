@@ -36,7 +36,7 @@ public class DataIdPublisher
 
     public DataIdPublisher() throws SQLException, DataHubMappingException {
         graph = Main.getGraph();
-        proc = new DataIdProcesser(DataIdConfig.getMappingConfigPath());
+        proc = new DataIdProcesser(DataIdConfig.getInstance().getMappingConfigPath());
     }
 
     /**
@@ -88,7 +88,7 @@ public class DataIdPublisher
 		try {
             String path = Main.getMainPath() + "/html/MappingsPage.html";
             String content = new String(Files.readAllBytes(Paths.get(path)));
-            content = content.replace("$content", StaticJsonHelper.getPrettyContent(StaticJsonHelper.getJsonContent(DataIdConfig.getMappingConfigPath())));
+            content = content.replace("$content", StaticJsonHelper.getPrettyContent(StaticJsonHelper.getJsonContent(DataIdConfig.getInstance().getMappingConfigPath())));
 			return content;
 		} catch (IOException e) {
             return addHtmlBody(produceHttpResponse(e));
@@ -166,13 +166,13 @@ public class DataIdPublisher
             final String content) throws RDFParseException, IOException, RDFHandlerException {
         if(!StaticJsonHelper.isJsonLdValid(content))
             return addHtmlBody("no valid JsonLd!");
-        String admins = DataIdConfig.get("adminName");
-        String pass = DataIdConfig.get("password");
+        String admins = DataIdConfig.getInstance().get("adminName");
+        String pass = DataIdConfig.getInstance().get("password");
         if(!admins.equals(username) || !pass.equals(password))
             return addHtmlBody("Username or password not recognized!");
 
         try {
-            StaticJsonHelper.writeJsonContent(DataIdConfig.getMappingConfigPath(), content);
+            StaticJsonHelper.writeJsonContent(DataIdConfig.getInstance().getMappingConfigPath(), content);
         } catch (IOException e) {
             return addHtmlBody(produceHttpResponse(e));
         }

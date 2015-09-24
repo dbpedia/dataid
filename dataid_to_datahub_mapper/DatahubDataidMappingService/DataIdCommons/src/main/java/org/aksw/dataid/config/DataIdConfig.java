@@ -8,63 +8,83 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.*;
-import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
 
 /**
  * Created by Chile on 8/16/2015.
  */
 public class DataIdConfig {
+	
+	private static DataIdConfig instance;
 
-    private static String mainPath;
-    private static String mainConfigPath;
-    private static JsonNode mainConfigFile;
+    private String mainPath;
+    private String mainConfigPath;
+    private JsonNode mainConfigFile;
+    
+    /**
+     * Standard constructor of singleton
+     */
+    private DataIdConfig() {
+    	
+    }
+    
+    public static DataIdConfig getInstance() {
+    	if (null == instance) {
+    		instance = new DataIdConfig();
+    	}
+    	
+    	return instance;
+    }
 
     public static void initDataIdConfig(String mainConfigPath, String mainPath) throws FileNotFoundException {
-        DataIdConfig.mainPath = mainPath;
-        DataIdConfig.mainConfigPath = mainConfigPath;
+    	DataIdConfig configInstance = getInstance();
+        
+    	configInstance.mainPath = mainPath;
+    	configInstance.mainConfigPath = mainConfigPath;
         System.out.println(mainConfigPath);
         InputStream inputStream = new FileInputStream(mainConfigPath);
         String content = StaticJsonHelper.GetStringFromInputStream(inputStream);
-        mainConfigFile = StaticJsonHelper.convertStringToJsonNode(content);
-        mainConfigFile = StaticJsonHelper.convertStringToJsonNode(replacePlaceholder(content));
+        configInstance.mainConfigFile = StaticJsonHelper.convertStringToJsonNode(content);
+        
+        String withoutPlaceholder = configInstance.replacePlaceholder(content);
+        configInstance.mainConfigFile = StaticJsonHelper.convertStringToJsonNode(withoutPlaceholder);
     }
 
-    public static String getMappingConfigPath()
+    public String getMappingConfigPath()
     {
         String zw = mainConfigFile.get("mappingConfigPath").asText();
         return zw.startsWith("/") ? (mainPath + zw) : (mainPath + "/" + zw);
     }
 
-    public static String getVirtuosoHost()
+    public String getVirtuosoHost()
     {
         return mainConfigFile.get("virtuosoHost").toString().replace("\"", "");
     }
-    public static Integer getVirtuosoPort()
+    public Integer getVirtuosoPort()
     {
         return Integer.parseInt(mainConfigFile.get("virtuosoPort").toString());
     }
-    public static String getVirtuosoUser()
+    public String getVirtuosoUser()
     {
         return mainConfigFile.get("virtuosoUser").toString().replace("\"", "");
     }
-    public static String getVirtuosoPassword()
+    public String getVirtuosoPassword()
     {
         return mainConfigFile.get("virtuosoPass").toString().replace("\"", "");
     }
 
-    public static String get(String key)
+    public String get(String key)
     {
         return mainConfigFile.get(key).asText().replace("\"", "");
     }
 
-    public static Iterator<Map.Entry<String, JsonNode>> getActionMap()
+    public Iterator<Map.Entry<String, JsonNode>> getActionMap()
     {
         return mainConfigFile.get("ckanActionMap").fields();
     }
 
-    private static Map<String, Map.Entry<String, String>> ontoMap = null;
-    public static Map<String, Map.Entry<String, String>> getOntologies()
+    private Map<String, Map.Entry<String, String>> ontoMap = null;
+    public Map<String, Map.Entry<String, String>> getOntologies()
     {
         if(ontoMap == null) {
             ontoMap = new HashMap<>();
@@ -77,7 +97,7 @@ public class DataIdConfig {
         return ontoMap;
     }
 
-    public static Map<String, List<String>> getExceptions()
+    public Map<String, List<String>> getExceptions()
     {
         try {
             TypeReference<Map<String, List<String>>> typeRef = new TypeReference<Map<String, List<String>>>(){};
@@ -87,7 +107,7 @@ public class DataIdConfig {
         }
     }
 
-    private static String replacePlaceholder(String input)
+    private String replacePlaceholder(String input)
     {
         Matcher matcher = java.util.regex.Pattern.compile("\\{\\$[^\\}]+\\}").matcher(input);
         while(matcher.find())

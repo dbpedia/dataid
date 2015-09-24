@@ -43,7 +43,7 @@ public class VirtuosoDataIdGraph {
     //TreeMap<DataId, NextKnownVersion>
     private TreeMap<URI, URI> knownDataIds = new TreeMap<URI, URI>();
     
-    private String dataIdUri = DataIdConfig.getOntologies().get("dataid").getKey();
+    private String dataIdUri = DataIdConfig.getInstance().getOntologies().get("dataid").getKey();
 
     public VirtuosoDataIdGraph(final String host, final int port, final String username, final String password) throws SQLException {
 

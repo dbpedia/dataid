@@ -36,7 +36,7 @@ public class PropertyMapper
     	if(mappingContent != null)
     	{
             mappingConfig = StaticContent.getMappings();
-    		this.dataIdPrefix = mappingConfig.getRdfContext().getPrefix(DataIdConfig.getOntologies().get("dataid").getKey());
+    		this.dataIdPrefix = mappingConfig.getRdfContext().getPrefix(DataIdConfig.getInstance().getOntologies().get("dataid").getKey());
     		
     		for(Map<String,DataIdProperty> dictionary : mappingConfig.getDataHubMapping().values())
     		{

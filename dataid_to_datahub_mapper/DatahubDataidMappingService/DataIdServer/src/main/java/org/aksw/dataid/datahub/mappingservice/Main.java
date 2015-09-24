@@ -29,10 +29,10 @@ public class Main {
     private static HttpServer httpServer;
 
     public static CkanRestClient CreateCkanRestClient(String apiKey) {
-		String dataHubUrl = DataIdConfig.get("datahubActionUri");
-		int timeout = Integer.parseInt(DataIdConfig.get("ckanTimeOut"));
+		String dataHubUrl = DataIdConfig.getInstance().get("datahubActionUri");
+		int timeout = Integer.parseInt(DataIdConfig.getInstance().get("ckanTimeOut"));
 		Map<String, String> actions = new HashMap<String, String>();
-		Iterator<Map.Entry<String, JsonNode>> i = DataIdConfig.getActionMap();
+		Iterator<Map.Entry<String, JsonNode>> i = DataIdConfig.getInstance().getActionMap();
 		for(Map.Entry<String, JsonNode> key; i.hasNext();)
 		{
 			key = i.next();
@@ -61,11 +61,11 @@ public class Main {
         //graph = new VirtuosoDataIdGraph(DataIdConfig.getVirtuosoHost(), DataIdConfig.getVirtuosoPort(), DataIdConfig.getVirtuosoUser(), DataIdConfig.getVirtuosoPassword());
         ResourceConfig rc = new PackagesResourceConfig(Main.class.getPackage().getName(), DataIdInputExceptionProvider.class.getPackage().getName());
         rc.getContainerResponseFilters().add(new CorsSupportProvider());
-        Base_Uri = UriBuilder.fromUri("http://" + DataIdConfig.get("ipaddress") + "/").port(Integer.parseInt(DataIdConfig.get("port").toString())).build();
+        Base_Uri = UriBuilder.fromUri("http://" + DataIdConfig.getInstance().get("ipaddress") + "/").port(Integer.parseInt(DataIdConfig.getInstance().get("port").toString())).build();
         System.out.println("Starting grizzly2...");
         httpServer = GrizzlyServerFactory.createHttpServer(Base_Uri, rc);
         StaticHttpHandler statichandler = new StaticHttpHandler(mainPath);
-        httpServer.getServerConfiguration().addHttpHandler(statichandler, "/" + DataIdConfig.get("contentDir").toString());
+        httpServer.getServerConfiguration().addHttpHandler(statichandler, "/" + DataIdConfig.getInstance().get("contentDir").toString());
 
         return httpServer;
     }

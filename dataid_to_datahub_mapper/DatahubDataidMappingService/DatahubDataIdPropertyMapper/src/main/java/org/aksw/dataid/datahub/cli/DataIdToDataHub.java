@@ -39,7 +39,7 @@ public class DataIdToDataHub {
 		List<Dataset> sets = null;
 		DataIdProcesser processor;
 		try {
-			processor = new DataIdProcesser(DataIdConfig.getMappingConfigPath());
+			processor = new DataIdProcesser(DataIdConfig.getInstance().getMappingConfigPath());
 			sets = processor.parseToDataHubDataset(dataIdContent);
 		} catch (DataHubMappingException e) {
 			e.printStackTrace();
@@ -78,11 +78,11 @@ public class DataIdToDataHub {
 	}
 
 	private static CkanRestClient createCkanRestClient() {
-		String dataHubUrl = DataIdConfig.get("datahubActionUri");
-        String apiKey = DataIdConfig.get("datahubApiKey");
-        int timeout = Integer.parseInt(DataIdConfig.get("ckanTimeOut"));
+		String dataHubUrl = DataIdConfig.getInstance().get("datahubActionUri");
+        String apiKey = DataIdConfig.getInstance().get("datahubApiKey");
+        int timeout = Integer.parseInt(DataIdConfig.getInstance().get("ckanTimeOut"));
 		Map<String, String> actions = new HashMap<String, String>();
-		Iterator<Entry<String, JsonNode>> i = DataIdConfig.getActionMap();
+		Iterator<Entry<String, JsonNode>> i = DataIdConfig.getInstance().getActionMap();
 		for(Entry<String, JsonNode> key; i.hasNext();)
 		{
 			key = i.next();
