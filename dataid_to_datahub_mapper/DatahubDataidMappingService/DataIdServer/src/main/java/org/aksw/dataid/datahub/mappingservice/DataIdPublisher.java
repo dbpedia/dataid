@@ -8,6 +8,7 @@ import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.jsonobjects.DatahubError;
 import org.aksw.dataid.datahub.jsonobjects.Dataset;
 import org.aksw.dataid.datahub.jsonobjects.ValidCkanResponse;
+import org.aksw.dataid.datahub.mappingobjects.DataId;
 import org.aksw.dataid.errors.DataIdInputException;
 import org.aksw.dataid.jsonutils.StaticJsonHelper;
 import org.aksw.dataid.errors.DataHubMappingException;
@@ -68,15 +69,15 @@ public class DataIdPublisher
     @Path("/getstoreddataset")
     @Produces("text/plain")
     @Consumes("text/plain")
-        public Dataset getStoredDataset(@QueryParam(value = "title") final String title) throws DatahubError, RDFHandlerException {
+        public String getStoredDataset(@QueryParam(value = "title") final String uri) throws DataIdInputException {
         try {
-            String id =  graph.getDataIdFile(title, proc.getMappings().getRdfContext());
+            String id =  graph.getDataIdFile(uri, proc.getMappings().getRdfContext());
             Dataset set = proc.parseToDataHubDataset(id).get(0);
-            return set;
+            //TODO DataHub??
+            return id;
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new DataIdInputException(e);
         }
-        return null;
     }
 
     @GET
@@ -229,10 +230,11 @@ public class DataIdPublisher
 
     @POST
     @Path("/publishdataid")
-    public String PublishDataId(final String ttl){
-        StringBuilder response = new StringBuilder();
+    public String PublishDataId(final String ttl) throws DataIdInputException {
+        IdPart dataid = new IdPart(ttl);
         try {
-            List<Dataset> sets = proc.parseToDataHubDataset(ttl);
+            graph.enterDataId(dataid.toSerialization(RDFFormat.TURTLE), dataid.getId().stringValue(), dataid.getPrevVersion().stringValue());
+/*            List<Dataset> sets = proc.parseToDataHubDataset(ttl);
 
             JsonLdOptions opt = new JsonLdOptions();
             opt.setBase("http://someuri.org");
@@ -250,12 +252,12 @@ public class DataIdPublisher
                 } catch (Exception e) {
                     response.append(produceHttpResponse("Dataset " + set.getDataIdUri() + " encountered an error: " + e.getMessage()));
                 }
-            }
+            }*/
         } catch (Exception e) {
             addHtmlBody(produceHttpResponse(e));
         }
 
-        return addHtmlBody(response.toString());
+        return addHtmlBody("DataID has been saved");
     }
 
 	@POST

@@ -18,14 +18,14 @@ function getContext()
         "rut" : "http://rdfunit.aksw.org/ns/core#",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     };
-    var dataid = getLdToAngularMap(getEmptyDataId('dzdzttt'));
+/*    var dataid = getLdToAngularMap(getEmptyDataId('dzdzttt'));
     angular.extend(c, dataid);
     var dataset = getLdToAngularMap(getEmptyDataset('zzzzg', dataid['@id']));
     angular.extend(c, dataset);
     var dist = getLdToAngularMap(getEmptyDistribution('ftdffhghj', dataset['@id'], ['dataid:Distribution']));
     angular.extend(c, dist);
     var agent = getLdToAngularMap(getEmptyAgent('ddfgrrrs', ['dataid:Creator']));
-    angular.extend(c, agent);
+    angular.extend(c, agent);*/
     return c;
 }
 
@@ -310,10 +310,12 @@ function getEmptyDataId(id) {
             "@type": ["void:DatasetDescription"],
             "dataid:associatedAgent": {
                 "@required": true,
+                "@type":["dataid:Agent"],
                 "@value": []
             },
             "foaf:topic": {
                 "@required": true,
+                "@type":["dataid:Dataset"],
                 "@value": []
             },
             "dc:description": {
@@ -323,12 +325,12 @@ function getEmptyDataId(id) {
             },
             "dc:issued": {
                 "@required": false,
-                "@type": "xsd:date",
+                "@type": ["xsd:date"],
                 "@value": null
             },
             "dc:modified": {
                 "@required": false,
-                "@type": "xsd:date",
+                "@type": ["xsd:date"],
                 "@value": null
             },
             "rdfs:label": {
@@ -338,7 +340,7 @@ function getEmptyDataId(id) {
             },
             "dc:title": {
                 "@required": true,
-                "@type": "xsd:string",
+                "@type": ["xsd:string"],
                 "@value": id.substring(Math.max(id.lastIndexOf('#')+1, id.lastIndexOf('/')+1))
             }
         }],
@@ -364,13 +366,15 @@ function getEmptyDataset(id, parentId) {
         "@id": id,
         "@type": ["dataid:Dataset"],
         "@parent": parentId,
+        "@pristine": true,
         "dataid:associatedAgent": {
             "@required": true,
+            "@type":["dataid:Agent"],
             "@value": []
         },
         "dataid:licenseName": {
             "@required": false,
-            "@type":"xsd:string",
+            "@type":["xsd:string"],
             "@value":null
         },
         "dc:description": {
@@ -380,42 +384,42 @@ function getEmptyDataset(id, parentId) {
         },
         "dc:issued": {
             "@required": false,
-            "@type": "xsd:date",
+            "@type": ["xsd:date"],
             "@value": null
         },
         "dc:language": {
             "@required": false,
-            "@type": "xsd:string",
+            "@type": ["xsd:string"],
             "@value": null
         },
         "dc:license":{
             "@required": true,
-            "@type":"dc:LicenseDocument",
+            "@type":["dc:LicenseDocument"],
             "@id": null
         },
         "dc:modified": {
             "@required": false,
-            "@type": "xsd:date",
+            "@type": ["xsd:date"],
             "@value": null
         },
         "void:entities":{
             "@required": false,
-            "@type": "xsd:integer",
+            "@type": ["xsd:integer"],
             "@value": null
         },
         "void:classes":{
             "@required": false,
-            "@type": "xsd:integer",
+            "@type": ["xsd:integer"],
             "@value": null
         },
         "void:distinctObjects":{
             "@required": false,
-            "@type": "xsd:integer",
+            "@type": ["xsd:integer"],
             "@value": null
         },
         "dc:accrualPeriodicity":{
             "@required": false,
-            "@type": "dc:Frequency",
+            "@type": ["dc:Frequency"],
             "@id": null
         },
         "dc:rights": {
@@ -425,11 +429,12 @@ function getEmptyDataset(id, parentId) {
         },
         "dc:title": {
             "@required": true,
-            "@type": "xsd:string",
+            "@type": ["xsd:string"],
             "@value": id.substring(Math.max(id.lastIndexOf('#')+1, id.lastIndexOf('/')+1))
         },
         "void:exampleResource": {
             "@required": false,
+            "@type":["rdfs:Resource"],
             "@value": []
         },
         "void:rootResource": {
@@ -438,11 +443,12 @@ function getEmptyDataset(id, parentId) {
         },
         "void:sparqlEndpoint": {
             "@required": false,
+            "@type":["dataid:SparqlEndpoint"],
             "@value": []
         },
         "void:triples": {
             "@required": false,
-            "@type": "xsd:integer",
+            "@type": ["xsd:integer"],
             "@value": null
         },
         "rdfs:label": {
@@ -452,14 +458,17 @@ function getEmptyDataset(id, parentId) {
         },
         "dcat:distribution": {
             "@required": true,
+            "@type":["dataid:Distribution"],
             "@value": []
         },
         "dcat:keyword": {
             "@required": true,
+            "@type":["xsd:string"],
             "@value": []
         },
         "void:subset": {
             "@required": false,
+            "@type":["dataid:Dataset"],
             "@value": []
         },
         "dcat:landingPage": {
@@ -469,22 +478,22 @@ function getEmptyDataset(id, parentId) {
         "dataid:previousVersion": {
             "@required": false,
             "@id": null,
-            "@type": "dataid:Dataset"
+            "@type": ["dataid:Dataset"]
         },
         "dataid:nextVersion": {
             "@required": false,
             "@id": null,
-            "@type": "dataid:Dataset"
+            "@type": ["dataid:Dataset"]
         },
         "dataid:latestVersion": {
             "@required": false,
             "@id": null,
-            "@type":"dataid:Dataset"
+            "@type":["dataid:Dataset"]
         },
         "dataid:containsLinks":{
             "@required": false,
             "@id":null,
-            "@type":"dataid:Linkset"
+            "@type":["dataid:Linkset"]
         }
     };
     return dataset;
@@ -496,6 +505,7 @@ function getEmptyDistribution(id, parentId, types)
         "@id": id,
         "@type": [].concat(types),
         "@parent": parentId,
+        "@pristine": true,
         "dc:description": {
             "@required": false,
             "@language": null,
@@ -503,22 +513,22 @@ function getEmptyDistribution(id, parentId, types)
         },
         "dc:issued": {
             "@required": false,
-            "@type": "xsd:date",
+            "@type": ["xsd:date"],
             "@value": null
         },
         "dc:modified": {
             "@required": false,
-            "@type": "xsd:date",
+            "@type": ["xsd:date"],
             "@value": null
         },
         "dc:format": {
             "@required": true,
-            "@type": "xsd:string",
+            "@type": ["xsd:string"],
             "@value": null
         },
         "dc:title":{
             "@required": true,
-            "@type": "xsd:string",
+            "@type": ["xsd:string"],
             "@value": id.substring(Math.max(id.lastIndexOf('#')+1, id.lastIndexOf('/')+1))
         },
         "rdfs:label": {
@@ -536,17 +546,17 @@ function getEmptyDistribution(id, parentId, types)
         },
         "dcat:mediaType":{
             "@required": false,
-            "@type": "xsd:string",
+            "@type": ["xsd:string"],
             "@value": null
         },
         "dcat:byteSize":{
             "@required": false,
-            "@type" : "xsd:integer",
+            "@type" : ["xsd:integer"],
             "@value": null
         },
         "dataid:md5Hash":{
             "@required": false,
-            "@type" : "dataid:md5",
+            "@type" : ["dataid:md5"],
             "@value": null
         },
         "dataid:checksum":{
@@ -556,11 +566,12 @@ function getEmptyDistribution(id, parentId, types)
         },
         "dataid:graphName":{
             "@required": false,
-            "@type":"xsd:string",
+            "@type":["xsd:string"],
             "@value": null
         },
         "dataid:associatedAgent": {
             "@required": false,
+            "@type":["dataid:Agent"],
             "@value": []
         }
     };
@@ -572,6 +583,7 @@ function getEmptyLinkset(id)
     var linkset = {
         "@id": id,
         "@type": ["dataid:Linkset"],
+        "@pristine": true,
         "void:objectsTarget":{
             "@required": true,
             "@id":null
@@ -582,7 +594,7 @@ function getEmptyLinkset(id)
         },
         "void:triples":{
             "@required": true,
-            "@type":"xsd:integer",
+            "@type":["xsd:integer"],
             "@value":null
         },
         "dataid:previousLinksetVersion":{
@@ -599,12 +611,12 @@ function getEmptyLinkset(id)
         },
         "dc:issued": {
             "@required": false,
-            "@type": "xsd:date",
+            "@type": ["xsd:date"],
             "@value": null
         },
         "dc:modified": {
             "@required": false,
-            "@type": "xsd:date",
+            "@type": ["xsd:date"],
             "@value": null
         }
     };
@@ -615,9 +627,10 @@ function getEmptyAgent(id, type){
     var agent = {
         "@id": id,
         "@type": ["dataid:Agent"].concat(type),
+        "@pristine": true,
         "dataid:agentMail": {
             "@required": true,
-            "@type":"xsd:string",
+            "@type":["xsd:string"],
             "@value": null
         },
         "rdfs:label": {
@@ -627,17 +640,17 @@ function getEmptyAgent(id, type){
         },
         "dataid:agentName": {
             "@required": true,
-            "@type":"xsd:string",
+            "@type":["xsd:string"],
             "@value": id.substring(Math.max(id.lastIndexOf('#')+1, id.lastIndexOf('/')+1))
         },
         "dataid:agentUrl" : {
             "@required": false,
-            "@type":"xsd:string",
+            "@type":["xsd:string"],
             "@value": null
         },
         "dataid:agentRole" : {
             "@required": false,
-            "@type":"xsd:string",
+            "@type":["xsd:string"],
             "@value": type.length > 0 ? type[0].substring(type[0].indexOf(':')+1) : 'Agent'
         }
     }

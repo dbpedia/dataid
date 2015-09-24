@@ -1,0 +1,4 @@
+{
+  "validatorEndpoint":"http://localhost:9995/dataid/publisher/validateid",
+  "insertIdEndpoint":"http://localhost:9997/dataid/publisher/publishdataid"
+}

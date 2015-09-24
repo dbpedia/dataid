@@ -78,22 +78,16 @@ public class VirtuosoDataIdGraph {
         }
     }
 
-    public void enterDataId(final String dataID, final String dataIdUri, final String prevId) throws Exception {
+    public void enterDataId(final String dataID, final String dataIdUri, final String prevId) throws DataIdInputException, SQLException {
         //TODO find fitting exception
         if(dataIdUri == null)
-            throw new Exception("please provide a dataIdUri");
+            throw new DataIdInputException("please provide a dataIdUri");
         if(dataID == null)
-            throw new Exception("please provide a DataId");
+            throw new DataIdInputException("please provide a DataId");
         if(dataIdExits(dataIdUri)) {
-            if (isHigherVersion(knownDataIds.get(new URIImpl(dataIdUri.toLowerCase().trim())), new URIImpl(prevId.toLowerCase().trim()))) {
-                deletePreviousId(dataIdUri);
-                enterId(dataID, dataIdUri, prevId);
-            }
-            else
-                throw new Exception("a DataId with this uri does exist with a higher or equal version number");
+            deletePreviousId(dataIdUri);
         }
-        else
-            enterId(dataID, dataIdUri, prevId);
+        enterId(dataID, dataIdUri, prevId);
     }
 
     private void deletePreviousId(final String dataIdUri) throws SQLException {

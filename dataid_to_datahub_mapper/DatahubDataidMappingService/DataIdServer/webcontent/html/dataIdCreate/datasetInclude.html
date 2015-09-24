@@ -70,7 +70,7 @@
                 <div>
                     <button class="btn btn-primary" style="float: right; height: 69px" ng-click="openAgent()" >add</button>
                     <div style="overflow: hidden; padding-right: .5em;">
-                        <select ng-required="dataset['dataid:associatedAgent']['@required']" style="width: 100%;" id="license" name="agentSelect" ng-model="dataset['dataid:associatedAgent']" ng-options="agent['@id'] as agent['dataid:agentName']['@value'] for agent in agents" multiple></select>
+                        <select ng-required="dataset['dataid:associatedAgent']['@required']" style="width: 100%;" id="license" name="agentSelect" ng-model="dataset['dataid:associatedAgent']['@value']" ng-options="agent['@id'] as agent['dataid:agentName']['@value'] for agent in agents" multiple></select>
                     </div>​
                 </div>
 
@@ -90,14 +90,14 @@
                 <div>
                     <button class="btn btn-primary" style="float: right; height: 69px" ng-click="openDistr(dataset)" >add</button>
                     <div style="overflow: hidden; padding-right: .5em;">
-                        <select ng-required="dataset['dcat:distribution']['@required']" style="width:100%" id="ditr" name="distSelect" ng-model="dataset['dcat:distribution']" ng-options="distr['@id'] as distr['dc:title']['@value'] for distr in distributions" multiple></select>
+                        <select ng-required="dataset['dcat:distribution']['@required']" style="width:100%" id="ditr" name="distSelect" ng-model="dataset['dcat:distribution']['@value']" ng-options="distr['@id'] as distr['dc:title']['@value'] for distr in distributions" multiple></select>
                     </div>​
                 </div>
 
                 <label for="rootR">Root Resource</label> <span ng-show="dataset['void:rootResource']['@required']" style="color: red">*</span>
                 <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/void/rootResource'> void:rootResource </a>
                 <br>
-                <select ng-required="dataset['void:rootResource']['@required']"  style="width: 100%;" id="rootR" name="licenseelect" ng-model="dataset['void:rootResource']['@id']" ng-options="distr for distr in dataset['dcat:distribution']"></select>
+                <select ng-required="dataset['void:rootResource']['@required']"  style="width: 100%;" id="rootR" name="licenseelect" ng-model="dataset['void:rootResource']['@id']" ng-options="distr for distr in dataset['dcat:distribution']['@value']"></select>
             </div>
         </div>
         <div ng-show="checked">

@@ -50,6 +50,9 @@ public class IdPart
     private ErrorWarningWrapper errorswarnings = new ErrorWarningWrapper();
     private Model graph;
     private Resource id;
+    private Resource prevVersion;
+    private Resource nextVersion;
+    private Resource latestVersion;
     private Set<URI> types;
     private DataIdParts partType;
     private String jsonLdErrorReport;
@@ -57,54 +60,53 @@ public class IdPart
     public IdPart(Model m) throws DataIdInputException {
         loadModel(m);
         //TODO multiple DataIds???
-        this.id = getRoots().iterator().next();
-        setTypes();
+        setIdAndTypes(getTypeStatements(StaticContent.DataIdUri).iterator().next());
         init();
     }
 
-    public IdPart(Model m, Resource id)
-    {
+    public IdPart(Model m, Resource id) throws DataIdInputException {
         loadModel(m);
-        this.id = id;
-        setTypes();
+        setIdAndTypes(id);
         init();
     }
 
     public IdPart(String s) throws DataIdInputException {
         loadModel(s);
-        this.id = getRoots().iterator().next();
-        setTypes();
+        setIdAndTypes(getTypeStatements(StaticContent.DataIdUri).iterator().next());
         init();
     }
     public IdPart(String s, Resource id) throws DataIdInputException {
         loadModel(s);
-        this.id = id;
-        setTypes();
+        setIdAndTypes(id);
         init();
     }
 
-    private void setTypes() {
+    private void setIdAndTypes(Resource id) {
+        this.id = id;
         types = new HashSet<>();
-        for (Value o : graph.filter(this.id, StaticContent.a, null).objects())
+        for (Value o : graph.filter(id, StaticContent.a, null).objects())
             if (o.getClass().isAssignableFrom(URI.class))
                 types.add((URI) o);
 
         partType = getDataIdPartType(getTypes());
     }
 
-    private static void init()
-    {
+    private void init() throws DataIdInputException {
         try {
-            validator = new DataIdValidator(DataIdConfig.getOntologies(), DataIdConfig.getExceptions());
+            if(validator == null)
+                validator = new DataIdValidator(DataIdConfig.getOntologies(), DataIdConfig.getExceptions());
         } catch (RDFReaderException e) {
             e.printStackTrace();
         }
+        this.nextVersion = getTypeStatements(StaticContent.nextVersion).iterator().next();
+        this.prevVersion = getTypeStatements(StaticContent.previousVersion).iterator().next();
+        this.latestVersion = getTypeStatements(StaticContent.latestVersion).iterator().next();
     }
 
-    private Set<Resource> getRoots() throws DataIdInputException {
-        Set<Resource> subjects = graph.filter(null, StaticContent.a, new URIImpl("http://rdfs.org/ns/void#DatasetDescription")).subjects();
+    private Set<Resource> getTypeStatements(String type) throws DataIdInputException {
+        Set<Resource> subjects = graph.filter(null, StaticContent.a, new URIImpl(type)).subjects();
         if(subjects.size() == 0)
-            throw new DataIdInputException("no root element (void:DatasetDescription) was found");
+            throw new DataIdInputException("no triple of type " + type + " was found");
         return subjects;
     }
 
@@ -133,22 +135,19 @@ public class IdPart
         return graph.filter(null, null, this.id).subjects();
     }
 
-    public IdPart getParent(Resource parentId)
-    {
+    public IdPart getParent(Resource parentId) throws DataIdInputException {
         if(getParents().contains(parentId))
             return getIdFromCache(parentId);
         return null;
     }
 
-    public IdPart getChild(Resource childId)
-    {
+    public IdPart getChild(Resource childId) throws DataIdInputException {
         if(getChildren().contains(childId))
             return getIdFromCache(childId);
         return null;
     }
 
-    private IdPart getIdFromCache(Resource iid)
-    {
+    private IdPart getIdFromCache(Resource iid) throws DataIdInputException {
         if(DataIdPartCache.keySet().contains(iid))
             return DataIdPartCache.get(iid);
         else
@@ -218,6 +217,18 @@ public class IdPart
 
     public DataIdParts getPartType() {
         return partType;
+    }
+
+    public Resource getLatestVersion() {
+        return latestVersion;
+    }
+
+    public Resource getNextVersion() {
+        return nextVersion;
+    }
+
+    public Resource getPrevVersion() {
+        return prevVersion;
     }
 
     public String getJsonLdErrorReport() throws DataIdInputException {

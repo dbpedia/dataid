@@ -31,6 +31,9 @@ public class StaticContent {
     public static final SimpleDateFormat msDateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
     public static final String LinksetUri = dataIdStump + "Linkset";
     public static final String DatasetUri = dataIdStump + "Dataset";
+    public static final String nextVersion = dataIdStump + "nextVersion";
+    public static final String previousVersion = dataIdStump + "Distribution";
+    public static final String latestVersion = dataIdStump + "Distribution";
     public static final String DistributionUri = dataIdStump + "Distribution";
     public static final String dcatDistributionUri = dcatStump + "Distribution";
     public static final String DataIdUri = voidStump + "DatasetDescription";

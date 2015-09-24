@@ -1,8 +1,9 @@
 /**
  * Created by Chile on 9/9/2015.
  */
-var dataIdGen = angular.module('dataIdGen', ['d3', 'angularJsonld', 'ui.bootstrap', 'ngSanitize'])
+var dataIdGen = angular.module('dataIdGen', ['angularJsonld', 'ui.bootstrap', 'ngSanitize'])
 var context = null;
+var validationModalDialog = null;
 
 dataIdGen.config(function(jsonldContextProvider){
     /* If we need to change the semantics of 'fullName' we just do it here for the entire application */
@@ -10,16 +11,31 @@ dataIdGen.config(function(jsonldContextProvider){
     jsonldContextProvider.add(context);
 });
 
-function genController($scope, $modal, $http) {
+function genController($scope, $modal, $http, $document) {
     $scope.messages = {};
     $scope.messages.notValidURI = "Not a valid URI!";
     $scope.showValidation = false;
     $scope.newIdSwitch = false;
-    $scope.currentTab = 'creatr';
+    $scope.currentTab = 'creator';
     $scope.languages = getLanguages();
     $scope.selectedLanguage = 'en';
     $scope.agentRoles = ["Creator", "Maintainer", "Publisher", "Contact", "Contributor" ];
     $scope.validationResult = {'@graph':[], '@context':{}};
+    $scope.valid = 'unvalidated';
+    $scope.config = null;
+    $scope.cleanId = null;
+    $scope.published = false;
+
+    (function(){
+        sendRequest("dataIdCreatorConfig.json", "GET", null, false, function(e){
+            if(e.target.status >202)
+                console.log(e.target.responseText);
+            else
+            {
+                $scope.config = JSON.parse(e.target.responseText);
+            }
+        }, function(){});
+    })();
 
     $scope.countInstancesOfAnyType = function()
     {
@@ -30,6 +46,64 @@ function genController($scope, $modal, $http) {
         }
         return counts;
     };
+
+    $scope.getNameById = function(id)
+    {
+        var obj = getById(id, $scope.graph);
+        if(isOfType(obj, 'dataid:Agent'))
+            return obj['dataid:agentName']['@value'];
+        else
+            return obj['dc:title']['@value'];
+    }
+
+    $scope.replacePrexixes = function(str)
+    {
+        var context = getContext();
+        for(var key in context)
+        {
+            if(str.indexOf(context[key]) >= 0)
+                str = str.replace(context[key], (key + ':')).replace(/for type [^\s]+/g, '');
+        }
+        return str;
+    };
+
+    $scope.setErrorTableWarningColor = function (level) {
+        if (level == 'rlog:WARN')
+            return {color: "yellow"}
+        if (level == 'rlog:ERROR')
+            return {color: "red"}
+    }
+
+
+    $scope.getLabelClass = function(id)
+    {
+        var obj = getById(id, $scope.graph);
+        var zw = {
+            "dataid:Dataset":"label-info",
+            "void:DatasetDescription":"label-success",
+            "dataid:Distribution":"label-default",
+            "dataid:Agent":"label-primary"
+        };
+        var zz = null;
+        if(obj.constructor === Array)
+            zz = "label label-xlg " + zw[obj['@type'][obj['@type'].length-1]] ;
+        else
+            zz = "label label-xlg " + zw[obj['@type']] ;
+        return zz;
+    };
+
+    $scope.changeSubset = function(sett)
+    {
+        console.log(JSON.stringify(sett));
+        if(isOfType(sett, 'void:DatasetDescription'))
+            ($("#dataiduri")).focus();
+        if(isOfType(sett, 'dataid:Agent'))
+            $scope.openAgent(null, sett);
+        if(isOfType(sett, 'dataid:Dataset'))
+            $scope.openDataset(null, sett);
+        if(isOfType(sett, 'dataid:Distribution') || isOfType(sett, 'dataid:SparqlEndpoint'))
+            $scope.openDist(null, sett);
+    }
 
     $scope.getNewId = function(parent, type)
     {
@@ -43,6 +117,23 @@ function genController($scope, $modal, $http) {
         return parentName;
     };
 
+    $scope.delSetAndChildren = function(sett)
+    {
+        var parent = $scope.getParent(sett);
+        if(!(parent === undefined || parent == null))
+            return;
+        var children = getChildren(sett);
+        if(isOfType('dataid:Agent'))
+            $scope.delAgent(sett);
+        if(isOfType('dataid:Dataset'))
+            $scope.delDataset2(sett);
+        if(isOfType('dataid:Distribution') || isOfType('dataid:SparqlEndpoint'))
+            $scope.delDistribution(sett);
+        //TODO Linkset
+        for(var i =0; i < children.length; i++) {
+            $scope.delSetAndChildren(children[i]);
+        }
+    };
     $scope.addDataset2 = function(parent) {
         var dataset = null;
         if(jsonLdTypeComparator(parent['@type'], "dataid:Dataset"))
@@ -73,6 +164,13 @@ function genController($scope, $modal, $http) {
         removeFromArray(dataset, $scope.graph);
     };
 
+    $scope.delDistribution = function(dataset) {
+        removeFromArray(dataset, $scope.graph);
+        var parent = $scope.getParent(dataset);
+        removeFromArray(dataset['@id'], parent['dcat:distribution']['@value']);
+        removeFromArray(dataset['@id'], parent['void:sparqlEndpoint']['@value']);
+    };
+
     $scope.addAgent = function(type) {
         var newId = $scope.getNewId($scope.root, type);
         var agent = getEmptyAgent(newId, [type])
@@ -80,13 +178,17 @@ function genController($scope, $modal, $http) {
         return  agent;
     };
 
-
     $scope.delAgent = function(dataset) {
+        if(getAllOfTypes('dataid:Agent', $scope.graph).length == 1) //we need at least one Agent
+        {
+            alert('you need at least one Agent');
+            return;
+        }
         removeFromArray(dataset, $scope.graph);
         for(var i =0; i < $scope.graph.length; i++)
         {
-            var arr = $scope.graph[i]['dataid:associatedAgent'];
-            if(arr != undefined)
+            var arr = $scope.graph[i]['dataid:associatedAgent']['@value'];
+            if(!!arr)
                 removeFromArray(dataset['@id'], arr);
         }
     };
@@ -108,7 +210,6 @@ function genController($scope, $modal, $http) {
         return child['@parent'] == parent['@id'];
     };
 
-    //TODO deleted datasets=
     $scope.agentFilter =function(agent) {
         return isOfType(agent, 'dataid:Agent');
     };
@@ -131,49 +232,34 @@ function genController($scope, $modal, $http) {
 
     $scope.getAllAgents = function()
     {
-        var ret = [];
-        for(var i=0; i < $scope.graph.length; i++)
-        {
-            if(isOfType($scope.graph[i], 'dataid:Agent'))
-                ret.push($scope.graph[i]);
-        }
-        return ret;
+        var zw = getAllOfTypes(['dataid:Agent'], $scope.graph);
+        return zw;
     };
 
     $scope.getAllDistributions = function()
     {
-        var ret = [];
-        for(var i=0; i < $scope.graph.length; i++)
-        {
-            if(isOfType($scope.graph[i], 'dataid:Distribution') || isOfType($scope.graph[i], 'dataid:SparqlEndpoint'))
-                ret.push($scope.graph[i]);
-        }
-        return ret;
+        return getAllOfTypes(['dataid:Distribution', 'dataid:SparqlEndpoint'], $scope.graph);
     };
 
-    $scope.openWelcome = function() {
+    $scope.openValidating = function() {
 
-        var modalDistInstance = $modal.open({
-            templateUrl: 'welcome.html',
-            controller: ModalWelcomeCtrl,
+        validationModalDialog = $modal.open({
+            templateUrl: 'validating.html',
+            controller: ModalValidatingCtrl,
             size: 'md',
             backdrop : 'static',
             resolve: {            }
         });
-        modalDistInstance.result.then(function(resp) {
-            if(resp == 'learn')
-                alert('learn');
-            if(resp == 'newId')
-                $scope.newIdSwitch = true;
-            if(resp == 'loadId')
-                alert('loadId');
+        validationModalDialog.result.then(function(resp) {
+            if(resp == 'cancel')
+                alert('canceled'); //TODO abort validation
         });
     };
 
     $scope.openNewAgent = function() {
-        $scope.openAgent(null);
+        $scope.openAgent(1, null);
     };
-    $scope.openAgent = function(agent) {
+    $scope.openAgent = function(parent, agent) {
         var modalDistInstance = $modal.open({
             templateUrl: 'modalAgentContent.html',
             controller: ModalAgentInstanceCtrl,
@@ -181,15 +267,22 @@ function genController($scope, $modal, $http) {
             backdrop : 'static',
             resolve: {
                 agent: function() {
-                    var newId = $scope.getNewId($scope.root, 'dataid:Agent');
                     if(agent == null)
+                    {
+                        var newId = $scope.getNewId($scope.root, 'dataid:Agent');
                         agent = getEmptyAgent(newId, []);
+                    }
+
                     return {agent: agent, messages: $scope.messages};
                 }
             }
         });
-        modalDistInstance.result.then(function(agent) {
-            $scope.pushNewSet(null, agent);
+        modalDistInstance.result.then(function(newAge) {
+            if(!(parent === undefined || parent == null))
+            {
+                $scope.pushNewSet(null, newAge);
+            }
+
         });
     };
 
@@ -204,15 +297,19 @@ function genController($scope, $modal, $http) {
             backdrop : 'static',
             resolve: {
                 dataset: function() {
-                    var newId = $scope.getNewId(parent, 'dataid:Dataset');
                     if(dataset == null)
+                    {
+                        var newId = $scope.getNewId(parent, 'dataid:Dataset');
                         dataset = getEmptyDataset(newId, parent['@id']);
-                    return {dataset: dataset, messages: $scope.messages, licenses: getLicenses(), agents: $scope.getAllAgents(), distributions: $scope.getAllDistributions(), openDist: $scope.openDist, openAgent: $scope.openAgent};
+                    }
+
+                    return {dataset: dataset, messages: $scope.messages, licenses: getLicenses(), agents: $scope.getAllAgents(), distributions: $scope.getAllDistributions(), openDist: $scope.openNewDist, openAgent: $scope.openNewAgent};
                 }
             }
         });
         modalDistInstance.result.then(function(retSet) {
-            $scope.pushNewSet(parent, retSet);
+            if(!(parent === undefined || parent === null))
+                $scope.pushNewSet(parent, retSet);
         });
     };
 
@@ -246,15 +343,19 @@ function genController($scope, $modal, $http) {
             backdrop : 'static',
             resolve: {
                 dist: function() {
-                    var newId = $scope.getNewId(parent, 'dataid:Distribution');
-                    if(distribution == null)
+                    if(distribution == null) {
+                        var newId = $scope.getNewId(parent, 'dataid:Distribution');
                         distribution = getEmptyDistribution(newId, parent['@id'], 'dataid:Distribution');
+                    }
                     return {distribution: distribution, license: getLicenses(), scope: $scope};
                 }
             }
         });
         modalDistInstance.result.then(function(dist) {
-            $scope.pushNewSet(parent, dist);
+            if(!(parent === undefined || parent === null))
+            {
+                $scope.pushNewSet(parent, dist);
+            }
         });
     };
 
@@ -278,6 +379,8 @@ function genController($scope, $modal, $http) {
         $scope.graph = dataid["@graph"];
         $scope.root = $scope.graph[0];
         $scope.agent = getAllOfTypes(['dataid:Agent'], $scope.graph)[0];
+        $scope.root['dataid:associatedAgent']['@value'].push($scope.agent['@id']);
+        $scope.validate($scope.dataid);
     }
 
     $scope.getObjFromId = function(id)
@@ -292,19 +395,92 @@ function genController($scope, $modal, $http) {
         return {};
     };
 
-    $scope.validationResult = {};
-
-    $scope.putOut = function(dataid)
+    $scope.validate = function(dataid)
     {
-        var ttl = cleanDataId(dataid);
-        console.log(ttl);
-        var request = sendRequest("http://localhost:9995/dataid/publisher/validateid", "POST", JSON.stringify(ttl), true, function(e){
+        $scope.cleanId = cleanDataId(dataid);
+        $scope.openValidating();
+        console.log($scope.cleanId);
+        var request = sendRequest($scope.config['validatorEndpoint'], "POST", JSON.stringify($scope.cleanId), true, function(e){
             if(e.target.status >202)
-                alert(request.responseText);
+                console.log(e.target.responseText);
             else
-                $scope.validationResult = JSON.parse(request.responseText);
-            console.log($scope.validationResult);
+            {
+
+                $scope.validationResult = JSON.parse(e.target.responseText);
+                console.log($scope.validationResult);
+                var errors = getAllOfTypes(['rut:TestCaseResult'], $scope.validationResult['@graph']);
+                var counts = {};
+                for(var i = 0; i< errors.length; i++) {
+                    var num = errors[i]["level"];
+                    counts[num] = counts[num] ? counts[num]+1 : 1;
+                }
+                if('rlog:ERROR' in counts)
+                    $scope.valid = 'false';
+                else if('rlog:WARN' in counts)
+                    $scope.valid = 'warnings';
+                else
+                    $scope.valid = 'true';
+                $scope.$apply();
+                validationModalDialog.close();
+            }
         }, function (e) { });
+    };
+
+    $scope.publishDataId = function()
+    {
+        if($scope.valid == 'true' && $scope.cleanId !== undefined && $scope.cleanId != null)
+        {
+            sendRequest($scope.config['insertIdEndpoint'], "POST", $scope.cleanId, true, function(e){
+                if(e.target.status >202)
+                    console.log(e.target.responseText);
+                else
+                {
+                    $scope.published = true;
+                    alert(e.target.responseText);
+                }
+            }, function(e){
+                alert(e.target.responseText);
+            });
+        }
+        else
+            alert("DataID is not valid! Please validate the DataID first.");
+    };
+
+    $scope.getValidationColor = function()
+    {
+        var zw = {
+            "true":"panel panel-success",
+            "unvalidated":"panel panel-default",
+            "warnings":"panel panel-warning",
+            "false":"panel panel-danger"
+        };
+        return zw[$scope.valid];
+    };
+
+    $scope.getValidationHeading = function()
+    {
+        var zw = {
+            "true":"DataID is valid",
+            "unvalidated":"DataID yet to be validated",
+            "warnings":"DataID is valid but recommended values are missing",
+            "false":"DataID is not valid"
+        };
+        return zw[$scope.valid];
+    };
+
+    $scope.isFormValid = function()
+    {
+        if(($('#dataiduri')).val().trim() == "http://example.org/dataids#dataid1")
+        {
+            alert("Please change the uri of the DataID.\nDon't use the example URL.");
+            return false;
+        }
+        if($scope.root['foaf:topic']['@value'].length == 0)
+        {
+            alert("Please add at least one dataset.\nSelect the Menu option next to your DataID on the left hand side.");
+            return false;
+        }
+        return this.form.$valid;
     };
 
     $scope.$watchCollection('graph', function(newVal){
@@ -313,14 +489,48 @@ function genController($scope, $modal, $http) {
             else if(isOfType(newVal[newVal.length-1], 'dataid:Distribution'))
                 $scope.$root.$broadcast('newDistribution',{"val":newVal[newVal.length-1]});
             else if(isOfType(newVal[newVal.length-1], 'dataid:Dataset'))
+            {
                 $scope.$root.$broadcast('newDataset',{"val":newVal[newVal.length-1]});
+            }
     });
 
-    $scope.dataid = getEmptyDataId('http://example.org/dataids#dataid1');
+
+    $scope.$watch("root['@id']", function(value, old){
+        //TODO validate URL please :)
+        if(value === undefined || value.length < 7 || value.substr(0, 7) != "http://")
+        {
+            value = "http://";
+            $scope.root['@id'] =  "http://";
+        }
+        if(old === undefined || old.length < 7 || old.substr(0, 7) != "http://")
+            old = "http://";
+        console.log('watch: newVal: ' + value + ' - oldVal: ' + old);
+        $scope.$broadcast('uriupdate',{instance:$scope.root, newVal:value, oldVal:old});
+    });
+
+    $scope.$on('uriupdate', function(event, newId){
+        console.log('newVal: ' + $scope.root['@id']);
+
+        var children = getChildren(newId.instance);
+        for(var i=0; i < children.length; i++)
+        {
+            var c = getById(children[i], $scope.graph);
+            console.log('onreceife: got child: ' + c['@id']);
+            if(c !== undefined && !!c && c['@parent'] == newId.oldVal)
+            {
+                console.log('onreceife: parent: ' + c['@parent']);
+                c['@parent'] = newId.newVal;
+            }
+        }
+    });
+
+
+    $scope.dataid = getEmptyDataId('http://dbpedia.dataid.org/myExampleDataId#1');
     $scope.graph = $scope.dataid["@graph"];
     $scope.root = $scope.graph[0];
+    $scope.agent = $scope.addAgent('dataid:Creator');
+    $scope.root['dataid:associatedAgent']['@value'].push($scope.agent['@id']);
     $scope.root = finalizeSet(null, $scope.root);
-        $scope.agent = $scope.addAgent('dataid:Creator');
     //$scope.dataset = $scope.addDataset2($scope.root);
 
     //AGentBox declaration
@@ -350,6 +560,11 @@ var ModalDatasetInstanceCtrl = function($scope, $modalInstance, dataset) {
     });
     $scope.$on('newDistribution', function(event, args){
         $scope.distributions.push(args.val);
+/*        $("#ditr").removeClass('ng-invalid')
+        $("#ditr").removeClass('ng-pristine');
+        $("#ditr").addClass('ng-valid');
+        $("#ditr").addClass('ng-dirty');*/
+        //alert(JSON.stringify(angular.element(this.formDataset['ditr']).$valid));
     });
     $scope.cancel = function() {
         $modalInstance.dismiss('cancel');
@@ -363,9 +578,11 @@ var ModalDatasetInstanceCtrl = function($scope, $modalInstance, dataset) {
     $scope.$watch("selectedLanguage", function(value) {
         initializeLanguage($scope.dataset, value);
     });
+    $scope.$watch("dataset['@id']", function(value, old){
+        $scope.$root.$broadcast('uriupdate',{instance:$scope.dataset, newVal:value, oldVal:old});
+    });
     $scope.selectedLanguage = 'en';
 };
-
 
 var ModalAgentInstanceCtrl = function($scope, $modalInstance, agent) {
     $scope.agent = agent.agent;
@@ -385,7 +602,11 @@ var ModalAgentInstanceCtrl = function($scope, $modalInstance, agent) {
     });
     $scope.someTypeSelected = function () {
         return $scope.agent['@type'].filter(function( obj ) { return !!obj && obj.trim() != 'dataid:Agent'; }).length == 0;
-    }
+    };
+
+    $scope.$watch("agent['@id']", function(value, old){
+        $scope.$root.$broadcast('uriupdate',{instance:$scope.agent, newVal:value, oldVal:old});
+    });
     $scope.selectedLanguage = 'en';
 };
 
@@ -395,7 +616,7 @@ var ModalDistInstanceCtrl = function($scope, $modalInstance, dist) {
     $scope.agents = dist.scope.getAllAgents();
     $scope.languages = getLanguages();
     $scope.foreignScope = dist.scope;
-    $scope.openAgent = dist.scope.openAgent;
+    $scope.openAgent = dist.scope.openNewAgent;
 
     $scope.$on('newAgent', function(event, args){
         $scope.agents.push(args.val);
@@ -415,14 +636,16 @@ var ModalDistInstanceCtrl = function($scope, $modalInstance, dist) {
     $scope.$watch("selectedLanguage", function(value) {
         initializeLanguage($scope.dataset, value);
     });
+    $scope.$watch("distribution['@id']", function(value, old){
+        $scope.$root.$broadcast('uriupdate',{instance:$scope.distribution, newVal:value, oldVal:old});
+    });
     $scope.selectedLanguage = 'en';
 };
 
-var ModalWelcomeCtrl = function($scope, $modalInstance) {
+var ModalValidatingCtrl = function($scope, $modalInstance) {
     $scope.ok = function(ret) {
         $modalInstance.close(ret);
     };
-
     $scope.cancel = function() {
         $modalInstance.dismiss('cancel');
     };
@@ -461,7 +684,7 @@ function finalizeSet(parent, newSet)
     else
     {
         name = newSet['dc:title']['@value'];
-        if(!!newSet['dc:issued']['@value'])
+        if(!newSet['dc:issued']['@value'])
             newSet['dc:issued']['@value'] = new Date().toISOString();
         else
             newSet['dc:modified']['@value'] = new Date().toISOString();
@@ -481,7 +704,8 @@ function refactorNewId(parentId, newName)
 function removeFromArray(obj, arr)
 {
     var ind = arr.indexOf(obj);
-    arr.splice(ind, 1);
+    if(ind >= 0)
+        arr.splice(ind, 1);
 }
 
 function getId(elem){
@@ -508,21 +732,59 @@ function jsonLdTypeComparator(comp1, comp2)
     var c2split = comp2.split([':']);
     var c2long = comp2.substr(0, 4) == 'http' ? comp2 : context[c2split[0]] + c2split[1];
 
+    if(!c1long || !c2long)
+        return false;
     return c1long.trim().toLowerCase() == c2long.trim().toLowerCase();
 }
 
-function cleanDataId(obj) {
+function cleanDataId(dataid)
+{
+    var id = getEmptyDataId("hdsjgfjh");
+    id['@graph'] = [];
+
+    for(var i=0; i < dataid['@graph'].length; i++)
+    {
+        id['@graph'].push(cleanDataIdPart(dataid['@graph'][i]));
+    }
+    return id;
+}
+
+function cleanDataIdPart(obj) {
     if(obj === null || typeof(obj) !== 'object' || 'isActiveClone' in obj)
         return obj;
 
     var temp = obj.constructor();
 
+    if('@id' in obj)
+    {
+        if(obj['@id'] == null || obj['@id'] === undefined)
+            return null;
+    }
     if('@value' in obj)
     {
-        if(obj['@value'] == null)
+        if(obj['@value'] == null || obj['@value'] === undefined)
             return null;
         if(obj['@value'].constructor === Array)
-            return obj['@value'];
+        {
+            if(!!obj['@type'] && obj['@type'].length > 0 && obj['@type'][0].trim().substr(0, 4) != "xsd:")
+            {
+                var tempArr = [];
+                for(var j=0; j < obj['@value'].length; j++)
+                {
+                    tempArr.push({ "@id" : obj['@value'][j]});
+                }
+                return tempArr;
+            }
+            else
+            {
+                var ta = [];
+                for(var i=0; i < obj['@value'].length; i++)
+                {
+                    ta.push(cleanDataIdPart(obj['@value'][i]));
+                }
+                return ta;
+            }
+        }
     }
     if('@language' in obj && !!obj['@value'])
     {
@@ -533,12 +795,20 @@ function cleanDataId(obj) {
         }
         return tenpArray;
     }
+
+    if('@type' in obj)
+    {
+        if(!!obj['@type'] && obj['@type'].length == 1)
+            obj['@type'] = obj['@type'][0];
+        else
+            obj['@type'] = obj['@type'];
+    }
     for (var key in obj) {
         if (Object.prototype.hasOwnProperty.call(obj, key)) {
             obj['isActiveClone'] = null;
-            if (key != '@parent' && key != '@required' && key != "$$hashKey")
+            if (key != '@parent' && key != '@required' && key != "$$hashKey" && key != "@pristine")
             {
-                var zw = cleanDataId(obj[key]);
+                var zw = cleanDataIdPart(obj[key]);
                 if(!!zw)
                     temp[key] = zw;
             }
@@ -596,17 +866,31 @@ function integrateDataId(dataid)
     return retDataId;
 }
 
-    function getOptionalArray(obj, property)
+function getChildren(sett)
+{
+    var children = [];
+    if(sett['dataid:associatedAgent'] != null)
+        children = children.concat(sett['dataid:associatedAgent']['@value']);
+    if(sett['dcat:distribution'] != null)
+        children = children.concat(sett['dcat:distribution']['@value']);
+    if(sett['void:subset'] != null)
+        children = children.concat(sett['void:subset']['@value']);
+    if(sett['foaf:topic'] != null)
+        children = children.concat(sett['foaf:topic']['@value']);
+    return children;
+}
+
+function getOptionalArray(obj, property)
+{
+    if(!!obj[property])
     {
-        if(!!obj[property])
-        {
-            if(obj[property].constructor === Array)
-                return obj[property];
-            else
-                return [obj[property]];
-        }
-        return [];
+        if(obj[property].constructor === Array)
+            return obj[property];
+        else
+            return [obj[property]];
     }
+    return [];
+}
 
 function integrateSet(orig, template)
 {
@@ -628,13 +912,22 @@ function integrateSet(orig, template)
             }
             else if (!!template[key]['@value'] && template[key]['@value'].constructor === Array) {
                 if (!!orig[key] && orig[key].constructor === Array)
-                    template[key]['@value'] = orig[key];
+                {
+                    if(!!orig[key]['@type'] && orig[key]['@type'][0].trim().substr(0,4) != "xsd:")
+                        template[key]['@value'] = idsToStrings(orig[key]);
+                    else
+                        template[key]['@value'] = orig[key];
+                }
+
                 else
                     template[key]['@value'].push(orig[key]);
             }
             else {
                 template[key]['@value'] = orig[key]['@value'];
-                template[key]['@type'] = orig[key]['@type'];
+                if(!!orig[key]['@type'] && orig[key]['@type'].constructor !== Array)
+                    template[key]['@type'] = [orig[key]['@type']];
+                else
+                    template[key]['@type'] = orig[key]['@type'];
                 template[key]['@language'] = orig[key]['@language'];
             }
         }
@@ -645,6 +938,21 @@ function integrateSet(orig, template)
         }
     }
     return template;
+}
+
+function idsToStrings(ids)
+{
+    if(ids.constructor !== Array)
+        return [ids['@id']];
+    else
+    {
+        var tempArr = [];
+        for(var i=0; i < ids.length; i++)
+        {
+            tempArr.push(ids[i]['@id']);
+        }
+        return tempArr;
+    }
 }
 
 function isOfType(obj, type)
@@ -706,93 +1014,14 @@ getAllOfTypes = function(types, graph)
     {
         for(var j=0; j < types.length; j++)
         {
-            if(isOfType(graph[i], types[j]))
+            if(!!graph[i] && !!types[j] && isOfType(graph[i], types[j]))
                 ret.push(graph[i]);
         }
     }
     return ret;
-}
+};
 
 getById = function(id, graph)
 {
     return graph.filter(function( obj ) { return obj['@id'] == id; })[0];
 };
-
-dataIdGen.directive('d3Bars', ['$window', '$timeout', 'd3Service',
-    function($window, $timeout, d3Service) {
-        return {
-            restrict: 'A',
-            scope: false,
-            link: function(scope, ele, attrs) {
-                d3Service.d3().then(function(d3) {
-
-                    var renderTimeout;
-                    var margin = parseInt(attrs.margin) || 20,
-                        barHeight = parseInt(attrs.barHeight) || 20,
-                        barPadding = parseInt(attrs.barPadding) || 5;
-
-                    $window.onresize = function() {
-                        scope.$apply();
-                    };
-
-/*                    scope.$watch(function() {
-                        return angular.element($window)[0].innerWidth;
-                    }, function() {
-                        scope.render(scope.data);
-                    });*/
-
-                    scope.$watch('validationResult', function(newData) {
-                        alert(JSON.stringify(newData));
-                        scope.render(newData);
-                    }, true);
-
-                    scope.render = function(data) {
-                        var layers = getLayers(data);
-                        var counts = {};
-                        for(var i = 0; i< layers.length; i++) {
-                            var num = layers[i]["level"];
-                            counts[num] = counts[num] ? counts[num]+1 : 1;
-                        }
-                        var peopleTable = tabulate(d3.select("#d3canvas"), ["level","resource", "message"], layers);
-
-                        resultTitle("Validation result: number of tests: " + result["@graph"][0]["testsRun"] + ", number of errors: " +
-                        counts["rlog:ERROR"] != null ? counts["rlog:ERROR"] : 0 + ", number of warnings: " +
-                        counts["rlog:WARN"] != null ? counts["rlog:WARN"] : 0);
-                        // uppercase the column headers
-                        peopleTable.selectAll("thead th")
-                            .text(function (column) {
-                                return column.charAt(0).toUpperCase() + column.substr(1);
-                            })
-                            .style("background-color", function(d) {
-                                return "#B2D1E0";
-                            });
-                        peopleTable.selectAll("tbody td")
-                            .text(function (td) {
-                                if(td.column == "level")
-                                    return td.value.replace('rlog:', '').replace('WARN', 'WARNING');
-                                else
-                                    return td.value;
-                            });
-
-                        peopleTable.selectAll("tbody tr")
-                            .style("background-color", function(d) {
-                                //d2 will be the same as d, but j will always be 0
-                                //since d3.select(this) only has one element
-                                if (d["level"] == "rlog:ERROR"){
-                                    return "#FF5C33";
-                                }
-                                else if (d["level"] == "rlog:WARN"){
-                                    return "#FFD633";
-                                }
-                                else {
-                                    return "#ffffff" ;
-                                }
-                            } );
-
-                        $('table').DataTable({
-                            "order": [[ 1, "asc" ]]
-                        });
-                    };
-                });
-            }}
-    }])

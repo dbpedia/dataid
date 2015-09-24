@@ -5,6 +5,9 @@
     <div class="panel-body">
         <div ng-hide="agentDontShowType">
             <label>Type of Agent: </label>  <span style="color: red">*</span><br/>
+            <div class="pull-right">
+                <span  popover-placement="left" class="help-button"  popover="Please select the function of the Agent." >?</span>
+            </div>
             <input type="radio" ng-required="someTypeSelected()"  ng-click="agent['dataid:agentRole']['@value']='Creator'" ng-model="agent['@type']" value="dataid:Creator, dataid:Agent" checked="checked" ng-list="/,|\./"> dataid:Creator
             <input style="margin-left: 20px" type="radio" ng-required="someTypeSelected()"  ng-click="agent['dataid:agentRole']['@value']='Contributor'" ng-model="agent['@type']" value="dataid:Contributor, dataid:Agent" ng-list="/,|\./"> dataid:Contributor
             <input style="margin-left: 20px" type="radio" ng-required="someTypeSelected()"  ng-click="agent['dataid:agentRole']['@value']='Contact'" ng-model="agent['@type']" value="dataid:Contact, dataid:Agent" ng-list="/,|\./"> dataid:Contact
@@ -17,14 +20,23 @@
         <input class="input-modal-md" ng-required="agent['rdfs:label']['@required']" ng-model="agent['rdfs:label']['@value'][selectedLanguage]"> <br/>
 
         <label>Agent Name</label> <span ng-show="agent['dataid:agentName']['@required']" style="color: red">*</span>
+        <div class="pull-right">
+            <span  popover-placement="left" class="help-button"  popover="Enter the name of this Agent" >?</span>
+        </div>
         <a class="desc2" target="_blank" href='http://dataid.dbpedia.org/ns/core#'> dataid:agentName </a>
         <input class="input-modal-md" ng-required="agent['dataid:agentName']['@required']" ng-model="agent['dataid:agentName']['@value']"> <br/>
 
         <label>Agent Mail</label> <span ng-show="agent['dataid:agentMail']['@required']" style="color: red">*</span>
+        <div class="pull-right">
+            <span  popover-placement="left" class="help-button"  popover="Enter the mail address of this Agent" >?</span>
+        </div>
         <a class="desc2" target="_blank" href='http://dataid.dbpedia.org/ns/core#'> dataid:agentMail </a>
         <input type="email" class="input-modal-md" ng-required="agent['dataid:agentMail']['@required']" ng-model="agent['dataid:agentMail']['@value']"> <br/>
 
         <label>Agent URL</label> <span ng-show="agent['dataid:agentUrl']['@required']" style="color: red">*</span>
+        <div class="pull-right">
+            <span  popover-placement="left" class="help-button"  popover="If available, enter a contact URL pertaining to this Agent" >?</span>
+        </div>
         <a class="desc2" target="_blank" href='http://dataid.dbpedia.org/ns/core#'> dataid:agentUrl </a>
         <input type="url" class="input-modal-md" ng-required="agent['dataid:agentUrl']['@required']" ng-model="agent['dataid:agentUrl']['@value']"> <br/>
     </div>

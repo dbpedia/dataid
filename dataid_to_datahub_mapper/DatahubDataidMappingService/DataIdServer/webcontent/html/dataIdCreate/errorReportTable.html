@@ -1,22 +1,24 @@
-<div class="panel panel-primary">
-    <div class="panel-heading foaf-link">
-        <h1 class="panel-title">{{agentBoxTitle}}</h1>
+<div ng-class="getValidationColor()">
+    <div class="panel-heading">
+        <h1 class="panel-title">{{getValidationHeading()}}</h1>
     </div>
-    <div class="panel-body">
-            <table>
+    <div class="panel-body" ng-show="valid=='false' || valid == 'warnings'">
+        <table cellpadding="0" cellspacing="0" border="0" class="dataTable" id="example">
+            <thead>
                 <tr>
-                    <th>Level</th>
-                    <th>Resource</th>
-                    <th>Message</th>
-                    <th>Test Case</th>
+                    <th align="center">Level</th>
+                    <th align="center">Resource</th>
+                    <th align="center">Message</th>
                 </tr>
-                <tr ng-repeat="x in validationResult['@graph']">
-                    <td>{{ x.level }}</td>
-                    <td>{{ x.resource }}</td>
-                    <td>{{ x.message }}</td>
-                    <td>{{ x.testCase }}</td>
+                </thead>
+            <tbody>
+                <tr ng-repeat="x in validationResult['@graph'] | filter:errorFilter">
+                    <td ng-style="setErrorTableWarningColor(x.level)">{{ x.level.replace('rlog:', '').replace('WARN', 'WARNING') }}</td>
+                    <td><a ng-class="getLabelClass(x.resource)" ng-click="changeSubset(getObjFromId(x.resource))" href >{{getNameById(x.resource)}}</a></td>
+                    <!--<td><div ng-click="changeSubset(graph, getById(x.resource))">{{getNameById(x.resource)}}</div></td>-->
+                    <td>{{ replacePrexixes(x.message) }}</td>
                 </tr>
-            </table>
-
+            </tbody>
+        </table>
     </div>
 </div>

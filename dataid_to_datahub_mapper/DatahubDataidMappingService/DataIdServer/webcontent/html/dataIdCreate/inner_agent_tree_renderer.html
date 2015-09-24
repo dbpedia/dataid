@@ -1,9 +1,10 @@
 <div>
-    <a class="label label-xlg label-primary" href="" >{{dataSet['dataid:agentName']['@value']}}</a>
+    <a class="label label-xlg label-primary" href="" ng-click="changeSubset(dataSet)">{{dataSet['dataid:agentName']['@value']}}</a>
     <div class="pull-right" ng-mouseover="activatePopover()">
         <div class="popr label label-xlg label-info" data-id="delAgentMenu">Menu</div>
         <div class="popr-box" data-box-id="delAgentMenu">
-            <a class="popr-item" name="{{dataSet['@id']}}" href="#" onclick="var scope = angular.element(event.target).scope(); scope.addDataset2(scope.delAgent(scope.getObjFromId(getId(this))));">remove agent</a>
+            <a name="{{dataSet['@id']}}" href="#" onclick="var scope = angular.element(event.target).scope(); scope.changeSubset(scope.getObjFromId(getId(this)));"><div class="popr-item" >edit</div></a>
+            <a href="#" name="{{dataSet['@id']}}" onclick="var scope = angular.element(event.target).scope(); if(confirm('Are you sure to delete this agent?')) scope.delSetAndChildren(scope.getObjFromId(getId(this)));" ><div class="popr-item" >delete</div></a>
         </div>
     </div>
 </div>

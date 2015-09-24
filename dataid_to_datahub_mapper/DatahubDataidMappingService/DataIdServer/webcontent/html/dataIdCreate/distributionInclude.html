@@ -52,7 +52,7 @@
                 <br>
                 <button class="btn btn-primary" style="float: right; height: 69px" ng-click="openAgent()" >add</button>
                 <div style="overflow: hidden; padding-right: .5em;">
-                    <select style="width: 100%;" id="agent" name="singleSelect" ng-required="distribution['dataid:associatedAgent']['@required']" ng-model="distribution['dataid:associatedAgent']" multiple>
+                    <select style="width: 100%;" id="agent" name="singleSelect" ng-required="distribution['dataid:associatedAgent']['@required']" ng-model="distribution['dataid:associatedAgent']['@value']" multiple>
                         <option ng-repeat="agent in agents" value="{{agent['@id']}}">{{agent['dataid:agentName']['@value']}}  is a {{agent['dataid:agentRole']['@value']}}</option>
                     </select>
                 </div>

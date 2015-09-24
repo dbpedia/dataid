@@ -6,19 +6,28 @@
     </div>
     <div class="panel-body" ng-show="clicked=='on'">
         <div>
-            <label>Dataset/Subset URI <span style="color: red">*</span></label>
+            <label>DataID URI <span style="color: red">*</span></label>
+            <div class="pull-right">
+                <span  popover-placement="right" class="help-button"  popover="This is the most important entry. Please use an unique URI starting with 'http://' as an Id. It is recommended to choose a domain under your supervision (e.g. your organization domain name). Otherwise, please use dbpedia.dataid.org as domain." >?</span>
+            </div>
             <br>  
-            <input ng-required="true" placeholder="e.g. http://dbpedia.org/mydataset/dataid.ttl" class="input" type="url" ng-model="root['@id']">
+            <input ng-required="true" id="dataiduri" placeholder="e.g. http://dbpedia.dataid.org/myExampleDataId#1" class="input" type="text" ng-model="root['@id']">
             <br/> 
             <span class="label label-danger" ng-show="form.dataset.$error.url">{{messages.notValidURI}} <br></span>
 
             <label>Title <span style="color: red">*</span></label>
+            <div class="pull-right">
+                <span  popover-placement="right" class="help-button"  popover="Please set the title of this DataID" >?</span>
+            </div>
             <a class="desc2" target="_blank" href='http://purl.org/dc/terms/title'> dc:title </a>
             <br>                
             <input ng-required="root['dc:title']['@required']" placeholder="e.g. DBpedia" type="text" class="dataset input" ng-model="root['dc:title']['@value']">
             <br/>
 
             <label for="dDescription">Description</label> <span style="color: red">*</span>
+            <div class="pull-right">
+                <span  popover-placement="right" class="help-button"  popover="Please enter any useful desription here..." >?</span>
+            </div>
             <a class="desc2" target="_blank" href='http://purl.org/dc/terms/description'> dc:description </a>
             <br>
             <textarea ng-required="root['dc:description']['@required']" class="input" rows="4" id="dDescription" ng-model="root['dc:description']['@value'][selectedLanguage]"></textarea> <br>

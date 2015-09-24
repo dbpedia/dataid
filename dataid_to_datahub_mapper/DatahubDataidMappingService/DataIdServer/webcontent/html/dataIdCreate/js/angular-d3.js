@@ -1,48 +1,73 @@
 angular.module('d3', [])
-    .factory('d3Service', ['$document', '$window', '$q', '$rootScope',
-        function($document, $window, $q, $rootScope) {
-            var d = $q.defer(),
-                d3service = {
-                    d3: function() { return d.promise; }
-                };
-            function onScriptLoad() {
-                // Load client in the browser
-                $rootScope.$apply(function() { d.resolve($window.d3); });
+    .factory('d3Service', [function(){
+        var canvas = d3.select(ele[0]);
+        var renderTimeout;
+        var margin = parseInt(attrs.margin) || 20,
+            barHeight = parseInt(attrs.barHeight) || 20,
+            barPadding = parseInt(attrs.barPadding) || 5;
+
+
+        scope.$watch('validationResult', function(newData) {
+            alert(JSON.stringify(newData));
+            scope.render(newData);
+        }, true);
+
+        /*                   $window.onresize = function() {
+         scope.$apply();
+         };
+
+         scope.$watch(function() {
+         return angular.element($window)[0].innerWidth;
+         }, function() {
+         scope.render(scope.data);
+         });*/
+
+
+        function render(data) {
+            var layers = getLayers(data);
+            var counts = {};
+            for (var i = 0; i < layers.length; i++) {
+                var num = layers[i]["level"];
+                counts[num] = counts[num] ? counts[num] + 1 : 1;
             }
-            var scriptTag = $document[0].createElement('script');
-            scriptTag.type = 'text/javascript';
-            scriptTag.async = true;
-            scriptTag.src = 'http://d3js.org/d3.v3.min.js';
-            scriptTag.onreadystatechange = function () {
-                if (this.readyState == 'complete') onScriptLoad();
-            }
-            scriptTag.onload = onScriptLoad;
+            var peopleTable = tabulate(canvas, ["level", "resource", "message"], layers);
 
-            var s = $document[0].getElementsByTagName('body')[0];
-            s.appendChild(scriptTag);
+            resultTitle("Validation result: number of tests: " + result["@graph"][0]["testsRun"] + ", number of errors: " +
+            counts["rlog:ERROR"] != null ? counts["rlog:ERROR"] : 0 + ", number of warnings: " +
+            counts["rlog:WARN"] != null ? counts["rlog:WARN"] : 0);
+            // uppercase the column headers
+            peopleTable.selectAll("thead th")
+                .text(function (column) {
+                    return column.charAt(0).toUpperCase() + column.substr(1);
+                })
+                .style("background-color", function (d) {
+                    return "#B2D1E0";
+                });
+            peopleTable.selectAll("tbody td")
+                .text(function (td) {
+                    if (td.column == "level")
+                        return td.value.replace('rlog:', '').replace('WARN', 'WARNING');
+                    else
+                        return td.value;
+                });
 
-            scriptTag = $document[0].createElement('script');
-            scriptTag.type = 'text/javascript';
-            scriptTag.async = true;
-            scriptTag.src = 'https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js';
-            scriptTag.onreadystatechange = function () {
-                if (this.readyState == 'complete') onScriptLoad();
-            }
-            scriptTag.onload = onScriptLoad;
+            peopleTable.selectAll("tbody tr")
+                .style("background-color", function (d) {
+                    //d2 will be the same as d, but j will always be 0
+                    //since d3.select(this) only has one element
+                    if (d["level"] == "rlog:ERROR") {
+                        return "#FF5C33";
+                    }
+                    else if (d["level"] == "rlog:WARN") {
+                        return "#FFD633";
+                    }
+                    else {
+                        return "#ffffff";
+                    }
+                });
 
-            s = $document[0].getElementsByTagName('body')[0];
-            s.appendChild(scriptTag);
-
-            scriptTag = $document[0].createElement('link');
-            scriptTag.rel = 'stylesheet';
-            scriptTag.href = 'http://cdn.datatables.net/1.10.7/css/jquery.dataTables.css';
-            scriptTag.onreadystatechange = function () {
-                if (this.readyState == 'complete') onScriptLoad();
-            }
-            scriptTag.onload = onScriptLoad;
-
-            s = $document[0].getElementsByTagName('body')[0];
-            s.appendChild(scriptTag);
-
-            return d3service;
-        }]);
+            $('table').DataTable({
+                "order": [[1, "asc"]]
+            });
+        };
+    }]);
