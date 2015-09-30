@@ -2,6 +2,7 @@
     "ipaddress":"localhost",
     "port":9997,
     "contentDir":"content",
+    "solrUrl":"http://vmdbpedia.informatik.uni-leipzig.de:8983/solr/dataidtest",
 	"datahubActionUri": "http://datahub.io/api/3/action/",
 	"mappingConfigPath": "/config/MappingConfig.json",
 	"ckanTimeOut": 10000,
@@ -9,6 +10,7 @@
     "password":"goodStuff",
     "virtuosoHost" : "vmdbpedia.informatik.uni-leipzig.de",
     "virtuosoPort" : 1111,
+    "virtuosoSparqlPort" : 8890,
     "virtuosoUser" : "dataid",
     "virtuosoPass" : "akswska",
 	"ckanActionMap":{

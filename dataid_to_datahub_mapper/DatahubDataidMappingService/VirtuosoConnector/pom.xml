@@ -10,16 +10,25 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>VirtuosoConnector</artifactId>
+
+    <repositories>
+        <repository>
+      	    <id>maven.aksw.internal</id>
+      	    <name>AKSW Internal Release Repository</name>
+      	    <url>http://maven.aksw.org/archiva/repository/internal</url>
+    	</repository>
+    </repositories>
+
     <dependencies>
         <dependency>
-            <groupId>tr.com.srdc</groupId>
-            <artifactId>virt-jena2</artifactId>
-            <version>2.6.2</version>
+            <groupId>com.openlink.virtuoso</groupId>
+            <artifactId>virt_jena2</artifactId>
+            <version>7.1.0</version>
         </dependency>
         <dependency>
-            <groupId>tr.com.srdc</groupId>
-            <artifactId>virtjdbc4</artifactId>
-            <version>2.6.2</version>
+            <groupId>com.openlink.virtuoso</groupId>
+            <artifactId>virtjdbc4-1</artifactId>
+            <version>7.1.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.jena</groupId>

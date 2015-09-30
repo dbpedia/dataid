@@ -1,0 +1,100 @@
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+<http://dataid.dbpedia.org/lod/core/dataid> a void:DatasetDescription ;
+	dataid:associatedAgent <http://dataid.dbpedia.org/lod/core/dataid#creator> ;
+	foaf:topic <http://dataid.dbpedia.org/lod/core/dataid#dataset> .
+
+<http://core-project.kmi.open.ac.uk/data-description> a dataid:Distribution ;
+	dcat:downloadURL <http://core-project.kmi.open.ac.uk/data-description> ;
+	dc:issued "2010-08-16"^^xsd:date;
+	dc:modified "2013-02-16"^^xsd:date;
+	dc:description "a wonderful description i am not going to write..."@en;
+	rdfs:label "some label here"@en;
+	dcat:mediaType "PNG" .
+
+<http://core-project.kmi.open.ac.uk/files/core-voiD.n3> a dataid:Distribution ;
+	dcat:downloadURL <http://core-project.kmi.open.ac.uk/files/core-voiD.n3> ;
+	dc:issued "2010-08-16"^^xsd:date;
+	dc:modified "2013-02-16"^^xsd:date;
+	dc:description "a wonderful description i am not going to write..."@en;
+	rdfs:label "some label here"@en;
+	dcat:mediaType "meta/void" .
+
+<http://core-project.kmi.open.ac.uk/files/download_20120123.rdf> a dataid:Distribution ;
+	dcat:downloadURL <http://core-project.kmi.open.ac.uk/files/download_20120123.rdf> ;
+	dc:issued "2010-08-16"^^xsd:date;
+	dc:modified "2013-02-16"^^xsd:date;
+	dc:description "a wonderful description i am not going to write..."@en;
+	rdfs:label "some label here"@en;
+	dcat:mediaType "RDF" .
+
+<http://core.kmi.open.ac.uk/squery> a dataid:Distribution , dataid:SparqlEndpoint ;
+	dcat:accessURL <http://core.kmi.open.ac.uk/squery> ;
+	dc:issued "2010-08-16"^^xsd:date;
+	dc:modified "2013-02-16"^^xsd:date;
+	dc:description "a wonderful description i am not going to write..."@en;
+	rdfs:label "some label here"@en;
+	dcat:mediaType "api/sparql" .
+
+
+<http://dataid.dbpedia.org/lod/core/dataid#contributor> a dataid:Contributor ;
+	dataid:agentMail "mailto:p.knoth@open.ac.uk" ;
+	dataid:agentName "Petr Knoth" .
+
+<http://dataid.dbpedia.org/lod/core/dataid#creator> a dataid:Creator ;
+	dataid:agentMail "mailto:p.knoth@open.ac.uk" ;
+	dataid:agentName "Petr Knoth" .
+
+<http://dataid.dbpedia.org/lod/core/dataid#dataset> 
+	dataid:associatedAgent <http://dataid.dbpedia.org/lod/core/dataid#contributor> , <http://dataid.dbpedia.org/lod/core/dataid#creator> ;
+	dataid:containsLinks <http://dataid.dbpedia.org/lod/core/dataid#links_rkb-explorer-oai> ;
+	dc:issued "2010-08-16"^^xsd:date;
+	dc:modified "2013-02-16"^^xsd:date;
+	dc:description "a wonderful description i am not going to write..."@en;
+	rdfs:label "some label here"@en;
+	dc:language "en";
+	dcat:landingPage "http://dataid.dbpedia.org/lod/core/dataid";
+	dataid:previousVersion <http://dataid.dbpedia.org/lod/core/dataid#dataset_prev>;
+	dataid:licenseName "cc-by";
+	void:rootResource <http://core-project.kmi.open.ac.uk/data-description>;
+	dc:description """The CORE dataset contains information about similarities between scientific papers stored across Open Access repositories. The similarities are calculated using Natural Language Processing techniques based on the full-text.  The similarities are provided only for research articles with an accessible and machine readable full-text. More information about the data structure can be found at:http://core-project-local.kmi.open.ac.uk/data-description.
+
+#### RDF Statistics
+
+At the moment we expose more than 92 million RDF triples describing similarities calculated on a set of more than 400k full-text articles harvested from over 230 Open Access repositories.
+
+#### Links
+
+The data about the similarities are represented using the  MuSIM ontology (http://kakapo.dcs.qmul.ac.uk/ontology/musim/0.2/musim.html) BIBO ontologies (http://bibliontology.com/) with links to the OAI (RKBExplorer) repository available in the Linked Data cloud. """ ;
+	dc:license <http://www.opendefinition.org/licenses/cc-by> ;
+	dc:title "CORE - Semantic Similarity of Open Access publications" ;
+	void:exampleResource <http://core-project.kmi.open.ac.uk/files/example-link.rdf> , <http://core-project.kmi.open.ac.uk/files/test.rdf> ;
+	void:sparqlEndpoint <http://core.kmi.open.ac.uk/squery> ;
+	void:triples "101526714"^^xsd:integer ;
+	void:uriSpace "http://core.kmi.open.ac.uk/data/" ;
+	a dataid:Dataset ;
+	rdfs:label "core" ;
+	dcat:distribution <http://core-project.kmi.open.ac.uk/data-description> , <http://core-project.kmi.open.ac.uk/files/core-voiD.n3> , <http://core-project.kmi.open.ac.uk/files/download_20120123.rdf> , <http://core.kmi.open.ac.uk/squery> ;
+	dcat:keyword "bibliographic" , "format-rdfs" , "license-metadata" , "lod" , "no-proprietary-vocab" , "no-provenance-metadata" , "oai" , "openuniversity" , "publications" , "published-by-producer" , "similarity" ;
+	dcat:landingPage <http://datahub.io/dataset/core> .
+
+<http://dataid.dbpedia.org/lod/core/dataid#links_rkb-explorer-oai> 
+	void:objectsTarget <http://datahub.io/dataset/rkb-explorer-oai> ;
+	void:subjectsTarget <http://dataid.dbpedia.org/lod/core/dataid#dataset> ;
+	void:triples "200000"^^xsd:int ;
+	dc:issued "2014-08-16"^^xsd:date;
+	dc:modified "2015-08-16"^^xsd:date;
+	dc:description "a wonderful description i am not going to write..."@en;
+	rdfs:label "some label here"@en;
+	a dataid:Linkset .

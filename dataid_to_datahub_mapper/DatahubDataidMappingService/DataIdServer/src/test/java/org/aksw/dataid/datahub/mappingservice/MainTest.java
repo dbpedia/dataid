@@ -5,6 +5,8 @@ import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.core.header.MediaTypes;
 import junit.framework.TestCase;
+
+import org.aksw.dataid.rdfunit.TestUtils;
 import org.glassfish.grizzly.http.server.HttpServer;
 
 
@@ -21,6 +23,8 @@ public class MainTest extends TestCase {
     @Override
     protected void setUp() throws Exception {
         super.setUp();
+        
+        TestUtils.init();
         
         //start the Grizzly2 web container 
         httpServer = Main.configureServer();

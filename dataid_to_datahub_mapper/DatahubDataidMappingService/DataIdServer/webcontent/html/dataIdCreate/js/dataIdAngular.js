@@ -1,6 +1,7 @@
 /**
  * Created by Chile on 9/9/2015.
  */
+
 var dataIdGen = angular.module('dataIdGen', ['angularJsonld', 'ui.bootstrap', 'ngSanitize'])
 var context = null;
 var validationModalDialog = null;
@@ -10,6 +11,90 @@ dataIdGen.config(function(jsonldContextProvider){
     context = getContext();
     jsonldContextProvider.add(context);
 });
+
+/** 
+ * This method can be used to display the information for this data row
+ *
+ * @param row	- data for this row
+ **/
+function formatTable( row ) {
+   
+    var returnString = "";
+	returnString = returnString + '<table>\n';
+	returnString = returnString + '\t\t<tr><th>Field Name</th><th>Field Value</th>\n<tr>';
+	
+	 // create pattern for name space prefixes         	
+	 var nsPrefixPattern = null;
+	 if (undefined != row.namespacePrefixes &&
+	    null != row.namespacePrefixes) {
+	         		
+	    var patternString = "(";
+	    var hasEntry = false;
+		for (nsPrefixIndex in row.namespacePrefixes) {
+		   	var nsPrefix = row.namespacePrefixes[nsPrefixIndex]
+		   	if (hasEntry) {
+		   		patternString = patternString + "|(" + 
+		   						nsPrefix + ")";
+		    } else {
+		    	patternString = patternString + "(" + 
+		    					nsPrefix + ")";
+		    	hasEntry = true;
+		    }
+		 }		         	
+		         	
+		 patternString = patternString + ")";
+		         	
+		 nsPrefixPattern = new RegExp(patternString);
+	}
+    
+    // now go through each property
+	for (property in row) {
+	  
+	    // filter out version field
+	    if ("_version_" === property ||
+	    	"namespacePrefixes" === property) {
+	    	continue;
+	    }
+	        		
+	    /// TODO mullekay : Get port for sparql endpoint!
+	    var sparqlUrl = location.protocol + '//' +
+	    				'vmdbpedia.informatik.uni-leipzig.de:8890' +
+	    				'/sparql?format=application%2Fjson&query=';
+	        		
+	   	var value = row[property];
+	   	if (nsPrefixPattern.test(value)) {
+			if (value instanceof Array) {
+		   		var tmp = "";
+		     			
+		 		for (var i in value) {		       				
+		   			var sparqlQuery = 'SELECT ?subject ?predicate ?object WHERE ' +
+		        				'{ { <' + value[i] + '> ?predicate ?object . } ' +
+		        				'UNION { ?subject ?object <' + value[i] + '> . } }';
+		        	sparqlQuery = sparqlUrl + escape(sparqlQuery);
+		        				
+		        	tmp = tmp + '<a target="_blank" href="' + sparqlQuery + '">' + value[i] + '</a>, ';
+		        }
+		        			
+		        // assign tmp as value
+		        value = tmp;
+		    } else {		        		
+		       	var sparqlQuery = 'SELECT ?predicate ?object WHERE ' +
+		       						'{ { <' + value + '> ?predicate ?object . } ' +
+		       						'UNION { ?predicate ?object <' + value + '> . } }';
+		       	sparqlQuery = sparqlUrl + escape(sparqlQuery);
+		        			
+		       	value = '<a target="_blank" href="' + sparqlQuery + '">' + value + '</a>';
+			}
+		}
+	        		
+		returnString = returnString + '\t\t<tr><td>' +
+	    							property + '</td><td>' +
+	        							value + '</td></tr>';
+	}
+	            
+	returnString = returnString + '\n</table><p><p>';
+    return returnString;
+}
 
 function genController($scope, $modal, $http, $document) {
     $scope.messages = {};
@@ -36,6 +121,233 @@ function genController($scope, $modal, $http, $document) {
             }
         }, function(){});
     })();
+    
+    $scope.sendSolrSearchRequest = function() {    	
+    	// construct url
+	 	var agentUrl = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '')+'/dataid/publisher/executeTextSearch';
+	 	var method = "POST";
+	 	
+	 	// get value of search query
+	 	var searchQuery = document.all.searchQuery.value;
+	 	if (null == searchQuery || 0 == searchQuery.trim()) {
+	 		// don't do anything, if there is no query
+	 		return;
+	 	}
+	 	
+        var searchQueryJson = "\"searchQuery\":\"" + searchQuery.replace(/"/g,"'") + "\""
+        
+        var facetSelection = document.all.facetQuery;
+	 	
+	 	// get filter queries
+	 	var facetQueriesJson = null;
+	 	if (undefined != facetSelection && null != facetSelection) {
+	 		// create json string
+	 		facetQueriesJson = ",\"facetQueries\":[";
+	 		// go through facet selection options
+	 		
+	 		var facetOptions;
+	 		/// TODO mullekay : Please check why this changes!
+	 		if (undefined != facetSelection.length) {
+	 			facetOptions = facetSelection;
+	 		} else {
+	 			facetOptions = facetSelection.form.elements;
+	 		}
+	 		 
+	 		var hasEntry = false;
+        	$.each(facetOptions, function(i, facetOption) {
+        		if (true == facetOption.checked) {
+        			
+        			if (false == hasEntry) {
+        				hasEntry = true;
+        			} else {
+        				facetQueriesJson = facetQueriesJson + ",";
+        			}
+        			
+        			// found a checked selection
+        			facetQueriesJson = facetQueriesJson + "\"" +
+        							   facetOption.value.replace(/"/g, "'") + "\"";
+        		}
+        	});
+        	facetQueriesJson = facetQueriesJson + "]";
+	 	} else {
+	 		facetQueriesJson = "";
+	 	}
+	    
+	    /// TODO mullekay: create trigger on event handler + transfer old search query --> compare and drive filtering by it
+	    var postData;
+	    if (undefined != $scope.previousQuery &&
+	    	$scope.previousQuery.valueOf() === searchQuery.replace(/"/g,"'").valueOf()) {
+	    	postData = "{" + searchQueryJson + facetQueriesJson + "}";
+	    } else {
+	    	// no filter queries are submitted, since query differs
+	    	postData = "{" + searchQueryJson + "}";
+	    }	    
+	    
+	    sendRequest(agentUrl, method, postData, true, function (e) {
+	    	// get json response
+	    	var responseText = e.target.responseText;
+	    	var jsonObject = JSON.parse(responseText);
+	    	
+	    	$scope.previousQuery = jsonObject.searchQuery;
+	    	
+	    	// get facet queries
+	    	var facetQueries = jsonObject.facetQuery;
+	    	if (undefined == facetQueries ||
+	    		null == facetQueries) {
+	    		 $('#searchResult').empty();
+	    		 return;
+	    	}
+	    	
+	    	var docs = jsonObject.documentResults;
+	    	if (undefined == docs ||
+	    		null == docs) {
+	    		 $('#searchResult').empty();
+	    		 return;
+	    	}	    	
+	    	
+	    	var previousFilterQueriesSet = new Set();
+	    	var previousFacetFilterQueries = jsonObject.facetQueries;
+	    	if (undefined != previousFacetFilterQueries && null != previousFacetFilterQueries && 0 < previousFacetFilterQueries.length) {
+	    		 $.each(previousFacetFilterQueries, function(i, item) {
+	    		 	previousFilterQueriesSet.add(item);
+	    		  });
+	    	}
+	    	
+	        // get all the facet queries and put them into check box form
+	        var index = 0;
+	        var checkBoxOptions = "";
+	        $.each(facetQueries, function(i, item) {
+	         	for (property in item) {
+	         		// check whether this is a known query
+	         		var knowsQuery = previousFilterQueriesSet.has(property);
+	         		var checked = "";
+	         		if (true == knowsQuery) {
+	         			checked = " checked ";
+	         			// delete query
+	         			previousFilterQueriesSet.delete(property);
+	         		}
+	         		
+	         		var id = 'checkedId_' + index;
+	         		
+	         		checkBoxOptions = checkBoxOptions +
+	         			'<label for="check' + index + '"> ' +
+		         			'<input type="checkbox" name="facetQuery" value="' +
+		         			property + '" id="' + id + '"' +
+		         			checked + '> ' +
+		         			// display it correctly to the user
+		         			property.replace(/'/g, "\"") +
+		         			' (' + item[property] + ')' +
+		         			'</input>'
+	         			'</label>\n';
+	         		
+	         		//id.observe('click', sendSolrSearchRequest());
+	         			
+	         		index++;
+	         	};
+	        });
+	        
+	        // this is run in case a filter query was not used
+	        previousFilterQueriesSet.forEach(function(item, sameItem, previousFilterQueriesSet) {
+	        
+         		var checked = " checked ";
+         		var id = 'checkedId_' + index;
+         		
+         		checkBoxOptions = checkBoxOptions +
+         			'<label for="check' + index + '">' +
+         			'<input type="checkbox" ' +
+         			'name="facetQuery" value="' +
+         			item + '" id="' + id + '"' + checked + '> ' +
+         			item.replace(/'/g, "\"") + ' (0)</input></label>';
+         			
+         		//id.observe('click', sendSolrSearchRequest());
+         		
+         		index++;
+	        });
+	        
+	        
+	        
+	        $('#searchResult').empty();
+	        
+		   	        // get the document data
+		   	var total = 'Found ' + docs.length + ' results';
+	        $('#searchResult').append('<div>' + total + '</div><p><p>');
+        
+		   	
+		   	 // create radio buttons which contain facet queries
+	        $('#searchResult').append('<form name="FacetSelectForm" action="#">' +
+	        					'<b>Choose which facet queries should be used to filter more specific DataID entries</b>' +
+	        					'<fieldset name="SelectedFacetQueries">' +
+	        					checkBoxOptions +
+	        					'</fieldset></form>');
+		   
+	        //create result table
+	        $('#searchResult').append('<table id="ResultTable" class="display" cellspacing="0" width="100%">' +
+	        						'<thead>' +
+	        						  	'<tr>' +
+                							'<th></th>>' +
+                							'<th>ID</th>>' +
+                							'<th>Type</th>>' +
+            							'</tr>>' +
+        							'</thead>>' + 
+        							'<tfoot>' +
+            						'<tr>' +
+                						'<th></th>' +
+                						'<th>ID</th>' +
+                						'<th>Type</th>' +
+            						'</tr>' +
+        							'</tfoot>' +
+    								'</table>');
+    								
+    		var dt = $('#ResultTable').DataTable( {
+		        "processing": true,
+		        "serverSide": false,
+  				"data" : docs, // pass in result data
+		       "columns" : [
+		            {
+		                "class":          	"details-control",
+		                "orderable":      	false,
+		                "documentResults":  null,
+		                "defaultContent": ""
+		            },
+		            { "data": "id" },
+		            { "data": "type" }
+		        ],
+		    } );
+		    
+		    // Array to track the ids of the details displayed rows
+		    var detailRows = [];
+		 
+		    $('#ResultTable tbody').on( 'click', 'tr td.details-control', function () {
+		        var tr = $(this).closest('tr');
+		        var row = dt.row( tr );
+		        var idx = $.inArray( tr.attr('id'), detailRows );
+		 
+		        if ( row.child.isShown() ) {
+		            tr.removeClass( 'details' );
+		            row.child.hide();
+		 
+		            // Remove from the 'open' array
+		            detailRows.splice( idx, 1 );
+		        }
+		        else {
+		            tr.addClass( 'details' );
+		            row.child( formatTable( row.data() ) ).show();
+		 
+		            // Add to the 'open' array
+		            if ( idx === -1 ) {
+		                detailRows.push( tr.attr('id') );
+		            }
+		        }
+		    } );
+		 
+		    // On each draw, loop over the `detailRows` array and show any child rows
+		    dt.on( 'draw', function () {
+		        $.each( detailRows, function ( i, id ) {
+		            $('#'+id+' td.details-control').trigger( 'click' );
+		        } );
+		    } );    
+	      }, function () {});
+    }
 
     $scope.countInstancesOfAnyType = function()
     {

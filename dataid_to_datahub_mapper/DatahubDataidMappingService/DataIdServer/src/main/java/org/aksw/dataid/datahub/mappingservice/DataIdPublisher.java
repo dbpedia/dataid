@@ -3,12 +3,16 @@ package org.aksw.dataid.datahub.mappingservice;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.jsonldjava.core.*;
+
+import aksw.dataid.solr.DataIdSolrConverterUtils;
+import aksw.dataid.solr.DataIdSolrDocument;
+import aksw.dataid.solr.DataIdSolrException;
+import aksw.dataid.solr.DataIdSolrHandler;
+
 import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.jsonobjects.DatahubError;
 import org.aksw.dataid.datahub.jsonobjects.Dataset;
 import org.aksw.dataid.datahub.jsonobjects.ValidCkanResponse;
-import org.aksw.dataid.datahub.mappingobjects.DataId;
 import org.aksw.dataid.errors.DataIdInputException;
 import org.aksw.dataid.jsonutils.StaticJsonHelper;
 import org.aksw.dataid.errors.DataHubMappingException;
@@ -26,7 +30,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.SQLException;
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.regex.Pattern;
 
 @Path("dataid/publisher")
 public class DataIdPublisher
@@ -37,6 +45,29 @@ public class DataIdPublisher
     public DataIdPublisher() throws SQLException, DataHubMappingException {
         graph = Main.getGraph();
         proc = new DataIdProcesser(DataIdConfig.getInstance().getMappingConfigPath());
+        
+        Map<String, Entry<String, String>> ontologyMap = DataIdConfig.getInstance().getOntologies();
+		if (null == ontologyMap || ontologyMap.isEmpty()) {
+			throw new RuntimeException("No ontology mappings stored in config");
+		}
+		
+		Entry<String, String> dataIdOntologyEntry = ontologyMap.get("dataid");
+		if (null == dataIdOntologyEntry) {
+			/// TODO mullekay: Logger
+			throw new RuntimeException("Was not able to find dataid ontology settings in config");
+		}
+		
+		// get data id data
+		String dataIdBaseUrl = dataIdOntologyEntry.getKey();
+		String ontologyUrl = dataIdOntologyEntry.getValue();
+		
+		try {
+			// just create an instance, since it loads the data
+			DataIdSolrConverterUtils dataIt2SolrConverter = new DataIdSolrConverterUtils(
+									dataIdBaseUrl, ontologyUrl, (Collection<String>) null);
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
     }
 
     /**
@@ -145,7 +176,7 @@ public class DataIdPublisher
             dataid.validate();
         return dataid.getJsonLdErrorReport();
     }
-
+    
     @POST
     @Path("/isIdValid")
     public String isIdValid(final String ttl)
@@ -227,6 +258,87 @@ public class DataIdPublisher
             return addHtmlBody(produceHttpResponse(e));
         }
     }
+    
+    @POST
+    @Path("/executeTextSearch")
+    public String executeTextSearch(final String searchQueryJson) throws DataIdInputException, JsonProcessingException, DataIdSolrException {
+        if (null == searchQueryJson || searchQueryJson.isEmpty()) {
+        	return "";
+        }
+        
+        DataIdSolrHandler solrHandler = null;
+    	try {
+    		solrHandler = new DataIdSolrHandler();
+    		
+    		String result = solrHandler.search(searchQueryJson);    		
+    		return result;
+    	} finally {
+    		if (null != solrHandler) {
+    			solrHandler.close();
+    			solrHandler = null;
+    		}
+    	}
+    }
+    
+    /**
+     * This method can be used to store data id information in SOLR
+     * @param ttl
+     */
+    protected void addDataIdToSolr(final String ttlDataId, final String dataIdBaseUri) {
+    	if (null == ttlDataId) {
+    		/// @TODO mullekay: add logging message
+    		System.err.println("Was not able to add data id file");
+    		return;
+    	}
+    	
+    	// create solr handler instance
+    	DataIdSolrHandler solrHandler = null;
+    	try {
+    		solrHandler = new DataIdSolrHandler();
+    		
+    		Map<String, Entry<String, String>> ontologyMap = DataIdConfig.getInstance().getOntologies();
+    		if (null == ontologyMap || ontologyMap.isEmpty()) {
+    			System.err.println("No ontology mappings stored in config");
+    			return;
+    		}
+    		
+    		Entry<String, String> dataIdOntologyEntry = ontologyMap.get("dataid");
+    		if (null == dataIdOntologyEntry) {
+    			/// TODO mullekay: Logger
+    			System.err.println("Was not able to find dataid ontology settings in config");
+    			return;
+    		}
+    		
+    		// get data id data
+    		String dataIdBaseUrl = dataIdOntologyEntry.getKey();
+    		String ontologyUrl = dataIdOntologyEntry.getValue();
+    		
+    		// TODO kmuler: put into cache
+    		Collection<String> solrFieldNames = solrHandler.getKnownSolrFieldNames();
+    		
+			// convert Data ID data into data which can be understood by SOLR
+			DataIdSolrConverterUtils dataIt2SolrConverter = new DataIdSolrConverterUtils(
+									dataIdBaseUrl, ontologyUrl, solrFieldNames);
+			dataIt2SolrConverter.addDataIdModel(dataIdBaseUri, ttlDataId);
+			
+			// get documents for each data id
+			Map<String, List<DataIdSolrDocument>> results = dataIt2SolrConverter.getJsonSolrDocuments();
+			
+			for (String key : results.keySet()) {
+				/// @TODO mullekay: Add debug logger
+				//System.out.println("Result: " + key + "\n");
+				solrHandler.addDataIdSolrDocuments(results.get(key));
+			}
+			
+    	} catch (Exception e) {
+    		throw new RuntimeException(e);
+    	} finally {
+    		if (null != solrHandler) {
+    			solrHandler.close();
+    			solrHandler = null;
+    		}
+    	}		
+    }
 
     @POST
     @Path("/publishdataid")
@@ -234,6 +346,8 @@ public class DataIdPublisher
         IdPart dataid = new IdPart(ttl);
         try {
             graph.enterDataId(dataid.toSerialization(RDFFormat.TURTLE), dataid.getId().stringValue(), dataid.getPrevVersion().stringValue());
+            
+            this.addDataIdToSolr(ttl, null);
 /*            List<Dataset> sets = proc.parseToDataHubDataset(ttl);
 
             JsonLdOptions opt = new JsonLdOptions();

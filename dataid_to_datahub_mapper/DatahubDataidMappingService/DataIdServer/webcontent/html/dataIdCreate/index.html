@@ -150,13 +150,14 @@
 </head>
 
 <body ng-controller="genController">
-<form id="form1" name="form">
+<form id="form1" name="form" ng-required="false">
     <img id='dataidlogo' ng-show="currentTab=='creator'" src="/content/imgs/krasseslogo.png" />
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-fixed-top pull-right" role="navigation" id="topnavbar" >
             <ul class="nav nav-pills pull-right">
                 <li class="active"><a href="#" ng-click="currentTab='creator'">DataID Editor</a></li>
-                <li class="active"><a href="#" ng-click="currentTab='search'">DataID Lookup</a></li>
+                <li class="active"><a href="general_text_search.html" >DataID Text Search</a></li>
+                <li class="active"><a href="general_text_search.html">DataID SPARQL Search</a></li>            
             </ul>
             <div class="navbar-default navbar-static-side" ng-show="currentTab == 'creator'">
                 <button style="width: 100%; margin: 1px; font-size: 14px; height: 39px;" class="btn btn-sm btn-primary" ng-click="openUpload()" >Open an existing DataID</button>
@@ -225,11 +226,13 @@
                                     <span><h2 >Create a new DataID: {{root['dc:title']['@value']}}</h2></span>
                                 </div>
 
-                                    <span><div style="float: right; height: 69px" class="pull-right">
-                                        <span>select languge of literals:</span>
-                                        <select id="langSelect" name="langSelect" ng-model="selectedLanguage" ng-options="lang.code as lang.lang for lang in languages"></select>
-                                        <br>
-                                    </div></span>
+                                    <span>
+                                    	<div style="float: right; height: 69px" class="pull-right">
+	                                        <span>select languge of literals:</span>
+	                                        <select id="langSelect" name="langSelect" ng-model="selectedLanguage" ng-options="lang.code as lang.lang for lang in languages"></select>
+	                                        <br>
+                                    	</div>
+                                    </span>
                                 <div>
                                     <p>
                                         This page will help you to create a new DataID.<br/> To edit an existing ID, please use the button on the upper left.
@@ -258,12 +261,6 @@
                 </div>
             </div>
 
-        </div>
-        <!--search page -->
-        <div id="search-wrapper" ng-show="currentTab == 'search'" style="float: left; margin-left: 350px;">
-            <div class="container">
-                Homepage
-            </div>
         </div>
     </div>
 

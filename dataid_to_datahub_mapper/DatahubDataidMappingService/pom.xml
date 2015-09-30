@@ -12,6 +12,7 @@
         <module>OntologyObjectMapping</module>
         <module>VirtuosoConnector</module>
         <module>DataIdCommons</module>
+        <module>DataIdSolr</module>
     </modules>
     <dependencies>
          <dependency>

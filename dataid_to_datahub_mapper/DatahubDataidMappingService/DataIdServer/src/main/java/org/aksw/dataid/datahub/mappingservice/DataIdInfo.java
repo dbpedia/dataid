@@ -1,8 +1,6 @@
 package org.aksw.dataid.datahub.mappingservice;
 
 import com.sun.jersey.spi.resource.Singleton;
-import org.aksw.dataid.config.DataIdConfig;
-import org.aksw.dataid.jsonutils.StaticJsonHelper;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

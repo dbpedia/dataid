@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html ng-app="dataIdGen">
+<head>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.9/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/underscore.js"></script>
+    <script type="text/javascript" src="js/angular-sanitize.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script type="text/javascript" async="" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" async="" src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>    
+    <script type="text/javascript" src="js/restangular.js"></script>
+    <script type="text/javascript" src="js/angular-jsonld.js"></script>
+    <script type="text/javascript" src="js/dataIdSets.js"></script>
+    <script type="text/javascript" src="js/dataIdAngular.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/popr.css">
+    <script type="text/javascript" src="js/popr.js"></script>
+    <script type="text/javascript" src="js/angular-multiselect.js"></script>
+    <script type="text/javascript" src="js/textSearch.js"></script>
+    <style>
+        .desc2{
+            float: right;
+            margin-right: 2px;
+        }
+        .input{
+            margin-bottom: 5px;
+            width: 98%
+        }
+        .input-modal-md{
+            margin-bottom: 5px;
+            width: 100%
+        }
+        .input-small2{
+            margin-bottom: 5px;
+            width: 90%
+        }
+
+        #page-wrapper {
+            position: inherit;
+            margin: 0 0 0 280px;
+            padding: 0 30px;
+            max-width: 800px;
+            border-left: 1px solid #e7e7e7;
+        }
+
+        .navbar-fixed-bottom{
+            /*position: inherit !important;*/
+            /*margin: 0 0 0 0px !important;*/
+            padding: 0 0px !important;
+            border-left: 1px solid #e7e7e7 !important;
+
+        }
+        .navbar-static-side {
+            z-index: 1;
+            position: absolute;
+            width: 350px;
+            height: 2350px;
+        }
+        .URIerror{
+            color: red;
+        }
+        .popover{
+            max-width: 340px;
+            min-width: 220px;
+        }
+        .help-button {
+            display: inline-block;
+            height: 22px;
+            width: 22px;
+            line-height: 22px;
+            text-align: center;
+            padding: 0;
+            background-color: #65bcda;
+            color: #FFF;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: default;
+            margin-left: 4px;
+            border-radius: 100%;
+            border-color: #FFF;
+            border: 2px solid #FFF;
+            -webkit-box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.2);
+        }
+        .ui-dialog { z-index: 10800 !important ;
+        }
+        .navbar-fixed-top{
+            height: 40px !important ;
+            min-height:  40px !important ;
+        }
+        .nav.navbar-nav{
+            height: 35px !important ;
+            min-height:  10px !important ;
+        }
+        ul {/* Remove margin for all <ul>s (and padding, because different browsers have different default styles) */
+            margin-left: 3px;
+            padding-left: 0;
+        }
+
+        ul ul {/* Add a margin for any <ul> inside another <ul> */
+            margin-left: 13px;
+        }
+        li { list-style: none; }
+
+        .accordion-toggle{
+            color: #777 !important;
+            font-size: 13px !important;
+            margin-top: 12px !important;
+        }
+        .panel .panel-default .ng-isolate-scope{
+            max-height: 200px !important;
+        }
+        #list{
+            max-height: 360px !important;
+            overflow:auto !important;
+        }
+        .navbar-fixed-bottom{
+            width: 350px;
+        }
+        #dataidlogo {
+            position: absolute;
+            top: 40px;
+            left: 1140px;
+        }
+        #topnavbar {
+            margin-bottom: 0px;
+            margin-right: 0px;
+            max-width: 1330px !important;
+        }
+        
+        td.details-control {
+    		background: url('../resources/details_open.png') no-repeat center center;
+    		cursor: pointer;
+		}
+		tr.details td.details-control {
+    		background: url('../resources/details_close.png') no-repeat center center;
+		}
+    </style>
+
+    <meta charset="UTF-8">
+    <title>DataId Text Search</title>
+    <script async>
+        function handleLoad(id, insert) {
+            var templates  = document.getElementById(id).import;
+            var template = templates.getElementById('template');
+            var clone = document.importNode(template.content, true);
+            var child = document.getElementById(insert);
+            var parent = child.parentNode;
+            parent.insertBefore(clone, child);
+            parent.removeChild(child);
+        }
+        function handleError(e) {
+            console.log('Error loading import: ' + e.target.href);
+        }
+    </script>
+</head>
+
+<body ng-controller="genController">
+	
+	<div class="page-header" >
+        <span><h2>DataID Text Search</h2></span>
+    </div>
+
+	<label>Search Text <span style="color: red">*</span></label>
+	<div class="pull-right">
+		<span  popover-placement="right" class="help-button" 
+			popover="Here you can enter query terms you are interested in.">?</span>		    	
+		<a class="desc2" target="_blank" href='https://lucene.apache.org/core/2_9_4/queryparsersyntax.html'>Advanced Search Syntax</a>
+	</div>
+
+	<input ng-required="true" type="text" ng-model="text" name="searchQuery" />
+	<div style="padding-top: 10px !important;">
+		<button class="btn btn-sm btn-primary" ng-click="sendSolrSearchRequest()" >Search</button>
+	</div>
+	
+	<div name="searchResult" id="searchResult" style="padding-top: 10px !important;">
+	</div>
+	
+</body>
+
+</html>
+

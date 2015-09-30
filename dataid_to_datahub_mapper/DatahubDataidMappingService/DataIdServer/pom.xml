@@ -141,5 +141,14 @@
             <artifactId>jackson-annotations</artifactId>
             <version>2.5.0</version>
         </dependency>
+        <dependency>
+        	<groupId>dataidToDatahubRestService</groupId>
+        	<artifactId>DataIdSolr</artifactId>
+        	<version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
+    <properties>
+    	<solr.version>5.3.0</solr.version>
+    	<jena.version>2.13.0</jena.version>
+    </properties>
 </project>
