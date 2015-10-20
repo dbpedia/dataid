@@ -2,11 +2,14 @@ package org.aksw.dataid.config;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.aksw.dataid.jsonutils.StaticJsonHelper;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.*;
+import java.util.regex.MatchResult;
+import java.util.regex.Matcher;
 
 /**
  * Created by Chile on 8/16/2015.
@@ -16,13 +19,19 @@ public class DataIdConfig {
     private static String mainPath;
     private static String mainConfigPath;
     private static JsonNode mainConfigFile;
+    private static String virtUser;
+    private static String virtPass;
 
-    public static void initDataIdConfig(String mPath)
-    {
-        mainPath = mPath;
-        mainConfigPath = mainPath + "/MainConfig.json";
+    public static void initDataIdConfig(String[] args) throws FileNotFoundException {
+        DataIdConfig.mainPath = args[1];
+        DataIdConfig.mainConfigPath = args[0];
         System.out.println(mainConfigPath);
-        mainConfigFile = StaticJsonHelper.getJsonContent(mainConfigPath);
+        InputStream inputStream = new FileInputStream(mainConfigPath);
+        String content = StaticJsonHelper.GetStringFromInputStream(inputStream);
+        mainConfigFile = StaticJsonHelper.convertStringToJsonNode(content);
+        mainConfigFile = StaticJsonHelper.convertStringToJsonNode(replacePlaceholder(content));
+        virtPass = args[3];
+        virtUser = args[2];
     }
 
     public static String getMappingConfigPath()
@@ -33,7 +42,7 @@ public class DataIdConfig {
 
     public static String getVirtuosoHost()
     {
-        return mainConfigFile.get("virtuosoHost").toString().replace("\"", "");
+        return mainConfigFile.get("virtuosoHost").asText();
     }
     public static Integer getVirtuosoPort()
     {
@@ -41,16 +50,38 @@ public class DataIdConfig {
     }
     public static String getVirtuosoUser()
     {
-        return mainConfigFile.get("virtuosoUser").toString().replace("\"", "");
+        return virtUser;
     }
-    public static String getVirtuosoPassword()
+    public static String getVirtuosoPassword()    {        return virtPass;    }
+
+    public static Integer getBranchCacheTimeOut() //in ms
     {
-        return mainConfigFile.get("virtuosoPass").toString().replace("\"", "");
+        return Integer.parseInt(mainConfigFile.get("cacheTimeOut").toString());
+    }
+    public static Integer getCacheTripleSize() //in ms
+    {
+        return Integer.parseInt(mainConfigFile.get("cacheTripleSize").toString());
+    }
+    public static String getLicenseQuery()
+    {
+        return mainConfigFile.get("licenseQuery").asText();
+    }
+    public static String getLanguageQuery()
+    {
+        return mainConfigFile.get("languageQuery").asText();
+    }
+    public static String getMimeQuery()
+    {
+        return mainConfigFile.get("mimeQuery").asText();
+    }
+    public static String getDataIdGraoh()
+    {
+        return mainConfigFile.get("dataIdGraph").asText();
     }
 
     public static String get(String key)
     {
-        return mainConfigFile.get(key).asText().replace("\"", "");
+        return mainConfigFile.get(key).asText();
     }
 
     public static Iterator<Map.Entry<String, JsonNode>> getActionMap()
@@ -72,7 +103,6 @@ public class DataIdConfig {
         return ontoMap;
     }
 
-    private static Map<String, List<String>> exceptions = null;
     public static Map<String, List<String>> getExceptions()
     {
         try {
@@ -81,5 +111,18 @@ public class DataIdConfig {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    private static String replacePlaceholder(String input)
+    {
+        Matcher matcher = java.util.regex.Pattern.compile("\\{\\$[^\\}]+\\}").matcher(input);
+        while(matcher.find())
+        {
+            String match = matcher.group();
+            String replacement = match.replace("{", "").replace("}", "").replace("$", "");
+            replacement = mainConfigFile.get(replacement).asText();
+            input =  input.replace(match, replacement);
+        }
+        return input;
     }
 }

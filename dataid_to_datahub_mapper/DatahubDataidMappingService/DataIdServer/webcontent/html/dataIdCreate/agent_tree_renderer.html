@@ -1,0 +1,9 @@
+<div>
+    <a class="label label-xlg label-warning" href ng-click="changeSubset(dataSet)">{{role}}</a>
+    <div class="pull-right">
+        <div class="label label-menu label-info popoverButton" popover-title="Options" popover-placement="right" popover-template="popovers.agentRolePopover.templateUrl" popover-trigger="click" popover-append-to-body='true'><i class="glyphicon glyphicon-menu-hamburger"></i></div>
+    </div>
+</div>
+<ul>
+    <li ng-repeat="dataSet in graph | filter:agentFilter" ng-if="dataSet['dataid:agentRole']['@value'] == role" ng-include="'inner_agent_tree_renderer.html'"></li>
+</ul>

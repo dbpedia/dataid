@@ -1,8 +1,9 @@
 package org.aksw.dataid.config;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import org.openrdf.model.Namespace;
+import org.openrdf.model.impl.NamespaceImpl;
+
+import java.util.*;
 
 /**
  * Created by Chile on 3/7/2015.
@@ -95,6 +96,16 @@ public class RdfContext implements Iterable<String>
     public Map<String, String> getMap()
     {
         return this.rdfContext;
+    }
+
+    public Set<Namespace> getNamespaces()
+    {
+        Set<Namespace> ns = new HashSet<>();
+        for(String st : rdfContext.keySet())
+        {
+            ns.add(new NamespaceImpl(st, rdfContext.get(st)));
+        }
+        return ns;
     }
 
     @Override

@@ -1,0 +1,81 @@
+
+<script type="text/ng-template" id="popover-version.html">
+    <h3 class="panel-heading popoverNoClose"> Version Control </h3>
+    <div class="popoverNoClose form-group">
+        <label class="popoverNoClose"> Popup Title: </label>
+        <input type="button" class="form-control exclude" ng-click="alert('haha')">
+    </div>
+</script>
+<script type="text/ng-template" id="popover-warning.html">
+        <div name="popoverDontClose" class="popoverNoClose popover-inner">
+            <div class="popoverNoClose popover-content text-left">
+                <div class="popoverNoClose">
+                    <p class="popoverNoClose" ng-click="log(this)">
+                        {{popMap[iName].message}}</p>
+                </div>
+                <div class="popoverNoClose" style="margin-bottom: 5px;">
+                    <span class="pull-right"><a class="btn btn-small btn-danger" ng-click="popOverClose(iName)" target="_self"><i class="glyphicon glyphicon-alert"></i> Ok </a></span>
+                </div>
+            </div>
+        </div>
+</script>
+<script type="text/ng-template" id="popover-note.html">
+    <div class="popoverNoClose popover-inner">
+        <div class="popoverNoClose popover-content text-left">
+            <div class="popoverNoClose btn-group">
+                <p class="popoverNoClose" ng-click="log(this)">{{popovers.dynamicPopover.message}}</p>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="popover-confirmation.html">
+    <div class="popoverNoClose popover-inner">
+        <h3 class="popoverNoClose panel-heading" ng-bind="title" ng-show="title"></h3>
+        <div class="popoverNoClose popover-content text-center">
+            <div class="popoverNoClose btn-group">
+                <a class="btn btn-small btn-primary" ng-click="callFunction(popovers.confirmPopover.functionName, popovers.confirmPopover.stringParam)" target="_self">
+                    <i class="glyphicon glyphicon-ok-circle"></i> Yes</a>
+                <a class="btn btn-small btn-warning">
+                    <i class="glyphicon glyphicon-remove-circle"></i> No</a>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="popover-dataset-menu.html">
+    <h3 class="popoverNoClose panel-heading" ng-bind="title" ng-show="title"></h3>
+    <div class="popoverNoClose form-group">
+        <input style="width: 100%" type="button" value="new Distribution" class="btn optionButton" ng-click="openNewDist(dataSet)">
+        <input style="width: 100%" type="button" value="new Subset" class="btn optionButton" ng-click="openNewDataset(dataSet)">
+        <input style="width: 100%" type="button" value="edit Dataset" class="btn optionButton" ng-click="changeSubset(dataSet)">
+        <input style="width: 100%" type="button" value="delete Dataset" class="btn optionButton" popover-title="Are you sure to delete this dataset and all its subsets / distributions?" popover-placement="right"
+               popover-template="popovers.confirmPopover.templateUrl" popover-trigger="click" ng-click="popovers.confirmPopover.functionName = 'delSetAndChildren'; popovers.confirmPopover.stringParam = popovers.datasetPopover.datasetId;">
+    </div>
+</script>
+<script type="text/ng-template" id="popover-agent-menu.html">
+    <h3 class="popoverNoClose panel-heading" ng-bind="title" ng-show="title"></h3>
+    <div class="popoverNoClose form-group">
+        <input style="width: 100%" type="button" value="edit Agent" class="btn optionButton" ng-click="changeSubset(dataSet)">
+        <input style="width: 100%" type="button" value="delete Agent" class="btn optionButton" popover-title="Are you sure to delete this agent?" popover-placement="right"
+               popover-template="popovers.confirmPopover.templateUrl" popover-trigger="click" ng-click="popovers.confirmPopover.functionName = 'delSetAndChildren'; popovers.confirmPopover.stringParam = popovers.agentPopover.agentId;">
+    </div>
+</script>
+<script type="text/ng-template" id="popover-distr-menu.html">
+    <h3 class="popoverNoClose panel-heading" ng-bind="title" ng-show="title"></h3>
+    <div class="popoverNoClose form-group">
+        <input style="width: 100%" type="button" value="edit Distribution" class="btn optionButton" ng-click="changeSubset(dataSet)">
+        <input style="width: 100%" type="button" value="delete Distribution" class="btn optionButton" popover-title="Are you sure to delete this distribution?" popover-placement="right"
+               popover-template="popovers.confirmPopover.templateUrl" popover-trigger="click" ng-click="popovers.confirmPopover.functionName = 'delSetAndChildren'; popovers.confirmPopover.stringParam = popovers.distrPopover.distrId;">
+    </div>
+</script>
+<script type="text/ng-template" id="popover-dataid-menu.html">
+    <h3 class="popoverNoClose panel-heading" ng-bind="title" ng-show="title"></h3>
+    <div class="popoverNoClose form-group">
+        <input style="width: 100%" type="button" value="add Dataset" class="btn optionButton" ng-click="openNewDataset(dataSet)">
+    </div>
+</script>
+<script type="text/ng-template" id="popover-agentrole-menu.html">
+    <h3 class="popoverNoClose panel-heading" ng-bind="title" ng-show="title"></h3>
+    <div class="popoverNoClose form-group">
+        <input style="width: 100%" type="button" value="create Agent" class="btn optionButton" ng-click="openNewAgent(dataSet['dataid:agentRole']['@value'])">
+    </div>
+</script>

@@ -1,6 +1,5 @@
 package org.aksw.dataid.rdfunit;
 
-import java.io.IOException;
 import java.util.*;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -8,16 +7,13 @@ import org.aksw.rdfunit.RDFUnitConfiguration;
 import org.aksw.rdfunit.enums.TestCaseExecutionType;
 import org.aksw.rdfunit.exceptions.TestCaseExecutionException;
 import org.aksw.rdfunit.exceptions.UndefinedSerializationException;
-import org.aksw.rdfunit.io.reader.RDFModelReader;
 import org.aksw.rdfunit.io.reader.RDFReaderException;
-import org.aksw.rdfunit.io.reader.RDFReaderFactory;
+import org.aksw.rdfunit.model.interfaces.TestSuite;
 import org.aksw.rdfunit.sources.SchemaSource;
 import org.aksw.rdfunit.sources.TestSource;
-import org.aksw.rdfunit.tests.TestCase;
-import org.aksw.rdfunit.tests.TestSuite;
 import org.aksw.rdfunit.validate.ParameterException;
-import org.aksw.rdfunit.validate.wrappers.RDFUnitStaticWrapper;
-import javax.servlet.http.HttpServletResponse;
+import org.aksw.rdfunit.validate.wrappers.RDFUnitStaticValidator;
+import org.aksw.rdfunit.validate.wrappers.RDFUnitTestSuiteGenerator;
 
 /**
  * User: Dimitris Kontokostas
@@ -32,16 +28,12 @@ public class DataIdValidator {
     public DataIdValidator(Map<String, Map.Entry<String, String>> ontologySources, Map<String, List<String>> exceptions) throws RDFReaderException {
 
         this.exceptions.putAll(exceptions);
+        RDFUnitTestSuiteGenerator.Builder tgBuilder = new RDFUnitTestSuiteGenerator.Builder();
         for(String prefix : ontologySources.keySet())
         {
-            String dls = ontologySources.get(prefix).getValue();
-            if(dls == null)
-                dls = ontologySources.get(prefix).getKey();
-            RDFUnitStaticWrapper.initWrapper(prefix, ontologySources.get(prefix).getKey(), dls);
-            org.aksw.rdfunit.io.reader.RDFReader ontologyReader = new RDFModelReader(RDFReaderFactory.createDereferenceReader(dls).read());
-            ontologySource.add(new SchemaSource( prefix, ontologySources.get(prefix).getKey(), ontologyReader));
+            tgBuilder.addSchemaURI(prefix, ontologySources.get(prefix).getValue());
         }
-
+        RDFUnitStaticValidator.initWrapper(tgBuilder.build());
     }
 
     public RDFUnitConfiguration getConfiguration(String type, String source, String inputFormat, String outputFormat, TestCaseExecutionType testCaseType) throws ParameterException {
@@ -54,8 +46,8 @@ public class DataIdValidator {
         }
 
         RDFUnitConfiguration configuration = new RDFUnitConfiguration(datasetName, "../data/");
-        configuration.setTestCacheEnabled(false);
-        configuration.setSchemata(ontologySource);
+        //configuration.setTestCacheEnabled(false);
+        //configuration.setSchemata(ontologySource);
 
         if (isText) {
             try {
@@ -89,15 +81,17 @@ public class DataIdValidator {
     }
 
     public TestSuite getTestSuite() {    //final RDFUnitConfiguration configuration, final TestSource testSource) {
-        TestSuite ts = RDFUnitStaticWrapper.getTestSuite();
-        if(exceptions != null) {
+        TestSuite ts = RDFUnitStaticValidator.getTestSuite();
+/*        if(exceptions != null) {
             List<TestCase> removees = new ArrayList<>();
             Iterator<TestCase> tCases = ts.getTestCases().iterator();
             while (tCases.hasNext()) {
                 TestCase tc = tCases.next();
-                if(exceptions.keySet().contains(tc.getAutoGeneratorURI()))
+                if(!(tc instanceof PatternBasedTestCaseImpl)) // not!
+                    continue;
+                if(exceptions.keySet().contains(((PatternBasedTestCaseImpl) tc).getAutoGeneratorURI()))
                 {
-                    for(String e : exceptions.get(tc.getAutoGeneratorURI())) {
+                    for(String e : exceptions.get(((PatternBasedTestCaseImpl) tc).getAutoGeneratorURI())) {
                         if (tc.getSparqlWhere().contains(e))
                             removees.add(tc);
                     }
@@ -105,22 +99,12 @@ public class DataIdValidator {
             }
             for (TestCase tc : removees)
                 ts.getTestCases().remove(tc);
-        }
+        }*/
         return ts;
     }
 
     public Model validate(final RDFUnitConfiguration configuration, final TestSource testSource, final TestSuite testSuite) throws TestCaseExecutionException {
-        return RDFUnitStaticWrapper.validate(configuration.getTestCaseExecutionType(), testSource, testSuite);
-    }
-
-    protected void printHelpMessage(HttpServletResponse httpServletResponse) throws IOException {
-        String helpMessage =
-                "\n -t\ttype: One of 'text|uri'" +
-                        "\n -s\tsource: Depending on -t it can be either a uri or text" +
-                        "\n -i\tInput format (in case of text type):'turtle|ntriples|rdfxml" + //|JSON-LD|RDF/JSON|TriG|NQuads'" +
-                        "\n -o\tOutput format:'html(default)|turtle|jsonld|rdfjson|ntriples|rdfxml|rdfxml-abbrev" + //JSON-LD|RDF/JSON|TriG|NQuads'"
-                        "";
-
+        return RDFUnitStaticValidator.validate(configuration.getTestCaseExecutionType(), testSource, testSuite);
     }
 }
 

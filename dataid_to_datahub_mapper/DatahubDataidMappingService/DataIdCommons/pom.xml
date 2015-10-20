@@ -36,19 +36,17 @@
         <dependency>
             <groupId>org.aksw.rdfunit</groupId>
             <artifactId>rdfunit-core</artifactId>
-            <version>0.7.6-SNAPSHOT</version>
+            <version>0.7.21-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.aksw.rdfunit</groupId>
             <artifactId>rdfunit-validate</artifactId>
-            <version>0.7.6-SNAPSHOT</version>
+            <version>0.7.21-SNAPSHOT</version>
         </dependency>
-
         <dependency>
-            <groupId>org.apache.jena</groupId>
-            <artifactId>apache-jena-libs</artifactId>
-            <type>pom</type>
-            <version>2.12.1</version>
+            <groupId>org.aksw.rdfunit</groupId>
+            <artifactId>rdfunit-manual-tests</artifactId>
+            <version>0.7.21-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>

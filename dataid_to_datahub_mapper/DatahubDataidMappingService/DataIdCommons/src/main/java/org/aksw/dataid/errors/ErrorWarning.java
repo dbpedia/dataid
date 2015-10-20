@@ -1,7 +1,7 @@
 package org.aksw.dataid.errors;
 
 import org.aksw.rdfunit.enums.RLOGLevel;
-import org.aksw.rdfunit.tests.results.RLOGTestCaseResult;
+import org.aksw.rdfunit.model.results.RLOGTestCaseResult;
 
 /**
  * Created by Chile on 4/6/2015.

@@ -16,6 +16,7 @@ public class DataIdInputExceptionProvider implements ExceptionMapper<DataIdInput
 
     @Override
     public Response toResponse(DataIdInputException e) {
+        e.printStackTrace();
         return Response.status(Response.Status.NOT_ACCEPTABLE).entity(e.getMessage()).build();
     }
 }

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html ng-app="dataIdGen">
+<head>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/jquery-2.1.0.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/ui-bootstrap-tpls-0.13.4.min.js"></script>
+    <script type="text/javascript" async="" src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
+    <script src="js/restangular.js"></script>
+    <script src="js/angular-jsonld.js"></script>
+    <script src="js/angular-messages.js"></script>
+    <script src="js/bootstrap-tagsinput.js"></script>
+    <script src="js/dataIdSets.js"></script>
+    <script src="js/dataIdAngular.js"></script>
+    <script src="js/gitgraph.js"></script>
+    <script src="js/bootstrap-validator.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/gitgraph.css" rel="stylesheet">
+    <script src="js/jquery-ui.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/bootstrap-multiselect.js"></script>
+    <link href="css/bootstrap-tagsinput.css" rel="stylesheet">
+    <link href="css/bootstrap-multiselect.css" rel="stylesheet">
+    <link href="css/bootstrap-newcolors.css" rel="stylesheet">
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+        .desc2{
+            float: right;
+            margin-right: 2px;
+        }
+        .input{
+            margin-bottom: 5px;
+            width: 98%
+        }
+        .input-modal-md{
+            margin-bottom: 5px;
+            width: 100%
+        }
+        .input-small2{
+            margin-bottom: 5px;
+            width: 90%
+        }
+
+        #page-wrapper {
+            position: inherit;
+            margin: 0 0 0 280px;
+            padding: 0 30px;
+            max-width: 800px;
+        }
+
+        #leftNavBottom {
+            padding: 0 0px !important;
+            border-left: 1px solid #e7e7e7 !important;
+            width: 350px;
+        }
+        .navbar-static-side {
+            z-index: 1;
+            position: absolute;
+            width: 350px;
+            background-color: rgba(0, 0, 0, 0) !important;
+            border-color: rgba(0, 0, 0, 0) !important;
+        }
+        .popover{
+            max-width: 340px;
+            min-width: 220px;
+        }
+        .help-button {
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            line-height: 20px;
+            text-align: center;
+            padding: 0;
+            background-color: #5cb85c;
+            color: #FFF;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: default;
+            margin-left: 4px;
+            border-radius: 100%;
+            border-color: #4cae4c;
+            -webkit-box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.2);
+        }
+        .ui-dialog { z-index: 10800 !important ;
+        }
+        .navbar-fixed-top{
+            height: 40px !important ;
+            min-height:  40px !important ;
+        }
+        .nav.navbar-nav{
+            height: 35px !important ;
+            min-height:  10px !important ;
+        }
+        ul {/* Remove margin for all <ul>s (and padding, because different browsers have different default styles) */
+            margin-left: 3px;
+            padding-left: 0;
+        }
+
+        ul ul {/* Add a margin for any <ul> inside another <ul> */
+            margin-left: 13px;
+        }
+        li {
+            list-style: none;
+        }
+        .panel .panel-default .ng-isolate-scope{
+            max-height: 200px !important;
+        }
+        #dataidlogo {
+            position: absolute;
+            top: 5px;
+            left: 400px;
+            width: 220px;
+            height: 95px;
+        }
+        #topnavbar {
+            margin-bottom: 0px;
+            margin-right: 0px;
+            max-width: 1340px !important;
+            background-color: rgba(0, 0, 0, 0) !important;
+            border-color: rgba(0, 0, 0, 0) !important;
+        }
+        .btn-group{
+            width: 100%;
+        }
+        .btn-group-vertical{
+            width: 100%;
+        }
+        .accordion-caret .accordion-toggle:hover {
+            text-decoration: none;
+        }
+        .accordion-caret .accordion-toggle:hover span,
+        .accordion-caret .accordion-toggle:hover strong {
+            text-decoration: underline;
+        }
+        .accordion-caret .accordion-toggle:before {
+            font-size: 25px;
+            vertical-align: -3px;
+        }
+        .accordion-caret .accordion-toggle:not(.collapsed):before {
+            content: "▾";
+            margin-right: 0px;
+        }
+        .accordion-caret .accordion-toggle.collapsed:before {
+            content: "▸";
+            margin-right: 0px;
+        }
+        .popoverButton
+        {
+            cursor: pointer;
+        }
+        .optionButton
+        {
+            color: #616161 !important;
+            border-color: #B2B3B3 !important;
+            background-color: #EFEFEF !important;
+            margin: 1px;
+        }
+        .label-xlg{
+            font-size: 12px;
+            padding: .3em .6em .3em;
+            display: inline-flex;
+        }
+        .label-menu{
+            font-size: 12px;
+            padding: .2em .6em .3em;
+            display: inline-flex;
+        }
+        .bootstrap-tagsinput {
+            width: 100%;
+        }
+        .bootstrap-tagsinput input{
+            width: 100%;
+        }
+        #navbar-search-btn{
+            height: 40px;
+            font-size: 14px;
+        }
+        #navbar-search{
+            height: 40px;
+            font-size: 14px;
+            border-color: #4c6355;
+        }
+        #options-btn{
+            width: 100%;
+            font-size: 14px;
+            height: 40px;
+        }
+        #versionGraph{
+            width:100%;
+        }
+        #accordion{
+            overflow-y: auto;
+            margin-bottom: 80px;
+        }
+        .btn-circle {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            padding: 6px 0;
+            font-size: 12px;
+            line-height: 1.42;
+            border-radius: 15px;
+            background-color: red;
+        }
+        .parturi{
+            border-color: #EEEEEE;
+            font-size:13px;
+            padding-left: 2px;
+        }
+        .publish-buttons{
+            width: 100%;
+            margin: 1px;
+            font-size: 14px;
+            height: 39px;
+        }
+        .navbar-hidden-side {
+            z-index: 1;
+            position: absolute;
+            width: 0px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>DataID Generator</title>
+</head>
+
+<body ng-controller="genController">
+<div ng-include="'popoverTemplates.html'"></div>
+<form id="form" name="form">
+    <img id='dataidlogo' ng-show="currentTab=='creator'" src="/content/imgs/krasseslogo.png" />
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top pull-right" role="navigation" id="topnavbar" >
+                <ul class="nav navbar-nav pull-right">
+                    <li class="active">
+                        <div class="row">
+                            <div class="col-lg-7"></div>
+                            <div class="col-md-2">
+                                <div class="input-group">
+                                    <input id="navbar-search" type="text" class="form-control" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                                        <button id="navbar-search-btn" class="btn btn-primary" type="button" ng-click="toggleOptionPanel()">Go!</button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="btn-group" style="float:right">
+                                    <input type="button"
+                                           class="btn btn-primary"
+                                           ng-click="currentTab='creator'"
+                                           value="DataID Editor"
+                                           style="width:50%; height: 40px;">
+                                    <input id="searchBtn"
+                                           type="button"
+                                           class="btn btn-primary"
+                                           ng-click="currentTab='searchText'"
+                                           value="DataID Text Search"
+                                           style="width:50%; float:right; height: 40px;">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!--<li class="active"><input id="navbar-search" type="text" class="form-control" placeholder="Search"></li>-->
+                    <li role="separator" class="divider"></li>
+                    <li class="active">
+
+                    </li>
+                </ul>
+            <div id="accordion"
+                 class="navbar-default navbar-static-side"
+                 ng-show="currentTab == 'creator'"
+                 ng-style="{height: (window.innerHeight - 80) + 'px'}">
+
+                <button id="options-btn"
+                        type="button"
+                        class="btn btn-sm btn-primary"
+                        ng-click="isoptions = !isoptions" >
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                    <span>  Options</span>
+                </button>
+                <div ng-init="isopensets=true"></div>
+                <div ng-init="isoptions=false"></div>
+                <uib-accordion close-others="oneAtATime">
+                    <uib-accordion-group data-toggle="collapse" is-open="isoptions" ng-show="isoptions">
+                        <div id="optionsList">
+                            <div class="popoverNoClose btn-group-vertical">
+                                <input class="btn btn-default"
+                                       type="button"
+                                       value="open an existing DataID"
+                                       ng-click="openUpload()">
+                                <input class="btn btn-default"
+                                       type="button"
+                                       value="reset inputs"
+                                       ng-click="loadDataIdTemplate()">
+                            </div>
+                        </div>
+                    </uib-accordion-group>
+                    <uib-accordion-group data-toggle="collapse" is-open="$parent.isopenbranch">
+                        <uib-accordion-heading>
+                            <i ng-class="{true : 'glyphicon glyphicon-chevron-down', false : 'glyphicon glyphicon-chevron-right'}[!!$parent.isopenbranch]"></i>
+                            <strong>Browse Versions</strong>
+                        </uib-accordion-heading>
+                        <canvas id="versionGraph" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover"></canvas>
+                    </uib-accordion-group>
+                    <uib-accordion-group data-toggle="collapse" is-open="isopensets">
+                        <uib-accordion-heading>
+                            <i ng-class="{true : 'glyphicon glyphicon-chevron-down', false : 'glyphicon glyphicon-chevron-right'}[!!isopensets]"></i>
+                            <strong>List of datasets</strong>
+                        </uib-accordion-heading>
+                        <div id="datasetList">
+                            <span>Dataset Title</span>
+                            <span class="pull-right">Options</span>
+                            <ul>
+                                <li ng-repeat="dataSet in graph | filter:dataidFilter" ng-include="'tree_item_renderer.html'"></li>
+                            </ul>
+                        </div>
+                    </uib-accordion-group>
+                    <uib-accordion-group data-toggle="collapse" is-open="isopenagents">
+                        <uib-accordion-heading>
+                            <i ng-class="{true : 'glyphicon glyphicon-chevron-down', false : 'glyphicon glyphicon-chevron-right'}[!!isopenagents]"></i>
+                            <strong>List of available Agents</strong>
+                        </uib-accordion-heading>
+                        <div id="agentList">
+                            <span>Agents:</span>
+                            <span class="pull-right">Options</span>
+                            <ul>
+                                <li ng-repeat="role in agentRoles" ng-include="'agent_tree_renderer.html'"></li>
+                            </ul>
+                        </div>
+                    </uib-accordion-group>
+                    <uib-accordion-group data-toggle="collapse" is-open="isopenlegend">
+                        <uib-accordion-heading>
+                            <i ng-class="{true : 'glyphicon glyphicon-chevron-down', false : 'glyphicon glyphicon-chevron-right'}[!!isopenlegend]"></i>
+                            <strong>Legend</strong>
+                        </uib-accordion-heading>
+                        <div id="legend">
+                            <div class="pull-left">
+                                <a class="btn btn-success" >DataID (void:DatasetDescription)</a> <br>
+                                <a class="btn btn-info" >dataid:Dataset</a>  <br>
+                                <a class="btn label-default" >dataid:Distribution</a>  <br>
+                                <a class="btn btn-primary" >dataid:Agent</a>  <br>
+                            </div>
+                        </div>
+                    </uib-accordion-group>
+                </uib-accordion>
+            </div>
+        </nav>
+        <nav id="leftNavBottom" class=" navbar-fixed-bottom" role="navigation" ng-show="currentTab == 'creator'">
+            <div>
+                <div>
+                    <div style="padding-top: 10px !important;">
+                        <button class="btn btn-sm btn-primary publish-buttons" ng-click="isFormValid() && validate(dataid)" >Validate DataID</button>
+                        <button class="btn btn-sm btn-primary publish-buttons" ng-click="publishDataId()" >Publish/Update DataID</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!--home page -->
+        <div id="home-wrapper" ng-show="currentTab == 'home'" >
+            <div class="container">
+                Homepage
+            </div>
+        </div>
+        <!--creator page -->
+        <div id="page-wrapper" ng-show="currentTab == 'creator'" style="float: left; margin-left: 350px;">
+
+            <br/>
+            <div class="container">
+                <div>
+                    <div class="form-group">
+                        <div class="row">
+                            <br>
+                            <div class="col-lg-10">
+                                <span><h2 class="pull-right">{{root['dc:title']['@value']}}</h2></span>
+                                <div class="page-header" style="padding-top: 15px" ></div>
+                                    <span><div class="pull-right">
+                                        <div style="width: 100%;">
+                                            <select class="btn-success"
+                                                    style="width: 100%;"
+                                                    id="langSelect"
+                                                    name="langSelect"
+                                                    ng-model="selectedLanguage"
+                                                    ng-options="lang.code.value as lang.lang.value for lang in languages"
+                                                    multiselectdropdown="languages"
+                                                    multiselectprefix="languge of literals: "
+                                                    multiselectidtag="code"
+                                                    multiselectfilter>
+
+                                            </select>
+                                        </div>
+                                    </div></span>
+                                <div>
+                                    <p>
+                                        This page will help you to create a new DataID.<br/>
+                                        To edit an existing ID, please use the button on the upper left.
+                                    </p>
+                                    <p>
+                                        A DataID is a fantastic thing i will tell you later about...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading hover-link">
+                                        <h1 class="panel-title">DataID URI</h1>
+                                    </div>
+                                        <div class="panel-body">
+                                            <div>
+                                                <input ng-required="true"
+                                                       ng-class="{'disabled': isTemplate}"
+                                                       dataiduri
+                                                       id="dataiduri"
+                                                       name="dataiduri"
+                                                       class="input popoverNoClose"
+                                                       type="text"
+                                                       ng-model="root['@id']"
+                                                       ng-init="iName='dataiduri'"
+                                                       popover-trigger="none"
+                                                       popover-placement="bottom"
+                                                       popover-title="{{popMap.dataiduri.title}}"
+                                                       popover-template="preparePopover('warningPopover', form.dataiduri)"
+                                                       popover-is-open="showAsInvalid(form.dataiduri)">
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div style="padding-top: 10px" class="col-md-5">
+                                <div ng-include="'general_information.html'"></div>
+                            </div>
+
+                            <div style="padding-top: 10px" class="col-md-5">
+                                <div ng-include="'agentinclude.html'"></div>
+                            </div>
+                            <div class="col-md-10">
+                                <div ng-include="'errorReportTable.html'"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--search page -->
+            <div class="container">
+                <div id="search-wrapper" ng-show="currentTab == 'searchText'" style="float: left; margin-left: 350px;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+</body>
+</html>
+

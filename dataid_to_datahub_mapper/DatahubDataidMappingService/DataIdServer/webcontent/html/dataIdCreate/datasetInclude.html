@@ -1,0 +1,146 @@
+        <div style="" class="row">
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div ng-init="clicked='on'"></div>
+            <div class="panel-heading">
+                <h1 class="panel-title">Basics</h1>
+            </div>
+            <div class="panel-body hover-link" >
+                <label style="margin-top: 10px" for="dTitle">Title</label> <span ng-show="dataset['dc:title']['@required']" style="color: red">*</span>
+                <div class="pull-right">
+                    <span  popover-placement="right" class="help-button"  popover="{{dataset['dc:title']['@label']}}" >?</span>
+                </div>
+                <a class="desc2" target="_blank" href='http://purl.org/dc/terms/title'> dc:title </a>
+                <br>
+                <input ng-required="dataset['dc:title']['@required']" style="width: 100%;" class="input" size="57" type="text" id="dTitle" ng-model="dataset['dc:title']['@value']"> <br>
+
+                <label for="dDescription">Description</label> <span ng-show="dataset['dc:description']['@required']" style="color: red">*</span>
+                <div class="pull-right">
+                    <span  popover-placement="right" class="help-button"  popover="{{dataset['dc:description']['@label']}}" >?</span>
+                </div>
+                <a class="desc2" target="_blank" href='http://purl.org/dc/terms/description'> dc:description </a>
+                <br>
+                <textarea ng-required="dataset['dc:description']['@required']" style="width: 100%;" class="input" rows="3" id="dDescription" ng-model="dataset['dc:description']['@value'][selectedLanguage]"></textarea> <br>
+
+                <label for="rdfsLabel">Label</label> <span ng-show="dataset['rdfs:label']['@required']" style="color: red">*</span>
+                <div class="pull-right">
+                    <span  popover-placement="right" class="help-button"  popover="{{dataset['rdfs:label']['@label']}}" >?</span>
+                </div>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='"http://www.w3.org/2000/01/rdf-schema#label'> rdfs:label </a>
+                <br>
+                <input ng-required="dataset['rdfs:label']['@required']" style="width: 100%;" class="input" type="text" id="rdfsLabel" ng-model="dataset['rdfs:label']['@value'][selectedLanguage]"> <br>
+
+                <label for="keywords">Keywords (English)</label> <span ng-show="dataset['dcat:keyword']['@required']" style="color: red">*</span>
+                <div class="pull-right">
+                    <span  popover-placement="right" class="help-button"  popover="{{dataset['dcat:keyword']['@label']}}" >?</span>
+                </div>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/vocab-dcat/keywords'> dcat:keyword </a>
+                <br>
+                <input class="input" data-role="tagsinput" placeholder="      " type="text" id="keywords" style="width: 100%;" ng-model="dataset['dcat:keyword']" ng-list="/,|\./">
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div ng-init="clicked='on'"></div>
+            <div class="panel-heading" >
+                <h1 class="panel-title">Contact</h1>
+            </div>
+            <div class="panel-body hover-link" >
+
+                <label for="landingPage">Landing Page</label> <span ng-show="dataset['dcat:landingPage']['@required']" style="color: red">*</span>
+                <div class="pull-right">
+                    <span  popover-placement="right" class="help-button"  popover="{{dataset['dcat:landingPage']['@label']}}" >?</span>
+                </div>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/vocab-dcat/media_type'> dcat:landingPage </a>
+                <br>
+                <input url ng-required="dataset['dcat:landingPage']['@required']"  style="width: 100%;" class="input" type="text" id="landingPage" ng-model="dataset['dcat:landingPage']['@id']">
+                <br>
+                <br>
+
+                <label for="agentSelect">Associated Agents</label> <span ng-show="dataset['dataid:associatedAgent']['@required']" style="color: red">*</span>
+                <div class="pull-right">
+                    <span  popover-placement="right" class="help-button"  popover="{{dataset['dataid:associatedAgent']['@label']}}" >?</span>
+                </div>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='http://dataid.dbpedia.org/ns/core#associatedAgent'> dataid:associatedAgent </a>
+                <br>
+                <div style="display: table;">
+                    <select class="btn-success" style="display:table-cell; width: 100%;"  id="agentSelect" name="agentSelect" ng-model="dataset['dataid:associatedAgent']['@value']" ng-options="agent['@id'] as agent['dataid:agentName']['@value'] for agent in agents" multiple multiselectdropdown="agents" addfunction="openagent('Agent')" addlabel="new Agent"></select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div ng-include="'licenseInclude.html'"></div>
+        <div class="panel panel-primary">
+            <div ng-init="clicked='on'"></div>
+            <div class="panel-heading">
+                <h1 class="panel-title">Distributions</h1>
+            </div>
+            <div class="panel-body hover-link" >
+
+                <label for="distSelect">Distributions & Endpoints</label> <span ng-show="dataset['dcat:distribution']['@required']" style="color: red">*</span>
+                <div class="pull-right">
+                    <span  popover-placement="left" class="help-button"  popover="{{dataset['dcat:distribution']['@label']}}" >?</span>
+                </div>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/vocab-dcat/distribution'> dcat:distribution </a>
+                <br>
+                <div style="display: table;">
+                    <select  class="btn-success" style="display:table-cell; width: 100%;"  id="distSelect" name="distSelect" ng-model="dataset['dcat:distribution']['@value']" ng-options="distr['@id'] as distr['dc:title']['@value'] for distr in distributions" multiple multiselectdropdown="distributions" addfunction="checkIfLicenseSelected() && opendistr(dataset)" addlabel="new Distribution"></select>
+                </div>
+                <br>
+                <label for="rootSelect">Root Resource</label> <span ng-show="dataset['void:rootResource']['@required']" style="color: red">*</span>
+                <div class="pull-right">
+                    <span  popover-placement="left" class="help-button"  popover="{{dataset['void:rootResource']['@label']}}" >?</span>
+                </div>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/void/rootResource'> void:rootResource </a>
+                <br>
+                <div style="width: 100%;">
+                    <select class="btn-success" style="width: 100%;"  id="rootSelect" name="rootSelect" ng-model="dataset['void:rootResource']['@id']" ng-options="distr for distr in dataset['dcat:distribution']['@value']" multiselectdropdown="dataset['dcat:distribution']['@value']" multiselectplaceholder="select a root resource"></select>
+                </div>
+            </div>
+        </div>
+        <div ng-show="addPropsChecked">
+            <div class="panel panel-primary">
+                <div class="panel-heading" >
+                    <h1 class="panel-title">Statistics</h1>
+                </div>
+                <div class="panel-body hover-link">
+                    <label for="dTriples">Triples</label> <span ng-show="dataset['void:triples']['@required']" style="color: red">*</span>
+                    <div class="pull-right">
+                        <span  popover-placement="left" class="help-button"  popover="{{dataset['void:triples']['@label']}}" >?</span>
+                    </div>
+                    <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/void/triples'> void:triples </a>
+                    <br>
+                    <input ng-required="dataset['void:triples']['@required']" style="width: 100%;" class="input" type="text" id="dTriples" name="dTriples" ng-model="dataset['void:triples']['@value']"> <br>
+                    <br>
+
+                    <label for="entries">Number of Entries</label> <span ng-show="dataset['void:entities']['@required']" style="color: red">*</span>
+                    <div class="pull-right">
+                        <span  popover-placement="left" class="help-button"  popover="{{dataset['void:entities']['@label']}}" >?</span>
+                    </div>
+                    <a style="float: right; margin-right: 0px; width: 100%;" target="_blank" href='"http://www.w3.org/TR/void/entities'> void:entities </a>
+                    <br>
+                    <input ng-required="dataset['void:entities']['@required']" class="input" type="text" id="entries" ng-model="dataset['void:entities']['@value']">
+                    <br>
+
+                    <label for="classes">Number of Classes</label> <span ng-show="dataset['void:classes']['@required']" style="color: red">*</span>
+                    <div class="pull-right">
+                        <span  popover-placement="left" class="help-button"  popover="{{dataset['void:classes']['@label']}}" >?</span>
+                    </div>
+                    <a style="float: right; margin-right: 0px; width: 100%;" target="_blank" href='"http://www.w3.org/TR/void/classes'> void:classes </a>
+                    <br>
+                    <input ng-required="dataset['void:classes']['@required']" class="input" type="text" id="classes" ng-model="dataset['void:classes']['@value']">
+                    <br>
+
+                    <label for="distinctObjects">Number of distinct Objects</label> <span ng-show="dataset['void:distinctObjects']['@required']" style="color: red">*</span>
+                    <div class="pull-right">
+                        <span  popover-placement="left" class="help-button"  popover="{{dataset['void:distinctObjects']['@label']}}" >?</span>
+                    </div>
+                    <a style="float: right; margin-right: 0px; width: 100%;" target="_blank" href='"http://www.w3.org/TR/void/distinctObjects'> void:distinctObjects </a>
+                    <br>
+                    <input ng-required="dataset['void:distinctObjects']['@required']" class="input" type="text" id="distinctObjects" ng-model="dataset['void:distinctObjects']['@value']">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-init="init()"/>
+</div>

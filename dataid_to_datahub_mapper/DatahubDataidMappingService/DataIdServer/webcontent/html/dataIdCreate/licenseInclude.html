@@ -1,0 +1,46 @@
+<div class="panel panel-primary">
+    <div ng-init="clicked='on'"></div>
+    <div class="panel-heading" >
+        <h1 class="panel-title">License</h1>
+    </div>
+    <div class="panel-body hover-link">
+
+        <label for="licenSelect">License</label> <span ng-show="dataset['dc:license']['@required']" style="color: red">*</span>
+        <div class="pull-right">
+            <span  popover-placement="left" class="help-button"  popover="{{dataset['dc:license']['@label']}}" >?</span>
+        </div>
+        <a style="float: right; margin-right: 0px;" target="_blank" href='http://purl.org/dc/terms/license'> dc:license </a>
+        <br>
+        <!--TODO ng-model="dataset['dataid:licenseName']['@value']"-->
+        <div style="width: 100%;"
+             ng-init="iName='licenSelect'"
+             id="licenSelectWrapper"
+             popover-trigger="none"
+             popover-placement="bottom"
+             popover-title="{{popMap.licenSelect.title}}"
+             popover-template="preparePopover('warningPopover', formDataset.licenSelect)"
+             popover-is-open="formDataset.licenSelect.$invalid && formDataset.licenSelect.$touched">
+            <select class="btn-success"
+                    style="width: 100%;"
+                    id="licenSelect"
+                    name="licenSelect"
+                    ng-model="dataset['dc:license']['@id']"
+                    ng-options="license['license']['value'] as license['label']['value'] for license in licenses"
+                    multiselectdropdown="licenses"
+                    multiselectplaceholder="select a license"
+                    multiselectidtag="license"
+                    multiselectvalidate>
+
+            </select>
+        </div>
+        <br>
+
+        <label for="dcrights">Rights Statement</label> <span ng-show="dataset['dc:rights']['@required']" style="color: red">*</span>
+        <div class="pull-right">
+            <span  popover-placement="left" class="help-button"  popover="{{dataset['dc:rights']['@label']}}" >?</span>
+        </div>
+        <a class="desc2" target="_blank" href='http://purl.org/dc/terms/rights'> dc:rights </a>
+        <br>
+        <textarea ng-required="dataset['dc:rights']['@required']" style="width: 100%;" class="input" rows="3" id="dcrights" ng-model="dataset['dc:rights']['@value'][selectedLanguage]"></textarea> <br>
+    </div>
+</div>

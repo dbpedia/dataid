@@ -1,35 +1,23 @@
 package org.aksw.dataid.datahub.mappingservice;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.fasterxml.jackson.databind.node.BaseJsonNode;
-import com.fasterxml.jackson.databind.node.JsonNodeFactory;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.github.jsonldjava.core.*;
-import com.sun.jersey.core.spi.factory.ResponseImpl;
 import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.jsonobjects.DatahubError;
 import org.aksw.dataid.datahub.jsonobjects.Dataset;
 import org.aksw.dataid.datahub.jsonobjects.ValidCkanResponse;
-import org.aksw.dataid.datahub.mappingobjects.DataId;
 import org.aksw.dataid.errors.DataIdInputException;
 import org.aksw.dataid.jsonutils.StaticJsonHelper;
 import org.aksw.dataid.errors.DataHubMappingException;
 import org.aksw.dataid.datahub.propertymapping.DataIdProcesser;
 import org.aksw.dataid.datahub.restclient.CkanRestClient;
 import org.aksw.dataid.ontology.IdPart;
-import org.aksw.dataid.statics.StaticContent;
-import org.aksw.dataid.virtuoso.VirtuosoDataIdGraph;
-import org.apache.jena.atlas.json.JSON;
-import org.eclipse.jdt.internal.compiler.ast.Javadoc;
+import org.aksw.dataid.statics.StaticFunctions;
+import org.aksw.dataid.virtuoso.VirtuosoDataIdBranch;
+import org.openrdf.rio.RDFFormat;
 import org.openrdf.rio.RDFHandlerException;
 import org.openrdf.rio.RDFParseException;
 
 import javax.ws.rs.*;
-import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -39,11 +27,9 @@ import java.util.List;
 @Path("dataid/publisher")
 public class DataIdPublisher
 {
-    private VirtuosoDataIdGraph graph;
     private DataIdProcesser proc;
 
     public DataIdPublisher() throws SQLException, DataHubMappingException {
-        graph = Main.getGraph();
         proc = new DataIdProcesser(DataIdConfig.getMappingConfigPath());
     }
 
@@ -74,98 +60,18 @@ public class DataIdPublisher
     }
 
     @GET
-    @Path("/getstoreddataset")
-    @Produces("text/plain")
-    @Consumes("text/plain")
-        public Dataset getStoredDataset(@QueryParam(value = "title") final String title) throws DatahubError, RDFHandlerException {
-        try {
-            String id =  graph.getDataIdFile(title, proc.getMappings().getRdfContext());
-            Dataset set = proc.parseToDataHubDataset(id).get(0);
-            return set;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    @GET
     @Path("/getmappings")
     @Produces("text/html")
     public String getMappings()
     {
 		try {
-            String path = Main.getMainPath() + "/MappingsPage.html";
+            String path = Main.getMainPath() + "/html/MappingsPage.html";
             String content = new String(Files.readAllBytes(Paths.get(path)));
             content = content.replace("$content", StaticJsonHelper.getPrettyContent(StaticJsonHelper.getJsonContent(DataIdConfig.getMappingConfigPath())));
 			return content;
 		} catch (IOException e) {
             return addHtmlBody(produceHttpResponse(e));
 		}
-    }
-
-    @GET
-    @Path("/dataidvalidator")
-    @Produces("text/html")
-    public String validator()
-    {
-        try {
-            String path = Main.getMainPath() + "/DataIdResultPage.html";
-            String content = new String(Files.readAllBytes(Paths.get(path)));
-            return content;
-        } catch (IOException e) {
-            return addHtmlBody(produceHttpResponse(e));
-        }
-    }
-
-
-    @POST
-    @Path("/validationresulttable")
-    @Produces("text/html")
-    public String validationresulttable(@QueryParam(value = "url") final String url, String result ) throws IOException {
-        if(result == null)
-            result = new String(Files.readAllBytes(Paths.get(url)));
-        try {
-            String path = Main.getMainPath() + "/ValidationResultTable.html";
-            String content = new String(Files.readAllBytes(Paths.get(path))).replace("$result", result);
-            return content;
-        } catch (IOException e) {
-            return addHtmlBody(produceHttpResponse(e));
-        }
-    }
-
-    @POST
-    @Path("/validateid")
-    public String validateDataId(final String ttl) throws DataIdInputException, JsonProcessingException {
-            IdPart dataid = new IdPart(ttl);
-            dataid.validate();
-
-        //reduce special errors (resources which dont need to be declared)
-/*        JsonNode jn = StaticJsonHelper.convertStringToJsonNode(dataid.getJsonLdErrorReport());
-        ArrayNode graph = JsonNodeFactory.instance.arrayNode();
-        for(JsonNode node : jn.get("@graph"))
-        {
-            if(node.get("message") !=  null && !(node.get("message").asText().contains("QualifiedCardinality of http://www.w3.org/ns/dcat#landingPage lower than 1")  //not!
-                    || node.get("message").asText().contains("qualifiedCardinality of http://rdfs.org/ns/void#objectsTarget different from 1")))
-            graph.add(node);
-        }
-        ObjectNode result = JsonNodeFactory.instance.objectNode();
-        result.put("@context", jn.get("@context"));
-        result.put("@graph", graph);
-
-        return  StaticJsonHelper.getPrettyContent(result);*/
-        return dataid.getJsonLdErrorReport();
-    }
-
-    @POST
-    @Path("/isIdValid")
-    public String isIdValid(final String ttl)
-    {
-        try {
-            IdPart dataid = new IdPart(ttl);
-            return new Boolean(dataid.validate()).toString();
-        } catch (Exception e) {
-            return produceHttpResponse(e);
-        }
     }
 
     @POST
@@ -191,74 +97,21 @@ public class DataIdPublisher
 
     @POST
     @Path("/prettyprintid")
-    public String prettyPrintId(final String ttl) {
+    public String prettyPrintId(@QueryParam(value = "format") final String format, final String ttl) {
         try {
             IdPart dataid = new IdPart(ttl);
-            return dataid.toTurtle();
+            RDFFormat f = null;
+            if(format != null)
+                for(Object fo : RDFFormat.values().toArray())
+                    if(((RDFFormat)fo).getName().equalsIgnoreCase(format))
+                        f = (RDFFormat)fo;
+            if(format == null)
+                f = StaticFunctions.getRDFFormat(ttl);
+            String ret = dataid.toSerialization(f);
+            return ret;
         } catch (Exception e) {
             return ttl;
         }
-    }
-
-    @POST
-    @Path("/publishlinkset")
-    public String PublishLinkSet(final String linkSet) {
-        try {
-            //TODO mayba add linkset uri?
-            IdPart dataid = new IdPart(linkSet);
-            graph.enterLinkSet(dataid);
-        } catch (Exception e) {
-            return addHtmlBody(produceHttpResponse(e));
-        }
-        return addHtmlBody(produceHttpResponse("linkset published"));
-    }
-
-    @POST
-    @Path("/dataidtojson")
-    @Produces("application/json")
-    public String DataIdToJson(final String ttl) {
-        try {
-            IdPart dataid = new IdPart(ttl);
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-            if(dataid.getPartType() == IdPart.DataIdParts.DataId)
-                return mapper.writeValueAsString(dataid);
-            else
-                return addHtmlBody(produceHttpResponse("no dataid found"));
-        } catch (Exception e) {
-            return addHtmlBody(produceHttpResponse(e));
-        }
-    }
-
-    @POST
-    @Path("/publishdataid")
-    public String PublishDataId(final String ttl){
-        StringBuilder response = new StringBuilder();
-        try {
-            List<Dataset> sets = proc.parseToDataHubDataset(ttl);
-
-            JsonLdOptions opt = new JsonLdOptions();
-            opt.setBase("http://someuri.org");
-            opt.setUseNativeTypes(true);
-            opt.setCompactArrays(true);
-            opt.setExpandContext(proc.getMappings().getRdfContext().getMap());
-
-            for(Dataset set : sets)
-            {
-                try {
-                    RDFDataset rdfd = (RDFDataset) JsonLdProcessor.toRDF(set.getGraph(), opt);
-                    String innerId = RDFDatasetUtils.toNQuads(rdfd);
-                    graph.enterDataId(innerId, set.getDataIdUri(), set.getVersion());
-                    response.append(produceHttpResponse("Dataset " + set.getDataIdUri() + " was published correctly"));
-                } catch (Exception e) {
-                    response.append(produceHttpResponse("Dataset " + set.getDataIdUri() + " encountered an error: " + e.getMessage()));
-                }
-            }
-        } catch (Exception e) {
-            addHtmlBody(produceHttpResponse(e));
-        }
-
-        return addHtmlBody(response.toString());
     }
 
 	@POST
@@ -335,7 +188,7 @@ public class DataIdPublisher
         String html = "<p>all sets are deployed:";
 
         for(Dataset set : sets)
-                html += "<p><a href=\"http://datahub.io/dataset/" + set.getName() + "\">http://datahub.io/dataset/" + set.getName() + "</a></p>";
+            html += "<p><a href=\"http://datahub.io/dataset/" + set.getName() + "\">http://datahub.io/dataset/" + set.getName() + "</a></p>";
         return html + "</p>";
     }
 

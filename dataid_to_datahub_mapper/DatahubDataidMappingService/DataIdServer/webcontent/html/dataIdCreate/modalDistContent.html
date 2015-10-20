@@ -1,0 +1,218 @@
+<form name="formDist" ng-submit="submit()" novalidate>
+    <div class="modal-header">
+        <div style="" class="row">
+            <div class="col-md-8">
+                <h3 class="modal-title">New Distribution</h3>
+            </div>
+            <div class="col-md-4">
+                <div class="pull-right">
+                    <div style="width: 100%;">
+                        <select class="btn-success" style="width: 100%;"  id="langSelect" name="langSelect" ng-model="selectedLanguage" ng-options="lang.code.value as lang.lang.value for lang in languages" multiselectdropdown="languages" multiselectprefix="languge of literals: " multiselectidtag="code" multiselectfilter></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-md-12" style="margin-top: 8px;">
+                <div class="input-group">
+                    <span class="input-group-addon" style="border-color: #EEEEEE; font-size:13px; padding-right: 2px;">uri: {{dataset['@id'].substring(0, dataset['@id'].indexOf('#')+1)}}</span>
+                    <input type="text" class="form-control" style="border-color: #EEEEEE; font-size:13px; padding-left: 2px;" id="idinput" value="{{dataset['@id'].substring(dataset['@id'].indexOf('#')+1)}}" ng-disabled="edituri" ng-model="halfuri" popover-title="This uri is invalid!" popover-placement="bottom" popover-template="notePopover.templateUrl" popover-trigger="focus">
+                    <span class="input-group-btn"><button type="button" class="btn btn-warning" ng-click="uriEditClik();" style="border-color: #EEEEEE; height:34px;"><i class="glyphicon glyphicon-pencil"></i></button></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-primary">
+                    <div ng-init="clicked='on'"></div>
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Basics</h1>
+                    </div>
+                    <div class="panel-body hover-link" >
+                        <label>Property type: </label>  <span ng-show="true" style="color: red">*</span>
+                        <div class="pull-right">
+                            <span  popover-placement="right" class="help-button"  popover="Please define the type of this distribution (default: dataid:Distribution)" >?</span>
+                        </div>
+                        <br>
+                        <input id="typeRadioDist"
+                               name="typeRadio"
+                               type="radio"
+                               onClick="document.getElementById('typeRadioSparql').checked = false; "
+                               ng-model="checked" ng-model="dataset['@type'][0]"
+                               value="dataid:Distribution" checked="checked">
+                        Distribution
+                        <input id="typeRadioSparql"
+                               name="typeRadio"
+                               type="radio"
+                               onClick="document.getElementById('typeRadioDist').checked = false;"
+                               ng-model="checked" ng-model="dataset['@type'][0]"
+                               value="dataid:SparqlEndpoint" >
+                        SparqlEndpoint
+                        <br/>
+                        <div ng-init="checked='dataid:Distribution'"></div>
+
+                        <label style="margin-top: 10px" for="distTitle">Title</label>  <span ng-show="dataset['dc:title']['@required']" style="color: red">*</span>
+                        <div class="pull-right">
+                            <span  popover-placement="right" class="help-button"  popover="{{dataset['dc:title']['@label']}}" >?</span>
+                        </div>
+                        <a style="margin-top: 10px"  class="desc2" target="_blank" href='http://purl.org/dc/terms/title'> dc:title </a>
+                        <br>
+                        <!--<input class="input" size="57" type="text" id="dTitle" ng-required="dataset['dc:title']['@required']" ng-model="dataset['dc:title']['@value']"> <br>-->
+
+
+                        <input ng-init="iName='distTitle'"
+                               ng-required="dataset['dc:title']['@required']"
+                               class="input"
+                               type="text"
+                               name="distTitle"
+                               id="distTitle"
+                               ng-model="dataset['dc:title']['@value']"
+                               popover-trigger="none"
+                               popover-placement="bottom"
+                               popover-title="{{popMap.distTitle.title}}"
+                               popover-template="preparePopover('warningPopover', formDist.distTitle)"
+                               popover-is-open="showAsInvalid(formDist.distTitle)">
+                        <br>
+
+                        <label for="dDescription">Description</label>  <span ng-show="dataset['dc:description']['@required']" style="color: red">*</span>
+                        <div class="pull-right">
+                            <span  popover-placement="right" class="help-button"  popover="{{dataset['dc:description']['@label']}}" >?</span>
+                        </div>
+                        <a class="desc2" target="_blank" href='http://purl.org/dc/terms/description'> dc:description </a>
+                        <br>
+                        <textarea class="input" rows="4" id="dDescription" ng-required="dataset['dc:description']['@required']" ng-model="dataset['dc:description']['@value'][selectedLanguage]"></textarea> <br>
+
+                        <label for="rdfsLabel">Label</label> <span ng-show="dataset['rdfs:label']['@required']" style="color: red">*</span>
+                        <div class="pull-right">
+                            <span  popover-placement="right" class="help-button"  popover="{{dataset['rdfs:label']['@label']}}" >?</span>
+                        </div>
+                        <a style="float: right; margin-right: 0px;" target="_blank" href='"http://www.w3.org/2000/01/rdf-schema#label'> rdfs:label </a>
+                        <br>
+                        <input class="input" type="text" id="rdfsLabel" ng-required="dataset['rdfs:label']['@required']" ng-model="dataset['rdfs:label']['@value'][selectedLanguage]"> <br>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div ng-init="clicked='on'"></div>
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Access & Contact</h1>
+                    </div>
+                    <div class="panel-body hover-link" >
+                        <div ng-show="checked == 'dataid:Distribution'">
+                            <label for="downloadURL">Download URL</label> <span ng-show="dataset['dcat:downloadURL']['@required']" style="color: red">*</span>
+                            <div class="pull-right">
+                                <span  popover-placement="right" class="help-button"  popover="{{dataset['dcat:downloadURL']['@label']}}" >?</span>
+                            </div>
+                            <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/vocab-dcat/#downloadURL'> dcat:downloadURL </a>
+                            <br>
+                            <input type="url" class="input" id="downloadURL" name="downloadURL" ng-required="dataset['dcat:downloadURL']['@required'] && checked == 'dataid:Distribution'" ng-model="dataset['dcat:downloadURL']['@id']"> <br>
+                        </div>
+                        <div ng-show="checked == 'dataid:SparqlEndpoint'">
+                            <label for="dAccessURL">Access URL</label> <span ng-show="dataset['dcat:accessURL']['@required']" style="color: red">*</span>
+                            <div class="pull-right">
+                                <span  popover-placement="right" class="help-button"  popover="{{dataset['dcat:accessURL']['@label']}}" >?</span>
+                            </div>
+                            <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/vocab-dcat/#accessURL'> dcat:accessURL </a>
+                            <br>
+                            <input type="url" class="input" id="dAccessURL" name="dAccessURL" ng-required="dataset['dcat:accessURL']['@required'] && checked == 'dataid:SparqlEndpoint'" ng-model="dataset['dcat:accessURL']['@id']"> <br>
+                        </div>
+                        <br>
+
+                        <label for="agentSelect">Associated Agents</label> <span ng-show="dataset['dataid:associatedAgent']['@required']" style="color: red">*</span>
+                        <div class="pull-right">
+                            <span  popover-placement="right" class="help-button"  popover="{{dataset['dataid:associatedAgent']['@label']}}" >?</span>
+                        </div>
+                        <a style="float: right; margin-right: 0px;" target="_blank" href='http://dataid.dbpedia.org/ns/core#associatedAgent'> dataid:associatedAgent </a>
+                        <br>
+                        <div style="display: table;">
+                            <select  class="btn-success" style="display:table-cell; width: 100%;"  id="agentSelect" name="agentSelect" ng-model="dataset['dataid:associatedAgent']['@value']" ng-options="agent['@id'] as agent['dataid:agentName']['@value'] for agent in agents" multiple multiselectdropdown="agents" addfunction="openagent('Agent')" addlabel="new Agent"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-primary">
+                    <div ng-init="clicked='on'"></div>
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Data Information</h1>
+                    </div>
+                    <div class="panel-body hover-link" >
+                        <!--                <label for="mediaType">Media Type</label> <span ng-show="dataset['dcat:mediaType']['@required']" style="color: red">*</span>
+                                        <div class="pull-right">
+                                            <span  popover-placement="left" class="help-button"  popover="{{dataset['dcat:mediaType']['@label']}}" >?</span>
+                                        </div>
+                                        <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/vocab-dcat/media_type'> dcat:mediaType </a>
+                                        <br>
+                                        <div style="width: 100%;">
+                                            <select class="btn-success" style="width: 100%;"  id="mediaType" name="mediaType" ng-model="dataset['dcat:mediaType']['@value']" ng-options="mime.mime.value for mime in mimetypes" multiselectdropdown="mimetypes" multiselectplaceholder="select the media type" multiselectfilter></select>
+                                        </div>
+                                        <br>-->
+
+                        <label for="dcFormat">Format</label> <span ng-show="dataset['dc:format']['@required']" style="color: red">*</span>
+                        <div class="pull-right">
+                            <span  popover-placement="left" class="help-button"  popover="{{dataset['dc:format']['@label']}}" >?</span>
+                        </div>
+                        <a style="float: right; margin-right: 0px;" target="_blank" href='http://purl.org/dc/terms/format'> dc:format </a>
+                        <br>
+                        <div style="width: 100%;">
+                            <select class="btn-success" style="width: 100%;"  id="dcFormat" name="dcFormat" ng-model="dataset['dc:format']['@value']" ng-options="mime.mime.value for mime in mimetypes" multiselectdropdown="mimetypes" multiselectplaceholder="select the media type" multiselectfilter multiselect-validation></select>
+                        </div>
+                        <br>
+
+                        <label for="dataidgraphName">Graph Name</label> <span ng-show="dataset['dataid:graphName']['@required']" style="color: red">*</span>
+                        <div class="pull-right">
+                            <span  popover-placement="left" class="help-button"  popover="{{dataset['dataid:graphName']['@label']}}" >?</span>
+                        </div>
+                        <a style="float: right; margin-right: 0px;" target="_blank" href='http://dataid.dbpedia.org/ns/core#graphName'> dataid:graphName </a>
+                        <br>
+                        <input  class="input"  type="text" id="dataidgraphName" ng-required="dataset['dataid:graphName']['@required']" ng-model="dataset['dataid:graphName']['@value']"> <br>
+                    </div>
+                </div>
+
+
+                <div class="panel panel-primary">
+                    <div ng-init="clicked='on'"></div>
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Statistics</h1>
+                    </div>
+                    <div class="panel-body hover-link" >
+                        <label for="byteSize">Byte Size</label> <span ng-show="dataset['dcat:byteSize']['@required']" style="color: red">*</span>
+                        <div class="pull-right">
+                            <span  popover-placement="left" class="help-button"  popover="{{dataset['dcat:byteSize']['@label']}}" >?</span>
+                        </div>
+                        <a style="float: right; margin-right: 0px;" target="_blank" href='"http://www.w3.org/TR/vocab-dcat/byteSize'> rdfs:label </a>
+                        <br>
+                        <input class="input" type="text" id="byteSize" ng-required="dataset['dcat:byteSize']['@required']" ng-model="dataset['dcat:byteSize']['@value']"> <br>
+
+                        <label for="dataidmd5Hash">md5 Hash</label> <span ng-show="dataset['dataid:md5Hash']['@required']" style="color: red">*</span>
+                        <div class="pull-right">
+                            <span  popover-placement="left" class="help-button"  popover="{{dataset['dataid:md5Hash']['@label']}}" >?</span>
+                        </div>
+                        <a style="float: right; margin-right: 0px;" target="_blank" href='"http://dataid.dbpedia.org/ns/core#md5Hash'> dataid:md5Hash </a>
+                        <br>
+                        <input class="input" type="text" id="dataidmd5Hash" ng-required="dataset['dataid:md5Hash']['@required']" ng-model="dataset['dataid:md5Hash']['@value']"> <br>
+
+                        <label for="dataidchecksum">Checksum</label> <span ng-show="dataset['dataid:checksum']['@required']" style="color: red">*</span>
+                        <div class="pull-right">
+                            <span  popover-placement="left" class="help-button"  popover="{{dataset['dataid:checksum']['@label']}}" >?</span>
+                        </div>
+                        <a style="float: right; margin-right: 0px;" target="_blank" href='"http://dataid.dbpedia.org/ns/core#checksum'> dataid:checksum </a>
+                        <br>
+                        <input class="input" type="text" id="dataidchecksum" ng-required="dataset['dataid:checksum']['@required']" ng-model="dataset['dataid:checksum']['@value']"> <br>
+                    </div>
+                </div>
+                <div ng-show="addLicense">
+                    <div ng-include="'licenseInclude.html'"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="pull-left">
+            <input type="checkbox" ng-model="addLicense"> show license information (default: same license as dataset)
+        </div>
+        <button class="popoverButton btn btn-primary" ng-click="formDist.$valid && ok()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

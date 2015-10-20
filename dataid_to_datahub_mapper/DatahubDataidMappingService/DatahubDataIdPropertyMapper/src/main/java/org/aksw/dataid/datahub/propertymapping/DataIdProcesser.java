@@ -24,11 +24,9 @@ public class DataIdProcesser
 {
     private MappingConfig mappings;
 	private PropertyMapper mapper;
-    private DataIdValidator validator;
 	
 	public DataIdProcesser(String mappingConfigPath) throws DataHubMappingException {
-        StaticContent.setRdfContext(mappingConfigPath);
-        mappings = StaticContent.setMappings(mappingConfigPath);
+        mappings = StaticContent.getMappings();
         if(mappings == null)
             throw new DataHubMappingException("the mapping-config file could not be found");
         mapper = new PropertyMapper(StaticJsonHelper.getJsonContent(mappingConfigPath));

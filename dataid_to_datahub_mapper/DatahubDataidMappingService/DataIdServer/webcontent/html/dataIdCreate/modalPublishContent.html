@@ -1,0 +1,61 @@
+<form name="formPublish">
+    <div class="modal-header">
+        <div style="" class="row">
+            <div class="col-md-6">
+                <h3 class="modal-title">Publishing a DataID</h3>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body" ng-init="isopencode = true">
+        <div class="row">
+            <p style="margin-left: 10px;">
+                Your DataID <strong>{{dataid['dc:title']['@value']}}</strong> has been published. <br>
+                Follow the steps below to get unlock all features of DataID
+            </p>
+            <accordion close-others="oneAtATime">
+                <accordion-group data-toggle="collapse" is-open="isopencode">
+                    <accordion-heading>
+                        <i ng-class="{true : 'glyphicon glyphicon-chevron-down', false : 'glyphicon glyphicon-chevron-right'}[!!isopencode]"></i>
+                        <strong>Verification Code</strong>
+                    </accordion-heading>
+                    <p>
+                        This verification code has to be used for updating this DataId.<br>
+                        An e-mail has been send to {{agent['dataid:agentMail']['@value']}} with additional information.
+                    </p>
+                    <br>
+                    <input type="input" class="form-control" value="{{code}}" style="font-size: 25px; height: 50px; text-align: center;" class="popoverNoClose form-control exclude" ng-disabled="true">
+                </accordion-group>
+                <accordion-group data-toggle="collapse" is-open="isopensets">
+                    <accordion-heading>
+                        <i ng-class="{true : 'glyphicon glyphicon-chevron-down', false : 'glyphicon glyphicon-chevron-right'}[!!isopensets]"></i>
+                        <strong>Next Steps</strong>
+                    </accordion-heading>
+                    <div class="list-group">
+                        <a href="" class="list-group-item" ng-click="alert('datahub.io')">
+                            <h4 class="list-group-item-heading">Datahub.io</h4>
+                            <p class="list-group-item-text">Extend the presence of your Dataset and publish it on Datahub.io.</p>
+                        </a>
+                        <a href="" class="list-group-item" ng-click="alert('linghub')">
+                            <h4 class="list-group-item-heading">Linghub.org</h4>
+                            <p class="list-group-item-text">Extend the presence of your Dataset and publish it on Linghub.org.</p>
+                        </a>
+                        <a href="" class="list-group-item" ng-click="alert('docker')">
+                            <h4 class="list-group-item-heading">Dockerize</h4>
+                            <p class="list-group-item-text">dock it up :)</p>
+                        </a>
+                    </div>
+                </accordion-group>
+                <accordion-group data-toggle="collapse" is-open="isopenagents">
+                    <accordion-heading>
+                        <i ng-class="{true : 'glyphicon glyphicon-chevron-down', false : 'glyphicon glyphicon-chevron-right'}[!!isopenagents]"></i>
+                        <strong>Otional Steps</strong>
+                    </accordion-heading>
+                </accordion-group>
+            </accordion>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="popoverButton btn btn-primary" ng-click="formAgent.$valid && ok()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

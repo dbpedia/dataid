@@ -9,14 +9,17 @@ import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.mappingprovider.CorsSupportProvider;
 import org.aksw.dataid.datahub.mappingprovider.DataIdInputExceptionProvider;
 import org.aksw.dataid.datahub.restclient.CkanRestClient;
+import org.aksw.dataid.virtuoso.VirtuosoDataIdDelta;
 import org.aksw.dataid.virtuoso.VirtuosoDataIdGraph;
 import org.glassfish.grizzly.http.server.HttpServer;
+import org.glassfish.grizzly.http.server.NetworkListener;
 import org.glassfish.grizzly.http.server.StaticHttpHandler;
 
 import javax.ws.rs.core.UriBuilder;
 import java.io.IOException;
 import java.net.URI;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -56,25 +59,26 @@ public class Main {
 
     public static URI Base_Uri;
     
-    protected static HttpServer configureServer(String mPath) throws IOException , SQLException{
-        mainPath = mPath;
-        DataIdConfig.initDataIdConfig(mainPath);
+    protected static HttpServer configureServer() throws IOException , SQLException{
         graph = new VirtuosoDataIdGraph(DataIdConfig.getVirtuosoHost(), DataIdConfig.getVirtuosoPort(), DataIdConfig.getVirtuosoUser(), DataIdConfig.getVirtuosoPassword());
         ResourceConfig rc = new PackagesResourceConfig(Main.class.getPackage().getName(), DataIdInputExceptionProvider.class.getPackage().getName());
         rc.getContainerResponseFilters().add(new CorsSupportProvider());
-        Base_Uri = UriBuilder.fromUri("http://" + DataIdConfig.get("ipaddress") + "/").port(Integer.parseInt(DataIdConfig.get("port").toString())).build();
+        Base_Uri = UriBuilder.fromUri("http://" + DataIdConfig.get("ipaddress") + "/").port(Integer.parseInt(DataIdConfig.get("port"))).build();
         System.out.println("Starting grizzly2...");
         httpServer = GrizzlyServerFactory.createHttpServer(Base_Uri, rc);
         StaticHttpHandler statichandler = new StaticHttpHandler(mainPath);
-        httpServer.getServerConfiguration().addHttpHandler(statichandler, "/static");
+        System.out.println(statichandler.isFileCacheEnabled());
+        httpServer.getServerConfiguration().addHttpHandler(statichandler, "/" + DataIdConfig.get("contentDir"));
 
         return httpServer;
     }
     
     public static void main(String[] args) throws IOException, SQLException {
-        assert args.length == 1;
+        assert args.length == 2;
 
-        configureServer(args[0]);
+        DataIdConfig.initDataIdConfig(args);
+        mainPath = args[1];
+        configureServer();
         httpServer.start();
         System.out.println(String.format("Jersey app started with WADL available at %sapplication.wadl\nHit enter to stop it...", Base_Uri));
         System.in.read();

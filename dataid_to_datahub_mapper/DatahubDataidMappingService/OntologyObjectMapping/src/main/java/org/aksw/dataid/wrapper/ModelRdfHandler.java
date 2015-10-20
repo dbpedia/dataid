@@ -1,6 +1,7 @@
 package org.aksw.dataid.wrapper;
 
 import org.aksw.dataid.statics.StaticContent;
+import org.aksw.dataid.statics.StaticFunctions;
 import org.openrdf.model.Model;
 import org.openrdf.model.Statement;
 import org.openrdf.rio.RDFHandler;
@@ -16,7 +17,7 @@ public class ModelRdfHandler implements RDFHandler
 
     @Override
     public void startRDF() throws RDFHandlerException {
-        model = Statics.createDefaultModel(StaticContent.getRdfContext());
+        model = StaticFunctions.createDefaultModel(StaticContent.getRdfContext());
         loaded = false;
     }
 

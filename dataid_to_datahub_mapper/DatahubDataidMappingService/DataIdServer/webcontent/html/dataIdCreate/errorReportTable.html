@@ -1,0 +1,24 @@
+<div ng-class="getValidationColor()">
+    <div class="panel-heading">
+        <h1 class="panel-title">{{getValidationHeading()}}</h1>
+    </div>
+    <div class="panel-body" ng-show="valid=='false' || valid == 'warnings'">
+        <table cellpadding="0" cellspacing="0" border="0" class="dataTable" id="example">
+            <thead>
+                <tr>
+                    <th align="center">Level</th>
+                    <th align="center">Resource</th>
+                    <th align="center">Message</th>
+                </tr>
+                </thead>
+            <tbody>
+                <tr ng-repeat="x in validationResult['@graph'] | filter:errorFilter">
+                    <td ng-style="setErrorTableWarningColor(x.level)">{{ x.level.replace('rlog:', '').replace('WARN', 'WARNING') }}</td>
+                    <td><a ng-class="getLabelClass(x.resource)" ng-click="changeSubset(getObjFromId(x.resource))" href >{{getNameById(x.resource)}}</a></td>
+                    <!--<td><div ng-click="changeSubset(graph, getById(x.resource))">{{getNameById(x.resource)}}</div></td>-->
+                    <td>{{ replacePrexixes(x.message) }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,11 +1,9 @@
 package org.aksw.dataid.errors;
 
-import org.aksw.dataid.config.DataIdProperty;
-import org.aksw.rdfunit.tests.results.RLOGTestCaseResult;
 
-import javax.naming.directory.InvalidAttributesException;
+import org.aksw.rdfunit.model.results.RLOGTestCaseResult;
+
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
 
 /**

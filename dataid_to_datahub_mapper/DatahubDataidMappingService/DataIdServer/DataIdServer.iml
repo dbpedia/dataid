@@ -108,15 +108,13 @@
     <orderEntry type="library" name="Maven: tr.com.srdc:virtjdbc4:2.6.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.jena:jena-tdb:1.1.1" level="project" />
     <orderEntry type="module" module-name="OntologyObjectMapping" />
+    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-languages:2.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-datatypes:2.8.0" level="project" />
     <orderEntry type="module" module-name="DataIdCommons" />
-    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-nquads:2.8.0" level="project" />
-    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-ntriples:2.8.0" level="project" />
-    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-jsonld:2.8.0" level="project" />
-    <orderEntry type="library" name="Maven: org.aksw.rdfunit:rdfunit-core:0.7.6-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.aksw.rdfunit:rdfunit-resources:0.7.6-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.aksw.jena-sparql-api:jena-sparql-api-cache-h2:2.12.1-8" level="project" />
-    <orderEntry type="library" name="Maven: com.h2database:h2:1.4.186" level="project" />
-    <orderEntry type="library" name="Maven: org.aksw.jena-sparql-api:jena-sparql-api-resources:2.12.1-8" level="project" />
+    <orderEntry type="library" name="Maven: org.aksw.rdfunit:rdfunit-core:0.7.21-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.aksw.jena-sparql-api:jena-sparql-api-cache-h2:2.13.0-5" level="project" />
+    <orderEntry type="library" name="Maven: com.h2database:h2:1.4.187" level="project" />
+    <orderEntry type="library" name="Maven: org.aksw.jena-sparql-api:jena-sparql-api-resources:2.13.0-5" level="project" />
     <orderEntry type="library" name="Maven: org.semarglproject:semargl-jena:0.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.semarglproject:semargl-core:0.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.semarglproject:semargl-rdfa:0.6.1" level="project" />
@@ -125,25 +123,27 @@
     <orderEntry type="library" name="Maven: xalan:xalan:2.7.1" level="project" />
     <orderEntry type="library" name="Maven: xalan:serializer:2.7.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-collections4:4.0" level="project" />
-    <orderEntry type="library" name="Maven: org.aksw.rdfunit:rdfunit-validate:0.7.6-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.aksw.rdfunit:rdfunit-validate:0.7.21-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.aksw.rdfunit:rdfunit-manual-tests:0.7.21-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-model:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-api:2.8.0" level="project" />
-    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-languages:2.8.0" level="project" />
-    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-datatypes:2.8.0" level="project" />
-    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-turtle:2.8.0" level="project" />
-    <orderEntry type="library" name="Maven: commons-io:commons-io:2.4" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-rdfxml:2.8.0" level="project" />
+    <orderEntry type="library" name="Maven: commons-io:commons-io:2.4" level="project" />
+    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-turtle:2.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-nquads:2.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-ntriples:2.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-jsonld:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-util:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.10" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.5.0" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.5.0" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.5.0" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-http-server:2.2.21" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-rcm:2.2.21" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-framework:2.2.21" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-http:2.2.21" level="project" />
     <orderEntry type="library" name="Maven: com.sun.jersey:jersey-grizzly2:1.19" level="project" />
-    <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-http:2.2.16" level="project" />
-    <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-framework:2.2.16" level="project" />
-    <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-http-server:2.2.16" level="project" />
-    <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-rcm:2.2.16" level="project" />
     <orderEntry type="library" name="Maven: com.sun.jersey:jersey-server:1.19" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.8.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.sun.jersey:jersey-client:1.19" level="project" />

@@ -1,20 +1,11 @@
 package org.aksw.dataid.virtuoso;
 
-import com.hp.hpl.jena.datatypes.BaseDatatype;
-import com.hp.hpl.jena.datatypes.RDFDatatype;
-import com.hp.hpl.jena.datatypes.TypeMapper;
 import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.errors.DataIdInputException;
 import org.aksw.dataid.ontology.IdPart;
-import org.aksw.dataid.statics.StaticContent;
-import org.aksw.dataid.wrapper.InternalLieteralImpl;
-import org.aksw.dataid.config.RdfContext;
-import org.aksw.dataid.wrapper.Statics;
-import org.openrdf.model.Model;
-import org.openrdf.model.URI;
-import org.openrdf.model.ValueFactory;
-import org.openrdf.model.impl.StatementImpl;
-import org.openrdf.model.impl.URIImpl;
+import org.apache.commons.collections15.MultiMap;
+import org.apache.commons.collections4.MapUtils;
+import org.openrdf.rio.RDFFormat;
 import org.openrdf.rio.RDFHandlerException;
 import virtuoso.jdbc4.VirtuosoDataSource;
 
@@ -22,235 +13,183 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 
 /**
  * Created by Chile on 3/4/2015.
  */
 public class VirtuosoDataIdGraph {
-    //constants
-    private final String blankNodePrefix = "nodeID://";
-    private final RDFDatatype typeResource = new BaseDatatype("http://www.w3.org/1999/02/22-rdf-syntax-ns#Resource");
-    private final RDFDatatype typeBlank = new BaseDatatype("http://www.w3.org/1999/02/22-rdf-syntax-ns#Blank");
 
-    private VirtuosoDataSource dSource = new VirtuosoDataSource();
-    private Connection conn;
-    private TypeMapper typeMapper = TypeMapper.getInstance();
-    //TreeMap<DataId, NextKnownVersion>
-    private TreeMap<URI, URI> knownDataIds = new TreeMap<URI, URI>();
-    
-    private String dataIdUri = DataIdConfig.getOntologies().get("dataid").getKey();
+    private static VirtuosoDataSource dSource = new VirtuosoDataSource();
+    private static Connection conn;
+
+    private Map<String, Map<String, Map.Entry<VirtuosoDataIdBranch, Date>>> branchCache = new HashMap<String, Map<String, Map.Entry<VirtuosoDataIdBranch, Date>>>();
+    private int cacheSize = 0;
 
     public VirtuosoDataIdGraph(final String host, final int port, final String username, final String password) throws SQLException {
 
-        dSource.setPortNumber(port);
-        dSource.setServerName(host);
-        dSource.setUser(username);
-        dSource.setPassword(password);
-        conn = dSource.getConnection();
-        conn.setAutoCommit(true);
-        conn.setHoldability(ResultSet.CLOSE_CURSORS_AT_COMMIT); //for faster execution
-        //DataId.setPreamble(this.getDataIdPreamble());
-        typeMapper.registerDatatype(typeResource);
-        typeMapper.registerDatatype(typeBlank);
-    }
-
-    private boolean isHigherVersion(URI thisVers, URI prvVers) throws SQLException {
-        try (Statement stmt = conn.createStatement()) {
-            ResultSet set = stmt.executeQuery(
-                    "SPARQL \n" +
-                            "PREFIX dataid: <" + dataIdUri + ">\n" +
-                            "SELECT ?prevV \n" +
-                            "FROM <http://dataid/store>\n" +
-                            "{ <" + thisVers.stringValue() + "> a dataid:Dataste;\n" +
-                            " dataid:priviousVersion+ ?prevV.}"
-            );
-
-            while (set.next()) {
-                if(prvVers.stringValue().toLowerCase().trim().equals(set.getString(1).toLowerCase().trim()))
-                    return true;
-            }
-            return false;
+        if(conn == null) {
+            dSource.setPortNumber(port);
+            dSource.setServerName(host);
+            dSource.setUser(username);
+            dSource.setPassword(password);
+            conn = dSource.getConnection();
+            conn.setAutoCommit(true);
+            conn.setHoldability(ResultSet.CLOSE_CURSORS_AT_COMMIT); //for faster execution
         }
     }
 
-    public void enterDataId(final String dataID, final String dataIdUri, final String prevId) throws Exception {
-        //TODO find fitting exception
-        if(dataIdUri == null)
-            throw new Exception("please provide a dataIdUri");
-        if(dataID == null)
-            throw new Exception("please provide a DataId");
-        if(dataIdExits(dataIdUri)) {
-            if (isHigherVersion(knownDataIds.get(new URIImpl(dataIdUri.toLowerCase().trim())), new URIImpl(prevId.toLowerCase().trim()))) {
-                deletePreviousId(dataIdUri);
-                enterId(dataID, dataIdUri, prevId);
+    public VirtuosoDataIdBranch getMasterBranch(String uri) throws DataIdInputException {
+        String branch;
+        try(Statement stmt = conn.createStatement()){
+            ResultSet set = stmt.executeQuery("SELECT branch FROM DB.DBA.DataIdBranches WHERE uri = '" + uri + "' AND master = 1");
+
+            if(set.next()) {
+                branch = set.getString(1);
             }
             else
-                throw new Exception("a DataId with this uri does exist with a higher or equal version number");
+                throw new DataIdInputException("No DataID with this id was found");
         }
-        else
-            enterId(dataID, dataIdUri, prevId);
+        catch(SQLException e) {
+            throw new DataIdInputException(e);
+        }
+        return getDataIdBranch(uri, branch);
     }
 
-    private void deletePreviousId(final String dataIdUri) throws SQLException {
-        String sparql = "SPARQL \n" +
-                "PREFIX dataid: <" + dataIdUri + ">\n" +
-                "WITH <http://dataid/store>\n" +
-                "DELETE {?s ?p ?o}\n" +
-                "WHERE {{SELECT ?s ?p ?o (?s as ?desc)\n" +
-                "FROM <http://dataid/store>\n" +
-                "{?s a void:DatasetDescription.\n" +
-                "?s ?p ?o.\n" +
-                "}}\n" +
-                "UNION\n" +
-                "{SELECT ?s ?p ?o ?desc\n" +
-                "FROM <http://dataid/store>\n" +
-                "{?desc a void:DatasetDescription.\n" +
-                "?desc foaf:primaryTopic ?set.\n" +
-                "?set (! dataid:pp)* ?s.\n" +
-                "?s ?p ?o.}}\n" +
-                "FILTER(?desc = <" + dataIdUri + ">)}";
-
-        try (Statement stmt = conn.createStatement()) {
-            stmt.execute(sparql);
-        }
-    }
-
-    private void enterId(final String dataID, final String dataIdUri, final String prevVersion) throws SQLException {
-        try (Statement stmt = conn.createStatement()) {
-            String inserTtlp = "TTLP('" + dataID + "','', 'http://dataid/store', 17)";
-            if(stmt.execute(inserTtlp))
-                knownDataIds.put(new URIImpl(dataIdUri.trim().toLowerCase()), new URIImpl(prevVersion.toLowerCase().trim()));
-        }
-    }
-
-    public boolean dataIdExits(final String dataIdUri) throws SQLException {
-        if(knownDataIds == null)
+    public VirtuosoDataIdBranch getDataIdBranch(String uri, String bra) throws DataIdInputException {
+        VirtuosoDataIdBranch branch;
+        if(!branchCache.keySet().contains(uri)) //not!
         {
-            knownDataIds = new TreeMap<URI, URI>();
-            try (Statement stmt = conn.createStatement()) {
-                ResultSet set = stmt.executeQuery(
-                    "SPARQL \n" +
-                        "PREFIX dataid: <" + dataIdUri + ">\n" +
-                        "SELECT str(?dataIdUri) str(?prevV) \n" +
-                        "FROM <http://dataid/store>\n" +
-                        "{\n" +
-                        "?dataIdUri a void:DatasetDescription.\n" +
-                        "OPTIONAL\n" +
-                        "{?set dataid:priviousVersion ?prevV.\n" +
-                        "}}"
-                );
-
-                while (set.next()) {
-                    knownDataIds.put(new URIImpl(set.getString(1).toLowerCase().trim()), new URIImpl(set.getString(2).toLowerCase().trim()));
-                }
-            }
+            branchCache.put(uri, new HashMap<String, Map.Entry<VirtuosoDataIdBranch, Date>>());
+            branch = new VirtuosoDataIdBranch(uri, bra, conn);
+            branchCache.get(uri).put(bra, new AbstractMap.SimpleEntry<>(branch , new Date())) ;
+            cacheSize += branch.getDeltaSize();
         }
-        if(knownDataIds.keySet().contains(dataIdUri.toLowerCase().trim()))
-            return true;
         else
-            return false;
+        {
+            if(branchCache.get(uri).containsKey(bra))
+                branch =  branchCache.get(uri).get(bra).getKey();
+            else
+                branch = new VirtuosoDataIdBranch(uri, bra, conn);
+        }
+        cleanBranchCache();
+        return branch;
     }
 
-    public InternalLieteralImpl getDataIdPreamble() throws SQLException {
-        Map<String, String> preambles = new HashMap<String, String>();
-        try (Statement stmt = conn.createStatement()) {
-            ResultSet set = stmt.executeQuery("SPARQL " +
-                "PREFIX dataid: <" + dataIdUri + ">\n" +
-                    "SELECT (lang(?prea) as ?lang) (str(?prea) as ?preamble) \n" +
-                    "FROM <http://dataid/store>\n" +
-                    "{?x dataid:preamble ?prea.}");
-
-            while (set.next()) {
-                preambles.put(set.getString(1), set.getString(2));
+    private void cleanBranchCache()
+    {
+        if(cacheSize > DataIdConfig.getCacheTripleSize()) {
+            Map<String,String> remove = new HashMap<String, String>();
+            for (Map.Entry<String, Map<String, Map.Entry<VirtuosoDataIdBranch, Date>>> ddd : branchCache.entrySet()) {
+                for(Map.Entry<String, Map.Entry<VirtuosoDataIdBranch, Date>> ent : ddd.getValue().entrySet()) {
+                    if (new Date().getTime() - ent.getValue().getValue().getTime() > DataIdConfig.getBranchCacheTimeOut()) {
+                        remove.put(ddd.getKey(), ent.getKey());
+                    }
+                }
+            }
+            for (Map.Entry<String, String> rem : remove.entrySet()) {
+                cacheSize -= branchCache.get(rem.getKey()).get(rem.getValue()).getKey().getDeltaSize();
+                branchCache.get(rem.getKey()).remove(rem.getValue());
             }
         }
-        return new InternalLieteralImpl(preambles);
     }
 
-    public URI getVersion(final String dataIdUri) throws Exception {
-        if(dataIdExits(dataIdUri))
-            return knownDataIds.get(new URIImpl(dataIdUri.toLowerCase().trim()));
-        throw new Exception("DataId does not (yet) exist!");
-    }
-
-    public String getDataIdFile(final String dataIdUri, final RdfContext context) throws SQLException, RDFHandlerException, DataIdInputException {
-        //create and execute query
-        String sparql = "SPARQL \n" +
-                "PREFIX dataid: <" + dataIdUri + ">\n" +
-                "SELECT ?s ?p ?t ?o \n" +
-                "FROM <http://dataid/store>\n" +
-                "{{SELECT ?s ?p ?o (?s as ?desc)\n" +
-                "FROM <http://dataid/store>\n" +
-                "{?s a void:DatasetDescription.\n" +
-                "?s ?p ?o.\n" +
-                "}}\n" +
-                "UNION\n" +
-                "{SELECT ?s ?p ?o ?desc\n" +
-                "FROM <http://dataid/store>\n" +
-                "{?desc a void:DatasetDescription.\n" +
-                "?desc foaf:primaryTopic ?set.\n" +
-                "?set (! dataid:pp)* ?s.\n" +
-                "?s ?p ?o.}}\n" +
-                "BIND( if ( COALESCE(datatype(?o), \"kk\") != \"kk\",\n" +
-                "             datatype(?o), if(ISURI(?o), <http://www.w3.org/1999/02/22-rdf-syntax-ns#Resource>, <http://www.w3.org/1999/02/22-rdf-syntax-ns#Blank>)) as ?t)\n" +
-                "FILTER(?desc = <" + dataIdUri + ">)}";
-
-        StringBuilder sb = new StringBuilder();
-
-        Model model = Statics.createDefaultModel(StaticContent.getRdfContext());
-        try(Statement stmt = conn.createStatement()) {
-            ResultSet set = stmt.executeQuery(sparql);
-
-            ValueFactory vFactory = new org.openrdf.model.impl.ValueFactoryImpl();
-
-            while (set.next()) {
-
-                org.openrdf.model.Resource subject = null;
-                if(set.getString(1).startsWith(blankNodePrefix)) {
-                    sb.append(set.getString(1).replace(blankNodePrefix, "_:"));
-                    subject = new org.openrdf.model.impl.BNodeImpl(set.getString(1).replace(blankNodePrefix, ""));
-                }
-                else {
-                    sb.append("<" + set.getString(1) + ">");
-                    subject = new URIImpl(set.getString(1));
-                }
-
-                sb.append(" <" + set.getString(2) + "> ");
-
-                org.openrdf.model.Value object = null;
-                RDFDatatype type = typeMapper.getSafeTypeByName(set.getString(3));
-                if(type.equals(this.typeBlank)) {
-                    sb.append(set.getString(4).replace(blankNodePrefix, "_:"));
-                    object = vFactory.createBNode(set.getString(4).replace(blankNodePrefix, ""));
-                }
-                else if(type.equals(this.typeResource)) {
-                    sb.append("<" + set.getString(4) + ">");
-                    object = vFactory.createURI(set.getString(4));
-                }
-                else {
-                    sb.append("\"" + set.getString(4).replaceAll("(\\r|\\n)", "") + "\"^^<" + set.getString(3) + ">");
-                    object = vFactory.createLiteral(set.getString(4).replaceAll("(\\r|\\n)", ""), vFactory.createURI(set.getString(3)) );
-                }
-                sb.append(".\n");
-                model.add(new StatementImpl(subject, vFactory.createURI(set.getString(2)), object));
+    public VirtuosoDataIdBranch createNewDataIdBranch(String uri, String name, String parentVersion, String contact, int isMaster) throws DataIdInputException {
+        String key;
+        Integer uribra;
+        if(uriAndBranchValid(uri, name))
+        {
+            try(Statement stmt = conn.createStatement()){
+                ResultSet set = stmt.executeQuery("SELECT DB.DBA.DataIdNewBranch('" + uri + "', '" + name + "', '" + contact + "', '" + parentVersion + "', " + isMaster + ")");
+                set.next();
+                uribra = Integer.parseInt(set.getString(1).substring(set.getString(1).indexOf('#')+1));
+                key = set.getString(1).substring(0, set.getString(1).indexOf('#'));
             }
+            catch(SQLException e) {
+                throw new DataIdInputException(e);
+            }
+            VirtuosoDataIdBranch br = new VirtuosoDataIdBranch(uri, name, uribra, conn);
+            br.setKey(key);
+            return br;
         }
-        return Statics.writeTurtle(model);
+        return null;
+    }
+
+    public boolean uriAndBranchValid(final String uri, final String branchName) throws DataIdInputException {
+        try(Statement stmt = conn.createStatement()){
+            ResultSet set = stmt.executeQuery("SELECT DB.DBA.DataIdIsValidUriAndBranch('" + uri + "', '" + branchName + "')");
+            set.next();
+            return Boolean.parseBoolean(set.getString(1));
+        }
+        catch(SQLException e) {
+            throw new DataIdInputException(e);
+        }
+    }
+
+    public boolean enterDataId(final IdPart dataID) throws DataIdInputException {
+        return false;
     }
 
     public boolean enterLinkSet(IdPart part) throws SQLException, RDFHandlerException, DataIdInputException {
         try (Statement stmt = conn.createStatement()) {
             //TODO!!!
             if(part.getPartType() == IdPart.DataIdParts.Linkset) {
-                String inserTtlp = "TTLP('" + part.toTurtle() + "','', 'http://dataid/store', 17)";
+                String inserTtlp = "TTLP('" + part.toSerialization(RDFFormat.TURTLE) + "','', '" + DataIdConfig.getDataIdGraoh() + "', 17)";
                 if (stmt.execute(inserTtlp))
                     return true;
             }
         }
         return false;
+    }
+
+    private String licenseString;
+    public String getLicenses() throws DataIdInputException {
+        if(licenseString == null) {
+            try (Statement stmt = VirtuosoDataIdGraph.getConn().createStatement()) {
+                ResultSet set = stmt.executeQuery(DataIdConfig.getLicenseQuery());
+                set.next();
+                licenseString = set.getString(1);
+            } catch (SQLException e) {
+                throw new DataIdInputException(e);
+            }
+        }
+        return licenseString;
+    }
+
+    private String langString;
+    public String getLangs() throws DataIdInputException {
+        if(langString == null) {
+            try (Statement stmt = VirtuosoDataIdGraph.getConn().createStatement()) {
+                ResultSet set = stmt.executeQuery(DataIdConfig.getLanguageQuery());
+                set.next();
+                langString = set.getString(1);
+            } catch (SQLException e) {
+                throw new DataIdInputException(e);
+            }
+        }
+        return langString;
+    }
+
+    private String mimeResult;
+    public String getMimes() throws DataIdInputException {
+        if(mimeResult == null) {
+            try (Statement stmt = VirtuosoDataIdGraph.getConn().createStatement()) {
+                ResultSet set = stmt.executeQuery(DataIdConfig.getMimeQuery());
+                set.next();
+                mimeResult = set.getString(1);
+            } catch (SQLException e) {
+                throw new DataIdInputException(e);
+            }
+        }
+        return mimeResult;
+    }
+
+    public static Connection getConn() {
+        return conn;
+    }
+
+    public int getCacheSize() {
+        return cacheSize;
     }
 }

@@ -6,7 +6,6 @@ import com.hp.hpl.jena.rdf.model.impl.ResourceImpl;
 import org.aksw.dataid.errors.ErrorWarning;
 import org.aksw.dataid.errors.ErrorWarningWrapper;
 import org.aksw.rdfunit.enums.RLOGLevel;
-import org.aksw.rdfunit.tests.results.RLOGTestCaseResult;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +22,7 @@ public class JenaModelEvaluator {
         this.model = m;
     }
 
-    public List<RLOGTestCaseResult> getAllErrors()
+/*    public List<RLOGTestCaseResult> getAllErrors()
     {
         List<Statement> zw = filterModel(null, "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#level", null);
         List<RLOGTestCaseResult> ret = new ArrayList<RLOGTestCaseResult>();
@@ -79,5 +78,5 @@ public class JenaModelEvaluator {
             ew.addWarning(r);
         }
         return ew;
-    }
+    }*/
 }
