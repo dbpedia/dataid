@@ -28,7 +28,9 @@ public class DataIdValidator {
     public DataIdValidator(Map<String, Map.Entry<String, String>> ontologySources, Map<String, List<String>> exceptions) throws RDFReaderException {
 
         this.exceptions.putAll(exceptions);
-        RDFUnitTestSuiteGenerator.Builder tgBuilder = new RDFUnitTestSuiteGenerator.Builder();
+        RDFUnitTestSuiteGenerator.Builder tgBuilder = new RDFUnitTestSuiteGenerator.Builder()
+                .enableAutotests()
+                .enableManualtests();
         for(String prefix : ontologySources.keySet())
         {
             tgBuilder.addSchemaURI(prefix, ontologySources.get(prefix).getValue());
