@@ -12,7 +12,6 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> . 
-@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 
 <http://dataid.dbpedia.org/ns/core#>
     a owl:Ontology ;
@@ -50,6 +49,104 @@ dataid:Agent
         owl:onProperty foaf:name ;
         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
     ] .
+    
+  
+dataid:DataId
+	a owl:Class ;
+    rdfs:label "A description of one or more datasets. The DataID itself."@en ;
+	dct:description "A description of one or more datasets. The DataID itself."@en ;
+	rdfs:comment """DataID is a way of describing Linked-Open-Data (LOD) datasets including content, authors, licenses and provenance via RDF files.
+Making your data accessible to others is the basic idea of LOD and is your contribution to a universal data give and take.
+To create DataIDs alongside datasets is the best way of announcing a new dataset and its updates to a global community by placing 
+it in the LOD cloud.
+Validating and delivering metadata files in a uniform way, as well as providing the ability to query 
+for datasets are main objectives of the DBpedia/DataID project.
+To learn more including how to draft an new DataID, please visit http://dataid.dbpedia.org."""@en ;
+
+	rdfs:subClassOf void:DatasetDescription, prov:Entity, [
+        a owl:Class;
+        owl:unionOf(
+	        [
+		        a owl:Restriction ;
+		        owl:onClass dataid:Dataset ;
+		        owl:onProperty foaf:topic ;
+		        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+	    	]
+	        [
+		        a owl:Restriction ;
+		        owl:onClass dataid:Dataset ;
+		        owl:onProperty foaf:primaryTopic;
+		        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+	        ]
+         )
+		] ,[
+	        a owl:Restriction ;
+	        owl:onProperty foaf:topic ;
+	        owl:allValuesFrom dataid:Dataset
+        ],[
+	        a owl:Restriction ;
+	        owl:onProperty foaf:primaryTopic ;
+	        owl:allValuesFrom dataid:Dataset
+        ], [
+	        a owl:Restriction ;
+	        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	        owl:onClass dataid:AccessLevel ;
+	        owl:onProperty dataid:hasAccessLevel
+    ], [
+	        a owl:Restriction ;
+	        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	        owl:onDataRange xsd:string ;
+	        owl:onProperty dct:hasVersion
+    ], [
+	        a owl:Restriction ;
+	        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	        owl:onDataRange xsd:date ;
+	        owl:onProperty dct:issued
+    ] ,[
+	        a owl:Restriction ;
+	        owl:allValuesFrom dataid:DataId ;
+	        owl:onProperty dataid:latestVersion
+    ] ,[
+	        a owl:Restriction ;
+	        owl:allValuesFrom dataid:DataId ;
+	        owl:onProperty dataid:nextVersion
+    ] ,[
+	        a owl:Restriction ;
+	        owl:allValuesFrom dataid:DataId ;
+	        owl:onProperty dataid:previousVersion
+    ] ,[
+	        a owl:Restriction ;
+	        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	        owl:onDataRange xsd:date ;
+	        owl:onProperty dct:modified
+    ], [
+	         a owl:Restriction ;
+	         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	         owl:onClass dataid:Dataset ;
+	         owl:onProperty dataid:nextVersion
+     ] ,[
+	         a owl:Restriction ;
+	         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	         owl:onClass dataid:AccessLevel ;
+	         owl:onProperty dataid:hasAccessLevel
+     ] , [
+	        #recommanded
+	         a owl:Restriction ;
+	         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	         owl:onClass dataid:Dataset ;
+	         owl:onProperty dataid:latestVersion
+     ], [
+	        #recommanded
+	         a owl:Restriction ;
+	         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	         owl:onClass dataid:Dataset ;
+	         owl:onProperty dataid:previousVersion
+     ],[
+	        a owl:Restriction ;
+	        owl:onClass dataid:Creator ;
+	        owl:onProperty dataid:associatedAgent ;
+	        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+    ] .
 
 dataid:Dataset
     a owl:Class ;
@@ -71,6 +168,11 @@ dataid:Dataset
         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onDataRange xsd:string ;
         owl:onProperty dct:hasVersion
+    ] ,[
+	         a owl:Restriction ;
+	         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	         owl:onClass dataid:AccessLevel ;
+	         owl:onProperty dataid:hasAccessLevel
     ] ,[
         a owl:Restriction ;
         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -144,6 +246,10 @@ dataid:Dataset
         a owl:Restriction ;
         owl:allValuesFrom odrl:Policy ;
         owl:onProperty dct:license
+    ],[
+        a owl:Restriction ;
+        owl:allValuesFrom dataid:Distribution ;
+        owl:onProperty dcat:distribution
     ], [
         a owl:Restriction ;
         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -165,7 +271,12 @@ dataid:Dataset
         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onDataRange xsd:integer ;
         owl:onProperty void:documents
-    ], [ rdf:type owl:Class ;
+    ], [ 
+		rdf:type owl:Restriction ;
+		owl:onProperty void:subset ;
+	 	owl:allValuesFrom dataid:Dataset
+ 	], [ 
+		rdf:type owl:Class ;
 		owl:unionOf ( [ rdf:type owl:Restriction ;
 			owl:onProperty void:subset ;
 		 	owl:onClass dataid:Dataset ;
@@ -261,6 +372,11 @@ dataid:Distribution
             )
         ] ;
         owl:onProperty dataid:checksum
+    ] ,[
+	         a owl:Restriction ;
+	         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	         owl:onClass dataid:AccessLevel ;
+	         owl:onProperty dataid:hasAccessLevel
     ], [
         a owl:Restriction ;
         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -396,6 +512,11 @@ dataid:Linkset
         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onClass dataid:AccessLevel ;
         owl:onProperty dataid:hasAccessLevel
+    ] ,[
+	         a owl:Restriction ;
+	         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	         owl:onClass dataid:AccessLevel ;
+	         owl:onProperty dataid:hasAccessLevel
     ],[
         a owl:Restriction ;
         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -513,91 +634,7 @@ dataid:latestVersion
     rdfs:domain prov:Entity ;
     rdfs:label "latest linkset version"@en ;
     rdfs:range prov:Entity .
-    
-dataid:DataId
-	a owl:Class ;
-    rdfs:label "A description of one or more datasets. The DataID itself."@en ;
-	dct:description "A description of one or more datasets. The DataID itself."@en ;
-	rdfs:comment """DataID is a way of describing Linked-Open-Data (LOD) datasets including content, authors, licenses and provenance via RDF files.
-Making your data accessible to others is the basic idea of LOD and is your contribution to a universal data give and take.
-To create DataIDs alongside datasets is the best way of announcing a new dataset and its updates to a global community by placing 
-it in the LOD cloud.
-Validating and delivering metadata files in a uniform way, as well as providing the ability to query 
-for datasets are main objectives of the DBpedia/DataID project.
-To learn more including how to draft an new DataID, please visit http://dataid.dbpedia.org."""@en ;
-
-	rdfs:subClassOf void:DatasetDescription, prov:Entity, [
-        a owl:Class;
-        owl:unionOf(
-	        [
-		        a owl:Restriction ;
-		        owl:onClass dataid:Dataset ;
-		        owl:onProperty foaf:topic ;
-		        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
-	    	]
-	        [
-		        a owl:Restriction ;
-		        owl:onClass dataid:Dataset ;
-		        owl:onProperty foaf:primaryTopic;
-		        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
-	        ]
-         )
-    ] ,[
-        a owl:Restriction ;
-        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onClass dataid:AccessLevel ;
-        owl:onProperty dataid:hasAccessLevel
-    ], [
-        a owl:Restriction ;
-        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onDataRange xsd:string ;
-        owl:onProperty dct:hasVersion
-    ], [
-        a owl:Restriction ;
-        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onDataRange xsd:date ;
-        owl:onProperty dct:issued
-    ] ,[
-        a owl:Restriction ;
-        owl:allValuesFrom dataid:DataId ;
-        owl:onProperty dataid:latestVersion
-    ] ,[
-        a owl:Restriction ;
-        owl:allValuesFrom dataid:DataId ;
-        owl:onProperty dataid:nextVersion
-    ] ,[
-        a owl:Restriction ;
-        owl:allValuesFrom dataid:DataId ;
-        owl:onProperty dataid:previousVersion
-    ] ,[
-        a owl:Restriction ;
-        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onDataRange xsd:date ;
-        owl:onProperty dct:modified
-    ], [
-         a owl:Restriction ;
-         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-         owl:onClass dataid:Dataset ;
-         owl:onProperty dataid:nextVersion
-     ] , [
-        #recommanded
-         a owl:Restriction ;
-         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-         owl:onClass dataid:Dataset ;
-         owl:onProperty dataid:latestVersion
-     ], [
-        #recommanded
-         a owl:Restriction ;
-         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-         owl:onClass dataid:Dataset ;
-         owl:onProperty dataid:previousVersion
-     ],[
-        a owl:Restriction ;
-        owl:onClass dataid:Creator ;
-        owl:onProperty dataid:associatedAgent ;
-        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
-    ] .
-
+  
 dataid:AuthorityEntityContext
 	a owl:Class ;
     rdfs:label "todo"@en ;
@@ -605,7 +642,30 @@ dataid:AuthorityEntityContext
 	rdfs:comment """todo"""@en ;
 
 	rdfs:subClassOf [
-		
+        a owl:Restriction ;
+        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass prov:Entity ;
+        owl:onProperty dataid:authorizedFor
+	], [
+        a owl:Restriction ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass dataid:AgentRole ;
+        owl:onProperty dataid:authorityAgentRole
+	], [
+        a owl:Restriction ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass dataid:Agent ;
+        owl:onProperty dataid:authorizedAgent
+	], [
+        a owl:Restriction ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onDataRange xsd:boolean ;
+        owl:onProperty dataid:isInheritable
+	], [
+        a owl:Restriction ;
+        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onDataRange xsd:date ;
+        owl:onProperty dataid:validUnitl
 	].
 	
 dataid:AgentRole
@@ -613,65 +673,74 @@ dataid:AgentRole
     rdfs:label "todo"@en ;
 	dct:description "todo"@en ;
 	rdfs:comment """todo"""@en ;
-
 	rdfs:subClassOf [
-		
-	].
-
-dataid:Contact
-    a owl:Class ;
-    rdfs:comment "Contact agent. An agent that can be contacted for general requests about the resource."@en ;
-    rdfs:label "Contact"@en ;
-    rdfs:subClassOf dataid:AgentRole .
-
-dataid:Contributor
-    a owl:Class ;
-    rdfs:comment "Contributor to the resource. An agent that was involved in creating or maintaining the resource but does not have the main part in this activity."@en ;
-    rdfs:label "Contributor"@en ;
-    rdfs:subClassOf dataid:AgentRole .
-
-dataid:Creator
-    a owl:Class ;
-    rdfs:comment "Creator of the resource. An agent that is credited with a main part in the initial creation of the resource."@en ;
-    rdfs:label "Creator"@en ;
-    rdfs:subClassOf dataid:AgentRole .
-	
-dataid:Maintainer
-    a owl:Class ;
-    rdfs:comment "Maintainer of the dataset. An agent that ensures the technical correctness, accessibility and up-to-dateness of a dataset."@en ;
-    rdfs:label "Maintainer"@en ;
-    rdfs:subClassOf dataid:AgentRole .
-
-dataid:Publisher
-    a owl:Class ;
-    rdfs:comment "Publisher of the dataset. An agent that makes the dataset accessible online on a server or repository without necessarily being involved in its creation."@en ;
-    rdfs:label "Publisher"@en ;
-    rdfs:subClassOf dataid:AgentRole .
-    
-dataid:Guest
-    a owl:Class ;
-    rdfs:comment "A visitor/anonymous agent has only read rights on public and semi-private documents"@en ;
-    rdfs:label "Publisher"@en ;
-    rdfs:subClassOf dataid:AgentRole .
+        a owl:Restriction ;
+        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass dataid:AuthorizedAction ;
+        owl:onProperty dataid:allowsFor
+    ];
+	owl:equivalentClass [ 
+		a owl:Class ;
+		owl:oneOf ( 
+			dataid:Guest
+			dataid:Creator
+			dataid:Contributor
+			dataid:Maintainer
+			dataid:Publisher
+			dataid:Contact
+		)
+	] .
     
 dataid:AuthorizedAction
 	a owl:Class ;
     rdfs:label "todo"@en ;
 	dct:description "AgentRoles provide agents with the ability to execute certain actions, which are defines by the instances of this concept."@en ;
-	rdfs:comment """todo"""@en ;
-
-	rdfs:subClassOf [
+	rdfs:comment """todo"""@en .
+	
+dataid:ResponsibleAction
+	a owl:Class ;
+    rdfs:label "responsible actions"@en ;
+	dct:description "AgentRoles provide access rights as well as responsibilities an agent has to attend to in order to fullfill this role."@en ;
+	rdfs:comment """Responsible actions should describe actions pertaining to responsibilities an agent is supposed to do"""@en ;
+	rdfs:subClassOf dataid:AuthorizedAction;
+	owl:equivalentClass [ 
+		a owl:Class ;
+		owl:oneOf ( 
+			dataid:ResponseToContact
+			dataid:AgentSupervision
+			dataid:UpdateDataId
+			dataid:PublishingDecision
+			dataid:ResponseToLifeCycleEvent
+		)
+	] .
+	
 		
-	].
+dataid:EntitledAction
+	a owl:Class ;
+    rdfs:label "entitled action"@en ;
+	dct:description "AgentRoles provide access and modification rights to an agent."@en ;
+	rdfs:comment """Entitled actions should comprise actions pertaining to access/modification restrictions."""@en ;
+	rdfs:subClassOf dataid:AuthorizedAction;
+	owl:equivalentClass [ 
+		a owl:Class ;
+		owl:oneOf ( 
+			dataid:ReadContent
+			dataid:ModifyContent
+			dataid:DeleteContent
+			dataid:ModifyAuthorizedAgents
+			dataid:ModifyAccessLevel
+			dataid:ModifyAgentRoles
+		)
+	] .
 	
 dataid:AccessLevel
 	a owl:Class;
 	owl:equivalentClass [ 
 		a owl:Class ;
 		owl:oneOf ( 
-			dataid:privateAccess
-			dataid:semiPrivateAccess
-			dataid:publicAccess 
+			dataid:PrivateAccess
+			dataid:SemiPrivateAccess
+			dataid:PublicAccess 
 		)
 	] .
 
@@ -710,19 +779,173 @@ dataid:allowsFor
     rdfs:label "allowes for"@en ;
     rdfs:range dataid:AuthorizedAction .
     
-################# Instanzen ####################
-dataid:privateAccess 
+################# Instances ####################
+dataid:PrivateAccess 
 	a dataid:AccessLevel;
 	rdfs:label "private"@en;
 	rdfs:comment "restricted access only to authorized agents"@en .
 	
-dataid:semiPrivateAccess 
+dataid:SemiPrivateAccess 
 	a dataid:AccessLevel;
 	rdfs:label "semi-private"@en;
 	rdfs:comment "read-only access to any agent, restiricted modification rights"@en .
 	
-dataid:publicAccess 
+dataid:PublicAccess 
 	a dataid:AccessLevel;
 	rdfs:label "public"@en;
 	rdfs:comment "no restriction on read and modification rights"@en .
 	
+	
+dataid:ResponseToContact
+	a dataid:ResponsibleAction;
+	rdfs:label "response to contact attempt"@en .
+	
+dataid:ResponseToLifeCycleEvent
+	a dataid:ResponsibleAction;
+	rdfs:label "response to life-cycle event"@en .
+	
+dataid:PublishingDecision
+	a dataid:ResponsibleAction;
+	rdfs:label "publishing decision"@en .
+	
+dataid:UpdateDataId
+	a dataid:ResponsibleAction;
+	rdfs:label "update DataId"@en .
+	
+dataid:AgentSupervision
+	a dataid:ResponsibleAction;
+	rdfs:label "agent supervision"@en .
+	
+dataid:ReadDataIdPublicAccess
+	a dataid:EntitledAction;
+	rdfs:label "read content right"@en .
+	
+dataid:ModifyContentPublicAccess
+	a dataid:EntitledAction;
+	rdfs:label "modify content right"@en .
+	
+dataid:DeleteContentPublicAccess
+	a dataid:EntitledAction;
+	rdfs:label "delete content right"@en .
+		
+dataid:ReadContentSemiPrivateAccess
+	a dataid:EntitledAction;
+	rdfs:label "read content right"@en .
+	
+dataid:ModifyContentSemiPrivateAccess
+	a dataid:EntitledAction;
+	rdfs:label "modify content right"@en .
+	
+dataid:DeleteContentSemiPrivateAccess
+	a dataid:EntitledAction;
+	rdfs:label "delete content right"@en .
+		
+dataid:ReadContentPrivateAccess
+	a dataid:EntitledAction;
+	rdfs:label "read content right"@en .
+	
+dataid:ModifyContentPrivateAccess
+	a dataid:EntitledAction;
+	rdfs:label "modify content right"@en .
+	
+dataid:DeleteContentPrivateAccess
+	a dataid:EntitledAction;
+	rdfs:label "delete content right"@en .
+	
+dataid:ModifyAuthorizedAgents
+	a dataid:EntitledAction;
+	rdfs:label "modify authorized agents"@en .
+	
+dataid:ModifyAccessLevel
+	a dataid:EntitledAction;
+	rdfs:label "modify entity access level"@en .
+	
+dataid:ModifyAgentRoles
+	a dataid:EntitledAction;
+	rdfs:label "modify agent roles"@en .
+		
+dataid:Guest
+	a dataid:AgentRole;
+	dataid:allowsFor dataid:ReadDataIdPublicAccess;
+	dataid:allowsFor dataid:ModifyDataIdPublicAccess;
+	dataid:allowsFor dataid:ReadDataIdSemiPrivateAccess;
+    rdfs:comment "A visitor/anonymous agent has only read rights on public and semi-private documents"@en ;
+	rdfs:label "guest"@en .
+	
+dataid:Creator
+	a dataid:AgentRole;
+	dataid:allowsFor dataid:ReadDataIdPublicAccess;
+	dataid:allowsFor dataid:ModifyDataIdPublicAccess;
+	dataid:allowsFor dataid:ReadDataIdSemiPrivateAccess;
+	dataid:allowsFor dataid:ModifyDataIdSemiPrivateAccess;
+	dataid:allowsFor dataid:ReadDataIdPrivateAccess;
+	dataid:allowsFor dataid:ModifyDataIdPrivateAccess;
+	dataid:allowsFor dataid:DeleteDataIdPrivateAccess;
+	dataid:allowsFor dataid:ModifyAuthorizedAgents;
+	dataid:allowsFor dataid:ResponseToLifeCycleEvent;
+	dataid:allowsFor dataid:ResponseToContact;
+	dataid:allowsFor dataid:UpdateDataId;
+	dataid:allowsFor dataid:AgentSupervision;
+	dataid:allowsFor dataid:PublishingDecision;
+	dataid:allowsFor dataid:ModifyAccessLevel;
+	dataid:allowsFor dataid:DeleteDataIdSemiPrivateAccess;
+	dataid:allowsFor dataid:DeleteDataIdPublicAccess;
+	dataid:allowsFor dataid:ModifyAgentRoles;
+    rdfs:comment "Creator of the resource. An agent that is credited with a main part in the initial creation of the resource."@en ;
+	rdfs:label "creator"@en .
+	
+dataid:Maintainer
+	a dataid:AgentRole;
+	dataid:allowsFor dataid:ReadDataIdPublicAccess;
+	dataid:allowsFor dataid:ModifyDataIdPublicAccess;
+	dataid:allowsFor dataid:ReadDataIdSemiPrivateAccess;
+	dataid:allowsFor dataid:ModifyDataIdSemiPrivateAccess;
+	dataid:allowsFor dataid:ReadDataIdPrivateAccess;
+	dataid:allowsFor dataid:ModifyDataIdPrivateAccess;
+	dataid:allowsFor dataid:DeleteDataIdPrivateAccess;
+	dataid:allowsFor dataid:ModifyAuthorizedAgents;
+	dataid:allowsFor dataid:ResponseToLifeCycleEvent;
+	dataid:allowsFor dataid:ResponseToContact;
+	dataid:allowsFor dataid:UpdateDataId;
+    rdfs:comment "Maintainer of the dataset. An agent that ensures the technical correctness, accessibility and up-to-dateness of a dataset."@en ;
+	rdfs:label "maintainer"@en .
+	
+dataid:Contributor
+	a dataid:AgentRole;
+	dataid:allowsFor dataid:ReadDataIdPublicAccess;
+	dataid:allowsFor dataid:ModifyDataIdPublicAccess;
+	dataid:allowsFor dataid:ReadDataIdSemiPrivateAccess;
+	rdfs:comment "Contributor to the resource. An agent that was involved in creating or maintaining the resource but does not have the main part in this activity."@en ;
+	rdfs:label "contributor"@en .
+	
+dataid:Contact
+	a dataid:AgentRole;
+	dataid:allowsFor dataid:ReadDataIdPublicAccess;
+	dataid:allowsFor dataid:ModifyDataIdPublicAccess;
+	dataid:allowsFor dataid:ReadDataIdSemiPrivateAccess;
+	dataid:allowsFor dataid:ModifyDataIdSemiPrivateAccess;
+	dataid:allowsFor dataid:ReadDataIdPrivateAccess;
+	dataid:allowsFor dataid:ResponseToContact;
+    rdfs:comment "Contact agent. An agent that can be contacted for general requests about the resource."@en ;
+	rdfs:label "contact"@en .
+	
+dataid:Publisher
+	a dataid:AgentRole;
+	dataid:allowsFor dataid:ReadDataIdPublicAccess;
+	dataid:allowsFor dataid:ModifyDataIdPublicAccess;
+	dataid:allowsFor dataid:ReadDataIdSemiPrivateAccess;
+	dataid:allowsFor dataid:ModifyDataIdSemiPrivateAccess;
+	dataid:allowsFor dataid:ReadDataIdPrivateAccess;
+	dataid:allowsFor dataid:ModifyDataIdPrivateAccess;
+	dataid:allowsFor dataid:DeleteDataIdPrivateAccess;
+	dataid:allowsFor dataid:ModifyAuthorizedAgents;
+	dataid:allowsFor dataid:ResponseToLifeCycleEvent;
+	dataid:allowsFor dataid:ResponseToContact;
+	dataid:allowsFor dataid:UpdateDataId;
+	dataid:allowsFor dataid:AgentSupervision;
+	dataid:allowsFor dataid:PublishingDecision;
+	dataid:allowsFor dataid:ModifyAccessLevel;
+	dataid:allowsFor dataid:DeleteDataIdSemiPrivateAccess;
+	dataid:allowsFor dataid:DeleteDataIdPublicAccess;
+    rdfs:comment "Publisher of the dataset. An agent that makes the dataset accessible online on a server or repository without necessarily being involved in its creation."@en ;
+	rdfs:label "publisher"@en .
