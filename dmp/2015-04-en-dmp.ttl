@@ -1,0 +1,2346 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://schema.dbpedia.org/dataid#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dmp: <http://dataid.dbpedia.org/ns/dmp#> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl>
+ a void:DatasetDescription;
+ foaf:primaryTopic <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#dataset> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#dataset>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 English dumps dataset"^^xsd:string ;
+ rdfs:label "DBpedia_2015-04_en"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.oclc.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "06-22-2015"^^xsd:date ;
+ dc:description """DBpedia is a crowd-sourced community effort to extract structured information from Wikipedia and make this information available on the Web. DBpedia allows you to ask sophisticated queries against Wikipedia, and to link the different data sets on the Web to Wikipedia data. We hope that this work will make it easier for the huge amount of information in Wikipedia to be used in some new interesting ways. Furthermore, it might inspire new mechanisms for navigating, linking, and improving the encyclopedia itself."""^^xsd:string ;
+ void:vocabulary <http://downloads.dbpedia.org/2015-04/dbpedia_201504.owl> ;
+ void:subset  <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#anchor-text_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#article-categories_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#article-templates_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#category-labels_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#disambiguations-unredirected_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#disambiguations_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#external-links_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#flickr-wrappr-links_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#freebase-links_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#genders_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#geo-coordinates_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#geonames_links_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#homepages_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#images_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#infobox-properties-unredirected_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#infobox-properties_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#infobox-property-definitions_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#instance-types-transitive_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#instance-types_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#instance_types_dbtax-dbo>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#instance_types_dbtax_ext>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#instance_types_sdtyped-dbo_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#interlanguage-links_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#iri-same-as-uri_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#labels_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#long-abstracts_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#mappingbased-properties-errors-unredirected_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#mappingbased-properties-unredirected_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#mappingbased-properties_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#out-degree_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#page-ids_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#page-length_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#page-links-unredirected_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#page-links_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#persondata-unredirected_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#persondata_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#pnd_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#redirects_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#revision-ids_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#revision-uris_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#short-abstracts_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#skos-categories_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#specific-mappingbased-properties_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#template-parameters_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#topical-concepts-unredirected_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#topical-concepts_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#transitive-redirects_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#wikidata-links-chapters_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#wikidata-links_en>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#wikipedia-links_en> ;
+ dmp:usefulness """DBpedia is an extract of the global knowledge compendium Wikipedia. Therefore it can serve many purposes, especially when general information about random subjects are of interest. Links to other datasets or web sites may provide additional context.""";
+ dmp:similarData """Similar data can be found in datasets like Freebase (https://freebase.com), Wikidata (https://wikidata.org), Yago (http://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/yago-naga/yago//) or OpenCyc (http://opencyc.org).""";
+ dmp:reuseAndIntegration """DBpedia is open data project. It can be reused and integrated in other datasets by anybody.""";
+ dmp:additionalSoftware """No additional Software is necessary for reuse and integration purposes.""";
+ dmp:growth """Wikipedia and therefor DBpedia is experiencing an ongoing growth by a rate of approximately 6M statements per year (en version).""";
+ dmp:preservation """Preservation and a continuous availability of all datasets (in all versions) is a key aspect of the DBpedia association.""";
+ dmp:openness """There are no restrictions to the openness of all DBpedia data.""". 
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#anchor-text_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 anchor-text en dump dataset"^^xsd:string ;
+ rdfs:label "anchor-text_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/anchor-text_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/anchor-text_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/anchor-text_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/anchor-text_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/anchor-text_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "anchor-text en" ;
+  dc:description "DBpedia dumpfile: anchor-text_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/anchor-text_en.nq.gz> ;
+  dcat:byteSize "-1220592492"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/anchor-text_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "anchor-text en" ;
+  dc:description "DBpedia dumpfile: anchor-text_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/anchor-text_en.nt.gz> ;
+  dcat:byteSize "2116172673"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/anchor-text_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "anchor-text en" ;
+  dc:description "DBpedia dumpfile: anchor-text_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/anchor-text_en.tql.gz> ;
+  dcat:byteSize "-1245247231"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/anchor-text_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "anchor-text en" ;
+  dc:description "DBpedia dumpfile: anchor-text_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/anchor-text_en.ttl.gz> ;
+  dcat:byteSize "2094615569"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#article-categories_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 article-categories en dump dataset"^^xsd:string ;
+ rdfs:label "article-categories_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/article-categories_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/article-categories_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/article-categories_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/article-categories_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/article-categories_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "article-categories en" ;
+  dc:description "DBpedia dumpfile: article-categories_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/article-categories_en.nq.gz> ;
+  dcat:byteSize "495218490"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/article-categories_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "article-categories en" ;
+  dc:description "DBpedia dumpfile: article-categories_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/article-categories_en.nt.gz> ;
+  dcat:byteSize "276551898"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/article-categories_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "article-categories en" ;
+  dc:description "DBpedia dumpfile: article-categories_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/article-categories_en.tql.gz> ;
+  dcat:byteSize "492723735"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/article-categories_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "article-categories en" ;
+  dc:description "DBpedia dumpfile: article-categories_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/article-categories_en.ttl.gz> ;
+  dcat:byteSize "276288656"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#article-templates_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 article-templates en dump dataset"^^xsd:string ;
+ rdfs:label "article-templates_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/article-templates_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/article-templates_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/article-templates_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/article-templates_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/article-templates_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "article-templates en" ;
+  dc:description "DBpedia dumpfile: article-templates_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/article-templates_en.nq.gz> ;
+  dcat:byteSize "619244386"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/article-templates_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "article-templates en" ;
+  dc:description "DBpedia dumpfile: article-templates_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/article-templates_en.nt.gz> ;
+  dcat:byteSize "309671480"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/article-templates_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "article-templates en" ;
+  dc:description "DBpedia dumpfile: article-templates_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/article-templates_en.tql.gz> ;
+  dcat:byteSize "615359394"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/article-templates_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "article-templates en" ;
+  dc:description "DBpedia dumpfile: article-templates_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/article-templates_en.ttl.gz> ;
+  dcat:byteSize "309066030"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#category-labels_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 category-labels en dump dataset"^^xsd:string ;
+ rdfs:label "category-labels_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/category-labels_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/category-labels_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/category-labels_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/category-labels_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/category-labels_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "category-labels en" ;
+  dc:description "DBpedia dumpfile: category-labels_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/category-labels_en.nq.gz> ;
+  dcat:byteSize "33867557"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/category-labels_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "category-labels en" ;
+  dc:description "DBpedia dumpfile: category-labels_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/category-labels_en.nt.gz> ;
+  dcat:byteSize "20343887"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/category-labels_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "category-labels en" ;
+  dc:description "DBpedia dumpfile: category-labels_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/category-labels_en.tql.gz> ;
+  dcat:byteSize "33673042"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/category-labels_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "category-labels en" ;
+  dc:description "DBpedia dumpfile: category-labels_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/category-labels_en.ttl.gz> ;
+  dcat:byteSize "20196633"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#disambiguations-unredirected_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 disambiguations-unredirected en dump dataset"^^xsd:string ;
+ rdfs:label "disambiguations-unredirected_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations-unredirected_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations-unredirected_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations-unredirected_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations-unredirected_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations-unredirected_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "disambiguations-unredirected en" ;
+  dc:description "DBpedia dumpfile: disambiguations-unredirected_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations-unredirected_en.nq.gz> ;
+  dcat:byteSize "27201347"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations-unredirected_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "disambiguations-unredirected en" ;
+  dc:description "DBpedia dumpfile: disambiguations-unredirected_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations-unredirected_en.nt.gz> ;
+  dcat:byteSize "15768950"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations-unredirected_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "disambiguations-unredirected en" ;
+  dc:description "DBpedia dumpfile: disambiguations-unredirected_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations-unredirected_en.tql.gz> ;
+  dcat:byteSize "27106258"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations-unredirected_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "disambiguations-unredirected en" ;
+  dc:description "DBpedia dumpfile: disambiguations-unredirected_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations-unredirected_en.ttl.gz> ;
+  dcat:byteSize "15732634"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#disambiguations_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 disambiguations en dump dataset"^^xsd:string ;
+ rdfs:label "disambiguations_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "disambiguations en" ;
+  dc:description "DBpedia dumpfile: disambiguations_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations_en.nq.gz> ;
+  dcat:byteSize "27619272"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "disambiguations en" ;
+  dc:description "DBpedia dumpfile: disambiguations_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations_en.nt.gz> ;
+  dcat:byteSize "16164285"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "disambiguations en" ;
+  dc:description "DBpedia dumpfile: disambiguations_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations_en.tql.gz> ;
+  dcat:byteSize "27521986"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "disambiguations en" ;
+  dc:description "DBpedia dumpfile: disambiguations_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/disambiguations_en.ttl.gz> ;
+  dcat:byteSize "16127120"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#external-links_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 external-links en dump dataset"^^xsd:string ;
+ rdfs:label "external-links_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/external-links_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/external-links_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/external-links_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/external-links_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/external-links_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "external-links en" ;
+  dc:description "DBpedia dumpfile: external-links_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/external-links_en.nq.gz> ;
+  dcat:byteSize "272564075"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/external-links_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "external-links en" ;
+  dc:description "DBpedia dumpfile: external-links_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/external-links_en.nt.gz> ;
+  dcat:byteSize "185413828"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/external-links_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "external-links en" ;
+  dc:description "DBpedia dumpfile: external-links_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/external-links_en.tql.gz> ;
+  dcat:byteSize "271614715"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/external-links_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "external-links en" ;
+  dc:description "DBpedia dumpfile: external-links_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/external-links_en.ttl.gz> ;
+  dcat:byteSize "185510342"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#flickr-wrappr-links_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 flickr-wrappr-links en dump dataset"^^xsd:string ;
+ rdfs:label "flickr-wrappr-links_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/flickr-wrappr-links_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/flickr-wrappr-links_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/flickr-wrappr-links_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/flickr-wrappr-links_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/flickr-wrappr-links_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "flickr-wrappr-links en" ;
+  dc:description "DBpedia dumpfile: flickr-wrappr-links_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/flickr-wrappr-links_en.nq.gz> ;
+  dcat:byteSize "132286611"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/flickr-wrappr-links_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "flickr-wrappr-links en" ;
+  dc:description "DBpedia dumpfile: flickr-wrappr-links_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/flickr-wrappr-links_en.nt.gz> ;
+  dcat:byteSize "76730698"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/flickr-wrappr-links_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "flickr-wrappr-links en" ;
+  dc:description "DBpedia dumpfile: flickr-wrappr-links_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/flickr-wrappr-links_en.tql.gz> ;
+  dcat:byteSize "130462767"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/flickr-wrappr-links_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "flickr-wrappr-links en" ;
+  dc:description "DBpedia dumpfile: flickr-wrappr-links_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/flickr-wrappr-links_en.ttl.gz> ;
+  dcat:byteSize "74728169"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#freebase-links_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 freebase-links en dump dataset"^^xsd:string ;
+ rdfs:label "freebase-links_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "06-18-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/freebase-links_en.nt.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/freebase-links_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "freebase-links en" ;
+  dc:description "DBpedia dumpfile: freebase-links_en.nt.gz" ;
+  dc:modified "06-18-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/freebase-links_en.nt.gz> ;
+  dcat:byteSize "128805625"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#genders_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 genders en dump dataset"^^xsd:string ;
+ rdfs:label "genders_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/genders_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/genders_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/genders_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/genders_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/genders_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "genders en" ;
+  dc:description "DBpedia dumpfile: genders_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/genders_en.nq.gz> ;
+  dcat:byteSize "1379005"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/genders_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "genders en" ;
+  dc:description "DBpedia dumpfile: genders_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/genders_en.nt.gz> ;
+  dcat:byteSize "645608"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/genders_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "genders en" ;
+  dc:description "DBpedia dumpfile: genders_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/genders_en.tql.gz> ;
+  dcat:byteSize "1328712"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/genders_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "genders en" ;
+  dc:description "DBpedia dumpfile: genders_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/genders_en.ttl.gz> ;
+  dcat:byteSize "641579"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#geo-coordinates_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 geo-coordinates en dump dataset"^^xsd:string ;
+ rdfs:label "geo-coordinates_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/geo-coordinates_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/geo-coordinates_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/geo-coordinates_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/geo-coordinates_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/geo-coordinates_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "geo-coordinates en" ;
+  dc:description "DBpedia dumpfile: geo-coordinates_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/geo-coordinates_en.nq.gz> ;
+  dcat:byteSize "36822"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/geo-coordinates_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "geo-coordinates en" ;
+  dc:description "DBpedia dumpfile: geo-coordinates_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/geo-coordinates_en.nt.gz> ;
+  dcat:byteSize "27518"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/geo-coordinates_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "geo-coordinates en" ;
+  dc:description "DBpedia dumpfile: geo-coordinates_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/geo-coordinates_en.tql.gz> ;
+  dcat:byteSize "36647"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/geo-coordinates_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "geo-coordinates en" ;
+  dc:description "DBpedia dumpfile: geo-coordinates_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/geo-coordinates_en.ttl.gz> ;
+  dcat:byteSize "27520"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#geonames_links_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 geonames links en dump dataset"^^xsd:string ;
+ rdfs:label "geonames_links_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "06-19-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/geonames_links_en.nt.bz2>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/geonames_links_en.nt.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/geonames_links_en.nt.bz2>
+  a dcat:Distribution ;
+  dc:title "geonames links en" ;
+  dc:description "DBpedia dumpfile: geonames_links_en.nt.bz2" ;
+  dc:modified "06-19-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/geonames_links_en.nt.bz2> ;
+  dcat:byteSize "3508531"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/geonames_links_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "geonames links en" ;
+  dc:description "DBpedia dumpfile: geonames_links_en.nt.gz" ;
+  dc:modified "06-19-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/geonames_links_en.nt.gz> ;
+  dcat:byteSize "4987367"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#homepages_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 homepages en dump dataset"^^xsd:string ;
+ rdfs:label "homepages_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/homepages_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/homepages_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/homepages_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/homepages_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/homepages_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "homepages en" ;
+  dc:description "DBpedia dumpfile: homepages_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/homepages_en.nq.gz> ;
+  dcat:byteSize "24811284"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/homepages_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "homepages en" ;
+  dc:description "DBpedia dumpfile: homepages_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/homepages_en.nt.gz> ;
+  dcat:byteSize "14754017"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/homepages_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "homepages en" ;
+  dc:description "DBpedia dumpfile: homepages_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/homepages_en.tql.gz> ;
+  dcat:byteSize "24614672"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/homepages_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "homepages en" ;
+  dc:description "DBpedia dumpfile: homepages_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/homepages_en.ttl.gz> ;
+  dcat:byteSize "14758612"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#images_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 images en dump dataset"^^xsd:string ;
+ rdfs:label "images_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/images_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/images_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/images_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/images_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/images_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "images en" ;
+  dc:description "DBpedia dumpfile: images_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/images_en.nq.gz> ;
+  dcat:byteSize "132912018"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/images_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "images en" ;
+  dc:description "DBpedia dumpfile: images_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/images_en.nt.gz> ;
+  dcat:byteSize "96355287"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/images_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "images en" ;
+  dc:description "DBpedia dumpfile: images_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/images_en.tql.gz> ;
+  dcat:byteSize "131945996"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/images_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "images en" ;
+  dc:description "DBpedia dumpfile: images_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/images_en.ttl.gz> ;
+  dcat:byteSize "95831729"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#infobox-properties-unredirected_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 infobox-properties-unredirected en dump dataset"^^xsd:string ;
+ rdfs:label "infobox-properties-unredirected_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties-unredirected_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties-unredirected_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties-unredirected_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties-unredirected_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties-unredirected_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "infobox-properties-unredirected en" ;
+  dc:description "DBpedia dumpfile: infobox-properties-unredirected_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties-unredirected_en.nq.gz> ;
+  dcat:byteSize "1384181406"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties-unredirected_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "infobox-properties-unredirected en" ;
+  dc:description "DBpedia dumpfile: infobox-properties-unredirected_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties-unredirected_en.nt.gz> ;
+  dcat:byteSize "930269572"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties-unredirected_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "infobox-properties-unredirected en" ;
+  dc:description "DBpedia dumpfile: infobox-properties-unredirected_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties-unredirected_en.tql.gz> ;
+  dcat:byteSize "1380974252"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties-unredirected_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "infobox-properties-unredirected en" ;
+  dc:description "DBpedia dumpfile: infobox-properties-unredirected_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties-unredirected_en.ttl.gz> ;
+  dcat:byteSize "928342636"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#infobox-properties_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 infobox-properties en dump dataset"^^xsd:string ;
+ rdfs:label "infobox-properties_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "infobox-properties en" ;
+  dc:description "DBpedia dumpfile: infobox-properties_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties_en.nq.gz> ;
+  dcat:byteSize "1384596745"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "infobox-properties en" ;
+  dc:description "DBpedia dumpfile: infobox-properties_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties_en.nt.gz> ;
+  dcat:byteSize "930498487"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "infobox-properties en" ;
+  dc:description "DBpedia dumpfile: infobox-properties_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties_en.tql.gz> ;
+  dcat:byteSize "1381336532"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "infobox-properties en" ;
+  dc:description "DBpedia dumpfile: infobox-properties_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-properties_en.ttl.gz> ;
+  dcat:byteSize "928504794"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#infobox-property-definitions_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 infobox-property-definitions en dump dataset"^^xsd:string ;
+ rdfs:label "infobox-property-definitions_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-property-definitions_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-property-definitions_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-property-definitions_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-property-definitions_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-property-definitions_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "infobox-property-definitions en" ;
+  dc:description "DBpedia dumpfile: infobox-property-definitions_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-property-definitions_en.nq.gz> ;
+  dcat:byteSize "2247995"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-property-definitions_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "infobox-property-definitions en" ;
+  dc:description "DBpedia dumpfile: infobox-property-definitions_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-property-definitions_en.nt.gz> ;
+  dcat:byteSize "1047466"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-property-definitions_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "infobox-property-definitions en" ;
+  dc:description "DBpedia dumpfile: infobox-property-definitions_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-property-definitions_en.tql.gz> ;
+  dcat:byteSize "2246407"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-property-definitions_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "infobox-property-definitions en" ;
+  dc:description "DBpedia dumpfile: infobox-property-definitions_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/infobox-property-definitions_en.ttl.gz> ;
+  dcat:byteSize "1044181"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#instance-types-transitive_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 instance-types-transitive en dump dataset"^^xsd:string ;
+ rdfs:label "instance-types-transitive_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types-transitive_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types-transitive_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types-transitive_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types-transitive_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types-transitive_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "instance-types-transitive en" ;
+  dc:description "DBpedia dumpfile: instance-types-transitive_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types-transitive_en.nq.gz> ;
+  dcat:byteSize "239141916"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types-transitive_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "instance-types-transitive en" ;
+  dc:description "DBpedia dumpfile: instance-types-transitive_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types-transitive_en.nt.gz> ;
+  dcat:byteSize "175772707"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types-transitive_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "instance-types-transitive en" ;
+  dc:description "DBpedia dumpfile: instance-types-transitive_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types-transitive_en.tql.gz> ;
+  dcat:byteSize "236909793"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types-transitive_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "instance-types-transitive en" ;
+  dc:description "DBpedia dumpfile: instance-types-transitive_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types-transitive_en.ttl.gz> ;
+  dcat:byteSize "175385868"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#instance-types_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 instance-types en dump dataset"^^xsd:string ;
+ rdfs:label "instance-types_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "instance-types en" ;
+  dc:description "DBpedia dumpfile: instance-types_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types_en.nq.gz> ;
+  dcat:byteSize "107545791"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "instance-types en" ;
+  dc:description "DBpedia dumpfile: instance-types_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types_en.nt.gz> ;
+  dcat:byteSize "59390265"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "instance-types en" ;
+  dc:description "DBpedia dumpfile: instance-types_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types_en.tql.gz> ;
+  dcat:byteSize "106055075"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "instance-types en" ;
+  dc:description "DBpedia dumpfile: instance-types_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance-types_en.ttl.gz> ;
+  dcat:byteSize "59210621"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#instance_types_dbtax-dbo>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 instance types dbtax-dbo dump dataset"^^xsd:string ;
+ rdfs:label "instance_types_dbtax-dbo_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "06-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance_types_dbtax-dbo.nt.bz2> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/instance_types_dbtax-dbo.nt.bz2>
+  a dcat:Distribution ;
+  dc:title "instance types dbtax-dbo" ;
+  dc:description "DBpedia dumpfile: instance_types_dbtax-dbo.nt.bz2" ;
+  dc:modified "06-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance_types_dbtax-dbo.nt.bz2> ;
+  dcat:byteSize "33670385"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#instance_types_dbtax_ext>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 instance types dbtax ext dump dataset"^^xsd:string ;
+ rdfs:label "instance_types_dbtax_ext_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "06-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance_types_dbtax_ext.nt.bz2> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/instance_types_dbtax_ext.nt.bz2>
+  a dcat:Distribution ;
+  dc:title "instance types dbtax ext" ;
+  dc:description "DBpedia dumpfile: instance_types_dbtax_ext.nt.bz2" ;
+  dc:modified "06-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance_types_dbtax_ext.nt.bz2> ;
+  dcat:byteSize "58039685"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#instance_types_sdtyped-dbo_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 instance types sdtyped-dbo en dump dataset"^^xsd:string ;
+ rdfs:label "instance_types_sdtyped-dbo_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "06-19-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance_types_sdtyped-dbo_en.nt.bz2> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/instance_types_sdtyped-dbo_en.nt.bz2>
+  a dcat:Distribution ;
+  dc:title "instance types sdtyped-dbo en" ;
+  dc:description "DBpedia dumpfile: instance_types_sdtyped-dbo_en.nt.bz2" ;
+  dc:modified "06-19-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/instance_types_sdtyped-dbo_en.nt.bz2> ;
+  dcat:byteSize "7246110"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#interlanguage-links_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 interlanguage-links en dump dataset"^^xsd:string ;
+ rdfs:label "interlanguage-links_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/interlanguage-links_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/interlanguage-links_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/interlanguage-links_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/interlanguage-links_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/interlanguage-links_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "interlanguage-links en" ;
+  dc:description "DBpedia dumpfile: interlanguage-links_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/interlanguage-links_en.nq.gz> ;
+  dcat:byteSize "4946379"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/interlanguage-links_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "interlanguage-links en" ;
+  dc:description "DBpedia dumpfile: interlanguage-links_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/interlanguage-links_en.nt.gz> ;
+  dcat:byteSize "3116275"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/interlanguage-links_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "interlanguage-links en" ;
+  dc:description "DBpedia dumpfile: interlanguage-links_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/interlanguage-links_en.tql.gz> ;
+  dcat:byteSize "4880310"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/interlanguage-links_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "interlanguage-links en" ;
+  dc:description "DBpedia dumpfile: interlanguage-links_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/interlanguage-links_en.ttl.gz> ;
+  dcat:byteSize "2998906"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#iri-same-as-uri_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 iri-same-as-uri en dump dataset"^^xsd:string ;
+ rdfs:label "iri-same-as-uri_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/iri-same-as-uri_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/iri-same-as-uri_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/iri-same-as-uri_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "iri-same-as-uri en" ;
+  dc:description "DBpedia dumpfile: iri-same-as-uri_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/iri-same-as-uri_en.nt.gz> ;
+  dcat:byteSize "19222415"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/iri-same-as-uri_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "iri-same-as-uri en" ;
+  dc:description "DBpedia dumpfile: iri-same-as-uri_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/iri-same-as-uri_en.ttl.gz> ;
+  dcat:byteSize "19169501"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#labels_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 labels en dump dataset"^^xsd:string ;
+ rdfs:label "labels_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/labels_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/labels_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/labels_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/labels_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/labels_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "labels en" ;
+  dc:description "DBpedia dumpfile: labels_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/labels_en.nq.gz> ;
+  dcat:byteSize "342619308"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/labels_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "labels en" ;
+  dc:description "DBpedia dumpfile: labels_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/labels_en.nt.gz> ;
+  dcat:byteSize "211102011"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/labels_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "labels en" ;
+  dc:description "DBpedia dumpfile: labels_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/labels_en.tql.gz> ;
+  dcat:byteSize "338409137"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/labels_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "labels en" ;
+  dc:description "DBpedia dumpfile: labels_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/labels_en.ttl.gz> ;
+  dcat:byteSize "207849168"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#long-abstracts_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 long-abstracts en dump dataset"^^xsd:string ;
+ rdfs:label "long-abstracts_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/long-abstracts_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/long-abstracts_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/long-abstracts_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/long-abstracts_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/long-abstracts_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "long-abstracts en" ;
+  dc:description "DBpedia dumpfile: long-abstracts_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/long-abstracts_en.nq.gz> ;
+  dcat:byteSize "1037654544"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/long-abstracts_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "long-abstracts en" ;
+  dc:description "DBpedia dumpfile: long-abstracts_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/long-abstracts_en.nt.gz> ;
+  dcat:byteSize "970712249"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/long-abstracts_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "long-abstracts en" ;
+  dc:description "DBpedia dumpfile: long-abstracts_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/long-abstracts_en.tql.gz> ;
+  dcat:byteSize "1037729365"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/long-abstracts_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "long-abstracts en" ;
+  dc:description "DBpedia dumpfile: long-abstracts_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/long-abstracts_en.ttl.gz> ;
+  dcat:byteSize "971033779"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#mappingbased-properties-errors-unredirected_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 mappingbased-properties-errors-unredirected en dump dataset"^^xsd:string ;
+ rdfs:label "mappingbased-properties-errors-unredirected_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-06-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-errors-unredirected_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-errors-unredirected_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-errors-unredirected_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-errors-unredirected_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-errors-unredirected_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "mappingbased-properties-errors-unredirected en" ;
+  dc:description "DBpedia dumpfile: mappingbased-properties-errors-unredirected_en.nq.gz" ;
+  dc:modified "05-06-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-errors-unredirected_en.nq.gz> ;
+  dcat:byteSize "1076313"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-errors-unredirected_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "mappingbased-properties-errors-unredirected en" ;
+  dc:description "DBpedia dumpfile: mappingbased-properties-errors-unredirected_en.nt.gz" ;
+  dc:modified "05-06-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-errors-unredirected_en.nt.gz> ;
+  dcat:byteSize "639912"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-errors-unredirected_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "mappingbased-properties-errors-unredirected en" ;
+  dc:description "DBpedia dumpfile: mappingbased-properties-errors-unredirected_en.tql.gz" ;
+  dc:modified "05-06-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-errors-unredirected_en.tql.gz> ;
+  dcat:byteSize "1076283"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-errors-unredirected_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "mappingbased-properties-errors-unredirected en" ;
+  dc:description "DBpedia dumpfile: mappingbased-properties-errors-unredirected_en.ttl.gz" ;
+  dc:modified "05-06-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-errors-unredirected_en.ttl.gz> ;
+  dcat:byteSize "638827"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#mappingbased-properties-unredirected_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 mappingbased-properties-unredirected en dump dataset"^^xsd:string ;
+ rdfs:label "mappingbased-properties-unredirected_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-unredirected_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-unredirected_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-unredirected_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-unredirected_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-unredirected_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "mappingbased-properties-unredirected en" ;
+  dc:description "DBpedia dumpfile: mappingbased-properties-unredirected_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-unredirected_en.nq.gz> ;
+  dcat:byteSize "586830170"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-unredirected_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "mappingbased-properties-unredirected en" ;
+  dc:description "DBpedia dumpfile: mappingbased-properties-unredirected_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-unredirected_en.nt.gz> ;
+  dcat:byteSize "404338375"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-unredirected_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "mappingbased-properties-unredirected en" ;
+  dc:description "DBpedia dumpfile: mappingbased-properties-unredirected_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-unredirected_en.tql.gz> ;
+  dcat:byteSize "584495219"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-unredirected_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "mappingbased-properties-unredirected en" ;
+  dc:description "DBpedia dumpfile: mappingbased-properties-unredirected_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties-unredirected_en.ttl.gz> ;
+  dcat:byteSize "403235155"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#mappingbased-properties_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 mappingbased-properties en dump dataset"^^xsd:string ;
+ rdfs:label "mappingbased-properties_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-06-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "mappingbased-properties en" ;
+  dc:description "DBpedia dumpfile: mappingbased-properties_en.nq.gz" ;
+  dc:modified "05-06-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties_en.nq.gz> ;
+  dcat:byteSize "583564653"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "mappingbased-properties en" ;
+  dc:description "DBpedia dumpfile: mappingbased-properties_en.nt.gz" ;
+  dc:modified "05-06-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties_en.nt.gz> ;
+  dcat:byteSize "401945401"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "mappingbased-properties en" ;
+  dc:description "DBpedia dumpfile: mappingbased-properties_en.tql.gz" ;
+  dc:modified "05-06-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties_en.tql.gz> ;
+  dcat:byteSize "583463596"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "mappingbased-properties en" ;
+  dc:description "DBpedia dumpfile: mappingbased-properties_en.ttl.gz" ;
+  dc:modified "05-06-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/mappingbased-properties_en.ttl.gz> ;
+  dcat:byteSize "402057328"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#out-degree_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 out-degree en dump dataset"^^xsd:string ;
+ rdfs:label "out-degree_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/out-degree_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/out-degree_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/out-degree_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/out-degree_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/out-degree_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "out-degree en" ;
+  dc:description "DBpedia dumpfile: out-degree_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/out-degree_en.nq.gz> ;
+  dcat:byteSize "276518359"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/out-degree_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "out-degree en" ;
+  dc:description "DBpedia dumpfile: out-degree_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/out-degree_en.nt.gz> ;
+  dcat:byteSize "152099657"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/out-degree_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "out-degree en" ;
+  dc:description "DBpedia dumpfile: out-degree_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/out-degree_en.tql.gz> ;
+  dcat:byteSize "272478319"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/out-degree_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "out-degree en" ;
+  dc:description "DBpedia dumpfile: out-degree_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/out-degree_en.ttl.gz> ;
+  dcat:byteSize "151801721"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#page-ids_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 page-ids en dump dataset"^^xsd:string ;
+ rdfs:label "page-ids_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-ids_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-ids_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-ids_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-ids_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/page-ids_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "page-ids en" ;
+  dc:description "DBpedia dumpfile: page-ids_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-ids_en.nq.gz> ;
+  dcat:byteSize "377884226"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/page-ids_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "page-ids en" ;
+  dc:description "DBpedia dumpfile: page-ids_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-ids_en.nt.gz> ;
+  dcat:byteSize "225215127"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/page-ids_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "page-ids en" ;
+  dc:description "DBpedia dumpfile: page-ids_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-ids_en.tql.gz> ;
+  dcat:byteSize "373280669"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/page-ids_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "page-ids en" ;
+  dc:description "DBpedia dumpfile: page-ids_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-ids_en.ttl.gz> ;
+  dcat:byteSize "225117851"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#page-length_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 page-length en dump dataset"^^xsd:string ;
+ rdfs:label "page-length_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-length_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-length_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-length_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-length_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/page-length_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "page-length en" ;
+  dc:description "DBpedia dumpfile: page-length_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-length_en.nq.gz> ;
+  dcat:byteSize "295306670"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/page-length_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "page-length en" ;
+  dc:description "DBpedia dumpfile: page-length_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-length_en.nt.gz> ;
+  dcat:byteSize "171053790"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/page-length_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "page-length en" ;
+  dc:description "DBpedia dumpfile: page-length_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-length_en.tql.gz> ;
+  dcat:byteSize "291249567"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/page-length_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "page-length en" ;
+  dc:description "DBpedia dumpfile: page-length_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-length_en.ttl.gz> ;
+  dcat:byteSize "170876663"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#page-links-unredirected_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 page-links-unredirected en dump dataset"^^xsd:string ;
+ rdfs:label "page-links-unredirected_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links-unredirected_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links-unredirected_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links-unredirected_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links-unredirected_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links-unredirected_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "page-links-unredirected en" ;
+  dc:description "DBpedia dumpfile: page-links-unredirected_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links-unredirected_en.nq.gz> ;
+  dcat:byteSize "-1391676359"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links-unredirected_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "page-links-unredirected en" ;
+  dc:description "DBpedia dumpfile: page-links-unredirected_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links-unredirected_en.nt.gz> ;
+  dcat:byteSize "1854860042"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links-unredirected_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "page-links-unredirected en" ;
+  dc:description "DBpedia dumpfile: page-links-unredirected_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links-unredirected_en.tql.gz> ;
+  dcat:byteSize "-1400705265"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links-unredirected_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "page-links-unredirected en" ;
+  dc:description "DBpedia dumpfile: page-links-unredirected_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links-unredirected_en.ttl.gz> ;
+  dcat:byteSize "1851889821"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#page-links_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 page-links en dump dataset"^^xsd:string ;
+ rdfs:label "page-links_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "page-links en" ;
+  dc:description "DBpedia dumpfile: page-links_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links_en.nq.gz> ;
+  dcat:byteSize "-1395674545"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "page-links en" ;
+  dc:description "DBpedia dumpfile: page-links_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links_en.nt.gz> ;
+  dcat:byteSize "1849171190"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "page-links en" ;
+  dc:description "DBpedia dumpfile: page-links_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links_en.tql.gz> ;
+  dcat:byteSize "-1404908007"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "page-links en" ;
+  dc:description "DBpedia dumpfile: page-links_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/page-links_en.ttl.gz> ;
+  dcat:byteSize "1846081388"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#persondata-unredirected_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 persondata-unredirected en dump dataset"^^xsd:string ;
+ rdfs:label "persondata-unredirected_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata-unredirected_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata-unredirected_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata-unredirected_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata-unredirected_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata-unredirected_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "persondata-unredirected en" ;
+  dc:description "DBpedia dumpfile: persondata-unredirected_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata-unredirected_en.nq.gz> ;
+  dcat:byteSize "149306488"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata-unredirected_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "persondata-unredirected en" ;
+  dc:description "DBpedia dumpfile: persondata-unredirected_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata-unredirected_en.nt.gz> ;
+  dcat:byteSize "88273208"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata-unredirected_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "persondata-unredirected en" ;
+  dc:description "DBpedia dumpfile: persondata-unredirected_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata-unredirected_en.tql.gz> ;
+  dcat:byteSize "148294046"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata-unredirected_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "persondata-unredirected en" ;
+  dc:description "DBpedia dumpfile: persondata-unredirected_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata-unredirected_en.ttl.gz> ;
+  dcat:byteSize "87964606"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#persondata_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 persondata en dump dataset"^^xsd:string ;
+ rdfs:label "persondata_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "persondata en" ;
+  dc:description "DBpedia dumpfile: persondata_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata_en.nq.gz> ;
+  dcat:byteSize "149243256"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "persondata en" ;
+  dc:description "DBpedia dumpfile: persondata_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata_en.nt.gz> ;
+  dcat:byteSize "88206258"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "persondata en" ;
+  dc:description "DBpedia dumpfile: persondata_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata_en.tql.gz> ;
+  dcat:byteSize "148229931"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "persondata en" ;
+  dc:description "DBpedia dumpfile: persondata_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/persondata_en.ttl.gz> ;
+  dcat:byteSize "87896919"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#pnd_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 pnd en dump dataset"^^xsd:string ;
+ rdfs:label "pnd_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/pnd_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/pnd_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/pnd_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/pnd_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/pnd_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "pnd en" ;
+  dc:description "DBpedia dumpfile: pnd_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/pnd_en.nq.gz> ;
+  dcat:byteSize "514"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/pnd_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "pnd en" ;
+  dc:description "DBpedia dumpfile: pnd_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/pnd_en.nt.gz> ;
+  dcat:byteSize "321"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/pnd_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "pnd en" ;
+  dc:description "DBpedia dumpfile: pnd_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/pnd_en.tql.gz> ;
+  dcat:byteSize "514"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/pnd_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "pnd en" ;
+  dc:description "DBpedia dumpfile: pnd_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/pnd_en.ttl.gz> ;
+  dcat:byteSize "321"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#redirects_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 redirects en dump dataset"^^xsd:string ;
+ rdfs:label "redirects_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/redirects_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/redirects_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/redirects_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/redirects_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/redirects_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "redirects en" ;
+  dc:description "DBpedia dumpfile: redirects_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/redirects_en.nq.gz> ;
+  dcat:byteSize "197163676"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/redirects_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "redirects en" ;
+  dc:description "DBpedia dumpfile: redirects_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/redirects_en.nt.gz> ;
+  dcat:byteSize "125548372"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/redirects_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "redirects en" ;
+  dc:description "DBpedia dumpfile: redirects_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/redirects_en.tql.gz> ;
+  dcat:byteSize "194935037"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/redirects_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "redirects en" ;
+  dc:description "DBpedia dumpfile: redirects_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/redirects_en.ttl.gz> ;
+  dcat:byteSize "125288305"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#revision-ids_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 revision-ids en dump dataset"^^xsd:string ;
+ rdfs:label "revision-ids_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-ids_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-ids_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-ids_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-ids_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-ids_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "revision-ids en" ;
+  dc:description "DBpedia dumpfile: revision-ids_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-ids_en.nq.gz> ;
+  dcat:byteSize "390901430"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-ids_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "revision-ids en" ;
+  dc:description "DBpedia dumpfile: revision-ids_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-ids_en.nt.gz> ;
+  dcat:byteSize "260693296"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-ids_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "revision-ids en" ;
+  dc:description "DBpedia dumpfile: revision-ids_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-ids_en.tql.gz> ;
+  dcat:byteSize "386620542"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-ids_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "revision-ids en" ;
+  dc:description "DBpedia dumpfile: revision-ids_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-ids_en.ttl.gz> ;
+  dcat:byteSize "260717237"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#revision-uris_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 revision-uris en dump dataset"^^xsd:string ;
+ rdfs:label "revision-uris_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-uris_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-uris_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-uris_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-uris_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-uris_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "revision-uris en" ;
+  dc:description "DBpedia dumpfile: revision-uris_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-uris_en.nq.gz> ;
+  dcat:byteSize "376435707"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-uris_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "revision-uris en" ;
+  dc:description "DBpedia dumpfile: revision-uris_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-uris_en.nt.gz> ;
+  dcat:byteSize "321589892"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-uris_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "revision-uris en" ;
+  dc:description "DBpedia dumpfile: revision-uris_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-uris_en.tql.gz> ;
+  dcat:byteSize "371868968"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-uris_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "revision-uris en" ;
+  dc:description "DBpedia dumpfile: revision-uris_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/revision-uris_en.ttl.gz> ;
+  dcat:byteSize "317612924"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#short-abstracts_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 short-abstracts en dump dataset"^^xsd:string ;
+ rdfs:label "short-abstracts_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/short-abstracts_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/short-abstracts_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/short-abstracts_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/short-abstracts_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/short-abstracts_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "short-abstracts en" ;
+  dc:description "DBpedia dumpfile: short-abstracts_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/short-abstracts_en.nq.gz> ;
+  dcat:byteSize "611486518"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/short-abstracts_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "short-abstracts en" ;
+  dc:description "DBpedia dumpfile: short-abstracts_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/short-abstracts_en.nt.gz> ;
+  dcat:byteSize "547705368"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/short-abstracts_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "short-abstracts en" ;
+  dc:description "DBpedia dumpfile: short-abstracts_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/short-abstracts_en.tql.gz> ;
+  dcat:byteSize "610904609"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/short-abstracts_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "short-abstracts en" ;
+  dc:description "DBpedia dumpfile: short-abstracts_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/short-abstracts_en.ttl.gz> ;
+  dcat:byteSize "547386404"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#skos-categories_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 skos-categories en dump dataset"^^xsd:string ;
+ rdfs:label "skos-categories_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/skos-categories_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/skos-categories_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/skos-categories_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/skos-categories_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/skos-categories_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "skos-categories en" ;
+  dc:description "DBpedia dumpfile: skos-categories_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/skos-categories_en.nq.gz> ;
+  dcat:byteSize "79829423"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/skos-categories_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "skos-categories en" ;
+  dc:description "DBpedia dumpfile: skos-categories_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/skos-categories_en.nt.gz> ;
+  dcat:byteSize "52533585"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/skos-categories_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "skos-categories en" ;
+  dc:description "DBpedia dumpfile: skos-categories_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/skos-categories_en.tql.gz> ;
+  dcat:byteSize "79580129"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/skos-categories_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "skos-categories en" ;
+  dc:description "DBpedia dumpfile: skos-categories_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/skos-categories_en.ttl.gz> ;
+  dcat:byteSize "52315191"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#specific-mappingbased-properties_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 specific-mappingbased-properties en dump dataset"^^xsd:string ;
+ rdfs:label "specific-mappingbased-properties_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/specific-mappingbased-properties_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/specific-mappingbased-properties_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/specific-mappingbased-properties_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/specific-mappingbased-properties_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/specific-mappingbased-properties_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "specific-mappingbased-properties en" ;
+  dc:description "DBpedia dumpfile: specific-mappingbased-properties_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/specific-mappingbased-properties_en.nq.gz> ;
+  dcat:byteSize "17627468"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/specific-mappingbased-properties_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "specific-mappingbased-properties en" ;
+  dc:description "DBpedia dumpfile: specific-mappingbased-properties_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/specific-mappingbased-properties_en.nt.gz> ;
+  dcat:byteSize "10086849"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/specific-mappingbased-properties_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "specific-mappingbased-properties en" ;
+  dc:description "DBpedia dumpfile: specific-mappingbased-properties_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/specific-mappingbased-properties_en.tql.gz> ;
+  dcat:byteSize "17369265"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/specific-mappingbased-properties_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "specific-mappingbased-properties en" ;
+  dc:description "DBpedia dumpfile: specific-mappingbased-properties_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/specific-mappingbased-properties_en.ttl.gz> ;
+  dcat:byteSize "10073248"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#template-parameters_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 template-parameters en dump dataset"^^xsd:string ;
+ rdfs:label "template-parameters_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/template-parameters_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/template-parameters_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "template-parameters en" ;
+  dc:description "DBpedia dumpfile: template-parameters_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/template-parameters_en.ttl.gz> ;
+  dcat:byteSize "5264043"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#topical-concepts-unredirected_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 topical-concepts-unredirected en dump dataset"^^xsd:string ;
+ rdfs:label "topical-concepts-unredirected_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts-unredirected_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts-unredirected_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts-unredirected_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts-unredirected_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts-unredirected_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "topical-concepts-unredirected en" ;
+  dc:description "DBpedia dumpfile: topical-concepts-unredirected_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts-unredirected_en.nq.gz> ;
+  dcat:byteSize "3253375"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts-unredirected_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "topical-concepts-unredirected en" ;
+  dc:description "DBpedia dumpfile: topical-concepts-unredirected_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts-unredirected_en.nt.gz> ;
+  dcat:byteSize "1802485"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts-unredirected_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "topical-concepts-unredirected en" ;
+  dc:description "DBpedia dumpfile: topical-concepts-unredirected_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts-unredirected_en.tql.gz> ;
+  dcat:byteSize "3235951"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts-unredirected_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "topical-concepts-unredirected en" ;
+  dc:description "DBpedia dumpfile: topical-concepts-unredirected_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts-unredirected_en.ttl.gz> ;
+  dcat:byteSize "1799758"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#topical-concepts_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 topical-concepts en dump dataset"^^xsd:string ;
+ rdfs:label "topical-concepts_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "topical-concepts en" ;
+  dc:description "DBpedia dumpfile: topical-concepts_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts_en.nq.gz> ;
+  dcat:byteSize "3278056"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "topical-concepts en" ;
+  dc:description "DBpedia dumpfile: topical-concepts_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts_en.nt.gz> ;
+  dcat:byteSize "1823838"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "topical-concepts en" ;
+  dc:description "DBpedia dumpfile: topical-concepts_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts_en.tql.gz> ;
+  dcat:byteSize "3260654"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "topical-concepts en" ;
+  dc:description "DBpedia dumpfile: topical-concepts_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/topical-concepts_en.ttl.gz> ;
+  dcat:byteSize "1820973"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#transitive-redirects_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 transitive-redirects en dump dataset"^^xsd:string ;
+ rdfs:label "transitive-redirects_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/transitive-redirects_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/transitive-redirects_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/transitive-redirects_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "transitive-redirects en" ;
+  dc:description "DBpedia dumpfile: transitive-redirects_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/transitive-redirects_en.nt.gz> ;
+  dcat:byteSize "125548076"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/transitive-redirects_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "transitive-redirects en" ;
+  dc:description "DBpedia dumpfile: transitive-redirects_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/transitive-redirects_en.ttl.gz> ;
+  dcat:byteSize "125288117"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#wikidata-links-chapters_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 wikidata-links-chapters en dump dataset"^^xsd:string ;
+ rdfs:label "wikidata-links-chapters_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "06-22-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links-chapters_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links-chapters_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links-chapters_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links-chapters_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links-chapters_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "wikidata-links-chapters en" ;
+  dc:description "DBpedia dumpfile: wikidata-links-chapters_en.nq.gz" ;
+  dc:modified "06-22-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links-chapters_en.nq.gz> ;
+  dcat:byteSize "219260091"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links-chapters_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "wikidata-links-chapters en" ;
+  dc:description "DBpedia dumpfile: wikidata-links-chapters_en.nt.gz" ;
+  dc:modified "06-22-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links-chapters_en.nt.gz> ;
+  dcat:byteSize "218111807"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links-chapters_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "wikidata-links-chapters en" ;
+  dc:description "DBpedia dumpfile: wikidata-links-chapters_en.tql.gz" ;
+  dc:modified "06-22-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links-chapters_en.tql.gz> ;
+  dcat:byteSize "217116373"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links-chapters_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "wikidata-links-chapters en" ;
+  dc:description "DBpedia dumpfile: wikidata-links-chapters_en.ttl.gz" ;
+  dc:modified "06-22-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links-chapters_en.ttl.gz> ;
+  dcat:byteSize "216133840"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#wikidata-links_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 wikidata-links en dump dataset"^^xsd:string ;
+ rdfs:label "wikidata-links_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "06-22-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "wikidata-links en" ;
+  dc:description "DBpedia dumpfile: wikidata-links_en.nq.gz" ;
+  dc:modified "06-22-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links_en.nq.gz> ;
+  dcat:byteSize "400359990"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "wikidata-links en" ;
+  dc:description "DBpedia dumpfile: wikidata-links_en.nt.gz" ;
+  dc:modified "06-22-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links_en.nt.gz> ;
+  dcat:byteSize "396906588"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "wikidata-links en" ;
+  dc:description "DBpedia dumpfile: wikidata-links_en.tql.gz" ;
+  dc:modified "06-22-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links_en.tql.gz> ;
+  dcat:byteSize "384029168"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "wikidata-links en" ;
+  dc:description "DBpedia dumpfile: wikidata-links_en.ttl.gz" ;
+  dc:modified "06-22-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikidata-links_en.ttl.gz> ;
+  dcat:byteSize "381233013"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl#wikipedia-links_en>
+ a dataid:Dataset ;
+ dc:title "DBpedia 2015-04 wikipedia-links en dump dataset"^^xsd:string ;
+ rdfs:label "wikipedia-links_en_2015-04"^^xsd:string ;
+ dcat:landingPage <http://dbpedia.org/> ;
+ dataid:associatedAgent <http://wiki.dbpedia.org/Association> ;
+ dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+ dc:modified "05-05-2015"^^xsd:date ;
+ dcat:distribution <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikipedia-links_en.nq.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikipedia-links_en.nt.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikipedia-links_en.tql.gz>, <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikipedia-links_en.ttl.gz> .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/wikipedia-links_en.nq.gz>
+  a dcat:Distribution ;
+  dc:title "wikipedia-links en" ;
+  dc:description "DBpedia dumpfile: wikipedia-links_en.nq.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikipedia-links_en.nq.gz> ;
+  dcat:byteSize "538535550"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nq" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/wikipedia-links_en.nt.gz>
+  a dcat:Distribution ;
+  dc:title "wikipedia-links en" ;
+  dc:description "DBpedia dumpfile: wikipedia-links_en.nt.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikipedia-links_en.nt.gz> ;
+  dcat:byteSize "371325614"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "nt" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/wikipedia-links_en.tql.gz>
+  a dcat:Distribution ;
+  dc:title "wikipedia-links en" ;
+  dc:description "DBpedia dumpfile: wikipedia-links_en.tql.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikipedia-links_en.tql.gz> ;
+  dcat:byteSize "530305758"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "tql" .
+
+<http://downloads.dbpedia.org/2015-04/core-i18n/en/wikipedia-links_en.ttl.gz>
+  a dcat:Distribution ;
+  dc:title "wikipedia-links en" ;
+  dc:description "DBpedia dumpfile: wikipedia-links_en.ttl.gz" ;
+  dc:modified "05-05-2015"^^xsd:date ;
+  dcat:downloadURL <http://downloads.dbpedia.org/2015-04/core-i18n/en/wikipedia-links_en.ttl.gz> ;
+  dcat:byteSize "363779698"^^xsd:decimal ;
+  dcat:mediaType "application/octet-stream" ;
+  dc:format "ttl" .
+
+<http://wiki.dbpedia.org/Association>
+ rdf:type dataid:Publisher, dataid:Maintainer ;
+ dataid:agentName "DBpedia Association" ;
+ dataid:agentMail "dbpedia@infai.org" .
+
+<https://github.com/dbpedia/extraction-framework/wiki/Extraction-Instructions>
+ rdf:type prov:Activity ;
+ dc:title "Extraction of DBpedia data from Wikipedia dumps" ;
+ prov:used <http://mappings.dbpedia.org/> ;
+ prov:used <https://github.com/dbpedia/extraction-framework> ;
+ prov:wasAssociatedWith <http://wiki.dbpedia.org/Association> .
+
+<http://mappings.dbpedia.org/>
+ rdf:type prov:Entity ;
+ dc:title "Mapping of Wikipedia articles to RDF" ;
+ dc:publisher <http://wiki.dbpedia.org/Association> .
+
+<https://github.com/dbpedia/extraction-framework>
+ rdf:type prov:Entity ;
+ dc:title "The DBpedia extraction framework" ;
+ dc:publisher  <http://wiki.dbpedia.org/Association> .

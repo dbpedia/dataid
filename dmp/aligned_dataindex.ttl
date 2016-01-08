@@ -1,7 +1,7 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix void: <http://rdfs.org/ns/void#> .
-@prefix dataid: <http://schema.dbpedia.org/dataid#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -12,4 +12,4 @@
 @prefix dmp: <http://schemas.dbpedia.org/dmp#> .
 
 <raw.githubusercontent.com/dbpedia/dataid/master/dmp/aligned_dataindex.ttl>
- dataid:dataIdUrl <dataid.ttl>, <http://downloads.dbpedia.org/2014/dataid.ttl> .
+ dataid:dataIdUrl <2015-04-en-dmp.ttl> .
