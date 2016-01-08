@@ -8,7 +8,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dmp: <http://dataid.dbpedia.org/ns/dmp#> .
+@prefix dmp: <http://schema.dbpedia.org/dmp#> .
 
 <http://downloads.dbpedia.org/2015-04/core-i18n/en/dataid.ttl>
  a void:DatasetDescription;
