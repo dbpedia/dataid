@@ -28,6 +28,9 @@
  dmp:usefulness """DBpedia is an extract of the global knowledge compendium Wikipedia. Therefore it can serve many purposes, especially when general information about random subjects are of interest. Links to other datasets or web sites may provide additional context.""";
  dmp:similarData """Similar data can be found in datasets like Freebase (https://freebase.com), Wikidata (https://wikidata.org), Yago (http://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/yago-naga/yago//) or OpenCyc (http://opencyc.org).""";
  dmp:reuseAndIntegration """DBpedia is open data project. It can be reused and integrated in other datasets by anybody.""";
+ dmp:repositoryUrl <http://datahub.io/dataset/dbpedia> ;
+ dmp:archiveLink <http://downloads.dbpedia.org> ;
+ dmp:licenseName "CC-BY-SA3.0de" ;
  dmp:additionalSoftware """No additional Software is necessary for reuse and integration purposes.""";
  dmp:growth """Wikipedia and therefor DBpedia is experiencing an ongoing growth by a rate of approximately 6M statements per year (en version).""";
  dmp:preservation """Preservation and a continuous availability of all datasets (in all versions) is a key aspect of the DBpedia association.""";
