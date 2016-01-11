@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import sys, getopt, os, collections, csv, rdflib
+import sys, os, collections, csv, rdflib, argparse
 from rdflib import Graph, URIRef, Literal, plugin
 from rdflib.namespace import Namespace
 from rdflib.plugins.parsers.notation3 import BadSyntax
@@ -68,7 +68,7 @@ def getDMPStuff(graph, namespaces):
           OPTIONAL{?dataset dmp:archiveLink ?archiveLink }
           OPTIONAL{?dataset dmp:preservation ?preservation } 
           OPTIONAL{?dataset dmp:openness ?openness }
-          OPTIONAL{?dataset dataid:licenseName ?licenseName } 
+          OPTIONAL{?dataset dmp:licenseName ?licenseName } 
           
         }""",initNs=namespaces)
            
@@ -77,7 +77,6 @@ def getDMPStuff(graph, namespaces):
     if len(qres.bindings) > 1:
         print("[WARNING] Too many DMP properties found, please add only one instance of each property", file=sys.stderr)
     row = qres.bindings[0]
-   
     try:
         dmp["usefulness"] = row["?usefulness"]
         dmp["similarData"] = row["?similarData"]
@@ -89,8 +88,8 @@ def getDMPStuff(graph, namespaces):
         dmp["preservation"] = row["?preservation"]
         dmp["openness"] = row["?openness"]
         dmp["licenseName"] = row["?licenseName"]
-    except KeyError:
-        print("[ERROR] Some Data Management Plan property is missing, be sure to include them: http://schemas.dbpedia.org/dmp#", file=sys.stderr)
+    except KeyError as e:
+        print("[ERROR] Data Management Plan property is missing: "+str(e.args[0]), file=sys.stderr)
         return None
     
     return dmp
@@ -269,24 +268,10 @@ def getDataIDs(infile,namespaces):
         
 def main(argv):
     infile = ''
-    outfile = ''
-    try:
-        opts, args = getopt.getopt(argv,"hi:",["ifile="])
-    except getopt.GetoptError as err:
-        print('generate_dmp.py -i <inputfile>')
-        sys.exit(2)
-    for opt, arg in opts:
-        if opt == '-h':
-            print('Usage: generate_dmp.py -i <inputfile>')
-            sys.exit()
-        elif opt in ("-i","--infile"):
-            infile = arg
-        else:
-            print('Usage: generate_dmp.py -i <inputfile>')
-            sys.exit()
-    
-    if os.path.exists(outfile):
-        os.remove(outfile)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-i", "--infile", help="input file", required=True)
+    args = parser.parse_args()
+    infile = args.infile
     
     namespaces = dict(
         dataid=Namespace("http://schema.dbpedia.org/dataid#"),
@@ -308,12 +293,11 @@ def main(argv):
             if data is None:
                 continue
 
-            authors = queryAuthors(g, namespaces)
+            authors = queryAuthors(g, namespaces)          
             if len(authors)==0:
                 continue
-
             links = countLinks(g, namespaces)
-            prov = getProv(g, namespaces)     
+            prov = getProv(g, namespaces)    
             additionalData = getDMPStuff(g, namespaces)
             generateHtml(data, authors, links, prov, additionalData)
         except BadSyntax:
