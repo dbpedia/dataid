@@ -12,6 +12,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> . 
+@prefix lvont: <http://lexvo.org/ontology> .
 
 <http://dataid.dbpedia.org/ns/core#>
     a owl:Ontology ;
@@ -63,7 +64,7 @@ Validating and delivering metadata files in a uniform way, as well as providing 
 for datasets are main objectives of the DBpedia/DataID project.
 To learn more including how to draft an new DataID, please visit http://dataid.dbpedia.org."""@en ;
 
-	rdfs:subClassOf void:DatasetDescription, prov:Entity, [
+	rdfs:subClassOf void:DatasetDescription, dcat:CatalogRecord, prov:Entity, [
         a owl:Class;
         owl:unionOf(
 	        [
@@ -143,7 +144,7 @@ To learn more including how to draft an new DataID, please visit http://dataid.d
 	         owl:onProperty dataid:previousVersion
      ],[
 	        a owl:Restriction ;
-	        owl:onClass dataid:Creator ;
+	        owl:onClass dataid:Agent ;
 	        owl:onProperty dataid:associatedAgent ;
 	        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
     ] .
@@ -221,10 +222,14 @@ dataid:Dataset
         owl:onClass dct:Frequency ;
         owl:onProperty dct:accrualPeriodicity
     ], [
+        a owl:Restriction ;
+        owl:allValuesFrom lvont:Language ;
+        owl:onProperty dct:language
+    ] ,[
     	#recommanded
         a owl:Restriction ;
         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onDataRange xsd:string ;
+        owl:onClass lvont:Language ;
         owl:onProperty dct:language
     ], [
         a owl:Restriction ;
