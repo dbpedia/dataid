@@ -368,16 +368,6 @@ dataid:Distribution
         owl:allValuesFrom dataid:Distribution ;
         owl:onProperty dataid:previousVersion
     ] ,[
-        a owl:Restriction ;
-        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onDataRange [
-            a rdfs:Datatype ;
-            owl:unionOf (dataid:crc32
-                dataid:md5
-            )
-        ] ;
-        owl:onProperty dataid:checksum
-    ] ,[
 	         a owl:Restriction ;
 	         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 	         owl:onClass dataid:AccessLevel ;
@@ -484,7 +474,17 @@ dataid:SingleFile
          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
          owl:onClass rdfs:Resource ;
          owl:onProperty dcat:downloadURL
-    ].
+    ],[
+        a owl:Restriction ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onDataRange [
+            a rdfs:Datatype ;
+            owl:unionOf (dataid:crc32
+                dataid:md5
+            )
+        ] ;
+        owl:onProperty dataid:checksum
+    ] .
 
 dataid:Directory
     a owl:Class;
@@ -495,7 +495,17 @@ dataid:Directory
          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
          owl:onClass rdfs:Resource ;
          owl:onProperty dcat:accessURL
-     ].
+     ],[
+        a owl:Restriction ;
+        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onDataRange [
+            a rdfs:Datatype ;
+            owl:unionOf (dataid:crc32
+                dataid:md5
+            )
+        ] ;
+        owl:onProperty dataid:checksum
+    ] .
 
 dataid:Linkset
     a owl:Class ;
@@ -598,7 +608,10 @@ dataid:associatedAgent
 dataid:checksum
     a owl:DatatypeProperty ;
     rdfs:comment "Checksum of a file to check for correctness"@en ;
-    rdfs:domain dataid:Distribution ;
+    rdfs:domain [
+    	a owl:Class;
+    	owl:unionOf(dataid:SingleFile dataid:Directory)
+    ] ;
     rdfs:label "checksum"@en ;
     rdfs:range dataid:crc32, dataid:md5 .
 
@@ -628,7 +641,10 @@ dataid:md5
 
 dataid:md5Hash
     a owl:DatatypeProperty, owl:FunctionalProperty ;
-    rdfs:domain dataid:Distribution ;
+    rdfs:domain [
+    	a owl:Class;
+    	owl:unionOf(dataid:SingleFile dataid:Directory)
+    ] ;
     rdfs:label "md5 hash"@en ;
     rdfs:range dataid:md5 ;
     rdfs:subPropertyOf dataid:checksum .
