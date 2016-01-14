@@ -24,7 +24,7 @@ dataid:Agent
     a owl:Class ;
     rdfs:comment "Any type of agent without a specific function."@en ;
     rdfs:label "Agent"@en ;
-    rdfs:subClassOf prov:Agent, [
+    rdfs:subClassOf prov:Agent, dct:Agent, [
         a owl:Restriction ;
         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onDataRange xsd:string ;
@@ -574,6 +574,20 @@ dataid:Linkset
         owl:onProperty dataid:nextVersion
     ] .
 
+dataid:similarData
+    a owl:ObjectProperty ;
+    rdfs:comment 	"points to other dataset containing related data"@en ;
+    rdfs:domain 	dataid:Dataset ;
+    rdfs:label 		"similar data"@en ;
+    rdfs:range  	dataid:Dataset .
+    
+dataid:preview
+    a owl:ObjectProperty ;
+    rdfs:comment 	"provides the uri of a short preview of the data provided by a distribution (do not link to the download or accessURL with this property)"@en ;
+    rdfs:domain 	dataid:Distribution ;
+    rdfs:label 		"data preview"@en ;
+    rdfs:range  	foaf:Document .
+    
 dataid:associatedAgent
     a owl:ObjectProperty ;
     rdfs:comment "some agent generally connected to the dataset, their function to be specified by their rdf:type"@en ;
@@ -699,7 +713,11 @@ dataid:AgentRole
 dataid:AuthorizedAction
 	a owl:Class ;
     rdfs:label "todo"@en ;
-	dct:description "AgentRoles provide agents with the ability to execute certain actions, which are defines by the instances of this concept."@en ;
+	dct:description "AgentRoles provide agents with the ability to execute certain actions as well as demand certain responsibilities, which are defines by the instances of this concept."@en ;
+	owl:equivalentClass [
+		a		owl:Class;
+		owl:unionOf(dataid:ResponsibleAction dataid:EntitledAction)
+	];
 	rdfs:comment """todo"""@en .
 	
 dataid:ResponsibleAction

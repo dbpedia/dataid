@@ -1,0 +1,163 @@
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dmp:   <http://dataid.dbpedia.org/ns/dmp#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/terms/> .
+
+<http://data.freme-project.eu/datasets/orcid/dataid.ttl>
+        a                       dataid:DataId ;
+        dataid:associatedAgent  <http://wiki.dbpedia.org/Association/Persons/Dojchinovski> ;
+        dc:publisher			<http://infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dataid:latestVersion    <http://data.freme-project.eu/datasets/orcid/dataid.ttl> ; # is this version of the dataid or link to the dataset dump???
+        dc:issued               "2015-09-15"^^xsd:date ;
+        dc:modified             "2015-09-15"^^xsd:date ;
+        foaf:primaryTopic       <http://data.freme-project.eu/datasets/orcid/dataid.ttl?set=orcid-dataset> .
+        
+<http://wiki.dbpedia.org/Association/Persons/Dojchinovski>
+        a          		dataid:Agent ;
+        foaf:mbox  		<mailto:milan.dojchinovski@fit.cvut.cz> ;
+        foaf:name  		"Milan Dojchinovski" .
+        
+<http://wiki.dbpedia.org/Association/Persons/Bruemmer>
+        a          		dataid:Agent ;
+        foaf:homepage	<http://aksw.org/MartinBruemmer.html> ;
+        foaf:name  		"Martin Brümmer" .
+        
+<http://data.freme-project.eu/datasets/orcid/dataid.ttl?subj=maintainerContext>
+        a                          dataid:AuthorityEntityContext ;
+        dataid:authorityAgentRole  dataid:Maintainer ;
+        dataid:authorizedAgent     <http://wiki.dbpedia.org/Association/Persons/Dojchinovski> ;
+        dataid:authorizedFor       <http://data.freme-project.eu/datasets/orcid/dataid.ttl> ;
+        dataid:isInheritable       true .
+        
+<http://www.infai.org/>
+        a              dataid:Agent ;
+        foaf:homepage  <http://infai.org/> ;
+        foaf:mbox      <mailto:info@infai.org> ;
+        foaf:name      "InfAI" .
+        
+<http://data.freme-project.eu/datasets/orcid/dataid.ttl?subj=bruemmerContext>
+        a                          dataid:AuthorityEntityContext ;
+        dataid:authorityAgentRole  dataid:Contributor ;
+        dataid:authorizedAgent     <http://wiki.dbpedia.org/Association/Persons/Bruemmer> ;
+        dataid:authorizedFor       <http://data.freme-project.eu/datasets/orcid/dataid.ttl> ;
+        dataid:isInheritable       true .
+        
+<http://data.freme-project.eu/datasets/orcid/dataid.ttl?subj=infaiContext>
+        a                          dataid:AuthorityEntityContext ;
+        dataid:authorityAgentRole  dataid:Creator ;
+        dataid:authorizedAgent     <http://www.infai.org/> ;
+        dataid:authorizedFor       <http://data.freme-project.eu/datasets/orcid/dataid.ttl> ;
+        dataid:isInheritable       true .
+        
+<http://orcid.org>
+        a dataid:Agent ;
+        foaf:homepage  <http://orcid.org/> ;
+        rdfs:label "ORCID Organization" ;
+        foaf:name "ORCID Organization" ;
+        foaf:mbox "mailto:support@orcid.org".
+        
+<http://data.freme-project.eu/datasets/orcid/dataid.ttl?subj=orcidContext>
+        a                          dataid:AuthorityEntityContext ;
+        dataid:authorityAgentRole  dataid:Publisher ;
+        dataid:authorizedAgent     <http://orcid.org> ;
+        dataid:authorizedFor       <http://data.freme-project.eu/datasets/orcid/dataid.ttl?set=orcid-raw-dataset> ;
+        dataid:isInheritable       true .
+        
+<http://data.freme-project.eu/datasets/orcid/dataid.ttl?set=orcid-dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "ORCID 2014 Dataset"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher			<http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "ORCID (Open Researcher and Contributor ID) is a nonproprietary alphanumeric code to uniquely identify scientific and other academic authors. This dataset contains RDF conversion of the ORCID dataset. The current conversion is based on the 2014 ORCID data dump, which contains around 1.3 million JSON files amounting to 41GB of data. The converted RDF version is 13GB large (uncompressed) and it is modelled with well known vocabularies such as Dublin Core, FOAF, schema.org, etc., and it is interlinked with GeoNames."@en ;
+        dc:issued               "2015-09-15"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/eng> ;  
+        dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;  
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:hasVersion           "0.1" ;
+        dc:title                "ORCID 2014 Dataset"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/orcid/dataid.ttl?set=orcid-dataset-single-dump> , <http://data.freme-project.eu/datasets/orcid/dataid.ttl?file=orcidSparql> , <http://data.freme-project.eu/datasets/orcid/dataid.ttl?dir=orcid-dataset-partitions-directory> ;
+        dcat:keyword            "freme project"@en , "orcid"@en , "rdf"@en , "research"@en ;
+        dcat:landingPage        <https://datahub.io/dataset/orcid-dataset> ;
+        prov:wasDerivedFrom 	<http://data.freme-project.eu/datasets/orcid/dataid.ttl?set=orcid-raw-dataset>.
+        
+<http://data.freme-project.eu/datasets/orcid/dataid.ttl?set=orcid-raw-dataset>
+		a 						dataid:Dataset;
+		rdfs:label              "ORCID 2014 Raw Dataset"@en ;
+		dataid:similarData		<http://data.freme-project.eu/datasets/orcid/dataid.ttl?set=orcid-dataset> ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher			<http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "ORCID (Open Researcher and Contributor ID) is a nonproprietary alphanumeric code to uniquely identify scientific and other academic authors. This is raw dump of the ORCID dataset."@en ;
+        dc:issued               "2015-09-15"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/eng> ;  
+        dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;  
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:title                "ORCID 2014 raw dump"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/orcid/dataid.ttl?file=orcid-raw-dataset-single-dump> ;
+        dcat:keyword            "orcid"@en , "rdf"@en , "research"@en ;
+        dcat:landingPage        <https://datahub.io/dataset/orcid-dataset> .
+        
+<http://data.freme-project.eu/datasets/orcid/dataid.ttl?file=orcid-raw-dataset-single-dump>
+        a                       dataid:SingleFile ;
+        rdfs:label              "ORCID 2014 raw dump file"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Dumpfile for the ORCID 2014 raw dataset."@en ;
+        dc:issued               "2015-09-15"^^xsd:date ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;   
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:title                "ORCID 2014 raw dump file"@en ;
+        dcat:accessURL        	<https://orcid.org/content/orcid-public-data-file-2014/> ;
+        dcat:format             "application/json" ;   
+        dcat:mediaType          "application/x-bzip2".    	
+
+<http://data.freme-project.eu/datasets/orcid/dataid.ttl?file=orcid-dataset-single-dump>
+        a                       dataid:SingleFile ;
+        rdfs:label              "ORCID 2014 Dataset"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Dump for the ORCID 2014 dataset."@en ;
+        dc:issued               "2015-09-15"^^xsd:date ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;   
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:title                "ORCID 2014 Dataset"@en ;
+        dcat:downloadURL        <http://rv2622.1blu.de/datasets/orcid/orcid.nt.bz2> ;
+        dcat:format             "application/n-triples" ;	
+        dcat:mediaType          "application/x-bzip2" .		
+        
+<http://data.freme-project.eu/datasets/orcid/dataid.ttl?dir=orcid-dataset-partitions-directory>
+        a                       dataid:Directory ;
+        rdfs:label              "ORCID 2014 Dataset directory"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ; 
+        dc:description          "Directory of the ORCID 2014 dataset containing the datasets split into small files."@en ;
+        dc:issued               "2015-09-15"^^xsd:date ; 
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:title                "ORCID 2014 Dataset Directory"@en ;
+        dcat:accessURL          <http://freme.aksw.org/datasets/orcid/> .
+
+<http://data.freme-project.eu/datasets/orcid/dataid.ttl?sparql=orcidSparql>
+        a                       dataid:SparqlEndpoint ;
+        rdfs:label              "ORCID 2014 SPARQL endpoint"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Public SPARQL endpoint for the ORCID 2014 dataset."@en ;
+        dc:issued               "2015-09-15"^^xsd:date ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;   
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:title                "ORCID 2014 SPARQL endpoint"@en ;
+        dcat:accessURL        	<http://rv2622.1blu.de:8890/sparql/> .
+        
