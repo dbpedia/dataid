@@ -1,0 +1,181 @@
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dmp:   <http://dataid.dbpedia.org/ns/dmp#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/terms/> .
+
+<http://data.freme-project.eu/datasets/cordis/dataid.ttl>
+        a                       dataid:DataId ;
+        dataid:associatedAgent  <http://infai.org/>, <http://wiki.dbpedia.org/Association/Persons/Dojchinovski> ;
+        dc:publisher			<http://infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:issued               "2015-11-02"^^xsd:date ;
+        dc:modified             "2015-11-02"^^xsd:date ;
+        foaf:primaryTopic       <http://data.freme-project.eu/datasets/cordis/dataid.ttl?set=cordis-dataset> .
+        
+<http://wiki.dbpedia.org/Association/Persons/Dojchinovski>
+        a          dataid:Agent ;
+        foaf:mbox  <mailto:milan.dojchinovski@fit.cvut.cz> ;
+        foaf:name  "Milan Dojchinovski" .
+        
+<http://data.freme-project.eu/datasets/cordis/dataid.ttl?subj=maintainerContext>
+        a                          dataid:AuthorityEntityContext ;
+        dataid:authorityAgentRole  dataid:Maintainer, dataid:Publisher ;
+        dataid:authorizedAgent     <http://wiki.dbpedia.org/Association/Persons/Dojchinovski> ;
+        dataid:authorizedFor       <http://data.freme-project.eu/datasets/cordis/dataid.ttl> ;
+        dataid:isInheritable       true .
+        
+<http://www.infai.org/>
+        a              dataid:Agent ;
+        foaf:homepage  <http://infai.org/> ;
+        foaf:mbox      <mailto:info@infai.org> ;
+        foaf:name      "InfAI" .
+        
+<http://data.freme-project.eu/datasets/cordis/dataid.ttl?subj=creatorContext>
+        a                          dataid:AuthorityEntityContext ;
+        dataid:authorityAgentRole  dataid:Creator ;
+        dataid:authorizedAgent     <http://www.infai.org/> ;
+        dataid:authorizedFor       <http://data.freme-project.eu/datasets/cordis/dataid.ttl> ;
+        dataid:isInheritable       true .
+        
+<http://cordis.europa.eu>
+        a dataid:Agent ;
+        rdfs:label "CORDIS" ;
+        foaf:name "CORDIS" ;
+        foaf:homepage <http://cordis.europa.eu>.
+        
+<http://data.freme-project.eu/datasets/cordis/dataid.ttl?subj=cordisContext>
+        a                          dataid:AuthorityEntityContext ;
+        dataid:authorityAgentRole  dataid:Creator ;
+        dataid:authorizedAgent     <http://cordis.europa.eu> ;
+        dataid:authorizedFor       <http://data.freme-project.eu/datasets/cordis/dataid.ttl?set=cordis-projects-raw-dataset> ;
+        dataid:isInheritable       true .
+        
+<http://cordis.europa.eu/guidance/helpdesk>
+	    a dataid:Agent ;
+        rdfs:label "CORDIS helpdesk" ;
+        foaf:name "CORDIS helpdesk" ;
+        foaf:phone "+352 2929 42210";
+        foaf:mbox	"cordis@publications.europa.eu";
+        foaf:homepage <http://cordis.europa.eu/guidance/helpdesk/home_en.html>.
+        
+<http://data.freme-project.eu/datasets/cordis/dataid.ttl?subj=creatorContext>
+        a                          dataid:AuthorityEntityContext ;
+        dataid:authorityAgentRole  dataid:Contact ;
+        dataid:authorizedAgent     <http://cordis.europa.eu/guidance/helpdesk> ;
+        dataid:authorizedFor       <http://data.freme-project.eu/datasets/cordis/dataid.ttl?set=cordis-projects-raw-dataset> ;
+        dataid:isInheritable       true .
+        
+<http://data.freme-project.eu/datasets/cordis/dataid.ttl?set=cordis-dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "CORDIS FP7 Dataset"@en ;
+        dataid:associatedAgent  <http://www.infai.org/>, <http://wiki.dbpedia.org/Association/Persons/Dojchinovski> ;
+        dc:publisher			<http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "CORDIS (Community Research and Development Information Service), is the European Commission’s core public repository providing dissemination information for all EU-funded research projects. This dataset contains RDF of the CORDIS FP7 dataset which provides descriptions for projects funded by the European Union under the seventh framework programme for research and technological development (FP7) from 2007 to 2013. The converted dataset contains over 1 million of RDF triples with a total size of around 200MB in the N-Triples RDF serialization format. The dataset is modelled with well known vocabularies such as Dublin Core, FOAF, DBpedia ontology, DOAP, etc., and it is interlinked with DBpedia."@en ;
+        dc:issued               "2015-11-02"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/eng> ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ; #TODO TBC http://ec.europa.eu/geninfo/legal_notices_en.htm
+        dc:modified             "2015-11-02"^^xsd:date ;
+        dc:title                "CORDIS FP7 Dataset"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/cordis/dataid.ttl?file=cordis-dataset-single-dump> , <http://data.freme-project.eu/datasets/cordis/dataid.ttl?sparql=cordisSparql> ;
+        dcat:keyword            "freme project"@en , "cordis"@en , "rdf"@en , "fp7"@en , "projects"@en , "research"@en ;
+        dcat:landingPage        <https://datahub.io/dataset/cordis-corpus> ;
+        prov:wasDerivedFrom 	<http://data.freme-project.eu/datasets/cordis/dataid.ttl?set=cordis-organisations-raw-dataset>, <http://data.freme-project.eu/datasets/cordis/dataid.ttl?set=cordis-projects-raw-dataset> .
+        
+        
+<http://data.freme-project.eu/datasets/cordis/dataid.ttl?set=cordis-projects-raw-dataset>
+		a 						dataid:Dataset;
+		rdfs:label              "CORDIS FP7 Projects Raw Dataset"@en ;
+		dataid:similarData		<http://data.freme-project.eu/datasets/cordis/dataid.ttl?set=cordis-dataset> ;
+        dataid:associatedAgent  <http://cordis.europa.eu>, <http://cordis.europa.eu/guidance/helpdesk> ;
+        dc:publisher			<http://cordis.europa.eu>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          ""@en ;
+        dc:issued               "2015-09-15"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/eng> ;  				#TODO
+        dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;  		#TODO
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:title                "CORDIS FP7 Projects Raw Dataset"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/cordis/dataid.ttl?file=cordis-projects-raw-dataset-dump-file> ;
+        dcat:keyword            "cordis"@en , "rdf"@en , "fp7"@en , "projects"@en , "research"@en ;
+        dcat:landingPage        <https://open-data.europa.eu/en/data/dataset/cordisfp7projects> .
+        
+<http://data.freme-project.eu/datasets/cordis/dataid.ttl?file=cordis-projects-raw-dataset-dump-file>
+        a                       dataid:SingleFile ;
+        rdfs:label              "CORDIS FP7 Projects Raw Dataset file"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Dumpfile for the ORCID 2014 raw dataset."@en ;
+        dc:issued               "2013-11-27"^^xsd:date ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;   			#TODO
+        dc:modified             "2015-11-11"^^xsd:date ;
+        dc:title                "CORDIS FP7 Projects Raw Dataset file"@en ;
+        dcat:downloadURL       	<http://cordis.europa.eu/data/cordis-fp7projects.csv> ;
+        dcat:format             "text/csv" . 
+
+        
+<http://data.freme-project.eu/datasets/cordis/dataid.ttl?set=cordis-organisations-raw-dataset>
+		a 						dataid:Dataset;
+		rdfs:label              "CORDIS FP7 Organisations Raw Dataset"@en ;
+		dataid:similarData		<http://data.freme-project.eu/datasets/cordis/dataid.ttl?set=cordis-dataset> ;
+        dataid:associatedAgent  <http://cordis.europa.eu>, <http://cordis.europa.eu/guidance/helpdesk> ;
+        dc:publisher			<http://cordis.europa.eu>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          ""@en ;
+        dc:issued               "2015-09-15"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/eng> ;  				#TODO
+        dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;  		#TODO
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:title                "CORDIS FP7 Organisations Raw Dataset"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/cordis/dataid.ttl?file=cordis-organisations-raw-dataset-dump-file> ;
+        dcat:keyword            "cordis"@en , "rdf"@en , "fp7"@en , "projects"@en , "research"@en ;
+        dcat:landingPage        <https://open-data.europa.eu/en/data/dataset/cordisfp7projects> .
+        
+<http://data.freme-project.eu/datasets/cordis/dataid.ttl?file=cordis-organisations-raw-dataset-dump-file>
+        a                       dataid:SingleFile ;
+        rdfs:label              "CORDIS FP7 Organisations Raw Dataset file"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Dumpfile for the ORCID 2014 raw dataset."@en ;
+        dc:issued               "2013-11-27"^^xsd:date ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;   			#TODO
+        dc:modified             "2015-11-11"^^xsd:date ;
+        dc:title                "CORDIS FP7 Organisations Raw Dataset file"@en ;
+        dcat:downloadURL       	<http://cordis.europa.eu/data/cordis-fp7organizations.csv> ;
+        dcat:format             "text/csv" . 
+        
+<http://data.freme-project.eu/datasets/cordis/dataid.ttl?file=cordis-dataset-single-dump>
+        a                       dataid:SingleFile ;
+        rdfs:label              "CORDIS FP7 Dataset dump"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "CORDIS FP7 Dataset dump."@en ;
+        dc:issued               "2015-11-02"^^xsd:date ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;   # TODO TBC http://ec.europa.eu/geninfo/legal_notices_en.htm
+        dc:modified             "2015-11-02"^^xsd:date ;
+        dc:title                "CORDIS FP7 Dataset"@en ;
+        dcat:downloadURL        <http://rv2622.1blu.de/datasets/cordis/cordis.nt.bz2> ;
+        dcat:format             "application/n-triples" ;	
+        dcat:mediaType          "application/x-bzip2" .		
+        
+<http://data.freme-project.eu/datasets/cordis/dataid.ttl?sparql=cordisSparql>
+        a                       dataid:SparqlEndpoint ;
+        rdfs:label              "CORDIS FP7 SPARQL endpoint"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Public SPARQL endpoint for the CORDIS FP7 dataset."@en ;
+        dc:issued               "2015-11-02"^^xsd:date ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ; #TODO TBC http://ec.europa.eu/geninfo/legal_notices_en.htm
+        dc:modified             "2015-11-02"^^xsd:date ;
+        dc:title                "CORDIS FP7 SPARQL endpoint"@en ;
+        dcat:accessURL        	<http://rv2622.1blu.de:8890/sparql/> .

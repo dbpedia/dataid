@@ -1,0 +1,133 @@
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dmp:   <http://dataid.dbpedia.org/ns/dmp#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/terms/> .
+
+<http://data.freme-project.eu/datasets/global-airports/dataid.ttl>
+        a                       dataid:DataId ;
+        dataid:associatedAgent  <http://wiki.dbpedia.org/Association/Persons/Dojchinovski> ;
+        dc:publisher			<http://infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dataid:latestVersion    <http://data.freme-project.eu/datasets/global-airports/dataid.ttl> ;
+        dc:issued               "2015-09-15"^^xsd:date ;
+        dc:modified             "2015-09-15"^^xsd:date ;
+        foaf:primaryTopic       <http://data.freme-project.eu/datasets/global-airports/dataid.ttl?set=global-airports-dataset> .
+        
+<http://wiki.dbpedia.org/Association/Persons/Dojchinovski>
+        a          dataid:Agent ;
+        foaf:mbox  <mailto:milan.dojchinovski@fit.cvut.cz> ;
+        foaf:name  "Milan Dojchinovski" .
+        
+<http://data.freme-project.eu/datasets/global-airports/dataid.ttl?subj=maintainerContext>
+        a                          dataid:AuthorityEntityContext ;
+        dataid:authorityAgentRole  dataid:Publisher, dataid:Maintainer ;
+        dataid:authorizedAgent     <http://wiki.dbpedia.org/Association/Persons/Dojchinovski> ;
+        dataid:authorizedFor       <http://data.freme-project.eu/datasets/global-airports/dataid.ttl> ;
+        dataid:isInheritable       true .
+        
+<http://www.infai.org/>
+        a              dataid:Agent ;
+        foaf:homepage  <http://infai.org/> ;
+        foaf:mbox      <mailto:info@infai.org> ;
+        foaf:name      "InfAI" .
+        
+<http://data.freme-project.eu/datasets/global-airports/dataid.ttl?subj=infaiContext>
+        a                          dataid:AuthorityEntityContext ;
+        dataid:authorityAgentRole  dataid:Creator ;
+        dataid:authorizedAgent     <http://www.infai.org/> ;
+        dataid:authorizedFor       <http://data.freme-project.eu/datasets/global-airports/dataid.ttl> ;
+        dataid:isInheritable       true .
+        
+<http://openflights.org>
+        a dataid:Agent ;
+        rdfs:label "openflights.org" ;
+        foaf:name "OpenFlights" ;
+        foaf:homepage <http://http://openflights.org/> .
+        
+<http://data.freme-project.eu/datasets/global-airports/dataid.ttl?subj=openFlightsContext>
+        a                          dataid:AuthorityEntityContext ;
+        dataid:authorityAgentRole  dataid:Publisher ;
+        dataid:authorizedAgent     <http://openflights.org> ;
+        dataid:authorizedFor       <http://data.freme-project.eu/datasets/global-airports/dataid.ttl?set=global-airports-raw-dataset> ;
+        dataid:isInheritable       true .
+        
+<http://data.freme-project.eu/datasets/global-airports/dataid.ttl?set=global-airports-dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "Global airports in RDF"@en ;
+        dataid:associatedAgent  <http://www.infai.org/>, <http://wiki.dbpedia.org/Association/Persons/Dojchinovski> ;
+        dc:publisher			<http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "This corpus contains RDF conversion of Global airports dataset which was retrieved from openflights.org. The dataset contains information about airport names, its location, codes, and other related info."@en ;
+        dc:issued               "2015-09-15"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/eng> ;
+        dc:license              <http://purl.oclc.org/NET/rdflicense/odbl1.0> ;
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:title                "Global airports in RDF"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/global-airports/dataid.ttl?file=cordis-dataset-single-dump> , <http://data.freme-project.eu/datasets/global-airports/dataid.ttl?sparql=globalAirportsSparql> ;
+        dcat:keyword            "air transport"@en , "airports"@en , "aviation"@en , "dbpedia"@en , "freme project"@en , "iata"@en  , "rdf"@en , "travel"@en ;
+        dcat:landingPage        <https://datahub.io/dataset/global-airports-in-rdf> ;
+        prov:wasDerivedFrom 	<http://data.freme-project.eu/datasets/global-airports/dataid.ttl?set=global-airports-raw-dataset> .
+        
+     
+<http://data.freme-project.eu/datasets/global-airports/dataid.ttl?set=global-airports-raw-dataset>
+		a 						dataid:Dataset;
+		rdfs:label              "Global airports"@en ;
+		dataid:similarData		<http://data.freme-project.eu/datasets/global-airports/dataid.ttl?set=global-airports-dataset> ;
+        dataid:associatedAgent  <http://openflights.org> ;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "TODO"@en ;										#TODO
+        dc:issued               "2015-09-15"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/eng> ;  			#TODO
+        dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;  	#TODO
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:publisher            <http://openflights.org>;
+        dc:title                "Global airports"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/global-airports/dataid.ttl?file=global-airports-raw-dataset-single-dump> ;
+        dcat:keyword            "air transport"@en , "airports"@en , "aviation"@en , "dbpedia"@en , "iata"@en  , "rdf"@en , "travel"@en ;
+        dcat:landingPage        <http://google.com> .							#TODO
+        
+<http://data.freme-project.eu/datasets/global-airports/dataid.ttl?file=global-airports-raw-dataset-single-dump>
+        a                       dataid:SingleFile ;
+        rdfs:label              "Global airports raw dump file"@en ;
+        dataid:associatedAgent  <http://openflights.org> ;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Dumpfile for the global airports raw dataset."@en ;
+        dc:issued               "2015-09-15"^^xsd:date ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;   	#TODO
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:title                "Global airports raw dump file"@en ;
+        dcat:downloadURL        <https://commondatastorage.googleapis.com/ckannet-storage/2012-07-09T214020/global_airports.csv> ;
+        dcat:format             "text/csv" . 
+
+<http://data.freme-project.eu/datasets/global-airports/dataid.ttl?file=cordis-dataset-single-dump>
+        a                       dataid:SingleFile ;
+        rdfs:label              "Global airports in RDF dataset dump"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Global airports in RDF dataset dump."@en ;
+        dc:issued               "2015-09-15"^^xsd:date ;
+        dc:license              <http://purl.oclc.org/NET/rdflicense/odbl1.0> ;
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:title                "Global airports in RDF"@en ;
+        dcat:downloadURL        <http://rv1460.1blu.de/datasets/global-airports/global-airports.ttl> ;
+        dcat:format             "application/n-triples" .
+
+<http://data.freme-project.eu/datasets/global-airports/dataid.ttl?sparql=globalAirportsSparql>
+        a                       dataid:SparqlEndpoint ;
+        rdfs:label              "Global airports SPARQL endpoint"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Public SPARQL endpoint for the Global airports dataset."@en ;
+        dc:issued               "2015-09-15"^^xsd:date ;
+        dc:license              <http://purl.oclc.org/NET/rdflicense/odbl1.0> ;
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:title                "Global airports SPARQL endpoint"@en ;
+        dcat:accessURL        	<http://rv2622.1blu.de:8890/sparql/> .

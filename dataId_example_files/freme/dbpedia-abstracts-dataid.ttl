@@ -1,0 +1,262 @@
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dmp:   <http://dataid.dbpedia.org/ns/dmp#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/terms/> .
+
+<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl>
+        a                       dataid:DataId ;
+        dataid:associatedAgent  <http://wiki.dbpedia.org/Association/Persons/Dojchinovski>, <http://infai.org/> ;
+        dc:title				"DataId of DBpedia abstract English corpus"@en ;
+        dc:publisher			<http://infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:issued               "2015-09-10"^^xsd:date ;
+        dc:modified             "2015-09-30"^^xsd:date ;
+        foaf:topic       		<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-en>, <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-de>, <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-nl>, <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-fr>, <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-it>, <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-jp>, <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-es> .
+        
+<http://wiki.dbpedia.org/Association/Persons/Dojchinovski>
+        a          dataid:Agent ;
+        foaf:mbox  <mailto:milan.dojchinovski@fit.cvut.cz> ;
+        foaf:name  "Milan Dojchinovski" .
+        
+<http://wiki.dbpedia.org/Association/Persons/Brummer>
+        a          dataid:Agent ;
+        foaf:homepage	<http://aksw.org/MartinBruemmer.html> ;
+        foaf:name  "Martin Brummer" .
+
+<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?subj=maintainerContext>
+        a                          dataid:AuthorityEntityContext ;
+        dataid:authorityAgentRole  dataid:Maintainer ;
+        dataid:authorizedAgent     <http://wiki.dbpedia.org/Association/Persons/Dojchinovski> ;
+        dataid:authorizedFor       <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl> ;
+        dataid:isInheritable       true .
+        
+<http://www.infai.org/>
+        a              dataid:Agent ;
+        foaf:homepage  <http://infai.org/> ;
+        foaf:mbox      <mailto:info@infai.org> ;
+        foaf:name      "InfAI" .
+        
+<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?subj=bruemmerContext>
+        a                          dataid:AuthorityEntityContext ;
+        dataid:authorityAgentRole  dataid:Contributor ;
+        dataid:authorizedAgent     <http://wiki.dbpedia.org/Association/Persons/Brummer> ;
+        dataid:authorizedFor       <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl> ;
+        dataid:isInheritable       true .
+        
+<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?subj=infaiContext>
+        a                          dataid:AuthorityEntityContext ;
+        dataid:authorityAgentRole  dataid:Creator ;
+        dataid:authorizedAgent     <http://www.infai.org/> ;
+        dataid:authorizedFor       <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl> ;
+        dataid:isInheritable       true .
+        
+<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-en>
+        a                       dataid:Dataset ;
+        rdfs:label              "DBpedia abstract English corpus"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher			<http://www.infai.org/> ;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "This corpus contains a conversion of Wikipedia abstracts in six languages (dutch, english, french, german, italian and spanish) into the I used the NLP Interchange Format (NIF). The corpus contains the abstract texts, as well as the position, surface form and linked article of all links in the text. As such, it contains entity mentions manually disambiguated to Wikipedia/DBpedia resources by native speakers, which predestines it for NER training and evaluation. Furthermore, the abstracts represent a special form of text that lends itself to be used for more sophisticated tasks, like open relation extraction. Their encyclopedic style, following Wikipedia guidelines on opening paragraphs adds further interesting properties. The first sentence puts the article in broader context. Most anaphers will refer to the original topic of the text, making them easier to resolve. Finally, should the same string occur in different meanings, Wikipedia guidelines suggest that the new meaning should again be linked for disambiguation. In short: The type of text is highly interesting."@en ;
+        dc:issued               "2015-09-10"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/eng> ;
+        dc:license              <http://purl.oclc.org/NET/rdflicense/cc-by-sa3.0en> ;
+        dc:modified             "2015-09-30"^^xsd:date ;
+        dc:title                "DBpedia abstract English corpus"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?dir=dbpedia-abstracts-en-dataset-partitions-directory> ;
+        dcat:keyword            "corpus"@en , "dbpedia"@en , "linguistics"@en , "llod"@en , "freme project"@en , "ner"@en  , "rdf"@en , "nif"@en ;
+        dcat:landingPage        <https://datahub.io/dataset/dbpedia-abstract-corpus> .
+
+<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?dir=dbpedia-abstracts-en-dataset-partitions-directory>
+        a                       dataid:Directory ;
+        rdfs:label              "DBpedia abstract English dataset directory"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Directory of the DBpedia abstract English corpus containing the datasets split into small files."@en ;
+        dc:issued               "2015-09-10"^^xsd:date ;
+        dc:license              <http://purl.oclc.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2015-09-30"^^xsd:date ;
+        dc:title                "DBpedia abstract English dataset directory"@en ;
+        dcat:accessURL        	<http://wiki-link.nlp2rdf.org/abstracts/en/> .
+        
+<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-de>
+        a                       dataid:Dataset ;
+        rdfs:label              "DBpedia abstract German corpus"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "This corpus contains a conversion of Wikipedia abstracts in six languages (dutch, english, french, german, italian and spanish) into the I used the NLP Interchange Format (NIF). The corpus contains the abstract texts, as well as the position, surface form and linked article of all links in the text. As such, it contains entity mentions manually disambiguated to Wikipedia/DBpedia resources by native speakers, which predestines it for NER training and evaluation. Furthermore, the abstracts represent a special form of text that lends itself to be used for more sophisticated tasks, like open relation extraction. Their encyclopedic style, following Wikipedia guidelines on opening paragraphs adds further interesting properties. The first sentence puts the article in broader context. Most anaphers will refer to the original topic of the text, making them easier to resolve. Finally, should the same string occur in different meanings, Wikipedia guidelines suggest that the new meaning should again be linked for disambiguation. In short: The type of text is highly interesting."@en ;
+        dc:issued               "2015-09-10"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/deu> ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2015-09-30"^^xsd:date ;
+        dc:title                "DBpedia abstract German corpus"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?dir=dbpedia-abstracts-de-dataset-partitions-directory> ;
+        dcat:keyword            "corpus"@en , "dbpedia"@en , "linguistics"@en , "llod"@en , "freme project"@en , "ner"@en  , "rdf"@en , "nif"@en ;
+        dcat:landingPage        <https://datahub.io/dataset/dbpedia-abstract-corpus> .
+
+<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?dir=dbpedia-abstracts-de-dataset-partitions-directory>
+        a                       dataid:Directory ;
+        rdfs:label              "DBpedia abstract German dataset directory"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Directory of the DBpedia abstract German corpus containing the datasets split into small files."@en ;
+        dc:issued               "2015-09-10"^^xsd:date ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2015-09-30"^^xsd:date ;
+        dc:title                "DBpedia abstract German dataset directory"@en ;
+        dcat:accessURL        	<http://wiki-link.nlp2rdf.org/abstracts/de/> .
+        
+<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-nl>
+        a                       dataid:Dataset ;
+        rdfs:label              "DBpedia abstract Dutch corpus"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "This corpus contains a conversion of Wikipedia abstracts in six languages (dutch, english, french, german, italian and spanish) into the I used the NLP Interchange Format (NIF). The corpus contains the abstract texts, as well as the position, surface form and linked article of all links in the text. As such, it contains entity mentions manually disambiguated to Wikipedia/DBpedia resources by native speakers, which predestines it for NER training and evaluation. Furthermore, the abstracts represent a special form of text that lends itself to be used for more sophisticated tasks, like open relation extraction. Their encyclopedic style, following Wikipedia guidelines on opening paragraphs adds further interesting properties. The first sentence puts the article in broader context. Most anaphers will refer to the original topic of the text, making them easier to resolve. Finally, should the same string occur in different meanings, Wikipedia guidelines suggest that the new meaning should again be linked for disambiguation. In short: The type of text is highly interesting."@en ;
+        dc:issued               "2015-09-10"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/nld> ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2015-09-30"^^xsd:date ;
+        dc:title                "DBpedia abstract Dutch corpus"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?dir=dbpedia-abstracts-nl-dataset-partitions-directory> ;
+        dcat:keyword            "corpus"@en , "dbpedia"@en , "linguistics"@en , "llod"@en , "freme project"@en , "ner"@en  , "rdf"@en , "nif"@en ;
+        dcat:landingPage        <https://datahub.io/dataset/dbpedia-abstract-corpus> .
+
+<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?dir=dbpedia-abstracts-nl-dataset-partitions-directory>
+        a                       dataid:Directory ;
+        rdfs:label              "DBpedia abstract Dutch dataset directory"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Directory of the DBpedia abstract Dutch corpus containing the datasets split into small files."@en ;
+        dc:issued               "2015-09-10"^^xsd:date ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2015-09-30"^^xsd:date ;
+        dc:title                "DBpedia abstract Dutch dataset directory"@en ;
+        dcat:accessURL        	<http://wiki-link.nlp2rdf.org/abstracts/nl/> .
+        
+<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-fr>
+        a                       dataid:Dataset ;
+        rdfs:label              "DBpedia abstract French corpus"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "This corpus contains a conversion of Wikipedia abstracts in six languages (dutch, english, french, german, italian and spanish) into the I used the NLP Interchange Format (NIF). The corpus contains the abstract texts, as well as the position, surface form and linked article of all links in the text. As such, it contains entity mentions manually disambiguated to Wikipedia/DBpedia resources by native speakers, which predestines it for NER training and evaluation. Furthermore, the abstracts represent a special form of text that lends itself to be used for more sophisticated tasks, like open relation extraction. Their encyclopedic style, following Wikipedia guidelines on opening paragraphs adds further interesting properties. The first sentence puts the article in broader context. Most anaphers will refer to the original topic of the text, making them easier to resolve. Finally, should the same string occur in different meanings, Wikipedia guidelines suggest that the new meaning should again be linked for disambiguation. In short: The type of text is highly interesting."@en ;
+        dc:issued               "2015-09-10"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/fra> ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2015-09-30"^^xsd:date ;
+        dc:title                "DBpedia abstract French corpus"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?dir=dbpedia-abstracts-fr-dataset-partitions-directory> ;
+        dcat:keyword            "corpus"@en , "dbpedia"@en , "linguistics"@en , "llod"@en , "freme project"@en , "ner"@en  , "rdf"@en , "nif"@en ;
+        dcat:landingPage        <https://datahub.io/dataset/dbpedia-abstract-corpus> .
+
+<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?dir=dbpedia-abstracts-fr-dataset-partitions-directory>
+        a                       dataid:Directory ;
+        rdfs:label              "DBpedia abstract French dataset directory"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Directory of the DBpedia abstract French corpus containing the datasets split into small files."@en ;
+        dc:issued               "2015-09-10"^^xsd:date ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2015-09-30"^^xsd:date ;
+        dc:title                "DBpedia abstract French dataset directory"@en ;
+        dcat:accessURL        	<http://wiki-link.nlp2rdf.org/abstracts/fr/> .
+        
+<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-it>
+        a                       dataid:Dataset ;
+        rdfs:label              "DBpedia abstract Italian corpus"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "This corpus contains a conversion of Wikipedia abstracts in six languages (dutch, english, french, german, italian and spanish) into the I used the NLP Interchange Format (NIF). The corpus contains the abstract texts, as well as the position, surface form and linked article of all links in the text. As such, it contains entity mentions manually disambiguated to Wikipedia/DBpedia resources by native speakers, which predestines it for NER training and evaluation. Furthermore, the abstracts represent a special form of text that lends itself to be used for more sophisticated tasks, like open relation extraction. Their encyclopedic style, following Wikipedia guidelines on opening paragraphs adds further interesting properties. The first sentence puts the article in broader context. Most anaphers will refer to the original topic of the text, making them easier to resolve. Finally, should the same string occur in different meanings, Wikipedia guidelines suggest that the new meaning should again be linked for disambiguation. In short: The type of text is highly interesting."@en ;
+        dc:issued               "2015-09-10"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/ita> ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2015-09-30"^^xsd:date ;
+        dc:title                "DBpedia abstract Italian corpus"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?dir=dbpedia-abstracts-it-dataset-partitions-directory> ;
+        dcat:keyword            "corpus"@en , "dbpedia"@en , "linguistics"@en , "llod"@en , "freme project"@en , "ner"@en  , "rdf"@en , "nif"@en ;
+        dcat:landingPage        <https://datahub.io/dataset/dbpedia-abstract-corpus> .
+
+<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?dir=dbpedia-abstracts-it-dataset-partitions-directory>
+        a                       dataid:Directory ;
+        rdfs:label              "DBpedia abstract Italian dataset directory"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Directory of the DBpedia abstract Italian corpus containing the datasets split into small files."@en ;
+        dc:issued               "2015-09-10"^^xsd:date ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2015-09-30"^^xsd:date ;
+        dc:title                "DBpedia abstract Italian dataset directory"@en ;
+        dcat:accessURL        	<http://wiki-link.nlp2rdf.org/abstracts/it/> .
+        
+<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-jp>
+        a                       dataid:Dataset ;
+        rdfs:label              "DBpedia abstract Japanese corpus"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "This corpus contains a conversion of Wikipedia abstracts in six languages (dutch, english, french, german, italian and spanish) into the I used the NLP Interchange Format (NIF). The corpus contains the abstract texts, as well as the position, surface form and linked article of all links in the text. As such, it contains entity mentions manually disambiguated to Wikipedia/DBpedia resources by native speakers, which predestines it for NER training and evaluation. Furthermore, the abstracts represent a special form of text that lends itself to be used for more sophisticated tasks, like open relation extraction. Their encyclopedic style, following Wikipedia guidelines on opening paragraphs adds further interesting properties. The first sentence puts the article in broader context. Most anaphers will refer to the original topic of the text, making them easier to resolve. Finally, should the same string occur in different meanings, Wikipedia guidelines suggest that the new meaning should again be linked for disambiguation. In short: The type of text is highly interesting."@en ;
+        dc:issued               "2015-09-10"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/jpn> ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2015-09-30"^^xsd:date ;
+        dc:title                "DBpedia abstract Japanese corpus"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?dir=dbpedia-abstracts-jp-dataset-partitions-directory> ;
+        dcat:keyword            "corpus"@en , "dbpedia"@en , "linguistics"@en , "llod"@en , "freme project"@en , "ner"@en  , "rdf"@en , "nif"@en ;
+        dcat:landingPage        <https://datahub.io/dataset/dbpedia-abstract-corpus> .
+
+<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?dir=dbpedia-abstracts-jp-dataset-partitions-directory>
+        a                       dataid:Directory ;
+        rdfs:label              "DBpedia abstract Japanese dataset directory"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Directory of the DBpedia abstract Japanese corpus containing the datasets split into small files."@en ;
+        dc:issued               "2015-09-10"^^xsd:date ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2015-09-30"^^xsd:date ;
+        dc:title                "DBpedia abstract Japanese dataset directory"@en ;
+        dcat:accessURL        	<http://wiki-link.nlp2rdf.org/abstracts/ja/> .
+        
+<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-es>
+        a                       dataid:Dataset ;
+        rdfs:label              "DBpedia abstract Spanish corpus"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "This corpus contains a conversion of Wikipedia abstracts in six languages (dutch, english, french, german, italian and spanish) into the I used the NLP Interchange Format (NIF). The corpus contains the abstract texts, as well as the position, surface form and linked article of all links in the text. As such, it contains entity mentions manually disambiguated to Wikipedia/DBpedia resources by native speakers, which predestines it for NER training and evaluation. Furthermore, the abstracts represent a special form of text that lends itself to be used for more sophisticated tasks, like open relation extraction. Their encyclopedic style, following Wikipedia guidelines on opening paragraphs adds further interesting properties. The first sentence puts the article in broader context. Most anaphers will refer to the original topic of the text, making them easier to resolve. Finally, should the same string occur in different meanings, Wikipedia guidelines suggest that the new meaning should again be linked for disambiguation. In short: The type of text is highly interesting."@en ;
+        dc:issued               "2015-09-10"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/spa> ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2015-09-30"^^xsd:date ;
+        dc:title                "DBpedia abstract Spanish corpus"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?dir=dbpedia-abstracts-es-dataset-partitions-directory> ;
+        dcat:keyword            "corpus"@en , "dbpedia"@en , "linguistics"@en , "llod"@en , "freme project"@en , "ner"@en  , "rdf"@en , "nif"@en ;
+        dcat:landingPage        <https://datahub.io/dataset/dbpedia-abstract-corpus> .
+
+<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?dir=dbpedia-abstracts-es-dataset-partitions-directory>
+        a                       dataid:Directory ;
+        rdfs:label              "DBpedia abstract Spanish dataset directory"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Directory of the DBpedia abstract Spanish corpus containing the datasets split into small files."@en ;
+        dc:issued               "2015-09-10"^^xsd:date ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2015-09-30"^^xsd:date ;
+        dc:title                "DBpedia abstract Spanish dataset directory"@en ;
+        dcat:accessURL        	<http://wiki-link.nlp2rdf.org/abstracts/es/> .
+

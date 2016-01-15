@@ -15,7 +15,6 @@
         dataid:associatedAgent  <http://wiki.dbpedia.org/Association/Persons/Dojchinovski> ;
         dc:publisher			<http://infai.org/>;
         dataid:hasAccessLevel   dataid:PublicAccess ;
-        dataid:latestVersion    <http://data.freme-project.eu/datasets/orcid/dataid.ttl> ; # is this version of the dataid or link to the dataset dump???
         dc:issued               "2015-09-15"^^xsd:date ;
         dc:modified             "2015-09-15"^^xsd:date ;
         foaf:primaryTopic       <http://data.freme-project.eu/datasets/orcid/dataid.ttl?set=orcid-dataset> .
@@ -32,7 +31,7 @@
         
 <http://data.freme-project.eu/datasets/orcid/dataid.ttl?subj=maintainerContext>
         a                          dataid:AuthorityEntityContext ;
-        dataid:authorityAgentRole  dataid:Maintainer ;
+        dataid:authorityAgentRole  dataid:Agent ;
         dataid:authorizedAgent     <http://wiki.dbpedia.org/Association/Persons/Dojchinovski> ;
         dataid:authorizedFor       <http://data.freme-project.eu/datasets/orcid/dataid.ttl> ;
         dataid:isInheritable       true .
@@ -82,7 +81,6 @@
         dc:language             <http://lexvo.org/id/iso639-3/eng> ;  
         dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;  
         dc:modified             "2015-09-15"^^xsd:date ;
-        dc:hasVersion           "0.1" ;
         dc:title                "ORCID 2014 Dataset"@en ;
         dcat:distribution       <http://data.freme-project.eu/datasets/orcid/dataid.ttl?set=orcid-dataset-single-dump> , <http://data.freme-project.eu/datasets/orcid/dataid.ttl?file=orcidSparql> , <http://data.freme-project.eu/datasets/orcid/dataid.ttl?dir=orcid-dataset-partitions-directory> ;
         dcat:keyword            "freme project"@en , "orcid"@en , "rdf"@en , "research"@en ;
@@ -117,7 +115,7 @@
         dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;   
         dc:modified             "2015-09-15"^^xsd:date ;
         dc:title                "ORCID 2014 raw dump file"@en ;
-        dcat:accessURL        	<https://orcid.org/content/orcid-public-data-file-2014/> ;
+        dcat:downloadURL       	<https://orcid.org/content/orcid-public-data-file-2014/> ;
         dcat:format             "application/json" ;   
         dcat:mediaType          "application/x-bzip2".    	
 

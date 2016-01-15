@@ -1,0 +1,291 @@
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dmp:   <http://dataid.dbpedia.org/ns/dmp#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/terms/> .
+
+<http://data.freme-project.eu/datasets/statbel/dataid.ttl>
+        a                       dataid:DataId ;
+        dataid:associatedAgent  <http://wiki.dbpedia.org/Association/Persons/Dojchinovski>, <http://infai.org/> ;
+        dc:publisher			<http://infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dataid:latestVersion    <http://data.freme-project.eu/datasets/statbel/dataid.ttl> ;
+        dc:issued               "2015-01-14"^^xsd:date ;
+        dc:modified             "2015-01-14"^^xsd:date ;
+        foaf:primaryTopic       <http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-dataset> .
+        
+<http://wiki.dbpedia.org/Association/Persons/Dojchinovski>
+        a          dataid:Agent ;
+        foaf:mbox  <mailto:milan.dojchinovski@fit.cvut.cz> ;
+        foaf:name  "Milan Dojchinovski" .
+        
+<http://www.infai.org/>
+        a              dataid:Agent ;
+        foaf:homepage  <http://infai.org/> ;
+        foaf:mbox      <mailto:info@infai.org> ;
+        foaf:name      "InfAI" .
+        
+<http://data.freme-project.eu/datasets/statbel/dataid.ttl?subj=creatorContext>
+        a                          dataid:AuthorityEntityContext ;
+        dataid:authorityAgentRole  dataid:Publisher, dataid:Maintainer ;
+        dataid:authorizedAgent     <http://wiki.dbpedia.org/Association/Persons/Dojchinovski> ;
+        dataid:authorizedFor       <http://data.freme-project.eu/datasets/statbel/dataid.ttl> ;
+        dataid:isInheritable       true .
+        
+<http://data.freme-project.eu/datasets/statbel/dataid.ttl?subj=infaiContext>
+        a                          dataid:AuthorityEntityContext ;
+        dataid:authorityAgentRole  dataid:Creator ;
+        dataid:authorizedAgent     <http://www.infai.org/> ;
+        dataid:authorizedFor       <http://data.freme-project.eu/datasets/statbel/dataid.ttl> ;
+        dataid:isInheritable       true .
+        
+<http://data.freme-project.eu/datasets/statbel/dataid.ttl?subj=statbelContext>
+        a                          dataid:AuthorityEntityContext ;
+        dataid:authorityAgentRole  dataid:Publisher ;
+        dataid:authorizedAgent     <http://statbel.fgov.be> ;
+        dataid:authorizedFor       <http://data.freme-project.eu/datasets/orcid/dataid.ttl?set=statbel-raw-dataset> ;
+        dataid:isInheritable       true .
+        
+<http://statbel.fgov.be>
+		a dataid:Agent ;
+		rdfs:label "Statbel" ;
+		foaf:name "Statbel" ;
+		foaf:homepage <http://statbel.fgov.be> .
+
+# root dataset
+<http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-dataset>
+        a                       dataid:Dataset ;
+        rdfs:label              "Statbel Corpus"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher			<http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "This corpus contains RDF conversion of datasets from the 'Statistics Belgium' (also known as Statbel) which aims at collecting, processing and disseminating relevant, reliable and commented data on Belgian society. Currently, the corpus contains three datasets: 1) Belgian house price index dataset: measures the inflation on residential property market in Belgium. 2) Employment, unemployment, labour market structure dataset: data on employment, unemployment and the labour market from the labour force survey conducted among Belgian households. 3) Unemployment and additional indicators dataset: contains unemployment related statistics about Belgium and its regions."@en ;
+        dc:issued               "2015-09-11"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/eng> ;
+        #dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:title                "Statbel Corpus"@en ;
+        dcat:distribution		<http://data.freme-project.eu/datasets/statbel/dataid.ttl?sparql=statbelSparql>;
+        void:subset				<http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-dataset-employment-unemployment>, <http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-dataset-hpi>, <http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-dataset-unemployment-indicators> ;
+        dcat:keyword            "belgium"@en , "corpus"@en , "datacube"@en , "freme project"@en , "rdf"@en , "statistics"@en ;
+        dcat:landingPage        <https://datahub.io/dataset/statbel-corpus> .
+
+# employment-unemployment dataset
+<http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-dataset-employment-unemployment>
+        a                       dataid:Dataset ;
+        rdfs:label              "Statbel - Employment, unemployment, labour market structure dataset"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Employment, unemployment, labour market structure dataset: data on employment, unemployment and the labour market from the labour force survey conducted among Belgian households."@en ;
+        dc:issued               "2015-09-11"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/eng> ;
+        #dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:title                "Statbel - Employment, unemployment, labour market structure dataset"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/statbel/dataid.ttl?sparql=statbelSparql> , <http://data.freme-project.eu/datasets/statbel/dataid.ttl?file=statbel-dataset-employment-unemployment-dump> ;
+        prov:wasDerivedFrom     <http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-employment-unemployment-raw-dataset> ;
+        dcat:keyword            "belgium"@en , "corpus"@en , "datacube"@en , "freme project"@en , "rdf"@en , "statistics"@en ;
+        dcat:landingPage        <https://datahub.io/dataset/statbel-corpus> .
+
+# employment-unemployment dataset dump
+<http://data.freme-project.eu/datasets/statbel/dataid.ttl?file=statbel-dataset-employment-unemployment-dump>
+        a                       dataid:SingleFile ;
+        rdfs:label              "Statbel - Employment, unemployment, labour market structure dataset dump"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Statbel - Employment, unemployment, labour market structure dataset: data on employment, unemployment and the labour market from the labour force survey conducted among Belgian households. Dump of the RDF dataset."@en ;
+        dc:issued               "2015-09-11"^^xsd:date ;
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/eng> ;
+        #dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:title                "Statbel - Employment, unemployment, labour market structure dataset"@en ;
+        dcat:downloadURL        <http://rv1460.1blu.de/datasets/statbel/house-price-index.ttl> ;
+        dcat:format             "text/turtle" .
+
+# employment-unemployment raw dataset
+<http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-employment-unemployment-raw-dataset>
+        a                       dataid:Dataset;
+        rdfs:label              "Statbel - Employment, unemployment, labour market structure raw dump"@en ;
+        dataid:similarData      <http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-dataset> ;
+        dataid:associatedAgent  <http://statbel.fgov.be> ;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Statbel - Employment, unemployment, labour market structure dataset: data on employment, unemployment and the labour market from the labour force survey conducted among Belgian households. The raw dataset."@en ;
+        dc:issued               "2015-09-15"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/eng> ;
+        #dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;   
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:publisher            <http://statbel.fgov.be>;
+        dc:title                "Statbel - Employment, unemployment, labour market structure raw dump"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/statbel/dataid.ttl?file=statbel-raw-dataset-employment-unemployment-dump> ;
+        dcat:keyword            "belgium"@en , "rdf"@en , "statistics"@en ;
+        dcat:landingPage        <http://statbel.fgov.be/en/statistics/figures/economy/construction_industry/house_price_index> .
+
+# employment-unemployment market raw dump
+<http://data.freme-project.eu/datasets/statbel/dataid.ttl?file=statbel-raw-dataset-employment-unemployment-dump>
+        a                       dataid:SingleFile ;
+        rdfs:label              "Statbel - Employment, unemployment, labour market structure raw dump file"@en ;
+        dataid:associatedAgent  <http://statbel.fgov.be> ;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Dumpfile for the Belgian labour market statistics raw dataset."@en ;
+        dc:issued               "2015-09-15"^^xsd:date ;
+        #dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ; 
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:title                "Statbel - Employment, unemployment, labour market structure raw dump file"@en ;
+        dcat:accessURL          <http://statbel.fgov.be/en/statistics/figures/labour_market_living_conditions/employment/> ;
+        dcat:format             "text/csv" . 
+        
+
+# hpi dataset
+<http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-dataset-hpi>
+        a                       dataid:Dataset ;
+        rdfs:label              "Statbel - Belgian house price index dataset"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "This corpus contains RDF conversion of datasets from the 'Statistics Belgium' (also known as Statbel) which aims at collecting, processing and disseminating relevant, reliable and commented data on Belgian society. Currently, the corpus contains three datasets: 1) Belgian house price index dataset: measures the inflation on residential property market in Belgium. 2) Employment, unemployment, labour market structure dataset: data on employment, unemployment and the labour market from the labour force survey conducted among Belgian households. 3) Unemployment and additional indicators dataset: contains unemployment related statistics about Belgium and its regions."@en ;
+        dc:issued               "2015-09-11"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/eng> ;
+        #dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:title                "Statbel - Belgian house price index dataset"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/statbel/dataid.ttl?sparql=statbelSparql> , <http://data.freme-project.eu/datasets/statbel/dataid.ttl?file=statbel-dataset-hpi-dump> ;
+        prov:wasDerivedFrom     <http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-raw-house-price-index-dataset> ;
+        dcat:keyword            "belgium"@en , "corpus"@en , "datacube"@en , "freme project"@en , "rdf"@en , "statistics"@en ;
+        dcat:landingPage        <https://datahub.io/dataset/statbel-corpus> .
+
+# hpi dump
+<http://data.freme-project.eu/datasets/statbel/dataid.ttl?file=statbel-dataset-hpi-dump>
+        a                       dataid:SingleFile ;
+        rdfs:label              "Statbel - Belgian house price index dataset dump"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Statbel - Employment, unemployment, labour market structure dataset"@en ;
+        dc:issued               "2015-09-11"^^xsd:date ;
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/eng> ; 
+        #dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ; 
+        dc:title                "Statbel - Belgian house price index dataset"@en ;
+        dcat:downloadURL        <http://rv1460.1blu.de/datasets/statbel/house-price-index.ttl> ;
+        dcat:format             "text/turtle" .
+
+# hpi raw dataset
+<http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-raw-house-price-index-dataset>
+		a                       dataid:Dataset;
+        rdfs:label              "Statbel - Belgian house price index dataset raw dump"@en ;
+        dataid:similarData      <http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-dataset> ;
+        dataid:associatedAgent  <http://statbel.fgov.be> ;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "TODO"@en ;
+        dc:issued               "2015-09-15"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/eng> ;
+        #dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ; 
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:publisher            <http://statbel.fgov.be>;
+        dc:title                "Statbel - Belgian house price index dataset raw dump"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/statbel/dataid.ttl?file=statbel-raw-house-price-index-dataset-single-dump> ;
+        dcat:keyword            "belgium"@en , "rdf"@en , "statistics"@en ;
+        dcat:landingPage        <http://statbel.fgov.be/en/statistics/figures/economy/construction_industry/house_price_index> .
+        
+# hpi raw dump
+<http://data.freme-project.eu/datasets/statbel/dataid.ttl?file=statbel-raw-house-price-index-dataset-single-dump>
+        a                       dataid:SingleFile ;
+        rdfs:label              "Statbel - Belgian house price index raw dump file"@en ;
+        dataid:associatedAgent  <http://statbel.fgov.be> ;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Dumpfile for the Belgian house price index raw dataset."@en ;
+        dc:issued               "2015-09-15"^^xsd:date ;
+        #dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:title                "Statbel - Belgian house price index raw dump file"@en ;
+        dcat:accessURL          <http://statbel.fgov.be/en/statistics/figures/economy/construction_industry/house_price_index/> ;
+        dcat:format             "text/csv" . 
+
+# unemployment-indicators dataset
+<http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-dataset-unemployment-indicators>
+        a                       dataid:Dataset ;
+        rdfs:label              "Statbel Corpus"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "This corpus contains RDF conversion of datasets from the 'Statistics Belgium' (also known as Statbel) which aims at collecting, processing and disseminating relevant, reliable and commented data on Belgian society. Currently, the corpus contains three datasets: 1) Belgian house price index dataset: measures the inflation on residential property market in Belgium. 2) Employment, unemployment, labour market structure dataset: data on employment, unemployment and the labour market from the labour force survey conducted among Belgian households. 3) Unemployment and additional indicators dataset: contains unemployment related statistics about Belgium and its regions."@en ;
+        dc:issued               "2015-09-11"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/eng> ;
+        #dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ;
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:title                "Statbel Corpus"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/statbel/dataid.ttl?sparql=statbelSparql> , <http://data.freme-project.eu/datasets/statbel/dataid.ttl?file=statbel-dataset-unemployment-indicators-dump> ;
+        dcat:keyword            "belgium"@en , "corpus"@en , "datacube"@en , "freme project"@en , "rdf"@en , "statistics"@en ;
+        prov:wasDerivedFrom     <http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-unemployment-raw-dataset>;
+        dcat:landingPage        <https://datahub.io/dataset/statbel-corpus> .
+
+# unemployment-indicators dataset dump
+<http://data.freme-project.eu/datasets/statbel/dataid.ttl?file=statbel-dataset-unemployment-indicators-dump>
+        a                       dataid:SingleFile ;
+        rdfs:label              "Stabel - Unemployment and additional indicators dataset"@en ;
+        dc:title                "Stabel - Unemployment and additional indicators dataset"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dc:publisher            <http://www.infai.org/>;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Contains unemployment related statistics about Belgium and its regions."@en ;
+        dc:issued               "2015-09-11"^^xsd:date ;
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/eng> ;
+        #dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ; 
+        dcat:downloadURL        <http://rv1460.1blu.de/datasets/statbel/unemployment-indicators.ttl> ;
+        dcat:format             "text/turtle" .
+
+
+# unemployment-indicators raw dataset
+<http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-unemployment-raw-dataset>
+		a 						dataid:Dataset;
+		rdfs:label              "Stabel - Unemployment and additional indicators dataset raw dump"@en ;
+		dataid:similarData		<http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-dataset> ;
+        dataid:associatedAgent  <http://statbel.fgov.be> ;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "TODO"@en ;
+        dc:issued               "2015-09-15"^^xsd:date ;
+        dc:language             <http://lexvo.org/id/iso639-3/eng> ;  
+        #dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;  
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:publisher            <http://statbel.fgov.be>;
+        dc:title                "Stabel - Unemployment and additional indicators dataset raw dump"@en ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/statbel/dataid.ttl?file=statbel-unemployment-raw-dataset-single-dump> ;
+        dcat:keyword            "belgium"@en , "rdf"@en , "statistics"@en ;
+        dcat:landingPage        <http://statbel.fgov.be/en/statistics/figures/economy/construction_industry/house_price_index> .
+        
+# unemployment-indicators raw dump
+<http://data.freme-project.eu/datasets/statbel/dataid.ttl?file=statbel-unemployment-raw-dataset-single-dump>
+        a                       dataid:SingleFile ;
+        rdfs:label              "Stabel - Unemployment and additional indicators dataset raw dump file"@en ;
+        dataid:associatedAgent  <http://statbel.fgov.be> ;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Dumpfile for the Belgian unemployment statistics raw dataset."@en ;
+        dc:issued               "2015-09-15"^^xsd:date ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ; 
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dc:title                "Stabel - Unemployment and additional indicators dataset raw dump file"@en ;
+    	dcat:downloadURL        <http://statbel.fgov.be/en/modules/publications/statistics/marche_du_travail_et_conditions_de_vie/unemployment_and_additional_indicators_2005-2010.jsp> ;
+        dcat:format             "application/vnd.ms-excel" . 
+
+# sparql
+<http://data.freme-project.eu/datasets/statbel/dataid.ttl?sparql=statbelSparql>
+        a                       dataid:SparqlEndpoint ;
+        rdfs:label              "Stabel SPARQL endpoint"@en ;
+        dc:title                "Stabel SPARQL endpoint"@en ;
+        dataid:associatedAgent  <http://www.infai.org/> ;
+        dataid:hasAccessLevel   dataid:PublicAccess ;
+        dc:description          "Public SPARQL endpoint for the Stabel dataset."@en ;
+        dc:issued               "2015-09-11"^^xsd:date ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ; 
+        dc:modified             "2015-09-15"^^xsd:date ;
+        dcat:accessURL        	<http://rv2622.1blu.de:8890/sparql/> .
+        
