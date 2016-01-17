@@ -1,0 +1,50 @@
+<RestClientRequest>
+  <option name="biscuits">
+    <list />
+  </option>
+  <option name="httpMethod" value="POST" />
+  <option name="urlBase" value="http://localhost:9997" />
+  <option name="urlPath" value="/dataid/publisher/publishtodatahub" />
+  <option name="headers">
+    <list>
+      <KeyValuePair>
+        <option name="key" value="Accept" />
+        <option name="value" value="*/*" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="Cache-Control" />
+        <option name="value" value="no-cache" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="Content-Type" />
+        <option name="value" value="text/turtle" />
+      </KeyValuePair>
+    </list>
+  </option>
+  <option name="parameters">
+    <list>
+      <KeyValuePair>
+        <option name="key" value="organization" />
+        <option name="value" value="dataid" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="apikey" />
+        <option name="value" value="1495b749-5efc-4097-9ba6-7e8d1acdbb67" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="excemptions" />
+        <option name="value" value="http://data.freme-project.eu/datasets/global-airports/dataid.ttl?set=global-airports-raw-dataset" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="isprivate" />
+        <option name="value" value="true" />
+      </KeyValuePair>
+    </list>
+  </option>
+  <option name="parametersEnabled" value="true" />
+  <option name="haveTextToSend" value="false" />
+  <option name="haveFileToSend" value="true" />
+  <option name="isFileUpload" value="false" />
+  <option name="textToSend" value="" />
+  <option name="filesToSend" value="C:\Users\Chile\Documents\GitHub\dataId\dataId_example_files\freme\global-airports-dataid.ttl" />
+</RestClientRequest>

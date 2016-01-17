@@ -35,16 +35,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://mbostock.github.com/d3/d3.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/content/jScript/commonScripts.js"></script>
     <script type="text/javascript" src="/content/jScript/valResTabulate.js"></script>
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.css"/>
 </head>
 <body>
-<img id='dataidlogo' src="/content/imgs/krasseslogo.png" />
-<img id='rdfunitlogo' src="/content/imgs/logo-rdfunit.png" />
+<img id='dataidlogo' width="212" height="70" src="/content/imgs/krasseslogo.png" />
+<img id='rdfunitlogo' width="212" height="70" src="/content/imgs/logo-rdfunit.png" />
 <h1>DataId Validator</h1>
 <h3>powered by: RDFUnit</h3>
 <div class="inline-div">
-    <textarea id="dataid" class="inline-txtarea" onchange="prettify()"></textarea>
+    <textarea id="dataid" class="inline-txtarea" onchange="formatInput()"></textarea>
 </div>
 <div>   </div>
 <input id='validate' type="button" onclick="validate()" value="validate!">
@@ -54,7 +55,7 @@
     <option value="N-Triples">N-Triples</option>
     <option value="JSON-LD">JSON-LD</option>
 </select>
-<input id='serialization' style="display: inline-block;" type="button" onclick="prettify()" value="change serialization">
+<input id='serialization' style="display: inline-block;" type="button" onclick="formatInput()" value="change serialization">
 <h2 id="resulttitle"></h2>
 <div id="canvas"></div>
 </body>

@@ -8,26 +8,50 @@
             <div class="col-md-4">
                 <div class="pull-right">
                     <div style="width: 100%;">
-                        <select class="btn-success" style="width: 100%;"  id="langSelect" name="langSelect" ng-model="selectedLanguage" ng-options="lang.code.value as lang.lang.value for lang in languages" multiselectdropdown="languages" multiselectprefix="languge of literals: " multiselectidtag="code" multiselectfilter></select>
+                        <select class="btn-success"
+                                style="width: 100%;"
+                                id="langSelect"
+                                name="langSelect"
+                                ng-model="selectedLanguage"
+                                ng-options="lang.code.value as lang.lang.value for lang in languages"
+                                multiselectdropdown="languages"
+                                multiselectprefix="languge of literals: "
+                                multiselectidtag="code"
+                                multiselectfilter>
+                        </select>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row" >
             <div class="col-md-12" style="margin-top: 8px;">
-                <div class="input-group">
+                <div class="input-group" ng-controller="PopoverCtrl">
                     <span class="input-group-addon" style="border-color: #EEEEEE; font-size:13px; padding-right: 2px;">uri: {{dataset['@id'].substring(0, dataset['@id'].indexOf('#')+1)}}</span>
-                    <input type="text" class="form-control" style="border-color: #EEEEEE; font-size:13px; padding-left: 2px;" id="idinput" value="{{dataset['@id'].substring(dataset['@id'].indexOf('#')+1)}}" ng-disabled="edituri" ng-model="halfuri" popover-title="This uri is invalid!" popover-placement="bottom" popover-template="notePopover.templateUrl" popover-trigger="focus">
-                    <span class="input-group-btn"><button type="button" class="btn btn-warning" ng-click="uriEditClik();" style="border-color: #EEEEEE; height:34px;"><i class="glyphicon glyphicon-pencil"></i></button></span>
+                    <input type="text"
+                           class="form-control parturi"
+                           id="idinput"
+                           name="idinput"
+                           ng-disabled="edituri"
+                           dataid-model
+                           ng-model="halfuri"
+                           ng-init="iName='idinput'"
+                           parturi="dataset['@id'].substring(0, dataset['@id'].indexOf('#'))">
+                    <div style="display: inline-block;"><ng-messages ng-messages-include="messagesTemplate" for="formAgent.idinput.$error"></ng-messages></div>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-warning" ng-click="uriEditClik();" style="border-color: #EEEEEE; height:34px;">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </button>
+                    </span>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal-body">
-        <div ng-include="'agentinclude.html'"></div>
+        <div ng-include="'agentinclude.html'" ng-init="formVar = 'formAgent'"></div>
     </div>
     <div class="modal-footer">
         <button class="popoverButton btn btn-primary" ng-click="formAgent.$valid && ok()">OK</button>
         <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
     </div>
 </form>
+<div ng-init="init()"/>

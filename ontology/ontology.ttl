@@ -133,6 +133,11 @@ To learn more including how to draft an new DataID, please visit http://dataid.d
 	         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
 	         owl:onClass dataid:Dataset ;
 	         owl:onProperty dataid:nextVersion
+     ], [
+	         a owl:Restriction ;
+	         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+	         owl:onDataRange xsd:string ;
+	         owl:onProperty dataid:version
      ] ,[
 	         a owl:Restriction ;
 	         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -181,10 +186,20 @@ dataid:Dataset
         owl:allValuesFrom xsd:date ;
         owl:onProperty dct:modified
     ], [
+         a owl:Restriction ;
+         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+         owl:onDataRange xsd:string ;
+         owl:onProperty dataid:version
+     ], [
         a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onDataRange xsd:string ;
         owl:onProperty rdfs:label
+    ],[
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass	rdfs:Resource;
+        owl:onProperty void:vocabulary
     ],[
          a owl:Restriction ;
          owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -389,7 +404,12 @@ dataid:Distribution
         a owl:Restriction ;
         owl:allValuesFrom xsd:date ;
         owl:onProperty dct:modified
-    ] ,[
+    ], [
+         a owl:Restriction ;
+         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+         owl:onDataRange xsd:string ;
+         owl:onProperty dataid:version
+     ] ,[
          a owl:Restriction ;
          owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
          owl:onClass dataid:AccessLevel ;
@@ -542,7 +562,12 @@ dataid:Linkset
         a owl:Restriction ;
         owl:allValuesFrom xsd:date ;
         owl:onProperty dct:modified
-    ],[
+    ], [
+         a owl:Restriction ;
+         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+         owl:onDataRange xsd:string ;
+         owl:onProperty dataid:version
+     ],[
         a owl:Restriction ;
         owl:Cardinality "1"^^xsd:nonNegativeInteger ;
         owl:onClass dataid:AccessLevel ;
@@ -613,6 +638,13 @@ dataid:preview
     rdfs:label 		"data preview"@en ;
     rdfs:range  	foaf:Document .
     
+dataid:version
+    a owl:ObjectProperty ;
+    rdfs:comment 	"provides a version string for any entity"@en ;
+    rdfs:domain 	prov:Entity ;
+    rdfs:label 		"version"@en ;
+    rdfs:range  	xsd:string . 
+    
 dataid:associatedAgent
     a owl:ObjectProperty ;
     rdfs:comment "some agent generally connected to the dataset, their function to be specified by their rdf:type"@en ;
@@ -649,6 +681,20 @@ dataid:graphName
     rdfs:label "Graph name"@en ;
     rdfs:range xsd:string .
 
+dataid:softwareRquirement
+    a owl:DatatypeProperty ;
+    rdfs:comment "software needed to access the data in this distribution"@en ;
+    rdfs:domain dataid:Distribution ;
+    rdfs:label "software requirement"@en ;
+    rdfs:range foaf:Document .
+
+dataid:documentation
+    a owl:DatatypeProperty ;
+    rdfs:comment "additional documents providing information about the described data"@en ;
+    rdfs:domain dataid:Dataset ;
+    rdfs:label "additional documentation"@en ;
+    rdfs:range foaf:Document .
+    
 dataid:md5
     a rdfs:Datatype ;
     rdfs:comment "A md5 checksum"@en ;

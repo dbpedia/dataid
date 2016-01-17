@@ -6,53 +6,100 @@
             </div>
             <div class="panel-body">
                 <div ng-hide="agentDontShowType">
-                    <label>Type of Agent: </label>  <span style="color: red">*</span><br/>
+                    <label>Type of Agent: </label>  <span style="color: red">*</span>
                     <div class="pull-right">
-                        <span  popover-placement="left" class="help-button"  popover="Please select the function of this Agent." >?</span>
+                        <a class="desc2" target="_blank" href='http://dataid.dbpedia.org/ns/core#'> dataid:agentRole </a>
+                        <span  popover-placement="bottom" class="help-button"  popover="Please select the function of this Agent." >?</span>
                     </div>
-                    <input type="radio" ng-required="someTypeSelected()"  ng-model="agent['dataid:agentRole']['@value']" value="Creator" checked="checked" > dataid:Creator
-                    <input style="margin-left: 20px" type="radio" ng-required="someTypeSelected()"  ng-model="agent['dataid:agentRole']['@value']" value="Contributor" > dataid:Contributor
-                    <input style="margin-left: 20px" type="radio" ng-required="someTypeSelected()"  ng-model="agent['dataid:agentRole']['@value']" value="Contact" > dataid:Contact
-                    <input style="margin-left: 20px" type="radio" ng-required="someTypeSelected()"  ng-model="agent['dataid:agentRole']['@value']" value="Maintainer" > dataid:Maintainer
-                    <input style="margin-left: 20px" type="radio" ng-required="someTypeSelected()"  ng-model="agent['dataid:agentRole']['@value']" value="Publisher" > dataid:Publisher <br/>
-                    <br>
+                    <div class="btn-group">
+                        <label class="btn btn-success" btn-radio="'Creator'" name="agentType" ng-model="agent['dataid:agentRole']['@value']" >
+                            Creator
+                        </label>
+                        <label class="btn btn-success" name="agentType" ng-model="agent['dataid:agentRole']['@value']" btn-radio="'Maintainer'" >
+                            Maintainer
+                        </label>
+                        <label class="btn btn-success" name="agentType" ng-model="agent['dataid:agentRole']['@value']" btn-radio="'Publisher'" >
+                            Publisher
+                        </label>
+                        <label class="btn btn-success" name="agentType" ng-model="agent['dataid:agentRole']['@value']" btn-radio="'Contributor'">
+                            Contributor
+                        </label>
+                        <label class="btn btn-success" name="agentType" ng-model="agent['dataid:agentRole']['@value']" btn-radio="'Contact'">
+                            Contact
+                        </label>
+                    </div>
+                    <div style="display: inline-block;"><ng-messages ng-messages-include="messagesTemplate" for="this[formVar].agentType.$error"></ng-messages></div>
                 </div>
 
-                <label>Agent Name</label> <span ng-show="agent['dataid:agentName']['@required']" style="color: red">*</span>
-<!--                <div class="pull-right">
-                    <span  popover-placement="left" class="help-button"  popover="{{dataset['dataid:agentName']['@label']}}" >?</span>
-                </div>-->
-                <a class="desc2" target="_blank" href='http://dataid.dbpedia.org/ns/core#'> dataid:agentName </a>
-                <br>
-                <input class="input" ng-required="agent['dataid:agentName']['@required']" ng-model="agent['dataid:agentName']['@value']" popover-placement="bottom" popover="{{agent['dataid:agentName']['@label']}}" popover-trigger="focus" popover-title="dataid:agentName" popover-popup-delay="500">
-                <br>
+                <div ng-controller="PopoverCtrl">
+                    <label>Agent Name</label> <span ng-show="agent['dataid:agentName']['@required']" style="color: red">*</span>
+                    <div class="pull-right">
+                        <a class="desc2" target="_blank" href='http://dataid.dbpedia.org/ns/core#'> dataid:agentName </a>
+                        <span  popover-placement="bottom" class="help-button"  popover="{{dataset['dataid:agentName']['@label']}}" >?</span>
+                    </div>
+                    <br>
+                    <input ng-init="iName='agentName'"
+                           type="text"
+                           class="input"
+                           id="agentName"
+                           name="agentName"
+                           dirty
+                           ng-model="agent['dataid:agentName']"
+                           dataid-model>
+                    <div style="display: inline-block;"><ng-messages ng-messages-include="messagesTemplate" for="this[formVar].agentName.$error"></ng-messages></div>
+                    </div>
 
-                <label>Agent Mail</label> <span ng-show="agent['dataid:agentMail']['@required']" style="color: red">*</span>
-<!--                <div class="pull-right">
-                    <span  popover-placement="left" class="help-button"  popover="{{dataset['dataid:agentMail']['@label']}}" >?</span>
-                </div>-->
-                <a class="desc2" target="_blank" href='http://dataid.dbpedia.org/ns/core#'> dataid:agentMail </a>
-                <br>
-                <input type="email" class="input" ng-required="agent['dataid:agentMail']['@required']" ng-model="agent['dataid:agentMail']['@value']" popover-placement="bottom" popover="{{agent['dataid:agentMail']['@label']}}" popover-trigger="focus" popover-title="dataid:agentMail" popover-popup-delay="500" data-error="Bruh, that email address is invalid">
-                <br>
+                <div ng-controller="PopoverCtrl">
+                    <label>Agent Mail</label> <span ng-show="agent['dataid:agentMail']['@required']" style="color: red">*</span>
+                    <div class="pull-right">
+                        <a class="desc2" target="_blank" href='http://dataid.dbpedia.org/ns/core#'> dataid:agentMail </a>
+                        <span  popover-placement="bottom" class="help-button"  popover="{{dataset['dataid:agentMail']['@label']}}" >?</span>
+                    </div>
+                    <br>
+                    <input ng-init="iName='agentMail'"
+                           email
+                           type="text"
+                           class="input"
+                           id="agentMail"
+                           name="agentMail"
+                           ng-model="agent['dataid:agentMail']"
+                           dataid-model>
+                    <div style="display: inline-block;"><ng-messages ng-messages-include="messagesTemplate" for="this[formVar].agentMail.$error"></ng-messages></div>
+                </div>
 
-                <label>Agent URL</label> <span ng-show="agent['dataid:agentUrl']['@required']" style="color: red">*</span>
-<!--                <div class="pull-right">
-                    <span  popover-placement="left" class="help-button"  popover="{{dataset['dataid:agentUrl']['@label']}}" >?</span>
-                </div>-->
-                <a class="desc2" target="_blank" href='http://dataid.dbpedia.org/ns/core#'> dataid:agentUrl </a>
-                <br>
-                <input type="url" class="input" ng-required="agent['dataid:agentUrl']['@required']" ng-model="agent['dataid:agentUrl']['@value']" popover-placement="bottom" popover="{{agent['dataid:agentUrl']['@label']}}" popover-trigger="focus" popover-title="dataid:agentUrl" popover-popup-delay="500">
-                <br/>
+                <div ng-controller="PopoverCtrl">
+                    <label>Agent URL</label> <span ng-show="agent['dataid:agentUrl']['@required']" style="color: red">*</span>
+                    <div class="pull-right">
+                        <a class="desc2" target="_blank" href='http://dataid.dbpedia.org/ns/core#'> dataid:agentUrl </a>
+                        <span  popover-placement="bottom" class="help-button"  popover="{{dataset['dataid:agentUrl']['@label']}}" >?</span>
+                    </div>
+                    <br>
+                    <input ng-init="iName='agentUrl'"
+                           type="text"
+                           class="input"
+                           id="agentUrl"
+                           name="agentUrl"
+                           ng-model="agent['dataid:agentUrl']"
+                           dataid-model>
+                    <div style="display: inline-block;"><ng-messages ng-messages-include="messagesTemplate" for="this[formVar].agentUrl.$error"></ng-messages></div>
+                </div>
 
-                <label>Label</label> <span ng-show="agent['rdfs:label']['@required']" style="color: red">*</span>
-<!--                <div class="pull-right">
-                    <span  popover-placement="left" class="help-button"  popover="{{dataset['rdfs:label']['@label']}}" >?</span>
-                </div>-->
-                <a class="desc2" target="_blank" href='http://www.w3.org/TR/rdf-schema/label'> rdfs:label </a>
-                <br>
-                <input class="input" ng-required="agent['rdfs:label']['@required']" ng-model="agent['rdfs:label']['@value'][selectedLanguage]" popover-placement="bottom" popover="{{agent['rdfs:label']['@label']}}" popover-trigger="focus" popover-title="rdfs:label" popover-popup-delay="500">
-                <br>
+                <div ng-controller="PopoverCtrl">
+                    <label>Label</label> <span ng-show="agent['rdfs:label']['@required']" style="color: red">*</span>
+                    <div class="pull-right">
+                        <a class="desc2" target="_blank" href='http://www.w3.org/TR/rdf-schema/label'> rdfs:label </a>
+                        <span  popover-placement="bottom" class="help-button"  popover="{{dataset['rdfs:label']['@label']}}" >?</span>
+                    </div>
+                    <br>
+                    <input ng-init="iName='rdfsAgentLabel'"
+                           type="text"
+                           class="input"
+                           id="rdfsAgentLabel"
+                           name="rdfsAgentLabel"
+                           ng-model="agent['rdfs:label']"
+                           dataid-model="selectedLanguage">
+                    <div style="display: inline-block;"><ng-messages ng-messages-include="messagesTemplate" for="this[formVar].rdfsAgentLabel.$error"></ng-messages></div>
+                </div>
             </div>
         </div>
     </div>

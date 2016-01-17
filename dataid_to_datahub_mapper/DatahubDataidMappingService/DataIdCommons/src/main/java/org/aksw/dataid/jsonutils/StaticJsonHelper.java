@@ -108,6 +108,19 @@ public class StaticJsonHelper
         }
         return null;
     }
+
+    public static String getPrettyContent(Object obj)
+    {
+        try {
+            String zw = JsonUtils.toPrettyString(obj);
+            if(!zw.startsWith("{"))
+                zw = "{\n" + zw + "\n}";
+            return zw;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return e.getMessage();
+        }
+    }
 	
 	public static void writeJsonContent(String path, String content) throws IOException, RDFParseException, RDFHandlerException {
 		JsonFileManager mainFileManager = new JsonFileManager();

@@ -14,33 +14,56 @@
             <input ng-required="true" ng-class="{'disabled': isTemplate}" id="dataiduri" placeholder="e.g. http://dbpedia.dataid.org/myExampleDataId#1" class="input" type="text" ng-model="root['@id']">
             <br/> 
             <span class="label label-danger" ng-show="form.dataset.$error.url">{{messages.notValidURI}} <br></span>-->
+            <div ng-controller="PopoverCtrl">
+                <label>Title <span style="color: red">*</span></label>
+                <div class="pull-right">
+                    <a class="desc2" target="_blank" href='http://purl.org/dc/terms/title'> dc:title </a>
+                    <span  popover-placement="bottom" class="help-button"  popover="{{root['dc:title']['@label']}}" >?</span>
+                </div>
 
-            <label>Title <span style="color: red">*</span></label>
-<!--            <div class="pull-right">
-                <span  popover-placement="right" class="help-button"  popover="{{root['dc:title']['@label']}}" >?</span>
-            </div>-->
-            <a class="desc2" target="_blank" href='http://purl.org/dc/terms/title'> dc:title </a>
-            <br>                
-            <input ng-required="root['dc:title']['@required']" placeholder="e.g. DBpedia" type="text" class="dataset input" ng-model="root['dc:title']['@value']" popover-placement="bottom" popover="{{root['dc:title']['@label']}}" popover-trigger="focus" popover-title="dc:title" popover-popup-delay="500">
-            <br/>
+                <br>
+                <input ng-init="iName='dcTitle'"
+                       class="input"
+                       id="dcTitle"
+                       name="dcTitle"
+                       dirty
+                       ng-model="root['dc:title']"
+                       dataid-model>
+                <div style="display: inline-block; font-size:10px;"><ng-messages ng-messages-include="messagesTemplate" for="form.dcTitle.$error"></ng-messages></div>
+            </div>
 
-            <label for="dDescription">Description</label> <span style="color: red">*</span>
-<!--            <div class="pull-right">
-                <span  popover-placement="right" class="help-button"  popover="{{root['dc:description']['@label']}}" >?</span>
-            </div>-->
-            <a class="desc2" target="_blank" href='http://purl.org/dc/terms/description'> dc:description </a>
-            <br>
-            <textarea ng-required="root['dc:description']['@required']" class="input" rows="4" id="dDescription" ng-model="root['dc:description']['@value'][selectedLanguage]" popover-placement="bottom" popover="{{root['dc:description']['@label']}}" popover-trigger="focus" popover-title="dc:description" popover-popup-delay="500"></textarea>
-            <br>
+            <div ng-controller="PopoverCtrl">
+                <label for="dDescription">Description</label> <span style="color: red">*</span>
+                <div class="pull-right">
+                    <a class="desc2" target="_blank" href='http://purl.org/dc/terms/description'> dc:description </a>
+                    <span  popover-placement="bottom" class="help-button"  popover="{{root['dc:description']['@label']}}" >?</span>
+                </div>
+                <br>
+                <textarea ng-init="iName='dDescription'"
+                       class="input"
+                       rows="4"
+                       id="dDescription"
+                       name="dDescription"
+                       ng-model="root['dc:description']"
+                       dataid-model="selectedLanguage">
+                </textarea>
+                <div style="display: inline-block; font-size:10px;"><ng-messages ng-messages-include="messagesTemplate" for="form.dDescription.$error"></ng-messages></div>
+            </div>
 
-            <label>Label</label> <span ng-show="root['rdfs:label']['@required']" style="color: red">*</span>
-            <!--            <div class="pull-right">
-                            <span  popover-placement="left" class="help-button"  popover="{{root['rdfs:label']['@label']}}" >?</span>
-                        </div>-->
-            <a class="desc2" target="_blank" href='http://www.w3.org/TR/rdf-schema/label'> rdfs:label </a>
-            <br>
-            <input class="input" ng-required="root['rdfs:label']['@required']" ng-model="root['rdfs:label']['@value'][selectedLanguage]" popover-placement="bottom" popover="{{root['rdfs:label']['@label']}}" popover-trigger="focus" popover-title="rdfs:label" popover-popup-delay="500">
-
+            <div ng-controller="PopoverCtrl">
+                <label>Label</label> <span ng-show="root['rdfs:label']['@required']" style="color: red">*</span>
+                <div class="pull-right">
+                    <a class="desc2" target="_blank" href='http://www.w3.org/TR/rdf-schema/label'> rdfs:label </a>
+                    <span  popover-placement="bottom" class="help-button"  popover="{{root['rdfs:label']['@label']}}" >?</span>
+                </div>
+                <br>
+                <input ng-init="iName='rdfsLabel'"
+                       class="input"
+                       id="rdfsLabel"
+                       name="rdfsLabel"
+                       ng-model="root['rdfs:label']"
+                       dataid-model="selectedLanguage">
+                <div style="display: inline-block; font-size:10px;"><ng-messages ng-messages-include="messagesTemplate" for="form.rdfsLabel.$error"></ng-messages></div>
             <!--
             <label>Ontology Location<span style="color: red">*</span> </label>
             <a class="desc2" target="_blank" href='http://dataid.dbpedia.org/ns/core#'> dataid:ontologyLocation </a>
@@ -49,6 +72,7 @@
             <br/>
             <span ng-show="form.ontologyLocation.$error.url">{{messages.notValidURI}} <br></span>
             <br/>-->
+            </div>
         </div>
     </div>
 </div>

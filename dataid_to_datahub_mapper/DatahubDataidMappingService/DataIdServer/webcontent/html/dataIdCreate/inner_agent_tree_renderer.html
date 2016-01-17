@@ -1,7 +1,11 @@
 <div>
-    <a class="label label-xlg label-primary" href="" ng-click="changeSubset(dataSet)"><i class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;{{dataSet['dataid:agentName']['@value']}}</a>
-    <div class="pull-right">
-        <div ng-init="popovers.agentPopover.agentId = dataSet['@id']"></div>
-        <div class="label label-xlg label-menu popoverButton" popover-title="Options" popover-placement="right" popover-template="popovers.agentPopover.templateUrl" popover-trigger="click" popover-append-to-body='true'><i class="glyphicon glyphicon-menu-hamburger"></i></div>
+    <div class="label label-xlg label-primary tree-item popoverButton"
+       popover-title="Options"
+       popover-placement="right"
+       popover-template="popovers.agentPopover.templateUrl"
+       popover-trigger="click"
+       popover-append-to-body='true'>
+        <i class="glyphicon glyphicon-user"></i>
+        &nbsp;&nbsp;{{dataSet['dataid:agentName']['@value'].length > 45 ? (dataSet['dataid:agentName']['@value'].substr(0, 44) + '...') : dataSet['dataid:agentName']['@value']}}
     </div>
 </div>

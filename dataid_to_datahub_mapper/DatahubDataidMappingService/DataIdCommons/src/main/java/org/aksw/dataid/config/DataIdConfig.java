@@ -70,6 +70,10 @@ public class DataIdConfig {
     {
         return mainConfigFile.get("languageQuery").asText();
     }
+    public static String getMagicNumbers()
+    {
+        return mainConfigFile.get("magicNumbers").asText();
+    }
     public static String getMimeQuery()
     {
         return mainConfigFile.get("mimeQuery").asText();
@@ -108,6 +112,16 @@ public class DataIdConfig {
         try {
             TypeReference<Map<String, List<String>>> typeRef = new TypeReference<Map<String, List<String>>>(){};
             return StaticJsonHelper.castJsonToObject(mainConfigFile.get("exceptionMap"), typeRef);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static Map<String, String> getCompressions()
+    {
+        try {
+            TypeReference<Map<String,String>> typeRef = new TypeReference<Map<String, String>>(){};
+            return StaticJsonHelper.castJsonToObject(mainConfigFile.get("compressionMap"), typeRef);
         } catch (Exception e) {
             return null;
         }

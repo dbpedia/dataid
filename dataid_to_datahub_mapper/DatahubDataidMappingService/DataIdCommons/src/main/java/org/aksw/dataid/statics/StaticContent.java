@@ -38,7 +38,7 @@ public class StaticContent {
     public static final String thisDataIdVersion = dataIdStump + "thisDataIdVersion";
     public static final String DistributionUri = dataIdStump + "Distribution";
     public static final String dcatDistributionUri = dcatStump + "Distribution";
-    public static final String DataIdUri = voidStump + "DatasetDescription";
+    public static final String DataIdUri = dataIdStump + "DataId";
     public static final String AgentdUri = dataIdStump + "Agent";
     public static final String PublisherUri = dataIdStump + "Publisher";
     public static final String MaintainerUri = dataIdStump + "Maintainer";

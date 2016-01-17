@@ -3,17 +3,36 @@ package org.aksw.dataid.datahub.mappingservice;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.aksw.dataid.classes.DirectoryReader;
+import org.aksw.dataid.classes.RemoteDirectoryInformation;
+import org.aksw.dataid.classes.RemoteFileInformation;
 import org.aksw.dataid.errors.DataIdInputException;
+import org.aksw.dataid.errors.InnerFutureException;
+import org.aksw.dataid.jsonutils.StaticJsonHelper;
 import org.aksw.dataid.ontology.IdPart;
+import org.aksw.dataid.statics.StaticFunctions;
 import org.aksw.dataid.virtuoso.VirtuosoDataIdBranch;
 import org.aksw.dataid.virtuoso.VirtuosoDataIdDelta;
 import org.aksw.dataid.virtuoso.VirtuosoDataIdGraph;
+import org.apache.commons.compress.archivers.ArchiveException;
+import org.apache.commons.compress.archivers.ArchiveStreamFactory;
+import org.apache.commons.compress.compressors.CompressorException;
+import org.apache.commons.compress.compressors.CompressorInputStream;
+import org.apache.commons.compress.compressors.CompressorStreamFactory;
+import org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream;
 import org.openrdf.rio.RDFFormat;
 
 import javax.ws.rs.*;
+import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.*;
 
 @Path("dataid/graph")
 public class DataIdGraphEndpoint {
@@ -59,6 +78,37 @@ public class DataIdGraphEndpoint {
         }
     }
 
+    @GET
+    @Path("/getdirectoryfiles")
+    @Produces("text/html")
+    public String getDirectoryFiles(@QueryParam(value = "url") String url) throws DataIdInputException {
+        try {
+            RemoteDirectoryInformation dirInfo = new RemoteDirectoryInformation(new URL(url), graph.getMagicNumbers());
+            dirInfo.runInformationGathering();
+            return StaticJsonHelper.getPrettyContent(dirInfo.getFiles());
+        } catch (MalformedURLException e) {
+            throw new DataIdInputException( "error: no valid url!");
+        } catch (InterruptedException e) {
+            throw new DataIdInputException( "concurrency problems!");
+        }
+    }
+
+    @GET
+    @Path("/getfileheaders")
+    @Produces("text/html")
+    public String getFileHeaders(@QueryParam(value = "url") String url) throws DataIdInputException {
+        try{
+            URL u = new URL(url);
+            RemoteFileInformation fileInfo = new RemoteFileInformation(u, graph.getMagicNumbers());
+            return StaticJsonHelper.getPrettyContent(fileInfo.call());
+        } catch (MalformedURLException e) {
+            throw new DataIdInputException( "error: no valid url!");
+        } catch (IOException e) {
+            throw new DataIdInputException( "file is not reachable");
+        } catch (InnerFutureException e) {
+            throw new DataIdInputException( "file is not reachable");
+        }
+    }
 
     @GET
     @Path("/dataidvalidator")

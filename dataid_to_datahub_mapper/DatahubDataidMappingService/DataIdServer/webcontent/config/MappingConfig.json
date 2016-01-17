@@ -10,7 +10,8 @@
     "prov" : "http://www.w3.org/ns/prov#",
     "sd" : "http://www.w3.org/ns/sparql-service-description#",
     "owl" : "http://www.w3.org/2002/07/owl#",
-    "xsd" : "http://www.w3.org/2001/XMLSchema#"
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "dmp" : "http://dataid.dbpedia.org/ns/dmp#"
   },
   "@graph" : {
     "version" : "0.9.9",
@@ -26,13 +27,13 @@
           "issued" : "2014-04-16T09:26:29.603416"
         },
         "name" : {
-          "dataIdRef" : "rdfs:label",
+          "dataIdRef" : "dc:title",
           "@type" : "xsd:string",
           "comment" : "A name given to the dataset.",
           "addedBy" : "Chile",
           "issued" : "2014-04-16T09:26:29.603416"
         },
-        "dataset_uri" : {
+        "dataIdUri" : {
           "dataIdRef" : "@id",
           "@type" : "xsd:string",
           "comment" : "Identifier of the dataset",
@@ -40,7 +41,7 @@
           "issued" : "2014-04-16T09:26:29.603416"
         },
         "version" : {
-          "dataIdRef" : "dataid:versionInfo",
+          "dataIdRef" : "dc:hasVersion",
           "@type" : "xsd:string",
           "comment" : "Version of a given dataset.",
           "addedBy" : "Chile",
@@ -55,7 +56,7 @@
           "additionalKey" : true
         },
         "ontology_location" : {
-          "dataIdRef" : "dataid:ontologyLocation",
+          "dataIdRef" : "void:vocabulary",
           "@type" : "xsd:string",
           "comment" : "Version of a given dataset.",
           "addedBy" : "Chile",
@@ -78,30 +79,50 @@
           "additionalKey" : true
         },
         "author" : {
-          "dataIdRef" : "dc:publisher",
+          "dataIdRef" : "dataid:Publisher",
           "@type" : "xsd:string",
-          "referenceChain" : [ "dc:publisher", "rdfs:label" ],
+          "referenceChain" : [ "dataid:Publisher", "foaf:name" ],
           "comment" : "some mapping comment",
           "addedBy" : "Chile",
           "issued" : "2014-04-16T09:26:29.603416",
           "hasAlternative" : "alt_pub1"
         },
         "alt_pub1" : {
-          "dataIdRef" : "dc:publisher",
+          "dataIdRef" : "dataid:Publisher",
           "@type" : "xsd:string",
-          "referenceChain" : [ "dc:publisher", "@id" ],
+          "referenceChain" : [ "dataid:Publisher", "rdfs:label" ],
+          "comment" : "some mapping comment",
+          "addedBy" : "Chile",
+          "issued" : "2014-04-16T09:26:29.603416",
+          "hasAlternative" : "alt_pub2",
+          "isAlternative" : true
+        },
+        "alt_pub2" : {
+          "dataIdRef" : "dataid:Publisher",
+          "@type" : "xsd:string",
+          "referenceChain" : [ "dataid:Publisher", "@id" ],
           "comment" : "some mapping comment",
           "addedBy" : "Chile",
           "issued" : "2014-04-16T09:26:29.603416",
           "isAlternative" : true
         },
         "author_email" : {
-          "dataIdRef" : "foaf:mbox",
+          "dataIdRef" : "dataid:Publisher",
           "@type" : "xsd:string",
-          "referenceChain" : [ "dc:publisher", "foaf:mbox" ],
+          "referenceChain" : [ "dataid:Publisher", "foaf:mbox" ],
           "comment" : "Link a dataset to relevant contact information which is provided.",
           "addedBy" : "Chile",
+          "hasAlternative" : "author_email2",
           "issued" : "2014-04-16T09:26:29.603416"
+        },
+        "author_email2" : {
+          "dataIdRef" : "dataid:Publisher",
+          "@type" : "xsd:string",
+          "referenceChain" : [ "dataid:Publisher", "foaf:homepage" ],
+          "comment" : "Link a dataset to relevant contact information which is provided.",
+          "addedBy" : "Chile",
+          "issued" : "2014-04-16T09:26:29.603416",
+          "isAlternative" : true
         },
         "notes" : {
           "dataIdRef" : "dc:description",
@@ -119,13 +140,6 @@
         },
         "license" : {
           "dataIdRef" : "dc:rights",
-          "@type" : "xsd:string",
-          "comment" : "free-text account of the dataset.",
-          "addedBy" : "Chile",
-          "issued" : "2014-04-16T09:26:29.603416"
-        },
-        "license_title" : {
-          "dataIdRef" : "dc:license",
           "@type" : "xsd:string",
           "comment" : "free-text account of the dataset.",
           "addedBy" : "Chile",
@@ -154,12 +168,50 @@
           "additionalKey" : true
         },
         "maintainer" : {
-          "dataIdRef" : "dcat:contactPoint",
+          "dataIdRef" : "dataid:Maintainer",
           "@type" : "xsd:string",
-          "referenceChain" : [ "dcat:contactPoint", "rdfs:label" ],
+          "referenceChain" : [ "dataid:Maintainer", "foaf:name" ],
           "comment" : "Link a dataset to relevant contact information which is provided.",
           "addedBy" : "Chile",
+          "issued" : "2014-04-16T09:26:29.603416",
+          "hasAlternative":"alt_maintainer1"
+        },
+        "alt_maintainer1" : {
+          "dataIdRef" : "dataid:Maintainer",
+          "@type" : "xsd:string",
+          "referenceChain" : [ "dataid:Maintainer", "rdfs:label" ],
+          "comment" : "some mapping comment",
+          "addedBy" : "Chile",
+          "issued" : "2014-04-16T09:26:29.603416",
+          "hasAlternative":"alt_maintainer2",
+          "isAlternative" : true
+        },
+        "alt_maintainer2" : {
+          "dataIdRef" : "dataid:Maintainer",
+          "@type" : "xsd:string",
+          "referenceChain" : [ "dataid:Maintainer", "@id" ],
+          "comment" : "some mapping comment",
+          "addedBy" : "Chile",
+          "issued" : "2014-04-16T09:26:29.603416",
+          "isAlternative" : true
+        },
+        "maintainer_email" : {
+          "dataIdRef" : "dataid:Maintainer",
+          "@type" : "xsd:string",
+          "referenceChain" : [ "dataid:Maintainer", "foaf:mbox" ],
+          "comment" : "Link a dataset to relevant contact information which is provided.",
+          "addedBy" : "Chile",
+          "hasAlternative" : "maintainer_email2",
           "issued" : "2014-04-16T09:26:29.603416"
+        },
+        "maintainer_email2" : {
+          "dataIdRef" : "dataid:Maintainer",
+          "@type" : "xsd:string",
+          "referenceChain" : [ "dataid:Maintainer", "foaf:homepage" ],
+          "comment" : "Link a dataset to relevant contact information which is provided.",
+          "addedBy" : "Chile",
+          "issued" : "2014-04-16T09:26:29.603416",
+          "isAlternative" : true
         },
         "tags" : {
           "dataIdRef" : "dcat:keyword",
@@ -169,16 +221,8 @@
           "issued" : "2014-04-16T09:26:29.603416",
           "isList" : true
         },
-        "maintainer_email" : {
-          "dataIdRef" : "foaf:mbox",
-          "@type" : "xsd:string",
-          "referenceChain" : [ "dcat:contactPoint", "foaf:mbox" ],
-          "comment" : "Link a dataset to relevant contact information which is provided.",
-          "addedBy" : "Chile",
-          "issued" : "2014-04-16T09:26:29.603416"
-        },
         "resources" : {
-          "dataIdRef" : "dcat:distribution, void:sparqlEndpoint",
+          "dataIdRef" : "dcat:distribution",
           "@type" : "dcat:distribution",
           "comment" : "Connects a dataset to its available distributions.",
           "addedBy" : "Chile",
@@ -187,6 +231,7 @@
         },
         "derived_from" : {
           "dataIdRef" : "prov:wasDerivedFrom",
+          "referenceChain" : [ "prov:wasDerivedFrom", "dcat:landingPage" ],
           "@type" : "xsd:string",
           "comment" : "The language of the dataset.",
           "addedBy" : "Chile",
@@ -201,24 +246,46 @@
           "issued" : "2014-04-16T09:26:29.603416",
           "additionalKey" : true
         },
-        "sparql_endpoint" : {
-          "dataIdRef" : "void:sparqlEndpoint",
-          "@type" : "xsd:string",
-          "comment" : "number of triples in this dataset",
-          "addedBy" : "Chile",
-          "issued" : "2014-04-16T09:26:29.603416",
-          "additionalKey" : true
-        },
         "links" : {
-          "dataIdRef" : "void:subset",
+          "dataIdRef" : "dataid:containsLinks",
           "@type" : "dataid:Linkset",
           "comment" : "links to other dataset",
           "addedBy" : "Chile",
           "issued" : "2014-04-16T09:26:29.603416",
           "additionalKey" : true
+        },
+        "triples" : {
+          "dataIdRef" : "void:triples",
+          "@type" : "xsd:integer",
+          "comment" : "number of triples in this dataset",
+          "addedBy" : "Chile",
+          "issued" : "2014-04-16T09:26:29.603416"
+        },
+        "subsets" : {
+          "dataIdRef" : "void:subset",
+          "@type" : "xsd:string",
+          "referenceChain" : [ "void:subset", "@id" ],
+          "comment" : "uri list of void:subset (for internal usage do not change)",
+          "addedBy" : "Chile",
+          "issued" : "2014-04-16T09:26:29.603416",
+          "isList" : true
         }
       },
       "resource" : {
+        "resourceUri" : {
+          "dataIdRef" : "@id",
+          "@type" : "xsd:string",
+          "comment" : "uri of resource",
+          "addedBy" : "Chile",
+          "issued" : "2014-04-16T09:26:29.603416"
+        },
+        "distributionType" : {
+          "dataIdRef" : "@type",
+          "@type" : "xsd:string",
+          "comment" : "resource type",
+          "addedBy" : "Chile",
+          "issued" : "2014-04-16T09:26:29.603416"
+        },
         "description" : {
           "dataIdRef" : "dc:description",
           "@type" : "xsd:string",
@@ -243,15 +310,15 @@
         "url" : {
           "dataIdRef" : "dcat:accessURL",
           "@type" : "xsd:string",
-          "comment" : "reference url",
+          "comment" : "download or acces url",
           "addedBy" : "Chile",
           "issued" : "2014-04-16T09:26:29.603416",
-          "hasAlternative" : "alt_rec_url"
+          "hasAlternative" : "alt_url"
         },
-        "alt_rec_url" : {
-          "dataIdRef" : "@id",
+        "alt_url" : {
+          "dataIdRef" : "dcat:downloadURL",
           "@type" : "xsd:string",
-          "comment" : "reference url",
+          "comment" : "download or acces url",
           "addedBy" : "Chile",
           "issued" : "2014-04-16T09:26:29.603416",
           "isAlternative" : true
@@ -267,13 +334,6 @@
           "dataIdRef" : "dcat:mediaType",
           "@type" : "xsd:string",
           "comment" : "mimetype",
-          "addedBy" : "Chile",
-          "issued" : "2014-04-16T09:26:29.603416"
-        },
-        "triples" : {
-          "dataIdRef" : "void:triples",
-          "@type" : "xsd:integer",
-          "comment" : "number of triples in this dataset",
           "addedBy" : "Chile",
           "issued" : "2014-04-16T09:26:29.603416"
         }

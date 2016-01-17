@@ -11,40 +11,41 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Dataset implements ValidCkanResponse, MappingObject
 {
-    private String id;
-    private String name;
-    private String title;
-    private String revision_id;
-    private String maintainer;
-    private String maintainer_email;
-    private String license_id;
-    private String license;
-    private String license_title;
-    private String license_url;
-    private Date metadata_created;
-    private Date metadata_modified;
-    private String author;
-    private String author_email;
-    private String download_url;
-    private String state;
-    private String version;
-    private String type;
-    private String notes;
+    private String id;                  //ckan id -> no mapping
+    private String name;                //ckan name (without spaces, lowercase)  -> no mapping
+    private String title;               //dc:title
+    private String revision_id;         //ckan internal -> no mapping
+    private String maintainer;          //name of maintainer or contact -> mapping to maintainer role
+    private String maintainer_email;    //mail of maintainer (replaceable by url e.g. to contact formular on dataid)
+    private String license_id;          //id of ckan internal license id  //TODO mapping for this?
+    private String license;             //dc:rights
+    private String license_title;       //name of license, get it from virtuoso  //TODO
+    private String license_url;         //dc:license
+    private Date metadata_created;      //internal/automated -> no mapping
+    private Date metadata_modified;     //internal/automated -> no mapping
+    private String author;              //name of publisher or creator -> mapping to creator role
+    private String author_email;        //mail of creator (replaceable by url e.g. to contact formular on dataid)
+    private String state;               //no equivalent
+    private String version;             //dc:hasVersion
+    private String type;                //should be "dataset"
+    private String notes;               //dc:description
+    private Integer triples;            //void:triples
     private boolean isopen;
-    private List<Tag> tags;
-    private List<Resource> resources;
-    private String url;
-    private List<DatasetExtras> extras;
+    private List<Tag> tags;             //dcat:keyword (no spaces)
+    private List<Resource> resources;   //dact:distribution
+    private String url;                 //dcat:landingPage
+    private List<DatasetExtras> extras; //list of additional properties
     private List<DatasetRelationship> relationships_as_object;
     private List<DatasetRelationship> relationships_as_subject;
-    private boolean isPrivate;
-    private String owner_org;
-    private Integer num_resources;
-    private Integer num_tags;
+    private boolean isPrivate;          //make public or not
+    private String owner_org;           //id of organisation
+    private Integer num_resources;      //internal
+    private Integer num_tags;           //internal
 
     //internal use!
-    private String dataset_uri;
-    private String dataIdUri;
+    private boolean isUpdate = false;   //create or update
+    private List<String> subsets = new ArrayList<>();
+    private String dataIdUri;           //@id -> the uri of the dataset
     private List<LinkedHashMap<String, Object>> graph = new ArrayList<LinkedHashMap<String, Object>>();
 
     public Dataset()
@@ -62,17 +63,6 @@ public class Dataset implements ValidCkanResponse, MappingObject
         resources = new ArrayList<Resource>();
         relationships_as_object = new ArrayList<DatasetRelationship>();
         relationships_as_subject = new ArrayList<DatasetRelationship>();
-    }
-
-    /**
-     * method necessary since a non-simple get method produces a NullPointerException in jackson.json.ObjectMapper!?
-     */
-    public void PrepareForParsing()
-    {
-        for(Resource res : this.resources)
-        {
-            res.PrepareForParsing();
-        }
     }
 
     public List<DatasetRelationship> getRelationships_as_object() {
@@ -144,7 +134,7 @@ public class Dataset implements ValidCkanResponse, MappingObject
     }
 
     public String getName() {
-        return name.toLowerCase().replace(" ", "_");
+        return name.trim().toLowerCase().replaceAll("\\W", "_");
     }
 
     public void setTitle(String title) {
@@ -243,14 +233,6 @@ public class Dataset implements ValidCkanResponse, MappingObject
         return author_email;
     }
 
-    public void setDownload_url(String download_url) {
-        this.download_url = download_url;
-    }
-
-    public String getDownload_url() {
-        return download_url;
-    }
-
     public void setState(String state) {
         this.state = state;
     }
@@ -307,14 +289,6 @@ public class Dataset implements ValidCkanResponse, MappingObject
         return url;
     }
 
-    public String getDataset_uri() {
-        return dataset_uri;
-    }
-
-    public void setDataset_uri(String datasetUri) {
-        this.dataset_uri = datasetUri;
-    }
-
     public List<Resource> getResources() {
         return resources;
     }
@@ -324,8 +298,38 @@ public class Dataset implements ValidCkanResponse, MappingObject
     }
 
     @JsonIgnore
+    public List<String> getSubsets() {
+        return subsets;
+    }
+
+    @JsonIgnore
+    public void setSubsets(List<String> subsets) {
+        this.subsets = subsets;
+    }
+
+    @JsonIgnore
+    public Integer getTriples() {
+        return triples;
+    }
+
+    @JsonIgnore
+    public void setTriples(Integer triples) {
+        this.triples = triples;
+    }
+
+    @JsonIgnore
     public String getDataIdUri() {
         return dataIdUri;
+    }
+
+    @JsonIgnore
+    public boolean isUpdate() {
+        return isUpdate;
+    }
+
+    @JsonIgnore
+    public void setUpdate(boolean isUpdate) {
+        this.isUpdate = isUpdate;
     }
 
     @JsonIgnore

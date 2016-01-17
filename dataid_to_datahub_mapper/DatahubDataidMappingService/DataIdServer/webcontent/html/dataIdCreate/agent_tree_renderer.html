@@ -1,7 +1,11 @@
 <div>
-    <a class="label label-xlg label-warning" href ng-click="changeSubset(dataSet)">{{role}}</a>
-    <div class="pull-right">
-        <div class="label label-menu label-info popoverButton" popover-title="Options" popover-placement="right" popover-template="popovers.agentRolePopover.templateUrl" popover-trigger="click" popover-append-to-body='true'><i class="glyphicon glyphicon-menu-hamburger"></i></div>
+    <div class="label label-xlg label-warning tree-item popoverButton"
+       popover-title="Options"
+       popover-placement="right"
+       popover-template="popovers.agentRolePopover.templateUrl"
+       popover-trigger="click"
+       popover-append-to-body='true'>
+        {{role}}
     </div>
 </div>
 <ul>

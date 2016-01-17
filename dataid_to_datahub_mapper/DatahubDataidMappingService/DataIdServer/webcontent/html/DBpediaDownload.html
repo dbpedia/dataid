@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://mbostock.github.com/d3/d3.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="/content/jScript/commonScripts.js"></script>
+        <script type="text/javascript" src="/content/jScript/dbpediaDownload.js"></script>
+        <link rel="stylesheet" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.css"/>
+    </head>
+    <body>
+        <div id="canvas"></div>
+        <script>
+            // render the table
+            var peopleTable = tabulate(["level","resource", "message", "testCase"], "http://downloads.dbpedia.org/2015-04/core-i18n/2015-04_dataid_catalog.ttl");
+
+            // uppercase the column headers
+            peopleTable.selectAll("thead th")
+                    .text(function(column) {
+                        return column.charAt(0).toUpperCase() + column.substr(1);
+                    });
+
+            $('table').DataTable({
+                "order": [[ 1, "asc" ]]
+            });
+        </script>
+    </body>
+</html>

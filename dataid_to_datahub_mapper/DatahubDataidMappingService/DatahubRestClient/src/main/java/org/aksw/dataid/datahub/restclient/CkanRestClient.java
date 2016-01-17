@@ -58,24 +58,29 @@ public class CkanRestClient implements Closeable
 	@SuppressWarnings("unchecked")
 	private <T> DatahubResponse<T> getDatahubResponse(String json, JavaType type, Class<T> exp) throws IOException, DatahubError
 	{
-		DatahubResponse<T> response;
+		DatahubResponse<T> response = new DatahubResponse<>();
+        if(json.contains("internal server error"))
+        {
+            response.setError(new DatahubError("An internal ckan server error occurred"));
+            return response;
+        }
 		response = (DatahubResponse<T>) deserializer.readValue(json, type);
-		if(response.getError() != null)
-			throw response.getError();
+//		if(response.getError() != null)
+//			throw response.getError();
 		return response;
 	}
     
     public ValidCkanResponse CreateDataset(Dataset set) throws IOException, DatahubError {
-    	set.setName(set.getName().replace(" ", ""));
-    	set.PrepareForParsing();
+    	//set.setName(set.getName().replace(" ", ""));
+    	//set.PrepareForParsing();
     	JsonNode json = serializer.convertValue(set, JsonNode.class);
     	String path = actionMap.get("CreateDataset");  
     	return postJson(path, json.toString());
     }
     
     public ValidCkanResponse UpdateDataset(Dataset set) throws IOException, DatahubError {
-    	set.setName(set.getName().replace(" ", ""));
-    	set.PrepareForParsing();
+    	//set.setName(set.getName().replace(" ", ""));
+    	//set.PrepareForParsing();
     	JsonNode json = serializer.convertValue(set, JsonNode.class);
     	String path = actionMap.get("UpdateDataset");  
 
@@ -108,28 +113,17 @@ public class CkanRestClient implements Closeable
     	return (List<DatasetRelationship>)returnObject.getResult();
     }
     
-//    public boolean CreateDatasetRelationship(DatasetRelationship orgRel) throws HttpResponseException, IOException
-//    {
-//    	String json = getJsonTree(orgRel).toString();
-//
-//    	String path = actionMap.get("CreateDatasetRelationship");    	
-//    	return postJson(path, json);
-//    }
-//    
-//    public boolean UpdateDatasetRelationship(DatasetRelationship orgRel, DatasetRelationship newRel) throws HttpResponseException, IOException
-//    {
-//    	String dynamicJson = "";
-//		try {
-//			dynamicJson = getDynamicJsonObjDifference(orgRel, newRel);
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//			return false;
-//		}
-//    	
-//    	String path = actionMap.get("UpdateDatasetRelationship");
-//    	return postJson(path, dynamicJson);
-//    }
+    public ValidCkanResponse CreateDatasetRelationship(DatasetRelationship orgRel) throws IOException, DatahubError {
+        JsonNode json = serializer.convertValue(orgRel, JsonNode.class);
+    	String path = actionMap.get("CreateDatasetRelationship");
+    	return postJson(path, json.toString());
+    }
+
+    public ValidCkanResponse UpdateDatasetRelationship(DatasetRelationship newRel) throws IOException, DatahubError {
+        JsonNode json = serializer.convertValue(newRel, JsonNode.class);
+        String path = actionMap.get("CreateDatasetRelationship");
+        return postJson(path, json.toString());
+    }
 	
 	private ValidCkanResponse postJson(String path, String jsonData) throws IOException, DatahubError {
 		HttpURLConnection conn = this.getHttpConnection(path, HttpMethod.Post, normalTimeout);

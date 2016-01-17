@@ -3857,7 +3857,8 @@ tbody.collapse.in {
         margin-right: 0; } }
 .navbar-default {
     background-color: #E6E3D4;
-    border-color: #E6E3D4; }
+    border-color: #415448;
+    border-width: 3px;}
 .navbar-default .navbar-brand {
     color: #777; }
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {

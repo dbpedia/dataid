@@ -1,6 +1,7 @@
 package org.aksw.dataid.datahub.mappingobjects;
 
 import org.aksw.dataid.config.RdfContext;
+import org.aksw.dataid.datahub.propertymapping.PropertyMapper;
 
 import java.util.*;
 
@@ -100,32 +101,120 @@ public class DataIdBody{
             return map;
         }
     }
-    private List<DataIdObject> list;
+
+    private List<DataIdObject> graph;
     private RdfContext context;
 
-    public DataIdBody(List<LinkedHashMap<String, Object>> list, RdfContext context)
+    private Map<String,LinkedHashMap<String, Object>> retMap = new HashMap<>();
+    private Map<String, ArrayList<Map.Entry<String, String>>> agents = new HashMap<>();
+
+    public DataIdBody(List<LinkedHashMap<String, Object>> graph, RdfContext context)
     {
-        this.list = new ArrayList<DataIdObject>();
-        for(LinkedHashMap<String, Object> map : list)
+        addRoleAgentMap(graph);
+        this.graph = new ArrayList<DataIdObject>();
+        for(LinkedHashMap<String, Object> map : graph)
         {
-            this.list.add(new DataIdObject(map));
+            this.graph.add(new DataIdObject(map));
         }
         this.context = context;
     }
 
     public DataIdBody(RdfContext context)
     {
-        this.list = new ArrayList<DataIdObject>();
+        this.graph = new ArrayList<DataIdObject>();
         this.context = context;
+    }
+
+    private void addRoleAgentMap(List<LinkedHashMap<String, Object>> graph)
+    {
+        for(LinkedHashMap<String, Object> map : graph)
+        {
+            filterAuthorityContexts(map);
+
+            if(map.get("@type").equals("dataid:DataId") || map.get("@type").equals("dataid:Dataset") || map.get("@type").equals("dataid:SingleFile")
+                    || map.get("@type").equals("dataid:SparqlENdpoint") || map.get("@type").equals("dataid:Directory") || map.get("@type").equals("dataid:ServiceEndpoint"))
+            {
+                retMap.put(map.get("@id").toString(), map);
+            }
+        }
+        String dataidUri = null;
+        for(LinkedHashMap<String, Object> map : graph)
+        {
+            if(map.get("@type").equals("dataid:DataId"))
+            {
+                dataidUri = map.get("@id").toString();
+                break;
+            }
+        }
+        if(dataidUri == null)
+            return;
+        for(Map.Entry<String, LinkedHashMap<String, Object>> ent : retMap.entrySet())
+        {
+            for(Map.Entry<String, String> zw : agents.get(dataidUri))
+                ent.getValue().put(zw.getKey(), zw.getValue());
+        }
+        for(LinkedHashMap<String, Object> map : graph) {
+            if (map.get("@type").equals("dataid:Dataset")) {
+                insertAgentsInDataset(map.get("@id").toString());
+            }
+        }
+    }
+
+    private void filterAuthorityContexts(LinkedHashMap<String, Object> map) {
+        if(map.get("@type").equals("dataid:AuthorityEntityContext"))
+        {
+            for(String ent : PropertyMapper.GetEntriesOfJsonLdNode(map.get("dataid:authorizedFor")))
+            {
+                insertAuthorities(map, ent);
+            }
+        }
+    }
+
+    private void insertAuthorities(LinkedHashMap<String, Object> map, String authFor)
+    {
+        for(String ent : PropertyMapper.GetEntriesOfJsonLdNode(map.get("dataid:authorityAgentRole")))
+        {
+            if(agents.get(authFor) == null)
+                agents.put(authFor, new ArrayList<Map.Entry<String, String>>());
+            agents.get(authFor).add(new AbstractMap.SimpleEntry<String, String>(ent, PropertyMapper.extractRealValue(map.get("dataid:authorizedAgent"))));
+        }
+    }
+
+    private void insertAgentsInDataset(String datasetUri)
+    {
+        if(agents.get(datasetUri) != null) {
+            for (Map.Entry<String, String> zw : agents.get(datasetUri)) {
+                insertAgentsInDataset(PropertyMapper.extractRealValue(datasetUri), zw.getKey(), zw.getValue());
+
+                for(String ent : PropertyMapper.GetEntriesOfJsonLdNode(retMap.get(datasetUri).get("void:subset")))
+                {
+                    insertAgentsInDataset(ent, zw.getKey(), zw.getValue());
+                }
+            }
+        }
+    }
+
+    private void insertAgentsInDataset(String datasetUri, String role, String agent)
+    {
+        LinkedHashMap<String, Object> dat = retMap.get(datasetUri);
+        if(dat != null)
+            dat.put(role, agent);
+        else
+            return;
+
+        for(String ent : PropertyMapper.GetEntriesOfJsonLdNode(dat.get("dcat:distribution")))
+        {
+            insertAgentsInDataset(ent, role, agent);
+        }
     }
 
     public void addDataIdObject(LinkedHashMap<String, Object> map)
     {
-        list.add(new DataIdObject(map));
+        graph.add(new DataIdObject(map));
     }
 
     public List<DataIdObject> getBody()
     {
-        return list;
+        return graph;
     }
 }

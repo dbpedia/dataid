@@ -1,0 +1,10 @@
+<http://json-ld.org/playground/adp> <http://dataid.dbpedia.org/mimetypes/magic> "D0 CF 11 E0 A1 B1 1A E1" .
+<http://json-ld.org/playground/123> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 1A 00 05 10 04" .
+<http://json-ld.org/playground/3g2> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 00 20 66 74 79 70 33 67 70" .
+<http://json-ld.org/playground/3g2> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 00 14 66 74 79 70 33 67 70" .
+<http://json-ld.org/playground/3gp> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 00 20 66 74 79 70 33 67 70" .
+<http://json-ld.org/playground/3gp> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 00 14 66 74 79 70 33 67 70" .
+<http://json-ld.org/playground/7z> <http://dataid.dbpedia.org/mimetypes/magic> "37 7A BC AF 27 1C" .
+<http://json-ld.org/playground/aac> <http://dataid.dbpedia.org/mimetypes/magic> "FF F1" .
+<http://json-ld.org/playground/aac> <http://dataid.dbpedia.org/mimetypes/magic> "FF F9" .
+<http://json-ld.org/playground/aif> <http://dataid.dbpedia.org/mimetypes/magic> "46 4F 52 4D 00" .

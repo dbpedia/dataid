@@ -1,10 +1,12 @@
 package org.aksw.dataid.virtuoso;
 
+import org.aksw.dataid.classes.PrefixTree;
 import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.errors.DataIdInputException;
 import org.aksw.dataid.ontology.IdPart;
 import org.apache.commons.collections15.MultiMap;
 import org.apache.commons.collections4.MapUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.openrdf.rio.RDFFormat;
 import org.openrdf.rio.RDFHandlerException;
 import virtuoso.jdbc4.VirtuosoDataSource;
@@ -155,6 +157,28 @@ public class VirtuosoDataIdGraph {
             }
         }
         return licenseString;
+    }
+
+    private PrefixTree<Map.Entry<String, String>> tree;
+    public PrefixTree<Map.Entry<String, String>> getMagicNumbers() throws DataIdInputException {
+        if(tree == null) {
+            tree = new PrefixTree<>();
+            try (Statement stmt = VirtuosoDataIdGraph.getConn().createStatement()) {
+                ResultSet set = stmt.executeQuery(DataIdConfig.getMagicNumbers());
+                while(set.next())
+                {
+                    String pad = "xx ";
+                    String magic = set.getString("m");
+                    String offset = set.getString("o");
+                    int off = (offset == null || offset.trim().equals("")) ? 0 : Integer.parseInt(offset);
+                    magic = StringUtils.leftPad(magic, off*pad.length() + magic.length(), pad);
+                    tree.insert(magic, new AbstractMap.SimpleEntry<String, String>(set.getString("e"), set.getString("mime")));
+                }
+            } catch (SQLException e) {
+                throw new DataIdInputException(e);
+            }
+        }
+        return tree;
     }
 
     private String langString;

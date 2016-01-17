@@ -24,19 +24,16 @@ import java.util.*;
 public class PropertyMapper 
 {
 	private MappingConfig mappingConfig;
-	//private Context jsonLdContext = new Context();
 	private Map<String,String> contextSynchronization = new HashMap<String,String>();
 	private DataId currentId;
 	private String dataIdPrefix;
-
-    private static List<String> ImplicitAlternativeProps;
 	
 	
     public PropertyMapper(JsonNode mappingContent) {
     	if(mappingContent != null)
     	{
             mappingConfig = StaticContent.getMappings();
-    		this.dataIdPrefix = mappingConfig.getRdfContext().getPrefix(DataIdConfig.getOntologies().get("dataid").getKey());
+    		this.dataIdPrefix = StaticContent.getRdfContext().getPrefix(DataIdConfig.getOntologies().get("dataid").getKey());
     		
     		for(Map<String,DataIdProperty> dictionary : mappingConfig.getDataHubMapping().values())
     		{
@@ -48,9 +45,6 @@ public class PropertyMapper
 	    			}
 	    		}
     		}
-            //String cont = .get("@context").toString();
-            //jsonLdContext = new Context(((Map<String, Object>) JsonUtils.fromString(cont)), new JsonLdOptions("http://someuri.io"));
-
     	}
     }
     
@@ -93,19 +87,17 @@ public class PropertyMapper
     	currentId = dataIdObject;
     	this.synchronizeRdfContexts(dataIdObject.getRdfContext());
 		List<Dataset> sets = new ArrayList<Dataset>();
-        ImplicitAlternativeProps = new ArrayList<String>();
 
 		for(DataIdBody.DataIdObject map : dataIdObject.getDataIdBody().getBody())
 		{
 			if(map.containsKey("@type"))
 			{
 				//mapping for dataset and resources
-				if(mappingConfig.getRdfContext().iriContains(String.valueOf((map.get("@type"))), dataIdPrefix, "Dataset"))
+				if(StaticContent.getRdfContext().iriContains(String.valueOf((map.get("@type"))), dataIdPrefix, "Dataset"))
 				{
 					Dataset set = new Dataset();
 					sets.add(fillObjectWithMapValues(set, map));
-					addTriples(set);
-                    getDataIdUriForDataset(set, map.get("@id").toString());
+					//addTriples(set);
                     for(Resource r : set.getResources())
                         for(LinkedHashMap<String, Object> o : r.getGraph())
                             set.addChild(o);
@@ -114,36 +106,9 @@ public class PropertyMapper
 			}
 		}
 		if(sets.size() == 0)
-			throw new DataHubMappingException("no dataset found!");
+			throw new DataIdInputException("no dataset found!");
     	return sets;
     }
-
-    private void getDataIdUriForDataset(final Dataset set, final String datasetId)
-    {
-        for(DataIdBody.DataIdObject map : currentId.getDataIdBody().getBody()) {
-            if (map.containsKey("@type")) {
-                if(mappingConfig.getRdfContext().iriContains(String.valueOf((map.get("@type"))), "void", "DatasetDescription")) {
-                    Object zw = map.get("foaf:primaryTopic");
-                    String key = ((LinkedHashMap<String, String>) zw).get("@id").trim().toLowerCase();
-                    if(datasetId.trim().toLowerCase().equals(key)) {
-                        set.setDataIdUri(map.get("@id").toString());
-                        set.addChild(map.getMap());
-                    }
-                }
-            }
-        }
-    }
-    
-	private void addTriples(Dataset set) {
-		int triples =0;
-		for(Resource r : set.getResources())
-		{
-            if(r.getTriples() != null)
-                triples += r.getTriples();
-        }
-        if(triples > 0)
-            setDatasetExtra(set, "triples", String.valueOf(triples));
-	}
 	
 	private void setDatasetExtra(Dataset set, String key, String value) {
 		DatasetExtras ex = new DatasetExtras();
@@ -177,18 +142,18 @@ public class PropertyMapper
     		DataIdProperty dataIdProp = mappingConfig.GetPropertyByDataHub(dictType, field.toString());
     		if(dataIdProp == null)
     			continue;
-    		if(ImplicitAlternativeProps.contains(dataIdProp.getDataHub()) || dataIdProp.isAlternative()) {
+    		if(dataIdProp.isAlternative()) {
                 dataIdProp.setAlternative(true);
                 continue;
             }
 
             dataIdProp.setDictionary(dictType);
             //add links
-            if(mappingConfig.getRdfContext().iriContains(dataIdProp.getType(), dataIdPrefix, "Linkset")) {
+            if(StaticContent.getRdfContext().iriContains(dataIdProp.getType(), dataIdPrefix, "Linkset")) {
                 if(dataContext.get(dataIdProp.getDataIdRef()) != null)
                 {
                     LinkedHashMap<String, Object> link = getSubGraphMap(((LinkedHashMap<String, Object>) dataContext.get(dataIdProp.getDataIdRef())).get("@id").toString());
-                    String voidPrefix = mappingConfig.getRdfContext().getPrefix("http://rdfs.org/ns/void#");
+                    String voidPrefix = StaticContent.getRdfContext().getPrefix("http://rdfs.org/ns/void#");
                     String target = ((LinkedHashMap<String, Object>) link.get(voidPrefix + ":target")).get("@id").toString();
                     String shorty = "links:" + target.substring(0, target.lastIndexOf('.')).replace("http://", "");
                     setDatasetExtra((Dataset) set, shorty, link.get(voidPrefix + ":triples").toString());
@@ -196,13 +161,15 @@ public class PropertyMapper
                 }
             }
             else
-			    SetGenericProperty(set, dataIdProp, dataContext);
+            {
+                SetGenericProperty(set, dataIdProp, dataContext);
+            }
     	}
     	return set;
 	}
 
 	@SuppressWarnings("unchecked")
-	private <T extends DataHubListObject> List<DataHubListObject> getGenericList(Class<T> listClass, Object fieldValue, Dataset set) throws IllegalAccessException, InstantiationException {
+	private <T> List<T> getGenericList(Class<T> listClass, Object fieldValue, Dataset set) throws IllegalAccessException, InstantiationException {
 		List<LinkedHashMap> value = null;
 		if(fieldValue.getClass() == LinkedHashMap.class)
 		{
@@ -220,12 +187,16 @@ public class PropertyMapper
 			if(inst.getClass() == Tag.class)
 			{
                 Tag t = new Tag();
-                t.setDisplay_name(String.valueOf(ele));
+                t.setDisplay_name(String.valueOf(((LinkedHashMap<String, Object>)ele).get("@value")));
                 t.setState("active");
-                t.setName(String.valueOf(ele));
+                t.setName(String.valueOf(((LinkedHashMap<String, Object>)ele).get("@value")));
                 inst = (T) t;
 				
 			}
+            else if(inst.getClass() == String.class)
+            {
+                inst = (T) extractRealValue(ele);
+            }
 			else if(ele.getClass() == LinkedHashMap.class)
                 inst = (T) fillObjectWithMapValues((MappingObject) inst, (LinkedHashMap<String, Object>)ele);
 			else
@@ -238,21 +209,26 @@ public class PropertyMapper
 			list.add(inst);
 
 		}
-		return (List<DataHubListObject>) list;
+		return list;
 	}
     
 	@SuppressWarnings("unchecked")
 	public <T extends MappingObject, E extends Map<String, Object>> boolean SetGenericProperty(T target, DataIdProperty fieldProperty, E context)
 	{
+        if (fieldProperty == null || fieldProperty.isReadOnly()) {
+            return false;
+        }
         for(String fieldString : fieldProperty.getDataIdRefs()) {
-            if (fieldProperty.isReadOnly()) {
-                return false;
-            }
 
             Object fieldValue = context.get(fieldString);
-            fieldValue = fieldProperty.getReferenceChain() == null ? fieldValue : fieldProperty.getReferenceChain().get(0);
+            //if(fieldValue == null)
+                //fieldValue = fieldProperty.getReferenceChain() == null ? fieldValue : fieldProperty.getReferenceChain().get(0);
+
             if(fieldValue == null)
-                return false;
+            {
+                return SetGenericProperty(target, getAlternative(target, fieldProperty, context), context);
+            }
+
             String stringValue = null;
 
             //multiple property occurrences -> if visible add additional keys
@@ -278,11 +254,26 @@ public class PropertyMapper
             }
             stringValue = getStringValue(fieldProperty, context, fieldValue, target);
 
+            if(fieldValue == null || stringValue == null)
+            {
+                return SetGenericProperty(target, getAlternative(target, fieldProperty, context), context);
+            }
+
             if (!setGenericproperty(target, fieldProperty, context, fieldValue, stringValue))  //not!!
                 return false;
         }
         return true;
 	}
+
+    private <T extends MappingObject, E extends Map<String, Object>> DataIdProperty getAlternative(T target, DataIdProperty fieldProperty, E context) {
+        if (fieldProperty.getHasAlternative() != null) {
+            DataIdProperty altProp = mappingConfig.GetPropertyByDataHub(fieldProperty.getDictionary(), fieldProperty.getHasAlternative());
+            altProp.setDataHub(fieldProperty.getDataHub());
+            return altProp;
+        }
+        else
+            return null;
+    }
 
     private <E extends Map<String, Object>> String getStringValue(DataIdProperty fieldProperty, E context, Object fieldValue, MappingObject set) {
         String stringValue;//follow reference chain
@@ -336,17 +327,6 @@ public class PropertyMapper
                 field.set(target, value);
             }
 
-            //follow alternatives
-            try {
-                field.get(target);    //alas, if field == null field.get throws Nullpointer
-            } catch (NullPointerException e) {
-                if (fieldProperty.getHasAlternative() != null) {
-                    DataIdProperty altProp = mappingConfig.GetPropertyByDataHub(fieldProperty.getDictionary(), fieldProperty.getHasAlternative());
-                    ImplicitAlternativeProps.add(altProp.getDataHub());
-                    altProp.setDataHub(fieldProperty.getDataHub());
-                    return SetGenericProperty(target, altProp, context);
-                }
-            }
         }catch(Exception e) {
             e.printStackTrace();
             return false;
@@ -354,11 +334,11 @@ public class PropertyMapper
         return true;
     }
 	
-	private String extractRealValue(Object value)
+	public static String extractRealValue(Object value)
 	{
 		if(value == null)
 			return null;
-		if(value.getClass() == LinkedHashMap.class)
+		else if(value.getClass() == LinkedHashMap.class)
 		{
 			if(((LinkedHashMap)value).keySet().contains("@id"))
 				return ((LinkedHashMap)value).get("@id").toString();
@@ -366,13 +346,37 @@ public class PropertyMapper
 				return ((LinkedHashMap)value).get("@value").toString();
 			return null;
 		}
-		else if(List.class.isAssignableFrom(value.getClass()))
+        else if(List.class.isAssignableFrom(value.getClass()))
+        {
+            return extractRealValue(((List<LinkedHashMap>)value).get(0));
+        }
+        else if(Map.Entry.class.isAssignableFrom(value.getClass()))
 		{
-			return extractRealValue(((List<LinkedHashMap>)value).get(0));
+			return extractRealValue(((Map.Entry)value).getValue());
 		}
 		else
 			return String.valueOf(value);
 	}
+
+    public static List<String> GetEntriesOfJsonLdNode(Object genericValue)
+    {
+        List<String> retList = new ArrayList<>();
+        if (genericValue == null)
+            return retList;
+        else if (LinkedHashMap.class.isAssignableFrom(genericValue.getClass())) {
+            for (Object sub : ((LinkedHashMap) genericValue).entrySet()) {
+                retList.add(PropertyMapper.extractRealValue(sub));
+            }
+        }
+        else if (List.class.isAssignableFrom(genericValue.getClass())) {
+            for (Object sub : ((List) genericValue)) {
+                retList.add(PropertyMapper.extractRealValue(sub));
+            }
+        }
+        else
+            retList.add(PropertyMapper.extractRealValue(genericValue));
+        return  retList;
+    }
 
     private LinkedHashMap<String, Object> getSubGraphMap(String key)
     {
@@ -431,7 +435,7 @@ public class PropertyMapper
 		for(String prefix : dataIdContext)
 		{
 			String postfix = dataIdContext.getUri(prefix);
-			String configPrefix = mappingConfig.getRdfContext().getPrefix(postfix);
+			String configPrefix = StaticContent.getRdfContext().getPrefix(postfix);
 			if(configPrefix != null)
 				this.contextSynchronization.put(prefix,  configPrefix);
 		}

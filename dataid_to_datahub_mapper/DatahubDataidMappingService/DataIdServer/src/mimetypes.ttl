@@ -1764,6 +1764,8 @@
 <http://json-ld.org/playground/pcurl> <http://dataid.dbpedia.org/mimetypes/extend> "pcurl" .
 <http://json-ld.org/playground/pcx> <http://dataid.dbpedia.org/mimetypes/extend> "pcx" .
 <http://json-ld.org/playground/pdb> <http://dataid.dbpedia.org/mimetypes/extend> "pdb" .
+<http://json-ld.org/playground/pdb> <http://dataid.dbpedia.org/mimetypes/mnOffset> "512"^^"xsd:integer" .
+<http://json-ld.org/playground/pdb> <http://dataid.dbpedia.org/mimetypes/mNumber> "0"^^"xsd:integer"
 <http://json-ld.org/playground/pdf> <http://dataid.dbpedia.org/mimetypes/extend> "pdf" .
 <http://json-ld.org/playground/pfa> <http://dataid.dbpedia.org/mimetypes/extend> "pfa" .
 <http://json-ld.org/playground/pfr> <http://dataid.dbpedia.org/mimetypes/extend> "pfr" .

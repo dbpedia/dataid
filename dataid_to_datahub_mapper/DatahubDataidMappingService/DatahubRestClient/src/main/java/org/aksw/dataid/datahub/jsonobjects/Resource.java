@@ -11,52 +11,30 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Resource  implements DataHubListObject, MappingObject
 {
-    private String id;
-    private String resource_group_id;
-    private String name;
-    private String description;
-    private Date created;
-    private String url;
-    private Integer size;
-    private Integer position;
-    private Integer triples;
-    private String resource_type;
-    private Date last_modified;
-    private String hash;
-    private String format;
-    private String mimetype;
-    private String mimetype_inner;
-    private String state;
+    private String id;                  //datahub id -> no mapping
+    private String resource_group_id;   //datahub internal -> no mapping
+    private String name;                //dc:title
+    private String description;         //dc:description
+    private Date created;               //dc:issued
+    private String url;                 //dcat:downloadURL / dcat:accessURL
+    private Integer size;               //dcat:byteSize
+    private Integer position;           //internal -> position in resource lost //TODO remember to put DataId link first
+    private Date last_modified;         //dc:modified
+    private String hash;                //dataid:checksum / dataid:md5
+    private String format;              //dc:format  //TODO needs additional work -> http://docs.ckan.org/en/ckan-1.7.2/domain-model-resource.html
+    private String mimetype;            //dcat:mimeType
+    private String mimetype_inner;      //dc:format
+    private String state;               //no equivalent
 
     //internal use!
-    private String resourceUri;
+    private String resourceUri;         //@id
+    private String distributionType;    //@type
     private List<LinkedHashMap<String, Object>> graph = new ArrayList<LinkedHashMap<String, Object>>();
 
 	public Resource() 
 	{
-		size = 0;
+        size = 0;
 		state = "active";
-	}
-	
-	/**
-	 * method necessary since a non-simple get method produces a NullPointerException in jackson.json.ObjectMapper!?
-	 */
-	public void PrepareForParsing()
-	{
-    	if (format != null) {
-			//datahub displays different formats of a resource via the || operators
-			if (format.startsWith("["))
-				format = format.substring(1, format.length() - 2);
-			format = format.replace(";", ",").replace(" ", "");
-			format = format.replace(",", "||");
-		}
-    	if (mimetype != null) {
-			//datahub displays different mimetypes of a resource via the || operators
-			if (mimetype.startsWith("["))
-				mimetype = mimetype.substring(1, mimetype.length() - 2);
-			mimetype = mimetype.replace(";", ",").replace(" ", "");
-			mimetype = mimetype.replace(",", "||");
-		}
 	}
 	
     public String getState() {
@@ -123,12 +101,15 @@ public class Resource  implements DataHubListObject, MappingObject
         return position;
     }
 
-    public void setResource_type(String resource_type) {
-        this.resource_type = resource_type;
-    }
-
+    /**
+     * type of the resource by ckan
+     * @return ckan resource type
+     */
     public String getResource_type() {
-        return resource_type;
+        if(distributionType.equals("dataid:SingleFile") || distributionType.equals("dataid:Directory"))
+            return "file";
+        else
+            return "api";
     }
 
     public void setLast_modified(Date last_modified) {
@@ -170,15 +151,6 @@ public class Resource  implements DataHubListObject, MappingObject
     public String getMimetype_inner() {
         return mimetype_inner;
     }
-    @JsonIgnore
-	public Integer getTriples() {
-		return triples;
-	}
-
-    @JsonIgnore
-	public void setTriples(Integer triples) {
-		this.triples = triples;
-	}
 
 	public void setSize(Integer size) {
 		this.size = size;
@@ -187,6 +159,16 @@ public class Resource  implements DataHubListObject, MappingObject
 	public void setPosition(Integer position) {
 		this.position = position;
 	}
+
+    @JsonIgnore
+    public String getDistributionType() {
+        return distributionType;
+    }
+
+    @JsonIgnore
+    public void setDistributionType(String distributionType) {
+        this.distributionType = distributionType;
+    }
 
     @JsonIgnore
     public String getResourceUri() {

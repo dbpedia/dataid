@@ -11,6 +11,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="org.apache.commons:commons-compress:1.9" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-rdfxml:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-model:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-rio-api:2.8.0" level="project" />

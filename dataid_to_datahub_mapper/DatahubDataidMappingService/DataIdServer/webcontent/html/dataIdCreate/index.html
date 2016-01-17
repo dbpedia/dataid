@@ -5,6 +5,7 @@
     <script src="js/angular.min.js"></script>
     <script src="js/underscore.js"></script>
     <script src="js/jquery-2.1.0.js"></script>
+    <script src="js/jquery-ui.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/ui-bootstrap-tpls-0.13.4.min.js"></script>
     <script type="text/javascript" async="" src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
@@ -18,7 +19,6 @@
     <script src="js/bootstrap-validator.js"></script>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/gitgraph.css" rel="stylesheet">
-    <script src="js/jquery-ui.js"></script>
     <link rel="stylesheet" href="css/jquery-ui.css">
     <script src="js/bootstrap-multiselect.js"></script>
     <link href="css/bootstrap-tagsinput.css" rel="stylesheet">
@@ -28,41 +28,27 @@
         body {
             overflow-x: hidden;
         }
-        .desc2{
-            float: right;
-            margin-right: 2px;
-        }
         .input{
-            margin-bottom: 5px;
-            width: 98%
+            width: 100%
         }
         .input-modal-md{
-            margin-bottom: 5px;
             width: 100%
         }
         .input-small2{
-            margin-bottom: 5px;
             width: 90%
-        }
-
-        #page-wrapper {
-            position: inherit;
-            margin: 0 0 0 280px;
-            padding: 0 30px;
-            max-width: 800px;
         }
 
         #leftNavBottom {
             padding: 0 0px !important;
             border-left: 1px solid #e7e7e7 !important;
+            opacity: 1;
             width: 350px;
         }
-        .navbar-static-side {
-            z-index: 1;
-            position: absolute;
-            width: 350px;
-            background-color: rgba(0, 0, 0, 0) !important;
-            border-color: rgba(0, 0, 0, 0) !important;
+        #leftNavBottomCompressed {
+            padding: 0 0px !important;
+            border-left: 1px solid #e7e7e7 !important;
+            opacity: 0;
+            width: 50px;
         }
         .popover{
             max-width: 340px;
@@ -102,10 +88,11 @@
         }
 
         ul ul {/* Add a margin for any <ul> inside another <ul> */
-            margin-left: 13px;
+            margin-left: 8px;
         }
-        li {
+        li .ng-scope{
             list-style: none;
+            font-size: 17px;
         }
         .panel .panel-default .ng-isolate-scope{
             max-height: 200px !important;
@@ -113,14 +100,27 @@
         #dataidlogo {
             position: absolute;
             top: 5px;
-            left: 400px;
+            left: 370px;
             width: 220px;
             height: 95px;
         }
         #topnavbar {
             margin-bottom: 0px;
             margin-right: 0px;
-            max-width: 1340px !important;
+            max-width: 1334px !important;
+            background-color: rgba(0, 0, 0, 0) !important;
+            border-color: rgba(0, 0, 0, 0) !important;
+        }
+        #topnav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0) !important;
+            border-color: rgba(0, 0, 0, 0) !important;
+        }
+
+        #innernav {
+            overflow: hidden;
+            max-width: 660px !important;
+            margin-left: 700px;
             background-color: rgba(0, 0, 0, 0) !important;
             border-color: rgba(0, 0, 0, 0) !important;
         }
@@ -163,7 +163,6 @@
         .label-xlg{
             font-size: 12px;
             padding: .3em .6em .3em;
-            display: inline-flex;
         }
         .label-menu{
             font-size: 12px;
@@ -185,17 +184,26 @@
             font-size: 14px;
             border-color: #4c6355;
         }
-        #options-btn{
-            width: 100%;
-            font-size: 14px;
-            height: 40px;
-        }
         #versionGraph{
             width:100%;
         }
         #accordion{
+            z-index: 1;
+            position: absolute;
+            width: 350px;
             overflow-y: auto;
+            overflow-x: hidden;
             margin-bottom: 80px;
+        }
+        #options-btn{
+            width: 350px;
+            font-size: 14px;
+            height: 40px;
+        }
+        #options-btn-compressed{
+            width: 50px;
+            font-size: 14px;
+            height: 40px;
         }
         .btn-circle {
             width: 30px;
@@ -223,31 +231,76 @@
             position: absolute;
             width: 0px;
         }
+        #page-wrapper{
+            float: left;
+            margin-left: 350px;
+            position: inherit;
+            padding: 0 0px;
+        }
+        input.ng-invalid.ng-touched,
+        select.ng-invalid.ng-touched + div.btn-group > input,
+        input.ng-invalid.ng-touched + div.bootstrap-tagsinput{
+            border-color: #e9463e;
+            outline: 0;
+            -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.075), 0 0 8px rgba(233, 70, 62, 0.60);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.075), 0 0 8px rgba(233, 70, 62, 0.60);
+        }
+        .panel-body{
+            z-index: 1;
+        }
+        ng-messages{
+            font-size: 10px;
+            z-index: 1;
+        }
+        ng-message{
+            color: #e9463e;
+            font-size: 10px;
+        }
+        textarea {
+            resize: none;
+            display: block;
+        }
+        .tree-item{
+            cursor: pointer;
+        }
+        #dataInformationPanel textarea {
+            overflow-y: hidden; /* fixes scrollbar flash - kudos to @brettjonesdev */
+        }
     </style>
     <meta charset="UTF-8">
     <title>DataID Generator</title>
+
 </head>
 
 <body ng-controller="genController">
+
+<script type="text/ng-template" id="messagesTemplate">
+    <ng-message when="required">This field is required!</ng-message>
+    <ng-message when="dirty">Please do not use the default name.</ng-message>
+    <ng-message when="email">This is not a valid email address</ng-message>
+    <ng-message when="uri">Please enter a valid URI!</ng-message>
+    <ng-message when="url">Please enter a valid URL!</ng-message>
+    <ng-message when="integer">Please state the amount as an integer value.</ng-message>
+    <ng-message when="parturi">Please enter a valid URI!</ng-message>
+    <ng-message when="uniqueuri">Please choose another uri. This one is already in use.</ng-message>
+    <ng-message when="nolicense">Please select a license first.</ng-message>
+    <ng-message when="pattern">The entered characters ar not in the expected pattern.</ng-message>
+    <ng-message when="htmlresource">To protect other users from spam, html resources are not supported.</ng-message>
+</script>
 <div ng-include="'popoverTemplates.html'"></div>
 <form id="form" name="form">
     <img id='dataidlogo' ng-show="currentTab=='creator'" src="/content/imgs/krasseslogo.png" />
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-fixed-top pull-right" role="navigation" id="topnavbar" >
-                <ul class="nav navbar-nav pull-right">
-                    <li class="active">
-                        <div class="row">
-                            <div class="col-lg-7"></div>
-                            <div class="col-md-2">
-                                <div class="input-group">
+                <ul class="nav navbar-nav pull-right" id="topnav" >
+                    <div class="active" id="innernav">
+                                <div class="input-group" style="width:250px; float: left;">
                                     <input id="navbar-search" type="text" class="form-control" placeholder="Search for...">
                                     <span class="input-group-btn">
                                         <button id="navbar-search-btn" class="btn btn-primary" type="button" ng-click="toggleOptionPanel()">Go!</button>
                                     </span>
                                 </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="btn-group" style="float:right">
+                                <div class="btn-group" style="float:right; width:300px;">
                                     <input type="button"
                                            class="btn btn-primary"
                                            ng-click="currentTab='creator'"
@@ -260,9 +313,7 @@
                                            value="DataID Text Search"
                                            style="width:50%; float:right; height: 40px;">
                                 </div>
-                            </div>
-                        </div>
-                    </li>
+                    </div>
                     <!--<li class="active"><input id="navbar-search" type="text" class="form-control" placeholder="Search"></li>-->
                     <li role="separator" class="divider"></li>
                     <li class="active">
@@ -274,16 +325,17 @@
                  ng-show="currentTab == 'creator'"
                  ng-style="{height: (window.innerHeight - 80) + 'px'}">
 
+
                 <button id="options-btn"
                         type="button"
                         class="btn btn-sm btn-primary"
-                        ng-click="isoptions = !isoptions" >
+                        ng-click="isoptions=!isoptions" >
                     <i class="glyphicon glyphicon-menu-hamburger"></i>
                     <span>  Options</span>
                 </button>
                 <div ng-init="isopensets=true"></div>
                 <div ng-init="isoptions=false"></div>
-                <uib-accordion close-others="oneAtATime">
+                <uib-accordion close-others="oneAtATime" >
                     <uib-accordion-group data-toggle="collapse" is-open="isoptions" ng-show="isoptions">
                         <div id="optionsList">
                             <div class="popoverNoClose btn-group-vertical">
@@ -295,6 +347,10 @@
                                        type="button"
                                        value="reset inputs"
                                        ng-click="loadDataIdTemplate()">
+                                <input class="btn btn-default"
+                                       type="button"
+                                       value="close left panel"
+                                       ng-click="toggleOptionPanel()">
                             </div>
                         </div>
                     </uib-accordion-group>
@@ -312,7 +368,6 @@
                         </uib-accordion-heading>
                         <div id="datasetList">
                             <span>Dataset Title</span>
-                            <span class="pull-right">Options</span>
                             <ul>
                                 <li ng-repeat="dataSet in graph | filter:dataidFilter" ng-include="'tree_item_renderer.html'"></li>
                             </ul>
@@ -325,7 +380,6 @@
                         </uib-accordion-heading>
                         <div id="agentList">
                             <span>Agents:</span>
-                            <span class="pull-right">Options</span>
                             <ul>
                                 <li ng-repeat="role in agentRoles" ng-include="'agent_tree_renderer.html'"></li>
                             </ul>
@@ -338,10 +392,10 @@
                         </uib-accordion-heading>
                         <div id="legend">
                             <div class="pull-left">
-                                <a class="btn btn-success" >DataID (void:DatasetDescription)</a> <br>
-                                <a class="btn btn-info" >dataid:Dataset</a>  <br>
-                                <a class="btn label-default" >dataid:Distribution</a>  <br>
-                                <a class="btn btn-primary" >dataid:Agent</a>  <br>
+                                <a class="btn btn-success" ></a> DataID (void:DatasetDescription)<br>
+                                <a class="btn btn-info" ></a> dataid:Dataset <br>
+                                <a class="btn label-default" ></a> dataid:Distribution <br>
+                                <a class="btn btn-primary" ></a> dataid:Agent <br>
                             </div>
                         </div>
                     </uib-accordion-group>
@@ -352,8 +406,41 @@
             <div>
                 <div>
                     <div style="padding-top: 10px !important;">
-                        <button class="btn btn-sm btn-primary publish-buttons" ng-click="isFormValid() && validate(dataid)" >Validate DataID</button>
-                        <button class="btn btn-sm btn-primary publish-buttons" ng-click="publishDataId()" >Publish/Update DataID</button>
+                        <button class="btn btn-sm btn-primary publish-buttons"
+                                ng-click="isFormValid() && validate(dataid)" >
+                            <i class="glyphicon glyphicon-check"></i>
+                            <span>  Validate DataID</span>
+                        </button>
+                        <button class="btn btn-sm btn-primary publish-buttons"
+                                ng-click="publishDataId()" >
+                            <i class="glyphicon glyphicon-share"></i>
+                            <span>  Publish/Update DataID</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav id="leftNavBottomCompressed" class=" navbar-fixed-bottom" role="navigation" ng-show="currentTab == 'creator'">
+            <div>
+                <div>
+
+                    <button id="options-btn-compressed"
+                            type="button"
+                            class="btn btn-sm btn-primary publish-buttons"
+                            ng-click="toggleOptionPanel()" >
+                        <i class="glyphicon glyphicon-menu-hamburger"></i>
+                    </button>
+                    <div style="padding-top: 10px !important;">
+                        <button class="btn btn-sm btn-primary publish-buttons"
+                                type="button"
+                                ng-click="isFormValid() && validate(dataid)" >
+                            <i class="glyphicon glyphicon-check"></i>
+                        </button>
+                        <button class="btn btn-sm btn-primary publish-buttons"
+                                type="button"
+                                ng-click="publishDataId()" >
+                            <i class="glyphicon glyphicon-share"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -365,15 +452,15 @@
             </div>
         </div>
         <!--creator page -->
-        <div id="page-wrapper" ng-show="currentTab == 'creator'" style="float: left; margin-left: 350px;">
+        <div id="page-wrapper" class="open-panel" ng-show="currentTab == 'creator'" >
 
             <br/>
-            <div class="container">
+            <div class="container" style="width:1000px;">
                 <div>
                     <div class="form-group">
                         <div class="row">
                             <br>
-                            <div class="col-lg-10">
+                            <div class="col-lg-12">
                                 <span><h2 class="pull-right">{{root['dc:title']['@value']}}</h2></span>
                                 <div class="page-header" style="padding-top: 15px" ></div>
                                     <span><div class="pull-right">
@@ -404,41 +491,39 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-10">
+                            <div class="col-lg-12">
                                 <div class="panel panel-primary">
                                     <div class="panel-heading hover-link">
                                         <h1 class="panel-title">DataID URI</h1>
                                     </div>
                                         <div class="panel-body">
                                             <div>
-                                                <input ng-required="true"
-                                                       ng-class="{'disabled': isTemplate}"
+                                                <input ng-class="{'disabled': isTemplate}"
                                                        dataiduri
                                                        id="dataiduri"
                                                        name="dataiduri"
                                                        class="input popoverNoClose"
                                                        type="text"
-                                                       ng-model="root['@id']"
-                                                       ng-init="iName='dataiduri'"
-                                                       popover-trigger="none"
-                                                       popover-placement="bottom"
-                                                       popover-title="{{popMap.dataiduri.title}}"
-                                                       popover-template="preparePopover('warningPopover', form.dataiduri)"
-                                                       popover-is-open="showAsInvalid(form.dataiduri)">
+                                                       dirty
+                                                       dataid-model
+                                                       ng-model="root">
+                                                <ng-messages ng-messages-include="messagesTemplate" for="form.dataiduri.$error">
+                                                    <ng-message when="dataiduri">Please enter a valid uri containing no '#'.</ng-message>
+                                                </ng-messages>
                                             </div>
                                         </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div style="padding-top: 10px" class="col-md-5">
+                            <div style="padding-top: 10px" class="col-md-6">
                                 <div ng-include="'general_information.html'"></div>
                             </div>
 
-                            <div style="padding-top: 10px" class="col-md-5">
-                                <div ng-include="'agentinclude.html'"></div>
+                            <div style="padding-top: 10px" class="col-md-6">
+                                <div ng-include="'agentinclude.html'" ng-init="formVar = 'form'"></div>
                             </div>
-                            <div class="col-md-10">
+                            <div class="col-md-12">
                                 <div ng-include="'errorReportTable.html'"></div>
                             </div>
                         </div>
@@ -458,5 +543,3 @@
 
 </form>
 </body>
-</html>
-

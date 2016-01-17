@@ -5683,6 +5683,9 @@ TTLP('
 <http://json-ld.org/playground/nq> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dataid.dbpedia.org/mimetypes/mimetype>.
 <http://json-ld.org/playground/nq> <http://dataid.dbpedia.org/mimetypes/mime> "application/n-quads".
 <http://json-ld.org/playground/nq> <http://dataid.dbpedia.org/mimetypes/extend> "nq".
+<http://json-ld.org/playground/tql> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dataid.dbpedia.org/mimetypes/mimetype>.
+<http://json-ld.org/playground/tql> <http://dataid.dbpedia.org/mimetypes/mime> "application/n-quads".
+<http://json-ld.org/playground/tql> <http://dataid.dbpedia.org/mimetypes/extend> "tql".
 <http://json-ld.org/playground/rtx> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dataid.dbpedia.org/mimetypes/mimetype>.
 <http://json-ld.org/playground/rtx> <http://dataid.dbpedia.org/mimetypes/mime> "text/richtext".
 <http://json-ld.org/playground/rtx> <http://dataid.dbpedia.org/mimetypes/extend> "rtx".
@@ -5952,4 +5955,613 @@ TTLP('
 <http://json-ld.org/playground/ice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dataid.dbpedia.org/mimetypes/mimetype>.
 <http://json-ld.org/playground/ice> <http://dataid.dbpedia.org/mimetypes/mime> "x-conference/x-cooltalk".
 <http://json-ld.org/playground/ice> <http://dataid.dbpedia.org/mimetypes/extend> "ice".
+<http://json-ld.org/playground/jp2> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 00 0c 6a 50 20 20 0d 0a" .
+<http://json-ld.org/playground/3gg> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 00 14 66 74 79 70 33 67 70" .
+<http://json-ld.org/playground/3gp> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 00 14 66 74 79 70 33 67 70" .
+<http://json-ld.org/playground/3g2> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 00 14 66 74 79 70 33 67 70" .
+<http://json-ld.org/playground/mp4> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 00 14 66 74 79 70 69 73 6f 6d" .
+<http://json-ld.org/playground/mov> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 00 14 66 74 79 70 71 74 20 20" .
+<http://json-ld.org/playground/mp4> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 00 18 66 74 79 70 33 67 70 35" .
+<http://json-ld.org/playground/m4v> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 00 18 66 74 79 70 6d 70 34 32" .
+<http://json-ld.org/playground/mp4> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 00 1c 66 74 79 70 4d 53 4e 56 01 29 00 46 4d 53 4e 56 6d 70 34 32" .
+<http://json-ld.org/playground/3gg> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 00 20 66 74 79 70 33 67 70" .
+<http://json-ld.org/playground/3gp> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 00 20 66 74 79 70 33 67 70" .
+<http://json-ld.org/playground/3g2> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 00 20 66 74 79 70 33 67 70" .
+<http://json-ld.org/playground/m4a> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 00 20 66 74 79 70 4d 34 41 20" .
+<http://json-ld.org/playground/ico> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 01 00" .
+<http://json-ld.org/playground/spl> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 01 00" .
+<http://json-ld.org/playground/mpeg> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 01 bx" .
+<http://json-ld.org/playground/mpg> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 01 bx" .
+<http://json-ld.org/playground/mpg> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 01 ba" .
+<http://json-ld.org/playground/vob> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 01 ba" .
+<http://json-ld.org/playground/cur> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 02 00" .
+<http://json-ld.org/playground/wb2> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 02 00" .
+<http://json-ld.org/playground/wk1> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 02 00 06 04 06 00 08 00 00 00 00 00" .
+<http://json-ld.org/playground/wk3> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 1a 00 00 10 04 00 00 00 00 00" .
+<http://json-ld.org/playground/wk4> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 1a 00 02 10 04 00 00 00 00 00" .
+<http://json-ld.org/playground/wk5> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 1a 00 02 10 04 00 00 00 00 00" .
+<http://json-ld.org/playground/qxd> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 4d 4d 58 50 52" .
+<http://json-ld.org/playground/qxd> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 49 49 58 50 52" .
+<http://json-ld.org/playground/hlp> <http://dataid.dbpedia.org/mimetypes/magic> "00 00 ff ff ff ff" .
+<http://json-ld.org/playground/hlp> <http://dataid.dbpedia.org/mimetypes/offset>  "6"^^xsd:integer .
+<http://json-ld.org/playground/ttf> <http://dataid.dbpedia.org/mimetypes/magic> "00 01 00 00 00" .
+<http://json-ld.org/playground/mny> <http://dataid.dbpedia.org/mimetypes/magic> "00 01 00 00 4d 53 49 53 41 4d 20 44 61 74 61 62 61 73 65" .
+<http://json-ld.org/playground/mdb> <http://dataid.dbpedia.org/mimetypes/magic> "00 01 00 00 53 74 61 6e 64 61 72 64 20 4a 65 74 20 44 42" .
+<http://json-ld.org/playground/img> <http://dataid.dbpedia.org/mimetypes/magic> "00 01 00 08 00 01 00 01 01" .
+<http://json-ld.org/playground/flt> <http://dataid.dbpedia.org/mimetypes/magic> "00 01 01" .
+<http://json-ld.org/playground/aba> <http://dataid.dbpedia.org/mimetypes/magic> "00 01 42 41" .
+<http://json-ld.org/playground/dba> <http://dataid.dbpedia.org/mimetypes/magic> "00 01 42 44" .
+<http://json-ld.org/playground/db> <http://dataid.dbpedia.org/mimetypes/magic> "00 06 15 61 00 00 00 02 00 00 04 d2 00 00 10 00" .
+<http://json-ld.org/playground/fli> <http://dataid.dbpedia.org/mimetypes/magic> "00 11 af" .
+<http://json-ld.org/playground/snm> <http://dataid.dbpedia.org/mimetypes/magic> "00 1e 84 90 00 00 00 00" .
+<http://json-ld.org/playground/enc> <http://dataid.dbpedia.org/mimetypes/magic> "00 5c 41 b1 ff" .
+<http://json-ld.org/playground/sol> <http://dataid.dbpedia.org/mimetypes/magic> "00 bf" .
+<http://json-ld.org/playground/ppt> <http://dataid.dbpedia.org/mimetypes/magic> "00 6e 1e f0" .
+<http://json-ld.org/playground/ppt> <http://dataid.dbpedia.org/mimetypes/offset>  "512"^^xsd:integer .
+<http://json-ld.org/playground/mdf> <http://dataid.dbpedia.org/mimetypes/magic> "00 ff ff ff ff ff ff ff ff ff ff 00 00 02 00 01" .
+<http://json-ld.org/playground/emf> <http://dataid.dbpedia.org/mimetypes/magic> "01 00 00 00" .
+<http://json-ld.org/playground/pic> <http://dataid.dbpedia.org/mimetypes/magic> "01 00 00 00 01" .
+<http://json-ld.org/playground/wmf> <http://dataid.dbpedia.org/mimetypes/magic> "01 00 09 00 00 03" .
+<http://json-ld.org/playground/fdb> <http://dataid.dbpedia.org/mimetypes/magic> "01 00 39 30" .
+<http://json-ld.org/playground/gdb> <http://dataid.dbpedia.org/mimetypes/magic> "01 00 39 30" .
+<http://json-ld.org/playground/tbi> <http://dataid.dbpedia.org/mimetypes/magic> "01 01 47 19 a4 00 00 00 00 00 00 00" .
+<http://json-ld.org/playground/mdf> <http://dataid.dbpedia.org/mimetypes/magic> "01 0f 00 00" .
+<http://json-ld.org/playground/tr1> <http://dataid.dbpedia.org/mimetypes/magic> "01 10" .
+<http://json-ld.org/playground/rgb> <http://dataid.dbpedia.org/mimetypes/magic> "01 da 01 01 00 03" .
+<http://json-ld.org/playground/drw> <http://dataid.dbpedia.org/mimetypes/magic> "01 ff 02 04 03 02" .
+<http://json-ld.org/playground/dss> <http://dataid.dbpedia.org/mimetypes/magic> "02 64 73 73" .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "3" .
+<http://json-ld.org/playground/db3> <http://dataid.dbpedia.org/mimetypes/magic> "3" .
+<http://json-ld.org/playground/qph> <http://dataid.dbpedia.org/mimetypes/magic> "03 00 00 00" .
+<http://json-ld.org/playground/adx> <http://dataid.dbpedia.org/mimetypes/magic> "03 00 00 00 41 50 50 52" .
+<http://json-ld.org/playground/db4> <http://dataid.dbpedia.org/mimetypes/magic> "4" .
+<http://json-ld.org/playground/drw> <http://dataid.dbpedia.org/mimetypes/magic> "7" .
+<http://json-ld.org/playground/skf> <http://dataid.dbpedia.org/mimetypes/magic> "07 53 4b 46" .
+<http://json-ld.org/playground/dtd> <http://dataid.dbpedia.org/mimetypes/magic> "07 64 74 32 64 64 74 64" .
+<http://json-ld.org/playground/db> <http://dataid.dbpedia.org/mimetypes/magic> "8" .
+<http://json-ld.org/playground/xls> <http://dataid.dbpedia.org/mimetypes/magic> "09 08 10 00 00 06 05 00" .
+<http://json-ld.org/playground/xls> <http://dataid.dbpedia.org/mimetypes/offset>  "512"^^xsd:integer .
+<http://json-ld.org/playground/pcx> <http://dataid.dbpedia.org/mimetypes/magic> "0a xx 01 01" .
+<http://json-ld.org/playground/wallet> <http://dataid.dbpedia.org/mimetypes/magic> "0a 16 6f 72 67 2e 62 69 74 63 6f 69 6e 2e 70 72" .
+<http://json-ld.org/playground/mp> <http://dataid.dbpedia.org/mimetypes/magic> "0c ed" .
+<http://json-ld.org/playground/doc> <http://dataid.dbpedia.org/mimetypes/magic> "0d 44 4f 43" .
+<http://json-ld.org/playground/nri> <http://dataid.dbpedia.org/mimetypes/magic> "0e 4e 65 72 6f 49 53 4f" .
+<http://json-ld.org/playground/wks> <http://dataid.dbpedia.org/mimetypes/magic> "0e 57 4b 53" .
+<http://json-ld.org/playground/ppt> <http://dataid.dbpedia.org/mimetypes/magic> "0f 00 e8 03" .
+<http://json-ld.org/playground/ppt> <http://dataid.dbpedia.org/mimetypes/offset>  "512"^^xsd:integer .
+<http://json-ld.org/playground/cl5> <http://dataid.dbpedia.org/mimetypes/magic> "10 00 00 00" .
+<http://json-ld.org/playground/ntf> <http://dataid.dbpedia.org/mimetypes/magic> "1a 00 00" .
+<http://json-ld.org/playground/nsf> <http://dataid.dbpedia.org/mimetypes/magic> "1a 00 00 04 00 00" .
+<http://json-ld.org/playground/arc> <http://dataid.dbpedia.org/mimetypes/magic> "1a 0x" .
+<http://json-ld.org/playground/pak> <http://dataid.dbpedia.org/mimetypes/magic> "1a 0b" .
+<http://json-ld.org/playground/eth> <http://dataid.dbpedia.org/mimetypes/magic> "1a 35 01 00" .
+<http://json-ld.org/playground/webm> <http://dataid.dbpedia.org/mimetypes/magic> "1a 45 df a3" .
+<http://json-ld.org/playground/mkv> <http://dataid.dbpedia.org/mimetypes/magic> "1a 45 df a3 93 42 82 88 6d 61 74 72 6f 73 6b 61" .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "1a 52 54 53 20 43 4f 4d 50 52 45 53 53 45 44 20 49 4d 41 47 45 20 56 31 2e 30 1a" .
+<http://json-ld.org/playground/ws> <http://dataid.dbpedia.org/mimetypes/magic> "1d 7d" .
+<http://json-ld.org/playground/gz> <http://dataid.dbpedia.org/mimetypes/magic> "1f 8b 08" .
+<http://json-ld.org/playground/tgz> <http://dataid.dbpedia.org/mimetypes/magic> "1f 8b 08" .
+<http://json-ld.org/playground/vlt> <http://dataid.dbpedia.org/mimetypes/magic> "1f 8b 08" .
+<http://json-ld.org/playground/tar.z> <http://dataid.dbpedia.org/mimetypes/magic> "1f 9d" .
+<http://json-ld.org/playground/tar.z> <http://dataid.dbpedia.org/mimetypes/magic> "1f a0" .
+<http://json-ld.org/playground/bsb> <http://dataid.dbpedia.org/mimetypes/magic> "21" .
+<http://json-ld.org/playground/ain> <http://dataid.dbpedia.org/mimetypes/magic> "21 12" .
+<http://json-ld.org/playground/lib> <http://dataid.dbpedia.org/mimetypes/magic> "21 3c 61 72 63 68 3e 0a" .
+<http://json-ld.org/playground/ost> <http://dataid.dbpedia.org/mimetypes/magic> "21 42 44 4e" .
+<http://json-ld.org/playground/pst> <http://dataid.dbpedia.org/mimetypes/magic> "21 42 44 4e" .
+<http://json-ld.org/playground/msi> <http://dataid.dbpedia.org/mimetypes/magic> "23 20" .
+<http://json-ld.org/playground/vmdk> <http://dataid.dbpedia.org/mimetypes/magic> "23 20 44 69 73 6b 20 44 65 73 63 72 69 70 74 6f" .
+<http://json-ld.org/playground/dsp> <http://dataid.dbpedia.org/mimetypes/magic> "23 20 4d 69 63 72 6f 73 6f 66 74 20 44 65 76 65 6c 6f 70 65 72 20 53 74 75 64 69 6f" .
+<http://json-ld.org/playground/amr> <http://dataid.dbpedia.org/mimetypes/magic> "23 21 41 4d 52" .
+<http://json-ld.org/playground/sil> <http://dataid.dbpedia.org/mimetypes/magic> "23 21 53 49 4c 4b 0a" .
+<http://json-ld.org/playground/hdr> <http://dataid.dbpedia.org/mimetypes/magic> "23 3f 52 41 44 49 41 4e 43 45 0a" .
+<http://json-ld.org/playground/pec> <http://dataid.dbpedia.org/mimetypes/magic> "23 50 45 43 30 30 30 31 4c 41 3a" .
+<http://json-ld.org/playground/pes> <http://dataid.dbpedia.org/mimetypes/magic> "23 50 45 53 30" .
+<http://json-ld.org/playground/sav> <http://dataid.dbpedia.org/mimetypes/magic> "24 46 4c 32 40 28 23 29 20 53 50 53 53 20 44 41 54 41 20 46 49 4c 45" .
+<http://json-ld.org/playground/eps> <http://dataid.dbpedia.org/mimetypes/magic> "25 21 50 53 2d 41 64 6f 62 65 2d 33 2e 30 20 45 50 53 46 2d 33 20 30" .
+<http://json-ld.org/playground/pdf> <http://dataid.dbpedia.org/mimetypes/magic> "25 50 44 46" .
+<http://json-ld.org/playground/fdf> <http://dataid.dbpedia.org/mimetypes/magic> "25 50 44 46" .
+<http://json-ld.org/playground/fbm> <http://dataid.dbpedia.org/mimetypes/magic> "25 62 69 74 6d 61 70" .
+<http://json-ld.org/playground/hqx> <http://dataid.dbpedia.org/mimetypes/magic> "28 54 68 69 73 20 66 69 6c 65 20 6d 75 73 74 20 62 65 20 63 6f 6e 76 65 72 74 65 64 20 77 69 74 68 20 42 69 6e 48 65 78 20" .
+<http://json-ld.org/playground/log> <http://dataid.dbpedia.org/mimetypes/magic> "2a 2a 2a 20 20 49 6e 73 74 61 6c 6c 61 74 69 6f 6e 20 53 74 61 72 74 65 64 20" .
+<http://json-ld.org/playground/lha> <http://dataid.dbpedia.org/mimetypes/magic> "2d 6c 68" .
+<http://json-ld.org/playground/lha> <http://dataid.dbpedia.org/mimetypes/offset>  "2"^^xsd:integer .
+<http://json-ld.org/playground/lzh> <http://dataid.dbpedia.org/mimetypes/magic> "2d 6c 68" .
+<http://json-ld.org/playground/lzh> <http://dataid.dbpedia.org/mimetypes/offset>  "2"^^xsd:integer .
+<http://json-ld.org/playground/ivr> <http://dataid.dbpedia.org/mimetypes/magic> "2e 52 45 43" .
+<http://json-ld.org/playground/rm> <http://dataid.dbpedia.org/mimetypes/magic> "2e 52 4d 46" .
+<http://json-ld.org/playground/rmvb> <http://dataid.dbpedia.org/mimetypes/magic> "2e 52 4d 46" .
+<http://json-ld.org/playground/ra> <http://dataid.dbpedia.org/mimetypes/magic> "2e 52 4d 46 00 00 00 12 00" .
+<http://json-ld.org/playground/ra> <http://dataid.dbpedia.org/mimetypes/magic> "2e 72 61 fd 00" .
+<http://json-ld.org/playground/au> <http://dataid.dbpedia.org/mimetypes/magic> "2e 73 6e 64" .
+<http://json-ld.org/playground/msf> <http://dataid.dbpedia.org/mimetypes/magic> "2f 2f 20 3c 21 2d 2d 20 3c 6d 64 62 3a 6d 6f 72 6b 3a 7a" .
+<http://json-ld.org/playground/cat> <http://dataid.dbpedia.org/mimetypes/magic> "30" .
+<http://json-ld.org/playground/evt> <http://dataid.dbpedia.org/mimetypes/magic> "30 00 00 00 4c 66 4c 65" .
+<http://json-ld.org/playground/asf> <http://dataid.dbpedia.org/mimetypes/magic> "30 26 b2 75 8e 66 cf 11 a6 d9 00 aa 00 62 ce 6c" .
+<http://json-ld.org/playground/wma> <http://dataid.dbpedia.org/mimetypes/magic> "30 26 b2 75 8e 66 cf 11 a6 d9 00 aa 00 62 ce 6c" .
+<http://json-ld.org/playground/wmv> <http://dataid.dbpedia.org/mimetypes/magic> "30 26 b2 75 8e 66 cf 11 a6 d9 00 aa 00 62 ce 6c" .
+<http://json-ld.org/playground/ntf> <http://dataid.dbpedia.org/mimetypes/magic> "30 31 4f 52 44 4e 41 4e 43 45 20 53 55 52 56 45 59 20 20 20 20 20 20 20" .
+<http://json-ld.org/playground/wri> <http://dataid.dbpedia.org/mimetypes/magic> "32 be" .
+<http://json-ld.org/playground/wri> <http://dataid.dbpedia.org/mimetypes/magic> "31 be" .
+<http://json-ld.org/playground/pcs> <http://dataid.dbpedia.org/mimetypes/magic> "32 03 10 00 00 00 00 00 00 00 80 00 00 00 ff 00" .
+<http://json-ld.org/playground/psd> <http://dataid.dbpedia.org/mimetypes/magic> "38 42 50 53" .
+<http://json-ld.org/playground/sle> <http://dataid.dbpedia.org/mimetypes/magic> "3a 56 45 52 53 49 4f 4e" .
+<http://json-ld.org/playground/asx> <http://dataid.dbpedia.org/mimetypes/magic> "3c" .
+<http://json-ld.org/playground/xdr> <http://dataid.dbpedia.org/mimetypes/magic> "3c" .
+<http://json-ld.org/playground/dci> <http://dataid.dbpedia.org/mimetypes/magic> "3c 21 64 6f 63 74 79 70" .
+<http://json-ld.org/playground/gpx> <http://dataid.dbpedia.org/mimetypes/magic> "3c 67 70 78 20 76 65 72 73 69 6f 6e 3d 22 31 2e 31" .
+<http://json-ld.org/playground/manifest> <http://dataid.dbpedia.org/mimetypes/magic> "3c 3f 78 6d 6c 20 76 65 72 73 69 6f 6e 3d" .
+<http://json-ld.org/playground/xul> <http://dataid.dbpedia.org/mimetypes/magic> "3c 3f 78 6d 6c 20 76 65 72 73 69 6f 6e 3d 22 31 2e 30 22 3f 3e" .
+<http://json-ld.org/playground/msc> <http://dataid.dbpedia.org/mimetypes/magic> "3c 3f 78 6d 6c 20 76 65 72 73 69 6f 6e 3d 22 31 2e 30 22 3f 3e 0d 0a 3c 4d 4d 43 5f 43 6f 6e 73 6f 6c 65 46 69 6c 65 20 43 6f 6e 73 6f 6c 65 56 65 72 73 69 6f 6e 3d 22" .
+<http://json-ld.org/playground/csd> <http://dataid.dbpedia.org/mimetypes/magic> "3c 43 73 6f 75 6e 64 53 79 6e 74 68 65 73 69 7a" .
+<http://json-ld.org/playground/fm> <http://dataid.dbpedia.org/mimetypes/magic> "3c 4d 61 6b 65 72 46 69 6c 65 20" .
+<http://json-ld.org/playground/mif> <http://dataid.dbpedia.org/mimetypes/magic> "3c 4d 61 6b 65 72 46 69 6c 65 20" .
+<http://json-ld.org/playground/b85> <http://dataid.dbpedia.org/mimetypes/magic> "3c 7e 36 3c 5c 25 5f 30 67 53 71 68 3b" .
+<http://json-ld.org/playground/wb3> <http://dataid.dbpedia.org/mimetypes/magic> "3e 00 03 00 fe ff 09 00 06" .
+<http://json-ld.org/playground/wb3> <http://dataid.dbpedia.org/mimetypes/offset>  "24"^^xsd:integer .
+<http://json-ld.org/playground/gid> <http://dataid.dbpedia.org/mimetypes/magic> "3f 5f 03 00" .
+<http://json-ld.org/playground/hlp> <http://dataid.dbpedia.org/mimetypes/magic> "3f 5f 03 00" .
+<http://json-ld.org/playground/enl> <http://dataid.dbpedia.org/mimetypes/magic> "40 40 40 20 00 00 40 40 40 40" .
+<http://json-ld.org/playground/enl> <http://dataid.dbpedia.org/mimetypes/offset>  "32"^^xsd:integer .
+<http://json-ld.org/playground/dwg> <http://dataid.dbpedia.org/mimetypes/magic> "41 43 31 30" .
+<http://json-ld.org/playground/sle> <http://dataid.dbpedia.org/mimetypes/magic> "41 43 76" .
+<http://json-ld.org/playground/aes> <http://dataid.dbpedia.org/mimetypes/magic> "41 45 53" .
+<http://json-ld.org/playground/syw> <http://dataid.dbpedia.org/mimetypes/magic> "41 4d 59 4f" .
+<http://json-ld.org/playground/bag> <http://dataid.dbpedia.org/mimetypes/magic> "41 4f 4c 20 46 65 65 64 62 61 67" .
+<http://json-ld.org/playground/aby> <http://dataid.dbpedia.org/mimetypes/magic> "41 4f 4c 44 42" .
+<http://json-ld.org/playground/idx> <http://dataid.dbpedia.org/mimetypes/magic> "41 4f 4c 44 42" .
+<http://json-ld.org/playground/ind> <http://dataid.dbpedia.org/mimetypes/magic> "41 4f 4c 49 44 58" .
+<http://json-ld.org/playground/abi> <http://dataid.dbpedia.org/mimetypes/magic> "41 4f 4c 49 4e 44 45 58" .
+<http://json-ld.org/playground/org> <http://dataid.dbpedia.org/mimetypes/magic> "41 4f 4c 56 4d 31 30 30" .
+<http://json-ld.org/playground/pfc> <http://dataid.dbpedia.org/mimetypes/magic> "41 4f 4c 56 4d 31 30 30" .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "41 56 47 36 5f 49 6e 74 65 67 72 69 74 79 5f 44 61 74 61 62 61 73 65" .
+<http://json-ld.org/playground/arc> <http://dataid.dbpedia.org/mimetypes/magic> "41 72 43 01" .
+<http://json-ld.org/playground/vcf> <http://dataid.dbpedia.org/mimetypes/magic> "42 45 47 49 4e 3a 56 43 41 52 44 0d 0a" .
+<http://json-ld.org/playground/bli> <http://dataid.dbpedia.org/mimetypes/magic> "42 4c 49 32 32 33" .
+<http://json-ld.org/playground/rbi> <http://dataid.dbpedia.org/mimetypes/magic> "42 4c 49 32 32 33" .
+<http://json-ld.org/playground/bmp> <http://dataid.dbpedia.org/mimetypes/magic> "42 4d" .
+<http://json-ld.org/playground/dib> <http://dataid.dbpedia.org/mimetypes/magic> "42 4d" .
+<http://json-ld.org/playground/prc> <http://dataid.dbpedia.org/mimetypes/magic> "42 4f 4f 4b 4d 4f 42 49" .
+<http://json-ld.org/playground/bpg> <http://dataid.dbpedia.org/mimetypes/magic> "42 50 47 fb" .
+<http://json-ld.org/playground/bz2> <http://dataid.dbpedia.org/mimetypes/magic> "42 5a 68" .
+<http://json-ld.org/playground/tar.bz2> <http://dataid.dbpedia.org/mimetypes/magic> "42 5a 68" .
+<http://json-ld.org/playground/tbz2> <http://dataid.dbpedia.org/mimetypes/magic> "42 5a 68" .
+<http://json-ld.org/playground/tb2> <http://dataid.dbpedia.org/mimetypes/magic> "42 5a 68" .
+<http://json-ld.org/playground/apuf> <http://dataid.dbpedia.org/mimetypes/magic> "42 65 67 69 6e 20 50 75 66 66 65 72 20 44 61 74 61 0d 0a" .
+<http://json-ld.org/playground/bli> <http://dataid.dbpedia.org/mimetypes/magic> "42 6c 69 6e 6b 20 62 79 20 44 2e 54 2e 53" .
+<http://json-ld.org/playground/rtd> <http://dataid.dbpedia.org/mimetypes/magic> "43 23 2b 44 a4 43 4d a5 48 64 72" .
+<http://json-ld.org/playground/cbd> <http://dataid.dbpedia.org/mimetypes/magic> "43 42 46 49 4c 45" .
+<http://json-ld.org/playground/iso> <http://dataid.dbpedia.org/mimetypes/magic> "43 44 30 30 31" .
+<http://json-ld.org/playground/cso> <http://dataid.dbpedia.org/mimetypes/magic> "43 49 53 4f" .
+<http://json-ld.org/playground/db> <http://dataid.dbpedia.org/mimetypes/magic> "43 4d 4d 4d 15 00 00 00" .
+<http://json-ld.org/playground/clb> <http://dataid.dbpedia.org/mimetypes/magic> "43 4d 58 31" .
+<http://json-ld.org/playground/clb> <http://dataid.dbpedia.org/mimetypes/magic> "43 4f 4d 2b" .
+<http://json-ld.org/playground/vmdk> <http://dataid.dbpedia.org/mimetypes/magic> "43 4f 57 44" .
+<http://json-ld.org/playground/cpt> <http://dataid.dbpedia.org/mimetypes/magic> "43 50 54 37 46 49 4c 45" .
+<http://json-ld.org/playground/cpt> <http://dataid.dbpedia.org/mimetypes/magic> "43 50 54 46 49 4c 45" .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "43 52 45 47" .
+<http://json-ld.org/playground/cru> <http://dataid.dbpedia.org/mimetypes/magic> "43 52 55 53 48 20 76" .
+<http://json-ld.org/playground/swf> <http://dataid.dbpedia.org/mimetypes/magic> "43 57 53" .
+<http://json-ld.org/playground/cin> <http://dataid.dbpedia.org/mimetypes/magic> "43 61 6c 63 75 6c 75 78 20 49 6e 64 6f 6f 72 20" .
+<http://json-ld.org/playground/ctf> <http://dataid.dbpedia.org/mimetypes/magic> "43 61 74 61 6c 6f 67 20 33 2e 30 30 00" .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "43 6c 69 65 6e 74 20 55 72 6c 43 61 63 68 65 20 4d 4d 46 20 56 65 72 20" .
+<http://json-ld.org/playground/dax> <http://dataid.dbpedia.org/mimetypes/magic> "44 41 58 00" .
+<http://json-ld.org/playground/db> <http://dataid.dbpedia.org/mimetypes/magic> "44 42 46 48" .
+<http://json-ld.org/playground/dms> <http://dataid.dbpedia.org/mimetypes/magic> "44 4d 53 21" .
+<http://json-ld.org/playground/adf> <http://dataid.dbpedia.org/mimetypes/magic> "44 4f 53" .
+<http://json-ld.org/playground/dst> <http://dataid.dbpedia.org/mimetypes/magic> "44 53 54 62" .
+<http://json-ld.org/playground/dvr> <http://dataid.dbpedia.org/mimetypes/magic> "44 56 44" .
+<http://json-ld.org/playground/ifo> <http://dataid.dbpedia.org/mimetypes/magic> "44 56 44" .
+<http://json-ld.org/playground/cdr> <http://dataid.dbpedia.org/mimetypes/magic> "45 4c 49 54 45 20 43 6f 6d 6d 61 6e 64 65 72 20" .
+<http://json-ld.org/playground/vcd> <http://dataid.dbpedia.org/mimetypes/magic> "45 4e 54 52 59 56 43 44 02 00 00 01 02 00 18 58" .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "45 52 46 53 53 41 56 45 44 41 54 41 46 49 4c 45" .
+<http://json-ld.org/playground/mdi> <http://dataid.dbpedia.org/mimetypes/magic> "45 50" .
+<http://json-ld.org/playground/evtx> <http://dataid.dbpedia.org/mimetypes/magic> "45 6c 66 46 69 6c 65 00" .
+<http://json-ld.org/playground/qbb> <http://dataid.dbpedia.org/mimetypes/magic> "45 86 00 00 06 00" .
+<http://json-ld.org/playground/cpe> <http://dataid.dbpedia.org/mimetypes/magic> "46 41 58 43 4f 56 45 52 2d 56 45 52" .
+<http://json-ld.org/playground/fdb> <http://dataid.dbpedia.org/mimetypes/magic> "46 44 42 48 00" .
+<http://json-ld.org/playground/sbv> <http://dataid.dbpedia.org/mimetypes/magic> "46 45 44 46" .
+<http://json-ld.org/playground/flv> <http://dataid.dbpedia.org/mimetypes/magic> "46 4c 56 01" .
+<http://json-ld.org/playground/aiff> <http://dataid.dbpedia.org/mimetypes/magic> "46 4f 52 4d 00" .
+<http://json-ld.org/playground/dax> <http://dataid.dbpedia.org/mimetypes/magic> "46 4f 52 4d 00" .
+<http://json-ld.org/playground/swf> <http://dataid.dbpedia.org/mimetypes/magic> "46 57 53" .
+<http://json-ld.org/playground/eml> <http://dataid.dbpedia.org/mimetypes/magic> "46 72 6f 6d 3a 20" .
+<http://json-ld.org/playground/eml> <http://dataid.dbpedia.org/mimetypes/magic> "46 72 6f 6d 20 3f 3f 3f" .
+<http://json-ld.org/playground/eml> <http://dataid.dbpedia.org/mimetypes/magic> "46 72 6f 6d 20 20 20" .
+<http://json-ld.org/playground/ts> <http://dataid.dbpedia.org/mimetypes/magic> "47" .
+<http://json-ld.org/playground/tsa> <http://dataid.dbpedia.org/mimetypes/magic> "47" .
+<http://json-ld.org/playground/tsv> <http://dataid.dbpedia.org/mimetypes/magic> "47" .
+<http://json-ld.org/playground/pat> <http://dataid.dbpedia.org/mimetypes/magic> "47 46 31 50 41 54 43 48" .
+<http://json-ld.org/playground/gif> <http://dataid.dbpedia.org/mimetypes/magic> "47 49 46 38 37 61" .
+<http://json-ld.org/playground/gif> <http://dataid.dbpedia.org/mimetypes/magic> "47 49 46 38 39 61" .
+<http://json-ld.org/playground/pat> <http://dataid.dbpedia.org/mimetypes/magic> "47 50 41 54" .
+<http://json-ld.org/playground/gx2> <http://dataid.dbpedia.org/mimetypes/magic> "47 58 32" .
+<http://json-ld.org/playground/g64> <http://dataid.dbpedia.org/mimetypes/magic> "47 65 6e 65 74 65 63 20 4f 6d 6e 69 63 61 73 74" .
+<http://json-ld.org/playground/xpt> <http://dataid.dbpedia.org/mimetypes/magic> "48 45 41 44 45 52 20 52 45 43 4f 52 44 2a 2a 2a" .
+<http://json-ld.org/playground/sh3> <http://dataid.dbpedia.org/mimetypes/magic> "48 48 47 42 31" .
+<http://json-ld.org/playground/tif> <http://dataid.dbpedia.org/mimetypes/magic> "49 20 49" .
+<http://json-ld.org/playground/tiff> <http://dataid.dbpedia.org/mimetypes/magic> "49 20 49" .
+<http://json-ld.org/playground/mp3> <http://dataid.dbpedia.org/mimetypes/magic> "49 44 33" .
+<http://json-ld.org/playground/koz> <http://dataid.dbpedia.org/mimetypes/magic> "49 44 33 03 00 00 00" .
+<http://json-ld.org/playground/crw> <http://dataid.dbpedia.org/mimetypes/magic> "49 49 1a 00 00 00 48 45 41 50 43 43 44 52 02 00" .
+<http://json-ld.org/playground/tif> <http://dataid.dbpedia.org/mimetypes/magic> "49 49 2a 00" .
+<http://json-ld.org/playground/tiff> <http://dataid.dbpedia.org/mimetypes/magic> "49 49 2a 00" .
+<http://json-ld.org/playground/cr2> <http://dataid.dbpedia.org/mimetypes/magic> "49 49 2a 00 10 00 00 00 43 52" .
+<http://json-ld.org/playground/db> <http://dataid.dbpedia.org/mimetypes/magic> "49 4d 4d 4d 15 00 00 00" .
+<http://json-ld.org/playground/cab> <http://dataid.dbpedia.org/mimetypes/magic> "49 53 63 28" .
+<http://json-ld.org/playground/hdr> <http://dataid.dbpedia.org/mimetypes/magic> "49 53 63 28" .
+<http://json-ld.org/playground/lit> <http://dataid.dbpedia.org/mimetypes/magic> "49 54 4f 4c 49 54 4c 53" .
+<http://json-ld.org/playground/chi> <http://dataid.dbpedia.org/mimetypes/magic> "49 54 53 46" .
+<http://json-ld.org/playground/chm> <http://dataid.dbpedia.org/mimetypes/magic> "49 54 53 46" .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "49 6e 6e 6f 20 53 65 74 75 70 20 55 6e 69 6e 73 74 61 6c 6c 20 4c 6f 67 20 28 62 29" .
+<http://json-ld.org/playground/ipd> <http://dataid.dbpedia.org/mimetypes/magic> "49 6e 74 65 72 40 63 74 69 76 65 20 50 61 67 65" .
+<http://json-ld.org/playground/jar> <http://dataid.dbpedia.org/mimetypes/magic> "4a 41 52 43 53 00" .
+<http://json-ld.org/playground/art> <http://dataid.dbpedia.org/mimetypes/magic> "4a 47 03 0e" .
+<http://json-ld.org/playground/art> <http://dataid.dbpedia.org/mimetypes/magic> "4a 47 04 0e" .
+<http://json-ld.org/playground/vmdk> <http://dataid.dbpedia.org/mimetypes/magic> "4b 44 4d" .
+<http://json-ld.org/playground/vmdk> <http://dataid.dbpedia.org/mimetypes/magic> "4b 44 4d 56" .
+<http://json-ld.org/playground/kgb> <http://dataid.dbpedia.org/mimetypes/magic> "4b 47 42 5f 61 72 63 68 20 2d" .
+<http://json-ld.org/playground/shd> <http://dataid.dbpedia.org/mimetypes/magic> "4b 49 00 00" .
+<http://json-ld.org/playground/lnk> <http://dataid.dbpedia.org/mimetypes/magic> "4c 00 00 00 01 14 02 00" .
+<http://json-ld.org/playground/obj> <http://dataid.dbpedia.org/mimetypes/magic> "4c 01" .
+<http://json-ld.org/playground/dst> <http://dataid.dbpedia.org/mimetypes/magic> "4c 41 3a" .
+<http://json-ld.org/playground/gid> <http://dataid.dbpedia.org/mimetypes/magic> "4c 4e 02 00" .
+<http://json-ld.org/playground/hlp> <http://dataid.dbpedia.org/mimetypes/magic> "4c 4e 02 00" .
+<http://json-ld.org/playground/pdb> <http://dataid.dbpedia.org/mimetypes/magic> "4d 2d 57 20 50 6f 63 6b 65 74 20 44 69 63 74 69" .
+<http://json-ld.org/playground/mar> <http://dataid.dbpedia.org/mimetypes/magic> "4d 41 52 31 00" .
+<http://json-ld.org/playground/mar> <http://dataid.dbpedia.org/mimetypes/magic> "4d 41 52 43" .
+<http://json-ld.org/playground/mar> <http://dataid.dbpedia.org/mimetypes/magic> "4d 41 72 30 00" .
+<http://json-ld.org/playground/mte> <http://dataid.dbpedia.org/mimetypes/magic> "4d 43 57 20 54 65 63 68 6e 6f 67 6f 6c 69 65 73" .
+<http://json-ld.org/playground/hdmp> <http://dataid.dbpedia.org/mimetypes/magic> "4d 44 4d 50 93 a7" .
+<http://json-ld.org/playground/dmp> <http://dataid.dbpedia.org/mimetypes/magic> "4d 44 4d 50 93 a7" .
+<http://json-ld.org/playground/mls> <http://dataid.dbpedia.org/mimetypes/magic> "4d 49 4c 45 53" .
+<http://json-ld.org/playground/mls> <http://dataid.dbpedia.org/mimetypes/magic> "4d 4c 53 57" .
+<http://json-ld.org/playground/tif> <http://dataid.dbpedia.org/mimetypes/magic> "4d 4d 00 2a" .
+<http://json-ld.org/playground/tiff> <http://dataid.dbpedia.org/mimetypes/magic> "4d 4d 00 2a" .
+<http://json-ld.org/playground/tif> <http://dataid.dbpedia.org/mimetypes/magic> "4d 4d 00 2b" .
+<http://json-ld.org/playground/tiff> <http://dataid.dbpedia.org/mimetypes/magic> "4d 4d 00 2b" .
+<http://json-ld.org/playground/mmf> <http://dataid.dbpedia.org/mimetypes/magic> "4d 4d 4d 44 00 00" .
+<http://json-ld.org/playground/nvram> <http://dataid.dbpedia.org/mimetypes/magic> "4d 52 56 4e" .
+<http://json-ld.org/playground/cab> <http://dataid.dbpedia.org/mimetypes/magic> "4d 53 43 46" .
+<http://json-ld.org/playground/ppz> <http://dataid.dbpedia.org/mimetypes/magic> "4d 53 43 46" .
+<http://json-ld.org/playground/snp> <http://dataid.dbpedia.org/mimetypes/magic> "4d 53 43 46" .
+<http://json-ld.org/playground/tlb> <http://dataid.dbpedia.org/mimetypes/magic> "4d 53 46 54 02 00 01 00" .
+<http://json-ld.org/playground/wim> <http://dataid.dbpedia.org/mimetypes/magic> "4d 53 57 49 4d" .
+<http://json-ld.org/playground/cdr> <http://dataid.dbpedia.org/mimetypes/magic> "4d 53 5f 56 4f 49 43 45" .
+<http://json-ld.org/playground/dvf> <http://dataid.dbpedia.org/mimetypes/magic> "4d 53 5f 56 4f 49 43 45" .
+<http://json-ld.org/playground/msv> <http://dataid.dbpedia.org/mimetypes/magic> "4d 53 5f 56 4f 49 43 45" .
+<http://json-ld.org/playground/mid> <http://dataid.dbpedia.org/mimetypes/magic> "4d 54 68 64" .
+<http://json-ld.org/playground/midi> <http://dataid.dbpedia.org/mimetypes/magic> "4d 54 68 64" .
+<http://json-ld.org/playground/pcs> <http://dataid.dbpedia.org/mimetypes/magic> "4d 54 68 64" .
+<http://json-ld.org/playground/dsn> <http://dataid.dbpedia.org/mimetypes/magic> "4d 56" .
+<http://json-ld.org/playground/mls> <http://dataid.dbpedia.org/mimetypes/magic> "4d 56 32 31 34" .
+<http://json-ld.org/playground/mls> <http://dataid.dbpedia.org/mimetypes/magic> "4d 56 32 43" .
+<http://json-ld.org/playground/com> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a" .
+<http://json-ld.org/playground/dll> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a" .
+<http://json-ld.org/playground/drv> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a" .
+<http://json-ld.org/playground/exe> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a" .
+<http://json-ld.org/playground/pif> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a" .
+<http://json-ld.org/playground/qts> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a" .
+<http://json-ld.org/playground/qtx> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a" .
+<http://json-ld.org/playground/sys> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a" .
+<http://json-ld.org/playground/acm> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a" .
+<http://json-ld.org/playground/ax> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a" .
+<http://json-ld.org/playground/cpl> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a" .
+<http://json-ld.org/playground/fon> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a" .
+<http://json-ld.org/playground/ocx> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a" .
+<http://json-ld.org/playground/olb> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a" .
+<http://json-ld.org/playground/scr> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a" .
+<http://json-ld.org/playground/vbx> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a" .
+<http://json-ld.org/playground/vxd> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a" .
+<http://json-ld.org/playground/386> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a" .
+<http://json-ld.org/playground/api> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a 90 00 03 00 00 00" .
+<http://json-ld.org/playground/ax> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a 90 00 03 00 00 00" .
+<http://json-ld.org/playground/flt> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a 90 00 03 00 00 00" .
+<http://json-ld.org/playground/zap> <http://dataid.dbpedia.org/mimetypes/magic> "4d 5a 90 00 03 00 00 00 04 00 00 00 ff ff" .
+<http://json-ld.org/playground/pdb> <http://dataid.dbpedia.org/mimetypes/magic> "4d 69 63 72 6f 73 6f 66 74 20 43 2f 43 2b 2b 20" .
+<http://json-ld.org/playground/sln> <http://dataid.dbpedia.org/mimetypes/magic> "4d 69 63 72 6f 73 6f 66 74 20 56 69 73 75 61 6c 20 53 74 75 64 69 6f 20 53 6f 6c 75 74 69 6f 6e 20 46 69 6c 65" .
+<http://json-ld.org/playground/wpl> <http://dataid.dbpedia.org/mimetypes/magic> "4d 69 63 72 6f 73 6f 66 74 20 57 69 6e 64 6f 77 73 20 4d 65 64 69 61 20 50 6c 61 79 65 72 20 2d 2d 20" .
+<http://json-ld.org/playground/wpl> <http://dataid.dbpedia.org/mimetypes/offset>  "84"^^xsd:integer .
+<http://json-ld.org/playground/gdb> <http://dataid.dbpedia.org/mimetypes/magic> "4d 73 52 63 66" .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "4e 41 56 54 52 41 46 46 49 43" .
+<http://json-ld.org/playground/jnt> <http://dataid.dbpedia.org/mimetypes/magic> "4e 42 2a 00" .
+<http://json-ld.org/playground/jtp> <http://dataid.dbpedia.org/mimetypes/magic> "4e 42 2a 00" .
+<http://json-ld.org/playground/nsf> <http://dataid.dbpedia.org/mimetypes/magic> "4e 45 53 4d 1a 01" .
+<http://json-ld.org/playground/ntf> <http://dataid.dbpedia.org/mimetypes/magic> "4e 49 54 46 30" .
+<http://json-ld.org/playground/cod> <http://dataid.dbpedia.org/mimetypes/magic> "4e 61 6d 65 3a 20" .
+<http://json-ld.org/playground/dbf> <http://dataid.dbpedia.org/mimetypes/magic> "4f 50 4c 44 61 74 61 62 61 73 65 46 69 6c 65" .
+<http://json-ld.org/playground/oga> <http://dataid.dbpedia.org/mimetypes/magic> "4f 67 67 53 00 02 00 00 00 00 00 00 00 00" .
+<http://json-ld.org/playground/ogg> <http://dataid.dbpedia.org/mimetypes/magic> "4f 67 67 53 00 02 00 00 00 00 00 00 00 00" .
+<http://json-ld.org/playground/ogv> <http://dataid.dbpedia.org/mimetypes/magic> "4f 67 67 53 00 02 00 00 00 00 00 00 00 00" .
+<http://json-ld.org/playground/ogx> <http://dataid.dbpedia.org/mimetypes/magic> "4f 67 67 53 00 02 00 00 00 00 00 00 00 00" .
+<http://json-ld.org/playground/dw4> <http://dataid.dbpedia.org/mimetypes/magic> "4f 7b" .
+<http://json-ld.org/playground/idx> <http://dataid.dbpedia.org/mimetypes/magic> "50 00 00 00 20 00 00 00" .
+<http://json-ld.org/playground/pgm> <http://dataid.dbpedia.org/mimetypes/magic> "50 35 0a" .
+<http://json-ld.org/playground/pak> <http://dataid.dbpedia.org/mimetypes/magic> "50 41 43 4b" .
+<http://json-ld.org/playground/dmp> <http://dataid.dbpedia.org/mimetypes/magic> "50 41 47 45 44 55 36 34" .
+<http://json-ld.org/playground/dmp> <http://dataid.dbpedia.org/mimetypes/magic> "50 41 47 45 44 55 4d 50" .
+<http://json-ld.org/playground/pax> <http://dataid.dbpedia.org/mimetypes/magic> "50 41 58" .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "50 45 53 54" .
+<http://json-ld.org/playground/pgd> <http://dataid.dbpedia.org/mimetypes/magic> "50 47 50 64 4d 41 49 4e" .
+<http://json-ld.org/playground/img> <http://dataid.dbpedia.org/mimetypes/magic> "50 49 43 54 00 08" .
+<http://json-ld.org/playground/zip> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04" .
+<http://json-ld.org/playground/zip> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04" .
+<http://json-ld.org/playground/jar> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04" .
+<http://json-ld.org/playground/kmz> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04" .
+<http://json-ld.org/playground/kwd> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04" .
+<http://json-ld.org/playground/odt> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04" .
+<http://json-ld.org/playground/odp> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04" .
+<http://json-ld.org/playground/ott> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04" .
+<http://json-ld.org/playground/sxc> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04" .
+<http://json-ld.org/playground/sxd> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04" .
+<http://json-ld.org/playground/sxi> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04" .
+<http://json-ld.org/playground/sxw> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04" .
+<http://json-ld.org/playground/sxc> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04" .
+<http://json-ld.org/playground/wmz> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04" .
+<http://json-ld.org/playground/xpi> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04" .
+<http://json-ld.org/playground/xps> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04" .
+<http://json-ld.org/playground/xpt> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04" .
+<http://json-ld.org/playground/epub> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04 0a 00 02 00" .
+<http://json-ld.org/playground/zip> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04 14 00 01 00 63 00 00 00 00 00" .
+<http://json-ld.org/playground/docx> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04 14 00 06 00" .
+<http://json-ld.org/playground/pptx> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04 14 00 06 00" .
+<http://json-ld.org/playground/xlsx> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04 14 00 06 00" .
+<http://json-ld.org/playground/jar> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 03 04 14 00 08 00 08 00" .
+<http://json-ld.org/playground/zip> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 07 08" .
+<http://json-ld.org/playground/zip> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 4c 49 54 45" .
+<http://json-ld.org/playground/zip> <http://dataid.dbpedia.org/mimetypes/offset>  "30"^^xsd:integer .
+<http://json-ld.org/playground/zip> <http://dataid.dbpedia.org/mimetypes/magic> "50 4b 53 70 58" .
+<http://json-ld.org/playground/zip> <http://dataid.dbpedia.org/mimetypes/offset>  "526"^^xsd:integer .
+<http://json-ld.org/playground/grp> <http://dataid.dbpedia.org/mimetypes/magic> "50 4d 43 43" .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "50 4e 43 49 55 4e 44 4f" .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "50 4d 4f 43 43 4d 4f 43" .
+<http://json-ld.org/playground/puf> <http://dataid.dbpedia.org/mimetypes/magic> "50 55 46 58" .
+<http://json-ld.org/playground/qel> <http://dataid.dbpedia.org/mimetypes/magic> "51 45 4c 20" .
+<http://json-ld.org/playground/qel> <http://dataid.dbpedia.org/mimetypes/offset>  "92"^^xsd:integer .
+<http://json-ld.org/playground/img> <http://dataid.dbpedia.org/mimetypes/magic> "51 46 49 fb" .
+<http://json-ld.org/playground/abd> <http://dataid.dbpedia.org/mimetypes/magic> "51 57 20 56 65 72 2e 20" .
+<http://json-ld.org/playground/qsd> <http://dataid.dbpedia.org/mimetypes/magic> "51 57 20 56 65 72 2e 20" .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "52 41 5a 41 54 44 42 31" .
+<http://json-ld.org/playground/reg> <http://dataid.dbpedia.org/mimetypes/magic> "52 45 47 45 44 49 54" .
+<http://json-ld.org/playground/sud> <http://dataid.dbpedia.org/mimetypes/magic> "52 45 47 45 44 49 54" .
+<http://json-ld.org/playground/adf> <http://dataid.dbpedia.org/mimetypes/magic> "52 45 56 4e 55 4d 3a 2c" .
+<http://json-ld.org/playground/ani> <http://dataid.dbpedia.org/mimetypes/magic> "52 49 46 46" .
+<http://json-ld.org/playground/cmx> <http://dataid.dbpedia.org/mimetypes/magic> "52 49 46 46" .
+<http://json-ld.org/playground/cdr> <http://dataid.dbpedia.org/mimetypes/magic> "52 49 46 46" .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "52 49 46 46" .
+<http://json-ld.org/playground/ds4> <http://dataid.dbpedia.org/mimetypes/magic> "52 49 46 46" .
+<http://json-ld.org/playground/avi> <http://dataid.dbpedia.org/mimetypes/magic> "52 49 46 46 xx xx xx xx 41 56 49 20 4c 49 53 54" .
+<http://json-ld.org/playground/cda> <http://dataid.dbpedia.org/mimetypes/magic> "52 49 46 46 xx xx xx xx 43 44 44 41 66 6d 74 20" .
+<http://json-ld.org/playground/qcp> <http://dataid.dbpedia.org/mimetypes/magic> "52 49 46 46 xx xx xx xx 51 4c 43 4d 66 6d 74 20" .
+<http://json-ld.org/playground/rmi> <http://dataid.dbpedia.org/mimetypes/magic> "52 49 46 46 xx xx xx xx 52 4d 49 44 64 61 74 61" .
+<http://json-ld.org/playground/wav> <http://dataid.dbpedia.org/mimetypes/magic> "52 49 46 46 xx xx xx xx 57 41 56 45 66 6d 74 20" .
+<http://json-ld.org/playground/cap> <http://dataid.dbpedia.org/mimetypes/magic> "52 54 53 53" .
+<http://json-ld.org/playground/rar> <http://dataid.dbpedia.org/mimetypes/magic> "52 61 72 21 1a 07 00" .
+<http://json-ld.org/playground/rar> <http://dataid.dbpedia.org/mimetypes/magic> "52 61 72 21 1a 07 01 00" .
+<http://json-ld.org/playground/eml> <http://dataid.dbpedia.org/mimetypes/magic> "52 65 74 75 72 6e 2d 50 61 74 68 3a 20" .
+<http://json-ld.org/playground/pf> <http://dataid.dbpedia.org/mimetypes/magic> "53 43 43 41" .
+<http://json-ld.org/playground/ast> <http://dataid.dbpedia.org/mimetypes/magic> "53 43 48 6c" .
+<http://json-ld.org/playground/img> <http://dataid.dbpedia.org/mimetypes/magic> "53 43 4d 49" .
+<http://json-ld.org/playground/dpx> <http://dataid.dbpedia.org/mimetypes/magic> "53 44 50 58" .
+<http://json-ld.org/playground/shw> <http://dataid.dbpedia.org/mimetypes/magic> "53 48 4f 57" .
+<http://json-ld.org/playground/cpi> <http://dataid.dbpedia.org/mimetypes/magic> "53 49 45 54 52 4f 4e 49 43 53 20 58 52 44 20 53 43 41 4e" .
+<http://json-ld.org/playground/fits> <http://dataid.dbpedia.org/mimetypes/magic> "53 49 4d 50 4c 45 20 20 3d 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 54" .
+<http://json-ld.org/playground/sit> <http://dataid.dbpedia.org/mimetypes/magic> "53 49 54 21 00" .
+<http://json-ld.org/playground/sdr> <http://dataid.dbpedia.org/mimetypes/magic> "53 4d 41 52 54 44 52 57" .
+<http://json-ld.org/playground/spf> <http://dataid.dbpedia.org/mimetypes/magic> "53 50 46 49 00" .
+<http://json-ld.org/playground/spvchain> <http://dataid.dbpedia.org/mimetypes/magic> "53 50 56 42" .
+<http://json-ld.org/playground/cnv> <http://dataid.dbpedia.org/mimetypes/magic> "53 51 4c 4f 43 4f 4e 56 48 44 00 00 31 2e 30 00" .
+<http://json-ld.org/playground/db> <http://dataid.dbpedia.org/mimetypes/magic> "53 51 4c 69 74 65 20 66 6f 72 6d 61 74 20 33 00" .
+<http://json-ld.org/playground/sym> <http://dataid.dbpedia.org/mimetypes/magic> "53 6d 62 6c" .
+<http://json-ld.org/playground/sit> <http://dataid.dbpedia.org/mimetypes/magic> "53 74 75 66 66 49 74 20 28 63 29 31 39 39 37 2d" .
+<http://json-ld.org/playground/cal> <http://dataid.dbpedia.org/mimetypes/magic> "53 75 70 65 72 43 61 6c 63" .
+<http://json-ld.org/playground/thp> <http://dataid.dbpedia.org/mimetypes/magic> "54 48 50 00" .
+<http://json-ld.org/playground/info> <http://dataid.dbpedia.org/mimetypes/magic> "54 68 69 73 20 69 73 20" .
+<http://json-ld.org/playground/uce> <http://dataid.dbpedia.org/mimetypes/magic> "55 43 45 58" .
+<http://json-ld.org/playground/ufa> <http://dataid.dbpedia.org/mimetypes/magic> "55 46 41 c6 d2 c1" .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "55 46 4f 4f 72 62 69 74" .
+<http://json-ld.org/playground/pch> <http://dataid.dbpedia.org/mimetypes/magic> "56 43 50 43 48 30" .
+<http://json-ld.org/playground/ctl> <http://dataid.dbpedia.org/mimetypes/magic> "56 45 52 53 49 4f 4e 20" .
+<http://json-ld.org/playground/mif> <http://dataid.dbpedia.org/mimetypes/magic> "56 65 72 73 69 6f 6e 20" .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "57 4d 4d 50" .
+<http://json-ld.org/playground/ws2> <http://dataid.dbpedia.org/mimetypes/magic> "57 53 32 30 30 30" .
+<http://json-ld.org/playground/zip> <http://dataid.dbpedia.org/mimetypes/offset>  "29"^^xsd:integer .
+<http://json-ld.org/playground/zip> <http://dataid.dbpedia.org/mimetypes/magic> "57 69 6e 5a 69 70" .
+<http://json-ld.org/playground/zip> <http://dataid.dbpedia.org/mimetypes/offset>  "152"^^xsd:integer .
+<http://json-ld.org/playground/lwp> <http://dataid.dbpedia.org/mimetypes/magic> "57 6f 72 64 50 72 6f" .
+<http://json-ld.org/playground/eml> <http://dataid.dbpedia.org/mimetypes/magic> "58 2d" .
+<http://json-ld.org/playground/cap> <http://dataid.dbpedia.org/mimetypes/magic> "58 43 50 00" .
+<http://json-ld.org/playground/xpt> <http://dataid.dbpedia.org/mimetypes/magic> "58 50 43 4f 4d 0a 54 79 70 65 4c 69 62" .
+<http://json-ld.org/playground/dpx> <http://dataid.dbpedia.org/mimetypes/magic> "58 50 44 53" .
+<http://json-ld.org/playground/bdr> <http://dataid.dbpedia.org/mimetypes/magic> "58 54" .
+<http://json-ld.org/playground/zoo> <http://dataid.dbpedia.org/mimetypes/magic> "5a 4f 4f 20" .
+<http://json-ld.org/playground/swf> <http://dataid.dbpedia.org/mimetypes/magic> "5a 57 53" .
+<http://json-ld.org/playground/ecf> <http://dataid.dbpedia.org/mimetypes/magic> "5b 47 65 6e 65 72 61 6c 5d 0d 0a 44 69 73 70 6c 61 79 20 4e 61 6d 65 3d 3c 44 69 73 70 6c 61 79 4e 61 6d 65" .
+<http://json-ld.org/playground/vcw> <http://dataid.dbpedia.org/mimetypes/magic> "5b 4d 53 56 43" .
+<http://json-ld.org/playground/dun> <http://dataid.dbpedia.org/mimetypes/magic> "5b 50 68 6f 6e 65 5d" .
+<http://json-ld.org/playground/sam> <http://dataid.dbpedia.org/mimetypes/magic> "5b 76 65 72 5d" .
+<http://json-ld.org/playground/sam> <http://dataid.dbpedia.org/mimetypes/magic> "5b 56 45 52 5d" .
+<http://json-ld.org/playground/vmd> <http://dataid.dbpedia.org/mimetypes/magic> "5b 56 4d 44 5d" .
+<http://json-ld.org/playground/cif> <http://dataid.dbpedia.org/mimetypes/magic> "5b 56 65 72 73 69 6f 6e" .
+<http://json-ld.org/playground/cif> <http://dataid.dbpedia.org/mimetypes/offset>  "2"^^xsd:integer .
+<http://json-ld.org/playground/cpx> <http://dataid.dbpedia.org/mimetypes/magic> "5b 57 69 6e 64 6f 77 73 20 4c 61 74 69 6e 20" .
+<http://json-ld.org/playground/cfg> <http://dataid.dbpedia.org/mimetypes/magic> "5b 66 6c 74 73 69 6d 2e 30 5d" .
+<http://json-ld.org/playground/pls> <http://dataid.dbpedia.org/mimetypes/magic> "5b 70 6c 61 79 6c 69 73 74 5d" .
+<http://json-ld.org/playground/hus> <http://dataid.dbpedia.org/mimetypes/magic> "5d fc c8 00" .
+<http://json-ld.org/playground/jar> <http://dataid.dbpedia.org/mimetypes/magic> "5f 27 a8 89" .
+<http://json-ld.org/playground/cas> <http://dataid.dbpedia.org/mimetypes/magic> "5f 43 41 53 45 5f" .
+<http://json-ld.org/playground/cbk> <http://dataid.dbpedia.org/mimetypes/magic> "5f 43 41 53 45 5f" .
+<http://json-ld.org/playground/arj> <http://dataid.dbpedia.org/mimetypes/magic> "60 ea" .
+<http://json-ld.org/playground/b64> <http://dataid.dbpedia.org/mimetypes/magic> "62 65 67 69 6e 2d 62 61 73 65 36 34" .
+<http://json-ld.org/playground/plist> <http://dataid.dbpedia.org/mimetypes/magic> "62 70 6c 69 73 74" .
+<http://json-ld.org/playground/caf> <http://dataid.dbpedia.org/mimetypes/magic> "63 61 66 66" .
+<http://json-ld.org/playground/vhd> <http://dataid.dbpedia.org/mimetypes/magic> "63 6f 6e 65 63 74 69 78" .
+<http://json-ld.org/playground/csh> <http://dataid.dbpedia.org/mimetypes/magic> "63 75 73 68 00 00 00 02 00 00 00" .
+<http://json-ld.org/playground/p10> <http://dataid.dbpedia.org/mimetypes/magic> "64 00 00 00" .
+<http://json-ld.org/playground/dex> <http://dataid.dbpedia.org/mimetypes/magic> "64 65 78 0a" .
+<http://json-ld.org/playground/au> <http://dataid.dbpedia.org/mimetypes/magic> "64 6e 73 2e" .
+<http://json-ld.org/playground/dsw> <http://dataid.dbpedia.org/mimetypes/magic> "64 73 77 66 69 6c 65" .
+<http://json-ld.org/playground/shd> <http://dataid.dbpedia.org/mimetypes/magic> "66 49 00 00" .
+<http://json-ld.org/playground/flac> <http://dataid.dbpedia.org/mimetypes/magic> "66 4c 61 43 00 00 00 22" .
+<http://json-ld.org/playground/mp4> <http://dataid.dbpedia.org/mimetypes/magic> "66 74 79 70 33 67 70 35" .
+<http://json-ld.org/playground/mp4> <http://dataid.dbpedia.org/mimetypes/offset>  "4"^^xsd:integer .
+<http://json-ld.org/playground/m4a> <http://dataid.dbpedia.org/mimetypes/magic> "66 74 79 70 4d 34 41 20" .
+<http://json-ld.org/playground/m4a> <http://dataid.dbpedia.org/mimetypes/offset>  "4"^^xsd:integer .
+<http://json-ld.org/playground/mp4> <http://dataid.dbpedia.org/mimetypes/magic> "66 74 79 70 4d 53 4e 56" .
+<http://json-ld.org/playground/mp4> <http://dataid.dbpedia.org/mimetypes/offset>  "4"^^xsd:integer .
+<http://json-ld.org/playground/mp4> <http://dataid.dbpedia.org/mimetypes/magic> "66 74 79 70 69 73 6f 6d" .
+<http://json-ld.org/playground/m4v> <http://dataid.dbpedia.org/mimetypes/magic> "66 74 79 70 6d 70 34 32" .
+<http://json-ld.org/playground/mov> <http://dataid.dbpedia.org/mimetypes/magic> "66 74 79 70 71 74 20 20" .
+<http://json-ld.org/playground/mov> <http://dataid.dbpedia.org/mimetypes/offset>  "4"^^xsd:integer .
+<http://json-ld.org/playground/shd> <http://dataid.dbpedia.org/mimetypes/magic> "67 49 00 00" .
+<http://json-ld.org/playground/xcf> <http://dataid.dbpedia.org/mimetypes/magic> "67 69 6d 70 20 78 63 66 20" .
+<http://json-ld.org/playground/shd> <http://dataid.dbpedia.org/mimetypes/magic> "68 49 00 00" .
+<http://json-ld.org/playground/dbb> <http://dataid.dbpedia.org/mimetypes/magic> "6c 33 33 6c" .
+<http://json-ld.org/playground/mov> <http://dataid.dbpedia.org/mimetypes/magic> "6d 6f 6f 76" .
+<http://json-ld.org/playground/mov> <http://dataid.dbpedia.org/mimetypes/offset>  "4"^^xsd:integer .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "72 65 67 66" .
+<http://json-ld.org/playground/acd> <http://dataid.dbpedia.org/mimetypes/magic> "72 69 66 66" .
+<http://json-ld.org/playground/ram> <http://dataid.dbpedia.org/mimetypes/magic> "72 74 73 70 3a 2f 2f" .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "73 6c 68 2e" .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "73 6c 68 21" .
+<http://json-ld.org/playground/pdb> <http://dataid.dbpedia.org/mimetypes/magic> "73 6d 5f" .
+<http://json-ld.org/playground/cal> <http://dataid.dbpedia.org/mimetypes/magic> "73 72 63 64 6f 63 69 64 3a" .
+<http://json-ld.org/playground/pdb> <http://dataid.dbpedia.org/mimetypes/magic> "73 7a 65 7a" .
+<http://json-ld.org/playground/prc> <http://dataid.dbpedia.org/mimetypes/magic> "74 42 4d 50 4b 6e 57 72" .
+<http://json-ld.org/playground/prc> <http://dataid.dbpedia.org/mimetypes/offset> "60"^^xsd:integer .
+<http://json-ld.org/playground/tar> <http://dataid.dbpedia.org/mimetypes/magic> "75 73 74 61 72" .
+<http://json-ld.org/playground/exr> <http://dataid.dbpedia.org/mimetypes/magic> "76 2f 31 01" .
+<http://json-ld.org/playground/flt> <http://dataid.dbpedia.org/mimetypes/magic> "76 32 30 30 33 2e 31 30 0d 0a 30 0d 0a" .
+<http://json-ld.org/playground/dmg> <http://dataid.dbpedia.org/mimetypes/magic> "78 01 73 0d 62 62 60" .
+<http://json-ld.org/playground/xar> <http://dataid.dbpedia.org/mimetypes/magic> "78 61 72 21" .
+<http://json-ld.org/playground/info> <http://dataid.dbpedia.org/mimetypes/magic> "7a 62 65 78" .
+<http://json-ld.org/playground/lgc> <http://dataid.dbpedia.org/mimetypes/magic> "7b 0d 0a 6f 20" .
+<http://json-ld.org/playground/lgd> <http://dataid.dbpedia.org/mimetypes/magic> "7b 0d 0a 6f 20" .
+<http://json-ld.org/playground/pwi> <http://dataid.dbpedia.org/mimetypes/magic> "7b 5c 70 77 69" .
+<http://json-ld.org/playground/rtf> <http://dataid.dbpedia.org/mimetypes/magic> "7b 5c 72 74 66 31" .
+<http://json-ld.org/playground/csd> <http://dataid.dbpedia.org/mimetypes/magic> "7c 4b c3 74 e1 c8 53 a4 79 b9 01 1d fc 4f dd 13" .
+<http://json-ld.org/playground/psp> <http://dataid.dbpedia.org/mimetypes/magic> "7e 42 4b 00" .
+<http://json-ld.org/playground/img> <http://dataid.dbpedia.org/mimetypes/magic> "7e 74 2c 01 50 70 02 4d 52 01 00 00 00 08 00 00 00 01 00 00 31 00 00 00 31 00 00 00 43 01 ff 00 01 00 08 00 01 00 00 00 7e 74 2c 01" .
+<http://json-ld.org/playground/obj> <http://dataid.dbpedia.org/mimetypes/magic> "80" .
+<http://json-ld.org/playground/adx> <http://dataid.dbpedia.org/mimetypes/magic> "80 00 00 20 03 12 04" .
+<http://json-ld.org/playground/cin> <http://dataid.dbpedia.org/mimetypes/magic> "80 2a 5f d7" .
+<http://json-ld.org/playground/wab> <http://dataid.dbpedia.org/mimetypes/magic> "81 32 84 c1 85 05 d0 11 b2 90 00 aa 00 3c f6 76" .
+<http://json-ld.org/playground/wpf> <http://dataid.dbpedia.org/mimetypes/magic> "81 cd ab" .
+<http://json-ld.org/playground/png> <http://dataid.dbpedia.org/mimetypes/magic> "89 50 4e 47 0d 0a 1a 0a" .
+<http://json-ld.org/playground/aw> <http://dataid.dbpedia.org/mimetypes/magic> "8a 01 09 00 00 00 e1 08 00 00 99 19" .
+<http://json-ld.org/playground/hap> <http://dataid.dbpedia.org/mimetypes/magic> "91 33 48 46" .
+<http://json-ld.org/playground/skr> <http://dataid.dbpedia.org/mimetypes/magic> "95 01" .
+<http://json-ld.org/playground/skr> <http://dataid.dbpedia.org/mimetypes/magic> "95 00" .
+<http://json-ld.org/playground/jb2> <http://dataid.dbpedia.org/mimetypes/magic> "97 4a 42 32 0d 0a 1a 0a" .
+<http://json-ld.org/playground/gpg> <http://dataid.dbpedia.org/mimetypes/magic> "99" .
+<http://json-ld.org/playground/pkr> <http://dataid.dbpedia.org/mimetypes/magic> "99 01" .
+<http://json-ld.org/playground/wab> <http://dataid.dbpedia.org/mimetypes/magic> "9c cb cb 8d 13 75 d2 11 91 58 00 c0 4f 79 56 a4" .
+<http://json-ld.org/playground/ppt> <http://dataid.dbpedia.org/mimetypes/magic> "a0 46 1d f0" .
+<http://json-ld.org/playground/ppt> <http://dataid.dbpedia.org/mimetypes/offset>  "512"^^xsd:integer .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "a9 0d 00 00 00 00 00 00" .
+<http://json-ld.org/playground/qdf> <http://dataid.dbpedia.org/mimetypes/magic> "ac 9e bd 8f 00 00" .
+<http://json-ld.org/playground/pdb> <http://dataid.dbpedia.org/mimetypes/magic> "ac ed 00 05 73 72 00 12 62 67 62 6c 69 74 7a 2e" .
+<http://json-ld.org/playground/pwl> <http://dataid.dbpedia.org/mimetypes/magic> "b0 4d 46 43" .
+<http://json-ld.org/playground/dcx> <http://dataid.dbpedia.org/mimetypes/magic> "b1 68 de 3a" .
+<http://json-ld.org/playground/tib> <http://dataid.dbpedia.org/mimetypes/magic> "b4 6e 68 44" .
+<http://json-ld.org/playground/cal> <http://dataid.dbpedia.org/mimetypes/magic> "b5 a2 b0 b3 b3 b0 a5 b5" .
+<http://json-ld.org/playground/wri> <http://dataid.dbpedia.org/mimetypes/magic> "be 00 00 00 ab 00 00 00 00 00 00 00 00" .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "be ba fe ca 0f 50 61 6c 6d 53 47 20 44 61 74 61" .
+<http://json-ld.org/playground/acs> <http://dataid.dbpedia.org/mimetypes/magic> "c3 ab cd ab" .
+<http://json-ld.org/playground/eps> <http://dataid.dbpedia.org/mimetypes/magic> "c5 d0 d3 c6" .
+<http://json-ld.org/playground/lbk> <http://dataid.dbpedia.org/mimetypes/magic> "c8 00 79 00" .
+<http://json-ld.org/playground/class> <http://dataid.dbpedia.org/mimetypes/magic> "ca fe ba be" .
+<http://json-ld.org/playground/jceks> <http://dataid.dbpedia.org/mimetypes/magic> "ce ce ce ce" .
+<http://json-ld.org/playground/doc> <http://dataid.dbpedia.org/mimetypes/magic> "cf 11 e0 a1 b1 1a e1 00" .
+<http://json-ld.org/playground/dbx> <http://dataid.dbpedia.org/mimetypes/magic> "cf ad 12 fe" .
+<http://json-ld.org/playground/doc> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/dot> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/pps> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/ppt> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/xla> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/xls> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/wiz> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/ac_> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/adp> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/apr> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/db> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/msc> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/msi> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/mtw> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/opt> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/pub> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/qbm> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/rvt> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/sou> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/spo> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/vsd> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/wps> <http://dataid.dbpedia.org/mimetypes/magic> "d0 cf 11 e0 a1 b1 1a e1" .
+<http://json-ld.org/playground/ftr> <http://dataid.dbpedia.org/mimetypes/magic> "d2 0a 00 00" .
+<http://json-ld.org/playground/arl> <http://dataid.dbpedia.org/mimetypes/magic> "d4 2a" .
+<http://json-ld.org/playground/aut> <http://dataid.dbpedia.org/mimetypes/magic> "d4 2a" .
+<http://json-ld.org/playground/wmf> <http://dataid.dbpedia.org/mimetypes/magic> "d7 cd c6 9a" .
+<http://json-ld.org/playground/doc> <http://dataid.dbpedia.org/mimetypes/magic> "db a5 2d 00" .
+<http://json-ld.org/playground/cpl> <http://dataid.dbpedia.org/mimetypes/magic> "dc dc" .
+<http://json-ld.org/playground/efx> <http://dataid.dbpedia.org/mimetypes/magic> "dc fe" .
+<http://json-ld.org/playground/info> <http://dataid.dbpedia.org/mimetypes/magic> "e3 10 00 01 00 00 00 00" .
+<http://json-ld.org/playground/pwl> <http://dataid.dbpedia.org/mimetypes/magic> "e3 82 85 96" .
+<http://json-ld.org/playground/one> <http://dataid.dbpedia.org/mimetypes/magic> "e4 52 5c 7b 8c d8 a7 4d ae b1 53 78 d0 29 96 d3" .
+<http://json-ld.org/playground/com> <http://dataid.dbpedia.org/mimetypes/magic> "eb" .
+<http://json-ld.org/playground/com> <http://dataid.dbpedia.org/mimetypes/magic> "e8" .
+<http://json-ld.org/playground/com> <http://dataid.dbpedia.org/mimetypes/magic> "e9" .
+<http://json-ld.org/playground/sys> <http://dataid.dbpedia.org/mimetypes/magic> "eb" .
+<http://json-ld.org/playground/sys> <http://dataid.dbpedia.org/mimetypes/magic> "e8" .
+<http://json-ld.org/playground/sys> <http://dataid.dbpedia.org/mimetypes/magic> "e9" .
+<http://json-ld.org/playground/img> <http://dataid.dbpedia.org/mimetypes/magic> "eb 3c 90 2a" .
+<http://json-ld.org/playground/doc> <http://dataid.dbpedia.org/mimetypes/magic> "ec a5 c1 00" .
+<http://json-ld.org/playground/doc> <http://dataid.dbpedia.org/mimetypes/offset>  "512"^^xsd:integer .
+<http://json-ld.org/playground/rpm> <http://dataid.dbpedia.org/mimetypes/magic> "ed ab ee db" .
+<http://json-ld.org/playground/dat> <http://dataid.dbpedia.org/mimetypes/magic> "f9 be b4 d9" .
+<http://json-ld.org/playground/xz> <http://dataid.dbpedia.org/mimetypes/magic> "fd 37 7a 58 5a 00" .
+<http://json-ld.org/playground/pub> <http://dataid.dbpedia.org/mimetypes/magic> "fd ff ff ff 02" .
+<http://json-ld.org/playground/pub> <http://dataid.dbpedia.org/mimetypes/offset>  "512"^^xsd:integer .
+<http://json-ld.org/playground/qbm> <http://dataid.dbpedia.org/mimetypes/magic> "fd ff ff ff 04" .
+<http://json-ld.org/playground/qbm> <http://dataid.dbpedia.org/mimetypes/offset>  "512"^^xsd:integer .
+<http://json-ld.org/playground/suo> <http://dataid.dbpedia.org/mimetypes/magic> "fd ff ff ff 04" .
+<http://json-ld.org/playground/suo> <http://dataid.dbpedia.org/mimetypes/offset>  "512"^^xsd:integer .
+<http://json-ld.org/playground/ppt> <http://dataid.dbpedia.org/mimetypes/magic> "fd ff ff ff xx xx 00 00" .
+<http://json-ld.org/playground/ppt> <http://dataid.dbpedia.org/mimetypes/offset>  "512"^^xsd:integer .
+<http://json-ld.org/playground/xls> <http://dataid.dbpedia.org/mimetypes/magic> "fd ff ff ff xx 02" .
+<http://json-ld.org/playground/xls> <http://dataid.dbpedia.org/mimetypes/offset>  "512"^^xsd:integer .
+<http://json-ld.org/playground/xls> <http://dataid.dbpedia.org/mimetypes/magic> "fd ff ff ff xx 00" .
+<http://json-ld.org/playground/xls> <http://dataid.dbpedia.org/mimetypes/offset>  "512"^^xsd:integer .
+<http://json-ld.org/playground/opt> <http://dataid.dbpedia.org/mimetypes/magic> "fd ff ff ff 20 00 00 00" .
+<http://json-ld.org/playground/opt> <http://dataid.dbpedia.org/mimetypes/offset>  "512"^^xsd:integer .
+<http://json-ld.org/playground/xls> <http://dataid.dbpedia.org/mimetypes/magic> "fd ff ff ff 20 00 00 00" .
+<http://json-ld.org/playground/xls> <http://dataid.dbpedia.org/mimetypes/offset>  "512"^^xsd:integer .
+<http://json-ld.org/playground/db> <http://dataid.dbpedia.org/mimetypes/magic> "fd ff ff ff xx xx xx xx xx xx xx xx 04 00 00 00" .
+<http://json-ld.org/playground/db> <http://dataid.dbpedia.org/mimetypes/offset>  "512"^^xsd:integer .
+<http://json-ld.org/playground/jks> <http://dataid.dbpedia.org/mimetypes/magic> "fe ed fe ed" .
+<http://json-ld.org/playground/gho> <http://dataid.dbpedia.org/mimetypes/magic> "fe ef" .
+<http://json-ld.org/playground/ghs> <http://dataid.dbpedia.org/mimetypes/magic> "fe ef" .
+<http://json-ld.org/playground/sys> <http://dataid.dbpedia.org/mimetypes/magic> "ff" .
+<http://json-ld.org/playground/wks> <http://dataid.dbpedia.org/mimetypes/magic> "ff 00 02 00 04 04 05 54 02 00" .
+<http://json-ld.org/playground/qrp> <http://dataid.dbpedia.org/mimetypes/magic> "ff 0a 00" .
+<http://json-ld.org/playground/cpi> <http://dataid.dbpedia.org/mimetypes/magic> "ff 46 4f 4e 54" .
+<http://json-ld.org/playground/sys> <http://dataid.dbpedia.org/mimetypes/magic> "ff 4b 45 59 42 20 20 20" .
+<http://json-ld.org/playground/wp> <http://dataid.dbpedia.org/mimetypes/magic> "ff 57 50 43" .
+<http://json-ld.org/playground/wpd> <http://dataid.dbpedia.org/mimetypes/magic> "ff 57 50 43" .
+<http://json-ld.org/playground/wpg> <http://dataid.dbpedia.org/mimetypes/magic> "ff 57 50 43" .
+<http://json-ld.org/playground/wpp> <http://dataid.dbpedia.org/mimetypes/magic> "ff 57 50 43" .
+<http://json-ld.org/playground/wp5> <http://dataid.dbpedia.org/mimetypes/magic> "ff 57 50 43" .
+<http://json-ld.org/playground/wp6> <http://dataid.dbpedia.org/mimetypes/magic> "ff 57 50 43" .
+<http://json-ld.org/playground/jfif> <http://dataid.dbpedia.org/mimetypes/magic> "ff d8 ff e0 xx xx 4a 46 49 46 00" .
+<http://json-ld.org/playground/jpe> <http://dataid.dbpedia.org/mimetypes/magic> "ff d8 ff e0 xx xx 4a 46 49 46 00" .
+<http://json-ld.org/playground/jpeg> <http://dataid.dbpedia.org/mimetypes/magic> "ff d8 ff e0 xx xx 4a 46 49 46 00" .
+<http://json-ld.org/playground/jpg> <http://dataid.dbpedia.org/mimetypes/magic> "ff d8 ff e0 xx xx 4a 46 49 46 00" .
+<http://json-ld.org/playground/jpg> <http://dataid.dbpedia.org/mimetypes/magic> "ff d8 ff e1 xx xx 45 78 69 66 00" .
+<http://json-ld.org/playground/jpg> <http://dataid.dbpedia.org/mimetypes/magic> "ff d8 ff e8 xx xx 53 50 49 46 46 00" .
+<http://json-ld.org/playground/mpeg> <http://dataid.dbpedia.org/mimetypes/magic> "ff fx" .
+<http://json-ld.org/playground/mpg> <http://dataid.dbpedia.org/mimetypes/magic> "ff fx" .
+<http://json-ld.org/playground/mp3> <http://dataid.dbpedia.org/mimetypes/magic> "ff fx" .
+<http://json-ld.org/playground/aac> <http://dataid.dbpedia.org/mimetypes/magic> "ff f1" .
+<http://json-ld.org/playground/aac> <http://dataid.dbpedia.org/mimetypes/magic> "ff f9" .
+<http://json-ld.org/playground/reg> <http://dataid.dbpedia.org/mimetypes/magic> "ff fe" .
+<http://json-ld.org/playground/mof> <http://dataid.dbpedia.org/mimetypes/magic> "ff fe 23 00 6c 00 69 00 6e 00 65 00 20 00 31 00" .
+<http://json-ld.org/playground/sys> <http://dataid.dbpedia.org/mimetypes/magic> "ff ff ff ff" .
 ','', 'http://dataid.dbpedia.org/mimetypes/', 17)

@@ -1,9 +1,10 @@
 {
-  "validatorEndpoint":"http://localhost:9995/dataid/publisher/validateid",
+  "validatorEndpoint":"http://localhost:9997/dataid/graph/validateid",
   "insertIdEndpoint":"http://localhost:9997/dataid/graph/createnewbranch?uri={0}&branch={1}&contact={2}&isMaster={3}",
   "licenseQuery":"http://localhost:9997/dataid/graph/getlicenses",
   "mimeQuery":"http://localhost:9997/dataid/graph/getmimes",
   "getLatestVersion":"http://localhost:9997/dataid/graph/getlatestversion?uri=",
+  "evaluateDistUrl":"http://localhost:9997/dataid/graph/getfileheaders?url=",
   "languageQuery":"http://localhost:9997/dataid/graph/getlanguages",
   "getVersion":"http://localhost:9997/dataid/graph/getversion?uri={0}&branch={1}&version={2}"
 }

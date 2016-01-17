@@ -83,24 +83,86 @@ dataIdGen.controller('genController',
         $scope.toggleOptionPanel = function()
         {
             var panel = $('#accordion');
+            var page = $('#page-wrapper');
+            var logo = $('#dataidlogo');
+            var nav = $('#innernav');
+            var leftNav = $('#leftNavBottom');
+            var leftNavBot = $('#leftNavBottomCompressed');
+            var optBtn = $('#options-btn');
+            var optBtnComp = $('#options-btn-compressed');
             if (panel.hasClass('navbar-static-side')) {
                 panel.removeClass('navbar-static-side');
                 panel.addClass('navbar-hidden-side');
-                panel.fadeOut('slow', function () {
+                panel.fadeOut('fast', function () {
                     panel.stop().animate({
                         width: '0px',
                         opacity: 0.0
-                    }, 500);
+                    }, 'fast');
                 });
+                leftNav.fadeOut('fast', function () {
+                    leftNav.stop().animate({
+                        width: '0px',
+                        opacity: 0.0
+                    }, 'fast');
+                });
+                leftNavBot.stop().animate({
+                    width: '50px',
+                    opacity: 1
+                }, 'fast', function () {
+                    leftNavBot.fadeIn('fast');
+                });
+                optBtn.fadeOut('fast', function () {
+                    optBtn.stop().animate({
+                        width: '0px',
+                        opacity: 0.0
+                    }, 'fast');
+                });
+                optBtnComp.stop().animate({
+                    width: '50px',
+                    opacity: 1
+                }, 'fast', function () {
+                    optBtnComp.fadeIn('fast');
+                });
+                page.animate({marginLeft: '-=300px'}, 'fast');
+                logo.animate({left: '-=300px'}, 'fast');
+                nav.animate({marginLeft: '-=350px'}, 'fast');
             } else {
                 panel.removeClass('navbar-hidden-side');
                 panel.addClass('navbar-static-side');
                 panel.stop().animate({
                     width: '350px',
                     opacity: 1
-                }, 500, function () {
-                    panel.fadeIn('slow');
+                }, 'fast', function () {
+                    panel.fadeIn('fast');
                 });
+                leftNav.stop().animate({
+                    width: '350px',
+                    opacity: 1
+                }, 'fast', function () {
+                    leftNav.fadeIn('fast');
+                });
+                leftNavBot.fadeOut('fast', function () {
+                    leftNavBot.stop().animate({
+                        width: '0px',
+                        opacity: 0.0
+                    }, 'fast');
+                });
+
+                optBtn.stop().animate({
+                    width: '350px',
+                    opacity: 1
+                }, 'fast', function () {
+                    optBtn.fadeIn('fast');
+                });
+                optBtnComp.fadeOut('fast', function () {
+                    optBtnComp.stop().animate({
+                        width: '0px',
+                        opacity: 0.0
+                    }, 'fast');
+                });
+                page.animate({marginLeft: '+=300px'}, 'fast');
+                logo.animate({left: '+=300px'}, 'fast');
+                nav.animate({marginLeft: '+=350px'}, 'fast');
             }
         };
 
@@ -210,6 +272,15 @@ dataIdGen.controller('genController',
             } );
         };
 
+
+        $scope.preparePopover = function(popover, input)
+        {
+            if(typeof input == 'string')
+                input = $scope.formAgent[input];
+            $scope.popMap[input.$name] = preparePopover(popover, input);
+            return $scope.popMap[input.$name] == null ? null : $scope.popMap[input.$name].template;
+        };
+
         $scope.countInstancesOfAnyType = function()
         {
             var counts = {};
@@ -261,7 +332,7 @@ dataIdGen.controller('genController',
 
         $scope.showAsInvalid = function(input)
         {
-            return showAsInvalid(input);
+            return false; //showAsInvalid(input);
         };
 
         $scope.getLabelClass = function(id)
@@ -292,7 +363,7 @@ dataIdGen.controller('genController',
                 $scope.openAgent(sett);
             if(isOfType(sett, 'dataid:Dataset'))
                 $scope.openDataset(null, sett);
-            if(isOfType(sett, 'dataid:Distribution') || isOfType(sett, 'dataid:SparqlEndpoint'))
+            if(isOfType(sett, 'dataid:Distribution'))
                 $scope.openDist(null, sett);
         }
 
@@ -321,7 +392,7 @@ dataIdGen.controller('genController',
             {
                 $scope.delDataset2(sett);
             }
-            if(isOfType(sett, 'dataid:Distribution') || isOfType('dataid:SparqlEndpoint'))
+            if(isOfType(sett, 'dataid:Distribution'))
             {
                 $scope.delDistribution(sett);
             }
@@ -434,7 +505,7 @@ dataIdGen.controller('genController',
 
         $scope.getAllDistributions = function()
         {
-            return getAllOfTypes(['dataid:Distribution', 'dataid:SparqlEndpoint'], $scope.graph);
+            return getAllOfTypes(['dataid:Distribution'], $scope.graph);
         };
 
         $scope.openValidating = function() {
@@ -527,11 +598,12 @@ dataIdGen.controller('genController',
 
         $scope.openNewDist = function(parent) {
             var newId = $scope.getNewId(parent, 'dataid:Distribution');
-            var distribution = getEmptyDistribution(newId, parent['@id'], 'dataid:Distribution');
+            var distribution = getEmptyDistribution(newId, parent['@id'], 'dataid:SingleFile');
             distribution['dc:license']['@id'] = parent['dc:license']['@id'];
             distribution['dc:rights']['@value'] = parent['dc:rights']['@value'];
             $scope.openDist(parent, distribution);
         };
+
         $scope.openDist = function(parent, distribution) {
 
             var modalDistInstance = $modal.open({
@@ -547,7 +619,9 @@ dataIdGen.controller('genController',
                             mimetypes:$scope.mimetypes,
                             agents: $scope.getAllAgents(),
                             openNewAgent: $scope.openNewAgent,
-                            isTemplate: $scope.isTemplate};
+                            isTemplate: $scope.isTemplate,
+                            urlHeaderUrl: $scope.config['evaluateDistUrl']
+                        };
                     }
                 }
             });
@@ -804,7 +878,7 @@ var ModalDatasetInstanceCtrl = function($scope, $modalInstance, $document, datas
     $scope.openagent = dataset.openAgent;
     $scope.popMap = {};
     $scope.edituri = true;
-    $scope.halfuri = '';
+    $scope.halfuri = {"@required":true, "@value":""};
     $scope.selectedLanguage = 'en';
 
     $scope.checkIfLicenseSelected = function()
@@ -826,10 +900,20 @@ var ModalDatasetInstanceCtrl = function($scope, $modalInstance, $document, datas
     $scope.init = function() {
         var zw = $('#keywords');
         zw.on('itemAdded', function(event) {
-            $scope.dataset['dcat:keyword']['@value'].push(event.item);
+            var newVal = angular.copy($scope.dataset['dcat:keyword']['@value']);
+            newVal.push(event.item);
+            $scope.formDataset.keywords.$setViewValue(newVal);
+            //signal its ok to show errors
+            $scope.formDataset.keywords.$dirty = true;
+            $scope.formDataset.keywords.$touched = true;
+            $scope.formDataset.keywords.$untouched = false;
+            $scope.$apply();
         });
         zw.on('itemRemoved', function(event) {
-            removeFromArray(event.item, $scope.dataset['dcat:keyword']['@value']);
+            var newVal = angular.copy($scope.dataset['dcat:keyword']['@value']);
+            removeFromArray(event.item, newVal);
+            $scope.formDataset.keywords.$setViewValue(newVal);
+            $scope.$apply();
         });
         zw.tagsinput(
             {
@@ -846,19 +930,6 @@ var ModalDatasetInstanceCtrl = function($scope, $modalInstance, $document, datas
         return $scope.popMap[input.$name] == null ? null : $scope.popMap[input.$name].template;
     };
 
-    $scope.submit = function(){
-        //$scope.dataset['@id'] = $scope.dataset['@id'] + '#' + $scope.halfuri;
-        if($scope.formDataset.$invalid)
-            toucheAllInputs($scope.formDataset); //and thereby showing all errors
-        else
-            $scope.ok();
-    };
-
-    $scope.showAsInvalid = function(input)
-    {
-        return showAsInvalid(input);
-    };
-
     $scope.popOverClose = function(parent)
     {
         $scope.formDataset[parent].$touched = false;
@@ -867,21 +938,22 @@ var ModalDatasetInstanceCtrl = function($scope, $modalInstance, $document, datas
 
     $scope.uriEditClik = function()
     {
-        $scope.edituri = {true:false, false:true}[$scope.edituri];
+        $scope.edituri = !$scope.edituri;
         if($scope.edituri)
-            $scope.halfuri = encodeURIComponent($scope.dataset['dc:title']['@value']);
-        else
-            $scope.halfuri = '';
-
+            $scope.formDataset.idinput.$setViewValue(encodeURIComponent($scope.dataset['dc:title']['@value']));
     };
     $scope.ok = function() {
-        if($scope.halfuri.trim().length == 0 || $scope.halfuri.indexOf('#') >=0 || !validateURL($scope.dataset['@id'].substring(0, $scope.dataset['@id'].indexOf('#')) + '#' + $scope.halfuri))
+        toucheAllInputs($scope.formDataset);
+        if($scope.formDataset.$invalid)
+            return;
+        if($scope.halfuri['@value'].trim().length == 0 || $scope.halfuri['@value'].indexOf('#') >=0
+            || !validateURL($scope.dataset['@id'].substring(0, $scope.dataset['@id'].indexOf('#')) + '#' + $scope.halfuri['@value']))
         {
             $('#idinput').trigger('focus');
             return;
         }
 
-        $scope.dataset['@id'] = $scope.dataset['@id'].substring(0, $scope.dataset['@id'].indexOf('#')) + '#' + $scope.halfuri;
+        $scope.dataset['@id'] = $scope.dataset['@id'].substring(0, $scope.dataset['@id'].indexOf('#')) + '#' + $scope.halfuri['@value'];
         $modalInstance.close($scope.dataset);
     };
 
@@ -897,7 +969,7 @@ var ModalDatasetInstanceCtrl = function($scope, $modalInstance, $document, datas
     $scope.$watch("dataset['dc:title']['@value']", function(value) {
         $scope.dataset['@id'] = $scope.dataset['@id'].substring(0, $scope.dataset['@id'].indexOf('#')) + '#' + encodeURIComponent(value);
         if($scope.edituri)
-            $scope.halfuri = encodeURIComponent(value);
+            $scope.halfuri['@value'] = encodeURIComponent(value);
     });
     $scope.$watch("dataset['dc:license']['@value']", function(value) {
         $scope.dataset['dataid:licenseName']['@value'] = $.grep($scope.licenses, function(e){ return e.val == value; }).name;
@@ -922,31 +994,36 @@ var ModalAgentInstanceCtrl = function($scope, $modalInstance , $document, agent)
     $scope.messages = agent.messages;
     $scope.languages = agent.languages;
     $scope.edituri = true;
-    $scope.halfuri = '';
-
-    $scope.notePopover = {
-        title: 'Invalid Uri',
-        templateUrl: 'popover-note.html',
-        agentId : ''
-    };
+    $scope.halfuri = {"@required":true, "@value":""};
+    $scope.popMap = {};
 
     $scope.uriEditClik = function()
     {
-        $scope.edituri = {true:false, false:true}[$scope.edituri];
+        $scope.edituri = !$scope.edituri;
         if($scope.edituri)
-            $scope.halfuri = encodeURIComponent($scope.dataset['dataid:agentName']['@value']);
-        else
-            $scope.halfuri = '';
-
+            $scope.formAgent.idinput.$setViewValue(encodeURIComponent($scope.dataset['dc:title']['@value']));
     };
+
+    $scope.preparePopover = function(popover, input)
+    {
+        if(typeof input == 'string')
+            input = $scope.formAgent[input];
+        $scope.popMap[input.$name] = preparePopover(popover, input);
+        return $scope.popMap[input.$name] == null ? null : $scope.popMap[input.$name].template;
+    };
+
     $scope.ok = function() {
-        if($scope.halfuri.trim().length == 0 || $scope.halfuri.indexOf('#') >=0 || !validateURL($scope.dataset['@id'].substring(0, $scope.dataset['@id'].indexOf('#')) + '#' + $scope.halfuri))
+        toucheAllInputs($scope.formAgent);
+        if($scope.formAgent.$invalid)
+            return;
+        if($scope.halfuri['@value'].trim().length == 0 || $scope.halfuri['@value'].indexOf('#') >=0
+            || !validateURL($scope.dataset['@id'].substring(0, $scope.dataset['@id'].indexOf('#')) + '#' + $scope.halfuri['@value']))
         {
             $('#idinput').trigger('focus');
             return;
         }
         $scope.dataset['@type'] = ['dataid:Agent', 'dataid:' + $scope.dataset['dataid:agentRole']['@value']];
-        $scope.dataset['@id'] = $scope.dataset['@id'].substring(0, $scope.dataset['@id'].indexOf('#')) + '#' + $scope.halfuri;
+        $scope.dataset['@id'] = $scope.dataset['@id'].substring(0, $scope.dataset['@id'].indexOf('#')) + '#' + $scope.halfuri['@value'];
         $modalInstance.close($scope.dataset);
     };
     $scope.cancel = function() {
@@ -955,7 +1032,7 @@ var ModalAgentInstanceCtrl = function($scope, $modalInstance , $document, agent)
     $scope.$watch("dataset['dataid:agentName']['@value']", function(value) {
         $scope.dataset['@id'] = $scope.dataset['@id'].substring(0, $scope.dataset['@id'].indexOf('#')) + '#' + encodeURIComponent(value);
         if($scope.edituri)
-            $scope.halfuri = encodeURIComponent(value);
+            $scope.halfuri['@value'] = encodeURIComponent(value);
     });
     $scope.$watch("selectedLanguage", function(value) {
         initializeLanguage($scope.dataset, value);
@@ -977,27 +1054,20 @@ var ModalDistInstanceCtrl = function($scope, $modalInstance, dist) {
     $scope.languages = dist.languages;
     $scope.openagent = dist.openNewAgent;
     $scope.mimetypes = dist.mimetypes;
+    $scope.urlHeaderUrl = dist.urlHeaderUrl;
     $scope.popMap = {};
     $scope.edituri = true;
-    $scope.halfuri = '';
+    $scope.halfuri = {"@required":true, "@value":""};
+    $scope.urlHeaderMap = {};
+
+    $scope.init = function() {
+        $scope.disableFormats(true);
+    };
 
     $scope.preparePopover = function(popover, input)
     {
         $scope.popMap[input.$name] = preparePopover(popover, input);
         return $scope.popMap[input.$name] == null ? null : $scope.popMap[input.$name].template;
-    };
-
-    $scope.submit = function(){
-        //$scope.dataset['@id'] = $scope.dataset['@id'] + '#' + $scope.halfuri;
-        if($scope.formDist.$invalid)
-            toucheAllInputs($scope.formDist); //and thereby showing all errors
-        else
-            $scope.ok();
-    };
-
-    $scope.showAsInvalid = function(input)
-    {
-        return showAsInvalid(input);
     };
 
     $scope.popOverClose = function(parent)
@@ -1008,23 +1078,92 @@ var ModalDistInstanceCtrl = function($scope, $modalInstance, dist) {
 
     $scope.uriEditClik = function()
     {
-        $scope.edituri = {true:false, false:true}[$scope.edituri];
+        $scope.edituri = !$scope.edituri;
         if($scope.edituri)
-            $scope.halfuri = encodeURIComponent($scope.dataset['dc:title']['@value']);
-        else
-            $scope.halfuri = '';
-
+            $scope.formDist.idinput.$setViewValue(encodeURIComponent($scope.dataset['dc:title']['@value']));
     };
+
     $scope.ok = function() {
-        if($scope.halfuri.trim().length == 0 || $scope.halfuri.indexOf('#') >=0 || !validateURL($scope.dataset['@id'].substring(0, $scope.dataset['@id'].indexOf('#')) + '#' + $scope.halfuri))
+        toucheAllInputs($scope.formDist);
+        if($scope.formDist.$invalid)
+            return;
+        if($scope.halfuri['@value'].trim().length == 0 || $scope.halfuri['@value'].indexOf('#') >=0
+            || !validateURL($scope.dataset['@id'].substring(0, $scope.dataset['@id'].indexOf('#')) + '#' + $scope.halfuri['@value']))
         {
             var zw = $('#idinput');
             zw.trigger('focus');
             return;
         }
 
-        $scope.dataset['@id'] = $scope.dataset['@id'].substring(0, $scope.dataset['@id'].indexOf('#')) + '#' + $scope.halfuri;
+        $scope.dataset['@id'] = $scope.dataset['@id'].substring(0, $scope.dataset['@id'].indexOf('#')) + '#' + $scope.halfuri['@value'];
         $modalInstance.close($scope.dataset);
+    };
+
+    $scope.evalDistUrl = function(url){
+        var tarea = $('#downloadURL');
+        tarea.css('height', 'auto' );
+        tarea.height( tarea.scrollHeight );
+        url = url.replace("www.","").trim();
+        if(url.indexOf("http") != 0 && url.indexOf("ftp") != 0)
+            url = "http://" + url;
+        $scope.formDist.downloadURL.$setViewValue(url);
+        url = encodeURIComponent(url);
+
+        sendRequest($scope.urlHeaderUrl + url, "GET", null, true, function(e){
+            if(e.target.status >202) {
+                if (e.target.responseText.indexOf("htmlresource") == 0)
+                    $scope.formDist.downloadURL.$setValidity('htmlresource', false);
+            }
+            else
+            {
+                $scope.urlHeaderMap = JSON.parse(e.target.responseText);
+                $scope.formDist.downloadURL.$setValidity('htmlresource', true);
+            }
+
+            $scope.$apply();
+        }, function(e){
+            alert(e.target.responseText);
+        });
+    };
+
+    $scope.calcSizeString = function(bytesize)
+    {
+        if(bytesize === undefined)
+            return "";
+        var giga = 1073741824;
+        var mega = 1048576;
+        var kilo = 1024;
+        if(typeof bytesize != 'string')
+            bytesize = Number(bytesize);
+        if(bytesize >= giga)
+            return (bytesize/giga).toFixed(1) + " GB";
+        if(bytesize >= mega)
+            return (bytesize/mega).toFixed(1) + " MB";
+        if(bytesize > kilo)
+            return (bytesize/kilo).toFixed(1) + " KB";
+        return bytesize.toString() + " B";
+    };
+
+    $scope.getExtention = function()
+    {
+        var array = $scope.urlHeaderMap["Compression"];
+        var ret = "";
+        if(array === undefined)
+            return ret;
+        for(var i=array.length-1; i >= 0 ; i--)
+            if(array[i] != null)
+                ret += "." + array[i];
+
+        var filter = $('.multiselect-search', $('#dataInformationPanel'));
+        filter.val($scope.urlHeaderMap["Extension"][0]);
+        filter.keydown();
+        return ret;
+    };
+
+    $scope.disableFormats = function(disable)
+    {
+        var formats = $('.multiselect', $('#dataInformationPanel'));
+        formats.prop('disabled', disable);
     };
 
     $scope.$on('newAgent', function(event, args){
@@ -1034,7 +1173,7 @@ var ModalDistInstanceCtrl = function($scope, $modalInstance, dist) {
     $scope.$watch("dataset['dc:title']['@value']", function(value) {
         $scope.dataset['@id'] = $scope.dataset['@id'].substring(0, $scope.dataset['@id'].indexOf('#')) + '#' + encodeURIComponent(value);
         if($scope.edituri)
-            $scope.halfuri = encodeURIComponent(value);
+            $scope.halfuri['@value'] = encodeURIComponent(value);
     });
 
     $scope.cancel = function() {
@@ -1247,7 +1386,7 @@ function cleanDataIdPart(obj) {
     for (var key in obj) {
         if (Object.prototype.hasOwnProperty.call(obj, key)) {
             obj['isActiveClone'] = null;
-            if (key != '@parent' && key != '@required' && key != "$$hashKey" && key != "@pristine" && key != "@label")
+            if (key != '@parent' && key != '@required' && key != "$$hashKey" && key != "@pristine" && key != "@label" && key != "@validators" && key != "@invalid")
             {
                 var zw = cleanDataIdPart(obj[key]);
                 if(!!zw)
@@ -1295,12 +1434,13 @@ function integrateDataId(dataid)
     }
     for(var i=0; i < dataid['@graph'].length; i++)
     {
+        //TODO check uniqueArray!!
         if(isOfType(dataid['@graph'][i], 'dataid:Agent'))
-            retDataId['@graph'].push(integrateSet(dataid['@graph'][i], getEmptyAgent(dataid['@graph'][i]['@id'], dataid['@graph'][i]['@type'])));
+            retDataId['@graph'].push(integrateSet(dataid['@graph'][i], getEmptyAgent(dataid['@graph'][i]['@id'], uniqueArray(['dataid:Agent'], dataid['@graph'][i]['@type']))));
         else if(isOfType(dataid['@graph'][i], 'dataid:Dataset'))
             retDataId['@graph'].push(integrateSet(dataid['@graph'][i], getEmptyDataset(dataid['@graph'][i]['@id'], parentMap[dataid['@graph'][i]['@id']])));
         else if(isOfType(dataid['@graph'][i], 'dataid:Distribution'))
-            retDataId['@graph'].push(integrateSet(dataid['@graph'][i], getEmptyDistribution(dataid['@graph'][i]['@id'], parentMap[dataid['@graph'][i]['@id']], dataid['@graph'][i]['@type'])));
+            retDataId['@graph'].push(integrateSet(dataid['@graph'][i], getEmptyDistribution(dataid['@graph'][i]['@id'], parentMap[dataid['@graph'][i]['@id']], uniqueArray(['dataid:Distribution'], dataid['@graph'][i]['@type']))));
         else if(isOfType(dataid['@graph'][i], 'dataid:Linkset'))
             retDataId['@graph'].push(integrateSet(dataid['@graph'][i], getEmptyLinkset(dataid['@graph'][i]['@id'])));
     }
@@ -1427,15 +1567,15 @@ function idsToStrings(ids)
 }
 
 function validateURL(textval) {
-    var urlregex = /^(https?|ftp):\/\/([a-zA-Z0-9.-]+(:[a-zA-Z0-9.&%$-]+)*@)*((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}|([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(:[0-9]+)*(\/($|[a-zA-Z0-9.,?'\\+&%$#=~_-]+))*$/;
+    var urlregex = /^\s*[a-z](?:[-a-z0-9\+\.])*:(?:\/\/(?:(?:%[0-9a-f][0-9a-f]|[-a-z0-9\._~\uA000-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF\u10000-\u1FFFD\u20000-\u2FFFD\u30000-\u3FFFD\u40000-\u4FFFD\u50000-\u5FFFD\u60000-\u6FFFD\u70000-\u7FFFD\u80000-\u8FFFD\u90000-\u9FFFD\uA0000-\uAFFFD\uB0000-\uBFFFD\uC0000-\uCFFFD\uD0000-\uDFFFD\uE1000-\uEFFFD!\$&\'\(\)\*\+,;=:])*@)?(?:\[(?:(?:(?:[0-9a-f]{1,4}:){6}(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(?:\.(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])){3})|::(?:[0-9a-f]{1,4}:){5}(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(?:\.(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])){3})|(?:[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){4}(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(?:\.(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])){3})|(?:[0-9a-f]{1,4}:[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){3}(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(?:\.(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])){3})|(?:(?:[0-9a-f]{1,4}:){0,2}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){2}(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(?:\.(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])){3})|(?:(?:[0-9a-f]{1,4}:){0,3}[0-9a-f]{1,4})?::[0-9a-f]{1,4}:(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(?:\.(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])){3})|(?:(?:[0-9a-f]{1,4}:){0,4}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(?:\.(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])){3})|(?:(?:[0-9a-f]{1,4}:){0,5}[0-9a-f]{1,4})?::[0-9a-f]{1,4}|(?:(?:[0-9a-f]{1,4}:){0,6}[0-9a-f]{1,4})?::)|v[0-9a-f]+[-a-z0-9\._~!\$&\'\(\)\*\+,;=:]+)\]|(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(?:\.(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])){3}|(?:%[0-9a-f][0-9a-f]|[-a-z0-9\._~\uA0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF\u10000-\u1FFFD\u20000-\u2FFFD\u30000-\u3FFFD\u40000-\u4FFFD\u50000-\u5FFFD\u60000-\u6FFFD\u70000-\u7FFFD\u80000-\u8FFFD\u90000-\u9FFFD\uA0000-\uAFFFD\uB0000-\uBFFFD\uC0000-\uCFFFD\uD0000-\uDFFFD\uE1000-\uEFFFD!\$&\'\(\)\*\+,;=@])*)(?::[0-9]*)?(?:\/(?:(?:%[0-9a-f][0-9a-f]|[-a-z0-9\._~\uA0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF\u10000-\u1FFFD\u20000-\u2FFFD\u30000-\u3FFFD\u40000-\u4FFFD\u50000-\u5FFFD\u60000-\u6FFFD\u70000-\u7FFFD\u80000-\u8FFFD\u90000-\u9FFFD\uA0000-\uAFFFD\uB0000-\uBFFFD\uC0000-\uCFFFD\uD0000-\uDFFFD\uE1000-\uEFFFD!\$&\'\(\)\*\+,;=:@]))*)*|\/(?:(?:(?:(?:%[0-9a-f][0-9a-f]|[-a-z0-9\._~\uA0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF\u10000-\u1FFFD\u20000-\u2FFFD\u30000-\u3FFFD\u40000-\u4FFFD\u50000-\u5FFFD\u60000-\u6FFFD\u70000-\u7FFFD\u80000-\u8FFFD\u90000-\u9FFFD\uA0000-\uAFFFD\uB0000-\uBFFFD\uC0000-\uCFFFD\uD0000-\uDFFFD\uE1000-\uEFFFD!\$&\'\(\)\*\+,;=:@]))+)(?:\/(?:(?:%[0-9a-f][0-9a-f]|[-a-z0-9\._~\uA0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF\u10000-\u1FFFD\u20000-\u2FFFD\u30000-\u3FFFD\u40000-\u4FFFD\u50000-\u5FFFD\u60000-\u6FFFD\u70000-\u7FFFD\u80000-\u8FFFD\u90000-\u9FFFD\uA0000-\uAFFFD\uB0000-\uBFFFD\uC0000-\uCFFFD\uD0000-\uDFFFD\uE1000-\uEFFFD!\$&\'\(\)\*\+,;=:@]))*)*)?|(?:(?:(?:%[0-9a-f][0-9a-f]|[-a-z0-9\._~\uA0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF\u10000-\u1FFFD\u20000-\u2FFFD\u30000-\u3FFFD\u40000-\u4FFFD\u50000-\u5FFFD\u60000-\u6FFFD\u70000-\u7FFFD\u80000-\u8FFFD\u90000-\u9FFFD\uA0000-\uAFFFD\uB0000-\uBFFFD\uC0000-\uCFFFD\uD0000-\uDFFFD\uE1000-\uEFFFD!\$&\'\(\)\*\+,;=:@]))+)(?:\/(?:(?:%[0-9a-f][0-9a-f]|[-a-z0-9\._~\uA0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF\u10000-\u1FFFD\u20000-\u2FFFD\u30000-\u3FFFD\u40000-\u4FFFD\u50000-\u5FFFD\u60000-\u6FFFD\u70000-\u7FFFD\u80000-\u8FFFD\u90000-\u9FFFD\uA0000-\uAFFFD\uB0000-\uBFFFD\uC0000-\uCFFFD\uD0000-\uDFFFD\uE1000-\uEFFFD!\$&\'\(\)\*\+,;=:@]))*)*|(?!(?:%[0-9a-f][0-9a-f]|[-a-z0-9\._~\uA0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF\u10000-\u1FFFD\u20000-\u2FFFD\u30000-\u3FFFD\u40000-\u4FFFD\u50000-\u5FFFD\u60000-\u6FFFD\u70000-\u7FFFD\u80000-\u8FFFD\u90000-\u9FFFD\uA0000-\uAFFFD\uB0000-\uBFFFD\uC0000-\uCFFFD\uD0000-\uDFFFD\uE1000-\uEFFFD!\$&\'\(\)\*\+,;=:@])))(?:\?(?:(?:%[0-9a-f][0-9a-f]|[-a-z0-9\._~\uA0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF\u10000-\u1FFFD\u20000-\u2FFFD\u30000-\u3FFFD\u40000-\u4FFFD\u50000-\u5FFFD\u60000-\u6FFFD\u70000-\u7FFFD\u80000-\u8FFFD\u90000-\u9FFFD\uA0000-\uAFFFD\uB0000-\uBFFFD\uC0000-\uCFFFD\uD0000-\uDFFFD\uE1000-\uEFFFD!\$&\'\(\)\*\+,;=:@])|[\uE000-\uF8FF\uF0000-\uFFFFD|\u100000-\u10FFFD\/\?])*)?(?:\#(?:(?:%[0-9a-f][0-9a-f]|[-a-z0-9\._~\uA0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF\u10000-\u1FFFD\u20000-\u2FFFD\u30000-\u3FFFD\u40000-\u4FFFD\u50000-\u5FFFD\u60000-\u6FFFD\u70000-\u7FFFD\u80000-\u8FFFD\u90000-\u9FFFD\uA0000-\uAFFFD\uB0000-\uBFFFD\uC0000-\uCFFFD\uD0000-\uDFFFD\uE1000-\uEFFFD!\$&\'\(\)\*\+,;=:@])|[\/\?])*)?\s*$/;
     return urlregex.test(textval);
 }
 
 function isOfType(obj, type)
 {
-    var typeArr = obj['@type'];
-    if(typeArr == undefined)
+    if(!obj['@type'])
         return false;
+    var typeArr = obj['@type'];
     if(typeArr.constructor === Array)
     {
         for(var i = 0; i< typeArr.length; i++)
@@ -1530,46 +1670,18 @@ function toucheAllInputs(form)
     $('[name=' + form.$name + ']').each(function(){
         $(this).find(':input').each(function()
         {
-            if(this.getAttribute('name') in form)
+            if(this.getAttribute('name') in form) {
                 form[this.getAttribute('name')].$touched = true;
+                setValidity(form[this.getAttribute('name')]);
+            }
         });
     });
 }
 
-function showAsInvalid(input)
-{
-    if(!input.$error.required && !input.$error.multiselectValidatior)
-    {
-        if(!input.$dirty)
-            return false;
-        else
-        {
-            var value = input.$modelValue || input.$viewValue;
-            if(value !== undefined && value != null)
-            {
-                if(value.constructor === Array && value.length == 0)
-                    return false;
-                if(typeof value == 'string' && value == "")
-                    return false;
-            }
-            else
-                return false;
-        }
-    }
-    if(input.$valid && !input.$error.required && !input.$error.multiselectValidatior)
-        return false;
-    else
-    {
-        if(input.$touched)
-            return true;
-        else
-            return false;
-    }
-}
-
 dataIdGen.controller('PopoverCtrl', PopoverCtrl);
+
 //validators
-dataIdGen.directive('integer', function()
+/*dataIdGen.directive('integer', function()
 {
     return{
         replace: true,
@@ -1644,7 +1756,7 @@ dataIdGen.directive('uniqueuri', function()
         scope: false,
         require: 'ngModel',
         link: function(scope, orgele, attrs, ngModel){
-            ngModel.$asyncValidators.uniqueuri=function(modelValue,viewValue){
+            ngModel.$validators.uniqueuri=function(modelValue,viewValue){
                 var dataiduri = scope.$eval(orgele.attr('uniqueuri'));
                 var url= validateURL((dataiduri != null ? dataiduri : 'http://somehost.com/path#') + value);
                 //TODO DB - unique check
@@ -1652,7 +1764,237 @@ dataIdGen.directive('uniqueuri', function()
             };
         }
     }
+});*/
+
+dataIdGen.directive('dataidModel', function()
+{
+    return{
+        replace: true,
+        scope: false,
+        require: 'ngModel',
+        link: function(scope, orgele, attrs, ngModel){
+            //ngModel.$options = { updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } };
+            var realModel = null;
+            var optKey = null;
+
+            function initialize() {
+                //figure out the actual value property
+                if (attrs["dataidModel"] !== undefined && !!attrs["dataidModel"]) {
+                    if (attrs["dataidModel"].substr(0, 1) == '@')
+                        realModel = attrs["dataidModel"];
+                    else {
+                        realModel = '@value';
+                        optKey = scope.$eval(attrs["dataidModel"]);
+                    }
+                }
+                else {
+                    if ('@value' in ngModel.$modelValue)
+                        realModel = '@value';
+                    if ('@id' in ngModel.$modelValue)
+                        realModel = '@id';
+                }
+
+                ngModel.getValue = function()
+                {
+                    if(ngModel.$modelValue === undefined)
+                        return null;
+                    if(!!optKey)
+                        return ngModel.$modelValue[realModel][optKey];
+                    else
+                        return ngModel.$modelValue[realModel];
+                };
+
+
+                ngModel.$modelValue['@validators'] = {};
+                if(attrs['email'] !== undefined)
+                    ngModel.$modelValue['@validators'].email = function(value){
+                        if(!value)
+                            return true;
+                        return /^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$/.test(value);
+                    };
+                if(ngModel.$modelValue['@required'])
+                    ngModel.$modelValue['@validators'].required = function(value){
+                        return requiredValue(value);
+                    };
+                if(isOfType(ngModel.$modelValue, 'xsd:integer'))
+                    ngModel.$modelValue['@validators'].integer = function(viewValue){
+                        if(!viewValue)
+                            return true;
+                        return /^[0-9]*$/.test(viewValue);
+                    };
+                if(realModel == '@id')
+                    ngModel.$modelValue['@validators'].uri = function(viewValue){
+                        if(!viewValue)
+                            return true;
+                        return validateURL(viewValue);
+                    };
+                if(attrs['parturi'] !== undefined)
+                {
+                    ngModel.$modelValue['@validators'].parturi = function(modelValue,viewValue){
+                        var dataiduri = scope.$eval(attrs['parturi']);
+                        var value = modelValue || viewValue;
+                        if(!value)
+                            return true;
+                        if(dataiduri.indexOf('#') >= 0)
+                            dataiduri = dataiduri.substring(0, dataiduri.indexOf('#')+1);
+                        else
+                            dataiduri = dataiduri + '#';
+                        var url= validateURL((dataiduri != null ? dataiduri : 'http://somehost.com/path#') + value);
+                        return  url && value.indexOf('#') == -1;
+                    };
+                }
+                if(attrs['uniqueuri'] !== undefined)
+                {
+                    ngModel.$modelValue['@validators'].uniqueuri = function(modelValue,viewValue){
+                        var value = modelValue || viewValue;
+                        if(!value)
+                            return true;
+                        var dataiduri = scope.$eval(attrs['uniqueuri']);
+                        //TODO DB - unique check
+                    };
+                }
+                if(attrs['dataiduri'] !== undefined)
+                {
+                    ngModel.$modelValue['@validators'].dataiduri = function(modelValue,viewValue){
+                        var value=modelValue || viewValue;
+                        if(!value)
+                            return true;
+                        var url = validateURL(value);
+                        return url && value.indexOf('#') == -1;
+                    };
+                }
+                if(attrs['dirty'] !== undefined)
+                {
+                    ngModel.$modelValue['@validators'].dirty = function(){
+                        return ngModel.$dirty;
+                    };
+                }
+                //clear all validators and push validators
+                ngModel.$validators = {};
+
+                ngModel.$viewValue = ngModel.getValue();
+                ngModel.$render();
+                unregister();
+            }
+
+            //call initialize when ngModel is assigned
+            var unregister = scope.$watch(function(){
+                return ngModel.$modelValue;
+            }, initialize);
+
+            //check if subproperty of value (an object key) changed
+            scope.$watch(attrs["dataidModel"], function (value) {
+                if(!!optKey) {
+                    optKey = value;
+                    ngModel.$viewValue = ngModel.$modelValue[realModel][optKey];
+                    ngModel.$render();
+                }
+            });
+
+            //watch for outside changes to the model
+/*            scope.$watch(ngModel.getValue, function (value) {
+                ngModel.$setViewValue(value);
+                ngModel.$render();
+            });*/
+
+            //add the formatter
+            ngModel.$formatters.push(function(value) {
+                if(!realModel)
+                    return value;
+                if(!!optKey)
+                    return value[realModel][optKey];
+                else
+                    return value[realModel];
+            });
+
+            //add the parser
+            ngModel.$parsers.unshift(function(value) {
+
+                if(!!optKey)
+                    ngModel.$modelValue[realModel][optKey] = value;
+                else
+                    ngModel.$modelValue[realModel]= value;
+                setValidity(ngModel, value);
+                return ngModel.$modelValue;
+            });
+
+        }
+    }
 });
+
+
+
+//validate
+function setValidity(ngModel)
+{
+    if(!ngModel.getValue || !ngModel.$modelValue)
+        return;
+    var  value = ngModel.getValue();
+    for(var key in ngModel.$modelValue['@validators'])
+    {
+        ngModel.$setValidity(key, ngModel.$modelValue['@validators'][key](ngModel.getValue()));
+    }
+    ngModel.$modelValue['@invalid'] = isValueValid(ngModel, value);
+    ngModel.$render();
+}
+
+function isValueValid(ngModel)
+{
+    if(!ngModel.getValue)
+        return;
+    var value = ngModel.getValue();
+    if(!ngModel.$error.required)
+    {
+        if(!ngModel.$dirty)
+            return false;
+        else
+        {
+            if(value !== undefined && value != null)
+            {
+                if(value.constructor === Array && value.length == 0)
+                    return false;
+                if(typeof value == 'string' && value == "")
+                    return false;
+            }
+            else
+                return false;
+        }
+    }
+    if(ngModel.$valid && !ngModel.$error.required)
+        return false;
+    else
+    {
+        if(ngModel.$touched)
+            return true;
+        else
+            return false;
+    }
+}
+
+function requiredValue(value)
+{
+    if (value === undefined || value == null)
+        return false;
+    else
+    {
+        if(value.constructor === Array)
+        {
+            if(value.length > 0)
+                return true;
+            else
+                return false;
+        }
+        else if(typeof value == 'string')
+        {
+            if(value.length > 0)
+                return true;
+            else
+                return false;
+        }
+        else
+            return false;
+    }
+}
 
 //dropdown button incl. validator
 dataIdGen.directive('multiselectdropdown', function ($compile) {
@@ -1668,7 +2010,7 @@ dataIdGen.directive('multiselectdropdown', function ($compile) {
                 nonSelectedText: attrs["multiselectplaceholder"] !== undefined ? attrs["multiselectplaceholder"] : attrs["multiple"] !== undefined ? 'select one or more' : 'select one' ,
                 selectionPrefix: attrs["multiselectprefix"] !== undefined ? attrs["multiselectprefix"] : '',
                 enableCaseInsensitiveFiltering: attrs["multiselectfilter"] === undefined ? false : true,
-                includeFilterClearBtn: false,
+                includeFilterClearBtn: true,
                 filterBehavior: 'both',
                 dropRight: true,
                 inheritClass: true,
@@ -1683,10 +2025,9 @@ dataIdGen.directive('multiselectdropdown', function ($compile) {
                 onChange: function(optionElement, checked) {
                     optionElement.parent().removeClass("ng-untouched");
                     optionElement.parent().addClass("ng-touched");
-                    var scopeElement = scope[element.closest("form").attr("name")][element.attr("name")];
-                    scopeElement.$touched = true;
-                    scopeElement.$untouched = false;
-                    var modelValue = ngModel.$modelValue; // current model value - array of selected items
+                    ngModel.$touched = true;
+                    ngModel.$untouched = false;
+                    var modelValue = !!ngModel.getValue ? ngModel.getValue() : ngModel.$modelValue; // current model value - array of selected items
                     var result = scope[attrs["multiselectdropdown"]][Number(optionElement[0].value)];
                     result = result[attrs["multiselectidtag"] !== undefined ? attrs["multiselectidtag"] : '@id'];
                     if (_.has(result, 'value'))
@@ -1718,8 +2059,9 @@ dataIdGen.directive('multiselectdropdown', function ($compile) {
                         modelValue = null;
                     }
                     //validity check
-                    ngModel.$setValidity('multiselectValidatior', scope.validateSelectArray(orgele, modelValue));
+                    //ngModel.$setValidity('multiselectValidatior', scope.validateSelectArray(orgele, modelValue));
 
+                    modelValue = angular.copy(modelValue);
                     ngModel.$setViewValue(modelValue);
                     ngModel.$render();
                     scope.$apply();
@@ -1734,34 +2076,14 @@ dataIdGen.directive('multiselectdropdown', function ($compile) {
             });
 
             //default
-            ngModel.$setValidity('multiselectValidatior', false);
+            //ngModel.$setValidity('multiselectValidatior', false);
 
             scope.validateSelectArray = function(element, value)
             {
                 if(element.attr("multiselectvalidate") === undefined)
                     return true;
                 else {
-                    if (value === undefined || value == null)
-                        return false;
-                    else
-                    {
-                        if(value.constructor === Array)
-                        {
-                            if(value.length > 0)
-                                return true;
-                            else
-                                return false;
-                        }
-                        else if(typeof value == 'string')
-                        {
-                            if(value.length > 0)
-                                return true;
-                            else
-                                return false;
-                        }
-                        else
-                            return false;
-                    }
+                    return requiredValue(value);
                 }
             };
 
@@ -1777,13 +2099,13 @@ dataIdGen.directive('multiselectdropdown', function ($compile) {
             scope.$watch(function () {
                 return element[0].length;
             }, function (newVal, oldVal) {
-                    element.multiselect('rebuild');
+                element.multiselect('rebuild');
             });
 
             // Watch for any changes from outside the directive and refresh
             scope.$watch(attrs.ngModel, function (value) {
                 element.multiselect('refresh');
-                ngModel.$setValidity('multiselectValidatior', scope.validateSelectArray(orgele, value));
+                //ngModel.$setValidity('multiselectValidatior', scope.validateSelectArray(orgele, value));
             });
         }
     };

@@ -1,4 +1,4 @@
-<form name="formDataset" ng-submit="submit()" novalidate>
+<form name="formDataset" ng-submit="ok()" novalidate>
     <div ng-init="checked='false'"></div>
     <div class="modal-header">
         <div style="" class="row">
@@ -26,23 +26,18 @@
         </div>
         <div class="row" >
             <div class="col-md-12" style="margin-top: 8px;">
-                <div class="input-group">
+                <div class="input-group" ng-controller="PopoverCtrl">
                     <span class="input-group-addon" style="border-color: #EEEEEE; font-size:13px; padding-right: 2px;">uri: {{dataset['@id'].substring(0, dataset['@id'].indexOf('#')+1)}}</span>
                     <input type="text"
                            class="form-control parturi"
                            name="idinput"
                            id="idinput"
-                           value="{{dataset['@id'].substring(dataset['@id'].indexOf('#')+1)}}"
                            ng-disabled="edituri"
-                           parturi="dataset['@id']"
                            ng-model="halfuri"
-                           ng-required="true"
+                           dataid-model
                            ng-init="iName='idinput'"
-                           popover-trigger="none"
-                           popover-placement="bottom"
-                           popover-title="{{popMap.idinput.title}}"
-                           popover-template="preparePopover('warningPopover', formDataset.idinput)"
-                           popover-is-open="showAsInvalid(formDataset.idinput)">
+                           parturi="dataset['@id'].substring(0, dataset['@id'].indexOf('#'))">
+                    <div style="display: inline-block;"><ng-messages ng-messages-include="messagesTemplate" for="formDataset.idinput.$error"></ng-messages></div>
                     <!--uniqueuri-->
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-warning" ng-click="uriEditClik();" style="border-color: #EEEEEE; height:34px;">
@@ -65,93 +60,74 @@
                         <div ng-controller="PopoverCtrl">
                             <label style="margin-top: 10px" for="dTitle">Title</label> <span ng-show="dataset['dc:title']['@required']" style="color: red">*</span>
                             <div class="pull-right">
-                                <span  popover-placement="right" class="help-button"  popover="{{dataset['dc:title']['@label']}}" >?</span>
+                                <a class="desc2" target="_blank" href='http://purl.org/dc/terms/title'> dc:title </a>
+                                <span  popover-placement="bottom" class="help-button"  popover="{{dataset['dc:title']['@label']}}" >?</span>
                             </div>
-                            <a class="desc2" target="_blank" href='http://purl.org/dc/terms/title'> dc:title </a>
                             <br>
                             <input ng-init="iName='dTitle'"
-                                   ng-required="dataset['dc:title']['@required']"
                                    style="width: 100%;"
                                    class="input"
                                    type="text"
                                    name="dTitle"
                                    id="dTitle"
-                                   ng-model="dataset['dc:title']['@value']"
-                                   popover-trigger="none"
-                                   popover-placement="bottom"
-                                   popover-title="{{popMap.dTitle.title}}"
-                                   popover-template="preparePopover('warningPopover', formDataset.dTitle)"
-                                   popover-is-open="showAsInvalid(formDataset.dTitle)">
-                            <br>
+                                   dirty
+                                   ng-model="dataset['dc:title']"
+                                   dataid-model>
+                            <div style="display: inline-block;"><ng-messages ng-messages-include="messagesTemplate" for="formDataset.dTitle.$error"></ng-messages></div>
                         </div>
                         <div ng-controller="PopoverCtrl">
                             <label for="dDescription">Description</label> <span ng-show="dataset['dc:description']['@required']" style="color: red">*</span>
                             <div class="pull-right">
-                                <span  popover-placement="right" class="help-button"  popover="{{dataset['dc:description']['@label']}}" >?</span>
+                                <a class="desc2" target="_blank" href='http://purl.org/dc/terms/description'> dc:description </a>
+                                <span  popover-placement="bottom" class="help-button"  popover="{{dataset['dc:description']['@label']}}" >?</span>
                             </div>
-                            <a class="desc2" target="_blank" href='http://purl.org/dc/terms/description'> dc:description </a>
                             <br>
                             <textarea ng-init="iName='dDescription'"
-                                      ng-required="dataset['dc:description']['@required']"
                                       style="width: 100%;"
                                       class="input"
                                       rows="3"
                                       name="dDescription"
                                       id="dDescription"
-                                      ng-model="dataset['dc:description']['@value'][selectedLanguage]"
-                                      popover-trigger="none"
-                                      popover-placement="bottom"
-                                      popover-title="{{popovers.dynamicPopover.title}}"
-                                      popover-template="preparePopover('warningPopover', formDataset.dDescription)"
-                                      popover-is-open="showAsInvalid(formDataset.dDescription)">
+                                      ng-model="dataset['dc:description']"
+                                      dataid-model="selectedLanguage">
                             </textarea>
+                            <div style="display: inline-block;"><ng-messages ng-messages-include="messagesTemplate" for="formDataset.dDescription.$error"></ng-messages></div>
                         </div>
-                        <br>
                         <div ng-controller="PopoverCtrl">
                             <label for="rdfsLabel">Label</label> <span ng-show="dataset['rdfs:label']['@required']" style="color: red">*</span>
                             <div class="pull-right">
-                                <span  popover-placement="right" class="help-button"  popover="{{dataset['rdfs:label']['@label']}}" >?</span>
+                                <a class="desc2" target="_blank" href='"http://www.w3.org/2000/01/rdf-schema#label'> rdfs:label </a>
+                                <span  popover-placement="bottom" class="help-button"  popover="{{dataset['rdfs:label']['@label']}}" >?</span>
                             </div>
-                            <a style="float: right; margin-right: 0px;" target="_blank" href='"http://www.w3.org/2000/01/rdf-schema#label'> rdfs:label </a>
                             <br>
                             <input ng-init="iName='rdfsLabel'"
-                                   ng-required="dataset['rdfs:label']['@required']"
                                    style="width: 100%;"
                                    class="input"
                                    type="text"
                                    name="rdfsLabel"
                                    id="rdfsLabel"
-                                   ng-model="dataset['rdfs:label']['@value'][selectedLanguage]"
-                                   popover-trigger="none"
-                                   popover-placement="bottom"
-                                   popover-title="{{popovers.dynamicPopover.title}}"
-                                   popover-template="preparePopover('warningPopover', formDataset.rdfsLabel)"
-                                   popover-is-open="showAsInvalid(formDataset.rdfsLabel)">
-                            <br>
+                                   ng-model="dataset['rdfs:label']"
+                                   dataid-model="selectedLanguage">
+                            <div style="display: inline-block;"><ng-messages ng-messages-include="messagesTemplate" for="formDataset.rdfsLabel.$error"></ng-messages></div>
                         </div>
                         <div ng-controller="PopoverCtrl">
                             <label for="keywords">Keywords (English)</label> <span ng-show="dataset['dcat:keyword']['@required']" style="color: red">*</span>
                             <div class="pull-right">
-                                <span  popover-placement="right" class="help-button"  popover="{{dataset['dcat:keyword']['@label']}}" >?</span>
+                                <a class="desc2" target="_blank" href='http://www.w3.org/TR/vocab-dcat/keywords'> dcat:keyword </a>
+                                <span  popover-placement="bottom" class="help-button"  popover="{{dataset['dcat:keyword']['@label']}}" >?</span>
                             </div>
-                            <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/vocab-dcat/keywords'> dcat:keyword </a>
                             <br>
-                            <div ng-init="iName='keywords'"
-                                 popover-trigger="none"
-                                 popover-placement="bottom"
-                                 popover-title="{{popMap.keywords.title}}"
-                                 popover-template="preparePopover('warningPopover', formDataset.keywords)"
-                                 popover-is-open="showAsInvalid(formDataset.keywords)">
+                            <div ng-init="iName='keywords'">
                                 <input class="input"
                                        data-role="tagsinput"
-                                       ng-required="dataset['dcat:keyword']['@required']"
                                        placeholder="       "
                                        type="text"
                                        id="keywords"
                                        name="keywords"
                                        style="width: 100%;"
-                                       ng-model="dataset['dcat:keyword']['@value']"
-                                       ng-list="/,|\./">
+                                       dataid-model
+                                       ng-model="dataset['dcat:keyword']">
+                                <div style="display: inline-block;"><ng-messages ng-messages-include="messagesTemplate" for="formDataset.keywords.$error"></ng-messages></div>
                             </div>
                         </div>
                     </div>
@@ -165,46 +141,35 @@
                         <div ng-controller="PopoverCtrl">
                             <label for="landingPage">Landing Page</label> <span ng-show="dataset['dcat:landingPage']['@required']" style="color: red">*</span>
                             <div class="pull-right">
-                                <span  popover-placement="right" class="help-button"  popover="{{dataset['dcat:landingPage']['@label']}}" >?</span>
+                                <a class="desc2" target="_blank" href='http://www.w3.org/TR/vocab-dcat/media_type'> dcat:landingPage </a>
+                                <span  popover-placement="bottom" class="help-button"  popover="{{dataset['dcat:landingPage']['@label']}}" >?</span>
                             </div>
-                            <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/vocab-dcat/media_type'> dcat:landingPage </a>
                             <br>
-                            <input uri
-                                   ng-required="dataset['dcat:landingPage']['@required']"
-                                   style="width: 100%;"
+                            <input style="width: 100%;"
                                    ng-init="iName='landingPage'"
                                    class="input"
                                    type="text"
                                    id="landingPage"
                                    name="landingPage"
-                                   ng-model="dataset['dcat:landingPage']['@id']"
-                                   popover-trigger="none"
-                                   popover-placement="bottom"
-                                   popover-title="{{popMap[iName].title}}"
-                                   popover-template="preparePopover('warningPopover', formDataset.landingPage)"
-                                   popover-is-open="showAsInvalid(formDataset.landingPage)">
+                                   ng-model="dataset['dcat:landingPage']"
+                                   dataid-model>
+                            <div style="display: inline-block;"><ng-messages ng-messages-include="messagesTemplate" for="formDataset.landingPage.$error"></ng-messages></div>
                         </div>
-                        <br>
                         <div ng-controller="PopoverCtrl">
                             <label for="agentSelect">Associated Agents</label> <span ng-show="dataset['dataid:associatedAgent']['@required']" style="color: red">*</span>
                             <div class="pull-right">
-                                <span  popover-placement="right" class="help-button"  popover="{{dataset['dataid:associatedAgent']['@label']}}" >?</span>
+                                <a class="desc2" target="_blank" href='http://dataid.dbpedia.org/ns/core#associatedAgent'> dataid:associatedAgent </a>
+                                <span  popover-placement="bottom" class="help-button"  popover="{{dataset['dataid:associatedAgent']['@label']}}" >?</span>
                             </div>
-                            <a style="float: right; margin-right: 0px;" target="_blank" href='http://dataid.dbpedia.org/ns/core#associatedAgent'> dataid:associatedAgent </a>
                             <br>
                             <div id="agentSelectWrapper"
-                                 style="display: table;"
-                                 ng-init="iName='agentSelect'"
-                                 popover-trigger="none"
-                                 popover-placement="bottom"
-                                 popover-title="{{popMap.agentSelect.title}}"
-                                 popover-template="preparePopover('warningPopover', formDataset.agentSelect)"
-                                 popover-is-open="showAsInvalid(formDataset.agentSelect)">
+                                 style="display: table;">
                                 <select class="btn-success"
                                         style="display:table-cell; width: 100%;"
                                         id="agentSelect"
                                         name="agentSelect"
-                                        ng-model="dataset['dataid:associatedAgent']['@value']"
+                                        ng-model="dataset['dataid:associatedAgent']"
+                                        dataid-model
                                         ng-options="agent['@id'] as agent['dataid:agentName']['@value'] for agent in agents"
                                         multiple
                                         multiselectdropdown="agents"
@@ -214,12 +179,13 @@
 
                                 </select>
                             </div>
+                            <div style="display: inline-block;"><ng-messages ng-messages-include="messagesTemplate" for="formDataset.agentSelect.$error"></ng-messages></div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <div ng-include="'licenseInclude.html'"></div>
+                <div ng-include="'licenseInclude.html'" ng-init="formVar='formDataset'"></div>
                 <div class="panel panel-primary">
                     <div ng-init="clicked='on'"></div>
                     <div class="panel-heading">
@@ -229,26 +195,18 @@
                         <div ng-controller="PopoverCtrl">
                             <label for="distSelect">Distributions & Endpoints</label> <span ng-show="dataset['dcat:distribution']['@required']" style="color: red">*</span>
                             <div class="pull-right">
-                                <span  class="help-button"
-                                       popover-placement="left"
-                                       popover="{{dataset['dcat:distribution']['@label']}}" >
-                                    ?
-                                </span>
+                                <a class="desc2" target="_blank" href='http://www.w3.org/TR/vocab-dcat/distribution'> dcat:distribution </a>
+                                <span  class="help-button" popover-placement="bottom" popover="{{dataset['dcat:distribution']['@label']}}" >?</span>
                             </div>
-                            <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/vocab-dcat/distribution'> dcat:distribution </a>
                             <br>
                             <div id="distSelectWrapper"
-                                 style="display: table;"
-                                 ng-init="iName='distSelect'"
-                                 popover-trigger="none"
-                                 popover-placement="bottom"
-                                 popover-title="{{popMap.distSelect.title}}"
-                                 popover-template="preparePopover('warningPopover', formDataset.distSelect)"
-                                 popover-is-open="showAsInvalid(formDataset.distSelect)">
+                                 style="display: table;">
                                 <select  class="btn-success"
                                          style="display:table-cell; width: 100%;"
-                                         id="distSelect" name="distSelect"
-                                         ng-model="dataset['dcat:distribution']['@value']"
+                                         id="distSelect"
+                                         name="distSelect"
+                                         ng-model="dataset['dcat:distribution']"
+                                         dataid-model
                                          ng-options="distr['@id'] as distr['dc:title']['@value'] for distr in distributions"
                                          multiple
                                          multiselectdropdown="distributions"
@@ -257,29 +215,32 @@
                                          multiselectvalidate>
                                 </select>
                             </div>
+                            <div style="display: inline-block;"><ng-messages ng-messages-include="messagesTemplate" for="formDataset.distSelect.$error"></ng-messages></div>
                             <br>
                         </div>
                         <div ng-controller="PopoverCtrl">
                             <label for="rootSelect">Root Resource</label>
                             <span ng-show="dataset['void:rootResource']['@required']" style="color: red">*</span>
                             <div class="pull-right">
-                                <span  popover-placement="left" class="help-button"  popover="{{dataset['void:rootResource']['@label']}}" >?</span>
+                                <a class="desc2" target="_blank" href='http://www.w3.org/TR/void/rootResource'> void:rootResource </a>
+                                <span  popover-placement="bottom" class="help-button"  popover="{{dataset['void:rootResource']['@label']}}" >?</span>
                             </div>
-                            <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/void/rootResource'> void:rootResource </a>
                             <br>
                             <div style="width: 100%;">
                                 <select class="btn-success"
                                         style="width: 100%;"
                                         id="rootSelect"
                                         name="rootSelect"
-                                        ng-model="dataset['void:rootResource']['@id']"
+                                        ng-model="dataset['void:rootResource']"
+                                        dataid-model
                                         ng-options="distr for distr in dataset['dcat:distribution']['@value']"
-                                        multiselectdropdown="dataset['dcat:distribution']['@value']"
+                                        multiselectdropdown="dataset['void:rootResource']['@value']"
                                         multiselectplaceholder="select a root resource">
 
                                 </select>
                             </div>
-                            </div>
+                            <div style="display: inline-block;"><ng-messages ng-messages-include="messagesTemplate" for="formDataset.rootSelect.$error"></ng-messages></div>
+                        </div>
                     </div>
                 </div>
                 <div ng-show="addPropsChecked">
@@ -291,98 +252,77 @@
                             <div ng-controller="PopoverCtrl">
                                 <label for="dTriples">Triples</label> <span ng-show="dataset['void:triples']['@required']" style="color: red">*</span>
                                 <div class="pull-right">
-                                    <span  popover-placement="left" class="help-button"  popover="{{dataset['void:triples']['@label']}}" >?</span>
+                                    <a class="desc2" target="_blank" href='http://www.w3.org/TR/void/triples'> void:triples </a>
+                                    <span  popover-placement="bottom" class="help-button"  popover="{{dataset['void:triples']['@label']}}" >?</span>
                                 </div>
-                                <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/void/triples'> void:triples </a>
                                 <br>
-                                    <input ng-required="dataset['void:triples']['@required']"
-                                           ng-init="iName='dTriples'" style="width: 100%;"
-                                           integer
+                                    <input ng-init="iName='dTriples'" style="width: 100%;"
                                            class="input"
                                            type="text"
                                            id="dTriples"
                                            name="dTriples"
-                                           ng-model="dataset['void:triples']['@value']"
-                                           popover-trigger="none"
-                                           popover-placement="bottom"
-                                           popover-title="{{popMap[iName].title}}"
-                                           popover-template="preparePopover('warningPopover', formDataset.dTriples)"
-                                           popover-is-open="showAsInvalid(formDataset.dTriples)">
+                                           ng-model="dataset['void:triples']"
+                                           dataid-model>
+                                <div style="display: inline-block;"><ng-messages ng-messages-include="messagesTemplate" for="formDataset.dTriples.$error"></ng-messages></div>
                             </div>
                             <br>
                             <div ng-controller="PopoverCtrl">
                                 <label for="entries">Number of Entries</label> <span ng-show="dataset['void:entities']['@required']" style="color: red">*</span>
                                 <div class="pull-right">
-                                    <span  popover-placement="left" class="help-button"  popover="{{dataset['void:entities']['@label']}}" >?</span>
+                                    <a class="desc2" target="_blank" href='"http://www.w3.org/TR/void/entities'> void:entities </a>
+                                    <span  popover-placement="bottom" class="help-button"  popover="{{dataset['void:entities']['@label']}}" >?</span>
                                 </div>
-                                <a style="float: right; margin-right: 0px; width: 100%;" target="_blank" href='"http://www.w3.org/TR/void/entities'> void:entities </a>
                                 <br>
-                                <input ng-required="dataset['void:entities']['@required']"
-                                       ng-init="iName='entries'"
+                                <input ng-init="iName='entries'"
                                        style="width: 100%;"
-                                       integer
                                        class="input"
                                        type="text"
                                        id="entries"
                                        name="entries"
-                                       ng-model="dataset['void:entities']['@value']"
-                                       popover-trigger="none"
-                                       popover-placement="bottom"
-                                       popover-title="{{popMap[iName].title}}"
-                                       popover-template="preparePopover('warningPopover', formDataset.entries)"
-                                       popover-is-open="showAsInvalid(formDataset.entries)">
+                                       ng-model="dataset['void:entities']"
+                                       dataid-model>
+                                <div style="display: inline-block;"><ng-messages ng-messages-include="messagesTemplate" for="formDataset.entries.$error"></ng-messages></div>
                             </div>
                             <br>
                             <div ng-controller="PopoverCtrl">
                                 <label for="classes">Number of Classes</label> <span ng-show="dataset['void:classes']['@required']" style="color: red">*</span>
                                 <div class="pull-right">
-                                    <span  popover-placement="left" class="help-button"  popover="{{dataset['void:classes']['@label']}}" >?</span>
+                                    <a class="desc2" target="_blank" href='"http://www.w3.org/TR/void/classes'> void:classes </a>
+                                    <span  popover-placement="bottom" class="help-button"  popover="{{dataset['void:classes']['@label']}}" >?</span>
                                 </div>
-                                <a style="float: right; margin-right: 0px; width: 100%;" target="_blank" href='"http://www.w3.org/TR/void/classes'> void:classes </a>
                                 <br>
-                                <input ng-required="dataset['void:classes']['@required']"
-                                       ng-init="iName='classes'"
+                                <input ng-init="iName='classes'"
                                        style="width: 100%;"
-                                       integer
                                        class="input"
                                        type="text"
                                        id="classes"
                                        name="classes"
-                                       ng-model="dataset['void:classes']['@value']"
-                                       popover-trigger="none"
-                                       popover-placement="bottom"
-                                       popover-title="{{popMap[iName].title}}"
-                                       popover-template="preparePopover('warningPopover', formDataset.classes)"
-                                       popover-is-open="showAsInvalid(formDataset.classes)">
+                                       ng-model="dataset['void:classes']"
+                                       dataid-model>
+                                <div style="display: inline-block;"><ng-messages ng-messages-include="messagesTemplate" for="formDataset.classes.$error"></ng-messages></div>
                             </div>
                             <br>
                             <div ng-controller="PopoverCtrl">
                                 <label for="distinctObjects">Number of distinct Objects</label> <span ng-show="dataset['void:distinctObjects']['@required']" style="color: red">*</span>
                                 <div class="pull-right">
-                                    <span  popover-placement="left" class="help-button"  popover="{{dataset['void:distinctObjects']['@label']}}" >?</span>
+                                    <a class="desc2" target="_blank" href='"http://www.w3.org/TR/void/distinctObjects'> void:distinctObjects </a>
+                                    <span  popover-placement="bottom" class="help-button"  popover="{{dataset['void:distinctObjects']['@label']}}" >?</span>
                                 </div>
-                                <a style="float: right; margin-right: 0px; width: 100%;" target="_blank" href='"http://www.w3.org/TR/void/distinctObjects'> void:distinctObjects </a>
                                 <br>
-                                <input ng-required="dataset['void:distinctObjects']['@required']"
-                                       ng-init="iName='distinctObjects'"
+                                <input ng-init="iName='distinctObjects'"
                                        style="width: 100%;"
-                                       integer
                                        class="input"
                                        type="text"
                                        id="distinctObjects"
                                        name="distinctObjects"
-                                       ng-model="dataset['void:distinctObjects']['@value']"
-                                       popover-trigger="none"
-                                       popover-placement="bottom"
-                                       popover-title="{{popMap[iName].title}}"
-                                       popover-template="preparePopover('warningPopover', formDataset.distinctObjects)"
-                                       popover-is-open="showAsInvalid(formDataset.distinctObjects)">
+                                       ng-model="dataset['void:distinctObjects']"
+                                       dataid-model>
+                                <div style="display: inline-block;"><ng-messages ng-messages-include="messagesTemplate" for="formDataset.distinctObjects.$error"></ng-messages></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div ng-init="init()"/>
         </div>
     </div>
     <div class="modal-footer">
@@ -394,3 +334,4 @@
         <!--ng-click="formDataset.$valid && ok()"-->
     </div>
 </form>
+<div ng-init="init()"/>

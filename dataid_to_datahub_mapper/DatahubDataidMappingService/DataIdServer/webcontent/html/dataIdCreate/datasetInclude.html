@@ -1,4 +1,4 @@
-        <div style="" class="row">
+<div style="" class="row">
     <div class="col-md-6">
         <div class="panel panel-primary">
             <div ng-init="clicked='on'"></div>
@@ -37,6 +37,23 @@
                 <a style="float: right; margin-right: 0px;" target="_blank" href='http://www.w3.org/TR/vocab-dcat/keywords'> dcat:keyword </a>
                 <br>
                 <input class="input" data-role="tagsinput" placeholder="      " type="text" id="keywords" style="width: 100%;" ng-model="dataset['dcat:keyword']" ng-list="/,|\./">
+                <br>
+                <a style="float: right; margin-right: 0px;" target="_blank" href='http://dataid.dbpedia.org/ns/core#associatedAgent'> dataid:associatedAgent </a>
+                <br>
+                <div style="display: table;">
+                    <select class="btn-success"
+                            style="display:table-cell; width: 100%;"
+                            id="dsLangSelect"
+                            name="dsLangSelect"
+                            ng-model="dataset['dc:language']['@value']"
+                            ng-options="lang.code.value as lang.lang.value for lang in languages"
+                            multiple
+                            multiselectdropdown="languages"
+                            multiselectprefix="languges of dataset: "
+                            multiselectidtag="code">
+
+                    </select>
+                </div>
             </div>
         </div>
         <div class="panel panel-primary">
@@ -63,7 +80,16 @@
                 <a style="float: right; margin-right: 0px;" target="_blank" href='http://dataid.dbpedia.org/ns/core#associatedAgent'> dataid:associatedAgent </a>
                 <br>
                 <div style="display: table;">
-                    <select class="btn-success" style="display:table-cell; width: 100%;"  id="agentSelect" name="agentSelect" ng-model="dataset['dataid:associatedAgent']['@value']" ng-options="agent['@id'] as agent['dataid:agentName']['@value'] for agent in agents" multiple multiselectdropdown="agents" addfunction="openagent('Agent')" addlabel="new Agent"></select>
+                    <select class="btn-success"
+                            style="display:table-cell; width: 100%;"
+                            id="agentSelect"
+                            name="agentSelect"
+                            ng-model="dataset['dataid:associatedAgent']['@value']"
+                            ng-options="agent['@id'] as agent['dataid:agentName']['@value'] for agent in agents"
+                            multiple multiselectdropdown="agents"
+                            addfunction="openagent('Agent')"
+                            addlabel="new Agent">
+                    </select>
                 </div>
             </div>
         </div>

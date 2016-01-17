@@ -1,13 +1,19 @@
 package org.aksw.dataid.datahub.propertymapping;
 
 import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.github.jsonldjava.core.JsonLdError;
 import com.github.jsonldjava.core.JsonLdOptions;
 import com.github.jsonldjava.core.JsonLdProcessor;
 import com.github.jsonldjava.utils.JsonUtils;
+import org.aksw.dataid.config.DataIdConfig;
+import org.aksw.dataid.datahub.jsonobjects.DatahubError;
 import org.aksw.dataid.datahub.jsonobjects.Dataset;
+import org.aksw.dataid.datahub.jsonobjects.DatasetRelationship;
+import org.aksw.dataid.datahub.jsonobjects.ValidCkanResponse;
 import org.aksw.dataid.datahub.mappingobjects.DataId;
 import org.aksw.dataid.config.MappingConfig;
+import org.aksw.dataid.datahub.restclient.CkanRestClient;
 import org.aksw.dataid.errors.DataHubMappingException;
 import org.aksw.dataid.errors.DataIdInputException;
 import org.aksw.dataid.jsonutils.RdfXmlParser;
@@ -66,13 +72,13 @@ public class DataIdProcesser
 	{
 		Object result =null;
 		result = JsonLdProcessor.fromRDF(sourceId, opt);
-		result = JsonLdProcessor.compact(result, mappings.getRdfContext().getMap(), opt);
+		result = JsonLdProcessor.compact(result, StaticContent.getRdfContext().getMap(), opt);
 		return buildDataId(result);
 	}
 
 	private DataId buildDataId(Object result) {
 		DataId id = new DataId();
-		id.setRdfContext(this.mappings.getRdfContext());
+		id.setRdfContext(StaticContent.getRdfContext());
         id.setDataIdBody((List<LinkedHashMap<String, Object>>) ((Map<String, Object>) result).get("@graph"));
 		return id;
 	}
@@ -124,26 +130,97 @@ public class DataIdProcesser
         opt.setCompactArrays(true);
         Object result =null;
         result = JsonUtils.fromString(sourceId);
-        return buildDataId(JsonLdProcessor.compact(result, this.mappings.getRdfContext(), opt));
+        return buildDataId(JsonLdProcessor.compact(result, StaticContent.getRdfContext(), opt));
     }
 
-/*    private DataidInput getInputType(String testString)
+    private List<Dataset> createDatahubDatasets(final CkanRestClient client, final String organization, final String dataid, final String excemptions, final boolean isprivate)
+            throws DataHubMappingException, IOException, DatahubError, DataIdInputException
     {
-        String test = testString.trim();
-        if(!test.contains(DataIdConfig.getDataIdUri()))  //!not!
-            return DataidInput.NoDataId;
-        else if(StaticJsonHelper.isJsonLdValid(test))
-            return DataidInput.JsonLd;
-        else if(StaticJsonHelper.isTurtleValid(test))
-            return DataidInput.Turtle;
-        else if(StaticJsonHelper.isNquadValid(test))
-            return DataidInput.Nquads;
-        else if(test.replace(" ", "").contains("rdf:resource=\"" + DataIdConfig.getDataIdUri() + "\""))
-            return DataidInput.RdfXml;
-        return DataidInput.NoDataId;
-    }*/
+        List<String> exemptionList = Arrays.asList(excemptions.replace(" ","").split(","));
+        List<Dataset> sets = new ArrayList<>();
+        for (Dataset set : parseToDataHubDataset(dataid)) {
+            if(exemptionList.contains(set.getDataIdUri().trim()))
+                continue;
+            String owner_org = client.GetOrganizationId(organization);
+            set.setOwner_org(owner_org);
+            set.setPrivate(isprivate);
+            sets.add(set);
+        }
+        return sets;
+    }
+
+    public List<Dataset> PublishDatasets(String organization, String apiKey, String excemptions, boolean isprivate, String dataid) throws DatahubError, DataIdInputException, DataHubMappingException {
+        try(CkanRestClient client = createCkanRestClient(apiKey))
+        {
+            List<Dataset> sets = createDatahubDatasets(client, organization, dataid, excemptions, isprivate);
+
+            if(sets == null || sets.size() == 0)
+                throw new DatahubError("no datasets found");
+
+            //publish all sets
+            HashMap<Dataset, DatahubError> erroniousResponseMap = insertDatasets(client, sets);
+            //post child/parent relationships
+            if(erroniousResponseMap.size() == 0)
+                updateRelationships(client, sets);
+
+            return sets;
+        } catch (IOException e) {
+            throw new DatahubError(e);
+        }
+    }
+
+    private HashMap<Dataset, DatahubError> insertDatasets(CkanRestClient client, List<Dataset> sets) throws IOException, DatahubError {
+        HashMap<Dataset, DatahubError> erroniousResponseMap = new HashMap<>();
+        for(Dataset set : sets) {
+            ValidCkanResponse ckanRes=null;
+            Dataset zw = client.GetDataset(set.getName());
+            String dataHubDataIdIdentifier = DataIdConfig.get("datahubOwnerDataId");
+            if (zw != null && zw.getOwner_org().equals(dataHubDataIdIdentifier))
+                ckanRes = client.UpdateDataset(set);
+            else
+                ckanRes = client.CreateDataset(set);
+            if(ckanRes instanceof DatahubError)
+                erroniousResponseMap.put(set, (DatahubError) ckanRes);
+        }
+        return erroniousResponseMap;
+    }
+
+    private void updateRelationships(CkanRestClient client, List<Dataset> sets) throws IOException, DatahubError {
+        for(Dataset set : sets) {
+            for(String subset : set.getSubsets())
+            {
+                for(Dataset sub : sets)
+                {
+                    if(sub.getDataIdUri().trim().equals(subset.trim()))
+                    {
+                        DatasetRelationship rel = new DatasetRelationship();
+                        rel.setSubject(set.getName());
+                        rel.setObject(sub.getName());
+                        rel.setType("parent_of");
+                        rel.setComment("void:subset");
+                        client.UpdateDatasetRelationship(rel);
+                    }
+                }
+            }
+        }
+    }
 
     public MappingConfig getMappings() {
         return mappings;
+    }
+
+    public CkanRestClient createCkanRestClient(String apiKey) {
+        String dataHubUrl = DataIdConfig.get("datahubActionUri");
+        int timeout = Integer.parseInt(DataIdConfig.get("ckanTimeOut"));
+        Map<String, String> actions = new HashMap<String, String>();
+        Iterator<Map.Entry<String, JsonNode>> i = DataIdConfig.getActionMap();
+        for(Map.Entry<String, JsonNode> key; i.hasNext();)
+        {
+            key = i.next();
+            actions.put(key.getKey(), key.getValue().asText());
+        }
+
+        CkanRestClient client = new CkanRestClient(dataHubUrl, apiKey, actions, timeout);
+        return client;
     }
 }

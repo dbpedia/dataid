@@ -124,6 +124,15 @@ function getContext()
     return c;
 }
 
+function uniqueArray(array1, array2)
+{
+    for(var i =0; i < array1.length; i++)
+        for(var j = array2.length-1; j >= 0; j--)
+            if(array1[i] == array2[j])
+                array2.splice(j, 1);
+    return array1.concat(array2);
+}
+
 function getEmptyDataId(id) {
     var dataid = {
         "@graph": [{
@@ -160,7 +169,7 @@ function getEmptyDataId(id) {
                 "@type":["dataid:Dataset"]
             },
             "dc:description": {
-                "@required": false,
+                "@required": true,
                 "@label":"a useful description",
                 "@language": null,
                 "@value": {}
@@ -375,7 +384,7 @@ function getEmptyDistribution(id, parentId, types)
 {
     var distr = {
         "@id": id,
-        "@type": [].concat(types),
+        "@type": uniqueArray(['dataid:Distribution'], types),
         "@parent": parentId,
         "@pristine": true,
         "dc:description": {
@@ -473,7 +482,7 @@ function getEmptyDistribution(id, parentId, types)
             "@value": null
         },
         "dataid:associatedAgent": {
-            "@required": false,
+            "@required": true,
             "@label":"some agent generally connected to the dataset",
             "@type":["dataid:Agent"],
             "@value": []
@@ -536,7 +545,7 @@ function getEmptyLinkset(id)
 function getEmptyAgent(id, type){
     var agent = {
         "@id": id,
-        "@type": ["dataid:Agent"].concat(type),
+        "@type": uniqueArray(["dataid:Agent"], type),
         "@pristine": true,
         "dataid:agentMail": {
             "@required": true,
@@ -557,10 +566,10 @@ function getEmptyAgent(id, type){
             "@value": "A name"
         },
         "dataid:agentUrl" : {
+            "@id": null,
             "@required": false,
             "@label":"landing page associated with an agent",
-            "@type":["xsd:string"],
-            "@value": null
+            "@type":["xsd:string"]
         },
         "dataid:agentRole" : {
             "@required": false,

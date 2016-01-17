@@ -1,60 +1,38 @@
 <div ng-if="isOfTypeS(dataSet, 'dataid:Dataset')">
-    <a class="label label-xlg label-info"
-       href
-       ng-click="changeSubset(dataSet)">
+    <div class="label label-xlg label-info tree-item popoverButton"
+       popover-title="Dataset Options"
+       popover-placement="right"
+       popover-template="popovers.datasetPopover.templateUrl"
+       popover-append-to-body='true'
+       popover-trigger="click"
+       ng-click="popovers.datasetPopover.datasetId = dataSet['@id'];">
         <i class="glyphicon glyphicon-folder-open"></i>
-        &nbsp;&nbsp;{{dataSet['dc:title']['@value']}}
-    </a>
-    <div class="pull-right" >
-        <div class="label label-menu label-info popoverButton"
-             popover-title="Dataset Options"
-             popover-placement="right"
-             popover-template="popovers.datasetPopover.templateUrl"
-             popover-append-to-body='true'
-             popover-trigger="click"
-             ng-click="popovers.datasetPopover.datasetId = dataSet['@id'];">
-            <i class="glyphicon glyphicon-menu-hamburger"></i>
-        </div>
+        &nbsp;&nbsp;{{dataSet['dc:title']['@value'].length > 44 ? (dataSet['dc:title']['@value'].substr(0, 43) + '...') : dataSet['dc:title']['@value']}}
     </div>
 </div>
 <div ng-if="isOfTypeS(dataSet, 'void:DatasetDescription')">
-        <a class="label label-xlg label-success"
-           href=""
-           ng-click="changeSubset(dataSet)">
+        <div class="label label-xlg label-success tree-item popoverButton"
+           popover-title="Options"
+           popover-placement="right"
+           popover-template="popovers.dataidPopover.templateUrl"
+           popover-append-to-body='true'
+           popover-trigger="click"
+           ng-click="popovers.dataidPopover.id = dataSet['@id'];">
             <i class="glyphicon glyphicon-book"></i>
-            &nbsp;&nbsp;{{dataSet['dc:title']['@value']}}</a>
-    <div class="pull-right">
-        <div class="label label-menu label-info popoverButton"
-             popover-title="Options"
-             popover-placement="right"
-             popover-template="popovers.dataidPopover.templateUrl"
-             popover-append-to-body='true'
-             popover-trigger="click"
-             ng-click="popovers.dataidPopover.id = dataSet['@id'];">
-            <i class="glyphicon glyphicon-menu-hamburger"></i>
+            &nbsp;&nbsp;{{dataSet['dc:title']['@value'].length > 46 ? (dataSet['dc:title']['@value'].substr(0, 45) + '...') : dataSet['dc:title']['@value']}}
         </div>
-    </div>
 </div>
 <div ng-if="isOfTypeS(dataSet, 'dataid:Distribution')">
-    <span>
-        <a class="label label-xlg label-default"
-           href=""
-           ng-click="changeSubset(dataSet)">
+        <div class="label label-xlg label-default tree-item popoverButton"
+           popover-title="Options"
+           popover-placement="right"
+           popover-template="popovers.distrPopover.templateUrl"
+           popover-append-to-body='true'
+           popover-trigger="click"
+           ng-click="popovers.distrPopover.distrId = dataSet['@id'];">
             <i class="glyphicon glyphicon-file"></i>
-            &nbsp;&nbsp;{{dataSet['dc:title']['@value']}}
-        </a>
-    </span>
-    <div class="pull-right">
-        <div class="label label-menu label-info popoverButton"
-             popover-title="Options"
-             popover-placement="right"
-             popover-template="popovers.distrPopover.templateUrl"
-             popover-append-to-body='true'
-             popover-trigger="click"
-             ng-click="popovers.distrPopover.distrId = dataSet['@id'];">
-            <i class="glyphicon glyphicon-menu-hamburger"></i>
+            &nbsp;&nbsp;{{dataSet['dc:title']['@value'].length > 42 ? (dataSet['dc:title']['@value'].substr(0, 419) + '...') : dataSet['dc:title']['@value']}}
         </div>
-    </div>
 </div>
 <div ng-init="parent=dataSet"></div>
 <ul>

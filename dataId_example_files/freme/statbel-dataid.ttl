@@ -47,9 +47,9 @@
         
 <http://data.freme-project.eu/datasets/statbel/dataid.ttl?subj=statbelContext>
         a                          dataid:AuthorityEntityContext ;
-        dataid:authorityAgentRole  dataid:Publisher ;
+        dataid:authorityAgentRole  dataid:Publisher, dataid:Maintainer ;
         dataid:authorizedAgent     <http://statbel.fgov.be> ;
-        dataid:authorizedFor       <http://data.freme-project.eu/datasets/orcid/dataid.ttl?set=statbel-raw-dataset> ;
+        dataid:authorizedFor       <http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-raw-house-price-index-dataset>, <http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-employment-unemployment-raw-dataset>, <http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-unemployment-raw-dataset> ;
         dataid:isInheritable       true .
         
 <http://statbel.fgov.be>

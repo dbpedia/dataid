@@ -1,28 +1,20 @@
 
 package org.aksw.dataid.datahub.mappingservice;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.sun.jersey.api.container.grizzly2.GrizzlyServerFactory;
 import com.sun.jersey.api.core.PackagesResourceConfig;
 import com.sun.jersey.api.core.ResourceConfig;
 import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.mappingprovider.CorsSupportProvider;
 import org.aksw.dataid.datahub.mappingprovider.DataIdInputExceptionProvider;
-import org.aksw.dataid.datahub.restclient.CkanRestClient;
-import org.aksw.dataid.virtuoso.VirtuosoDataIdDelta;
 import org.aksw.dataid.virtuoso.VirtuosoDataIdGraph;
 import org.glassfish.grizzly.http.server.HttpServer;
-import org.glassfish.grizzly.http.server.NetworkListener;
 import org.glassfish.grizzly.http.server.StaticHttpHandler;
 
 import javax.ws.rs.core.UriBuilder;
 import java.io.IOException;
 import java.net.URI;
 import java.sql.SQLException;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 
 
 public class Main {
@@ -30,20 +22,6 @@ public class Main {
     private static VirtuosoDataIdGraph graph;
     private static HttpServer httpServer;
 
-    public static CkanRestClient CreateCkanRestClient(String apiKey) {
-		String dataHubUrl = DataIdConfig.get("datahubActionUri");
-		int timeout = Integer.parseInt(DataIdConfig.get("ckanTimeOut"));
-		Map<String, String> actions = new HashMap<String, String>();
-		Iterator<Map.Entry<String, JsonNode>> i = DataIdConfig.getActionMap();
-		for(Map.Entry<String, JsonNode> key; i.hasNext();)
-		{
-			key = i.next();
-			actions.put(key.getKey(), key.getValue().asText());
-		}
-		
-		CkanRestClient client = new CkanRestClient(dataHubUrl, apiKey, actions, timeout);
-		return client;
-	}
 	
     private static int getPort(int defaultPort) {
         //grab port from environment, otherwise fall back to default port 9998
