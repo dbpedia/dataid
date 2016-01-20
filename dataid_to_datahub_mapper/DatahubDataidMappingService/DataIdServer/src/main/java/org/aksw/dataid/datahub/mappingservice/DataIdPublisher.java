@@ -3,7 +3,9 @@ package org.aksw.dataid.datahub.mappingservice;
 import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.jsonobjects.DatahubError;
 import org.aksw.dataid.datahub.jsonobjects.Dataset;
+import org.aksw.dataid.datahub.jsonobjects.ValidCkanResponse;
 import org.aksw.dataid.errors.DataIdInputException;
+import org.aksw.dataid.errors.DataIdServiceException;
 import org.aksw.dataid.jsonutils.StaticJsonHelper;
 import org.aksw.dataid.errors.DataHubMappingException;
 import org.aksw.dataid.datahub.propertymapping.DataIdProcesser;
@@ -107,6 +109,19 @@ public class DataIdPublisher
         }
     }
 
+    @POST
+    @Path("/deletefromdatahub")
+    public String DeleteFromDatahub(
+            @QueryParam(value = "apikey") final String apiKey,
+            final String dataid) throws DataIdServiceException {
+
+        String res = checkParameters(apiKey, dataid);
+        if(res != null)
+            return res;
+
+        return addHtmlBody(produceHttpResponse(proc.DeleteDatasets(apiKey, dataid)));
+    }
+
 	@POST
 	@Path("/publishtodatahub")
 	public String PublishToDatahub(
@@ -114,15 +129,22 @@ public class DataIdPublisher
 			@QueryParam(value = "apikey") final String apiKey,
             @DefaultValue("") @QueryParam(value = "excemptions") final String excemptions,
 			@DefaultValue("false") @QueryParam(value = "isprivate") final boolean isprivate,
-			final String dataid) throws DataIdInputException, DatahubError, DataHubMappingException {
+			final String dataid) throws DataIdServiceException {
+
+
 
         String res = checkParameters(organization, apiKey, dataid);
         if(res != null)
             return res;
 
-        return addHtmlBody(produceHttpResponse(proc.PublishDatasets(organization, apiKey, excemptions, isprivate, dataid)));
+
+        return addHtmlBody(produceHttpResponse(proc.PublishDatasets(apiKey, excemptions, isprivate, dataid)));
     }
 
+    private String checkParameters(final String apiKey, final String dataid)
+    {
+        return checkParameters("dataid", apiKey, dataid);
+    }
     private String checkParameters(final String organization, final String apiKey, final String dataid)
 	{
 		if(apiKey == null)
@@ -134,12 +156,20 @@ public class DataIdPublisher
 		return null;
 	}
 
-    private String produceHttpResponse(Iterable<Dataset> sets)
+    private String produceHttpResponse(ValidCkanResponse... sets)
     {
         String html = "<p>all sets are deployed:";
 
-        for(Dataset set : sets)
-            html += "<p><a href=\"http://datahub.io/dataset/" + set.getName() + "\">http://datahub.io/dataset/" + set.getName() + "</a></p>";
+        for(int i =0; i < sets.length; i++) {
+            if(sets[i] instanceof Dataset) {
+                Dataset set = ((Dataset) sets[i]);
+                html += "<p><a href=\"http://datahub.io/dataset/" + set.getName() + "\">http://datahub.io/dataset/" + set.getName() + "</a></p>";
+            }
+            else {
+                DatahubError err = (DatahubError) sets[i];
+                html += "<p>An error (" + err.getType() + ") occurred: " + err.getMessage() + "</p>";
+            }
+        }
         return html + "</p>";
     }
 

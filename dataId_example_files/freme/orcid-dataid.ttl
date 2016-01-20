@@ -82,7 +82,7 @@
         dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;  
         dc:modified             "2015-09-15"^^xsd:date ;
         dc:title                "ORCID 2014 Dataset"@en ;
-        dcat:distribution       <http://data.freme-project.eu/datasets/orcid/dataid.ttl?set=orcid-dataset-single-dump> , <http://data.freme-project.eu/datasets/orcid/dataid.ttl?file=orcidSparql> , <http://data.freme-project.eu/datasets/orcid/dataid.ttl?dir=orcid-dataset-partitions-directory> ;
+        dcat:distribution       <http://data.freme-project.eu/datasets/orcid/dataid.ttl?file=orcid-dataset-single-dump>, <http://data.freme-project.eu/datasets/orcid/dataid.ttl?dir=orcid-dataset-partitions-directory>, <http://data.freme-project.eu/datasets/orcid/dataid.ttl?sparql=orcidSparql> ;
         dcat:keyword            "freme project"@en , "orcid"@en , "rdf"@en , "research"@en ;
         dcat:landingPage        <https://datahub.io/dataset/orcid-dataset> ;
         prov:wasDerivedFrom 	<http://data.freme-project.eu/datasets/orcid/dataid.ttl?set=orcid-raw-dataset>.

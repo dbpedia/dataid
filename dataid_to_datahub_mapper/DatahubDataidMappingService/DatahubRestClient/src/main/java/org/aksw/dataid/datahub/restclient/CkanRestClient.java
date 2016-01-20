@@ -18,6 +18,25 @@ import java.util.Map;
 
 public class CkanRestClient implements Closeable
 {
+    public enum CkanAction
+    {
+        GetDataset,
+        CreateDataset,
+        UpdateDataset,
+        DeleteDataset,
+        CreateResource,
+        UpdateResource,
+        DeleteResource,
+        GetRelationships,
+        UpdateDatasetRelationship,
+        CreateDatasetRelationship,
+        DeleteDatasetRelationship,
+        CreateUser,
+        UpdateUser,
+        DeleteUser,
+        GetOrganizationId
+    }
+
 	private String connectionUrl;
     private HttpURLConnection conn;
     private final ObjectMapper serializer = new ObjectMapper();
@@ -64,28 +83,8 @@ public class CkanRestClient implements Closeable
             response.setError(new DatahubError("An internal ckan server error occurred"));
             return response;
         }
-		response = (DatahubResponse<T>) deserializer.readValue(json, type);
-//		if(response.getError() != null)
-//			throw response.getError();
-		return response;
+		return (DatahubResponse<T>) deserializer.readValue(json, type);
 	}
-    
-    public ValidCkanResponse CreateDataset(Dataset set) throws IOException, DatahubError {
-    	//set.setName(set.getName().replace(" ", ""));
-    	//set.PrepareForParsing();
-    	JsonNode json = serializer.convertValue(set, JsonNode.class);
-    	String path = actionMap.get("CreateDataset");  
-    	return postJson(path, json.toString());
-    }
-    
-    public ValidCkanResponse UpdateDataset(Dataset set) throws IOException, DatahubError {
-    	//set.setName(set.getName().replace(" ", ""));
-    	//set.PrepareForParsing();
-    	JsonNode json = serializer.convertValue(set, JsonNode.class);
-    	String path = actionMap.get("UpdateDataset");  
-
-    	return postJson(path, json.toString());
-    }
     
     public String GetOrganizationId(String orgName) throws IOException, DatahubError
     {
@@ -112,19 +111,20 @@ public class CkanRestClient implements Closeable
 
     	return (List<DatasetRelationship>)returnObject.getResult();
     }
-    
-    public ValidCkanResponse CreateDatasetRelationship(DatasetRelationship orgRel) throws IOException, DatahubError {
-        JsonNode json = serializer.convertValue(orgRel, JsonNode.class);
-    	String path = actionMap.get("CreateDatasetRelationship");
-    	return postJson(path, json.toString());
-    }
 
-    public ValidCkanResponse UpdateDatasetRelationship(DatasetRelationship newRel) throws IOException, DatahubError {
-        JsonNode json = serializer.convertValue(newRel, JsonNode.class);
-        String path = actionMap.get("CreateDatasetRelationship");
+    public ValidCkanResponse GenericAction(CkanAction action, MappingObject set) throws IOException, DatahubError
+    {
+        JsonNode json = serializer.convertValue(set, JsonNode.class);
+        String path = actionMap.get(action.toString());
         return postJson(path, json.toString());
     }
-	
+
+    public ValidCkanResponse GenericAction(CkanAction action, String obj) throws IOException, DatahubError
+    {
+        String path = actionMap.get(action.toString());
+        return postJson(path, obj);
+    }
+
 	private ValidCkanResponse postJson(String path, String jsonData) throws IOException, DatahubError {
 		HttpURLConnection conn = this.getHttpConnection(path, HttpMethod.Post, normalTimeout);
 		OutputStream os = conn.getOutputStream();

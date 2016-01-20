@@ -12,6 +12,7 @@ import org.aksw.dataid.config.MappingConfig;
 import org.aksw.dataid.errors.DataHubMappingException;
 import org.aksw.dataid.config.RdfContext;
 import org.aksw.dataid.errors.DataIdInputException;
+import org.aksw.dataid.errors.DataIdServiceException;
 import org.aksw.dataid.statics.StaticContent;
 
 import java.io.IOException;
@@ -48,8 +49,7 @@ public class PropertyMapper
     	}
     }
     
-    private <E extends Map<String, Object>> E getObjectMapById(String id)
-    {
+    private <E extends Map<String, Object>> E getObjectMapById(String id) throws DataIdInputException {
     	if(id == null || currentId.getDataIdBody() != null)
     	{
     		for(DataIdBody.DataIdObject map : currentId.getDataIdBody().getBody())
@@ -60,11 +60,10 @@ public class PropertyMapper
     			}
     		}
     	}
-    	return null;
+        throw new DataIdInputException("An instance could not be found for this id: " + id);
     }
     
-    private <E extends Map<String, Object>> String followReferenceChain(List<String> chain, E context, MappingObject set)
-    {
+    private <E extends Map<String, Object>> String followReferenceChain(List<String> chain, E context, MappingObject set) throws DataIdInputException {
     	for (int i =0; i< chain.size();i++ )
     	{
     		if(i<chain.size()-1) {
@@ -82,8 +81,7 @@ public class PropertyMapper
     	return null;
     }
     
-    public List<Dataset> DataidToDatasets(DataId dataIdObject) throws DataHubMappingException, DataIdInputException
-    {
+    public List<Dataset> DataidToDatasets(DataId dataIdObject) throws DataIdServiceException {
     	currentId = dataIdObject;
     	this.synchronizeRdfContexts(dataIdObject.getRdfContext());
 		List<Dataset> sets = new ArrayList<Dataset>();
@@ -105,6 +103,42 @@ public class PropertyMapper
 				}
 			}
 		}
+        for(Dataset set : sets)
+        {
+            List<Resource> newResources= new ArrayList<>();
+
+            for(int i =0; i < set.getSubsets().size(); i++)
+            {
+                String subset = set.getSubsets().get(i);
+                for(Dataset sub : sets) {
+                    if(sub.getDataIdUri().trim().equals(subset.trim()))
+                    {
+                        Resource subjRes = new Resource();
+                        //subjRes.setPackage_id(set.getId());
+                        subjRes.setUrl(sub.getDatahubUrl());
+                        subjRes.setDescription("Sub-Dataset of " + set.getTitle());
+                        subjRes.setFormat("HTML");
+                        subjRes.setName(sub.getTitle());
+                        subjRes.setDistributionType("void:subset");
+                        newResources.add(subjRes);
+
+                        Resource objRes = new Resource();
+                        //objRes.setPackage_id(sub.getId());
+                        objRes.setUrl(set.getDatahubUrl());
+                        objRes.setDescription("Parent-Dataset");
+                        objRes.setFormat("HTML");
+                        objRes.setName(set.getTitle());
+                        objRes.setDistributionType("void:subset");
+                        sub.getResources().add(objRes);
+                    }
+                }
+            }
+            for(int i =0; i < set.getResources().size(); i++)
+            {
+                newResources.add(set.getResources().get(i));
+            }
+            set.setResources(newResources);
+        }
 		if(sets.size() == 0)
 			throw new DataIdInputException("no dataset found!");
     	return sets;
@@ -117,8 +151,7 @@ public class PropertyMapper
 		set.getExtras().add(ex);
 	}
     
-	private <T extends MappingObject, E extends Map<String, Object>> T fillObjectWithMapValues(T set, E dataContext)
-	{
+	private <T extends MappingObject, E extends Map<String, Object>> T fillObjectWithMapValues(T set, E dataContext) throws DataIdServiceException {
 		//take care of id link
 		if(dataContext.keySet().size() == 1 && dataContext.get("@id") != null)
 		{
@@ -169,20 +202,26 @@ public class PropertyMapper
 	}
 
 	@SuppressWarnings("unchecked")
-	private <T> List<T> getGenericList(Class<T> listClass, Object fieldValue, Dataset set) throws IllegalAccessException, InstantiationException {
-		List<LinkedHashMap> value = null;
+	private <T, E extends Map<String, Object>> List<T> getGenericList(Class<T> listClass, Object fieldValue, Dataset set) throws IllegalAccessException, InstantiationException, DataIdServiceException {
+		List<LinkedHashMap> value = new ArrayList<LinkedHashMap>();
 		if(fieldValue.getClass() == LinkedHashMap.class)
 		{
-			value = new ArrayList<LinkedHashMap>();
-			value .add((LinkedHashMap) fieldValue);
+			value.add((LinkedHashMap) fieldValue);
 		}
+        else if(List.class.isAssignableFrom(fieldValue.getClass()))
+        {
+            value = (List<LinkedHashMap>) fieldValue;
+        }
 		else
-			value = (List<LinkedHashMap>) fieldValue;
+			throw new DataIdInputException("a list item was out of format");
 		
 		List<T> list = new ArrayList<T>();
 		for(Object ele : value)
 		{
-			T inst = listClass.newInstance();
+
+            T inst = listClass.newInstance();
+            //if(MappingObject.class.isAssignableFrom(inst.getClass()))
+            //    inst = (T) (fillObjectWithMapValues((MappingObject) inst, (LinkedHashMap<String, Object>)ele));
 
 			if(inst.getClass() == Tag.class)
 			{
@@ -202,10 +241,10 @@ public class PropertyMapper
 			else
                 inst = (T) ele;
 			
-			if(inst.getClass() == Resource.class) {
+/*			if(inst.getClass() == Resource.class) {
                 ((Resource) inst).setPosition(list.size());
                 //set.addChild((LinkedHashMap<String, Object>)ele);
-            }
+            }*/
 			list.add(inst);
 
 		}
@@ -213,61 +252,62 @@ public class PropertyMapper
 	}
     
 	@SuppressWarnings("unchecked")
-	public <T extends MappingObject, E extends Map<String, Object>> boolean SetGenericProperty(T target, DataIdProperty fieldProperty, E context)
-	{
+	public <T extends MappingObject, E extends Map<String, Object>> boolean SetGenericProperty(T target, DataIdProperty fieldProperty, E context) throws DataIdServiceException {
         if (fieldProperty == null || fieldProperty.isReadOnly()) {
             return false;
         }
-        for(String fieldString : fieldProperty.getDataIdRefs()) {
+        String fieldString = fieldProperty.getDataIdRef();
 
-            Object fieldValue = context.get(fieldString);
-            //if(fieldValue == null)
-                //fieldValue = fieldProperty.getReferenceChain() == null ? fieldValue : fieldProperty.getReferenceChain().get(0);
+        Object fieldValue = context.get(fieldString);
+        //if(fieldValue == null)
+            //fieldValue = fieldProperty.getReferenceChain() == null ? fieldValue : fieldProperty.getReferenceChain().get(0);
 
-            if(fieldValue == null)
-            {
-                return SetGenericProperty(target, getAlternative(target, fieldProperty, context), context);
-            }
-
-            String stringValue = null;
-
-            //multiple property occurrences -> if visible add additional keys
-            if (!fieldProperty.isList() && List.class.isAssignableFrom(fieldValue.getClass())) {
-                if(fieldProperty.isAdditionalKey() || Arrays.asList("url", "author", "author_email", "maintainer", "maintainer_email").contains(fieldProperty.getDataHub()))
-                {
-                    int count =0;
-                    for (Object obj : (List) fieldValue) {
-                        DataIdProperty zw = (DataIdProperty) fieldProperty.clone();
-
-                        if(count > 0) {
-                            zw.setAdditionalKey(true);
-                            zw.setDataHub(fieldProperty.getDataHub() + "_" + count);
-                        }
-                        setGenericproperty(target, zw, context, obj, getStringValue(zw, context, obj, target));
-                        count++;
-                    }
-                }
-                else
-                    setGenericproperty(target, fieldProperty, context, ((List) fieldValue).get(0), getStringValue(fieldProperty, context, ((List) fieldValue).get(0), target));
-
-                return true;
-            }
-            stringValue = getStringValue(fieldProperty, context, fieldValue, target);
-
-            if(fieldValue == null || stringValue == null)
-            {
-                return SetGenericProperty(target, getAlternative(target, fieldProperty, context), context);
-            }
-
-            if (!setGenericproperty(target, fieldProperty, context, fieldValue, stringValue))  //not!!
-                return false;
+        if(fieldValue == null)
+        {
+            return SetGenericProperty(target, getAlternative(target, fieldProperty, context), context);
         }
+
+        String stringValue = null;
+
+        //multiple property occurrences -> if visible add additional keys
+        if (!fieldProperty.isList() && List.class.isAssignableFrom(fieldValue.getClass())) {
+            if(fieldProperty.isAdditionalKey() || Arrays.asList("url", "author", "author_email", "maintainer", "maintainer_email").contains(fieldProperty.getDataHub()))
+            {
+                int count =0;
+                for (Object obj : (List) fieldValue) {
+                    DataIdProperty zw = (DataIdProperty) fieldProperty.clone();
+
+                    if(count > 0) {
+                        zw.setAdditionalKey(true);
+                        zw.setDataHub(fieldProperty.getDataHub() + "_" + count);
+                    }
+                    setGenericproperty(target, zw, context, obj, getStringValue(zw, context, obj, target));
+                    count++;
+                }
+            }
+            else
+                setGenericproperty(target, fieldProperty, context, ((List) fieldValue).get(0), getStringValue(fieldProperty, context, ((List) fieldValue).get(0), target));
+
+            return true;
+        }
+        stringValue = getStringValue(fieldProperty, context, fieldValue, target);
+
+        if(fieldValue == null || stringValue == null)
+        {
+            return SetGenericProperty(target, getAlternative(target, fieldProperty, context), context);
+        }
+
+        if (!setGenericproperty(target, fieldProperty, context, fieldValue, stringValue))  //not!!
+            return false;
+
         return true;
 	}
 
     private <T extends MappingObject, E extends Map<String, Object>> DataIdProperty getAlternative(T target, DataIdProperty fieldProperty, E context) {
         if (fieldProperty.getHasAlternative() != null) {
             DataIdProperty altProp = mappingConfig.GetPropertyByDataHub(fieldProperty.getDictionary(), fieldProperty.getHasAlternative());
+            if(altProp == null)
+                return null;
             altProp.setDataHub(fieldProperty.getDataHub());
             return altProp;
         }
@@ -275,7 +315,7 @@ public class PropertyMapper
             return null;
     }
 
-    private <E extends Map<String, Object>> String getStringValue(DataIdProperty fieldProperty, E context, Object fieldValue, MappingObject set) {
+    private <E extends Map<String, Object>> String getStringValue(DataIdProperty fieldProperty, E context, Object fieldValue, MappingObject set) throws DataIdInputException {
         String stringValue;//follow reference chain
         if (fieldProperty.getReferenceChain() != null)
             stringValue = followReferenceChain((List<String>) fieldProperty.getReferenceChain(), context, set);
@@ -288,7 +328,7 @@ public class PropertyMapper
         return stringValue;
     }
 
-    private  <T extends MappingObject, E extends Map<String, Object>> boolean setGenericproperty(T target, DataIdProperty fieldProperty, E context, Object fieldValue, String stringValue) {
+    private  <T extends MappingObject, E extends Map<String, Object>> boolean setGenericproperty(T target, DataIdProperty fieldProperty, E context, Object fieldValue, String stringValue) throws DataIdServiceException {
         //take care of default values
         if (stringValue == null && fieldProperty.getDefaultValue() != null)
             stringValue = fieldProperty.getDefaultValue();
@@ -328,8 +368,7 @@ public class PropertyMapper
             }
 
         }catch(Exception e) {
-            e.printStackTrace();
-            return false;
+            throw new DataIdServiceException(e);
         }
         return true;
     }

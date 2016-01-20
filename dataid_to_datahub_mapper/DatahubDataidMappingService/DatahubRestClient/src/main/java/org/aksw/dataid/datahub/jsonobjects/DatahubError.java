@@ -2,9 +2,10 @@ package org.aksw.dataid.datahub.jsonobjects;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.aksw.dataid.errors.DataIdServiceException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class DatahubError extends Exception implements ValidCkanResponse
+public class DatahubError extends DataIdServiceException implements ValidCkanResponse
 {
 	private String message;
 	private String __type;
@@ -28,12 +29,6 @@ public class DatahubError extends Exception implements ValidCkanResponse
         super(cause);
         this.__type = cause.getClass().getName();
         this.message = cause.getMessage();
-    }
-
-    protected DatahubError(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
-        this.message = message;
-        this.__type = cause.getClass().getName();
     }
 
     @Override

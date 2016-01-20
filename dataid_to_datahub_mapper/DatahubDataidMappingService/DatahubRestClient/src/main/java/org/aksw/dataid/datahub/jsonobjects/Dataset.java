@@ -19,14 +19,14 @@ public class Dataset implements ValidCkanResponse, MappingObject
     private String maintainer_email;    //mail of maintainer (replaceable by url e.g. to contact formular on dataid)
     private String license_id;          //id of ckan internal license id  //TODO mapping for this?
     private String license;             //dc:rights
-    private String license_title;       //name of license, get it from virtuoso  //TODO
+    private String license_title;       //name of license, get it from virtuoso
     private String license_url;         //dc:license
     private Date metadata_created;      //internal/automated -> no mapping
     private Date metadata_modified;     //internal/automated -> no mapping
     private String author;              //name of publisher or creator -> mapping to creator role
     private String author_email;        //mail of creator (replaceable by url e.g. to contact formular on dataid)
     private String state;               //no equivalent
-    private String version;             //dc:hasVersion
+    private String version;             //dataid:version
     private String type;                //should be "dataset"
     private String notes;               //dc:description
     private Integer triples;            //void:triples
@@ -296,6 +296,9 @@ public class Dataset implements ValidCkanResponse, MappingObject
     public void setResources( List<Resource> resources ) {
         this.resources = resources;
     }
+
+    @JsonIgnore
+    public String getDatahubUrl() {return "http://datahub.io/dataset/" + getName(); }
 
     @JsonIgnore
     public List<String> getSubsets() {

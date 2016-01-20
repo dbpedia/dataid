@@ -21,14 +21,14 @@
         foaf:topic       		<http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-en>, <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-de>, <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-nl>, <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-fr>, <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-it>, <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-jp>, <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?set=dbpedia-abstracts-dataset-es> .
         
 <http://wiki.dbpedia.org/Association/Persons/Dojchinovski>
-        a          dataid:Agent ;
-        foaf:mbox  <mailto:milan.dojchinovski@fit.cvut.cz> ;
-        foaf:name  "Milan Dojchinovski" .
+        a          		dataid:Agent ;
+        foaf:mbox  		"milan.dojchinovski@fit.cvut.cz" ;
+        foaf:name  		"Milan Dojchinovski" .
         
 <http://wiki.dbpedia.org/Association/Persons/Brummer>
-        a          dataid:Agent ;
+        a          		dataid:Agent ;
         foaf:homepage	<http://aksw.org/MartinBruemmer.html> ;
-        foaf:name  "Martin Brummer" .
+        foaf:name  		"Martin Brummer" .
 
 <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?subj=maintainerContext>
         a                          dataid:AuthorityEntityContext ;
@@ -40,7 +40,7 @@
 <http://www.infai.org/>
         a              dataid:Agent ;
         foaf:homepage  <http://infai.org/> ;
-        foaf:mbox      <mailto:info@infai.org> ;
+        foaf:mbox      "info@infai.org" ;
         foaf:name      "InfAI" .
         
 <http://data.freme-project.eu/datasets/dbpedia-abstracts/dataid.ttl?subj=bruemmerContext>

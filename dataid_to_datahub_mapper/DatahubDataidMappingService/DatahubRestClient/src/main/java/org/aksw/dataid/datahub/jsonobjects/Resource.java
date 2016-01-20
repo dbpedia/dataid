@@ -18,13 +18,14 @@ public class Resource  implements DataHubListObject, MappingObject
     private Date created;               //dc:issued
     private String url;                 //dcat:downloadURL / dcat:accessURL
     private Integer size;               //dcat:byteSize
-    private Integer position;           //internal -> position in resource lost //TODO remember to put DataId link first
+    //private Integer position;           //internal -> position in resource lost //TODO remember to put DataId link first
     private Date last_modified;         //dc:modified
     private String hash;                //dataid:checksum / dataid:md5
     private String format;              //dc:format  //TODO needs additional work -> http://docs.ckan.org/en/ckan-1.7.2/domain-model-resource.html
     private String mimetype;            //dcat:mimeType
     private String mimetype_inner;      //dc:format
     private String state;               //no equivalent
+    private String package_id;          //id of the dataset -> no mapping
 
     //internal use!
     private String resourceUri;         //@id
@@ -97,9 +98,9 @@ public class Resource  implements DataHubListObject, MappingObject
         return size;
     }
 
-    public int getPosition() {
-        return position;
-    }
+//    public int getPosition() {
+//        return position;
+//    }
 
     /**
      * type of the resource by ckan
@@ -108,6 +109,8 @@ public class Resource  implements DataHubListObject, MappingObject
     public String getResource_type() {
         if(distributionType.equals("dataid:SingleFile") || distributionType.equals("dataid:Directory"))
             return "file";
+        else if(distributionType.equals("void:subset"))
+            return "documentation";
         else
             return "api";
     }
@@ -156,9 +159,17 @@ public class Resource  implements DataHubListObject, MappingObject
 		this.size = size;
 	}
 
-	public void setPosition(Integer position) {
-		this.position = position;
-	}
+	//public void setPosition(Integer position) {
+	//	this.position = position;
+	//}
+
+    public String getPackage_id() {
+        return package_id;
+    }
+
+    public void setPackage_id(String package_id) {
+        this.package_id = package_id;
+    }
 
     @JsonIgnore
     public String getDistributionType() {

@@ -106,14 +106,14 @@
         dc:modified             "2015-09-15"^^xsd:date ;
         dc:language             <http://lexvo.org/id/iso639-3/eng> ;
         #dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ;
-        dc:title                "Statbel - Employment, unemployment, labour market structure dataset"@en ;
+        dc:title                "Statbel - Employment, unemployment, labour market structure dataset dump"@en ;
         dcat:downloadURL        <http://rv1460.1blu.de/datasets/statbel/house-price-index.ttl> ;
         dcat:format             "text/turtle" .
 
 # employment-unemployment raw dataset
 <http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-employment-unemployment-raw-dataset>
         a                       dataid:Dataset;
-        rdfs:label              "Statbel - Employment, unemployment, labour market structure raw dump"@en ;
+        rdfs:label              "Statbel - Employment, unemployment, labour market structure raw dataset"@en ;
         dataid:similarData      <http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-dataset> ;
         dataid:associatedAgent  <http://statbel.fgov.be> ;
         dataid:hasAccessLevel   dataid:PublicAccess ;
@@ -123,7 +123,7 @@
         #dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;   
         dc:modified             "2015-09-15"^^xsd:date ;
         dc:publisher            <http://statbel.fgov.be>;
-        dc:title                "Statbel - Employment, unemployment, labour market structure raw dump"@en ;
+        dc:title                "Statbel - Employment, unemployment, labour market structure raw dataset"@en ;
         dcat:distribution       <http://data.freme-project.eu/datasets/statbel/dataid.ttl?file=statbel-raw-dataset-employment-unemployment-dump> ;
         dcat:keyword            "belgium"@en , "rdf"@en , "statistics"@en ;
         dcat:landingPage        <http://statbel.fgov.be/en/statistics/figures/economy/construction_industry/house_price_index> .
@@ -180,7 +180,7 @@
 # hpi raw dataset
 <http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-raw-house-price-index-dataset>
 		a                       dataid:Dataset;
-        rdfs:label              "Statbel - Belgian house price index dataset raw dump"@en ;
+        rdfs:label              "Statbel - Belgian house price index raw dataset"@en ;
         dataid:similarData      <http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-dataset> ;
         dataid:associatedAgent  <http://statbel.fgov.be> ;
         dataid:hasAccessLevel   dataid:PublicAccess ;
@@ -212,7 +212,7 @@
 # unemployment-indicators dataset
 <http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-dataset-unemployment-indicators>
         a                       dataid:Dataset ;
-        rdfs:label              "Statbel Corpus"@en ;
+        rdfs:label              "Statbel - Unemployment and additional indicators dataset"@en ;
         dataid:associatedAgent  <http://www.infai.org/> ;
         dc:publisher            <http://www.infai.org/>;
         dataid:hasAccessLevel   dataid:PublicAccess ;
@@ -221,7 +221,7 @@
         dc:language             <http://lexvo.org/id/iso639-3/eng> ;
         #dc:license              <http://purl.org/NET/rdflicense/cc-by-sa3.0> ;
         dc:modified             "2015-09-15"^^xsd:date ;
-        dc:title                "Statbel Corpus"@en ;
+        dc:title                "Statbel - Unemployment and additional indicators dataset"@en ;
         dcat:distribution       <http://data.freme-project.eu/datasets/statbel/dataid.ttl?sparql=statbelSparql> , <http://data.freme-project.eu/datasets/statbel/dataid.ttl?file=statbel-dataset-unemployment-indicators-dump> ;
         dcat:keyword            "belgium"@en , "corpus"@en , "datacube"@en , "freme project"@en , "rdf"@en , "statistics"@en ;
         prov:wasDerivedFrom     <http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-unemployment-raw-dataset>;
@@ -230,8 +230,8 @@
 # unemployment-indicators dataset dump
 <http://data.freme-project.eu/datasets/statbel/dataid.ttl?file=statbel-dataset-unemployment-indicators-dump>
         a                       dataid:SingleFile ;
-        rdfs:label              "Stabel - Unemployment and additional indicators dataset"@en ;
-        dc:title                "Stabel - Unemployment and additional indicators dataset"@en ;
+        rdfs:label              "Statbel - Unemployment and additional indicators dataset"@en ;
+        dc:title                "Statbel - Unemployment and additional indicators dataset"@en ;
         dataid:associatedAgent  <http://www.infai.org/> ;
         dc:publisher            <http://www.infai.org/>;
         dataid:hasAccessLevel   dataid:PublicAccess ;
@@ -247,7 +247,7 @@
 # unemployment-indicators raw dataset
 <http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-unemployment-raw-dataset>
 		a 						dataid:Dataset;
-		rdfs:label              "Stabel - Unemployment and additional indicators dataset raw dump"@en ;
+		rdfs:label              "Statbel - Unemployment and additional indicators raw dataset"@en ;
 		dataid:similarData		<http://data.freme-project.eu/datasets/statbel/dataid.ttl?set=statbel-dataset> ;
         dataid:associatedAgent  <http://statbel.fgov.be> ;
         dataid:hasAccessLevel   dataid:PublicAccess ;
@@ -257,7 +257,7 @@
         #dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ;  
         dc:modified             "2015-09-15"^^xsd:date ;
         dc:publisher            <http://statbel.fgov.be>;
-        dc:title                "Stabel - Unemployment and additional indicators dataset raw dump"@en ;
+        dc:title                "Statbel - Unemployment and additional indicators raw dataset"@en ;
         dcat:distribution       <http://data.freme-project.eu/datasets/statbel/dataid.ttl?file=statbel-unemployment-raw-dataset-single-dump> ;
         dcat:keyword            "belgium"@en , "rdf"@en , "statistics"@en ;
         dcat:landingPage        <http://statbel.fgov.be/en/statistics/figures/economy/construction_industry/house_price_index> .
@@ -265,25 +265,25 @@
 # unemployment-indicators raw dump
 <http://data.freme-project.eu/datasets/statbel/dataid.ttl?file=statbel-unemployment-raw-dataset-single-dump>
         a                       dataid:SingleFile ;
-        rdfs:label              "Stabel - Unemployment and additional indicators dataset raw dump file"@en ;
+        rdfs:label              "Statbel - Unemployment and additional indicators dataset raw dump file"@en ;
         dataid:associatedAgent  <http://statbel.fgov.be> ;
         dataid:hasAccessLevel   dataid:PublicAccess ;
         dc:description          "Dumpfile for the Belgian unemployment statistics raw dataset."@en ;
         dc:issued               "2015-09-15"^^xsd:date ;
         dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ; 
         dc:modified             "2015-09-15"^^xsd:date ;
-        dc:title                "Stabel - Unemployment and additional indicators dataset raw dump file"@en ;
+        dc:title                "Statbel - Unemployment and additional indicators dataset raw dump file"@en ;
     	dcat:downloadURL        <http://statbel.fgov.be/en/modules/publications/statistics/marche_du_travail_et_conditions_de_vie/unemployment_and_additional_indicators_2005-2010.jsp> ;
         dcat:format             "application/vnd.ms-excel" . 
 
 # sparql
 <http://data.freme-project.eu/datasets/statbel/dataid.ttl?sparql=statbelSparql>
         a                       dataid:SparqlEndpoint ;
-        rdfs:label              "Stabel SPARQL endpoint"@en ;
-        dc:title                "Stabel SPARQL endpoint"@en ;
+        rdfs:label              "Statbel SPARQL endpoint"@en ;
+        dc:title                "Statbel SPARQL endpoint"@en ;
         dataid:associatedAgent  <http://www.infai.org/> ;
         dataid:hasAccessLevel   dataid:PublicAccess ;
-        dc:description          "Public SPARQL endpoint for the Stabel dataset."@en ;
+        dc:description          "Public SPARQL endpoint for the Statbel dataset."@en ;
         dc:issued               "2015-09-11"^^xsd:date ;
         dc:license              <http://purl.org/NET/rdflicense/cc-zero1.0> ; 
         dc:modified             "2015-09-15"^^xsd:date ;

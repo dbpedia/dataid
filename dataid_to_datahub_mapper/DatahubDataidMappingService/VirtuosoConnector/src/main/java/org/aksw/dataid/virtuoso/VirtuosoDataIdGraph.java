@@ -148,7 +148,7 @@ public class VirtuosoDataIdGraph {
     private String licenseString;
     public String getLicenses() throws DataIdInputException {
         if(licenseString == null) {
-            try (Statement stmt = VirtuosoDataIdGraph.getConn().createStatement()) {
+            try (Statement stmt = conn.createStatement()) {
                 ResultSet set = stmt.executeQuery(DataIdConfig.getLicenseQuery());
                 set.next();
                 licenseString = set.getString(1);
@@ -163,7 +163,7 @@ public class VirtuosoDataIdGraph {
     public PrefixTree<Map.Entry<String, String>> getMagicNumbers() throws DataIdInputException {
         if(tree == null) {
             tree = new PrefixTree<>();
-            try (Statement stmt = VirtuosoDataIdGraph.getConn().createStatement()) {
+            try (Statement stmt = conn.createStatement()) {
                 ResultSet set = stmt.executeQuery(DataIdConfig.getMagicNumbers());
                 while(set.next())
                 {
@@ -181,10 +181,23 @@ public class VirtuosoDataIdGraph {
         return tree;
     }
 
+    public String getLicenseName(String uri) throws DataIdInputException {
+        if(langString == null) {
+            try (Statement stmt = conn.createStatement()) {
+                ResultSet set = stmt.executeQuery(DataIdConfig.getLicenseNameQuery());
+                set.next();
+                return set.getString(1);
+            } catch (SQLException e) {
+                throw new DataIdInputException(e);
+            }
+        }
+        return "";
+    }
+
     private String langString;
     public String getLangs() throws DataIdInputException {
         if(langString == null) {
-            try (Statement stmt = VirtuosoDataIdGraph.getConn().createStatement()) {
+            try (Statement stmt = conn.createStatement()) {
                 ResultSet set = stmt.executeQuery(DataIdConfig.getLanguageQuery());
                 set.next();
                 langString = set.getString(1);
@@ -198,7 +211,7 @@ public class VirtuosoDataIdGraph {
     private String mimeResult;
     public String getMimes() throws DataIdInputException {
         if(mimeResult == null) {
-            try (Statement stmt = VirtuosoDataIdGraph.getConn().createStatement()) {
+            try (Statement stmt = conn.createStatement()) {
                 ResultSet set = stmt.executeQuery(DataIdConfig.getMimeQuery());
                 set.next();
                 mimeResult = set.getString(1);
@@ -207,10 +220,6 @@ public class VirtuosoDataIdGraph {
             }
         }
         return mimeResult;
-    }
-
-    public static Connection getConn() {
-        return conn;
     }
 
     public int getCacheSize() {

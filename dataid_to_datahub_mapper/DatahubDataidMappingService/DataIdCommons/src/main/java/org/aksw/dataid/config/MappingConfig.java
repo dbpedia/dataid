@@ -6,8 +6,6 @@ import org.aksw.dataid.config.RdfContext;
 import java.util.Date;
 import java.util.Map;
 
-
-
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MappingConfig 
 {
@@ -37,25 +35,6 @@ public class MappingConfig
 	}
 
     protected MappingConfig(){}
-	
-	public DataIdProperty GetPropertyByDataId(String dictionary, String dataDataIdProperty)
-	{
-			for(String key : dataHubMapping.get(dictionary).keySet())
-			{
-				DataIdProperty prop = dataHubMapping.get(dictionary).get(key);
-				for(String ref : prop.getDataIdRefs())
-				{
-					//TODO proper comparison!!
-					if(ref.equals(dataDataIdProperty))
-					{
-						return prop;
-					}
-				}
-
-			}
-		
-		return null;
-	}
 	
 	public DataIdProperty GetPropertyByDataHub(DataIdProperty.MappingDictionaryType dictionary, String dataDataIdProperty)
 	{

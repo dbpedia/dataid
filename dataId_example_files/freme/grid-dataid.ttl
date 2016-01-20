@@ -76,16 +76,18 @@
         rdfs:label              "GRID Dataset"@en ;
         dc:title                "GRID Dataset"@en ;
         dataid:associatedAgent  <http://www.infai.org/>, <http://wiki.dbpedia.org/Association/Persons/Dojchinovski> ;
-        dc:publisher		<http://www.infai.org/>;
+        dc:publisher			<http://wiki.dbpedia.org/Association/Persons/Dojchinovski>;
         dataid:hasAccessLevel   dataid:PublicAccess ;
         dc:description          "GRID is a free, openly accessible database of research institution identifiers which enables users to make sense of their data. It does so by minimising the work required to link datasets together using a unique and persistent identifier. This is RDF version of the dataset."@en ;
         dc:issued               "2016-01-15"^^xsd:date ;
+        dataid:version			"1.0";
         dc:modified             "2016-01-15"^^xsd:date ;
         dc:language             <http://lexvo.org/id/iso639-3/eng> ;
-        dc:license              <http://purl.oclc.org/NET/rdflicense/cc-by3.0> ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-by3.0> ;
         dcat:distribution       <http://data.freme-project.eu/datasets/grid/dataid.ttl?file=grid-dataset-single-dump> , <http://data.freme-project.eu/datasets/grid/dataid.ttl?sparql=gridSparql> ;
         dcat:keyword            "freme project"@en , "grid"@en , "rdf"@en , "organizations"@en , "research"@en ;
         #dcat:landingPage        <TODO> ; # here goes the datahub.io page
+        dataid:documentation	<http://api.freme-project.eu/doc/current/>;
         prov:wasDerivedFrom 	<http://data.freme-project.eu/datasets/grid/dataid.ttl?set=grid-raw-dataset> .
         
 <http://data.freme-project.eu/datasets/grid/dataid.ttl?file=grid-dataset-single-dump>
@@ -95,42 +97,46 @@
         dataid:associatedAgent  <http://www.infai.org/> ;
         dc:publisher            <http://www.infai.org/>;
         dataid:hasAccessLevel   dataid:PublicAccess ;
+        dataid:version			"1.0";
         dc:description          "GRID Dataset RDF dump."@en ;
         dc:issued               "2016-01-15"^^xsd:date ;
         dc:modified             "2016-01-15"^^xsd:date ;
-        dc:license              <http://purl.oclc.org/NET/rdflicense/cc-by3.0> ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-by3.0> ;
         dcat:downloadURL        <http://rv2622.1blu.de/datasets/grid/grid.nt.bz2> ;
-        dcat:format             "application/n-triples" ;
+        dcat:byteSize			43137 ;
+        dc:format             "application/n-triples" ;
         dcat:mediaType          "application/x-bzip2" .
         
 <http://data.freme-project.eu/datasets/grid/dataid.ttl?set=grid-raw-dataset>
-	a 			dataid:Dataset;
-	rdfs:label              "GRID Raw Dataset"@en ;
+		a 						dataid:Dataset;
+		rdfs:label              "GRID Raw Dataset"@en ;
         dc:title                "GRID Raw Dataset"@en ;
-	dataid:similarData	<http://data.freme-project.eu/datasets/grid/dataid.ttl?set=grid-dataset> ;
+		dataid:similarData		<http://data.freme-project.eu/datasets/grid/dataid.ttl?set=grid-dataset> ;
         dataid:associatedAgent  <https://www.grid.ac/>, <https://www.grid.ac/pages/contact> ;
-        dc:publisher		<https://www.grid.ac/>;
+        dc:publisher			<https://www.grid.ac/>;
         dataid:hasAccessLevel   dataid:PublicAccess ;
         dc:description          "GRID is a free, openly accessible database of research institution identifiers which enables users to make sense of their data. It does so by minimising the work required to link datasets together using a unique and persistent identifier. This is raw version of the dataset."@en ;
         dc:issued               "2015-09-22"^^xsd:date ;
         dc:modified             "2015-12-14"^^xsd:date ;
         dc:language             <http://lexvo.org/id/iso639-3/eng> ;
-        dc:license              <http://purl.oclc.org/NET/rdflicense/cc-by3.0> ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-by3.0> ;
         dcat:distribution       <http://data.freme-project.eu/datasets/grid/dataid.ttl?file=grid-raw-dataset-dump-file> ;
         dcat:keyword            "freme project"@en , "grid"@en , "raw"@en , "organizations"@en , "research"@en ;
+        dataid:documentation	<https://gridac.freshdesk.com/support/solutions>;
         dcat:landingPage        <https://www.grid.ac/downloads> .
         
 <http://data.freme-project.eu/datasets/grid/dataid.ttl?file=grid-raw-dataset-dump-file>
         a                       dataid:SingleFile ;
         rdfs:label              "GRID Raw Dataset file"@en ;
         dc:title                "GRID Raw Dataset file"@en ;
-        dataid:associatedAgent  <http://www.infai.org/> ;
-        dc:publisher            <http://www.infai.org/> ;
+        dataid:associatedAgent  <https://www.grid.ac/> ;
+        dc:publisher            <https://www.grid.ac/> ;
         dataid:hasAccessLevel   dataid:PublicAccess ;
         dc:description          "Dumpfile for the GRID raw dataset."@en ;
         dc:issued               "2015-09-22"^^xsd:date ;
         dc:modified             "2015-12-14"^^xsd:date ;
-        dc:license              <http://purl.oclc.org/NET/rdflicense/cc-by3.0> ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-by3.0> ;
+        dcat:byteSize			43537 ;
         dcat:accessURL       	<https://www.grid.ac/downloads> .
         
 <http://data.freme-project.eu/datasets/grid/dataid.ttl?sparql=gridSparql>
@@ -142,5 +148,5 @@
         dc:description          "Public SPARQL endpoint for the GRID dataset."@en ;
         dc:issued               "2016-01-15"^^xsd:date ;
         dc:modified             "2016-01-15"^^xsd:date ;
-        dc:license              <http://purl.oclc.org/NET/rdflicense/cc-by3.0> ;
+        dc:license              <http://purl.org/NET/rdflicense/cc-by3.0> ;
         dcat:accessURL        	<http://rv2622.1blu.de:8890/sparql/> .

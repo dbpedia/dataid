@@ -1,33 +1,44 @@
 {
-    "ipaddress":"localhost",
-    "port":9997,
-    "contentDir":"content",
-	"datahubActionUri": "https://datahub.io/api/3/action/",
-    "datahubOwnerDataId": "58f089dd-98c3-4de7-ba0f-e4c06680bf27",
-	"mappingConfigPath": "/config/MappingConfig.json",
-	"ckanTimeOut": 10000,
-    "adminName":"aksw",
-    "password":"goodStuff",
-    "virtuosoHostt" : "vmdbpedia.informatik.uni-leipzig.de",
+  "ipaddress":"localhost",
+  "port":9997,
+  "contentDir":"content",
+  "datahubActionUri": "https://datahub.io/api/3/action/",
+  "datahubOwnerDataId": "58f089dd-98c3-4de7-ba0f-e4c06680bf27",
+  "mappingConfigPath": "/config/MappingConfig.json",
+  "ckanTimeOut": 10000,
+  "adminName":"aksw",
+  "password":"goodStuff",
+  "virtuosoHostt" : "vmdbpedia.informatik.uni-leipzig.de",
   "virtuosoHost" : "localhost",
-    "virtuosoPort" : 1112,
-    "dataIdGraph": "http://dataid.dbpedia.org/store/",
-    "cacheTimeOut": 7200000,
-    "cacheTripleSize": 1000000,
-	"ckanActionMap":{
-		"GetDataset": "package_show",
-		"CreateDataset": "package_create",
-		"UpdateDataset": "package_update",
-        "GetRelationships": "package_relationships_list",
-        "UpdateDatasetRelationship": "package_create",
-        "CreateDatasetRelationship": "package_relationship_create",
-        "GetOrganizationId": "organization_show"
-	},
-    "ontologyMap":{
-      "dataid": {"uri":"http://dataid.dbpedia.org/ns/core#", "dlUrl":"http://{$ipaddress}:{$port}/{$contentDir}/ontos/ontology.ttl"},
-      "void": {"uri":"http://rdfs.org/ns/void#", "dlUrl":"http://{$ipaddress}:{$port}/{$contentDir}/ontos/void.rdf"},
-      "dc": {"uri":"http://purl.org/dc/terms/", "dlUrl":"http://{$ipaddress}:{$port}/{$contentDir}/ontos/dc.ttl"}
-    },
+  "virtuosoPort" : 1112,
+  "dataIdGraph": "http://dataid.dbpedia.org/store/",
+  "cacheTimeOut": 7200000,
+  "cacheTripleSize": 1000000,
+  "ckanActionMap":{
+      "GetDataset": "package_show",
+      "CreateDataset": "package_create",
+      "UpdateDataset": "package_update",
+      "DeleteDataset": "package_delete",
+      "CreateResource": "resource_create",
+      "UpdateResource": "resource_update",
+      "DeleteResource": "resource_delete",
+      "CreateUser": "user_create",
+      "UpdateUser": "user_update",
+      "DeleteUser": "user_delete",
+      "GetRelationships": "package_relationships_list",
+      "UpdateDatasetRelationship": "package_create",
+      "CreateDatasetRelationship": "package_relationship_create",
+      "DeleteDatasetRelationship": "package_relationship_delete",
+      "GetOrganizationId": "organization_show"
+  },
+  "ckanLicenseMap": {
+
+  },
+  "ontologyMap":{
+    "dataid": {"uri":"http://dataid.dbpedia.org/ns/core#", "dlUrl":"http://{$ipaddress}:{$port}/{$contentDir}/ontos/ontology.ttl"},
+    "void": {"uri":"http://rdfs.org/ns/void#", "dlUrl":"http://{$ipaddress}:{$port}/{$contentDir}/ontos/void.rdf"},
+    "dc": {"uri":"http://purl.org/dc/terms/", "dlUrl":"http://{$ipaddress}:{$port}/{$contentDir}/ontos/dc.ttl"}
+  },
   "exceptionMap":{
     "http://rdfunit.aksw.org/data/generators#OWLQCARDEX": ["http://rdfs.org/ns/void#objectsTarget"],
     "http://rdfunit.aksw.org/data/generators#OWLQCARDEX-MIN":["http://www.w3.org/ns/dcat#landingPage"]
@@ -67,5 +78,6 @@
   "magicNumbers" : "SPARQL \nSELECT ?m ?o ?e ?mime FROM <http://dataid.dbpedia.org/mimetypes/> WHERE{ ?s a <http://dataid.dbpedia.org/mimetypes/mimetype>; <http://dataid.dbpedia.org/mimetypes/extend> ?e; <http://dataid.dbpedia.org/mimetypes/mime> ?mime; <http://dataid.dbpedia.org/mimetypes/magic> ?m. OPTIONAL{ ?s <http://dataid.dbpedia.org/mimetypes/offset> ?o.}} ORDER BY ?m",
   "licenseQuery":"SPARQL define output:format \"JSON\" \nprefix odrl: <http://www.w3.org/ns/odrl/2/> \nprefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> \n SELECT DISTINCT ?license ?label \nFROM <http://dataid.dbpedia.org/licenses/>\nWHERE{\n?license a odrl:Set ;\nrdfs:label ?label.\n}",
   "mimeQuery":"SPARQL define output:format \"JSON\" PREFIX : <http://dataid.dbpedia.org/mimetypes/> SELECT str(?m) as ?mime concat(str(?e), \" - \", str(?m)) as ?extend ?details FROM <http://dataid.dbpedia.org/mimetypes/> WHERE {{?s a :mimetype; :extend ?e; :mime ?m.} OPTIONAL {?s :details ?details.}}ORDER BY ?e",
-  "languageQuery":"SPARQL define output:format \"JSON\" \nSELECT DISTINCT ?code ?lang\n FROM <http://dataid.dbpedia.org/iso639-1/>\nWHERE{\n?l a <http://id.loc.gov/vocabulary/iso639-1/iso639-1_Language>.\n?l <http://www.w3.org/2004/02/skos/core#prefLabel> ?lang.\n?l <http://www.loc.gov/mads/rdf/v1#code> ?code.\nFILTER(lang(?lang) = \"en\")}\nORDER BY ?lang"
+  "languageQuery":"SPARQL define output:format \"JSON\" \nSELECT DISTINCT ?code ?lang\n FROM <http://dataid.dbpedia.org/iso639-1/>\nWHERE{\n?l a <http://id.loc.gov/vocabulary/iso639-1/iso639-1_Language>.\n?l <http://www.w3.org/2004/02/skos/core#prefLabel> ?lang.\n?l <http://www.loc.gov/mads/rdf/v1#code> ?code.\nFILTER(lang(?lang) = \"en\")}\nORDER BY ?lang",
+  "licenseNameQuery": "SPARQL  \nprefix odrl: <http://www.w3.org/ns/odrl/2/> \nprefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> \n SELECT DISTINCT ?label \nFROM <http://dataid.dbpedia.org/licenses/> \nWHERE{\n<http://purl.org/NET/rdflicense/cc-by3.0> rdfs:label ?label. \n}"
 }

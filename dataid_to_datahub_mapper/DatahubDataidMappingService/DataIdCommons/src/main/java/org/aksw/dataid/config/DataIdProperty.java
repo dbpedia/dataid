@@ -52,13 +52,11 @@ public class DataIdProperty
 	public void setReadOnly(boolean readOnly) {
 		this.isReadOnly = readOnly;
 	}
-	public List<String> getDataIdRefs()
-	{
-		String[] reffs = getDataIdRef().replace(";", ",").replace(" ", "").split(",");
-		return Arrays.asList(reffs);
-	}
 	public String getDataIdRef() {
-		return dataIdRef;
+        if(referenceChain != null && referenceChain.size() > 0)
+            return referenceChain.get(0);
+        else
+		    return dataIdRef;
 	}
 	public void setDataIdRef(String id) {
 		this.dataIdRef = id;

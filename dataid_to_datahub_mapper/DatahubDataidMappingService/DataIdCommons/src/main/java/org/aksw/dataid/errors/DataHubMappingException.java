@@ -1,6 +1,6 @@
 package org.aksw.dataid.errors;
 
-public class DataHubMappingException extends Exception 
+public class DataHubMappingException extends DataIdServiceException
 {
 	  public DataHubMappingException() { super(); }
 	  public DataHubMappingException(String message) { super(message); }

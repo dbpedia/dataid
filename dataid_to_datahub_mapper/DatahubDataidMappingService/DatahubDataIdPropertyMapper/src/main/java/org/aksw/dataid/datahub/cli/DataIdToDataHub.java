@@ -11,6 +11,7 @@ import org.aksw.dataid.datahub.propertymapping.*;
 import org.aksw.dataid.datahub.restclient.CkanRestClient;
 import org.aksw.dataid.errors.DataHubMappingException;
 import org.aksw.dataid.errors.DataIdInputException;
+import org.aksw.dataid.errors.DataIdServiceException;
 import org.aksw.dataid.jsonutils.StaticJsonHelper;
 import org.apache.commons.cli.*;
 import org.apache.http.client.HttpResponseException;
@@ -19,6 +20,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -32,7 +34,7 @@ public class DataIdToDataHub {
 	private static CkanRestClient client;
 	private static CommandLine cli;
 
-	public static void main(String[] args) 
+	public static void main(String[] args) throws DataIdServiceException
 	{
 		CommandLine cli = getCli(args);
 		String dataIdContent = getDataIdContent(cli);
@@ -41,10 +43,9 @@ public class DataIdToDataHub {
 		try {
 			processor = new DataIdProcesser(DataIdConfig.getMappingConfigPath());
 			sets = processor.parseToDataHubDataset(dataIdContent);
-		} catch (DataHubMappingException e) {
-			e.printStackTrace();
-        } catch (DataIdInputException e1) {
-            e1.printStackTrace();
+		} catch (SQLException e) {
+            e.printStackTrace();
+            throw new DataIdServiceException("an unexpected error occurred on the DataIdHub");
         }
         client = createCkanRestClient();
 
@@ -53,19 +54,11 @@ public class DataIdToDataHub {
 	    	try {		
 			    if(cli.getOptionValue("create") != null)
 			    {
-                    try {
-                        client.CreateDataset(set);
-                    } catch (DatahubError e) {
-                        e.printStackTrace();
-                    }
+                        client.GenericAction(CkanRestClient.CkanAction.CreateDataset, set);
                 }
 			    else if(cli.getOptionValue("update") != null)
 			    {
-                    try {
-                        client.UpdateDataset(set);
-                    } catch (DatahubError e) {
-                        e.printStackTrace();
-                    }
+                        client.GenericAction(CkanRestClient.CkanAction.UpdateDataset, set);
                 }
 			} catch (HttpResponseException e) {
 		        System.err.println( "An exception occurred while accessing Datahub: \n" + e.getMessage() );
@@ -94,7 +87,7 @@ public class DataIdToDataHub {
 	}
 
 
-	private static String getDataIdContent(CommandLine cli) {
+	private static String getDataIdContent(CommandLine cli) throws DataIdInputException {
 		String content = null;
 	    if(cli.getOptionValue("file") != null)
 	    {
@@ -103,9 +96,8 @@ public class DataIdToDataHub {
                 InputStream inputStream = new FileInputStream(sourceUrl);
                 return StaticJsonHelper.GetStringFromInputStream(inputStream);
             } catch (FileNotFoundException e) {
-                e.printStackTrace();
+                throw new DataIdInputException(e);
             }
-            return null;
         }
 	    else
 	    {
@@ -130,22 +122,7 @@ public class DataIdToDataHub {
 		return cli;
 	}
 
-	private static String getPrettyString(JsonNode dataHubObject) {
-		try {
-			return new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(dataHubObject);
-		} catch (JsonGenerationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
-	}
-	
+
 	private static Options createInputOptions()
 	{
 		Options options = new Options();

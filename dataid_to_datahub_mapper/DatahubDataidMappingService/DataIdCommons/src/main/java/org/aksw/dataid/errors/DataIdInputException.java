@@ -1,7 +1,7 @@
 package org.aksw.dataid.errors;
 
 
-public class DataIdInputException extends Exception
+public class DataIdInputException extends DataIdServiceException
 {
 	  public DataIdInputException() { super(); }
 	  public DataIdInputException(String message) { super(message); }

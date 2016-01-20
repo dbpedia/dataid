@@ -29,11 +29,6 @@
         </dependency>
         <dependency>
             <groupId>dataidToDatahubRestService</groupId>
-            <artifactId> DatahubDataIdPropertyMapper</artifactId>
-            <version> 1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>dataidToDatahubRestService</groupId>
             <artifactId>OntologyObjectMapping</artifactId>
             <version> 1.0-SNAPSHOT</version>
         </dependency>

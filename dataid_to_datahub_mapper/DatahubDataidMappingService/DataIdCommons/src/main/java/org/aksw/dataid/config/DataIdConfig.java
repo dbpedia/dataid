@@ -70,6 +70,10 @@ public class DataIdConfig {
     {
         return mainConfigFile.get("languageQuery").asText();
     }
+    public static String getLicenseNameQuery()
+    {
+        return mainConfigFile.get("licenseNameQuery").asText();
+    }
     public static String getMagicNumbers()
     {
         return mainConfigFile.get("magicNumbers").asText();

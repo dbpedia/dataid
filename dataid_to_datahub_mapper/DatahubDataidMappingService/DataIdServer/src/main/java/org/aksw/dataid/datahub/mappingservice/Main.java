@@ -6,6 +6,7 @@ import com.sun.jersey.api.core.PackagesResourceConfig;
 import com.sun.jersey.api.core.ResourceConfig;
 import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.mappingprovider.CorsSupportProvider;
+import org.aksw.dataid.datahub.mappingprovider.CustomRequestWrapperFilter;
 import org.aksw.dataid.datahub.mappingprovider.DataIdInputExceptionProvider;
 import org.aksw.dataid.virtuoso.VirtuosoDataIdGraph;
 import org.glassfish.grizzly.http.server.HttpServer;
@@ -15,12 +16,17 @@ import javax.ws.rs.core.UriBuilder;
 import java.io.IOException;
 import java.net.URI;
 import java.sql.SQLException;
+import java.util.Date;
+import java.util.concurrent.atomic.AtomicLong;
 
 
 public class Main {
 	private static String mainPath;
     private static VirtuosoDataIdGraph graph;
     private static HttpServer httpServer;
+    private static AtomicLong idProvider = new AtomicLong(new Date().getTime());
+
+    private static final String JERSEY_SERVLET_CONTEXT_PATH = "";
 
 	
     private static int getPort(int defaultPort) {
@@ -39,7 +45,8 @@ public class Main {
     
     protected static HttpServer configureServer() throws IOException , SQLException{
         graph = new VirtuosoDataIdGraph(DataIdConfig.getVirtuosoHost(), DataIdConfig.getVirtuosoPort(), DataIdConfig.getVirtuosoUser(), DataIdConfig.getVirtuosoPassword());
-        ResourceConfig rc = new PackagesResourceConfig(Main.class.getPackage().getName(), DataIdInputExceptionProvider.class.getPackage().getName());
+        ResourceConfig rc = new PackagesResourceConfig(Main.class.getPackage().getName(), DataIdInputExceptionProvider.class.getPackage().getName(), CustomRequestWrapperFilter.class.getName());
+        rc.getContainerRequestFilters().add(new CustomRequestWrapperFilter());
         rc.getContainerResponseFilters().add(new CorsSupportProvider());
         Base_Uri = UriBuilder.fromUri("http://" + DataIdConfig.get("ipaddress") + "/").port(Integer.parseInt(DataIdConfig.get("port"))).build();
         System.out.println("Starting grizzly2...");
@@ -61,6 +68,11 @@ public class Main {
         System.out.println(String.format("Jersey app started with WADL available at %sapplication.wadl\nHit enter to stop it...", Base_Uri));
         System.in.read();
         httpServer.stop();
+    }
+
+    public static long generateServiceEventId()
+    {
+        return idProvider.incrementAndGet();
     }
 
     public static VirtuosoDataIdGraph getGraph() {

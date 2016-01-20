@@ -119,7 +119,7 @@
         dc:modified             "2015-11-11"^^xsd:date ;
         dc:title                "CORDIS FP7 Projects Raw Dataset file"@en ;
         dcat:downloadURL       	<http://cordis.europa.eu/data/cordis-fp7projects.csv> ;
-        dcat:format             "text/csv" . 
+        dc:format             "text/csv" . 
 
         
 <http://data.freme-project.eu/datasets/cordis/dataid.ttl?set=cordis-organisations-raw-dataset>
@@ -151,7 +151,7 @@
         dc:modified             "2015-11-11"^^xsd:date ;
         dc:title                "CORDIS FP7 Organisations Raw Dataset file"@en ;
         dcat:downloadURL       	<http://cordis.europa.eu/data/cordis-fp7organizations.csv> ;
-        dcat:format             "text/csv" . 
+        dc:format             "text/csv" . 
         
 <http://data.freme-project.eu/datasets/cordis/dataid.ttl?file=cordis-dataset-single-dump>
         a                       dataid:SingleFile ;
@@ -165,7 +165,7 @@
         dc:modified             "2015-11-02"^^xsd:date ;
         dc:title                "CORDIS FP7 Dataset"@en ;
         dcat:downloadURL        <http://rv2622.1blu.de/datasets/cordis/cordis.nt.bz2> ;
-        dcat:format             "application/n-triples" ;	
+        dc:format             "application/n-triples" ;	
         dcat:mediaType          "application/x-bzip2" .		
         
 <http://data.freme-project.eu/datasets/cordis/dataid.ttl?sparql=cordisSparql>
