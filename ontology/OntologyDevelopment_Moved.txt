@@ -1,0 +1,4 @@
+The development of the DataID ontology has been moved int a separate git repository:
+https://github.com/dbpedia/DataId-Ontology
+
+(content in the 'old' directory will be deprecated)

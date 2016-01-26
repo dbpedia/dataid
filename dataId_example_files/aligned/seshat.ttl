@@ -1,0 +1,90 @@
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dmp:   <http://dataid.dbpedia.org/ns/dmp#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/terms/> .
+
+<http://www.aligned-project.eu/data/seshat_dataid.ttl>
+	a dataid:DataId
+	dataid:hasAccessLevel dataid:SemiPrivateAccess;
+	dc:issued "21-07-2015"^^xsd:date;
+	dc:modified "22-12-2015"^^xsd:date ;
+	dc:publisher <https://evolution-institute.org>;
+	dataid:associatedAgent <https://evolution-institute.org>, <http://dacura.cs.tcd.ie/the-dacura-team/>;
+	foaf:primaryTopic <https://dacura.scss.tcd.ie/public/seshat/> .
+
+<https://evolution-institute.org>
+	rdf:type dataid:Agent ;
+	foaf:name "The Evolution Institute";
+	foaf:homepage  <https://evolution-institute.org> .
+
+<http://www.aligned-project.eu/data/seshat_dataid.ttl#context=evolution-institute>
+    a                          dataid:AuthorityEntityContext ;
+    dataid:authorityAgentRole  dataid:Creator, dataid:Publisher ;
+    dataid:authorizedAgent     <https://evolution-institute.org> ;
+    dataid:authorizedFor       <http://www.aligned-project.eu/data/seshat_dataid.ttl>;
+    dataid:isInheritable       true .
+
+<http://dacura.cs.tcd.ie/the-dacura-team/>
+	rdf:type dataid:Agent ;
+	foaf:name "The Dacura team at Trinity College Dublin" ;
+	foaf:mbox "dacura@scss.tcd.ie".
+
+<http://www.aligned-project.eu/data/seshat_dataid.ttl#context=the-dacura-team>
+    a                          dataid:AuthorityEntityContext ;
+    dataid:authorityAgentRole  dataid:Maintainer;
+    dataid:authorizedAgent     <http://dacura.cs.tcd.ie/the-dacura-team/>;
+    dataid:authorizedFor       <http://www.aligned-project.eu/data/seshat_dataid.ttl>;
+    dataid:isInheritable       true .
+
+<http://www.aligned-project.eu/data/seshat_dataid.ttl#context=embargo>
+    a                          dataid:AuthorityEntityContext ;
+    dataid:authorityAgentRole  dataid:Guest;
+    dataid:authorizedAgent     dataid:GuestAgent;
+    dataid:authorizedFor       <http://www.aligned-project.eu/data/seshat_dataid.ttl>;
+    dataid:validUnitl          "01-01-2017"^^xsd:date ;		#TODO this generic guest authority context is to define the embargo periode -> please define a date until the dataset is embargoed
+    dataid:isInheritable       true .
+
+<https://dacura.scss.tcd.ie/public/seshat/>
+	a dataid:Dataset ;
+	foaf:isPrimaryTopicOf  <http://www.aligned-project.eu/data/seshat_dataid.ttl>;
+	dc:title "Seshat: Global History Databank" ;
+	rdfs:label "Seshat" ;
+	dcat:landingPage <http://seshatdatabank.info/> ;
+	dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+	dc:issued "21-07-2015"^^xsd:date;		#todo when was the dataset first launched
+	dc:modified "22-12-2015"^^xsd:date;
+	dataid:hasAccessLevel dataid:SemiPrivateAccess;
+	dataid:associatedAgent <https://evolution-institute.org>, <http://dacura.cs.tcd.ie/the-dacura-team/>;
+	void:triples "950000" ;
+	dcat:keyword "todo"@en, "..."@en;
+	#dct:language ? -> TODO
+	dcat:distribution <https://dacura.scss.tcd.ie/public/seshat/somefile.ttl>;  # is mandatory
+	dc:description "Seshat is a set of historical and social science times series data describing human societies from approximately 10,000BC to the present day. The data has been collected for testing theories about sociocultural evolution and historical dynamics (Cliodynamics). Each time series consists of approximately 1500 variables (properties of human societies) sampled at approximately 100 year intervals (depending on the richness of the historical record for a given place and time). Ultimately, the Seshat project would like to include all kinds of theoretically relevant data in it. However, given limited resources, it is impossible to collect every possible variable time series. Instead, the strategy is to rely on the 'Big Question approach' that selects sets of variables relevant to specific social science big questions that are coded first. As research projects studying new big questions are funded, new sets of variables are added." ;
+	dmp:usefulness "The Seshat Global History Databank is a useful resource for interlinking historical datasets from different sources. Users profiting from Seshat are domain experts, open data developers, SMEs and researchers in data science and digital humanities." ;
+	dmp:similarData """<a href="http://www.dbpedia.org/">DBPedia</a> provides similar datasets""" ;
+	dmp:reuseAndIntegration "Seshat data can be integrated into other datasets and reused for data enrichment or mashup purposes" ;
+	dmp:additionalSoftware """Seshat needs no additional software to be used. It will provide complementary visualisations and tools""" ;
+	dmp:openness "Seshat is currently private, but will be open after an 18-month embargo." .
+
+#TODO talk to Markus
+<https://dacura.scss.tcd.ie/public/seshat/somefile.ttl>
+	a dataid:SingleFile; #todo select right subclass
+	dataid:isDistributionOf  <https://dacura.scss.tcd.ie/public/seshat/>;
+	dcat:downloadURL  <https://dacura.scss.tcd.ie/public/seshat/somefile.ttl>;  #todo
+	dataid:hasAccessLevel dataid:SemiPrivateAccess;
+	dc:issued "21-07-2015"^^xsd:date;		#todo when was the dataset first launched
+	dc:modified "22-12-2015"^^xsd:date;
+	dataid:associatedAgent <https://evolution-institute.org>, <http://dacura.cs.tcd.ie/the-dacura-team/>;
+	dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;
+	dc:format "text/csv".   #todo Markus will fill this in after he's seen the data
+	#dcat:mediaType "text/csv";   #todo Markus will fill this in after he's seen the data
+	#dcat:byteSize 12345678;  #todo Markus will fill this in after he's seen the data
+
+
