@@ -3,6 +3,7 @@ package org.aksw.dataid.datahub.mappingservice;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.github.jsonldjava.core.*;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.sun.javaws.exceptions.InvalidArgumentException;
@@ -10,6 +11,7 @@ import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.jsonobjects.DatahubError;
 import org.aksw.dataid.datahub.jsonobjects.Dataset;
 import org.aksw.dataid.datahub.jsonobjects.ValidCkanResponse;
+import org.aksw.dataid.datahub.xmlObjects.Repository;
 import org.aksw.dataid.jsonutils.StaticJsonHelper;
 import org.aksw.dataid.datahub.propertymapping.DataHubMappingException;
 import org.aksw.dataid.datahub.propertymapping.DataIdInputException;
@@ -40,6 +42,17 @@ public class DataIdPublisher
         graph = Main.getGraph();
         proc = new DataIdProcesser(DataIdConfig.getMappingConfigPath(), DataIdConfig.getOntologyPath());
         ModelWrapper.setRdfContext(proc.getMappingConfig().getRdfContext());
+    }
+
+    @GET
+    @Path("/deserializerepo")
+    @Produces("text/plain")
+    @Consumes("text/plain")
+    public String deserializeRepo(final String repoXml) throws IOException {
+
+        XmlMapper mapper = new XmlMapper();
+        Repository repo = mapper.readValue(repoXml, Repository.class);
+        return repo.getRe3dataIdentifier();
     }
 
     @GET
