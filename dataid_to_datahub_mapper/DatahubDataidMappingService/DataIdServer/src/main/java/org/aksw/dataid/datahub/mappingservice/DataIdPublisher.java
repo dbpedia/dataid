@@ -1,9 +1,12 @@
 package org.aksw.dataid.datahub.mappingservice;
 
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.datahub.jsonobjects.DatahubError;
 import org.aksw.dataid.datahub.jsonobjects.Dataset;
 import org.aksw.dataid.datahub.jsonobjects.ValidCkanResponse;
+import org.aksw.dataid.datahub.xmlObjects.Re3Data;
+import org.aksw.dataid.datahub.xmlObjects.Repository;
 import org.aksw.dataid.errors.DataIdInputException;
 import org.aksw.dataid.errors.DataIdServiceException;
 import org.aksw.dataid.jsonutils.StaticJsonHelper;
@@ -54,6 +57,15 @@ public class DataIdPublisher
             else
                 throw datahubError;
         }
+    }
+
+    @POST
+    @Path("/deserializerepo")
+    public String deserializeRepo(final String repoXml) throws IOException {
+
+        XmlMapper mapper = new XmlMapper();
+        Re3Data repo = mapper.readValue(repoXml.replaceAll("re3data\\.orgIdentifier", "re3dataorgIdentifier"), Re3Data.class);
+        return repo.getRepositories().getRe3dataIdentifier();
     }
 
     @GET

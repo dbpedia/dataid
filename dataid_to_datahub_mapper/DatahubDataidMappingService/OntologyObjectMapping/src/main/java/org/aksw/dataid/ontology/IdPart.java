@@ -5,7 +5,6 @@ import org.aksw.dataid.errors.DataIdInputException;
 import org.aksw.dataid.errors.ErrorWarningWrapper;
 import org.aksw.dataid.jsonutils.StaticJsonHelper;
 import org.aksw.dataid.rdfunit.DataIdValidator;
-import org.aksw.dataid.rdfunit.JenaModelEvaluator;
 import org.aksw.dataid.statics.StaticContent;
 import org.aksw.dataid.statics.StaticFunctions;
 import org.aksw.jena_sparql_api.model.QueryExecutionFactoryModel;
@@ -220,7 +219,7 @@ public class IdPart
             RDFUnitConfiguration config = validator.getConfiguration("text", ttl, sf.getName(), sf.getName(), TestCaseExecutionType.extendedTestCaseResult);
             TestSource source = config.getTestSource();
             System.out.println("query size: " + ((QueryExecutionFactoryModel) source.getExecutionFactory()).getModel().size());
-            com.hp.hpl.jena.rdf.model.Model m = validator.validate(config, source, validator.getTestSuite());
+            org.apache.jena.rdf.model.Model m = validator.validate(config, source, validator.getTestSuite());
             // ew = new JenaModelEvaluator(m).getErrorWarnings();
            // this.errorswarnings.addAll(ew.getErrors());
            // this.errorswarnings.addAll(ew.getWarnings());

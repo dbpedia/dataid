@@ -2,7 +2,6 @@ package org.aksw.dataid.rdfunit;
 
 import java.util.*;
 
-import com.hp.hpl.jena.rdf.model.Model;
 import org.aksw.rdfunit.RDFUnitConfiguration;
 import org.aksw.rdfunit.enums.TestCaseExecutionType;
 import org.aksw.rdfunit.exceptions.TestCaseExecutionException;
@@ -14,6 +13,7 @@ import org.aksw.rdfunit.sources.TestSource;
 import org.aksw.rdfunit.validate.ParameterException;
 import org.aksw.rdfunit.validate.wrappers.RDFUnitStaticValidator;
 import org.aksw.rdfunit.validate.wrappers.RDFUnitTestSuiteGenerator;
+import org.apache.jena.rdf.model.Model;
 
 /**
  * User: Dimitris Kontokostas

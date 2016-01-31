@@ -1,11 +1,9 @@
 package org.aksw.dataid.rdfunit;
 
-import com.hp.hpl.jena.rdf.model.*;
-import com.hp.hpl.jena.rdf.model.impl.PropertyImpl;
-import com.hp.hpl.jena.rdf.model.impl.ResourceImpl;
 import org.aksw.dataid.errors.ErrorWarning;
 import org.aksw.dataid.errors.ErrorWarningWrapper;
 import org.aksw.rdfunit.enums.RLOGLevel;
+import org.apache.jena.rdf.model.Model;
 
 import java.util.ArrayList;
 import java.util.List;

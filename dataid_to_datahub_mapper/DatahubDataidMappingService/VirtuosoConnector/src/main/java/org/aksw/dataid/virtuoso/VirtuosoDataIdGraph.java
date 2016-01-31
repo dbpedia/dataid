@@ -4,18 +4,15 @@ import org.aksw.dataid.classes.PrefixTree;
 import org.aksw.dataid.config.DataIdConfig;
 import org.aksw.dataid.errors.DataIdInputException;
 import org.aksw.dataid.ontology.IdPart;
-import org.apache.commons.collections15.MultiMap;
-import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.openrdf.rio.RDFFormat;
 import org.openrdf.rio.RDFHandlerException;
-import virtuoso.jdbc4.VirtuosoDataSource;
+//import virtuoso.jdbc4.VirtuosoDataSource;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.*;
+import java.util.Date;
+import java.util.concurrent.Executor;
 
 
 /**
@@ -23,7 +20,7 @@ import java.util.*;
  */
 public class VirtuosoDataIdGraph {
 
-    private static VirtuosoDataSource dSource = new VirtuosoDataSource();
+    //private static VirtuosoDataSource dSource = new VirtuosoDataSource();
     private static Connection conn;
 
     private Map<String, Map<String, Map.Entry<VirtuosoDataIdBranch, Date>>> branchCache = new HashMap<String, Map<String, Map.Entry<VirtuosoDataIdBranch, Date>>>();
@@ -32,11 +29,281 @@ public class VirtuosoDataIdGraph {
     public VirtuosoDataIdGraph(final String host, final int port, final String username, final String password) throws SQLException {
 
         if(conn == null) {
-            dSource.setPortNumber(port);
-            dSource.setServerName(host);
-            dSource.setUser(username);
-            dSource.setPassword(password);
-            conn = dSource.getConnection();
+//            dSource.setPortNumber(port);
+//            dSource.setServerName(host);
+//            dSource.setUser(username);
+//            dSource.setPassword(password);
+            conn =  new Connection() {
+                @Override
+                public Statement createStatement() throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public PreparedStatement prepareStatement(String sql) throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public CallableStatement prepareCall(String sql) throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public String nativeSQL(String sql) throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public void setAutoCommit(boolean autoCommit) throws SQLException {
+
+                }
+
+                @Override
+                public boolean getAutoCommit() throws SQLException {
+                    return false;
+                }
+
+                @Override
+                public void commit() throws SQLException {
+
+                }
+
+                @Override
+                public void rollback() throws SQLException {
+
+                }
+
+                @Override
+                public void close() throws SQLException {
+
+                }
+
+                @Override
+                public boolean isClosed() throws SQLException {
+                    return false;
+                }
+
+                @Override
+                public DatabaseMetaData getMetaData() throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public void setReadOnly(boolean readOnly) throws SQLException {
+
+                }
+
+                @Override
+                public boolean isReadOnly() throws SQLException {
+                    return false;
+                }
+
+                @Override
+                public void setCatalog(String catalog) throws SQLException {
+
+                }
+
+                @Override
+                public String getCatalog() throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public void setTransactionIsolation(int level) throws SQLException {
+
+                }
+
+                @Override
+                public int getTransactionIsolation() throws SQLException {
+                    return 0;
+                }
+
+                @Override
+                public SQLWarning getWarnings() throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public void clearWarnings() throws SQLException {
+
+                }
+
+                @Override
+                public Statement createStatement(int resultSetType, int resultSetConcurrency) throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public PreparedStatement prepareStatement(String sql, int resultSetType, int resultSetConcurrency) throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public CallableStatement prepareCall(String sql, int resultSetType, int resultSetConcurrency) throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public Map<String, Class<?>> getTypeMap() throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public void setTypeMap(Map<String, Class<?>> map) throws SQLException {
+
+                }
+
+                @Override
+                public void setHoldability(int holdability) throws SQLException {
+
+                }
+
+                @Override
+                public int getHoldability() throws SQLException {
+                    return 0;
+                }
+
+                @Override
+                public Savepoint setSavepoint() throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public Savepoint setSavepoint(String name) throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public void rollback(Savepoint savepoint) throws SQLException {
+
+                }
+
+                @Override
+                public void releaseSavepoint(Savepoint savepoint) throws SQLException {
+
+                }
+
+                @Override
+                public Statement createStatement(int resultSetType, int resultSetConcurrency, int resultSetHoldability) throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public PreparedStatement prepareStatement(String sql, int resultSetType, int resultSetConcurrency, int resultSetHoldability) throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public CallableStatement prepareCall(String sql, int resultSetType, int resultSetConcurrency, int resultSetHoldability) throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public PreparedStatement prepareStatement(String sql, int autoGeneratedKeys) throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public PreparedStatement prepareStatement(String sql, int[] columnIndexes) throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public PreparedStatement prepareStatement(String sql, String[] columnNames) throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public Clob createClob() throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public Blob createBlob() throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public NClob createNClob() throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public SQLXML createSQLXML() throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public boolean isValid(int timeout) throws SQLException {
+                    return false;
+                }
+
+                @Override
+                public void setClientInfo(String name, String value) throws SQLClientInfoException {
+
+                }
+
+                @Override
+                public void setClientInfo(Properties properties) throws SQLClientInfoException {
+
+                }
+
+                @Override
+                public String getClientInfo(String name) throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public Properties getClientInfo() throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public Array createArrayOf(String typeName, Object[] elements) throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public Struct createStruct(String typeName, Object[] attributes) throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public void setSchema(String schema) throws SQLException {
+
+                }
+
+                @Override
+                public String getSchema() throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public void abort(Executor executor) throws SQLException {
+
+                }
+
+                @Override
+                public void setNetworkTimeout(Executor executor, int milliseconds) throws SQLException {
+
+                }
+
+                @Override
+                public int getNetworkTimeout() throws SQLException {
+                    return 0;
+                }
+
+                @Override
+                public <T> T unwrap(Class<T> iface) throws SQLException {
+                    return null;
+                }
+
+                @Override
+                public boolean isWrapperFor(Class<?> iface) throws SQLException {
+                    return false;
+                }
+            }   ;                         //dSource.getConnection();
             conn.setAutoCommit(true);
             conn.setHoldability(ResultSet.CLOSE_CURSORS_AT_COMMIT); //for faster execution
         }

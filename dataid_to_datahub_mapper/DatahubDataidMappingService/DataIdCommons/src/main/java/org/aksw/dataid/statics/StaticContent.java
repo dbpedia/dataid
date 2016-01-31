@@ -45,6 +45,7 @@ public class StaticContent {
     public static final String CreatorUri = dataIdStump + "Creator";
     public static final String ContactUri = dataIdStump + "Contact";
     public static final String ContributorUri = dataIdStump + "Contributor";
+    public static final String Re3DataNamespace = "r3d";
 
     public static RdfContext getRdfContext() {
         if(rdfContext == null)

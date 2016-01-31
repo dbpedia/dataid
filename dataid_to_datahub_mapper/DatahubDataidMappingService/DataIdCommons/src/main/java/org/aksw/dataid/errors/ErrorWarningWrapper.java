@@ -1,7 +1,8 @@
 package org.aksw.dataid.errors;
 
 
-import org.aksw.rdfunit.model.results.RLOGTestCaseResult;
+
+import org.aksw.rdfunit.model.interfaces.results.RLOGTestCaseResult;
 
 import java.util.ArrayList;
 import java.util.List;

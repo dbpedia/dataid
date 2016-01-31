@@ -1,7 +1,7 @@
 package org.aksw.dataid.errors;
 
 import org.aksw.rdfunit.enums.RLOGLevel;
-import org.aksw.rdfunit.model.results.RLOGTestCaseResult;
+import org.aksw.rdfunit.model.interfaces.results.RLOGTestCaseResult;
 
 /**
  * Created by Chile on 4/6/2015.
@@ -21,9 +21,9 @@ public class ErrorWarning {
 
     public ErrorWarning(RLOGTestCaseResult r)
     {
-        this.resource = r.getResource();
+        this.resource = r.getFailingResource();
         this.msg = r.getMessage();
-        if(r.getLogLevel() == RLOGLevel.ERROR || r.getLogLevel() == RLOGLevel.FATAL)
+        if(r.getSeverity() == RLOGLevel.ERROR || r.getSeverity() == RLOGLevel.FATAL)
             this.errorType = DataIdErrorType.Error;
         else
             this.errorType = DataIdErrorType.Warning;
