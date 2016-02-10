@@ -1,0 +1,85 @@
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dmp:   <http://dataid.dbpedia.org/ns/dmp#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/terms/> .
+
+<http://www.aligned-project.eu/data/jurion_dataid.ttl>
+	a dataid:DataId ;
+	dataid:hasAccessLevel dataid:SemiPrivateAccess;
+	dc:issued "05-01-2016"^^xsd:date ;
+	dc:modified "05-01-2016"^^xsd:date ;
+	dc:publisher <http://wolterskluwer.de>;
+	dataid:associatedAgent <http://wolterskluwer.de>;
+	owl:versionInfo "0.0.1";
+	foaf:primaryTopic <http://www.aligned-project.eu/data/jurion_dataset> .
+
+<http://wolterskluwer.de>
+	rdf:type dataid:Agent ;
+	foaf:name "Wolters Kluwer Deutschland GmbH" ;
+	foaf:homepage <http://wolterskluwer.de> .
+
+<http://www.aligned-project.eu/data/seshat_dataid.ttl#context=wolterskluwer>
+    a                          dataid:AuthorityEntityContext ;
+    dataid:authorityAgentRole  dataid:Creator, dataid:Publisher, dataid:Maintainer;
+    dataid:authorizedAgent     <http://dacura.cs.tcd.ie/the-dacura-team/>;
+    dataid:authorizedFor       <http://www.aligned-project.eu/data/jurion_dataid.ttl>;
+    dataid:validForAccessLevel  dataid:PrivateAccess , dataid:SemiPrivateAccess , dataid:PublicAccess ;
+    dataid:isInheritable       true .
+
+<http://www.aligned-project.eu/data/jurion_dataset>
+	a dataid:Dataset ;
+	foaf:isPrimaryTopicOf  <http://www.aligned-project.eu/data/jurion_dataid.ttl>;
+	dc:title "Wolters Kluwer JURION Dataset" ;
+	rdfs:label "JURION" ;
+	owl:versionInfo "0.0.1";
+	dc:publisher <http://wolterskluwer.de>;
+	dcat:landingPage <http://wolterskluwer.de> ;
+	dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ; #TODO???
+	dc:issued "21-07-2015"^^xsd:date;		#todo when was the dataset first launched
+	dc:modified "22-12-2015"^^xsd:date;
+	dataid:hasAccessLevel dataid:SemiPrivateAccess; #TODO
+	dataid:associatedAgent <http://wolterskluwer.de>;
+	void:triples 40000000 ;
+	dcat:keyword "todo"@en, "..."@en; #TODO
+	#dct:language ? -> TODO
+	dcat:landingPage <http://wolterskluwer.de> ;
+	dcat:distribution <http://www.aligned-project.eu/data/jurion_dataset/somefile.ttl>;  # is mandatory
+	dc:description "The Wolters Kluwer JURION dataset contains different document types and formats. The relevant information is split into three formats: XML according to a DTD for documents; RDF data for metadata; and SKOS concepts for controlled vocabularies. Some metadata available in the XML is extracted and transformed into RDF using XSLT scripts. This transformation is based on an OWL ontology for document structures or on a SKOS schema derived from the controlled vocabularies. The information is designed for improving functionalities in various steps of the content lifecycle processes and later software functionalities, e.g. indexing, search suggestions, browsing, visualizations and so on. Future extensions might also inspire new possibilities for content processing and representations." ;
+	dmp:usefulness "WKD XML documents are the basis for most content-based applications within the company. WKD vocabularies are a useful source to enrich WKD documents and enhance therefore the way of finding and representing the documents on the JURION platform. WKD RDF data are useful for internal WKD data management processes. As WKD is an information service provider and content of good quality is a main asset, the use of RDF metadata enables enhancements over the whole linked data lifecycle. The result of the standardized and highly flexible data format is the implementation of new data management processes with a much better quality, transparency and flexibility." ;
+	dmp:similarData """European legislation and jurisdiction (http://eur-lex.europa.eu), German legislation (http://www.gesetze-im-internet.de/), EUROVOC Thesaurus (http://eurovoc.europa.eu/drupal/?q=de)""" ;
+	dmp:reuseAndIntegration "A re-use of the data is currently only planned for WKD internal purposes. The necessary technical infrastructure like CMS, metadata database based on a triple store and a thesaurus management system is in place." ;
+	dmp:openness "The data set is not openly available, since it is intellectual property of WKD." ;
+	dmp:preservation "Preservation of the data set is guaranteed by archival on a dedicated archive server." ;
+	dmp:growth "The growth rate for XML documents is not very high, since a lot of legal documents are replaced by others and quite a few get outdated. The RDF transformation is just starting at WKD, so that the data set size will substantially grow in the next years. Afterwards it will be an ongoing so that the dataset will grow consistently. The number of WKD Vocabularies and the data sets as such are also growing very fast due to a rising internal demand. Currently, we have only German content, but plan to integrate also further languages and topics. Goal is to cover all domains that are useful for the WKD product landscape." .
+	
+
+#TODO dummy distribution plese fill in if possible, ask Markus for support
+<http://www.aligned-project.eu/data/jurion_dataset/somefile.ttl>
+	a dataid:SingleFile; #todo select right subclass
+	dataid:isDistributionOf  <http://www.aligned-project.eu/data/jurion_dataset>;
+	dcat:accessURL  <http://wolterskluwer.de>;  #todo or direct download url
+	dataid:hasAccessLevel dataid:PrivateAccess;  #???
+	dc:issued "21-07-2015"^^xsd:date;		#todo when was the dataset first launched
+	dc:modified "22-12-2015"^^xsd:date;
+	dataid:associatedAgent <http://wolterskluwer.de>;
+	dc:license <http://purl.org/NET/rdflicense/cc-by-sa3.0de> ;  #TODO???
+	dcat:mediaType dataid:MediaType_n-triples_x-bzip2. 
+
+#TODO for example...
+dataid:MediaType_n-triples_x-bzip2
+        a                      dataid:MediaType ;
+        dataid:innerMediaType  dataid:MediaType_n-triples ;
+        dataid:typeExension    ".bz2" ;
+        dataid:typeTemplate    "application/x-bzip2" .
+
+dataid:MediaType_n-triples
+        a                    dataid:MediaType ;
+        dataid:typeExension  ".nt" ;
+        dataid:typeTemplate  "application/n-triples" .
