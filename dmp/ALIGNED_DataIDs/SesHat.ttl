@@ -1,0 +1,103 @@
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/terms/> .
+
+@base <http://aligned-project.eu/dataids/> .
+
+<seshat.ttl>
+        a                          dataid:DataId ;
+        dataid:inCatalog           <http://aligned-project.eu/dataids/catalog.ttl> ;
+        dataid:associatedAgent     <http://seshatdatabank.info>, <https://evolution-institute.org> ;
+        dataid:underAuthorization  <seshat.ttl?auth=evolution-institute>, <seshat.ttl?auth=seshat> ;
+        dc:publisher               <https://evolution-institute.org> ;
+        dc:maintainer			   <http://seshatdatabank.info> ;
+        dc:issued                  "2016-08-02"^^xsd:date ;
+        dc:modified                "2017-01-13"^^xsd:date ;
+        dc:title                   "DataID metadata for all Seshat related datasets created, enriched and maintained by the Seshat Project and its contributors in collaboration with the European project: ALIGNED."@en ;
+        foaf:primaryTopic          <seshat.ttl?set=maindataset> .
+
+#### Agents & Authorizations ####
+  
+<http://seshatdatabank.info>
+		 a 							dataid:Agent ;
+		 foaf:name 					"Seshat: Global History Databank" ;
+		 foaf:homepage				<http://seshatdatabank.info> ;
+		 foaf:mbox 					"seshatghd@gmail.com" .
+		 
+<https://evolution-institute.org>
+		 a 							dataid:Agent ;
+		 foaf:name 					"The Evolution Institute" ;
+		 foaf:homepage				<https://evolution-institute.org> ;
+		 foaf:mbox 					"communications@evolution-institute.org" .
+
+<seshat.ttl?auth=seshat>
+        a                          	dataid:Authorization ;
+        dataid:authorityAgentRole  	dataid:Maintainer ;
+        dataid:authorizedAgent     	<http://seshatdatabank.info> ;
+        dataid:authorizedFor       	<seshat.ttl> ;
+        dataid:isInheritable       	true .
+        
+<seshat.ttl?auth=evolution-institute>
+        a                          	dataid:Authorization ;
+        dataid:authorityAgentRole  	dataid:Creator, dataid:Publisher ;
+        dataid:authorizedAgent     	<https://evolution-institute.org> ;
+        dataid:authorizedFor       	<seshat.ttl> ;
+        dataid:isInheritable       	true .
+        
+########## Main Dataset ##########
+
+<seshat.ttl?set=maindataset>
+        a                       	dataid:Superset ;
+ 		rdfs:label 					"Seshat Datasets"@en ;
+        dataid:associatedAgent  	<http://seshatdatabank.info>, <https://evolution-institute.org>  ;
+        dataid:growth               <seshat.ttl?stmt=growth> ;
+        dataid:openness             <seshat.ttl?stmt=openness> ;
+        dataid:reuseAndIntegration  <seshat.ttl?stmt=reuseAndIntegration> ;
+        dataid:similarData          <seshat.ttl?stmt=similarData> ;
+        dataid:usefulness           <seshat.ttl?stmt=usefulness> ;
+        dc:rights					<seshat.ttl?stmt=rights> ;
+     	dc:description 				"""Seshat is a set of historical and social science times series data describing human societies from approximately 10,000BC to the present day. The data has been collected for testing theories about sociocultural evolution and historical dynamics (Cliodynamics). Each time series consists of approximately 1500 variables (properties of human societies) sampled at approximately 100 year intervals (depending on the richness of the historical record for a given place and time). Ultimately, the Seshat project would like to include all kinds of theoretically relevant data in it. However, given limited resources, it is impossible to collect every possible variable time series. Instead, the strategy is to rely on the “Big Question approach” that selects sets of variables relevant to specific social science big questions that are coded first. As research projects studying new big questions are funded, new sets of variables are added."""@en ;
+        dc:issued               	"2016-07-02"^^xsd:date ;
+        dc:modified             	"2017-01-11"^^xsd:date ;
+        dc:language             	<http://lexvo.org/id/iso639-3/eng> ;
+        dc:license              	<http://purl.org/NET/rdflicense/cc-by3.0> ; 		
+        dc:publisher                <https://evolution-institute.org> ;
+        dc:maintainer			    <http://seshatdatabank.info> ;
+        dc:title                	"Seshat: Global History Databank"@en ;
+        dcat:keyword            	"Seshat"@en, "historical science"@en, "social science"@en, "sociocultural evolution"@en, "historical dynamics"@en ;				
+        dcat:landingPage        	<http://seshatdatabank.info> ;
+        foaf:isPrimaryTopicOf   	<seshat.ttl>  .
+
+########### Statements ###########
+
+<seshat.ttl?stmt=rights>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "This dataset is not subject to any license."@en .
+        
+<seshat.ttl?stmt=openness>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "Seshat is currently private, but will be open after an 18-month embargo."@en .
+        
+<seshat.ttl?stmt=growth>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "The growth rate is approx. 5,000 datapoints or approx. 50,000 triples/month at the moment. Data collection is rapid but the rate varies over time."@en .
+        
+<seshat.ttl?stmt=similarData>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "DBpedia provides similar datasets."@en .
+
+<seshat.ttl?stmt=usefulness>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "The Seshat Global History Databank is a useful resource for interlinking historical datasets from different sources. Users profiting from Seshat are domain experts, open data developers, SMEs and researchers in data science and digital humanities."@en .
+
+<seshat.ttl?stmt=reuseAndIntegration>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "Seshat data can be integrated into other datasets and reused for data enrichment or mashup purposes."@en .
+

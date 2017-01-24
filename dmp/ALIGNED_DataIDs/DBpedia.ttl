@@ -1,0 +1,126 @@
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/terms/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+
+@base <http://aligned-project.eu/dataids/> .
+
+<dbpedia.ttl>
+        a                          dataid:DataId ;
+        dataid:inCatalog           <http://aligned-project.eu/dataids/catalog.ttl> ;
+        dataid:associatedAgent     <http://wiki.dbpedia.org/dbpedia-association/persons/Freudenberg> , <http://wiki.dbpedia.org/dbpedia-association> , <http://wiki.dbpedia.org/dbpedia-association/persons/Kontokostas> ;
+        dataid:underAuthorization  <dbpedia.ttl?auth=creatorAuthorization> , <dbpedia.ttl?auth=maintainerAuthorization> , <dbpedia.ttl?auth=contactAuthorization> ;
+        dc:publisher               <http://wiki.dbpedia.org/dbpedia-association> ;
+        dc:issued               	"2016-07-02"^^xsd:date ;
+        dc:modified             	"2017-01-11"^^xsd:date ;
+        dc:title                   "DataID metadata for all DBpedia language editions of release 2016-04"@en ;
+        foaf:primaryTopic          <dbpedia.ttl?set=maindataset> .
+        
+#### Agents & Authorizations ####
+  
+<dbpedia.ttl?auth=creatorAuthorization>
+        a                          dataid:Authorization ;
+        dataid:authorityAgentRole  dataid:Creator ;
+        dataid:authorizedAgent     <http://wiki.dbpedia.org/dbpedia-association> ;
+        dataid:authorizedFor       <dbpedia.ttl> ;
+        dataid:isInheritable       true .
+
+<http://www.researcherid.com/rid/L-2180-2016>
+        a                              dataid:Identifier ;
+        dataid:literal                 "L-2180-2016" ;
+        dc:issued                      "2016-08-01"^^xsd:date ;
+        dc:references                  <http://www.researcherid.com/rid/L-2180-2016> ;
+        datacite:usesIdentifierScheme  datacite:researcherid .
+
+<http://wiki.dbpedia.org/dbpedia-association/persons/Kontokostas>
+        a                        dataid:Agent ;
+        dataid:hasAuthorization  <dbpedia.ttl?auth=contactAuthorization> ;
+        foaf:homepage            <http://aksw.org/DimitrisKontokostas.html> ;
+        foaf:mbox                "kontokostas@informatik.uni-leipzig.de" ;
+        foaf:name                "Dimitris Kontokostas" .
+
+<dbpedia.ttl?auth=contactAuthorization>
+        a                          dataid:Authorization ;
+        dataid:authorityAgentRole  dataid:Contact ;
+        dataid:authorizedAgent     <http://wiki.dbpedia.org/dbpedia-association/persons/Kontokostas> ;
+        dataid:authorizedFor       <dbpedia.ttl> ;
+        dataid:isInheritable       true .
+
+<http://wiki.dbpedia.org/dbpedia-association>
+        a                        dataid:Agent ;
+        dataid:hasAuthorization  <dbpedia.ttl?auth=creatorAuthorization> ;
+        foaf:homepage            <http://dbpedia.org> ;
+        foaf:mbox                "dbpedia@infai.org" ;
+        foaf:name                "DBpedia Association" .
+
+<dbpedia.ttl?auth=maintainerAuthorization>
+        a                          dataid:Authorization ;
+        dataid:authorityAgentRole  dataid:Maintainer ;
+        dataid:authorizedAgent     <http://wiki.dbpedia.org/dbpedia-association/persons/Freudenberg> ;
+        dataid:authorizedFor       <dbpedia.ttl> ;
+        dataid:isInheritable       true .
+
+<http://wiki.dbpedia.org/dbpedia-association/persons/Freudenberg>
+        a                        dataid:Agent ;
+        dataid:hasAuthorization  <dbpedia.ttl?auth=maintainerAuthorization> ;
+        dataid:identifier        <http://www.researcherid.com/rid/L-2180-2016> ;
+        foaf:mbox                "freudenberg@informatik.uni-leipzig.de" ;
+        foaf:name                "Markus Freudenberg" .
+        
+########## Main Dataset ##########
+
+<dbpedia.ttl?set=maindataset>
+        a                       	dataid:Superset ;
+ 		rdfs:label 					"DBpedia release 2016-04 Main Dataset"@en ;
+        dataid:associatedAgent  	<http://wiki.dbpedia.org/dbpedia-association/persons/Freudenberg> , <http://wiki.dbpedia.org/dbpedia-association> , <http://wiki.dbpedia.org/dbpedia-association/persons/Kontokostas> ;
+        dataid:growth               <dbpedia.ttl?stmt=growth> ;
+        dataid:openness             <dbpedia.ttl?stmt=openness> ;
+        dataid:reuseAndIntegration  <dbpedia.ttl?stmt=reuseAndIntegration> ;
+        dataid:similarData          <dbpedia.ttl?stmt=similarData> ;
+        dataid:usefulness           <dbpedia.ttl?stmt=usefulness> ;
+        dc:rights					<dbpedia.ttl?stmt=rights> ;
+     	dc:description 				"""DBpedia is a crowd-sourced community effort to extract structured information from Wikipedia and make this information available on the Web. DBpedia allows you to ask sophisticated queries against Wikipedia, and to link the different data sets on the Web to Wikipedia data. We hope that this work will make it easier for the huge amount of information in Wikipedia to be used in some new interesting ways. Furthermore, it might inspire new mechanisms for navigating, linking, and improving the encyclopedia itself."""@en ;
+        dc:issued               	"2016-07-02"^^xsd:date ;
+        dc:modified             	"2017-01-11"^^xsd:date ;
+        dc:license              	<http://purl.oclc.org/NET/rdflicense/cc-by-sa3.0> ;		
+        dc:publisher                <http://wiki.dbpedia.org/dbpedia-association> ;
+        dc:title                	"DBpedia release 2016-04 Main Dataset"@en ;
+        dcat:keyword            	"Main Dataset"@en , "DBpedia"@en, "Wikipedia"@en;			
+        dcat:landingPage        	<http://dbpedia.org/> ;
+        foaf:isPrimaryTopicOf   	<dbpedia.ttl>  ;
+        foaf:page                   <http://wiki.dbpedia.org/Downloads2016-04> ;
+        void:subset					 <http://dbpedia.org/dataset/main_dataset?lang=af&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=als&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=am&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=an&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ar&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=arz&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ast&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=az&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ba&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=bar&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=bat-smg&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=be&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=bg&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=bn&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=bpy&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=br&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=bs&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=bug&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ca&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ce&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ceb&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ckb&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=commons&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=core&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=cs&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=cv&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=cy&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=da&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=de&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=el&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=en&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=eo&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=es&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=et&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=eu&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=fa&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=fi&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=fo&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=fr&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=fy&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ga&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=gd&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=gl&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=gu&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=he&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=hi&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=hr&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ht&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=hu&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=hy&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ia&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=id&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=io&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=is&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=it&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ja&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=jv&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ka&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=kk&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=kn&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ko&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ku&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ky&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=la&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=lb&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=lmo&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=lt&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=lv&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=mg&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=mk&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ml&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=mn&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=mr&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ms&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=mt&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=my&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=mzn&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=nah&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=nap&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=nds&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ne&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=new&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=nl&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=nn&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=no&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=oc&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=pa&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=pl&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=pms&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=pnb&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=pt&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=qu&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ro&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ru&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=sa&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=sah&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=scn&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=sco&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=sh&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=si&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=simple&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=sk&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=sl&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=sq&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=sr&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=su&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=sv&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=sw&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ta&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=te&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=tg&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=th&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=tl&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=tr&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=tt&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=uk&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=ur&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=uz&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=vec&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=vi&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=vo&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=wa&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=war&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=wikidata&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=yi&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=yo&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=zh&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=zh-min-nan&dbpv=2016-04> , <http://dbpedia.org/dataset/main_dataset?lang=zh-yue&dbpv=2016-04> .
+
+########### Statements ###########
+
+<dbpedia.ttl?stmt=rights>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "This dataset is not subject to any license."@en .
+        
+<dbpedia.ttl?stmt=openness>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "Seshat is currently private, but will be open after an 18-month embargo."@en .
+        
+<dbpedia.ttl?stmt=growth>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "The growth rate is approx. 5,000 datapoints or approx. 50,000 triples/month at the moment. Data collection is rapid but the rate varies over time."@en .
+        
+<dbpedia.ttl?stmt=similarData>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "DBpedia provides similar datasets."@en .
+
+<dbpedia.ttl?stmt=usefulness>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "The Seshat Global History Databank is a useful resource for interlinking historical datasets from different sources. Users profiting from Seshat are domain experts, open data developers, SMEs and researchers in data science and digital humanities."@en .
+
+<dbpedia.ttl?stmt=reuseAndIntegration>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "Seshat data can be integrated into other datasets and reused for data enrichment or mashup purposes."@en .
+

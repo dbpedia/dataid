@@ -1,0 +1,89 @@
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/terms/> .
+
+@base <http://aligned-project.eu/dataids/> .
+
+<poolparty.ttl>
+        a                          	dataid:DataId ;
+        dataid:inCatalog           	<http://aligned-project.eu/dataids/catalog.ttl> ;
+        dataid:associatedAgent     	<http://www.poolparty.biz> ;
+        dataid:underAuthorization  	<poolparty.ttl?auth=semanticwebcompany> ;
+        dc:publisher               	<http://www.poolparty.biz> ;		
+        dc:maintainer			    <http://www.poolparty.biz> ;
+        dc:issued                  	"2016-08-02"^^xsd:date ;
+        dc:modified                	"2017-01-13"^^xsd:date ;
+        dc:title                   	"DataID metadata for all PoolParty datasets created as result of the collaboration of the Semantic Web Company in the European project: ALIGNED."@en ;
+        foaf:primaryTopic          	<poolparty.ttl?set=maindataset> .
+
+#### Agents & Authorizations ####
+
+<http://www.poolparty.biz>
+		 a 							dataid:Agent ;
+		 foaf:name 					"PoolParty Semantic Suite" ;
+		 foaf:homepage				<http://www.poolparty.biz> ;
+		 foaf:mbox 					"office@semantic-web.at" .
+
+<poolparty.ttl?auth=semanticwebcompany>
+        a                          	dataid:Authorization ;
+        dataid:authorityAgentRole  	dataid:Creator, dataid:Maintainer, dataid:Publisher ;
+        dataid:authorizedAgent     	<http://www.poolparty.biz> ;
+        dataid:authorizedFor       	<poolparty.ttl> ;
+        dataid:isInheritable       	true .
+        
+########## Main Dataset ##########
+
+<poolparty.ttl?set=maindataset>
+        a                       	dataid:Superset ;
+ 		rdfs:label 					"PoolParty-UG"@en ;
+        dataid:associatedAgent  	<http://www.poolparty.biz>  ;
+        dataid:growth               <poolparty.ttl?stmt=growth> ;
+        dataid:openness             <poolparty.ttl?stmt=openness> ;
+        dataid:reuseAndIntegration  <poolparty.ttl?stmt=reuseAndIntegration> ;
+        dataid:similarData          <poolparty.ttl?stmt=similarData> ;
+        dataid:usefulness           <poolparty.ttl?stmt=usefulness> ;
+        dc:rights					<poolparty.ttl?stmt=rights> ;
+     	dc:description 				"""Semantic Web Company uses Confluence and JIRA for requirements collection, feature specification and tracking of changes respectively. The unified governance dataset gathers data from Confluence and JIRA and converts it into RDF using DIO and DIOPP ontologies.The data is generated using UnifiedViews tool. The dataset contains description, creator information, comments of the requirements and its respective JIRA issue. The requirements can be stories or epics from Confluence whereas the issue could be bug, task or new feature. The dataset has 64 epics which further have 244 requirement stories and more than 8000 JIRA issues."""@en ;
+        dc:issued               	"2016-07-02"^^xsd:date ;
+        dc:modified             	"2017-01-11"^^xsd:date ;
+        dc:language             	<http://lexvo.org/id/iso639-3/eng> ;
+        #dc:license              	<http://purl.oclc.org/NET/rdflicense/cc-by-sa3.0> ; 			#dont know!!!!!!!!!!!!!!!!!!!!!!!!
+        dc:publisher            	<http://www.poolparty.biz> ;
+        dc:title                	"Semantic Web Company PoolParty Unified Governance Dataset"@en ;
+        dcat:keyword            	"PoolParty"@en, "Semantic Web Company"@en, "Confluence"@en, "JIRA"@en ;				
+        dcat:landingPage        	<http://www.poolparty.biz> ;
+        foaf:isPrimaryTopicOf   	<poolparty.ttl>  .
+
+########### Statements ###########
+
+<poolparty.ttl?stmt=rights>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "This dataset is not subject to any license."@en .
+        
+<poolparty.ttl?stmt=openness>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "The data set is not openly available, since it is intellectual property of SWC . DIOPP can be used without any restriction."@en .
+        
+<poolparty.ttl?stmt=growth>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "The dataset is updated daily and the growth of data depends on activity for software development cycle."@en .
+        
+<poolparty.ttl?stmt=similarData>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "No known similar datasets found so far."@en .
+
+<poolparty.ttl?stmt=usefulness>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "The unified governance dataset can search over the integrated RDF software development data and compute similarity for software development artifacts based on a combined graph based and text based approach."@en .
+
+<poolparty.ttl?stmt=reuseAndIntegration>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "The unified governance dataset can be used for statistical analysis of the software development cycle."@en .
+

@@ -1,0 +1,88 @@
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/terms/> .
+
+@base <http://aligned-project.eu/dataids/> .
+
+<jurion.ttl>
+        a                          	dataid:DataId ;
+        dataid:inCatalog           	<http://aligned-project.eu/dataids/catalog.ttl> ;
+        dataid:associatedAgent     	<http://wolterskluwer.com> ;
+        dataid:underAuthorization  	<jurion.ttl?auth=wolterskluwer> ;
+        dc:publisher               	<http://wolterskluwer.com> ;
+        dc:maintainer               <http://wolterskluwer.com> ;
+        dc:issued                  	"2016-08-02"^^xsd:date ;
+        dc:modified                	"2017-01-13"^^xsd:date ;
+        dc:title                   	"DataID metadata for all JURION datasets created as result of the collaboration of the Wolters Kluver company in the European project: ALIGNED."@en ;
+        foaf:primaryTopic          	<jurion.ttl?set=maindataset> .
+
+#### Agents & Authorizations ####
+
+<http://wolterskluwer.com>
+		 a 							dataid:Agent ;
+		 foaf:name 					"Wolters Kluwer Deutschland" ;
+		 foaf:homepage				<http://wolterskluwer.com> ;
+		 foaf:mbox 					"LegalandReginfo@wolterskluwer.com" .
+
+<jurion.ttl?auth=wolterskluwer>
+        a                          	dataid:Authorization ;
+        dataid:authorityAgentRole  	dataid:Creator, dataid:Maintainer, dataid:Publisher ;
+        dataid:authorizedAgent     	<http://wolterskluwer.com> ;
+        dataid:authorizedFor       	<jurion.ttl> ;
+        dataid:isInheritable       	true .
+        
+########## Main Dataset ##########
+
+<jurion.ttl?set=maindataset>
+        a                       	dataid:Superset ;
+        dataid:associatedAgent  	<http://wolterskluwer.com>  ;
+        dataid:growth               <jurion.ttl?stmt=growth> ;
+        dataid:openness             <jurion.ttl?stmt=openness> ;
+        dataid:reuseAndIntegration  <jurion.ttl?stmt=reuseAndIntegration> ;
+        dataid:similarData          <jurion.ttl?stmt=similarData> ;
+        dataid:usefulness           <jurion.ttl?stmt=usefulness> ;
+        dc:rights					<jurion.ttl?stmt=rights> ;
+     	dc:description 				"""The Wolters Kluwer JURION dataset contains different document types and formats. The relevant information is split into three formats: XML according to a DTD for documents; RDF data for metadata; and SKOS concepts for controlled vocabularies. Some metadata available in the XML is extracted and transformed into RDF using XSLT scripts. This transformation is based on an OWL ontology for document structures or on a SKOS schema derived from the controlled vocabularies. The information is designed for improving functionalities in various steps of the content lifecycle processes and later software functionalities, e.g. indexing, search suggestions, browsing, visualizations and so on. Future extensions might also inspire new possibilities for content processing and representations. Part of the WKD SKOS schemas is publicly available as Linked open Data. Specifically, a thesaurus on labor law concepts and another one on German and international courts. These vocabularies were updated and extended in 2016, also based on the quality improvements measures within the JURION use case in ALIGNED. The purpose of these vocabularies is to engage more scientists in using legal data and create added value services on top. The raw document data available in governmental legal repositories need in addition domain knowledge vocabularies attached to them to exploit their full potential to legal professionals as well as citizens."""@en ;
+        dc:issued               	"2016-07-02"^^xsd:date ;
+        dc:modified             	"2017-01-11"^^xsd:date ;
+        dc:language             	<http://lexvo.org/id/iso639-3/eng> ;
+        dc:license             		<http://purl.org/NET/rdflicense/cc-by3.0> ;
+        dc:publisher            	<http://wolterskluwer.com> ;
+        dc:title                	"Wolters Kluwer JURION Dataset"@en ;
+        dcat:keyword            	"Jurion"@en, "Wolters Kluwer"@en ;									
+        dcat:landingPage        	<http://wolterskluwer.com> ;
+        foaf:isPrimaryTopicOf   	<jurion.ttl>  .
+
+########### Statements ###########
+
+<jurion.ttl?stmt=rights>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "The data set is copyright protected. The Open Data vocabularies follow a CC BY license."@en .
+        
+<jurion.ttl?stmt=openness>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "The data set is not openly available, since it is intellectual property of WKD. The Open Data vocabularies can be accessed and downloaded at: http://vocabulary.wolterskluwer.de."@en .
+        
+<jurion.ttl?stmt=growth>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "The growth rate for XML documents is not very high, since a lot of legal documents are replaced by others and quite a few get outdated. The RDF transformation is just starting at WKD, so that the data set size will substantially grow in the next years. Afterwards it will be an ongoing so that the dataset will grow consistently. The number of WKD Vocabularies and the data sets as such are also growing very fast due to a rising internal demand. Currently, we have only German content, but plan to integrate also further languages and topics. Goal is to cover all domains that are useful for the WKD product landscape."@en .
+        
+<jurion.ttl?stmt=similarData>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "European legislation and jurisdiction (http://eur-lex.europa.eu), German legislation (http://www.gesetze-im-internet.de/), EUROVOC Thesaurus (http://eurovoc.europa.eu/drupal/?q=de)."@en .
+
+<jurion.ttl?stmt=usefulness>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "WKD XML documents are the basis for most content-based applications within the company. WKD vocabularies are a useful source to enrich WKD documents and enhance therefore the way of finding and representing the documents on the JURION platform. WKD RDF data are useful for internal WKD data management processes. As WKD is an information service provider and content of good quality is a main asset, the use of RDF metadata enables enhancements over the whole linked data lifecycle. The result of the standardized and highly flexible data format is the implementation of new data management processes with a much better quality, transparency and flexibility."@en .
+
+<jurion.ttl?stmt=reuseAndIntegration>
+        a                 dataid:SimpleStatement ;
+        dataid:statement  "A re-use of the data is currently only planned for WKD internal purposes. The necessary technical infrastructure like CMS, metadata database based on a triple store and a thesaurus management system is in place."@en .
+
